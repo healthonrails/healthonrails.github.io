@@ -1,0 +1,91 @@
+import pandas as pd
+import numpy as np
+from google.colab import data_table
+
+!pip install gradio
+
+import gradio as gr
+
+data_table.enable_dataframe_formatter()
+
+CSV_FILE = '/content/Nov2_pre_Tank1_Tank2_corrected_116_key_frames_coco_dataset_Nov2_pre_Tank1_Tank2_mask_rcnn_tracking_results_with_segmenation.csv'
+
+df = pd.read_csv(CSV_FILE)
+
+df.head()
+
+def paired_distance(frame_number,
+                    this_instance='Female_98',
+                    other_instance='Male_109'):
+    df_dis = df[df["frame_number"]==frame_number][['cx','cy','instance_name']]
+    df_this = df_dis[df_dis.instance_name == this_instance]
+    df_other = df_dis[df_dis.instance_name == other_instance]
+    try:
+      dist = np.linalg.norm(df_this[['cx','cy']].values-df_other[['cx','cy']].values)
+    except:
+      dist = None
+
+
+    return dist
+
+paired_distance(0,'Female_98','Male_109')
+
+instance_names = list(df.instance_name.unique())
+
+iface = gr.Interface(paired_distance,
+                     [
+                         gr.inputs.Number(),
+                         gr.inputs.Dropdown(instance_names),
+                         gr.inputs.Dropdown(instance_names),
+
+                     ],
+                     [
+                         gr.outputs.Label(label="Paired Distance"),
+                     ]
+                     )
+iface.launch()
+
+def instance_distance_between_frame(frame_number,
+                                    instance_name='Female_86'):
+    if frame_number < 1:
+      return 0
+    previous_frame_number = frame_number - 1
+    df_dis = df[df["frame_number"]==frame_number][['cx','cy','instance_name']]
+    df_dis_prev = df[df["frame_number"]==previous_frame_number][['cx','cy','instance_name']]
+    df_dis = df_dis[df_dis.instance_name == instance_name]
+    df_dis_prev = df_dis_prev[df_dis_prev.instance_name == instance_name]
+
+    try:
+      dist = np.linalg.norm(df_dis[['cx','cy']].values-df_dis_prev[['cx','cy']].values)
+    except:
+      dist = None
+    
+    return dist
+    
+
+df['dist_from_previous_frame_female_86'] = df.frame_number.apply(instance_distance_between_frame,instance_name='Female_86')
+
+df['dist_from_previous_frame_female_86'].describe()
+
+df['dist_from_previous_frame_female_86'].sum()
+
+df['dist_from_previous_frame_male_109']= df.frame_number.apply(instance_distance_between_frame, instance_name='Male_109')
+
+df['dist_from_previous_frame_male_109'].sum()
+
+df['dist_from_previous_frame_female_98']= df.frame_number.apply(instance_distance_between_frame, instance_name='Female_98')
+
+df['dist_from_previous_frame_female_98'].sum()
+
+import plotly.express as px
+import plotly.graph_objects as go
+
+
+fig = px.line(x=df.frame_number, y=df.dist_from_previous_frame_female_86, labels={'x':'frame_number', 'y':'dist from previous frame female_86'})
+fig.show()
+
+df['dist_frog__female_98_male_109'] = df.frame_number.apply(paired_distance)
+
+
+fig = px.line(x=df.frame_number, y=df.dist_frog__female_98_male_109, labels={'x':'frame_number', 'y':'distance between frog male in tank 2 to frog female in tank 2'})
+fig.show()

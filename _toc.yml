@@ -23,6 +23,7 @@ parts:
     - file: tutorials/Annolid_on_Detectron2_Tutorial_3_Evaluate_our_model
     - file: tutorials/Annolid_on_Detectron2_Tutorial_4_Running_inference
     - file: tutorials/Annolid_on_Detectron2_Tutorial_full
+    - file: tutorials/Annolid_post_processing_distances
   - caption: Annolid Zoo
     chapters:
     - file: content/annolid_zoo
