@@ -113,13 +113,13 @@ else:
 
 # ### If you use your own video / dataset you need to update the VIDEO_INPUT name
 
-# In[ ]:
+# In[9]:
 
 
 VIDEO_INPUT="YOUR_VIDEO_NAME"
 
 
-# In[9]:
+# In[10]:
 
 
 if IN_COLAB:

@@ -184,6 +184,11 @@
    Annolid on Detectron2 Tutorial
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Annolid_post_processing_distances.html">
+   Calucate distances for a pair of instances in the same frame or the same instance across frames
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -472,66 +477,103 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyyaml==5.3 in /home/jeremy/anaconda3/lib/python3.9/site-packages (5.3)
-torch:  1.10 ; cuda:  cu102
-Looking in links: https://dl.fbaipublicfiles.com/detectron2/wheels/cu102/torch1.10/index.html
-Requirement already satisfied: detectron2 in /home/jeremy/anaconda3/lib/python3.9/site-packages (0.6+cu102)
-Requirement already satisfied: pycocotools&gt;=2.0.2 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (2.0.3)
-Requirement already satisfied: Pillow&gt;=7.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (8.4.0)
-Requirement already satisfied: tqdm&gt;4.29.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (4.62.3)
-Requirement already satisfied: omegaconf&gt;=2.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (2.1.1)
-Requirement already satisfied: hydra-core&gt;=1.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (1.1.1)
-Requirement already satisfied: iopath&lt;0.1.10,&gt;=0.1.7 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (0.1.9)
-Requirement already satisfied: black==21.4b2 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (21.4b2)
-Requirement already satisfied: termcolor&gt;=1.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (1.1.0)
-Requirement already satisfied: tensorboard in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (2.7.0)
-Requirement already satisfied: future in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (0.18.2)
-Requirement already satisfied: tabulate in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (0.8.9)
-Requirement already satisfied: pydot in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (1.4.2)
-Requirement already satisfied: yacs&gt;=0.1.8 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (0.1.8)
-Requirement already satisfied: matplotlib in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (3.4.3)
-Requirement already satisfied: cloudpickle in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (2.0.0)
-Requirement already satisfied: fvcore&lt;0.1.6,&gt;=0.1.5 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from detectron2) (0.1.5.post20211023)
-Requirement already satisfied: click&gt;=7.1.2 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from black==21.4b2-&gt;detectron2) (8.0.3)
-Requirement already satisfied: toml&gt;=0.10.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from black==21.4b2-&gt;detectron2) (0.10.2)
-Requirement already satisfied: regex&gt;=2020.1.8 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from black==21.4b2-&gt;detectron2) (2021.8.3)
-Requirement already satisfied: pathspec&lt;1,&gt;=0.8.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from black==21.4b2-&gt;detectron2) (0.9.0)
-Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from black==21.4b2-&gt;detectron2) (0.4.3)
-Requirement already satisfied: appdirs in /home/jeremy/anaconda3/lib/python3.9/site-packages (from black==21.4b2-&gt;detectron2) (1.4.4)
-Requirement already satisfied: numpy in /home/jeremy/anaconda3/lib/python3.9/site-packages (from fvcore&lt;0.1.6,&gt;=0.1.5-&gt;detectron2) (1.20.3)
-Requirement already satisfied: pyyaml&gt;=5.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from fvcore&lt;0.1.6,&gt;=0.1.5-&gt;detectron2) (5.3)
-Requirement already satisfied: antlr4-python3-runtime==4.8 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from hydra-core&gt;=1.1-&gt;detectron2) (4.8)
-Requirement already satisfied: portalocker in /home/jeremy/anaconda3/lib/python3.9/site-packages (from iopath&lt;0.1.10,&gt;=0.1.7-&gt;detectron2) (2.3.2)
-Requirement already satisfied: setuptools&gt;=18.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from pycocotools&gt;=2.0.2-&gt;detectron2) (58.0.4)
-Requirement already satisfied: cython&gt;=0.27.3 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from pycocotools&gt;=2.0.2-&gt;detectron2) (0.29.24)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from matplotlib-&gt;detectron2) (2.8.2)
-Requirement already satisfied: cycler&gt;=0.10 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from matplotlib-&gt;detectron2) (0.10.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from matplotlib-&gt;detectron2) (1.3.1)
-Requirement already satisfied: pyparsing&gt;=2.2.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from matplotlib-&gt;detectron2) (3.0.4)
-Requirement already satisfied: six in /home/jeremy/anaconda3/lib/python3.9/site-packages (from cycler&gt;=0.10-&gt;matplotlib-&gt;detectron2) (1.16.0)
-Requirement already satisfied: werkzeug&gt;=0.11.15 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (2.0.2)
-Requirement already satisfied: absl-py&gt;=0.4 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (1.0.0)
-Requirement already satisfied: tensorboard-data-server&lt;0.7.0,&gt;=0.6.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (0.6.1)
-Requirement already satisfied: requests&lt;3,&gt;=2.21.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (2.26.0)
-Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (0.4.6)
-Requirement already satisfied: protobuf&gt;=3.6.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (3.19.1)
-Requirement already satisfied: grpcio&gt;=1.24.3 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (1.43.0)
-Requirement already satisfied: wheel&gt;=0.26 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (0.37.0)
-Requirement already satisfied: google-auth&lt;3,&gt;=1.6.3 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (2.3.3)
-Requirement already satisfied: markdown&gt;=2.6.8 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (3.3.6)
-Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from tensorboard-&gt;detectron2) (1.8.1)
-Requirement already satisfied: cachetools&lt;5.0,&gt;=2.0.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (4.2.4)
-Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (4.8)
-Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (0.2.8)
-Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;detectron2) (1.3.0)
-Requirement already satisfied: importlib-metadata&gt;=4.4 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from markdown&gt;=2.6.8-&gt;tensorboard-&gt;detectron2) (4.8.1)
-Requirement already satisfied: zipp&gt;=0.5 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from importlib-metadata&gt;=4.4-&gt;markdown&gt;=2.6.8-&gt;tensorboard-&gt;detectron2) (3.6.0)
-Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;3,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (0.4.8)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (1.26.7)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (3.2)
-Requirement already satisfied: charset-normalizer~=2.0.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (2.0.4)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (2021.10.8)
-Requirement already satisfied: oauthlib&gt;=3.0.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;detectron2) (3.1.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyyaml==5.3 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (5.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 21.3.1; however, version 22.0.2 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/chenyang/miniconda3/envs/ceed/bin/python -m pip install --upgrade pip&#39; command.</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch:  1.9 ; cuda:  1.9.0
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in links: https://dl.fbaipublicfiles.com/detectron2/wheels/1.9.0/torch1.9/index.html
+Requirement already satisfied: detectron2 in /Users/chenyang/Desktop/Developer/cpl/annolid/annolid/detectron2 (0.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Pillow&gt;=7.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (8.3.1)
+Requirement already satisfied: matplotlib in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (3.1.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pycocotools&gt;=2.0.2 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (2.0.2)
+Requirement already satisfied: termcolor&gt;=1.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (1.1.0)
+Requirement already satisfied: yacs&gt;=0.1.6 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (0.1.8)
+Requirement already satisfied: tabulate in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (0.8.9)
+Requirement already satisfied: cloudpickle in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (1.3.0)
+Requirement already satisfied: tqdm&gt;4.29.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (4.43.0)
+Requirement already satisfied: tensorboard in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (2.3.0)
+Requirement already satisfied: fvcore&lt;0.1.6,&gt;=0.1.5 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (0.1.5.post20210804)
+Requirement already satisfied: iopath&lt;0.1.10,&gt;=0.1.7 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (0.1.9)
+Requirement already satisfied: future in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (0.18.2)
+Requirement already satisfied: pydot in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (1.4.2)
+Requirement already satisfied: omegaconf&gt;=2.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (2.1.0)
+Requirement already satisfied: hydra-core&gt;=1.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (1.1.0)
+Requirement already satisfied: black==21.4b2 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from detectron2) (21.4b2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mypy-extensions&gt;=0.4.3 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (0.4.3)
+Requirement already satisfied: click&gt;=7.1.2 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (7.1.2)
+Requirement already satisfied: toml&gt;=0.10.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (0.10.1)
+Requirement already satisfied: pathspec&lt;1,&gt;=0.8.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (0.9.0)
+Requirement already satisfied: typing-extensions&gt;=3.7.4 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (3.7.4.3)
+Requirement already satisfied: appdirs in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (1.4.4)
+Requirement already satisfied: typed-ast&gt;=1.4.2 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (1.4.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: regex&gt;=2020.1.8 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from black==21.4b2-&gt;detectron2) (2021.8.3)
+Requirement already satisfied: pyyaml&gt;=5.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from fvcore&lt;0.1.6,&gt;=0.1.5-&gt;detectron2) (5.3)
+Requirement already satisfied: numpy in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from fvcore&lt;0.1.6,&gt;=0.1.5-&gt;detectron2) (1.18.2)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: antlr4-python3-runtime==4.8 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from hydra-core&gt;=1.1-&gt;detectron2) (4.8)
+Requirement already satisfied: importlib-resources in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from hydra-core&gt;=1.1-&gt;detectron2) (5.2.2)
+Requirement already satisfied: portalocker in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from iopath&lt;0.1.10,&gt;=0.1.7-&gt;detectron2) (2.3.0)
+Requirement already satisfied: setuptools&gt;=18.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from pycocotools&gt;=2.0.2-&gt;detectron2) (44.0.0.post20200106)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: cython&gt;=0.27.3 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from pycocotools&gt;=2.0.2-&gt;detectron2) (0.29.16)
+Requirement already satisfied: python-dateutil&gt;=2.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from matplotlib-&gt;detectron2) (2.8.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from matplotlib-&gt;detectron2) (1.1.0)
+Requirement already satisfied: cycler&gt;=0.10 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from matplotlib-&gt;detectron2) (0.10.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from matplotlib-&gt;detectron2) (2.4.6)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: werkzeug&gt;=0.11.15 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (0.16.0)
+Requirement already satisfied: google-auth-oauthlib&lt;0.5,&gt;=0.4.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (0.4.1)
+Requirement already satisfied: grpcio&gt;=1.24.3 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (1.38.1)
+Requirement already satisfied: tensorboard-plugin-wit&gt;=1.6.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (1.7.0)
+Requirement already satisfied: six&gt;=1.10.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (1.14.0)
+Requirement already satisfied: markdown&gt;=2.6.8 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (3.1.1)
+Requirement already satisfied: google-auth&lt;2,&gt;=1.6.3 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (1.32.1)
+Requirement already satisfied: wheel&gt;=0.26 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (0.34.2)
+Requirement already satisfied: absl-py&gt;=0.4 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (0.9.0)
+Requirement already satisfied: protobuf&gt;=3.6.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (3.17.3)
+Requirement already satisfied: requests&lt;3,&gt;=2.21.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from tensorboard-&gt;detectron2) (2.26.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1-modules&gt;=0.2.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from google-auth&lt;2,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (0.2.8)
+Requirement already satisfied: rsa&lt;5,&gt;=3.1.4 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from google-auth&lt;2,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (4.0)
+Requirement already satisfied: cachetools&lt;5.0,&gt;=2.0.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from google-auth&lt;2,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (4.0.0)
+Requirement already satisfied: requests-oauthlib&gt;=0.7.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;detectron2) (1.3.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (2.9)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (2020.6.20)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (2.0.1)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests&lt;3,&gt;=2.21.0-&gt;tensorboard-&gt;detectron2) (1.25.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: zipp&gt;=3.1.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from importlib-resources-&gt;hydra-core&gt;=1.1-&gt;detectron2) (3.5.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyasn1&lt;0.5.0,&gt;=0.4.6 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from pyasn1-modules&gt;=0.2.1-&gt;google-auth&lt;2,&gt;=1.6.3-&gt;tensorboard-&gt;detectron2) (0.4.8)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: oauthlib&gt;=3.0.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests-oauthlib&gt;=0.7.0-&gt;google-auth-oauthlib&lt;0.5,&gt;=0.4.1-&gt;tensorboard-&gt;detectron2) (3.1.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 21.3.1; however, version 22.0.2 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/chenyang/miniconda3/envs/ceed/bin/python -m pip install --upgrade pip&#39; command.</span>
 </pre></div>
 </div>
 </div>
@@ -583,7 +625,7 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /home/jeremy/anaconda3/lib/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gpu available
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>no gpu
 </pre></div>
 </div>
 </div>
@@ -599,22 +641,51 @@ Requirement already satisfied: oauthlib&gt;=3.0.0 in /home/jeremy/anaconda3/lib/
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: gdown in /home/jeremy/anaconda3/lib/python3.9/site-packages (4.2.0)
-Requirement already satisfied: filelock in /home/jeremy/anaconda3/lib/python3.9/site-packages (from gdown) (3.3.1)
-Requirement already satisfied: six in /home/jeremy/anaconda3/lib/python3.9/site-packages (from gdown) (1.16.0)
-Requirement already satisfied: tqdm in /home/jeremy/anaconda3/lib/python3.9/site-packages (from gdown) (4.62.3)
-Requirement already satisfied: beautifulsoup4 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from gdown) (4.10.0)
-Requirement already satisfied: requests[socks] in /home/jeremy/anaconda3/lib/python3.9/site-packages (from gdown) (2.26.0)
-Requirement already satisfied: soupsieve&gt;1.2 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from beautifulsoup4-&gt;gdown) (2.2.1)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests[socks]-&gt;gdown) (1.26.7)
-Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests[socks]-&gt;gdown) (3.2)
-Requirement already satisfied: charset-normalizer~=2.0.0 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests[socks]-&gt;gdown) (2.0.4)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests[socks]-&gt;gdown) (2021.10.8)
-Requirement already satisfied: PySocks!=1.5.7,&gt;=1.5.6 in /home/jeremy/anaconda3/lib/python3.9/site-packages (from requests[socks]-&gt;gdown) (1.7.1)
-Downloading...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: gdown in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (4.2.1)
+Requirement already satisfied: requests[socks] in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from gdown) (2.26.0)
+Requirement already satisfied: six in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from gdown) (1.14.0)
+Requirement already satisfied: beautifulsoup4 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from gdown) (4.10.0)
+Requirement already satisfied: tqdm in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from gdown) (4.43.0)
+Requirement already satisfied: filelock in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from gdown) (3.0.12)
+Requirement already satisfied: soupsieve&gt;1.2 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from beautifulsoup4-&gt;gdown) (2.3.1)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests[socks]-&gt;gdown) (1.25.8)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests[socks]-&gt;gdown) (2.9)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests[socks]-&gt;gdown) (2.0.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests[socks]-&gt;gdown) (2020.6.20)
+Requirement already satisfied: PySocks!=1.5.7,&gt;=1.5.6 in /Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages (from requests[socks]-&gt;gdown) (1.7.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: You are using pip version 21.3.1; however, version 22.0.2 is available.</span>
+<span class=" -Color -Color-Yellow">You should consider upgrading via the &#39;/Users/chenyang/miniconda3/envs/ceed/bin/python -m pip install --upgrade pip&#39; command.</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading...
 From: https://drive.google.com/uc?id=1fUXCLnoJ5SwXg54mj0NBKGzidsV8ALVR
-To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
-100%|██████████████████████████████████████| 10.3M/10.3M [00:00&lt;00:00, 96.4MB/s]
+To: /Users/chenyang/Desktop/Developer/cpl/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                               | 0.00/10.3M [00:00&lt;?, ?B/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|█▉                                     | 524k/10.3M [00:00&lt;00:02, 4.10MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█████▊                                | 1.57M/10.3M [00:00&lt;00:01, 4.72MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|█████████████▌                        | 3.67M/10.3M [00:00&lt;00:01, 5.88MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|█████████████████████▎                | 5.77M/10.3M [00:00&lt;00:00, 7.32MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 76%|████████████████████████████▉         | 7.86M/10.3M [00:00&lt;00:00, 8.94MB/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|████████████████████████████████████▋ | 9.96M/10.3M [00:00&lt;00:00, 10.4MB/s]
+100%|██████████████████████████████████████| 10.3M/10.3M [00:00&lt;00:00, 12.9MB/s]
 </pre></div>
 </div>
 </div>
@@ -693,7 +764,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00000979_94.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00005018_19.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00001257_80.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004335_26.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004335_26.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004804_39.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00006396_43.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00006993_65.jpg  
@@ -712,20 +785,28 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004767_87.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00000378_62.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00006563_31.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00001476_48.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00001476_48.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004555_67.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00003070_62.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00005007_38.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00003342_41.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002267_91.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002267_91.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002248_99.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00000702_46.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00003237_15.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002412_96.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002412_96.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00001322_73.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002328_97.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004312_85.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004443_46.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004443_46.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00003783_81.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00000779_3.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00002654_1.jpg  
@@ -733,15 +814,21 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004098_59.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00006538_99.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00006832_71.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00007024_26.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00005772_51.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00007024_26.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00005772_51.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00006330_76.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00000871_10.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00003034_64.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00004539_89.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/JPEGImages/00005788_49.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/valid/annotations.json  
-  inflating: ./novelctrlk6_8_coco_dataset/.DS_Store  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/.DS_Store  
   inflating: ./__MACOSX/novelctrlk6_8_coco_dataset/._.DS_Store  
   inflating: ./novelctrlk6_8_coco_dataset/data.yaml  
   inflating: ./novelctrlk6_8_coco_dataset/train/.DS_Store  
@@ -753,14 +840,18 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000759_28.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003680_32.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004441_88.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005090_94.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005090_94.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002476_27.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000965_42.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001652_55.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002000_18.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002333_0.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005752_39.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006670_0.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006670_0.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005763_18.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004469_75.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005566_43.jpg  
@@ -773,7 +864,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002647_78.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004295_47.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003667_56.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006131_85.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006131_85.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000311_77.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000879_40.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002991_7.jpg  
@@ -783,13 +876,17 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003269_66.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003224_49.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002628_21.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001838_25.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001838_25.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002825_40.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002247_29.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003100_30.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001922_57.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001320_92.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006299_63.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006299_63.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000952_60.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000842_70.jpg  
   inflating: ./__MACOSX/novelctrlk6_8_coco_dataset/train/JPEGImages/._00000842_70.jpg  
@@ -799,7 +896,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004032_20.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006212_69.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003134_31.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006169_98.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006169_98.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006830_36.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004570_24.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000735_23.jpg  
@@ -813,7 +912,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006319_53.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005025_83.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000530_64.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002362_63.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002362_63.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002311_72.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005068_37.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006353_11.jpg  
@@ -829,7 +930,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004672_51.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004062_19.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005246_28.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005154_53.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005154_53.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00005584_93.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003834_80.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004711_6.jpg  
@@ -843,7 +946,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001999_45.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004081_4.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00000776_14.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002546_58.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002546_58.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001181_61.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00002226_87.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001632_33.jpg  
@@ -854,7 +959,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006844_69.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001892_72.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001153_93.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001389_82.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001389_82.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001439_52.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006367_98.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004018_67.jpg  
@@ -862,7 +969,9 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006361_13.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003167_10.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00006832_66.jpg  
-  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004956_38.jpg  
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00004956_38.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00001980_61.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/JPEGImages/00003364_13.jpg  
   inflating: ./novelctrlk6_8_coco_dataset/train/annotations.json  
@@ -930,10 +1039,13 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jeremy/anaconda3/envs/annolid-env/lib/python3.7/site-packages/detectron2/structures/image_list.py:88: UserWarning: __floordiv__ is deprecated, and its behavior will change in a future version of pytorch. It currently rounds toward 0 (like the &#39;trunc&#39; function NOT &#39;floor&#39;). This results in incorrect rounding for negative values. To keep the current behavior, use torch.div(a, b, rounding_mode=&#39;trunc&#39;), or for actual floor division, use torch.div(a, b, rounding_mode=&#39;floor&#39;).
-  max_size = (max_size + (stride - 1)) // stride * stride
-/home/jeremy/anaconda3/envs/annolid-env/lib/python3.7/site-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2157.)
-  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages/torch/_tensor.py:575: UserWarning: floor_divide is deprecated, and will be removed in a future version of pytorch. It currently rounds toward 0 (like the &#39;trunc&#39; function NOT &#39;floor&#39;). This results in incorrect rounding for negative values.
+To keep the current behavior, use torch.div(a, b, rounding_mode=&#39;trunc&#39;), or for actual floor division, use torch.div(a, b, rounding_mode=&#39;floor&#39;). (Triggered internally at  ../aten/src/ATen/native/BinaryOps.cpp:467.)
+  return torch.floor_divide(self, other)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/chenyang/miniconda3/envs/ceed/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  ../c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
 </pre></div>
 </div>
 </div>
@@ -947,13 +1059,13 @@ To: /home/jeremy/Documents/annolid/book/tutorials/novelctrlk6_8_coco_dataset.zip
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([ 6, 74, 74, 65, 74, 68], device=&#39;cuda:0&#39;)
-Boxes(tensor([[ 100.5904,   16.4716, 1262.0560,  977.0276],
-        [ 504.0177,  541.5104,  551.6971,  589.2094],
-        [ 898.6787,  518.7311,  947.8806,  568.1455],
-        [  19.0260,  140.1515,  163.2243,  981.9127],
-        [ 788.5672,  356.4314,  832.5961,  404.7740],
-        [ 121.0352,    0.0000, 1254.3234,  988.9520]], device=&#39;cuda:0&#39;))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([74, 74, 65,  6, 74, 56])
+Boxes(tensor([[ 791.9539,  358.5143,  835.7755,  403.3139],
+        [ 502.8876,  541.0079,  552.8179,  588.6618],
+        [  19.6670,  156.9238,  165.2130,  984.5294],
+        [  45.9373,    8.8360, 1280.0000,  983.8845],
+        [ 595.6891,  372.0525,  644.3878,  414.5810],
+        [  10.1923,   61.7742,  166.9124,  970.0615]]))
 </pre></div>
 </div>
 </div>
@@ -1011,7 +1123,7 @@ Boxes(tensor([[ 100.5904,   16.4716, 1262.0560,  977.0276],
          ...,
          [False, False, False,  ..., False, False, False],
          [False, False, False,  ..., False, False, False],
-         [False, False, False,  ..., False, False, False]]], device=&#39;cuda:0&#39;)
+         [False, False, False,  ..., False, False, False]]])
 </pre></div>
 </div>
 </div>
@@ -1023,250 +1135,7 @@ Boxes(tensor([[ 100.5904,   16.4716, 1262.0560,  977.0276],
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>namespace(name=&#39;coco_2017_train&#39;,
-          json_file=&#39;datasets/coco/annotations/instances_train2017.json&#39;,
-          image_root=&#39;datasets/coco/train2017&#39;,
-          evaluator_type=&#39;coco&#39;,
-          thing_dataset_id_to_contiguous_id={1: 0,
-                                             2: 1,
-                                             3: 2,
-                                             4: 3,
-                                             5: 4,
-                                             6: 5,
-                                             7: 6,
-                                             8: 7,
-                                             9: 8,
-                                             10: 9,
-                                             11: 10,
-                                             13: 11,
-                                             14: 12,
-                                             15: 13,
-                                             16: 14,
-                                             17: 15,
-                                             18: 16,
-                                             19: 17,
-                                             20: 18,
-                                             21: 19,
-                                             22: 20,
-                                             23: 21,
-                                             24: 22,
-                                             25: 23,
-                                             27: 24,
-                                             28: 25,
-                                             31: 26,
-                                             32: 27,
-                                             33: 28,
-                                             34: 29,
-                                             35: 30,
-                                             36: 31,
-                                             37: 32,
-                                             38: 33,
-                                             39: 34,
-                                             40: 35,
-                                             41: 36,
-                                             42: 37,
-                                             43: 38,
-                                             44: 39,
-                                             46: 40,
-                                             47: 41,
-                                             48: 42,
-                                             49: 43,
-                                             50: 44,
-                                             51: 45,
-                                             52: 46,
-                                             53: 47,
-                                             54: 48,
-                                             55: 49,
-                                             56: 50,
-                                             57: 51,
-                                             58: 52,
-                                             59: 53,
-                                             60: 54,
-                                             61: 55,
-                                             62: 56,
-                                             63: 57,
-                                             64: 58,
-                                             65: 59,
-                                             67: 60,
-                                             70: 61,
-                                             72: 62,
-                                             73: 63,
-                                             74: 64,
-                                             75: 65,
-                                             76: 66,
-                                             77: 67,
-                                             78: 68,
-                                             79: 69,
-                                             80: 70,
-                                             81: 71,
-                                             82: 72,
-                                             84: 73,
-                                             85: 74,
-                                             86: 75,
-                                             87: 76,
-                                             88: 77,
-                                             89: 78,
-                                             90: 79},
-          thing_classes=[&#39;person&#39;,
-                         &#39;bicycle&#39;,
-                         &#39;car&#39;,
-                         &#39;motorcycle&#39;,
-                         &#39;airplane&#39;,
-                         &#39;bus&#39;,
-                         &#39;train&#39;,
-                         &#39;truck&#39;,
-                         &#39;boat&#39;,
-                         &#39;traffic light&#39;,
-                         &#39;fire hydrant&#39;,
-                         &#39;stop sign&#39;,
-                         &#39;parking meter&#39;,
-                         &#39;bench&#39;,
-                         &#39;bird&#39;,
-                         &#39;cat&#39;,
-                         &#39;dog&#39;,
-                         &#39;horse&#39;,
-                         &#39;sheep&#39;,
-                         &#39;cow&#39;,
-                         &#39;elephant&#39;,
-                         &#39;bear&#39;,
-                         &#39;zebra&#39;,
-                         &#39;giraffe&#39;,
-                         &#39;backpack&#39;,
-                         &#39;umbrella&#39;,
-                         &#39;handbag&#39;,
-                         &#39;tie&#39;,
-                         &#39;suitcase&#39;,
-                         &#39;frisbee&#39;,
-                         &#39;skis&#39;,
-                         &#39;snowboard&#39;,
-                         &#39;sports ball&#39;,
-                         &#39;kite&#39;,
-                         &#39;baseball bat&#39;,
-                         &#39;baseball glove&#39;,
-                         &#39;skateboard&#39;,
-                         &#39;surfboard&#39;,
-                         &#39;tennis racket&#39;,
-                         &#39;bottle&#39;,
-                         &#39;wine glass&#39;,
-                         &#39;cup&#39;,
-                         &#39;fork&#39;,
-                         &#39;knife&#39;,
-                         &#39;spoon&#39;,
-                         &#39;bowl&#39;,
-                         &#39;banana&#39;,
-                         &#39;apple&#39;,
-                         &#39;sandwich&#39;,
-                         &#39;orange&#39;,
-                         &#39;broccoli&#39;,
-                         &#39;carrot&#39;,
-                         &#39;hot dog&#39;,
-                         &#39;pizza&#39;,
-                         &#39;donut&#39;,
-                         &#39;cake&#39;,
-                         &#39;chair&#39;,
-                         &#39;couch&#39;,
-                         &#39;potted plant&#39;,
-                         &#39;bed&#39;,
-                         &#39;dining table&#39;,
-                         &#39;toilet&#39;,
-                         &#39;tv&#39;,
-                         &#39;laptop&#39;,
-                         &#39;mouse&#39;,
-                         &#39;remote&#39;,
-                         &#39;keyboard&#39;,
-                         &#39;cell phone&#39;,
-                         &#39;microwave&#39;,
-                         &#39;oven&#39;,
-                         &#39;toaster&#39;,
-                         &#39;sink&#39;,
-                         &#39;refrigerator&#39;,
-                         &#39;book&#39;,
-                         &#39;clock&#39;,
-                         &#39;vase&#39;,
-                         &#39;scissors&#39;,
-                         &#39;teddy bear&#39;,
-                         &#39;hair drier&#39;,
-                         &#39;toothbrush&#39;],
-          thing_colors=[[220, 20, 60],
-                        [119, 11, 32],
-                        [0, 0, 142],
-                        [0, 0, 230],
-                        [106, 0, 228],
-                        [0, 60, 100],
-                        [0, 80, 100],
-                        [0, 0, 70],
-                        [0, 0, 192],
-                        [250, 170, 30],
-                        [100, 170, 30],
-                        [220, 220, 0],
-                        [175, 116, 175],
-                        [250, 0, 30],
-                        [165, 42, 42],
-                        [255, 77, 255],
-                        [0, 226, 252],
-                        [182, 182, 255],
-                        [0, 82, 0],
-                        [120, 166, 157],
-                        [110, 76, 0],
-                        [174, 57, 255],
-                        [199, 100, 0],
-                        [72, 0, 118],
-                        [255, 179, 240],
-                        [0, 125, 92],
-                        [209, 0, 151],
-                        [188, 208, 182],
-                        [0, 220, 176],
-                        [255, 99, 164],
-                        [92, 0, 73],
-                        [133, 129, 255],
-                        [78, 180, 255],
-                        [0, 228, 0],
-                        [174, 255, 243],
-                        [45, 89, 255],
-                        [134, 134, 103],
-                        [145, 148, 174],
-                        [255, 208, 186],
-                        [197, 226, 255],
-                        [171, 134, 1],
-                        [109, 63, 54],
-                        [207, 138, 255],
-                        [151, 0, 95],
-                        [9, 80, 61],
-                        [84, 105, 51],
-                        [74, 65, 105],
-                        [166, 196, 102],
-                        [208, 195, 210],
-                        [255, 109, 65],
-                        [0, 143, 149],
-                        [179, 0, 194],
-                        [209, 99, 106],
-                        [5, 121, 0],
-                        [227, 255, 205],
-                        [147, 186, 208],
-                        [153, 69, 1],
-                        [3, 95, 161],
-                        [163, 255, 0],
-                        [119, 0, 170],
-                        [0, 182, 199],
-                        [0, 165, 120],
-                        [183, 130, 88],
-                        [95, 32, 0],
-                        [130, 114, 135],
-                        [110, 129, 133],
-                        [166, 74, 118],
-                        [219, 142, 185],
-                        [79, 210, 114],
-                        [178, 90, 62],
-                        [65, 70, 15],
-                        [127, 167, 115],
-                        [59, 105, 106],
-                        [142, 108, 45],
-                        [196, 172, 0],
-                        [95, 54, 80],
-                        [128, 76, 255],
-                        [201, 57, 1],
-                        [246, 0, 122],
-                        [191, 162, 208]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Metadata(evaluator_type=&#39;coco&#39;, image_root=&#39;datasets/coco/train2017&#39;, json_file=&#39;datasets/coco/annotations/instances_train2017.json&#39;, name=&#39;coco_2017_train&#39;, thing_classes=[&#39;person&#39;, &#39;bicycle&#39;, &#39;car&#39;, &#39;motorcycle&#39;, &#39;airplane&#39;, &#39;bus&#39;, &#39;train&#39;, &#39;truck&#39;, &#39;boat&#39;, &#39;traffic light&#39;, &#39;fire hydrant&#39;, &#39;stop sign&#39;, &#39;parking meter&#39;, &#39;bench&#39;, &#39;bird&#39;, &#39;cat&#39;, &#39;dog&#39;, &#39;horse&#39;, &#39;sheep&#39;, &#39;cow&#39;, &#39;elephant&#39;, &#39;bear&#39;, &#39;zebra&#39;, &#39;giraffe&#39;, &#39;backpack&#39;, &#39;umbrella&#39;, &#39;handbag&#39;, &#39;tie&#39;, &#39;suitcase&#39;, &#39;frisbee&#39;, &#39;skis&#39;, &#39;snowboard&#39;, &#39;sports ball&#39;, &#39;kite&#39;, &#39;baseball bat&#39;, &#39;baseball glove&#39;, &#39;skateboard&#39;, &#39;surfboard&#39;, &#39;tennis racket&#39;, &#39;bottle&#39;, &#39;wine glass&#39;, &#39;cup&#39;, &#39;fork&#39;, &#39;knife&#39;, &#39;spoon&#39;, &#39;bowl&#39;, &#39;banana&#39;, &#39;apple&#39;, &#39;sandwich&#39;, &#39;orange&#39;, &#39;broccoli&#39;, &#39;carrot&#39;, &#39;hot dog&#39;, &#39;pizza&#39;, &#39;donut&#39;, &#39;cake&#39;, &#39;chair&#39;, &#39;couch&#39;, &#39;potted plant&#39;, &#39;bed&#39;, &#39;dining table&#39;, &#39;toilet&#39;, &#39;tv&#39;, &#39;laptop&#39;, &#39;mouse&#39;, &#39;remote&#39;, &#39;keyboard&#39;, &#39;cell phone&#39;, &#39;microwave&#39;, &#39;oven&#39;, &#39;toaster&#39;, &#39;sink&#39;, &#39;refrigerator&#39;, &#39;book&#39;, &#39;clock&#39;, &#39;vase&#39;, &#39;scissors&#39;, &#39;teddy bear&#39;, &#39;hair drier&#39;, &#39;toothbrush&#39;], thing_colors=[[220, 20, 60], [119, 11, 32], [0, 0, 142], [0, 0, 230], [106, 0, 228], [0, 60, 100], [0, 80, 100], [0, 0, 70], [0, 0, 192], [250, 170, 30], [100, 170, 30], [220, 220, 0], [175, 116, 175], [250, 0, 30], [165, 42, 42], [255, 77, 255], [0, 226, 252], [182, 182, 255], [0, 82, 0], [120, 166, 157], [110, 76, 0], [174, 57, 255], [199, 100, 0], [72, 0, 118], [255, 179, 240], [0, 125, 92], [209, 0, 151], [188, 208, 182], [0, 220, 176], [255, 99, 164], [92, 0, 73], [133, 129, 255], [78, 180, 255], [0, 228, 0], [174, 255, 243], [45, 89, 255], [134, 134, 103], [145, 148, 174], [255, 208, 186], [197, 226, 255], [171, 134, 1], [109, 63, 54], [207, 138, 255], [151, 0, 95], [9, 80, 61], [84, 105, 51], [74, 65, 105], [166, 196, 102], [208, 195, 210], [255, 109, 65], [0, 143, 149], [179, 0, 194], [209, 99, 106], [5, 121, 0], [227, 255, 205], [147, 186, 208], [153, 69, 1], [3, 95, 161], [163, 255, 0], [119, 0, 170], [0, 182, 199], [0, 165, 120], [183, 130, 88], [95, 32, 0], [130, 114, 135], [110, 129, 133], [166, 74, 118], [219, 142, 185], [79, 210, 114], [178, 90, 62], [65, 70, 15], [127, 167, 115], [59, 105, 106], [142, 108, 45], [196, 172, 0], [95, 54, 80], [128, 76, 255], [201, 57, 1], [246, 0, 122], [191, 162, 208]], thing_dataset_id_to_contiguous_id={1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 7: 6, 8: 7, 9: 8, 10: 9, 11: 10, 13: 11, 14: 12, 15: 13, 16: 14, 17: 15, 18: 16, 19: 17, 20: 18, 21: 19, 22: 20, 23: 21, 24: 22, 25: 23, 27: 24, 28: 25, 31: 26, 32: 27, 33: 28, 34: 29, 35: 30, 36: 31, 37: 32, 38: 33, 39: 34, 40: 35, 41: 36, 42: 37, 43: 38, 44: 39, 46: 40, 47: 41, 48: 42, 49: 43, 50: 44, 51: 45, 52: 46, 53: 47, 54: 48, 55: 49, 56: 50, 57: 51, 58: 52, 59: 53, 60: 54, 61: 55, 62: 56, 63: 57, 64: 58, 65: 59, 67: 60, 70: 61, 72: 62, 73: 63, 74: 64, 75: 65, 76: 66, 77: 67, 78: 68, 79: 69, 80: 70, 81: 71, 82: 72, 84: 73, 85: 74, 86: 75, 87: 76, 88: 77, 89: 78, 90: 79})
 </pre></div>
 </div>
 </div>
@@ -1299,16 +1168,16 @@ Boxes(tensor([[ 100.5904,   16.4716, 1262.0560,  977.0276],
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "annolid-env"
+            mode: "python"
         },
         kernelOptions: {
-            kernelName: "annolid-env",
+            kernelName: "python3",
             path: "./tutorials"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'annolid-env'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
