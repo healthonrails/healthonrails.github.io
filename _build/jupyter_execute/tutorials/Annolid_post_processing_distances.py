@@ -3,7 +3,7 @@
 
 # <a href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_post_processing_distances.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-# ## Calucate distances for a pair of instances in the same frame or the same instance across frames
+# ## Calculate distances for a pair of instances in the same frame or the same instance across frames
 
 # In[1]:
 
@@ -31,10 +31,10 @@ import gradio as gr
 data_table.enable_dataframe_formatter()
 
 
-# In[ ]:
+# In[1]:
 
 
-CSV_FILE = '/content/Nov2_pre_Tank1_Tank2_corrected_116_key_frames_coco_dataset_Nov2_pre_Tank1_Tank2_mask_rcnn_tracking_results_with_segmenation.csv'
+CSV_FILE = '/content/mask_rcnn_tracking_results_with_segmenation.csv'
 
 
 # In[ ]:
@@ -49,7 +49,7 @@ df = pd.read_csv(CSV_FILE)
 df.head()
 
 
-# ## Caculate the distance of a pair of instances in a given frame
+# ## Calculate the distance of a pair of instances in a given frame
 # 
 # ---
 

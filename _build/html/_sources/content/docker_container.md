@@ -10,6 +10,17 @@ Currently this has only been tested on Ubuntu 20.04 LTS.
 ```
 
 
+```{note}
+ \<Image ID\> can be find using the following docker command.
+```
+```
+$docker images
+
+REPOSITORY                TAG                               IMAGE ID       CREATED        SIZE
+
+<none>                    <none>                            *45a1fb807421*   x months ago   xxGB
+```
+
 ```
 cd annolid/docker
 docker build .

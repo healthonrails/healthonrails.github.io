@@ -186,7 +186,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../tutorials/Annolid_post_processing_distances.html">
-   Calucate distances for a pair of instances in the same frame or the same instance across frames
+   Calculate distances for a pair of instances in the same frame or the same instance across frames
   </a>
  </li>
 </ul>
@@ -340,6 +340,17 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Currently this has only been tested on Ubuntu 20.04 LTS.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>&lt;Image ID&gt; can be find using the following docker command.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$docker images
+
+REPOSITORY                TAG                               IMAGE ID       CREATED        SIZE
+
+&lt;none&gt;                    &lt;none&gt;                            *45a1fb807421*   x months ago   xxGB
+</pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>cd annolid/docker
 docker build .
