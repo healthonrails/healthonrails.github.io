@@ -1,4 +1,7 @@
-# How to label images
+# Labeling Instances
+
+## Effortless Object Labeling with Minimal Points: Automated Polygon Generation using Segment Anything Models
+![](https://github.com/healthonrails/annolid/blob/main/docs/imgs/annolid_with_segment_anything.gif)
 
 ## What should you label ?
 Due to Annolid using an instance segmentation approach, it is very versatile in what you want to label. We use polygons & keypoints to label region of interest (e.g. Vole_1, Mouse_1, Mouse_2, Frog, tail_base, nose...) or to capture interesting behaviors or feature (e.g. rearing, social_interaction, urine_sample ...).
@@ -13,6 +16,26 @@ When done, save the zone information to a json file by clicking the Save icon.
 ```{note}
 If you need to delinate something other than a Polygon (you need a keypoint for example), then right click directly on the image and and click 'Create Point'. You can also create Rectangle, Circle, Line or LineStrip.  
 ```
+
+# Save Labels
+
+In the previous [step](labelling_images), we delinated zone and their associated labels. Those label need to be save using the 'Save Labels' button.
+
+```{note}
+You can manually edit those label by openning the label file and adding/removing labels. Those will then appear inside the GUI.
+```
+
+```{warning}
+If you manually edit the label file, do not remove the first 2 lines '\_\_ignore\_\_' and
+'\_background\_'
+```
+
+Here is a video to guide you through the process:
+
+<figure class="video_container">
+  <iframe width="720" height="480" src="https://www.youtube.com/embed/pb8X4bqLRZ0" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
+
 
 
 To help guide you through the process we made the following video:
