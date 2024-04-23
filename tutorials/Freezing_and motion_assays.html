@@ -417,6 +417,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-dense-motion-estimation">How to Run Dense Motion Estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freezing-or-not-freezing">Freezing or Not Freezing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-for-dense-motion-estimation">Methodology for Dense Motion Estimation</a></li>
 </ul>
             </nav>
@@ -431,11 +433,31 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="freezing-and-motion-assays">
 <h1>Freezing and motion assays<a class="headerlink" href="#freezing-and-motion-assays" title="Link to this heading">#</a></h1>
+<section id="how-to-run-dense-motion-estimation">
+<h2>How to Run Dense Motion Estimation<a class="headerlink" href="#how-to-run-dense-motion-estimation" title="Link to this heading">#</a></h2>
+<p>To run dense motion estimation:</p>
+<ol class="arabic simple">
+<li><p>Open Annolid.</p></li>
+<li><p>Click on the View menu and select Glitter2.</p></li>
+<li><p>In the open dialog, choose a video file and the corresponding tracking CSV file.</p></li>
+<li><p>Select a motion threshold greater than zero, for example, 0.09 as shown in the screenshot below. This motion threshold will be used to decide whether freezing behavior is present or not.</p></li>
+</ol>
+<p><img alt="Visualizing and Dense Motion Estimation Dialog" src="../assets/images/fish_motion_estimation.png" /></p>
+<p>This will generate a CSV file named with the format <code class="docutils literal notranslate"><span class="pre">video_name_tracking_motion.csv</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">fish_640x360_tracking_motion.csv</span></code>.</p>
+<p>Here are the first few rows of the <code class="docutils literal notranslate"><span class="pre">fish_640x360_tracking_motion.csv</span></code> file:</p>
+<p><img alt="Motion Estimation Result CSV file" src="../assets/images/motion_csv.png" />.
+Note: The motion index column corresponds to the dense motion estimation method described in the section below.</p>
+</section>
+<section id="freezing-or-not-freezing">
+<h2>Freezing or Not Freezing<a class="headerlink" href="#freezing-or-not-freezing" title="Link to this heading">#</a></h2>
+<p>By default, Annolid will use the selected motion threshold to produce the freezing binary classification with the “freezing” column based on the motion index. If the motion index is greater and equal than the threshold, it will be classified as “not freezing”; otherwise, it will be classified as “freezing”.</p>
+<p>Alternatively, you can perform post-processing based on the motion index column to determine a better threshold for classification.</p>
+</section>
 <section id="methodology-for-dense-motion-estimation">
 <h2>Methodology for Dense Motion Estimation<a class="headerlink" href="#methodology-for-dense-motion-estimation" title="Link to this heading">#</a></h2>
 <p>In this section, we detail our methodology for dense motion estimation, including the algorithms and techniques utilized. We employ a computer vision method that combines optical flow and instance masks derived from a tracking result CSV file to estimate dense motion across frames in a video. Specifically, the method utilizes the Farneback algorithm [1], implemented in OpenCV [2], to calculate the optical flow between consecutive frames, thereby providing a dense motion field. This optical flow is then employed to compute the motion index, representing the magnitude of motion within each instance mask. The motion index is calculated as the sum of optical flow magnitudes in polar coordinates within the instance mask, normalized by the mask’s area. This approach furnishes a quantitative measure of motion within each instance.</p>
 <p>Moreover, the method leverages mask Intersection over Union (IOU) to quantify the overlap between instance masks across frames. It further integrates instance tracking results from a CSV file, enabling the analysis of specific instances (e.g., objects) within the video. The output of this method comprises a video annotated with motion flows, along with a tracking CSV file containing motion analysis results, including motion index values for each instance in each frame.</p>
-<p>Our dense motion estimation has been validated through comparison with ultrasound data, showing a high correlation. This validation was conducted in a study by Pranic et al. (2022) [3], where mouse pups’ production of ultrasonic vocalizations (USVs) in response to isolation from the nest was examined.</p>
+<p>Our dense motion estimation has been validated through comparison with ultrasonic data, showing a high correlation. This validation was conducted in a study by Pranic et al. (2022) [3], where mouse pups’ production of ultrasonic vocalizations (USVs) in response to isolation from the nest was examined.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nd">@inproceedings</span><span class="p">{</span><span class="n">farneback2003two</span><span class="p">,</span>
   <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Two</span><span class="o">-</span><span class="n">frame</span> <span class="n">motion</span> <span class="n">estimation</span> <span class="n">based</span> <span class="n">on</span> <span class="n">polynomial</span> <span class="n">expansion</span><span class="p">},</span>
   <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Farneb</span><span class="p">{</span>\<span class="s2">&quot;a}ck, Gunnar},</span>
@@ -534,6 +556,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-dense-motion-estimation">How to Run Dense Motion Estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freezing-or-not-freezing">Freezing or Not Freezing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-for-dense-motion-estimation">Methodology for Dense Motion Estimation</a></li>
 </ul>
   </nav></div>
