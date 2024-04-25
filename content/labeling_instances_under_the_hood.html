@@ -186,6 +186,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
@@ -394,7 +395,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -410,6 +413,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-point-prompt">Labeling with Point Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-text-prompt">Labeling with text prompt</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -421,6 +433,17 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="labeling-instances-under-the-hood">
 <h1>Labeling instances:  under the hood<a class="headerlink" href="#labeling-instances-under-the-hood" title="Link to this heading">#</a></h1>
+<section id="labeling-with-point-prompt">
+<h2>Labeling with Point Prompt<a class="headerlink" href="#labeling-with-point-prompt" title="Link to this heading">#</a></h2>
+<p>When you select the “AI Polygons” option, you can click points in the video frame or image. Annolid will then use efficientSAM by default to produce a polygon around the instance.</p>
+<p>Please refer to this <a class="reference external" href="https://youtu.be/YOnUnpwkLFc?si=bbmKXpPiGe2_G5h7">video</a> for a step-by-step guide.</p>
+</section>
+<section id="labeling-with-text-prompt">
+<h2>Labeling with text prompt<a class="headerlink" href="#labeling-with-text-prompt" title="Link to this heading">#</a></h2>
+<p>Annolid allows you to input text prompts with comma-separated labels, such as ‘cat, dog’, to utilize Grounding-DINO for generating bounding boxes. These bounding boxes will then serve as prompts for High-Quality SAM to generate masks, which will subsequently be converted into polygons.</p>
+<p>Here is a video guiding you through the process: <a class="reference external" href="https://youtu.be/bCCobNAwWvM?si=-mbTc2QfjnNv9FKy">Watch Video</a>
+.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -478,7 +501,21 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-point-prompt">Labeling with Point Prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-text-prompt">Labeling with text prompt</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
