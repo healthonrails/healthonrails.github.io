@@ -186,6 +186,7 @@
 
 
 
+
 <li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Video preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extract frames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances</a></li>
@@ -202,6 +203,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Place preference</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
 </ul>
@@ -394,7 +396,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -410,6 +414,30 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Place preference</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-and-featuring-sleap-keypoint-predictions-with-annolid">Converting and Featuring SLEAP Keypoint Predictions with Annolid</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-zone-file">1. Create Zone File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-sleap-prediction-file">2. Load SLEAP Prediction File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-keypoints-to-json">3. Save Keypoints to JSON</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-files-into-annolid">4. Load Files into Annolid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-verification">5. Conversion Verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-convert-to-csv">6. Optional: Convert to CSV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features">7. Additional Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -421,6 +449,77 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="place-preference">
 <h1>Place preference<a class="headerlink" href="#place-preference" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="converting-and-featuring-sleap-keypoint-predictions-with-annolid">
+<h1>Converting and Featuring SLEAP Keypoint Predictions with Annolid<a class="headerlink" href="#converting-and-featuring-sleap-keypoint-predictions-with-annolid" title="Link to this heading">#</a></h1>
+<p>[<a class="reference external" href="https://i9.ytimg.com/vi_webp/tvLHj-Nwu-Y/mq2.webp?sqp=COCIxbEG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&amp;amp;rs=AOn4CLA8dAP3_nEJsDAFYf02EJ9ct147UQ"></a>](<a class="reference external" href="https://youtu.be/tvLHj-Nwu-Y?si=G7gXjQM4Oh9Ob5ix">https://youtu.be/tvLHj-Nwu-Y?si=G7gXjQM4Oh9Ob5ix</a>)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tvLHj-Nwu-Y?si=ddyWwA2Wedypnoim" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p>In this tutorial, we’ll walk through the process of converting SLEAP keypoint predictions into JSON files and featuring them with Annolid for tracking purposes. Let’s dive in!</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Before getting started, ensure you have the following:</p>
+<ul class="simple">
+<li><p>SLEAP prediction H5 format file</p></li>
+<li><p>AI Polygon for zone creation</p></li>
+<li><p>Annolid installed and configured</p></li>
+</ul>
+</section>
+<section id="steps">
+<h2>Steps<a class="headerlink" href="#steps" title="Link to this heading">#</a></h2>
+<section id="create-zone-file">
+<h3>1. Create Zone File<a class="headerlink" href="#create-zone-file" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open your video file.</p></li>
+<li><p>Use AI Polygon to automatically create zone shapes.</p></li>
+<li><p>Name the zones and specify the keyword “zone” in the label description field.</p></li>
+</ul>
+</section>
+<section id="load-sleap-prediction-file">
+<h3>2. Load SLEAP Prediction File<a class="headerlink" href="#load-sleap-prediction-file" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Go to the file menu and select “Load SLEAP h5”</p></li>
+<li><p>Click the “run” button to initiate the conversion to Labelme JSON format.</p></li>
+</ul>
+</section>
+<section id="save-keypoints-to-json">
+<h3>3. Save Keypoints to JSON<a class="headerlink" href="#save-keypoints-to-json" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Once the conversion is complete, save the JSON files containing the keypoints on your desktop.</p></li>
+</ul>
+</section>
+<section id="load-files-into-annolid">
+<h3>4. Load Files into Annolid<a class="headerlink" href="#load-files-into-annolid" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open Annolid.</p></li>
+<li><p>Load the the video file and Annolid will load JSON files automatically for further reviewing or editing.</p></li>
+</ul>
+</section>
+<section id="conversion-verification">
+<h3>5. Conversion Verification<a class="headerlink" href="#conversion-verification" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Check the conversions across frames to ensure the predictions are accurate.</p></li>
+</ul>
+</section>
+<section id="optional-convert-to-csv">
+<h3>6. Optional: Convert to CSV<a class="headerlink" href="#optional-convert-to-csv" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>If needed, convert the JSON file format of the keypoints to CSV format.</p></li>
+<li><p>Click on the file menu and select “Save CSV.”</p></li>
+<li><p>Locate the folder containing the JSON files and click the “run” button to generate and save the CSV files to disk.</p></li>
+</ul>
+</section>
+<section id="additional-features">
+<h3>7. Additional Features<a class="headerlink" href="#additional-features" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Annolid automatically converts the keypoints to smaller circles around their center with a radius of 10 pixels.</p></li>
+<li><p>Random 10 points are drawn on each circle.</p></li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>By following these steps, you can efficiently convert SLEAP keypoint predictions into JSON files and utilize Annolid for tracking and analysis purposes. Happy tracking!</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -478,7 +577,36 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Place preference</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-and-featuring-sleap-keypoint-predictions-with-annolid">Converting and Featuring SLEAP Keypoint Predictions with Annolid</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-zone-file">1. Create Zone File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-sleap-prediction-file">2. Load SLEAP Prediction File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-keypoints-to-json">3. Save Keypoints to JSON</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-files-into-annolid">4. Load Files into Annolid</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-verification">5. Conversion Verification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-convert-to-csv">6. Optional: Convert to CSV</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features">7. Additional Features</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
