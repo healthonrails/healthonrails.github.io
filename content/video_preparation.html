@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../assets/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../assets/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../assets/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../assets/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../assets/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../assets/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -186,6 +186,7 @@
 
 
 
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Video preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
 <li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
@@ -202,6 +203,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
 </ul>
@@ -422,6 +424,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-ffmpeg-installation">Verify FFmpeg installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressing-a-video">Compressing a Video</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rescaling-a-video">Rescaling a Video</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compress-videos-with-annolid-gui">Compress Videos with Annolid GUI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tips">Additional Tips</a></li>
 </ul>
             </nav>
@@ -480,6 +483,22 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="nb">filter</span><span class="p">:</span><span class="n">v</span> <span class="n">scale</span><span class="o">=</span><span class="n">w</span><span class="o">=</span><span class="mi">1280</span><span class="p">:</span><span class="n">h</span><span class="o">=-</span><span class="mi">1</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
 </pre></div>
 </div>
+</section>
+<section id="compress-videos-with-annolid-gui">
+<h2>Compress Videos with Annolid GUI<a class="headerlink" href="#compress-videos-with-annolid-gui" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Click <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Downsample</span> <span class="pre">Videos</span></code>.</strong></p></li>
+<li><p><strong>Select the folder</strong> containing your original videos.</p></li>
+<li><p><strong>Select an output folder</strong> to save all the compressed videos.</p></li>
+<li><p><strong>Set the scale factor</strong>:</p>
+<ul class="simple">
+<li><p>For example, selecting <code class="docutils literal notranslate"><span class="pre">0.5</span></code> will reduce the size of the video by half.</p></li>
+</ul>
+</li>
+<li><p><strong>Check the <code class="docutils literal notranslate"><span class="pre">Rescale</span> <span class="pre">Video</span></code> checkbox</strong>.</p></li>
+<li><p><strong>Click the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Scaling</span></code> button</strong>.</p></li>
+</ol>
+<p>This will compress and downsample all the files in the selected folder.</p>
 </section>
 <section id="additional-tips">
 <h2>Additional Tips<a class="headerlink" href="#additional-tips" title="Link to this heading">#</a></h2>
@@ -558,6 +577,7 @@ Set the audio bitrate using -b:a (e.g., -b:a 128k for 128 kbps audio)</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-ffmpeg-installation">Verify FFmpeg installation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressing-a-video">Compressing a Video</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rescaling-a-video">Rescaling a Video</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compress-videos-with-annolid-gui">Compress Videos with Annolid GUI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tips">Additional Tips</a></li>
 </ul>
   </nav></div>
