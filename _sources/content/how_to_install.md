@@ -2,95 +2,69 @@
 
 To run Annolid, we suggest using Anaconda package/environment manager for Python. Download and install the [Anaconda](https://www.anaconda.com/products/individual) environment first. Then do the following, using the bash shell in Linux or the conda command line (= Anaconda Prompt) in Windows.
 
-```{note}
-We also provide a pypi version of Annaconda that you can use but it is most likely not an as up-to-date version of the code as the codebase on Github (at least for the foreseable future)
-```
+We also provide a PyPI version of Annolid that you can use, but it may not be as up-to-date as the codebase on GitHub.
 
 ## Requirements
-- Ubuntu / macOS / Windows      \
-- Python >= 3.7                 \
-- [PyQt4 / PyQt5]
+- Ubuntu / macOS / Windows
+- Python >= 3.10 (recommended: 3.11)
+- Qt bindings (installed automatically via Annolid’s dependencies)
+- Optional: CUDA/MPS GPU for faster inference/training
 
 ## Install Annolid locally
 
-We create a virtual environment called _annolid-env_ into which we will install Annolid and all of its dependencies, along with whatever other Python tools we need. Python 3.7 is recommended, as it is the version being used for Annolid development.
+We create a virtual environment called _annolid-env_ into which we will install Annolid and all of its dependencies, along with whatever other Python tools we need. Python 3.11 is recommended, as it is the version being used for Annolid development.
 
 ### Clone Annolid repository and change into the directory
 ```
+conda create -n annolid-env python=3.11
+conda activate annolid-env
+conda install git
+conda install ffmpeg
 git clone --recurse-submodules https://github.com/healthonrails/annolid.git
 cd annolid
+pip install -e .
 ```
-### Installing with Anaconda
-```
-conda env create -f environment.yml
+```{note}
+Install [ffmpeg](https://ffmpeg.org/) (for example with `conda install -c conda-forge ffmpeg`) to ensure OpenCV can decode a wide range of video formats during playback.
 ```
 
 ```{note}
-Note: if you got this error:
-`ERROR: Could not find a version that satisfies the requirement decord>=0.4.0` try to install [ffmpeg](https://ffmpeg.org/) or you can install it in conda with `conda install -c conda-forge ffmpeg` and then install [decord](https://github.com/dmlc/decord) from source.
+On Windows, if you encounter errors related to pycocotools, please download and install [Visual Studio 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16). Then, run the following command in your terminal: `pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"`
 ```
 
 ```{note}
-Alternatively you can install with pip if you prefer using
-`pip install -e .`
-```
-
-```{note}
-On Windows, if you encounter errors for pycocotools, please download and install [Visual studio 2019](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16). Then please run the following command in your terminal. `pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"`
-```
-
-```{note}
-To fix the error, `“Failed to load platform plugin “xcb”` while launching qt5 app on Linux run `sudo apt install --reinstall libxcb-xinerama0`
+To fix the error `“Failed to load platform plugin “xcb”`, while launching the Qt5 app on Linux, run `sudo apt install --reinstall libxcb-xinerama0`.
 ```
 
 We then activate the virtual environment we just created.
 ```
 conda activate annolid-env
 ```
-
 ```{note}
-Be sure to activate the annolid virtual environment every time you restart Anaconda or your computer; the shell prompt should read "(annolid-env)"
+Be sure to activate the Annolid virtual environment every time you restart Anaconda or your computer; the shell prompt should read "(annolid-env)".
 ```
-
-Finally to open Annolid GUI, just type the following :
+Finally, to open the Annolid GUI, just type the following:
 ```
 annolid
 ```
 
+For detailed installation instructions, please check [Annolid Installation and Quick Start (PDF)](https://annolid.com/assets/pdfs/install_annolid.pdf).
 
-## Install Detectron2 locally
-::::{Important}
-If you intend to process your tagged videos using Google Colab (which you should do unless you are using a workstation with a higher-end GPU), then you do not need to install Detectron2 on your local machine, and you can ignore this section.
+# The following sections are optional.
+## Detectron2 (optional): train Mask R-CNN / batch inference
+
+::::{important}
+Detectron2 is **not required** for the core Annolid GUI workflow (AI polygons, Cutie/EfficientTAM tracking, YOLO-based inference, exports, and analyses).
+
+Install Detectron2 only if you specifically need **Mask R-CNN training/inference** through Detectron2.
 ::::
 
 
-### Requirements:
+### Installation guidance
+Detectron2 wheels depend on **your exact** Python / PyTorch / CUDA combination, and the recommended installation method changes over time.
 
-Windows, Linux or MacOS with Python ≥ 3.7, PyTorch ≥ 1.5 and torchvision that matches the PyTorch installation. Install them together at [pytorch.org](http://pytorch.org) to make sure of this. Presently, the combination of torch 1.8 and torchvision 0.9.1 works well, along with pyyaml 5.3, as shown below.
-For purposes of using Annolid, it is OK to downgrade pyyaml from its current version to 5.3.
-
-### Install Detectron2 dependencies:
-```
-pip install pyyaml==5.3
-pip install pycocotools>=2.0.1
-pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 -f https://download.pytorch.org/whl/torch_stable.html
-```
-### Install Detectron2
-```
-import torch
-assert torch.__version__.startswith("1.9")    
-pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu102/torch1.9/index.html
-```
-See https://detectron2.readthedocs.io/tutorials/install.html for further information.
-
-
-### Install Detectron2 on Windows 10
-
-```
-git clone https://github.com/facebookresearch/detectron2.git
-cd detectron2
-pip install -e .
-```
+- Official instructions: https://detectron2.readthedocs.io/tutorials/install.html
+- If you want the simplest path, use the Annolid Colab notebook (below), which comes with a compatible GPU runtime.
 
 
 ```{note}
@@ -103,23 +77,15 @@ If you encounter an error on windows with message says:
 If you installed Detectron2 locally you can skip this section.
 ```
 
-This step is only if you did not install Detectron2 locally and intend to process your tagged videos using Google Colab.
-Google Colab uses CUDA 10.2 + torch 1.9.0.
+This step is only if you did not install Detectron2 locally and intend to train/run Detectron2 models on Google Colab.
 
-[![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/healthonrails/annolid/blob/master/docs/tutorials/Annolid_on_Detectron2_Tutorial.ipynb)
+[![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_on_Detectron2_Tutorial.ipynb)
 
-# Using YOLACT instead of Detectron2:
-```{note}
-YOLACT models are less accurate comparing to Mask-RCNN in Detectron2. However, it is faster in terms of inference.
-```
-DCNv2 will not work if Pytorch is greater than 1.4.0
-
-```
-!pip install torchvision==0.5.0
-!pip install torch==1.4.0
-```
-
-For more information, please check https://github.com/healthonrails/annolid/blob/master/docs/tutorials/Train_networks_tutorial_v1.0.1.ipynb and https://github.com/healthonrails/yolac
+## YOLO (recommended for many custom models)
+Annolid includes Ultralytics YOLO support (segmentation and pose) and a GUI training workflow. A typical path is:
+1. Label frames in Annolid (LabelMe JSONs).
+2. Convert to YOLO dataset format (Annolid menu: *File → Convert Labelme to YOLO format*).
+3. Train from Annolid (menu: *File → Train models* → select **YOLO**).
 
 
 # Alternative installation
