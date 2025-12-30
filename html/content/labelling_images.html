@@ -8,51 +8,51 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>How to label images &#8212; Annolid Documentation</title>
+    <title>Labeling Instances &#8212; Annolid Documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/labelling_images';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Save Labels" href="save_labels.html" />
+    <link rel="next" title="Labeling instances: under the hood" href="labeling_instances_under_the_hood.html" />
     <link rel="prev" title="Extract frames" href="extract_frames.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -71,27 +71,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,8 +109,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -138,6 +139,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="README.html">
   
@@ -159,7 +162,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -172,58 +175,55 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid Documentation
+                    Annolid: Start Here
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">High level overview</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="how_to_install.html">How to install</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="docker_container.html">Docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gui_or_cli.html">GUI or CLI ?</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">How to label images</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_labels.html">Save Labels</a></li>
-<li class="toctree-l1"><a class="reference internal" href="create_coco.html">Create your COCO format dataset</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tips_and_tricks.html">Tips and tricks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Labeling Instances</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Annolid_on_Detectron2_Tutorial_1_Introduction_to_Detectron2.html">Annolid on Detectron2 Tutorial 1 : Introduction to Detectron2</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Annolid_on_Detectron2_Tutorial_2_Train_a_Model.html">Annolid on Detectron2 Tutorial 2 : Train a Model</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Annolid_on_Detectron2_Tutorial_3_Evaluate_our_model.html">Annolid on Detectron2 Tutorial 3 : Evaluating the model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Annolid_on_Detectron2_Tutorial_4_Running_inference.html">Annolid on Detectron2 Tutorial 4 : Running inference</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Annolid_on_Detectron2_Tutorial_full.html">Annolid on Detectron2 Tutorial</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Annolid_post_processing_distances.html">Calculate distances for a pair of instances in the same frame or the same instance across frames</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid Zoo</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">Cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Work based on annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
 </ul>
 
     </div>
@@ -239,7 +239,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -248,14 +248,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -380,10 +380,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -391,14 +391,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -409,7 +409,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>How to label images</h1>
+    <h1>Labeling Instances</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -419,9 +419,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Labeling Instances</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effortless-object-labeling-with-minimal-points-automated-polygon-generation-using-segment-anything-models">Effortless Object Labeling with Minimal Points: Automated Polygon Generation using Segment Anything Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-you-label">What should you label ?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-labels">Save Labels</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-and-re-identification">Tracking and re-identification</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -432,26 +440,47 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="how-to-label-images">
-<h1>How to label images<a class="headerlink" href="#how-to-label-images" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="labeling-instances">
+<h1>Labeling Instances<a class="headerlink" href="#labeling-instances" title="Link to this heading">#</a></h1>
+<section id="effortless-object-labeling-with-minimal-points-automated-polygon-generation-using-segment-anything-models">
+<h2>Effortless Object Labeling with Minimal Points: Automated Polygon Generation using Segment Anything Models<a class="headerlink" href="#effortless-object-labeling-with-minimal-points-automated-polygon-generation-using-segment-anything-models" title="Link to this heading">#</a></h2>
+<p><img alt="" src="https://github.com/healthonrails/annolid/blob/main/docs/imgs/annolid_with_segment_anything.gif" /></p>
+</section>
 <section id="what-should-you-label">
 <h2>What should you label ?<a class="headerlink" href="#what-should-you-label" title="Link to this heading">#</a></h2>
 <p>Due to Annolid using an instance segmentation approach, it is very versatile in what you want to label. We use polygons &amp; keypoints to label region of interest (e.g. Vole_1, Mouse_1, Mouse_2, Frog, tail_base, nose…) or to capture interesting behaviors or feature (e.g. rearing, social_interaction, urine_sample …).</p>
 <p>Here is an example image :
 <img alt="" src="../_images/labelling_0.png" /></p>
-<p>Labelling in done on a frame by frame basis. We’ll show you how to label zones in a given frame. Start the Annolid GUI. Click the ‘Open dir’ button and select the directory where you exported your images in the previous <a class="reference internal" href="extract_frames.html"><span class="doc std std-doc">step</span></a>. All the extracted images are shown in File List in the bottom right. Select the first image you want to annotate. Click the ‘Create Polygon’ button and delineate the structure/zone you want to label. When you finish labelling your zone, you can give it a name that will appear in the ‘Polygon Labels’. Repeat until all the desired zones are labelled. You can adjust or delete the polygons by clicking on the ‘Edit Polygon’ button. Then click the polygon to be edited and directly edit the nodes. If you want to delete it, once you selected it, just click the ‘delete Polygon’ button.
+<p>Labeling is done on a frame-by-frame basis. We’ll show you how to label zones in a given frame. Start the Annolid GUI. Click the ‘Open dir’ button and select the directory where you exported your images in the previous <a class="reference internal" href="extract_frames.html"><span class="doc std std-doc">step</span></a>. All the extracted images are shown in File List in the bottom right. Select the first image you want to annotate. Click the ‘Create Polygon’ button and delineate the structure/zone you want to label. When you finish labeling your zone, you can give it a name that will appear in the ‘Polygon Labels’. Repeat until all the desired zones are labeled. You can adjust or delete the polygons by clicking on the ‘Edit Polygon’ button. Then click the polygon to be edited and directly edit the nodes. If you want to delete it, once you selected it, just click the ‘delete Polygon’ button.
 When done, save the zone information to a json file by clicking the Save icon.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you need to delinate something other than a Polygon (you need a keypoint for example), then right click directly on the image and and click ‘Create Point’. You can also create Rectangle, Circle, Line or LineStrip.</p>
+<p>If you need to delineate something other than a polygon (for example a keypoint), right click on the image and click ‘Create Point’. You can also create Rectangle, Circle, Line or LineStrip.</p>
 </div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="save-labels">
+<h1>Save Labels<a class="headerlink" href="#save-labels" title="Link to this heading">#</a></h1>
+<p>In the previous <a class="reference internal" href="#"><span class="doc std std-doc">step</span></a>, we delineated zones and their associated labels. Those labels need to be saved using the ‘Save Labels’ button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can manually edit those labels by opening the label file and adding/removing labels. They will then appear inside the GUI.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you manually edit the label file, do not remove the first 2 lines ‘__ignore__’ and
+‘_background_’</p>
+</div>
+<p>Here is a video to guide you through the process:</p>
+<figure class="video_container">
+  <iframe width="720" height="480" src="https://www.youtube.com/embed/pb8X4bqLRZ0" frameborder="0" allowfullscreen="true"> </iframe>
+</figure>
 <p>To help guide you through the process we made the following video:</p>
 <figure class="video_container">
   <iframe width="720" height="480" src="https://www.youtube.com/embed/zX8cUImRI_s" frameborder="0" allowfullscreen="true"> </iframe>
 </figure>
-<p>Depending on your behavioral apparatus and overall configuration, Annolid might need very few images to perform accurage instance segmentation. We recommend as a first pass to label ~100 frames.
+<p>Depending on your behavioral apparatus and overall configuration, Annolid might need very few images to perform accurate instance segmentation. We recommend as a first pass to label ~100 frames.
 <img alt="" src="../_images/labelling_1.png" /></p>
-</section>
 <section id="tracking-and-re-identification">
 <h2>Tracking and re-identification<a class="headerlink" href="#tracking-and-re-identification" title="Link to this heading">#</a></h2>
 <p>To link instances across frames, we treat each instance as its own class across frames.
@@ -494,7 +523,7 @@ So if you want</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -507,11 +536,11 @@ So if you want</p>
       </div>
     </a>
     <a class="right-next"
-       href="save_labels.html"
+       href="labeling_instances_under_the_hood.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Save Labels</p>
+        <p class="prev-next-title">Labeling instances:  under the hood</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -531,9 +560,17 @@ So if you want</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Labeling Instances</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#effortless-object-labeling-with-minimal-points-automated-polygon-generation-using-segment-anything-models">Effortless Object Labeling with Minimal Points: Automated Polygon Generation using Segment Anything Models</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-should-you-label">What should you label ?</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#save-labels">Save Labels</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-and-re-identification">Tracking and re-identification</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -581,8 +618,8 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
