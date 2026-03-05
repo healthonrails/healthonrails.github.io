@@ -615,10 +615,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phased-plan" class="md-nav__link">
+  <a href="#target-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phased Plan
+        Target Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phased-plan-updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phased Plan (Updated)
       
     </span>
   </a>
@@ -637,10 +648,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#remaining-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps
+        Remaining Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit Criteria
       
     </span>
   </a>
@@ -747,10 +769,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#phased-plan" class="md-nav__link">
+  <a href="#target-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Phased Plan
+        Target Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phased-plan-updated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phased Plan (Updated)
       
     </span>
   </a>
@@ -769,10 +802,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
+  <a href="#remaining-work" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next Steps
+        Remaining Work
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exit-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exit Criteria
       
     </span>
   </a>
@@ -801,27 +845,53 @@
 
 <h1 id="migration-plan">Migration Plan<a class="headerlink" href="#migration-plan" title="Permanent link">&para;</a></h1>
 <h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
-<p>Move from fragmented documentation sources to a single, professional, maintainable docs system.</p>
-<h2 id="phased-plan">Phased Plan<a class="headerlink" href="#phased-plan" title="Permanent link">&para;</a></h2>
+<p>Move from fragmented documentation sources to a single, maintainable system
+with clear ownership of landing, docs, and book surfaces.</p>
+<h2 id="target-architecture">Target Architecture<a class="headerlink" href="#target-architecture" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>website/</code> is the source of truth for <code>https://annolid.com/</code> (landing page).</li>
+<li><code>docs/</code> is the source of truth for MkDocs content at <code>https://annolid.com/portal/</code>.</li>
+<li>Root docs routes (<code>/installation/</code>, <code>/reference/</code>, etc.) are preserved as
+  compatibility mirrors for existing links.</li>
+<li><code>book/</code> is the source of truth for Jupyter Book at <code>https://annolid.com/book/</code>.</li>
+<li>Legacy one-off URLs are handled by generated redirect stubs
+  (<code>scripts/write_legacy_redirects.sh</code>).</li>
+</ul>
+<h2 id="phased-plan-updated">Phased Plan (Updated)<a class="headerlink" href="#phased-plan-updated" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Keep legacy sources available while redirects and links are stabilized.</li>
-<li>Use <code>docs/</code> as the canonical docs source.</li>
-<li>Reduce duplicated prose by replacing repeats with concise summaries and canonical links.</li>
-<li>Migrate high-value guides first (installation, workflows, tutorials, deployment).</li>
-<li>Retire duplicated legacy pages after at least one stable release cycle.</li>
+<li>Consolidate canonical docs prose in <code>docs/</code> and remove duplicate ownership.</li>
+<li>Preserve compatibility paths during transition (<code>/portal/</code> plus root docs mirrors).</li>
+<li>Publish Jupyter Book only under <code>/book/</code> and keep deploy scripts path-safe.</li>
+<li>Retire duplicated legacy pages after at least one stable release cycle with
+   redirect coverage.</li>
 </ol>
 <h2 id="current-status">Current Status<a class="headerlink" href="#current-status" title="Permanent link">&para;</a></h2>
 <ul>
-<li>MkDocs site source consolidated into <code>docs/</code>.</li>
-<li>Automated deployment publishes docs at root and <code>/portal</code> compatibility path.</li>
-<li>Installation and workflow guidance consolidated.</li>
-<li>Tutorials and reference index migrated into docs-native pages.</li>
+<li>MkDocs source is consolidated in <code>docs/</code>.</li>
+<li>Landing page is consolidated in <code>website/</code> and synced to site root.</li>
+<li>Docs deploy to <code>/portal/</code> and root compatibility routes.</li>
+<li>Book deploy is corrected to <code>/book/</code> with bootstrap recovery when missing.</li>
+<li>Redirect map and generated legacy stubs are documented and active.</li>
 </ul>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<h2 id="remaining-work">Remaining Work<a class="headerlink" href="#remaining-work" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Add additional redirects for any remaining external links to retired pages.</li>
-<li>Add link-checking and docs spelling checks.</li>
-<li>Continue improving canonical docs-native guides in <code>docs/</code>.</li>
+<li>Audit and replace any remaining internal links that still point to retired
+  legacy source locations.</li>
+<li>Add automated docs link validation in CI for public routes (<code>/</code>, <code>/portal/</code>,
+  <code>/book/</code>, and legacy redirects).</li>
+<li>Add an explicit deprecation timeline for legacy source files still kept for
+  historical context.</li>
+<li>Continue converting notebook-heavy guidance into concise docs-native guides
+  with canonical references.</li>
+</ul>
+<h2 id="exit-criteria">Exit Criteria<a class="headerlink" href="#exit-criteria" title="Permanent link">&para;</a></h2>
+<p>Migration can be considered complete when all are true:</p>
+<ul>
+<li>No user-facing docs route depends on duplicated source ownership.</li>
+<li>Legacy URLs are either redirected or intentionally retired with notice.</li>
+<li>CI validates docs integrity (strict build plus link checks) on docs changes.</li>
+<li>Deployment consistently produces working <code>/, /portal/, /book/</code> surfaces.</li>
 </ul>
 
 

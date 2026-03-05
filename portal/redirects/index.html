@@ -642,10 +642,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#legacy-to-canonical-mapping" class="md-nav__link">
+  <a href="#canonical-public-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Legacy to Canonical Mapping
+        Canonical Public Paths
       
     </span>
   </a>
@@ -653,10 +653,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-source-mapping" class="md-nav__link">
+  <a href="#legacy-to-canonical-url-mapping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Repository Source Mapping
+        Legacy to Canonical URL Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-ownership-and-mirrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Route Ownership and Mirrors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-source-mapping-legacy-content-to-canonical-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Source Mapping (Legacy Content to Canonical Docs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-legacy-redirect-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generated Legacy Redirect Stubs
       
     </span>
   </a>
@@ -747,10 +780,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#legacy-to-canonical-mapping" class="md-nav__link">
+  <a href="#canonical-public-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Legacy to Canonical Mapping
+        Canonical Public Paths
       
     </span>
   </a>
@@ -758,10 +791,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-source-mapping" class="md-nav__link">
+  <a href="#legacy-to-canonical-url-mapping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Repository Source Mapping
+        Legacy to Canonical URL Mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#route-ownership-and-mirrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Route Ownership and Mirrors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repository-source-mapping-legacy-content-to-canonical-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Repository Source Mapping (Legacy Content to Canonical Docs)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generated-legacy-redirect-stubs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generated Legacy Redirect Stubs
       
     </span>
   </a>
@@ -800,7 +866,8 @@
 
 
 <h1 id="redirect-and-deprecation-map">Redirect and Deprecation Map<a class="headerlink" href="#redirect-and-deprecation-map" title="Permanent link">&para;</a></h1>
-<p>This page defines migration targets from legacy Annolid docs pages to canonical docs pages.</p>
+<p>This page defines migration targets from legacy Annolid URLs to the current
+canonical documentation and site paths.</p>
 <h2 id="migration-policy">Migration Policy<a class="headerlink" href="#migration-policy" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Keep legacy pages available during transition.</li>
@@ -808,7 +875,16 @@
 <li>Prefer stable docs URLs for new links and external references.</li>
 <li>Retire duplicated legacy content only after one full release cycle with clear notice.</li>
 </ul>
-<h2 id="legacy-to-canonical-mapping">Legacy to Canonical Mapping<a class="headerlink" href="#legacy-to-canonical-mapping" title="Permanent link">&para;</a></h2>
+<h2 id="canonical-public-paths">Canonical Public Paths<a class="headerlink" href="#canonical-public-paths" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Landing page: <code>https://annolid.com/</code></li>
+<li>Docs canonical entry: <code>https://annolid.com/portal/</code></li>
+<li>Docs compatibility routes: <code>https://annolid.com/installation/</code>,
+  <code>https://annolid.com/reference/</code>, <code>https://annolid.com/tutorials/</code>, etc.</li>
+<li>Book canonical entry: <code>https://annolid.com/book/</code></li>
+<li>Landing assets: <code>https://annolid.com/website-assets/</code></li>
+</ul>
+<h2 id="legacy-to-canonical-url-mapping">Legacy to Canonical URL Mapping<a class="headerlink" href="#legacy-to-canonical-url-mapping" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -835,7 +911,39 @@
 </tr>
 </tbody>
 </table>
-<h2 id="repository-source-mapping">Repository Source Mapping<a class="headerlink" href="#repository-source-mapping" title="Permanent link">&para;</a></h2>
+<h2 id="route-ownership-and-mirrors">Route Ownership and Mirrors<a class="headerlink" href="#route-ownership-and-mirrors" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Public Path Prefix</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td><code>website/</code> + docs compatibility routes</td>
+<td>Landing page at root; root docs routes are preserved for compatibility.</td>
+</tr>
+<tr>
+<td><code>/portal/</code></td>
+<td><code>docs/</code> (MkDocs)</td>
+<td>Canonical docs namespace for stable links.</td>
+</tr>
+<tr>
+<td><code>/book/</code></td>
+<td><code>book/</code> (Jupyter Book)</td>
+<td>Dedicated Jupyter Book surface.</td>
+</tr>
+<tr>
+<td><code>/website-assets/</code></td>
+<td><code>website/assets/</code></td>
+<td>Landing-only static assets.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repository-source-mapping-legacy-content-to-canonical-docs">Repository Source Mapping (Legacy Content to Canonical Docs)<a class="headerlink" href="#repository-source-mapping-legacy-content-to-canonical-docs" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -862,14 +970,20 @@
 </tr>
 </tbody>
 </table>
+<h2 id="generated-legacy-redirect-stubs">Generated Legacy Redirect Stubs<a class="headerlink" href="#generated-legacy-redirect-stubs" title="Permanent link">&para;</a></h2>
+<p>The following HTML redirect stubs are generated automatically during deploy by
+<code>scripts/write_legacy_redirects.sh</code>:</p>
+<ul>
+<li><code>/content/README.html</code> -&gt; <code>/</code></li>
+<li><code>/content/how_to_install.html</code> -&gt; <code>/installation/</code></li>
+<li><code>/extract_frames.html</code> -&gt; <code>/workflows/</code></li>
+<li><code>/install.html</code> -&gt; <code>/installation/</code></li>
+</ul>
 <h2 id="deployment-notes">Deployment Notes<a class="headerlink" href="#deployment-notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>GitHub Pages path-based publishing:</li>
-<li>root (<code>/</code>) for docs</li>
-<li><code>/book/</code> for Jupyter Book</li>
-<li><code>/portal/</code> compatibility mirror path</li>
-<li>External domain sync (<code>healthonrails.github.io</code>) preserves this path layout.</li>
-<li>Redirect stubs are auto-generated by <code>scripts/write_legacy_redirects.sh</code> during deploy workflows.</li>
+<li>External sync workflow: <code>.github/workflows/healthonrails-site-sync.yml</code></li>
+<li>Redirect generation: <code>scripts/write_legacy_redirects.sh</code></li>
+<li>Book path sync target: <code>/book/</code></li>
 </ul>
 
 

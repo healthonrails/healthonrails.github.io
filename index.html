@@ -1,835 +1,791 @@
-
 <!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Unified Annolid documentation.">
-      
-      
-      
-        <link rel="canonical" href="https://annolid.com/">
-      
-      
-      
-        <link rel="next" href="installation/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="assets/images/icon_annolid.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
-    
-    
-      
-        <title>Annolid Docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Annolid is a practical platform for animal behavior annotation, segmentation, tracking, and behavior analysis."
+  />
+  <title>Annolid | Research-Grade Animal Behavior AI</title>
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b30;
+      --panel: rgba(10, 20, 35, 0.8);
+      --line: rgba(163, 201, 255, 0.16);
+      --text: #f2f7ff;
+      --muted: #adc0db;
+      --accent: #61d0ff;
+      --warm: #f4c35c;
+      --success: #5fe4ba;
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --content: 1180px;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
 
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(97, 208, 255, 0.18), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(244, 195, 92, 0.14), transparent 18%),
+        linear-gradient(180deg, #08111d 0%, #0a1525 44%, #07111f 100%);
+    }
 
-    
-    
-  </head>
-  
-  
-    
-    
-      
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#annolid-docs" class="md-skip">
-          Skip to content
-        </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 88%);
+      pointer-events: none;
+    }
 
-<header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
-      
-  <img src="assets/images/icon_annolid.png" alt="logo">
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            Annolid Docs
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Home
-            
-          </span>
-        </div>
-      </div>
-    </div>
-    
-      
-        <form class="md-header__option" data-md-component="palette">
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
-    
-  
-</form>
-      
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--content));
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 14, 26, 0.56);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      padding: 7px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 28px rgba(97, 208, 255, 0.12);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      transition: transform 180ms ease, border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      color: var(--text);
+      border-color: rgba(97, 208, 255, 0.38);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .button-primary {
+      color: #07111f;
+      background: linear-gradient(135deg, var(--warm), #ffe7a5);
+      border-color: transparent;
+      font-weight: 700;
+      box-shadow: 0 16px 32px rgba(244, 195, 92, 0.24);
+    }
+
+    .hero {
+      padding: 76px 0 42px;
+    }
+
+    .hero-grid,
+    .capability-grid,
+    .path-grid,
+    .surface-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 16px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(97, 208, 255, 0.08);
+      border: 1px solid rgba(97, 208, 255, 0.16);
+      color: #d7ecff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      max-width: 11ch;
+    }
+
+    .hero-copy,
+    .section-heading p,
+    .card p,
+    .path p,
+    .surface p,
+    .cta-panel p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .hero-copy {
+      max-width: 60ch;
+      font-size: 1.05rem;
+      margin: 0 0 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric,
+    .hero-panel,
+    .card,
+    .path,
+    .surface,
+    .cta-panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .metric {
+      padding: 18px;
+      border-radius: 16px;
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .workflow-strip {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .workflow-strip span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #d7ecff;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .hero-panel {
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(18, 34, 56, 0.95), rgba(8, 18, 32, 0.9)),
+        var(--panel);
+    }
+
+    .hero-panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--success);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 0 7px rgba(95, 228, 186, 0.12);
+    }
+
+    .panel-signal {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .panel-signal div {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .panel-signal span {
+      display: block;
+      margin-bottom: 4px;
+      color: #9bc0e6;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .panel-screen img {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    main section {
+      padding: 28px 0;
+    }
+
+    .section-heading {
+      max-width: 56ch;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+    }
+
+    .capability-grid,
+    .path-grid,
+    .surface-grid,
+    .docs-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .path,
+    .surface,
+    .docs-link {
+      padding: 22px;
+      border-radius: 20px;
+    }
+
+    .docs-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .docs-link {
+      display: block;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .docs-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(97, 208, 255, 0.38);
+      background: rgba(14, 26, 44, 0.96);
+    }
+
+    .docs-link strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .docs-link span {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 10px;
+      color: #8fdcff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .path ul,
+    .surface ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .cta {
+      padding: 42px 0 82px;
+    }
+
+    .cta-panel {
+      padding: 28px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(97, 208, 255, 0.12), rgba(244, 195, 92, 0.12)),
+        rgba(12, 23, 40, 0.9);
+    }
+
+    .citations {
+      padding: 0 0 46px;
+    }
+
+    .citation-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .citation-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .citation-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .citation-card code {
+      display: block;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.2);
+      color: #d8ebff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.83rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+    }
+
+    .footer {
+      padding: 0 0 32px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .metrics,
+      .capability-grid,
+      .path-grid,
+      .surface-grid,
+      .panel-signal {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links,
+      .hero-actions {
+        width: 100%;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell nav">
+      <a class="brand" href="/" aria-label="Annolid home">
+        <span class="brand-mark">
+          <img src="website-assets/images/annolid_logo.png" alt="Annolid logo" />
+        </span>
+        <span class="brand-copy">
+          <strong>Annolid</strong>
+          <span>Animal behavior AI workflows</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="button" href="https://github.com/healthonrails/annolid">GitHub</a>
+        <a class="button" href="/portal/workflows/">Workflows</a>
+        <a class="button" href="/portal/reference/">Reference</a>
+        <a class="button" href="/portal/tutorials/">Tutorials</a>
+        <a class="button button-primary" href="/portal/installation/">Get Started</a>
       </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow">Research-grade vision tooling</span>
+          <h1>Animal behavior analysis with a cleaner operational surface.</h1>
+          <p class="hero-copy">
+            Annolid brings annotation, segmentation, tracking, pose estimation, and behavior
+            analysis into one practical environment for labs that need reproducible results
+            without a brittle pile of disconnected tools.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/portal/installation/">Install Annolid</a>
+            <a class="button" href="/portal/tutorials/">Open Tutorials</a>
+            <a class="button" href="/portal/">Browse Docs</a>
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/healthonrails/annolid" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    healthonrails/annolid
-  </div>
-</a>
-      </div>
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Home
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="installation/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Installation
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="workflows/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Workflows
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="tutorials/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Tutorials
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="deployment/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Deployment
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="migration/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Migration Plan
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="redirects/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Redirect Map
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="reference/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  References
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
-      
-  <img src="assets/images/icon_annolid.png" alt="logo">
-
-    </a>
-    Annolid Docs
-  </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/healthonrails/annolid" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
-    healthonrails/annolid
-  </div>
-</a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Home
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#start-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start Here
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-surfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation Surfaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="installation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="workflows/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workflows
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="tutorials/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tutorials
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="deployment/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deployment
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="migration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Migration Plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="redirects/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Redirect Map
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    References
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#start-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start Here
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation-surfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation Surfaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-  
-  
-
-
-<h1 id="annolid-docs">Annolid Docs<a class="headerlink" href="#annolid-docs" title="Permanent link">&para;</a></h1>
-<p>Annolid is a practical toolkit for annotation, segmentation, tracking, and behavior analysis in real lab workflows.</p>
-<p>This site is the canonical documentation entry point. It gives you a clean path for installation, day-to-day usage, and deployment.</p>
-<h2 id="start-here">Start Here<a class="headerlink" href="#start-here" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="installation/">Installation</a>: Pick a supported install path for your system.</li>
-<li><a href="workflows/">Workflows</a>: Run the standard video-first labeling and tracking workflow.</li>
-<li><a href="tutorials/">Tutorials</a>: Follow curated walkthrough videos and practical guides.</li>
-<li><a href="deployment/">Deployment</a>: Understand website/book/docs auto-publishing.</li>
-<li><a href="migration/">Migration Plan</a>: Track de-duplication and migration status.</li>
-</ul>
-<h2 id="documentation-surfaces">Documentation Surfaces<a class="headerlink" href="#documentation-surfaces" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>docs/</code>: canonical user-facing docs at <code>annolid.com</code></li>
-<li><code>book/</code>: Jupyter Book content published at <code>/book</code></li>
-<li><code>website/</code>: landing page source for the public root site</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
+          <div class="metrics">
+            <div class="metric">
+              <strong>One workspace</strong>
+              <span>Annotation, segmentation, tracking, and review in one lab-ready flow.</span>
             </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+            <div class="metric">
+              <strong>Human-in-the-loop</strong>
+              <span>Correct predictions quickly instead of accepting opaque model output.</span>
+            </div>
+            <div class="metric">
+              <strong>Research-ready outputs</strong>
+              <span>Keep results structured enough for reruns and downstream analysis.</span>
+            </div>
+          </div>
+          <div class="workflow-strip" aria-label="Workflow">
+            <span>Frames</span>
+            <span>Annotation</span>
+            <span>Segmentation</span>
+            <span>Tracking</span>
+            <span>Behavior Export</span>
+          </div>
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
-</button>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
-  
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
-  
-</div>
-      
+
+        <aside class="hero-panel" aria-label="Platform overview">
+          <div class="hero-panel-head">
+            <strong>Platform view</strong>
+            <span class="status">Active workflow</span>
+          </div>
+          <p class="hero-copy">
+            Move from raw video to reviewed behavior outputs with a tighter path for labeling,
+            identity tracking, segmentation, and export.
+          </p>
+          <div class="panel-signal">
+            <div>
+              <span>Operational mode</span>
+              <strong>Human-in-the-loop review</strong>
+            </div>
+            <div>
+              <span>Primary destination</span>
+              <strong>Lab-ready analysis outputs</strong>
+            </div>
+          </div>
+          <div class="panel-screen">
+            <img src="website-assets/images/annolid_gui.png" alt="Annolid GUI showing annotation and analysis tools" />
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Built for the full analysis loop</h2>
+          <p>
+            The landing page should communicate the same thing as the software: operational
+            clarity, modern computer vision workflows, and tools built for real experiments
+            instead of isolated benchmark demos.
+          </p>
+        </div>
+        <div class="capability-grid">
+          <article class="card">
+            <span class="kicker">Annotation</span>
+            <h3>Precise labels without workflow drag</h3>
+            <p>Create and refine instance labels, masks, and keypoints with tooling designed for iterative review instead of one-pass labeling.</p>
+          </article>
+          <article class="card">
+            <span class="kicker">Segmentation</span>
+            <h3>Practical model workflows</h3>
+            <p>Run segmentation pipelines that support research iteration while keeping outputs and review state understandable.</p>
+          </article>
+          <article class="card">
+            <span class="kicker">Tracking</span>
+            <h3>Identity continuity in difficult scenes</h3>
+            <p>Handle overlap, motion, and interaction-heavy videos with workflows that prioritize correction, visibility, and reproducibility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Choose the path that matches your team</h2>
+          <p>
+            Annolid is useful whether you are curating training data, validating model output,
+            or building a repeatable analysis system for a lab or shared facility.
+          </p>
+        </div>
+        <div class="path-grid">
+          <article class="path">
+            <span class="kicker">For labeling teams</span>
+            <h3>Curate high-quality training data</h3>
+            <p>Build clean annotation sets for detection, segmentation, pose, and behavior workflows.</p>
+            <ul>
+              <li>Frame extraction and review</li>
+              <li>Interactive correction loops</li>
+              <li>Export-friendly shape semantics</li>
+            </ul>
+          </article>
+          <article class="path">
+            <span class="kicker">For model operators</span>
+            <h3>Validate pipelines against real experiments</h3>
+            <p>Test inference and post-processing in the same environment where review and comparison actually happen.</p>
+            <ul>
+              <li>Segmentation and tracking evaluation</li>
+              <li>Video batch workflows</li>
+              <li>Human-in-the-loop quality control</li>
+            </ul>
+          </article>
+          <article class="path">
+            <span class="kicker">For labs</span>
+            <h3>Turn ad hoc analysis into a system</h3>
+            <p>Create a repeatable path from acquisition to export so collaborators can reproduce results instead of rebuilding them.</p>
+            <ul>
+              <li>Operational docs and tutorials</li>
+              <li>Structured outputs for downstream analysis</li>
+              <li>Research-ready deployment surface</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Go straight to the docs surface you need</h2>
+          <p>
+            The landing page stays at <code>annolid.com</code>. Product documentation lives under
+            the docs portal and book paths so users can move directly into the right surface.
+          </p>
+        </div>
+        <div class="docs-grid">
+          <a class="docs-link" href="/portal/">
+            <span class="kicker">Docs portal</span>
+            <strong>Open the documentation hub</strong>
+            <span>Start from the canonical MkDocs entry point for installation, workflows, deployment, and reference material.</span>
+          </a>
+          <a class="docs-link" href="/portal/installation/">
+            <span class="kicker">Installation</span>
+            <strong>Get Annolid running</strong>
+            <span>Jump directly to platform-specific setup guidance without going through the full docs index first.</span>
+          </a>
+          <a class="docs-link" href="/portal/tutorials/">
+            <span class="kicker">Tutorials</span>
+            <strong>Follow practical walkthroughs</strong>
+            <span>Open curated tutorials for real labeling, segmentation, tracking, and behavior analysis workflows.</span>
+          </a>
+          <a class="docs-link" href="/portal/reference/">
+            <span class="kicker">Reference</span>
+            <strong>Find operational details fast</strong>
+            <span>Use the reference surface for deployment notes, technical links, and high-signal operational guidance.</span>
+          </a>
+          <a class="docs-link" href="/portal/deployment/">
+            <span class="kicker">Deployment</span>
+            <strong>Understand the publication model</strong>
+            <span>Inspect how landing page, docs, redirects, and external site sync are deployed to the public site.</span>
+          </a>
+          <a class="docs-link" href="/book/">
+            <span class="kicker">Book</span>
+            <strong>Open the Jupyter Book</strong>
+            <span>Go directly to the notebook-oriented Annolid book that is published separately under <code>/book/</code>.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="shell">
+        <div class="cta-panel">
+          <div class="section-heading">
+            <h2>Use the landing page as a front door, not a detour.</h2>
+            <p>
+              Start with installation if you want to run Annolid now, or go directly to the
+              docs portal if you already know the workflow you need.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/portal/installation/">Install Annolid</a>
+            <a class="button" href="/portal/">Open Docs Portal</a>
+            <a class="button" href="/book/">Open Book</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="citations" id="citations">
+      <div class="shell">
+        <div class="section-heading">
+          <h2>Cite Annolid</h2>
+          <p>If Annolid supports your work, please cite one or more of the references below.</p>
+        </div>
+        <div class="citation-grid">
+          <article class="citation-card">
+            <p>
+              Yang C, Cleland TA. <a href="https://arxiv.org/abs/2403.18690">Annolid: Annotate, Segment, and Track Anything You Need</a>. arXiv:2403.18690 (2024).
+            </p>
+            <code>@misc{yang2024annolid,
+  title={Annolid: Annotate, Segment, and Track Anything You Need},
+  author={Chen Yang and Thomas A. Cleland},
+  year={2024},
+  eprint={2403.18690},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}</code>
+          </article>
+          <article class="citation-card">
+            <p>
+              Yang C, Forest J, Einhorn M, Cleland TA. <a href="https://arxiv.org/abs/2312.07723">Automated Behavioral Analysis Using Instance Segmentation</a>. arXiv:2312.07723 (2023).
+            </p>
+            <code>@article{yang2023automated,
+  title={Automated Behavioral Analysis Using Instance Segmentation},
+  author={Yang, Chen and Forest, Jeremy and Einhorn, Matthew and Cleland, Thomas A},
+  journal={arXiv preprint arXiv:2312.07723},
+  year={2023}
+}</code>
+          </article>
+          <article class="citation-card">
+            <p>
+              Yang C, Forest J, Einhorn M, Cleland T. <a href="https://github.com/healthonrails/annolid">Annolid: an instance segmentation-based multiple animal tracking and behavior analysis package</a> (2020).
+            </p>
+            <code>@misc{yang2020annolid,
+  author = {Chen Yang and Jeremy Forest and Matthew Einhorn and Thomas Cleland},
+  title = {Annolid: an instance segmentation-based multiple animal tracking and behavior analysis package},
+  howpublished = {\url{https://github.com/healthonrails/annolid}},
+  year = {2020}
+}</code>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-bar">
+      <span>Annolid for annotation, segmentation, tracking, and behavior analysis. Copyright 2026.</span>
+      <span><a href="https://www.cplab.net/">CPLab</a> | <a href="https://github.com/healthonrails/annolid">GitHub</a> | <a href="/portal/">Docs portal</a> | <a href="#citations">Citations</a></span>
     </div>
-  </div>
-</footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-    
-  </body>
+  </footer>
+</body>
 </html>
