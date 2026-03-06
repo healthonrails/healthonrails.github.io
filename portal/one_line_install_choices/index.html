@@ -1394,12 +1394,14 @@
 <h3 id="windows-powershell">Windows (PowerShell)<a class="headerlink" href="#windows-powershell" title="Permanent link">&para;</a></h3>
 <pre><code class="language-powershell">irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1 | iex
 </code></pre>
-<p>What the installer does:
-- Clones Annolid.
-- Creates an isolated environment (<code>.venv</code> by default).
-- Installs dependencies and Annolid.
-- Detects GPU and installs CUDA-enabled PyTorch when appropriate.
-- Prompts for optional extras and launch.</p>
+<p>What the installer does:</p>
+<ul>
+<li>Clones Annolid.</li>
+<li>Creates an isolated environment (<code>.venv</code> by default).</li>
+<li>Installs dependencies and Annolid.</li>
+<li>Detects GPU and installs CUDA-enabled PyTorch when appropriate.</li>
+<li>Prompts for optional extras and launch.</li>
+</ul>
 <h2 id="quick-decision-table">Quick decision table<a class="headerlink" href="#quick-decision-table" title="Permanent link">&para;</a></h2>
 <p>Choose the flag set that matches your goal.</p>
 <table>
@@ -1413,50 +1415,52 @@
 <tbody>
 <tr>
 <td>Default install</td>
-<td><code>... | bash</code></td>
-<td><code>... | iex</code></td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash</code></td>
+<td><code>irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1 \| iex</code></td>
 </tr>
 <tr>
 <td>Skip GPU detection</td>
-<td><code>... | bash -s -- --no-gpu</code></td>
-<td><code>...; install.ps1 -NoGpu</code></td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --no-gpu</code></td>
+<td><code>.\install.ps1 -NoGpu</code></td>
 </tr>
 <tr>
 <td>Non-interactive install</td>
-<td><code>... | bash -s -- --no-interactive</code></td>
-<td><code>...; install.ps1 -NoInteractive</code></td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --no-interactive</code></td>
+<td><code>.\install.ps1 -NoInteractive</code></td>
 </tr>
 <tr>
 <td>Install to custom folder</td>
-<td><code>... | bash -s -- --install-dir /path/to/annolid</code></td>
-<td><code>...; install.ps1 -InstallDir C:\path\to\annolid</code></td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --install-dir /path/to/annolid</code></td>
+<td><code>.\install.ps1 -InstallDir C:\\path\\to\\annolid</code></td>
 </tr>
 <tr>
 <td>Custom venv location</td>
-<td><code>... | bash -s -- --venv-dir /path/to/.venv</code></td>
-<td><code>...; install.ps1 -VenvDir C:\path\to\.venv</code></td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --venv-dir /path/to/.venv</code></td>
+<td><code>.\install.ps1 -VenvDir C:\\path\\to\\.venv</code></td>
 </tr>
 <tr>
-<td>Use Conda env (Linux/macOS only)</td>
-<td><code>... | bash -s -- --use-conda</code></td>
-<td>Not supported in <code>install.ps1</code></td>
+<td>Use Conda env</td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --use-conda</code></td>
+<td><code>Not supported in install.ps1</code></td>
 </tr>
 <tr>
 <td>Enable optional extras</td>
-<td><code>... | bash -s -- --extras sam3,text_to_speech</code></td>
-<td><code>...; install.ps1 -Extras sam3,text_to_speech</code></td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --extras sam3,text_to_speech</code></td>
+<td><code>.\install.ps1 -Extras sam3,text_to_speech</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="linuxmacos-options-in-detail">Linux/macOS options in detail<a class="headerlink" href="#linuxmacos-options-in-detail" title="Permanent link">&para;</a></h2>
-<p><code>install.sh</code> supports:
-- <code>--install-dir DIR</code>
-- <code>--venv-dir DIR</code>
-- <code>--extras EXTRAS</code>
-- <code>--no-gpu</code>
-- <code>--use-conda</code>
-- <code>--no-interactive</code>
-- <code>--help</code></p>
+<p><code>install.sh</code> supports:</p>
+<ul>
+<li><code>--install-dir DIR</code></li>
+<li><code>--venv-dir DIR</code></li>
+<li><code>--extras EXTRAS</code></li>
+<li><code>--no-gpu</code></li>
+<li><code>--use-conda</code></li>
+<li><code>--no-interactive</code></li>
+<li><code>--help</code></li>
+</ul>
 <p>Examples:</p>
 <pre><code class="language-bash"># Non-interactive CPU-only install to a custom directory
 curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | \
@@ -1471,13 +1475,15 @@ curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.s
   bash -s -- --extras sam3,image_editing,text_to_speech
 </code></pre>
 <h2 id="windows-options-in-detail">Windows options in detail<a class="headerlink" href="#windows-options-in-detail" title="Permanent link">&para;</a></h2>
-<p><code>install.ps1</code> supports:
-- <code>-InstallDir DIR</code>
-- <code>-VenvDir DIR</code>
-- <code>-Extras EXTRAS</code>
-- <code>-NoGpu</code>
-- <code>-NoInteractive</code>
-- <code>-Help</code></p>
+<p><code>install.ps1</code> supports:</p>
+<ul>
+<li><code>-InstallDir DIR</code></li>
+<li><code>-VenvDir DIR</code></li>
+<li><code>-Extras EXTRAS</code></li>
+<li><code>-NoGpu</code></li>
+<li><code>-NoInteractive</code></li>
+<li><code>-Help</code></li>
+</ul>
 <p>For extra options, run:</p>
 <pre><code class="language-powershell">Get-Help .\install.ps1 -Detailed
 </code></pre>
@@ -1490,12 +1496,14 @@ curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.s
 </code></pre>
 <h2 id="optional-extras-extras-extras">Optional extras (<code>--extras</code> / <code>-Extras</code>)<a class="headerlink" href="#optional-extras-extras-extras" title="Permanent link">&para;</a></h2>
 <p><code>gui</code> is installed by default by the one-line installers, so <code>annolid</code> launches without additional flags.</p>
-<p>Current supported extras:
-- <code>sam3</code>
-- <code>image_editing</code>
-- <code>text_to_speech</code>
-- <code>qwen3_embedding</code>
-- <code>annolid_bot</code></p>
+<p>Current supported extras:</p>
+<ul>
+<li><code>sam3</code></li>
+<li><code>image_editing</code></li>
+<li><code>text_to_speech</code></li>
+<li><code>qwen3_embedding</code></li>
+<li><code>annolid_bot</code></li>
+</ul>
 <h3 id="what-each-extra-is-for-with-example-use-cases">What each extra is for (with example use cases)<a class="headerlink" href="#what-each-extra-is-for-with-example-use-cases" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -1603,10 +1611,12 @@ curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.s
 </code></pre>
 <p>If <code>annolid</code> is not found, activate the environment printed by the installer and retry.</p>
 <h2 id="security-note">Security note<a class="headerlink" href="#security-note" title="Permanent link">&para;</a></h2>
-<p>Piping scripts from the internet is convenient but trust-based. For stricter security:
-- download script first,
-- inspect it,
-- then run locally with explicit options.</p>
+<p>Piping scripts from the internet is convenient but trust-based. For stricter security:</p>
+<ul>
+<li>download script first,</li>
+<li>inspect it,</li>
+<li>then run locally with explicit options.</li>
+</ul>
 
 
 
