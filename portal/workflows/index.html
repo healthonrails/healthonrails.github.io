@@ -346,6 +346,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../agent_calendar/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Agent Calendar
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../agent_secrets/" class="md-tabs__link">
         
   
@@ -981,6 +1000,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../agent_calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../agent_secrets/" class="md-nav__link">
         
   
@@ -1317,9 +1363,11 @@
 <li>draft-and-send support for configured Zulip targets from the bot UI.</li>
 </ul>
 <p>When you use background integrations such as Zulip, WhatsApp, or calendar services, the agent config is loaded from the Annolid agent config path, not the LLM settings file.</p>
+<p>For Google Calendar, Annolid now prefers an existing cached token by default. If you want the agent to perform first-run OAuth authorization, set <code>tools.calendar.allow_interactive_auth=true</code> explicitly in the agent config and run that flow from an interactive session.</p>
 <p>See:</p>
 <ul>
 <li><a href="../mcp/">MCP</a></li>
+<li><a href="../agent_calendar/">Agent Calendar</a></li>
 <li><a href="../tutorials/">Tutorials</a></li>
 </ul>
 <h2 id="3-cli-model-workflow">3. CLI Model Workflow<a class="headerlink" href="#3-cli-model-workflow" title="Permanent link">&para;</a></h2>
