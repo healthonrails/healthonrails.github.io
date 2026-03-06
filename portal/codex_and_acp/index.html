@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/agent_calendar/">
+        <link rel="canonical" href="https://annolid.com/codex_and_acp/">
       
       
-        <link rel="prev" href="../codex_and_acp/">
+        <link rel="prev" href="../mcp/">
       
       
-        <link rel="next" href="../agent_secrets/">
+        <link rel="next" href="../agent_calendar/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Agent Calendar - Annolid Docs</title>
+        <title>Codex and ACP - Annolid Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#agent-calendar" class="md-skip">
+        <a href="#codex-and-acp" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Agent Calendar
+              Codex and ACP
             
           </span>
         </div>
@@ -342,9 +342,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../codex_and_acp/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -361,11 +363,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../agent_calendar/" class="md-tabs__link">
         
   
   
@@ -892,33 +892,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../codex_and_acp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Codex and ACP
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -938,7 +911,7 @@
   <span class="md-ellipsis">
     
   
-    Agent Calendar
+    Codex and ACP
   
 
     
@@ -956,7 +929,7 @@
   <span class="md-ellipsis">
     
   
-    Agent Calendar
+    Codex and ACP
   
 
     
@@ -982,10 +955,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#google-calendar-files" class="md-nav__link">
+  <a href="#which-mode-should-i-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Google Calendar Files
+        Which Mode Should I Use?
       
     </span>
   </a>
@@ -993,66 +966,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relevant-config" class="md-nav__link">
+  <a href="#codex-provider-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relevant Config
+        Codex Provider Modes
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default Behavior
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-time-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        First-Time Authentication
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#token-renewal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Token Renewal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-failure-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Failure Cases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Failure Cases">
+    <nav class="md-nav" aria-label="Codex Provider Modes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#token-file-is-never-created" class="md-nav__link">
+  <a href="#1-openai_codex-cloud-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Token file is never created
+        1. openai_codex Cloud Provider
       
     </span>
   </a>
@@ -1060,54 +989,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-bot-says-the-token-expired-and-needs-to-be-refreshed" class="md-nav__link">
+  <a href="#2-codex_cli-local-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The bot says the token expired and needs to be refreshed
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annolid-says-interactive-auth-is-disabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annolid says interactive auth is disabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annolid-says-credentials-or-token-files-are-missing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annolid says credentials or token files are missing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-bot-can-list-events-but-refuses-to-create-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The bot can list events but refuses to create one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#browser-auth-opens-but-renewal-still-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Browser auth opens but renewal still fails
+        2. codex_cli Local Provider
       
     </span>
   </a>
@@ -1120,10 +1005,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-operating-pattern" class="md-nav__link">
+  <a href="#transport-behavior-for-openai_codex" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Operating Pattern
+        Transport Behavior for openai_codex
       
     </span>
   </a>
@@ -1131,10 +1016,149 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-docs" class="md-nav__link">
+  <a href="#long-lived-acp-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related Docs
+        Long-Lived ACP Sessions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-Lived ACP Sessions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-annolid-stores-for-acp-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Annolid Stores for ACP Sessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdio-acp-bridge-for-ides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stdio ACP Bridge for IDEs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stdio ACP Bridge for IDEs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-bridge-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Bridge Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-ide-launch-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example IDE Launch Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-setup-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Setup Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Setup Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-codex-as-main-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Codex as Main Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-codex-cli-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Codex CLI Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide-or-thread-oriented-coding-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDE or Thread-Oriented Coding Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
       
     </span>
   </a>
@@ -1145,6 +1169,33 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1365,10 +1416,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#google-calendar-files" class="md-nav__link">
+  <a href="#which-mode-should-i-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Google Calendar Files
+        Which Mode Should I Use?
       
     </span>
   </a>
@@ -1376,66 +1427,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#relevant-config" class="md-nav__link">
+  <a href="#codex-provider-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Relevant Config
+        Codex Provider Modes
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default Behavior
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#first-time-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        First-Time Authentication
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#token-renewal" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Token Renewal
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-failure-cases" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Failure Cases
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Failure Cases">
+    <nav class="md-nav" aria-label="Codex Provider Modes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#token-file-is-never-created" class="md-nav__link">
+  <a href="#1-openai_codex-cloud-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Token file is never created
+        1. openai_codex Cloud Provider
       
     </span>
   </a>
@@ -1443,54 +1450,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#the-bot-says-the-token-expired-and-needs-to-be-refreshed" class="md-nav__link">
+  <a href="#2-codex_cli-local-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The bot says the token expired and needs to be refreshed
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annolid-says-interactive-auth-is-disabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annolid says interactive auth is disabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#annolid-says-credentials-or-token-files-are-missing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annolid says credentials or token files are missing
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#the-bot-can-list-events-but-refuses-to-create-one" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The bot can list events but refuses to create one
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#browser-auth-opens-but-renewal-still-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Browser auth opens but renewal still fails
+        2. codex_cli Local Provider
       
     </span>
   </a>
@@ -1503,10 +1466,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-operating-pattern" class="md-nav__link">
+  <a href="#transport-behavior-for-openai_codex" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Operating Pattern
+        Transport Behavior for openai_codex
       
     </span>
   </a>
@@ -1514,10 +1477,149 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-docs" class="md-nav__link">
+  <a href="#long-lived-acp-sessions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related Docs
+        Long-Lived ACP Sessions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Long-Lived ACP Sessions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-annolid-stores-for-acp-sessions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Annolid Stores for ACP Sessions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancel-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancel Behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stdio-acp-bridge-for-ides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stdio ACP Bridge for IDEs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stdio ACP Bridge for IDEs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-bridge-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Bridge Does
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-ide-launch-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example IDE Launch Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-setup-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Setup Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Setup Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloud-codex-as-main-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud Codex as Main Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-codex-cli-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local Codex CLI Fallback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ide-or-thread-oriented-coding-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IDE or Thread-Oriented Coding Work
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
       
     </span>
   </a>
@@ -1544,150 +1646,219 @@
   
 
 
-<h1 id="agent-calendar">Agent Calendar<a class="headerlink" href="#agent-calendar" title="Permanent link">&para;</a></h1>
-<p>This page documents how Annolid Bot uses Google Calendar credentials, cached OAuth tokens, and token renewal.</p>
-<h2 id="google-calendar-files">Google Calendar Files<a class="headerlink" href="#google-calendar-files" title="Permanent link">&para;</a></h2>
-<p>Annolid reads Google Calendar settings from <code>~/.annolid/config.json</code>.</p>
-<p>Default paths:</p>
+<h1 id="codex-and-acp">Codex and ACP<a class="headerlink" href="#codex-and-acp" title="Permanent link">&para;</a></h1>
+<p>Annolid now supports Codex in more than one way. The easiest mental model is:</p>
 <ul>
-<li>OAuth client credentials: <code>~/.annolid/agent/google_calendar_credentials.json</code></li>
-<li>Cached OAuth token: <code>~/.annolid/agent/google_calendar_token.json</code></li>
+<li><code>openai_codex</code>: Codex as a cloud model, authenticated through ChatGPT/Codex OAuth-style credentials.</li>
+<li><code>codex_cli</code>: Codex as a local CLI runtime for conservative text-first execution.</li>
+<li><code>ACP</code>: a long-lived external coding session that Annolid can keep open across turns.</li>
 </ul>
-<p>The credentials file is the Google OAuth client JSON downloaded from Google Cloud. The token file is created locally after a successful interactive OAuth flow.</p>
-<p>Annolid keeps these files private when possible:</p>
+<p>These modes solve different problems. You do not need all of them at once.</p>
+<h2 id="which-mode-should-i-use">Which Mode Should I Use?<a class="headerlink" href="#which-mode-should-i-use" title="Permanent link">&para;</a></h2>
+<p>Use <code>openai_codex</code> when:</p>
 <ul>
-<li>token file mode: <code>0600</code></li>
-<li>token parent directory mode: <code>0700</code></li>
+<li>you want Codex to be the main model in Annolid Bot,</li>
+<li>you want normal model-style chat behavior,</li>
+<li>you want the best default behavior for cloud Codex access.</li>
 </ul>
-<h2 id="relevant-config">Relevant Config<a class="headerlink" href="#relevant-config" title="Permanent link">&para;</a></h2>
-<p>Example config block:</p>
+<p>Use <code>codex_cli</code> when:</p>
+<ul>
+<li>you already have the <code>codex</code> CLI installed locally,</li>
+<li>you want a simple local fallback,</li>
+<li>you want session continuity through the Codex CLI thread system.</li>
+</ul>
+<p>Use ACP when:</p>
+<ul>
+<li>you want Annolid to keep a coding session alive across multiple prompts,</li>
+<li>you want an IDE or external client to talk to Annolid over stdio,</li>
+<li>you want to route follow-up coding instructions into the same long-lived session instead of starting over each turn.</li>
+</ul>
+<h2 id="codex-provider-modes">Codex Provider Modes<a class="headerlink" href="#codex-provider-modes" title="Permanent link">&para;</a></h2>
+<h3 id="1-openai_codex-cloud-provider">1. <code>openai_codex</code> Cloud Provider<a class="headerlink" href="#1-openai_codex-cloud-provider" title="Permanent link">&para;</a></h3>
+<p>This is the main Codex provider inside Annolid.</p>
+<p>Current behavior:</p>
+<ul>
+<li>default model: <code>openai-codex/gpt-5.4</code></li>
+<li>default transport: <code>auto</code></li>
+<li><code>auto</code> means WebSocket-first with SSE fallback</li>
+<li>explicit <code>transport</code> values supported: <code>auto</code>, <code>websocket</code>, <code>sse</code></li>
+</ul>
+<p>Annolid keeps the provider separate from regular <code>openai</code> configuration because the auth and transport behavior are different.</p>
+<p>Practical note:</p>
+<ul>
+<li>Annolid auto-detects local Codex OAuth credentials in the runtime. You do not need to paste an API key into the Annolid UI for <code>openai_codex</code>.</li>
+<li>In AI Model Settings, use <code>Refresh</code> to check the local Codex login state immediately, or click <code>Save</code> and Annolid will detect and store non-secret auth status metadata automatically.</li>
+<li>If the required Python packages are missing, Annolid will return a direct setup error instead of a vague provider failure.</li>
+</ul>
+<p>Required packages for this mode:</p>
+<ul>
+<li><code>oauth_cli_kit</code></li>
+<li><code>httpx</code></li>
+<li><code>websockets</code></li>
+</ul>
+<p>Example install inside the project environment:</p>
+<pre><code class="language-bash">source .venv/bin/activate
+pip install oauth-cli-kit httpx websockets
+</code></pre>
+<h3 id="2-codex_cli-local-provider">2. <code>codex_cli</code> Local Provider<a class="headerlink" href="#2-codex_cli-local-provider" title="Permanent link">&para;</a></h3>
+<p>This mode uses the local <code>codex</code> executable instead of Annolid’s cloud provider stack.</p>
+<p>Current behavior:</p>
+<ul>
+<li>default model: <code>codex-cli/gpt-5.3-codex</code></li>
+<li>text-first runtime</li>
+<li>Codex CLI thread IDs are persisted so later turns can resume the same Codex thread</li>
+<li>GUI chat sessions pass the Annolid session ID through to preserve continuity</li>
+</ul>
+<p>This mode is useful when the local Codex CLI is already installed and you want a simpler runtime path.</p>
+<p>Requirements:</p>
+<ul>
+<li><code>codex</code> must be available on <code>PATH</code></li>
+</ul>
+<p>Check it with:</p>
+<pre><code class="language-bash">codex --help
+</code></pre>
+<h2 id="transport-behavior-for-openai_codex">Transport Behavior for <code>openai_codex</code><a class="headerlink" href="#transport-behavior-for-openai_codex" title="Permanent link">&para;</a></h2>
+<p>Annolid’s <code>openai_codex</code> provider now supports the same transport model users expect from OpenClaw-style Codex integration:</p>
+<ul>
+<li><code>websocket</code>: force websocket transport</li>
+<li><code>sse</code>: force SSE transport</li>
+<li><code>auto</code>: try websocket first, then fall back to SSE automatically</li>
+</ul>
+<p>Why this matters:</p>
+<ul>
+<li>websocket is the preferred fast path,</li>
+<li>SSE is the compatibility path,</li>
+<li><code>auto</code> gives the best default for most users.</li>
+</ul>
+<p>Advanced users can set this in <code>~/.annolid/llm_settings.json</code>:</p>
 <pre><code class="language-json">{
-  &quot;tools&quot;: {
-    &quot;calendar&quot;: {
-      &quot;enabled&quot;: true,
-      &quot;provider&quot;: &quot;google&quot;,
-      &quot;credentialsFile&quot;: &quot;~/.annolid/agent/google_calendar_credentials.json&quot;,
-      &quot;tokenFile&quot;: &quot;~/.annolid/agent/google_calendar_token.json&quot;,
-      &quot;calendarId&quot;: &quot;primary&quot;,
-      &quot;timezone&quot;: &quot;America/New_York&quot;,
-      &quot;defaultEventDurationMinutes&quot;: 30,
-      &quot;allowInteractiveAuth&quot;: false
-    }
+  &quot;provider&quot;: &quot;openai_codex&quot;,
+  &quot;openai_codex&quot;: {
+    &quot;base_url&quot;: &quot;https://chatgpt.com/backend-api/codex/responses&quot;,
+    &quot;transport&quot;: &quot;auto&quot;,
+    &quot;preferred_models&quot;: [&quot;openai-codex/gpt-5.4&quot;]
   }
 }
 </code></pre>
-<p>Important fields:</p>
+<p>If the websocket attempt fails in <code>auto</code> mode, Annolid falls back to SSE automatically.</p>
+<h2 id="long-lived-acp-sessions">Long-Lived ACP Sessions<a class="headerlink" href="#long-lived-acp-sessions" title="Permanent link">&para;</a></h2>
+<p>ACP stands for Agent Client Protocol. In Annolid, ACP is the session-oriented runtime for external coding harness workflows.</p>
+<p>What that means in practice:</p>
 <ul>
-<li><code>enabled</code>: enables Google Calendar tool registration.</li>
-<li><code>credentialsFile</code>: path to the Google OAuth client JSON.</li>
-<li><code>tokenFile</code>: path to the locally cached OAuth token.</li>
-<li><code>allowInteractiveAuth</code>: allows Annolid to open the browser-based OAuth flow when no valid cached token is available.</li>
+<li>Annolid can create a coding session once,</li>
+<li>keep it open across prompts,</li>
+<li>queue follow-up requests into the same session,</li>
+<li>cancel the active turn without destroying the whole session,</li>
+<li>expose the session over stdio for IDE integrations.</li>
 </ul>
-<h2 id="default-behavior">Default Behavior<a class="headerlink" href="#default-behavior" title="Permanent link">&para;</a></h2>
-<p>Annolid is cache-first by default:</p>
-<ol>
-<li>If the token file exists, Annolid uses it.</li>
-<li>If the token is expired but refreshable, Google auth refreshes it.</li>
-<li>If no usable token exists, Annolid only starts the OAuth browser flow when <code>allowInteractiveAuth=true</code>.</li>
-<li>If <code>allowInteractiveAuth=false</code> and no valid token exists, the Google Calendar tool is skipped or returns an actionable error instead of opening a browser unexpectedly.</li>
-</ol>
-<p>This is intentional so background agents do not trigger OAuth prompts.</p>
-<h2 id="first-time-authentication">First-Time Authentication<a class="headerlink" href="#first-time-authentication" title="Permanent link">&para;</a></h2>
-<p>Use this flow when <code>google_calendar_token.json</code> does not exist yet.</p>
-<ol>
-<li>Put your Google OAuth credentials JSON at the configured <code>credentialsFile</code> path.</li>
-<li>Set <code>tools.calendar.allowInteractiveAuth</code> to <code>true</code> in <code>~/.annolid/config.json</code>.</li>
-<li>Launch Annolid from an interactive terminal session:</li>
-</ol>
-<pre><code class="language-bash">annolid
-</code></pre>
-<ol>
-<li>Open a fresh Annolid Bot session.</li>
-<li>Ask the bot to perform a calendar action, for example:</li>
-</ol>
-<pre><code class="language-text">List my next 3 Google Calendar events
-</code></pre>
-<ol>
-<li>Complete the browser-based Google OAuth flow.</li>
-<li>Confirm that the token file now exists at the configured <code>tokenFile</code> path.</li>
-<li>Set <code>allowInteractiveAuth</code> back to <code>false</code> if you want the safer background default.</li>
-</ol>
-<h2 id="token-renewal">Token Renewal<a class="headerlink" href="#token-renewal" title="Permanent link">&para;</a></h2>
-<p>If the cached token has expired and can no longer be refreshed, re-authenticate:</p>
-<ol>
-<li>Confirm that <code>credentialsFile</code> still points to a valid Google OAuth client JSON.</li>
-<li>Set <code>tools.calendar.allowInteractiveAuth=true</code>.</li>
-<li>Remove the stale token file at the configured <code>tokenFile</code> path.</li>
-<li>Launch Annolid from a terminal:</li>
-</ol>
-<pre><code class="language-bash">annolid
-</code></pre>
-<ol>
-<li>Trigger a calendar action again.</li>
-<li>Complete the OAuth flow in the browser.</li>
-<li>Verify that a new token file was written.</li>
-<li>Optionally set <code>allowInteractiveAuth=false</code> again after renewal.</li>
-</ol>
-<h2 id="common-failure-cases">Common Failure Cases<a class="headerlink" href="#common-failure-cases" title="Permanent link">&para;</a></h2>
-<h3 id="token-file-is-never-created">Token file is never created<a class="headerlink" href="#token-file-is-never-created" title="Permanent link">&para;</a></h3>
-<p>Check all of the following:</p>
+<p>This is different from one-shot provider chat. ACP is for ongoing coding work.</p>
+<h3 id="what-annolid-stores-for-acp-sessions">What Annolid Stores for ACP Sessions<a class="headerlink" href="#what-annolid-stores-for-acp-sessions" title="Permanent link">&para;</a></h3>
+<p>Annolid keeps ACP session state under the local session store in:</p>
 <ul>
-<li><code>tools.calendar.enabled</code> is <code>true</code></li>
-<li><code>provider</code> is <code>google</code></li>
-<li><code>credentialsFile</code> exists</li>
-<li><code>allowInteractiveAuth</code> is <code>true</code></li>
-<li>Annolid was launched from an interactive terminal session</li>
-<li>the Google Calendar tool is present in the current toolset</li>
+<li><code>~/.annolid/sessions/</code></li>
 </ul>
-<p>If the bot can already list events, the tool is registered. In that case, a missing token file usually means the auth flow has not been triggered in the current process or the token path is not writable.</p>
-<h3 id="the-bot-says-the-token-expired-and-needs-to-be-refreshed">The bot says the token expired and needs to be refreshed<a class="headerlink" href="#the-bot-says-the-token-expired-and-needs-to-be-refreshed" title="Permanent link">&para;</a></h3>
-<p>That means the cached token is no longer usable. Use the token renewal flow above:</p>
+<p>Annolid also tracks Codex CLI thread continuity for ACP-backed Codex CLI runs, so follow-up prompts can resume the same Codex context instead of starting a fresh local thread each time.</p>
+<h3 id="cancel-behavior">Cancel Behavior<a class="headerlink" href="#cancel-behavior" title="Permanent link">&para;</a></h3>
+<p>ACP <code>cancel</code> does not tear down the whole session anymore.</p>
+<p>Current behavior:</p>
+<ul>
+<li>the active turn is aborted,</li>
+<li>the session stays alive,</li>
+<li>the next prompt can reuse the same ACP session.</li>
+</ul>
+<p>This makes ACP suitable for IDE workflows where the user may stop a long turn and immediately retry with a narrower instruction.</p>
+<h2 id="stdio-acp-bridge-for-ides">Stdio ACP Bridge for IDEs<a class="headerlink" href="#stdio-acp-bridge-for-ides" title="Permanent link">&para;</a></h2>
+<p>Annolid now exposes a formal stdio ACP bridge.</p>
+<p>Run it with:</p>
+<pre><code class="language-bash">annolid-run agent acp bridge --workspace /path/to/repo
+</code></pre>
+<p>This starts a stdio server that external tools can spawn and communicate with.</p>
+<p>Current ACP-native methods supported:</p>
+<ul>
+<li><code>initialize</code></li>
+<li><code>newSession</code></li>
+<li><code>loadSession</code></li>
+<li><code>prompt</code></li>
+<li><code>cancel</code></li>
+<li><code>listSessions</code></li>
+<li><code>shutdown</code></li>
+</ul>
+<p>Annolid also accepts compatibility aliases used by OpenClaw-style clients, including:</p>
+<ul>
+<li><code>sessions_spawn</code></li>
+<li><code>sessions_send</code></li>
+<li><code>sessions_poll</code></li>
+<li><code>sessions_list</code></li>
+<li><code>sessions_close</code></li>
+</ul>
+<h3 id="what-the-bridge-does">What the Bridge Does<a class="headerlink" href="#what-the-bridge-does" title="Permanent link">&para;</a></h3>
+<p>The stdio bridge:</p>
+<ul>
+<li>maps external ACP client sessions to Annolid ACP runtime sessions,</li>
+<li>keeps session IDs stable for the life of the bridge process,</li>
+<li>emits session update notifications,</li>
+<li>supports long-lived coding workflows over stdio.</li>
+</ul>
+<p>Annolid also bounds idle ACP client sessions so a long-running IDE process does not grow an unbounded in-memory session map.</p>
+<h2 id="example-ide-launch-pattern">Example IDE Launch Pattern<a class="headerlink" href="#example-ide-launch-pattern" title="Permanent link">&para;</a></h2>
+<p>If your editor supports custom stdio agent servers, the command usually looks like:</p>
+<pre><code class="language-bash">annolid-run agent acp bridge --workspace /absolute/path/to/repo
+</code></pre>
+<p>The editor then sends ACP messages over stdin/stdout.</p>
+<h2 id="recommended-setup-paths">Recommended Setup Paths<a class="headerlink" href="#recommended-setup-paths" title="Permanent link">&para;</a></h2>
+<h3 id="cloud-codex-as-main-model">Cloud Codex as Main Model<a class="headerlink" href="#cloud-codex-as-main-model" title="Permanent link">&para;</a></h3>
+<p>Use this if you want Annolid Bot itself to talk directly to Codex:</p>
 <ol>
-<li>enable <code>allowInteractiveAuth</code></li>
-<li>remove the stale token file</li>
-<li>relaunch Annolid from a terminal</li>
-<li>trigger a calendar action</li>
-<li>complete OAuth again</li>
+<li>Ensure Codex OAuth-style credentials are available to Annolid.</li>
+<li>Install required packages in <code>.venv</code>.</li>
+<li>Set provider to <code>openai_codex</code>. Do not enter an API key in the UI for this provider.</li>
+<li>Leave transport on <code>auto</code> unless you are debugging transport issues.</li>
 </ol>
-<h3 id="annolid-says-interactive-auth-is-disabled">Annolid says interactive auth is disabled<a class="headerlink" href="#annolid-says-interactive-auth-is-disabled" title="Permanent link">&para;</a></h3>
-<p>Set this in <code>~/.annolid/config.json</code>:</p>
-<pre><code class="language-json">{
-  &quot;tools&quot;: {
-    &quot;calendar&quot;: {
-      &quot;allowInteractiveAuth&quot;: true
-    }
-  }
-}
-</code></pre>
-<p>Restart Annolid after changing the config.</p>
-<h3 id="annolid-says-credentials-or-token-files-are-missing">Annolid says credentials or token files are missing<a class="headerlink" href="#annolid-says-credentials-or-token-files-are-missing" title="Permanent link">&para;</a></h3>
-<p>Verify both paths in <code>~/.annolid/config.json</code> and confirm the files exist where configured.</p>
-<h3 id="the-bot-can-list-events-but-refuses-to-create-one">The bot can list events but refuses to create one<a class="headerlink" href="#the-bot-can-list-events-but-refuses-to-create-one" title="Permanent link">&para;</a></h3>
-<p>Use a current Annolid build and restart the app after calendar-related updates. A direct prompt such as this should trigger the calendar tool:</p>
-<pre><code class="language-text">Create a Google Calendar event tomorrow at 10 AM called Agent Coding Event
-</code></pre>
-<h3 id="browser-auth-opens-but-renewal-still-fails">Browser auth opens but renewal still fails<a class="headerlink" href="#browser-auth-opens-but-renewal-still-fails" title="Permanent link">&para;</a></h3>
-<p>Typical causes:</p>
+<h3 id="local-codex-cli-fallback">Local Codex CLI Fallback<a class="headerlink" href="#local-codex-cli-fallback" title="Permanent link">&para;</a></h3>
+<p>Use this if you prefer the local CLI path:</p>
+<ol>
+<li>Install the <code>codex</code> CLI.</li>
+<li>Set provider to <code>codex_cli</code>.</li>
+<li>Keep using the same Annolid chat session to preserve Codex CLI thread continuity.</li>
+</ol>
+<h3 id="ide-or-thread-oriented-coding-work">IDE or Thread-Oriented Coding Work<a class="headerlink" href="#ide-or-thread-oriented-coding-work" title="Permanent link">&para;</a></h3>
+<p>Use this if you want persistent coding sessions:</p>
+<ol>
+<li>Launch <code>annolid-run agent acp bridge --workspace /path/to/repo</code>.</li>
+<li>Connect your IDE or ACP-compatible client over stdio.</li>
+<li>Reuse the returned ACP session ID for follow-up prompts.</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>If <code>openai_codex</code> fails immediately:</p>
 <ul>
-<li>wrong Google OAuth client JSON</li>
-<li>token file path not writable</li>
-<li>Google OAuth app missing Calendar scope approval</li>
-<li>running from a non-interactive environment</li>
+<li>verify <code>oauth_cli_kit</code>, <code>httpx</code>, and <code>websockets</code> are installed in <code>.venv</code></li>
+<li>check that the Codex OAuth/token source is available to the current runtime</li>
 </ul>
-<h2 id="recommended-operating-pattern">Recommended Operating Pattern<a class="headerlink" href="#recommended-operating-pattern" title="Permanent link">&para;</a></h2>
+<p>If <code>codex_cli</code> fails immediately:</p>
 <ul>
-<li>Keep <code>allowInteractiveAuth=false</code> for normal background use.</li>
-<li>Turn it on only for first-time setup or token renewal.</li>
-<li>Launch Annolid from a terminal when you need OAuth.</li>
-<li>Switch it back off after a fresh token is created.</li>
+<li>verify <code>codex</code> is installed and on <code>PATH</code></li>
+<li>run <code>codex --help</code> manually</li>
 </ul>
-<h2 id="related-docs">Related Docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
+<p>If websocket transport is unstable:</p>
 <ul>
-<li><a href="../workflows/">Workflows</a></li>
-<li><a href="../reference/">Reference</a></li>
-<li><a href="../agent_secrets/">Agent Secrets</a></li>
-<li><a href="../agent_security/">Agent Security</a></li>
+<li>leave <code>transport</code> set to <code>auto</code> so Annolid can fall back to SSE</li>
+<li>force <code>sse</code> only if you want to disable websocket attempts entirely</li>
 </ul>
+<p>If an ACP session seems stuck:</p>
+<ul>
+<li>send <code>cancel</code></li>
+<li>reuse the same session with a narrower prompt</li>
+<li>restart the bridge if the external client and bridge state are out of sync</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Annolid’s Codex support is now split into clear layers:</p>
+<ul>
+<li><code>openai_codex</code> for cloud Codex with transport-aware runtime selection</li>
+<li><code>codex_cli</code> for local Codex CLI execution with thread continuity</li>
+<li>ACP for long-lived external coding sessions</li>
+<li>stdio ACP bridge for IDE and tool integration</li>
+</ul>
+<p>That separation makes Codex behavior easier to understand, easier to debug, and safer to extend.</p>
 
 
 
