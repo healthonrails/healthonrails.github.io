@@ -361,6 +361,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../agent_security/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Agent Security
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -863,6 +882,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../agent_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1231,6 +1277,12 @@ annolid-run list-models
 annolid-run train &lt;model&gt; --help-model
 annolid-run predict &lt;model&gt; --help-model
 </code></pre>
+<p>Security-focused agent commands:</p>
+<pre><code class="language-bash">annolid-run agent-security-check
+annolid-run agent-security-audit
+annolid-run agent-security-audit --fix
+annolid-run agent-secrets-audit
+</code></pre>
 <h2 id="important-config-files">Important Config Files<a class="headerlink" href="#important-config-files" title="Permanent link">&para;</a></h2>
 <ul>
 <li>LLM and Annolid Bot model settings:
@@ -1239,6 +1291,8 @@ annolid-run predict &lt;model&gt; --help-model
   <code>~/.annolid/config.json</code></li>
 <li>Annolid agent local private secret store:
   <code>~/.annolid/agent_secrets.json</code></li>
+<li>Annolid agent sessions directory:
+  <code>~/.annolid/sessions/</code></li>
 <li>LabelMe/GUI-style user config:
   <code>~/.labelmerc</code></li>
 </ul>
@@ -1251,6 +1305,7 @@ annolid-run predict &lt;model&gt; --help-model
 <li><a href="../tutorials/">Tutorials</a></li>
 <li><a href="../mcp/">MCP</a></li>
 <li><a href="../agent_secrets/">Agent Secrets</a></li>
+<li><a href="../agent_security/">Agent Security</a></li>
 <li><a href="../sam3d/">SAM 3D</a></li>
 <li><a href="../deployment/">Deployment</a></li>
 </ul>
