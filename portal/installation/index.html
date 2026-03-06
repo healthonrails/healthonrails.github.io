@@ -16,7 +16,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="../workflows/">
+        <link rel="next" href="../install_with_uv/">
       
       
         
@@ -250,6 +250,44 @@
   
   
     <li class="md-tabs__item">
+      <a href="../install_with_uv/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  uv Setup
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../one_line_install_choices/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  One-Line Installer
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../workflows/" class="md-tabs__link">
         
   
@@ -268,14 +306,53 @@
   
   
   
+    
+    
+      <li class="md-tabs__item">
+        <a href="../tutorials/" class="md-tabs__link">
+          
+  
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
     <li class="md-tabs__item">
-      <a href="../tutorials/" class="md-tabs__link">
+      <a href="../mcp/" class="md-tabs__link">
         
   
   
     
   
-  Tutorials
+  MCP
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sam3d/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  SAM 3D
 
       </a>
     </li>
@@ -496,10 +573,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#recommended-uv" class="md-nav__link">
+  <a href="#recommended-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended (uv)
+        Recommended Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-line-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-line installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-venv-with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local .venv with uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-venv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip / venv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-extras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Extras
       
     </span>
   </a>
@@ -507,10 +645,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pip-alternative" class="md-nav__link">
+  <a href="#verify-the-install" class="md-nav__link">
     <span class="md-ellipsis">
       
-        pip Alternative
+        Verify the Install
       
     </span>
   </a>
@@ -518,10 +656,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
+  <a href="#common-post-install-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Installation
+        Common Post-install Notes
       
     </span>
   </a>
@@ -529,10 +667,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-guides" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related Guides
+        Next Steps
       
     </span>
   </a>
@@ -543,6 +681,60 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_with_uv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uv Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one_line_install_choices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-Line Installer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -580,6 +772,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../tutorials/" class="md-nav__link">
         
@@ -588,7 +832,153 @@
   <span class="md-ellipsis">
     
   
-    Tutorials
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/segment-based-batch-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/Labelme_to_YOLO_class_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabelMe to YOLO Class Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/sandboxed_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sandboxed Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sam3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM 3D
   
 
     
@@ -736,10 +1126,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#recommended-uv" class="md-nav__link">
+  <a href="#recommended-paths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended (uv)
+        Recommended Paths
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Recommended Paths">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-line-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-line installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-venv-with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local .venv with uv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pip-venv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pip / venv
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conda
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-extras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Extras
       
     </span>
   </a>
@@ -747,10 +1198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pip-alternative" class="md-nav__link">
+  <a href="#verify-the-install" class="md-nav__link">
     <span class="md-ellipsis">
       
-        pip Alternative
+        Verify the Install
       
     </span>
   </a>
@@ -758,10 +1209,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
+  <a href="#common-post-install-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Installation
+        Common Post-install Notes
       
     </span>
   </a>
@@ -769,10 +1220,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#related-guides" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Related Guides
+        Next Steps
       
     </span>
   </a>
@@ -800,41 +1251,94 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<p>Annolid supports Python <code>3.10</code> to <code>3.13</code>.</p>
-<h2 id="recommended-uv">Recommended (uv)<a class="headerlink" href="#recommended-uv" title="Permanent link">&para;</a></h2>
-<p><code>uv</code> provides fast, reproducible environment setup.</p>
-<pre><code class="language-bash"># macOS / Linux
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Windows (PowerShell)
-powershell -ExecutionPolicy ByPass -c &quot;irm https://astral.sh/uv/install.ps1 | iex&quot;
+<p>Annolid currently exposes two main commands after install:</p>
+<ul>
+<li><code>annolid</code>: launch the desktop GUI</li>
+<li><code>annolid-run</code>: run model and workflow plugins from the terminal</li>
+</ul>
+<p>Annolid requires Python 3.10 or newer. In practice, Python 3.11 is the safest default for new environments.</p>
+<h2 id="recommended-paths">Recommended Paths<a class="headerlink" href="#recommended-paths" title="Permanent link">&para;</a></h2>
+<h3 id="one-line-installer">One-line installer<a class="headerlink" href="#one-line-installer" title="Permanent link">&para;</a></h3>
+<p>For most users, start with the project installers:</p>
+<ul>
+<li>macOS and Linux:</li>
+</ul>
+<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | bash
 </code></pre>
-<p>Create and activate a virtual environment:</p>
-<pre><code class="language-bash">uv venv
-source .venv/bin/activate
+<ul>
+<li>Windows PowerShell:</li>
+</ul>
+<pre><code class="language-powershell">irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1 | iex
 </code></pre>
-<p>Install Annolid:</p>
-<pre><code class="language-bash">uv pip install annolid
-</code></pre>
-<p>Install from source (development):</p>
-<pre><code class="language-bash">git clone https://github.com/healthonrails/annolid.git
+<p>See <a href="../one_line_install_choices/">One-Line Installer</a> for flags, extras, CPU/GPU choices, and non-interactive installs.</p>
+<h3 id="local-venv-with-uv">Local <code>.venv</code> with <code>uv</code><a class="headerlink" href="#local-venv-with-uv" title="Permanent link">&para;</a></h3>
+<p>For development or reproducible local work, use <code>uv</code> and a repository-local <code>.venv</code>:</p>
+<pre><code class="language-bash">git clone --recurse-submodules https://github.com/healthonrails/annolid.git
 cd annolid
-uv pip install -e .
+uv venv .venv --python 3.11
+source .venv/bin/activate
+uv pip install -e &quot;.[gui]&quot;
 </code></pre>
-<h2 id="pip-alternative">pip Alternative<a class="headerlink" href="#pip-alternative" title="Permanent link">&para;</a></h2>
+<p>The dedicated guide is <a href="../install_with_uv/">uv Setup</a>.</p>
+<h3 id="pip-venv">pip / venv<a class="headerlink" href="#pip-venv" title="Permanent link">&para;</a></h3>
+<p>If you prefer standard Python tooling:</p>
 <pre><code class="language-bash">python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install annolid
+pip install &quot;annolid[gui]&quot;
 </code></pre>
-<h2 id="verify-installation">Verify Installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h2>
+<p>To install from source:</p>
+<pre><code class="language-bash">git clone --recurse-submodules https://github.com/healthonrails/annolid.git
+cd annolid
+pip install -e &quot;.[gui]&quot;
+</code></pre>
+<h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
+<p>Conda still works well when you want environment management plus FFmpeg and native libraries from conda-forge:</p>
+<pre><code class="language-bash">conda create -n annolid-env python=3.11
+conda activate annolid-env
+conda install -c conda-forge ffmpeg git
+git clone --recurse-submodules https://github.com/healthonrails/annolid.git
+cd annolid
+pip install -e &quot;.[gui]&quot;
+</code></pre>
+<h2 id="optional-extras">Optional Extras<a class="headerlink" href="#optional-extras" title="Permanent link">&para;</a></h2>
+<p>Useful extras currently defined in <code>pyproject.toml</code> include:</p>
+<ul>
+<li><code>gui</code>: Qt bindings for the desktop application</li>
+<li><code>sam3</code>: SAM3-related dependencies</li>
+<li><code>image_editing</code>: diffusion/image-editing features</li>
+<li><code>text_to_speech</code>: read-aloud and narration features</li>
+<li><code>qwen3_embedding</code>: embedding-related utilities</li>
+<li><code>mediapipe</code>: MediaPipe-based workflows</li>
+<li><code>cowtracker</code>: CowTracker backend dependency</li>
+<li><code>annolid_bot</code>: Annolid Bot integrations such as MCP, Playwright, WhatsApp bridge support, and Google Calendar dependencies</li>
+</ul>
+<p>Example:</p>
+<pre><code class="language-bash">pip install -e &quot;.[gui,annolid_bot,text_to_speech]&quot;
+</code></pre>
+<h2 id="verify-the-install">Verify the Install<a class="headerlink" href="#verify-the-install" title="Permanent link">&para;</a></h2>
+<p>Run:</p>
 <pre><code class="language-bash">annolid --help
 annolid-run --help
 </code></pre>
-<h2 id="related-guides">Related Guides<a class="headerlink" href="#related-guides" title="Permanent link">&para;</a></h2>
+<p>Launch the GUI:</p>
+<pre><code class="language-bash">annolid
+</code></pre>
+<p>List available model plugins:</p>
+<pre><code class="language-bash">annolid-run list-models
+</code></pre>
+<h2 id="common-post-install-notes">Common Post-install Notes<a class="headerlink" href="#common-post-install-notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>One-line install choices: <a href="https://github.com/healthonrails/annolid/blob/main/docs/one_line_install_choices.md">docs/one_line_install_choices.md</a></li>
-<li>uv-focused setup: <a href="https://github.com/healthonrails/annolid/blob/main/docs/install_with_uv.md">docs/install_with_uv.md</a></li>
+<li>Install FFmpeg if video import/export or codec support is incomplete.</li>
+<li>If you use Annolid Bot with MCP or browser automation, install the <code>annolid_bot</code> extra.</li>
+<li>If <code>qtpy.QtBindingsNotFoundError</code> appears, install the <code>gui</code> extra in the active environment.</li>
+<li>On Python 3.13+, the GUI stack may use <code>PySide6</code> instead of <code>PyQt5</code> based on the package metadata.</li>
+</ul>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../workflows/">Workflows</a> for the main GUI and CLI paths</li>
+<li><a href="../mcp/">MCP</a> for Annolid Bot integrations</li>
+<li><a href="../sam3d/">SAM 3D</a> for the optional 3D reconstruction setup</li>
 </ul>
 
 

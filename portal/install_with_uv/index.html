@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/tutorials/">
+        <link rel="canonical" href="https://annolid.com/install_with_uv/">
       
       
-        <link rel="prev" href="../workflows/">
+        <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="segment-based-batch-tracking/">
+        <link rel="next" href="../one_line_install_choices/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Overview - Annolid Docs</title>
+        <title>uv Setup - Annolid Docs</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorials" class="md-skip">
+        <a href="#installing-annolid-with-uv" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              uv Setup
             
           </span>
         </div>
@@ -246,9 +246,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../install_with_uv/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -303,13 +305,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../tutorials/" class="md-tabs__link">
           
   
   
@@ -537,10 +537,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../install_with_uv/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uv Setup
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -556,6 +583,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-create-venv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create .venv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-install-annolid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Install Annolid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Verify
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Launch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-for-current-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes for Current Codebase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -618,31 +753,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -660,7 +790,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -675,37 +805,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
         
   
   
@@ -721,81 +824,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#video-walkthroughs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Video Walkthroughs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#focused-markdown-tutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Focused Markdown Tutorials
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notebook-tutorials-in-docstutorials" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Notebook Tutorials in docs/tutorials/
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-choose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How To Choose
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#repository-first-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repository-first Note
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -808,7 +836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="segment-based-batch-tracking/" class="md-nav__link">
+      <a href="../tutorials/segment-based-batch-tracking/" class="md-nav__link">
         
   
   
@@ -836,7 +864,7 @@
   
   
     <li class="md-nav__item">
-      <a href="Labelme_to_YOLO_class_map/" class="md-nav__link">
+      <a href="../tutorials/Labelme_to_YOLO_class_map/" class="md-nav__link">
         
   
   
@@ -864,7 +892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sandboxed_shell/" class="md-nav__link">
+      <a href="../tutorials/sandboxed_shell/" class="md-nav__link">
         
   
   
@@ -1081,10 +1109,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#video-walkthroughs" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Video Walkthroughs
+        Prerequisites
       
     </span>
   </a>
@@ -1092,10 +1120,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#focused-markdown-tutorials" class="md-nav__link">
+  <a href="#1-clone-the-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Focused Markdown Tutorials
+        1. Clone the Repository
       
     </span>
   </a>
@@ -1103,10 +1131,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notebook-tutorials-in-docstutorials" class="md-nav__link">
+  <a href="#2-create-venv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notebook Tutorials in docs/tutorials/
+        2. Create .venv
       
     </span>
   </a>
@@ -1114,10 +1142,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-choose" class="md-nav__link">
+  <a href="#3-install-annolid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How To Choose
+        3. Install Annolid
       
     </span>
   </a>
@@ -1125,10 +1153,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-first-note" class="md-nav__link">
+  <a href="#4-verify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Repository-first Note
+        4. Verify
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-launch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Launch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes-for-current-codebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notes for Current Codebase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -1155,44 +1216,55 @@
   
 
 
-<h1 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h1>
-<p>This page points to the practical tutorial material that exists in the repository today.</p>
-<h2 id="video-walkthroughs">Video Walkthroughs<a class="headerlink" href="#video-walkthroughs" title="Permanent link">&para;</a></h2>
+<h1 id="installing-annolid-with-uv">Installing Annolid with <code>uv</code><a class="headerlink" href="#installing-annolid-with-uv" title="Permanent link">&para;</a></h1>
+<p>This is the recommended development-style setup for this repository and matches the local validation guidance used in the repo instructions.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://youtu.be/PNbPA649r78">Tracking four interacting mice with one labeled frame</a></li>
-<li><a href="https://www.youtube.com/@annolid">Annolid YouTube channel</a></li>
-<li><a href="https://www.youtube.com/embed/videoseries?list=PLYp4D9Y-8_dRXPOtfGu48W5ENtfKn-Owc">Annolid playlist</a></li>
+<li>Python 3.10 to 3.13 on your <code>PATH</code></li>
+<li><code>git</code></li>
+<li><code>ffmpeg</code> recommended for video-heavy workflows</li>
+<li><code>uv</code> installed from <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a></li>
 </ul>
-<h2 id="focused-markdown-tutorials">Focused Markdown Tutorials<a class="headerlink" href="#focused-markdown-tutorials" title="Permanent link">&para;</a></h2>
+<h2 id="1-clone-the-repository">1. Clone the Repository<a class="headerlink" href="#1-clone-the-repository" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">git clone --recurse-submodules https://github.com/healthonrails/annolid.git
+cd annolid
+</code></pre>
+<h2 id="2-create-venv">2. Create <code>.venv</code><a class="headerlink" href="#2-create-venv" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">uv venv .venv --python 3.11
+source .venv/bin/activate
+</code></pre>
+<p>On Windows PowerShell:</p>
+<pre><code class="language-powershell">uv venv .venv --python 3.11
+.venv\Scripts\Activate.ps1
+</code></pre>
+<h2 id="3-install-annolid">3. Install Annolid<a class="headerlink" href="#3-install-annolid" title="Permanent link">&para;</a></h2>
+<p>GUI-capable editable install:</p>
+<pre><code class="language-bash">uv pip install -e &quot;.[gui]&quot;
+</code></pre>
+<p>If you also need Annolid Bot integrations:</p>
+<pre><code class="language-bash">uv pip install -e &quot;.[gui,annolid_bot]&quot;
+</code></pre>
+<h2 id="4-verify">4. Verify<a class="headerlink" href="#4-verify" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">annolid --help
+annolid-run --help
+annolid-run list-models
+</code></pre>
+<h2 id="5-launch">5. Launch<a class="headerlink" href="#5-launch" title="Permanent link">&para;</a></h2>
+<pre><code class="language-bash">annolid
+</code></pre>
+<h2 id="notes-for-current-codebase">Notes for Current Codebase<a class="headerlink" href="#notes-for-current-codebase" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="segment-based-batch-tracking/">Segment-based batch tracking</a></li>
-<li><a href="Labelme_to_YOLO_class_map/">LabelMe to YOLO class mapping</a></li>
-<li><a href="sandboxed_shell/">Sandboxed shell for Annolid Bot</a></li>
-<li><a href="../mcp/">MCP setup and usage</a></li>
-<li><a href="../sam3d/">SAM 3D integration</a></li>
+<li>The current terminal command is <code>annolid-run</code>, not older <code>annolid-train</code> or <code>annolid-track</code> commands.</li>
+<li>The repo’s local validation instructions assume a repository-local <code>.venv</code>.</li>
+<li>Optional extras are defined in <code>pyproject.toml</code>; install only what you need.</li>
 </ul>
-<h2 id="notebook-tutorials-in-docstutorials">Notebook Tutorials in <code>docs/tutorials/</code><a class="headerlink" href="#notebook-tutorials-in-docstutorials" title="Permanent link">&para;</a></h2>
-<p>Representative notebooks currently tracked in the repo:</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>docs/tutorials/Extract_frames_from_a_video.ipynb</code></li>
-<li><code>docs/tutorials/yolov8_tracking_tutorial.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_video_batch_inference.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_model_evaluation.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_Pose_Estimation_on_YOLO_Tutorial.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_Instance_Segmentation_on_YOLO_Tutorial.ipynb</code></li>
-<li><code>docs/tutorials/YOLO_SAHI_inference_for_ultralytics.ipynb</code></li>
-<li><code>docs/tutorials/zero_shot_object_detection_and_tracking_with_grounding_dino.ipynb</code></li>
-<li><code>docs/tutorials/RAFT_optical_flow.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_behavior_video_classification_on_slowfast.ipynb</code></li>
+<li>If Qt bindings are missing, reinstall with the <code>gui</code> extra.</li>
+<li>If FFmpeg tools are missing, install <code>ffmpeg</code> with your package manager or conda-forge.</li>
+<li>If Annolid Bot features are missing, ensure you installed the <code>annolid_bot</code> extra and configured the relevant runtime files.</li>
+<li>If you want a fully reproducible dependency state, keep <code>uv.lock</code> in sync with your environment and use the repo’s validation checks.</li>
 </ul>
-<h2 id="how-to-choose">How To Choose<a class="headerlink" href="#how-to-choose" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Start with the GUI/video workflow if you are labeling or reviewing data interactively.</li>
-<li>Use the notebook tutorials when you need training, evaluation, or post-processing examples.</li>
-<li>Use the markdown guides when you need an operational setup such as MCP, sandboxed shell execution, or batch tracking.</li>
-</ul>
-<h2 id="repository-first-note">Repository-first Note<a class="headerlink" href="#repository-first-note" title="Permanent link">&para;</a></h2>
-<p>Some older docs still link to historical book content, but the current maintained tutorial sources for this repo live under <code>docs/</code> and <code>docs/tutorials/</code>.</p>
 
 
 

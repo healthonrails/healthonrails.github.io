@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/tutorials/">
+        <link rel="canonical" href="https://annolid.com/tutorials/Labelme_to_YOLO_class_map/">
       
       
-        <link rel="prev" href="../workflows/">
+        <link rel="prev" href="../segment-based-batch-tracking/">
       
       
-        <link rel="next" href="segment-based-batch-tracking/">
+        <link rel="next" href="../sandboxed_shell/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/icon_annolid.png">
+      <link rel="icon" href="../../assets/images/icon_annolid.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Overview - Annolid Docs</title>
+        <title>LabelMe to YOLO Class Map - Annolid Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +53,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tutorials" class="md-skip">
+        <a href="#step-by-step-tutorial-from-annolid-behavior-labeling-to-a-yolo-pose-dataset" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +92,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+    <a href="../.." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
       
-  <img src="../assets/images/icon_annolid.png" alt="logo">
+  <img src="../../assets/images/icon_annolid.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              LabelMe to YOLO Class Map
             
           </span>
         </div>
@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -229,7 +229,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../installation/" class="md-tabs__link">
+      <a href="../../installation/" class="md-tabs__link">
         
   
   
@@ -248,7 +248,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../install_with_uv/" class="md-tabs__link">
+      <a href="../../install_with_uv/" class="md-tabs__link">
         
   
   
@@ -267,7 +267,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../one_line_install_choices/" class="md-tabs__link">
+      <a href="../../one_line_install_choices/" class="md-tabs__link">
         
   
   
@@ -286,7 +286,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../workflows/" class="md-tabs__link">
+      <a href="../../workflows/" class="md-tabs__link">
         
   
   
@@ -309,7 +309,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -327,7 +327,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../mcp/" class="md-tabs__link">
+      <a href="../../mcp/" class="md-tabs__link">
         
   
   
@@ -346,7 +346,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../sam3d/" class="md-tabs__link">
+      <a href="../../sam3d/" class="md-tabs__link">
         
   
   
@@ -365,7 +365,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../deployment/" class="md-tabs__link">
+      <a href="../../deployment/" class="md-tabs__link">
         
   
   
@@ -384,7 +384,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../migration/" class="md-tabs__link">
+      <a href="../../migration/" class="md-tabs__link">
         
   
   
@@ -403,7 +403,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../redirects/" class="md-tabs__link">
+      <a href="../../redirects/" class="md-tabs__link">
         
   
   
@@ -422,7 +422,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../reference/" class="md-tabs__link">
+      <a href="../../reference/" class="md-tabs__link">
         
   
   
@@ -457,9 +457,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+    <a href="../.." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
       
-  <img src="../assets/images/icon_annolid.png" alt="logo">
+  <img src="../../assets/images/icon_annolid.png" alt="logo">
 
     </a>
     Annolid Docs
@@ -486,7 +486,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -513,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -540,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install_with_uv/" class="md-nav__link">
+      <a href="../../install_with_uv/" class="md-nav__link">
         
   
   
@@ -567,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../one_line_install_choices/" class="md-nav__link">
+      <a href="../../one_line_install_choices/" class="md-nav__link">
         
   
   
@@ -594,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../workflows/" class="md-nav__link">
+      <a href="../../workflows/" class="md-nav__link">
         
   
   
@@ -675,6 +675,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segment-based-batch-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -694,7 +750,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    LabelMe to YOLO Class Map
   
 
     
@@ -712,7 +768,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    LabelMe to YOLO Class Map
   
 
     
@@ -738,10 +794,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#video-walkthroughs" class="md-nav__link">
+  <a href="#overview-of-the-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Video Walkthroughs
+        Overview of the Workflow
       
     </span>
   </a>
@@ -749,10 +805,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#focused-markdown-tutorials" class="md-nav__link">
+  <a href="#step-0-prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Focused Markdown Tutorials
+        Step 0 – Prerequisites
       
     </span>
   </a>
@@ -760,10 +816,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notebook-tutorials-in-docstutorials" class="md-nav__link">
+  <a href="#step-1-configure-behaviors-in-the-annolid-gui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notebook Tutorials in docs/tutorials/
+        Step 1 – Configure Behaviors in the Annolid GUI
       
     </span>
   </a>
@@ -771,10 +827,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-choose" class="md-nav__link">
+  <a href="#step-2-label-behaviors-in-annolid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How To Choose
+        Step 2 – Label Behaviors in Annolid
       
     </span>
   </a>
@@ -782,10 +838,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-first-note" class="md-nav__link">
+  <a href="#step-3-optional-refine-in-labelme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Repository-first Note
+        Step 3 – Optional: Refine in LabelMe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-convert-to-yolo-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 – Convert to YOLO Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 – Convert to YOLO Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUI Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-inspect-the-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 – Inspect the Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 – Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 – Next Steps
       
     </span>
   </a>
@@ -808,63 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="segment-based-batch-tracking/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Segment-based Batch Tracking
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Labelme_to_YOLO_class_map/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LabelMe to YOLO Class Map
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="sandboxed_shell/" class="md-nav__link">
+      <a href="../sandboxed_shell/" class="md-nav__link">
         
   
   
@@ -899,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/" class="md-nav__link">
+      <a href="../../mcp/" class="md-nav__link">
         
   
   
@@ -926,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sam3d/" class="md-nav__link">
+      <a href="../../sam3d/" class="md-nav__link">
         
   
   
@@ -953,7 +1025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
+      <a href="../../deployment/" class="md-nav__link">
         
   
   
@@ -980,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
+      <a href="../../migration/" class="md-nav__link">
         
   
   
@@ -1007,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../redirects/" class="md-nav__link">
+      <a href="../../redirects/" class="md-nav__link">
         
   
   
@@ -1034,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../../reference/" class="md-nav__link">
         
   
   
@@ -1081,10 +1153,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#video-walkthroughs" class="md-nav__link">
+  <a href="#overview-of-the-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Video Walkthroughs
+        Overview of the Workflow
       
     </span>
   </a>
@@ -1092,10 +1164,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#focused-markdown-tutorials" class="md-nav__link">
+  <a href="#step-0-prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Focused Markdown Tutorials
+        Step 0 – Prerequisites
       
     </span>
   </a>
@@ -1103,10 +1175,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#notebook-tutorials-in-docstutorials" class="md-nav__link">
+  <a href="#step-1-configure-behaviors-in-the-annolid-gui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Notebook Tutorials in docs/tutorials/
+        Step 1 – Configure Behaviors in the Annolid GUI
       
     </span>
   </a>
@@ -1114,10 +1186,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-choose" class="md-nav__link">
+  <a href="#step-2-label-behaviors-in-annolid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How To Choose
+        Step 2 – Label Behaviors in Annolid
       
     </span>
   </a>
@@ -1125,10 +1197,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-first-note" class="md-nav__link">
+  <a href="#step-3-optional-refine-in-labelme" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Repository-first Note
+        Step 3 – Optional: Refine in LabelMe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-convert-to-yolo-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 – Convert to YOLO Format
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 – Convert to YOLO Format">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cli-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUI Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-inspect-the-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 – Inspect the Output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 – Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 – Next Steps
       
     </span>
   </a>
@@ -1155,44 +1299,144 @@
   
 
 
-<h1 id="tutorials">Tutorials<a class="headerlink" href="#tutorials" title="Permanent link">&para;</a></h1>
-<p>This page points to the practical tutorial material that exists in the repository today.</p>
-<h2 id="video-walkthroughs">Video Walkthroughs<a class="headerlink" href="#video-walkthroughs" title="Permanent link">&para;</a></h2>
+<h1 id="step-by-step-tutorial-from-annolid-behavior-labeling-to-a-yolo-pose-dataset">Step-by-Step Tutorial: From Annolid Behavior Labeling to a YOLO Pose Dataset<a class="headerlink" href="#step-by-step-tutorial-from-annolid-behavior-labeling-to-a-yolo-pose-dataset" title="Permanent link">&para;</a></h1>
+<p>Use this walkthrough to move seamlessly from interactive behavior labeling in Annolid to a YOLO-ready pose dataset with stable class IDs. The process ties directly into Annolid’s project schema, so the behaviors you flag in the GUI end up with matching IDs in your training data and downstream analytics.</p>
+<h2 id="overview-of-the-workflow">Overview of the Workflow<a class="headerlink" href="#overview-of-the-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Configure behavior definitions in the Annolid project schema.</li>
+<li>Label frames or videos in the Annolid GUI.</li>
+<li>Convert them to Ultralytics YOLO format. The converter reuses the schema automatically, or you can provide a custom class map if needed.</li>
+<li>Inspect the generated dataset and continue with training or analysis.</li>
+</ol>
+<hr />
+<h2 id="step-0-prerequisites">Step 0 – Prerequisites<a class="headerlink" href="#step-0-prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://youtu.be/PNbPA649r78">Tracking four interacting mice with one labeled frame</a></li>
-<li><a href="https://www.youtube.com/@annolid">Annolid YouTube channel</a></li>
-<li><a href="https://www.youtube.com/embed/videoseries?list=PLYp4D9Y-8_dRXPOtfGu48W5ENtfKn-Owc">Annolid playlist</a></li>
+<li>Annolid installed with GUI and CLI access.</li>
+<li>Video files or extracted frames you plan to label.</li>
+<li>Optional: an existing <code>project.annolid.json/.yaml</code> file describing your behaviors, modifiers, and keyboard bindings.</li>
 </ul>
-<h2 id="focused-markdown-tutorials">Focused Markdown Tutorials<a class="headerlink" href="#focused-markdown-tutorials" title="Permanent link">&para;</a></h2>
+<p>Keep the schema file in (or above) the directory where you store LabelMe annotations—Annolid tools now auto-discover it to lock in class IDs.</p>
+<hr />
+<h2 id="step-1-configure-behaviors-in-the-annolid-gui">Step 1 – Configure Behaviors in the Annolid GUI<a class="headerlink" href="#step-1-configure-behaviors-in-the-annolid-gui" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Launch Annolid and open <strong>File → Project Schema…</strong>.</li>
+<li>Load your existing schema (<code>project.annolid.json</code>) or create a new one. The <code>code</code> field of each behavior becomes the primary identifier everywhere (flags, converter, analytics).</li>
+<li>Assign colors, categories, modifiers, and key bindings if you plan to use keyboard-driven labeling.</li>
+<li>Save the schema near your project assets (for example, root of the project or the folder that will hold LabelMe annotations).</li>
+</ol>
+<p>As soon as a schema is loaded, the <strong>Pinned Flags</strong> panel synchronizes to the same behavior list automatically—no more juggling the legacy <code>configs/behaviors.yaml</code> file.</p>
+<hr />
+<h2 id="step-2-label-behaviors-in-annolid">Step 2 – Label Behaviors in Annolid<a class="headerlink" href="#step-2-label-behaviors-in-annolid" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open a video or an image sequence.</li>
+<li>Confirm the behavior flags panel reflects the schema from Step 1. If not, reload the schema.</li>
+<li>Label behaviors using your configured shortcuts. The flags controller enforces exclusivity rules and updates modifier toggles automatically.</li>
+<li>When satisfied, export to LabelMe:</li>
+<li>Choose <strong>File → Export → LabelMe JSON…</strong> (or trigger the equivalent CLI command).</li>
+<li>Annolid writes paired <code>frame_XXXXX.png</code> and <code>frame_XXXXX.json</code> files per labeled frame.</li>
+</ol>
+<p>You now have a LabelMe-compatible dataset with behavior codes already aligned to the project schema.</p>
+<hr />
+<h2 id="step-3-optional-refine-in-labelme">Step 3 – Optional: Refine in LabelMe<a class="headerlink" href="#step-3-optional-refine-in-labelme" title="Permanent link">&para;</a></h2>
+<p>If you want to adjust annotations manually or add pose keypoints:</p>
+<ol>
+<li>Open the exported dataset in the LabelMe desktop app.</li>
+<li>For each instance, make sure the <strong>label</strong> (or <code>flags.display_label</code>) matches the behavior <code>code</code> defined in Step 1.</li>
+<li>Add polygons or keypoints as needed. The converter groups shapes by instance label and preserves keypoint order.</li>
+</ol>
+<p>Keep the folder’s contents clean—only <code>*.json</code> + <code>*.png</code> pairs belong in this directory.</p>
+<hr />
+<h2 id="step-4-convert-to-yolo-format">Step 4 – Convert to YOLO Format<a class="headerlink" href="#step-4-convert-to-yolo-format" title="Permanent link">&para;</a></h2>
+<h3 id="cli-path">CLI Path<a class="headerlink" href="#cli-path" title="Permanent link">&para;</a></h3>
+<pre><code class="language-bash">python -m annolid.main \
+  --labelme2yolo /path/to/labelme_dataset \
+  --val_size 0.1 \
+  --test_size 0.1
+</code></pre>
 <ul>
-<li><a href="segment-based-batch-tracking/">Segment-based batch tracking</a></li>
-<li><a href="Labelme_to_YOLO_class_map/">LabelMe to YOLO class mapping</a></li>
-<li><a href="sandboxed_shell/">Sandboxed shell for Annolid Bot</a></li>
-<li><a href="../mcp/">MCP setup and usage</a></li>
-<li><a href="../sam3d/">SAM 3D integration</a></li>
+<li><code>--labelme2yolo</code> points at the folder filled with LabelMe annotations.</li>
+<li>The converter walks up from that folder until it finds <code>project.annolid.json/.yaml</code>, then uses the schema’s behavior order as the class map. No extra flag required.</li>
+<li>Supply <code>--labelme2yolo-class-map</code> (JSON/YAML/TXT) only if you need to override the schema or you are working outside Annolid.</li>
+<li><code>--val_size</code> and <code>--test_size</code> are optional fractions for splitting the dataset.</li>
 </ul>
-<h2 id="notebook-tutorials-in-docstutorials">Notebook Tutorials in <code>docs/tutorials/</code><a class="headerlink" href="#notebook-tutorials-in-docstutorials" title="Permanent link">&para;</a></h2>
-<p>Representative notebooks currently tracked in the repo:</p>
+<p>Need a fully automated run? Use the new builder:</p>
+<pre><code class="language-bash">python -m annolid.main \
+  --build_pose_dataset /path/to/labelme_dataset \
+  --pose_output /path/to/output_dataset \
+  --val_size 0.1 \
+  --test_size 0.1
+</code></pre>
+<p>The builder pulls in your schema automatically, enforces class IDs, writes subject metadata companions, and drops a <code>dataset_summary.json</code> so you can review class and subject coverage without opening any files.</p>
+<h3 id="gui-path">GUI Path<a class="headerlink" href="#gui-path" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In Annolid, open <strong>File → Convert LabelMe to YOLO</strong>.</li>
+<li>Select the annotation directory.</li>
+<li>Leave “Optional Class Map” blank to rely on the schema. Provide a file only if you want a custom order.</li>
+<li>Adjust validation/test split fields if desired.</li>
+<li>Click <strong>Convert to YOLO Format</strong> and wait for the success message.</li>
+</ol>
+<p>Both paths emit the same dataset layout.</p>
+<hr />
+<h2 id="step-5-inspect-the-output">Step 5 – Inspect the Output<a class="headerlink" href="#step-5-inspect-the-output" title="Permanent link">&para;</a></h2>
+<pre><code>labelme_dataset/
+└── YOLO_dataset/
+    ├── images/{train,val,test}/
+    ├── labels/{train,val,test}/
+    └── data.yaml
+</code></pre>
+<p>Validate the contents:</p>
+<ol>
+<li><code>labels/train/*.txt</code>: first number is the class ID defined by the schema, followed by YOLO bbox values and pose keypoints (x, y, visibility).</li>
+<li><code>data.yaml</code>: the <code>names</code> list mirrors your behavior codes; <code>kpt_shape</code> and <code>kpt_labels</code> reflect the keypoint layout detected from your annotations.</li>
+<li>Confirm the splits (train/val/test) contain the expected number of files.</li>
+</ol>
+<p>Once verified, follow the existing pose training tutorial (<code>docs/tutorials/Annolid_Pose_Estimation_on_YOLO11_Tutorial.ipynb</code>) or the IntegraPose workflows to fine-tune YOLO for simultaneous pose and behavior predictions.</p>
+<hr />
+<h2 id="step-6-troubleshooting">Step 6 – Troubleshooting<a class="headerlink" href="#step-6-troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely Cause</th>
+<th>Suggested Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Label 'XYZ' is not defined in the provided class map.</code></td>
+<td>The annotation references a behavior missing from the schema.</td>
+<td>Add the behavior to <code>project.annolid.json</code> or adjust the LabelMe label.</td>
+</tr>
+<tr>
+<td><code>Class map indices must be contiguous…</code></td>
+<td>Manual class map (JSON/YAML/TXT) skips numbers or starts at a non-zero value.</td>
+<td>Rewrite the mapping with IDs <code>0..N-1</code>.</td>
+</tr>
+<tr>
+<td>Converter silently adds new classes</td>
+<td>No schema or class map was found.</td>
+<td>Move <code>project.annolid.json</code> into or above the dataset folder, or pass <code>--labelme2yolo-class-map</code>.</td>
+</tr>
+<tr>
+<td>GUI warns about missing PyYAML</td>
+<td>You loaded a YAML class map but PyYAML isn’t installed.</td>
+<td><code>pip install pyyaml</code>, or use JSON/TXT instead.</td>
+</tr>
+<tr>
+<td>Keypoints missing or zeroed</td>
+<td>Instances in LabelMe lacked those keypoints.</td>
+<td>Ensure each instance contains the same keypoint names and re-export.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-7-next-steps">Step 7 – Next Steps<a class="headerlink" href="#step-7-next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>docs/tutorials/Extract_frames_from_a_video.ipynb</code></li>
-<li><code>docs/tutorials/yolov8_tracking_tutorial.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_video_batch_inference.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_model_evaluation.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_Pose_Estimation_on_YOLO_Tutorial.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_Instance_Segmentation_on_YOLO_Tutorial.ipynb</code></li>
-<li><code>docs/tutorials/YOLO_SAHI_inference_for_ultralytics.ipynb</code></li>
-<li><code>docs/tutorials/zero_shot_object_detection_and_tracking_with_grounding_dino.ipynb</code></li>
-<li><code>docs/tutorials/RAFT_optical_flow.ipynb</code></li>
-<li><code>docs/tutorials/Annolid_behavior_video_classification_on_slowfast.ipynb</code></li>
+<li>Keep the project schema versioned alongside your dataset—consistency of behavior IDs is crucial for multitask learning and analytics.</li>
+<li>Install pytest and run <code>python -m pytest tests/test_labelme2yolo_pose.py</code> to validate conversions in CI.</li>
+<li>Explore downstream analytics (bout smoothing, gait metrics, LSTM refiners) now that the YOLO outputs share the exact class IDs used during labeling.</li>
 </ul>
-<h2 id="how-to-choose">How To Choose<a class="headerlink" href="#how-to-choose" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Start with the GUI/video workflow if you are labeling or reviewing data interactively.</li>
-<li>Use the notebook tutorials when you need training, evaluation, or post-processing examples.</li>
-<li>Use the markdown guides when you need an operational setup such as MCP, sandboxed shell execution, or batch tracking.</li>
-</ul>
-<h2 id="repository-first-note">Repository-first Note<a class="headerlink" href="#repository-first-note" title="Permanent link">&para;</a></h2>
-<p>Some older docs still link to historical book content, but the current maintained tutorial sources for this repo live under <code>docs/</code> and <code>docs/tutorials/</code>.</p>
+<p>You’re ready to train multi-task YOLO models (pose + behavior) without ever hand-editing class maps—the schema-driven workflow keeps every tool in sync. Happy labeling!</p>
 
 
 
@@ -1248,10 +1492,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
