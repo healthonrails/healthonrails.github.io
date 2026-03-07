@@ -1228,6 +1228,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GUI Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1567,6 +1584,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GUI Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1740,13 +1774,16 @@ annotations, datasets, and configs remain authoritative.</p>
 <li><code>annolid-run memory ...</code> CLI commands (<code>stats</code>, <code>search</code>, <code>delete</code>, <code>distill</code>, <code>cleanup</code>)</li>
 <li>Maintenance scripts for export/import, migration, and re-embedding</li>
 <li>GUI Memory Manager with CRUD operations</li>
+<li>One-click settings profile apply actions for all Settings panels</li>
+<li>One-click "save current settings as profile" actions for all Settings panels</li>
 <li>Structured settings profiles (<code>SettingsProfile</code>) in addition to snapshots</li>
 <li>Automated multi-source migration collectors (JSON, markdown memory logs, project schemas)</li>
+<li>In-app migration report dashboard (scan + counts + import)</li>
 </ul>
 <p>Not yet complete:</p>
 <ul>
-<li>One-click profile apply flows for every GUI settings panel</li>
-<li>In-app migration report dashboard</li>
+<li>Cross-workspace profile browsing/pinning in GUI</li>
+<li>Incremental migration history with rollback checkpoints</li>
 </ul>
 <h2 id="gui-workflow">GUI Workflow<a class="headerlink" href="#gui-workflow" title="Permanent link">&para;</a></h2>
 <p>Open the Memory Manager from the desktop app:</p>
@@ -1761,6 +1798,14 @@ annotations, datasets, and configs remain authoritative.</p>
 <li>delete requires confirmation</li>
 <li>operations refresh the result table immediately</li>
 </ul>
+<h3 id="migration-dashboard">Migration dashboard<a class="headerlink" href="#migration-dashboard" title="Permanent link">&para;</a></h3>
+<p>In the same Memory Manager dialog, open <code>Migration Dashboard</code>:</p>
+<ol>
+<li>Select a legacy source directory</li>
+<li>Click <code>Scan Sources</code> to collect and preview import candidates</li>
+<li>Review source counts and record previews</li>
+<li>Click <code>Import Scanned</code> to ingest records into the active memory backend</li>
+</ol>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Install optional memory dependencies:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[memory]&quot;</span>
@@ -1882,6 +1927,17 @@ annolid-run<span class="w"> </span>memory<span class="w"> </span>cleanup<span cl
 <li><code>SettingsSnapshot</code> for point-in-time captures</li>
 <li><code>SettingsProfile</code> for reusable typed workflow configurations</li>
 </ul>
+<p>Profile apply is available from <code>Settings</code> menu with one-click actions for:</p>
+<ul>
+<li>Advanced Parameters</li>
+<li>Optical Flow</li>
+<li>Depth</li>
+<li>SAM 3D</li>
+<li>Patch Similarity</li>
+<li>PCA Feature Map</li>
+</ul>
+<p>Profile save actions are available in the same menu for the same workflows, so
+you can save current panel state and later apply it with one click.</p>
 <p>Minimal profile example:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.adapters.settings_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">SettingsProfile</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.adapters.workspace</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkspaceMemoryAdapter</span>
