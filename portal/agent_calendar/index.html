@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1256,6 +1275,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1607,21 +1653,21 @@
 </ul>
 <h2 id="relevant-config">Relevant Config<a class="headerlink" href="#relevant-config" title="Permanent link">&para;</a></h2>
 <p>Example config block:</p>
-<pre><code class="language-json">{
-  &quot;tools&quot;: {
-    &quot;calendar&quot;: {
-      &quot;enabled&quot;: true,
-      &quot;provider&quot;: &quot;google&quot;,
-      &quot;credentialsFile&quot;: &quot;~/.annolid/agent/google_calendar_credentials.json&quot;,
-      &quot;tokenFile&quot;: &quot;~/.annolid/agent/google_calendar_token.json&quot;,
-      &quot;calendarId&quot;: &quot;primary&quot;,
-      &quot;timezone&quot;: &quot;America/New_York&quot;,
-      &quot;defaultEventDurationMinutes&quot;: 30,
-      &quot;allowInteractiveAuth&quot;: false
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;calendar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;google&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;credentialsFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/.annolid/agent/google_calendar_credentials.json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tokenFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/.annolid/agent/google_calendar_token.json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;calendarId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;primary&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;defaultEventDurationMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;allowInteractiveAuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Important fields:</p>
 <ul>
 <li><code>enabled</code>: enables Google Calendar tool registration.</li>
@@ -1645,14 +1691,14 @@
 <li>Set <code>tools.calendar.allowInteractiveAuth</code> to <code>true</code> in <code>~/.annolid/config.json</code>.</li>
 <li>Launch Annolid from an interactive terminal session:</li>
 </ol>
-<pre><code class="language-bash">annolid
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid
+</code></pre></div>
 <ol>
 <li>Open a fresh Annolid Bot session.</li>
 <li>Ask the bot to perform a calendar action, for example:</li>
 </ol>
-<pre><code class="language-text">List my next 3 Google Calendar events
-</code></pre>
+<div class="highlight"><pre><span></span><code>List my next 3 Google Calendar events
+</code></pre></div>
 <ol>
 <li>Complete the browser-based Google OAuth flow.</li>
 <li>Confirm that the token file now exists at the configured <code>tokenFile</code> path.</li>
@@ -1666,8 +1712,8 @@
 <li>Remove the stale token file at the configured <code>tokenFile</code> path.</li>
 <li>Launch Annolid from a terminal:</li>
 </ol>
-<pre><code class="language-bash">annolid
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid
+</code></pre></div>
 <ol>
 <li>Trigger a calendar action again.</li>
 <li>Complete the OAuth flow in the browser.</li>
@@ -1697,21 +1743,21 @@
 </ol>
 <h3 id="annolid-says-interactive-auth-is-disabled">Annolid says interactive auth is disabled<a class="headerlink" href="#annolid-says-interactive-auth-is-disabled" title="Permanent link">&para;</a></h3>
 <p>Set this in <code>~/.annolid/config.json</code>:</p>
-<pre><code class="language-json">{
-  &quot;tools&quot;: {
-    &quot;calendar&quot;: {
-      &quot;allowInteractiveAuth&quot;: true
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;calendar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;allowInteractiveAuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Restart Annolid after changing the config.</p>
 <h3 id="annolid-says-credentials-or-token-files-are-missing">Annolid says credentials or token files are missing<a class="headerlink" href="#annolid-says-credentials-or-token-files-are-missing" title="Permanent link">&para;</a></h3>
 <p>Verify both paths in <code>~/.annolid/config.json</code> and confirm the files exist where configured.</p>
 <h3 id="the-bot-can-list-events-but-refuses-to-create-one">The bot can list events but refuses to create one<a class="headerlink" href="#the-bot-can-list-events-but-refuses-to-create-one" title="Permanent link">&para;</a></h3>
 <p>Use a current Annolid build and restart the app after calendar-related updates. A direct prompt such as this should trigger the calendar tool:</p>
-<pre><code class="language-text">Create a Google Calendar event tomorrow at 10 AM called Agent Coding Event
-</code></pre>
+<div class="highlight"><pre><span></span><code>Create a Google Calendar event tomorrow at 10 AM called Agent Coding Event
+</code></pre></div>
 <h3 id="browser-auth-opens-but-renewal-still-fails">Browser auth opens but renewal still fails<a class="headerlink" href="#browser-auth-opens-but-renewal-still-fails" title="Permanent link">&para;</a></h3>
 <p>Typical causes:</p>
 <ul>

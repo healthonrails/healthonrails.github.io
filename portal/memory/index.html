@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/reference/">
+        <link rel="canonical" href="https://annolid.com/memory/">
       
       
-        <link rel="prev" href="../redirects/">
+        <link rel="prev" href="../agent_security/">
       
+      
+        <link rel="next" href="../sam3d/">
       
       
         
@@ -25,7 +27,7 @@
     
     
       
-        <title>References - Annolid Docs</title>
+        <title>Memory Subsystem - Annolid Docs</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reference" class="md-skip">
+        <a href="#annolid-memory" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              References
+              Memory Subsystem
             
           </span>
         </div>
@@ -435,9 +437,11 @@
   
   
   
+    
   
-    <li class="md-tabs__item">
-      <a href="../memory/" class="md-tabs__link">
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
         
   
   
@@ -530,11 +534,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../reference/" class="md-tabs__link">
         
   
   
@@ -1063,10 +1065,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1082,6 +1111,158 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#current-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retrieval-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieval Behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adapters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSONL Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Constraints
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1198,37 +1379,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    References
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
         
   
   
@@ -1244,92 +1398,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Commands
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#important-config-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Important Config Files
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-docs-pages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current Docs Pages
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-botagent-surfaces" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current Bot/Agent Surfaces
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#selected-repository-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Selected Repository Paths
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-documentation-rule" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current Documentation Rule
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1361,10 +1429,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#current-scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Commands
+        Current Scope
       
     </span>
   </a>
@@ -1372,10 +1440,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#important-config-files" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Important Config Files
+        Quick Start
       
     </span>
   </a>
@@ -1383,10 +1451,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-docs-pages" class="md-nav__link">
+  <a href="#architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current Docs Pages
+        Architecture
       
     </span>
   </a>
@@ -1394,10 +1462,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-botagent-surfaces" class="md-nav__link">
+  <a href="#data-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current Bot/Agent Surfaces
+        Data Contract
       
     </span>
   </a>
@@ -1405,10 +1473,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#selected-repository-paths" class="md-nav__link">
+  <a href="#retrieval-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selected Repository Paths
+        Retrieval Behavior
       
     </span>
   </a>
@@ -1416,10 +1484,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-documentation-rule" class="md-nav__link">
+  <a href="#cli-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current Documentation Rule
+        CLI Usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer API
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adapters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adapters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maintenance-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintenance Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jsonl-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSONL Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design Constraints
       
     </span>
   </a>
@@ -1446,83 +1580,205 @@
   
 
 
-<h1 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h1>
-<p>This page collects the current operational reference points for Annolid.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<p>Primary entry points:</p>
+<h1 id="annolid-memory">Annolid Memory<a class="headerlink" href="#annolid-memory" title="Permanent link">&para;</a></h1>
+<p>Annolid memory is an optional, local-first retrieval layer for reusable context:
+project notes, annotation conventions, workflow recipes, settings snapshots, and
+agent-facing memory.</p>
+<p>Memory is support context, not source of truth. Canonical project files,
+annotations, datasets, and configs remain authoritative.</p>
+<h2 id="current-scope">Current Scope<a class="headerlink" href="#current-scope" title="Permanent link">&para;</a></h2>
+<p>Implemented:</p>
 <ul>
-<li><code>annolid</code>: launch the GUI</li>
-<li><code>annolid-run</code>: run plugin-based training and inference workflows</li>
+<li>Layered modules in <code>annolid/domain/memory</code>, <code>annolid/services/memory</code>,
+  <code>annolid/infrastructure/memory/lancedb</code>, and <code>annolid/interfaces/memory</code></li>
+<li>LanceDB-backed storage with optional semantic retrieval</li>
+<li>Scope/category/source taxonomy</li>
+<li>Persistence helpers and interface adapters</li>
+<li><code>annolid-run memory ...</code> CLI commands (<code>stats</code>, <code>search</code>, <code>delete</code>, <code>distill</code>, <code>cleanup</code>)</li>
+<li>Maintenance scripts for export/import, migration, and re-embedding</li>
 </ul>
-<p>Common CLI discovery commands:</p>
-<div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
-annolid-run<span class="w"> </span>--help
-annolid-run<span class="w"> </span>list-models
-annolid-run<span class="w"> </span>train<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--help-model
-annolid-run<span class="w"> </span>predict<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--help-model
+<p>Not yet complete:</p>
+<ul>
+<li>Full GUI CRUD workflows</li>
+<li>Rich structured settings model beyond snapshot-style storage</li>
+<li>End-to-end automated migration from all legacy memory sources</li>
+</ul>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>Install optional memory dependencies:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[memory]&quot;</span>
 </code></pre></div>
-<p>Security-focused agent commands:</p>
-<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-security-check
-annolid-run<span class="w"> </span>agent-security-audit
-annolid-run<span class="w"> </span>agent-security-audit<span class="w"> </span>--fix
-annolid-run<span class="w"> </span>agent-secrets-audit
+<p>For local development in this repository, activate <code>.venv</code> first:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </code></pre></div>
-<p>ACP bridge command:</p>
-<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent<span class="w"> </span>acp<span class="w"> </span>bridge<span class="w"> </span>--workspace<span class="w"> </span>/path/to/repo
+<p>Enable memory via environment variables:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_ENABLED</span><span class="o">=</span><span class="nb">true</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_BACKEND</span><span class="o">=</span>lancedb
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_LANCEDB_PATH</span><span class="o">=</span>~/.annolid/memory/lancedb
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_EMBEDDING_PROVIDER</span><span class="o">=</span>jina
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_EMBEDDING_MODEL</span><span class="o">=</span>jina-embeddings-v3
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_VECTOR_WEIGHT</span><span class="o">=</span><span class="m">0</span>.65
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_BM25_WEIGHT</span><span class="o">=</span><span class="m">0</span>.35
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_RERANK_PROVIDER</span><span class="o">=</span>none
 </code></pre></div>
-<h2 id="important-config-files">Important Config Files<a class="headerlink" href="#important-config-files" title="Permanent link">&para;</a></h2>
+<p>Supported backend values today:</p>
 <ul>
-<li>LLM and Annolid Bot model settings:
-  <code>~/.annolid/llm_settings.json</code></li>
-<li>Annolid agent runtime and channel config:
-  <code>~/.annolid/config.json</code></li>
-<li>Annolid agent local private secret store:
-  <code>~/.annolid/agent_secrets.json</code></li>
-<li>Annolid agent Google Calendar credentials:
-  <code>~/.annolid/agent/google_calendar_credentials.json</code></li>
-<li>Annolid agent Google Calendar cached token:
-  <code>~/.annolid/agent/google_calendar_token.json</code></li>
-<li>Annolid agent sessions directory:
-  <code>~/.annolid/sessions/</code></li>
-<li>LabelMe/GUI-style user config:
-  <code>~/.labelmerc</code></li>
+<li><code>lancedb</code></li>
+<li><code>none</code></li>
 </ul>
-<h2 id="current-docs-pages">Current Docs Pages<a class="headerlink" href="#current-docs-pages" title="Permanent link">&para;</a></h2>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>annolid/
+  domain/memory/
+  services/memory/
+  infrastructure/memory/lancedb/
+  interfaces/memory/
+</code></pre></div>
+<p>Layer responsibilities:</p>
 <ul>
-<li><a href="../installation/">Installation</a></li>
-<li><a href="../install_with_uv/">uv Setup</a></li>
-<li><a href="../one_line_install_choices/">One-Line Installer</a></li>
-<li><a href="../workflows/">Workflows</a></li>
-<li><a href="../tutorials/">Tutorials</a></li>
-<li><a href="../mcp/">MCP</a></li>
-<li><a href="../codex_and_acp/">Codex and ACP</a></li>
-<li><a href="../agent_calendar/">Agent Calendar</a></li>
-<li><a href="../agent_secrets/">Agent Secrets</a></li>
-<li><a href="../agent_security/">Agent Security</a></li>
-<li><a href="../sam3d/">SAM 3D</a></li>
-<li><a href="../deployment/">Deployment</a></li>
+<li><code>domain</code>: backend-agnostic models, protocols, scopes, taxonomy</li>
+<li><code>services</code>: store/retrieve orchestration, context building, persistence workflows</li>
+<li><code>infrastructure</code>: LanceDB config/backend/retriever/embedder/reranker/migration</li>
+<li><code>interfaces</code>: registry, CLI, and adapters (bot/annotation/project/workflow/workspace)</li>
 </ul>
-<h2 id="current-botagent-surfaces">Current Bot/Agent Surfaces<a class="headerlink" href="#current-botagent-surfaces" title="Permanent link">&para;</a></h2>
-<p>Annolid Bot currently spans:</p>
+<h2 id="data-contract">Data Contract<a class="headerlink" href="#data-contract" title="Permanent link">&para;</a></h2>
+<p>Primary models:</p>
 <ul>
-<li>GUI chat dock in the desktop app,</li>
-<li>optional background channels such as Zulip and WhatsApp,</li>
-<li>MCP integrations,</li>
-<li>browser/web tooling when configured,</li>
-<li>automation scheduling and auxiliary services defined in the agent config.</li>
+<li><code>MemoryRecord</code>: write model for new records</li>
+<li><code>MemoryHit</code>: read model returned by list/search</li>
 </ul>
-<p>The current Zulip UI flow is part of the Annolid Bot dock and depends on the Zulip channel block in <code>~/.annolid/config.json</code>.</p>
-<h2 id="selected-repository-paths">Selected Repository Paths<a class="headerlink" href="#selected-repository-paths" title="Permanent link">&para;</a></h2>
+<p>Key fields:</p>
 <ul>
-<li>GUI code: <code>annolid/gui/</code></li>
-<li>Bot widget code: <code>annolid/gui/widgets/ai_chat_widget.py</code></li>
-<li>Agent/channel config schema: <code>annolid/core/agent/config/</code></li>
-<li>CLI plugin entry point: <code>annolid/engine/cli.py</code></li>
-<li>Tutorial notebooks: <code>docs/tutorials/</code></li>
-<li>MkDocs config: <code>mkdocs.yml</code></li>
+<li><code>text</code>: short human-readable memory statement</li>
+<li><code>scope</code>: for example <code>global</code>, <code>project:&lt;id&gt;</code>, <code>dataset:&lt;id&gt;</code>, <code>workspace:&lt;id&gt;</code></li>
+<li><code>category</code>: for example <code>project_note</code>, <code>annotation_rule</code>, <code>setting</code>, <code>workflow_recipe</code></li>
+<li><code>metadata</code>: structured references back to canonical artifacts and context</li>
 </ul>
-<h2 id="current-documentation-rule">Current Documentation Rule<a class="headerlink" href="#current-documentation-rule" title="Permanent link">&para;</a></h2>
-<p>User-facing guidance should be added to <code>docs/</code> first. Historical book content and legacy links are secondary references, not the primary source of truth.</p>
+<h2 id="retrieval-behavior">Retrieval Behavior<a class="headerlink" href="#retrieval-behavior" title="Permanent link">&para;</a></h2>
+<p>The LanceDB retriever can combine:</p>
+<ul>
+<li>vector similarity</li>
+<li>full-text retrieval (when available)</li>
+<li>recency weighting</li>
+<li>length normalization</li>
+<li>optional reranking</li>
+</ul>
+<p>Blank-query retrieval is supported for scoped context calls (for example,
+"show project memory" with no semantic query text).</p>
+<h2 id="cli-usage">CLI Usage<a class="headerlink" href="#cli-usage" title="Permanent link">&para;</a></h2>
+<p>Use memory commands through the main runner:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>memory<span class="w"> </span>stats<span class="w"> </span>--scope<span class="w"> </span>global
+annolid-run<span class="w"> </span>memory<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;segmentation conventions&quot;</span><span class="w"> </span>--top_k<span class="w"> </span><span class="m">5</span>
+annolid-run<span class="w"> </span>memory<span class="w"> </span>delete<span class="w"> </span>&lt;memory_id&gt;
+annolid-run<span class="w"> </span>memory<span class="w"> </span>distill<span class="w"> </span>project:demo<span class="w"> </span>--max_records<span class="w"> </span><span class="m">50</span>
+annolid-run<span class="w"> </span>memory<span class="w"> </span>cleanup<span class="w"> </span>workspace:default<span class="w"> </span>--older_than_days<span class="w"> </span><span class="m">30</span><span class="w"> </span>--min_importance<span class="w"> </span><span class="m">0</span>.2
+</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li><code>search</code> uses semantic retrieval when embeddings are enabled</li>
+<li><code>cleanup</code> removes low-importance/old records within a scope</li>
+<li><code>distill</code> requires summarization service availability</li>
+</ul>
+<h2 id="developer-api">Developer API<a class="headerlink" href="#developer-api" title="Permanent link">&para;</a></h2>
+<p>Store memory directly:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.domain.memory.scopes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemoryCategory</span><span class="p">,</span> <span class="n">MemoryScope</span><span class="p">,</span> <span class="n">MemorySource</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_memory_service</span>
+
+<span class="n">service</span> <span class="o">=</span> <span class="n">get_memory_service</span><span class="p">()</span>
+<span class="n">service</span><span class="o">.</span><span class="n">store_memory</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Use tail_base instead of tailroot for this dataset.&quot;</span><span class="p">,</span>
+    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">&quot;mouse-session-a&quot;</span><span class="p">),</span>
+    <span class="n">category</span><span class="o">=</span><span class="n">MemoryCategory</span><span class="o">.</span><span class="n">ANNOTATION_RULE</span><span class="p">,</span>
+    <span class="n">source</span><span class="o">=</span><span class="n">MemorySource</span><span class="o">.</span><span class="n">ANNOTATION</span><span class="p">,</span>
+    <span class="n">importance</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="s2">&quot;mouse&quot;</span><span class="p">},</span>
+<span class="p">)</span>
+</code></pre></div>
+<p>Build scoped context:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_context_service</span>
+
+<span class="n">context</span> <span class="o">=</span> <span class="n">get_context_service</span><span class="p">()</span><span class="o">.</span><span class="n">build_project_context</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="s2">&quot;demo-project&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Use persistence helpers:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.domain.memory.scopes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemoryScope</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_persistence_service</span>
+
+<span class="n">persistence</span> <span class="o">=</span> <span class="n">get_persistence_service</span><span class="p">()</span>
+<span class="n">persistence</span><span class="o">.</span><span class="n">save_settings_snapshot</span><span class="p">(</span>
+    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">workspace</span><span class="p">(</span><span class="s2">&quot;lab-a&quot;</span><span class="p">),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Known-good export setup&quot;</span><span class="p">,</span>
+    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fps&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">},</span>
+    <span class="n">context</span><span class="o">=</span><span class="s2">&quot;Infrared videos&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="adapters">Adapters<a class="headerlink" href="#adapters" title="Permanent link">&para;</a></h2>
+<p>Available interface adapters:</p>
+<ul>
+<li><code>BotMemoryAdapter</code></li>
+<li><code>AnnotationMemoryAdapter</code></li>
+<li><code>ProjectMemoryAdapter</code></li>
+<li><code>WorkflowMemoryAdapter</code></li>
+<li><code>WorkspaceMemoryAdapter</code></li>
+</ul>
+<p>Adapters isolate callers from backend-specific implementation details.</p>
+<h2 id="maintenance-operations">Maintenance Operations<a class="headerlink" href="#maintenance-operations" title="Permanent link">&para;</a></h2>
+<p>Scripts:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+python<span class="w"> </span>scripts/export_memory.py<span class="w"> </span><span class="nb">export</span><span class="w"> </span>/tmp/annolid_memory.jsonl
+python<span class="w"> </span>scripts/export_memory.py<span class="w"> </span>import<span class="w"> </span>/tmp/annolid_memory.jsonl
+python<span class="w"> </span>scripts/migrate_memory.py<span class="w"> </span>--source-dir<span class="w"> </span>/path/to/legacy/json
+python<span class="w"> </span>scripts/reembed_memory.py
+</code></pre></div>
+<p>Purpose:</p>
+<ul>
+<li><code>export_memory.py</code>: export/import JSONL memory records</li>
+<li><code>migrate_memory.py</code>: import legacy JSON records into the active backend</li>
+<li><code>reembed_memory.py</code>: regenerate vectors using current embedding settings</li>
+</ul>
+<h2 id="jsonl-format">JSONL Format<a class="headerlink" href="#jsonl-format" title="Permanent link">&para;</a></h2>
+<p>Export output is newline-delimited JSON. Each line is one record without vector
+payloads.</p>
+<p>Expected fields:</p>
+<ul>
+<li><code>id</code></li>
+<li><code>text</code></li>
+<li><code>scope</code></li>
+<li><code>category</code></li>
+<li><code>source</code></li>
+<li><code>timestamp_ms</code></li>
+<li><code>importance</code></li>
+<li><code>token_count</code></li>
+<li><code>tags</code></li>
+<li><code>metadata_json</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>vectors are omitted by design (recomputable)</li>
+<li><code>metadata_json</code> is stored as JSON text for backend compatibility</li>
+<li>import regenerates embeddings via <code>store_memory(...)</code></li>
+<li>duplicate handling follows service-layer dedupe behavior</li>
+</ul>
+<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
+<p>Run targeted memory tests:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pytest<span class="w"> </span>tests/services/test_memory_service.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/test_memory_cli.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/test_memory_cli_commands.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/test_memory_scripts.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/services/test_persistence_service.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/interfaces/test_adapters.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/interfaces/test_workspace_memory_adapter.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/memory/test_taxonomy.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/memory/lancedb/test_migration.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/memory/lancedb/test_backend.py<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>tests/memory/lancedb/test_backend_admin.py
+</code></pre></div>
+<h2 id="design-constraints">Design Constraints<a class="headerlink" href="#design-constraints" title="Permanent link">&para;</a></h2>
+<p>The subsystem is intentionally conservative:</p>
+<ul>
+<li>writes are explicit, not implicit side effects</li>
+<li>stored memory should be compact and summary-oriented</li>
+<li>canonical project artifacts remain source of truth</li>
+<li>optional dependencies must degrade gracefully when unavailable</li>
+</ul>
 
 
 

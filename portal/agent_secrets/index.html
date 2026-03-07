@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1223,6 +1242,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1550,28 +1596,28 @@
 <p>At runtime, Annolid resolves secret refs and passes normal string values to the existing agent/provider/channel code. This means current features keep working without changing how Zulip, WhatsApp, email, or provider clients consume credentials.</p>
 <h2 id="recommended-flow">Recommended Flow<a class="headerlink" href="#recommended-flow" title="Permanent link">&para;</a></h2>
 <p>For existing plaintext config:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-audit
-annolid-run agent-secrets-migrate
-annolid-run agent-secrets-migrate --apply
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-audit
+annolid-run<span class="w"> </span>agent-secrets-migrate
+annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>--apply
+</code></pre></div>
 <p>For environment-managed secrets:</p>
-<pre><code class="language-bash">export ZULIP_API_KEY=&quot;...&quot;
-annolid-run agent-secrets-set --path tools.zulip.api_key --env ZULIP_API_KEY
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ZULIP_API_KEY</span><span class="o">=</span><span class="s2">&quot;...&quot;</span>
+annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.zulip.api_key<span class="w"> </span>--env<span class="w"> </span>ZULIP_API_KEY
+</code></pre></div>
 <p>For a local private secret:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-set \
-  --path tools.zulip.api_key \
-  --local tools.zulip.api_key \
-  --value &quot;...&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--path<span class="w"> </span>tools.zulip.api_key<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--local<span class="w"> </span>tools.zulip.api_key<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--value<span class="w"> </span><span class="s2">&quot;...&quot;</span>
+</code></pre></div>
 <p>To remove a ref:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-remove --path tools.zulip.api_key
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-remove<span class="w"> </span>--path<span class="w"> </span>tools.zulip.api_key
+</code></pre></div>
 <p>To remove a local ref and also delete the stored secret value:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-remove \
-  --path tools.zulip.api_key \
-  --delete-local-value
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-remove<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--path<span class="w"> </span>tools.zulip.api_key<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--delete-local-value
+</code></pre></div>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
 <h3 id="annolid-run-agent-secrets-audit"><code>annolid-run agent-secrets-audit</code><a class="headerlink" href="#annolid-run-agent-secrets-audit" title="Permanent link">&para;</a></h3>
 <p>Audits the current agent config and reports:</p>
@@ -1585,11 +1631,11 @@ annolid-run agent-secrets-set --path tools.zulip.api_key --env ZULIP_API_KEY
 <h3 id="annolid-run-agent-secrets-migrate"><code>annolid-run agent-secrets-migrate</code><a class="headerlink" href="#annolid-run-agent-secrets-migrate" title="Permanent link">&para;</a></h3>
 <p>Finds plaintext secret fields in <code>config.json</code> and shows what would be moved into the local secret store.</p>
 <p>Dry run:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-migrate
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-migrate
+</code></pre></div>
 <p>Apply:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-migrate --apply
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>--apply
+</code></pre></div>
 <p>When applied, Annolid:</p>
 <ol>
 <li>copies plaintext secret values into <code>~/.annolid/agent_secrets.json</code>,</li>
@@ -1599,9 +1645,9 @@ annolid-run agent-secrets-set --path tools.zulip.api_key --env ZULIP_API_KEY
 <h3 id="annolid-run-agent-secrets-set"><code>annolid-run agent-secrets-set</code><a class="headerlink" href="#annolid-run-agent-secrets-set" title="Permanent link">&para;</a></h3>
 <p>Attaches a secret ref to a config path.</p>
 <p>Examples:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-set --path providers.gemini.api_key --env GEMINI_API_KEY
-annolid-run agent-secrets-set --path tools.email.password --local tools.email.password --value &quot;app-password&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>providers.gemini.api_key<span class="w"> </span>--env<span class="w"> </span>GEMINI_API_KEY
+annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.email.password<span class="w"> </span>--local<span class="w"> </span>tools.email.password<span class="w"> </span>--value<span class="w"> </span><span class="s2">&quot;app-password&quot;</span>
+</code></pre></div>
 <h3 id="annolid-run-agent-secrets-remove"><code>annolid-run agent-secrets-remove</code><a class="headerlink" href="#annolid-run-agent-secrets-remove" title="Permanent link">&para;</a></h3>
 <p>Removes a secret ref from a config path. By default this removes only the ref metadata. Use <code>--delete-local-value</code> to also delete the local stored secret value.</p>
 <h2 id="security-check">Security Check<a class="headerlink" href="#security-check" title="Permanent link">&para;</a></h2>
@@ -1613,37 +1659,37 @@ annolid-run agent-secrets-set --path tools.email.password --local tools.email.pa
 </ul>
 <h2 id="example-config">Example Config<a class="headerlink" href="#example-config" title="Permanent link">&para;</a></h2>
 <p>Environment-backed ref:</p>
-<pre><code class="language-json">{
-  &quot;tools&quot;: {
-    &quot;zulip&quot;: {
-      &quot;enabled&quot;: true,
-      &quot;serverUrl&quot;: &quot;https://zulip.example.com&quot;,
-      &quot;user&quot;: &quot;annolid-bot@example.com&quot;,
-      &quot;apiKey&quot;: &quot;&quot;
-    }
-  },
-  &quot;secrets&quot;: {
-    &quot;refs&quot;: {
-      &quot;tools.zulip.api_key&quot;: {
-        &quot;source&quot;: &quot;env&quot;,
-        &quot;name&quot;: &quot;ZULIP_API_KEY&quot;
-      }
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;zulip&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;serverUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://zulip.example.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;annolid-bot@example.com&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;apiKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;secrets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;refs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tools.zulip.api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;env&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ZULIP_API_KEY&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>Local-store-backed ref:</p>
-<pre><code class="language-json">{
-  &quot;secrets&quot;: {
-    &quot;refs&quot;: {
-      &quot;tools.zulip.api_key&quot;: {
-        &quot;source&quot;: &quot;local&quot;,
-        &quot;name&quot;: &quot;tools.zulip.api_key&quot;
-      }
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;secrets&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;refs&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;tools.zulip.api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tools.zulip.api_key&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Secret refs are additive and backward-compatible with existing config fields.</li>

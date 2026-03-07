@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../sam3d/" class="md-tabs__link">
         
   
@@ -1228,6 +1247,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sam3d/" class="md-nav__link">
         
   
@@ -1578,11 +1624,11 @@
 <hr />
 <h2 id="step-4-convert-to-yolo-format">Step 4 – Convert to YOLO Format<a class="headerlink" href="#step-4-convert-to-yolo-format" title="Permanent link">&para;</a></h2>
 <h3 id="cli-path">CLI Path<a class="headerlink" href="#cli-path" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">python -m annolid.main \
-  --labelme2yolo /path/to/labelme_dataset \
-  --val_size 0.1 \
-  --test_size 0.1
-</code></pre>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--labelme2yolo<span class="w"> </span>/path/to/labelme_dataset<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--test_size<span class="w"> </span><span class="m">0</span>.1
+</code></pre></div>
 <ul>
 <li><code>--labelme2yolo</code> points at the folder filled with LabelMe annotations.</li>
 <li>The converter walks up from that folder until it finds <code>project.annolid.json/.yaml</code>, then uses the schema’s behavior order as the class map. No extra flag required.</li>
@@ -1590,12 +1636,12 @@
 <li><code>--val_size</code> and <code>--test_size</code> are optional fractions for splitting the dataset.</li>
 </ul>
 <p>Need a fully automated run? Use the new builder:</p>
-<pre><code class="language-bash">python -m annolid.main \
-  --build_pose_dataset /path/to/labelme_dataset \
-  --pose_output /path/to/output_dataset \
-  --val_size 0.1 \
-  --test_size 0.1
-</code></pre>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--build_pose_dataset<span class="w"> </span>/path/to/labelme_dataset<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pose_output<span class="w"> </span>/path/to/output_dataset<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--test_size<span class="w"> </span><span class="m">0</span>.1
+</code></pre></div>
 <p>The builder pulls in your schema automatically, enforces class IDs, writes subject metadata companions, and drops a <code>dataset_summary.json</code> so you can review class and subject coverage without opening any files.</p>
 <h3 id="gui-path">GUI Path<a class="headerlink" href="#gui-path" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1608,12 +1654,12 @@
 <p>Both paths emit the same dataset layout.</p>
 <hr />
 <h2 id="step-5-inspect-the-output">Step 5 – Inspect the Output<a class="headerlink" href="#step-5-inspect-the-output" title="Permanent link">&para;</a></h2>
-<pre><code class="language-text">labelme_dataset/
+<div class="highlight"><pre><span></span><code>labelme_dataset/
 └── YOLO_dataset/
     ├── images/{train,val,test}/
     ├── labels/{train,val,test}/
     └── data.yaml
-</code></pre>
+</code></pre></div>
 <p>Validate the contents:</p>
 <ol>
 <li><code>labels/train/*.txt</code>: first number is the class ID defined by the schema, followed by YOLO bbox values and pose keypoints (x, y, visibility).</li>

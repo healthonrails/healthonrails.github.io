@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1184,6 +1203,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1456,32 +1502,32 @@
 <li><code>uv</code> installed from <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a></li>
 </ul>
 <h2 id="1-clone-the-repository">1. Clone the Repository<a class="headerlink" href="#1-clone-the-repository" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">git clone --recurse-submodules https://github.com/healthonrails/annolid.git
-cd annolid
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
+<span class="nb">cd</span><span class="w"> </span>annolid
+</code></pre></div>
 <h2 id="2-create-venv">2. Create <code>.venv</code><a class="headerlink" href="#2-create-venv" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">uv venv .venv --python 3.11
-source .venv/bin/activate
-</code></pre>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</code></pre></div>
 <p>On Windows PowerShell:</p>
-<pre><code class="language-powershell">uv venv .venv --python 3.11
-.venv\Scripts\Activate.ps1
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">uv</span> <span class="n">venv</span> <span class="p">.</span><span class="n">venv</span> <span class="p">-</span><span class="n">-python</span> <span class="n">3</span><span class="p">.</span><span class="n">11</span>
+<span class="p">.</span><span class="n">venv</span><span class="p">\</span><span class="n">Scripts</span><span class="p">\</span><span class="n">Activate</span><span class="p">.</span><span class="n">ps1</span>
+</code></pre></div>
 <h2 id="3-install-annolid">3. Install Annolid<a class="headerlink" href="#3-install-annolid" title="Permanent link">&para;</a></h2>
 <p>GUI-capable editable install:</p>
-<pre><code class="language-bash">uv pip install -e &quot;.[gui]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+</code></pre></div>
 <p>If you also need Annolid Bot integrations:</p>
-<pre><code class="language-bash">uv pip install -e &quot;.[gui,annolid_bot]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,annolid_bot]&quot;</span>
+</code></pre></div>
 <h2 id="4-verify">4. Verify<a class="headerlink" href="#4-verify" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">annolid --help
-annolid-run --help
-annolid-run list-models
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
+annolid-run<span class="w"> </span>--help
+annolid-run<span class="w"> </span>list-models
+</code></pre></div>
 <h2 id="5-launch">5. Launch<a class="headerlink" href="#5-launch" title="Permanent link">&para;</a></h2>
-<pre><code class="language-bash">annolid
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid
+</code></pre></div>
 <h2 id="notes-for-current-codebase">Notes for Current Codebase<a class="headerlink" href="#notes-for-current-codebase" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The current terminal command is <code>annolid-run</code>, not older <code>annolid-train</code> or <code>annolid-track</code> commands.</li>

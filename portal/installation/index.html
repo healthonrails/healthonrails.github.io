@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1201,6 +1220,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1493,44 +1539,44 @@
 <ul>
 <li>macOS and Linux:</li>
 </ul>
-<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | bash
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
 <ul>
 <li>Windows PowerShell:</li>
 </ul>
-<pre><code class="language-powershell">irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1 | iex
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">healthonrails</span><span class="p">/</span><span class="n">annolid</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+</code></pre></div>
 <p>See <a href="../one_line_install_choices/">One-Line Installer</a> for flags, extras, CPU/GPU choices, and non-interactive installs.</p>
 <h3 id="local-venv-with-uv">Local <code>.venv</code> with <code>uv</code><a class="headerlink" href="#local-venv-with-uv" title="Permanent link">&para;</a></h3>
 <p>For development or reproducible local work, use <code>uv</code> and a repository-local <code>.venv</code>:</p>
-<pre><code class="language-bash">git clone --recurse-submodules https://github.com/healthonrails/annolid.git
-cd annolid
-uv venv .venv --python 3.11
-source .venv/bin/activate
-uv pip install -e &quot;.[gui]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
+<span class="nb">cd</span><span class="w"> </span>annolid
+uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+</code></pre></div>
 <p>The dedicated guide is <a href="../install_with_uv/">uv Setup</a>.</p>
 <h3 id="pip-venv">pip / venv<a class="headerlink" href="#pip-venv" title="Permanent link">&para;</a></h3>
 <p>If you prefer standard Python tooling:</p>
-<pre><code class="language-bash">python -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-pip install &quot;annolid[gui]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui]&quot;</span>
+</code></pre></div>
 <p>To install from source:</p>
-<pre><code class="language-bash">git clone --recurse-submodules https://github.com/healthonrails/annolid.git
-cd annolid
-pip install -e &quot;.[gui]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
+<span class="nb">cd</span><span class="w"> </span>annolid
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+</code></pre></div>
 <h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
 <p>Conda still works well when you want environment management plus FFmpeg and native libraries from conda-forge:</p>
-<pre><code class="language-bash">conda create -n annolid-env python=3.11
-conda activate annolid-env
-conda install -c conda-forge ffmpeg git
-git clone --recurse-submodules https://github.com/healthonrails/annolid.git
-cd annolid
-pip install -e &quot;.[gui]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>annolid-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.11
+conda<span class="w"> </span>activate<span class="w"> </span>annolid-env
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ffmpeg<span class="w"> </span>git
+git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
+<span class="nb">cd</span><span class="w"> </span>annolid
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+</code></pre></div>
 <h2 id="optional-extras">Optional Extras<a class="headerlink" href="#optional-extras" title="Permanent link">&para;</a></h2>
 <p>Useful extras currently defined in <code>pyproject.toml</code> include:</p>
 <ul>
@@ -1544,19 +1590,19 @@ pip install -e &quot;.[gui]&quot;
 <li><code>annolid_bot</code>: Annolid Bot integrations such as MCP, Playwright, WhatsApp bridge support, and Google Calendar dependencies</li>
 </ul>
 <p>Example:</p>
-<pre><code class="language-bash">pip install -e &quot;.[gui,annolid_bot,text_to_speech]&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,annolid_bot,text_to_speech]&quot;</span>
+</code></pre></div>
 <h2 id="verify-the-install">Verify the Install<a class="headerlink" href="#verify-the-install" title="Permanent link">&para;</a></h2>
 <p>Run:</p>
-<pre><code class="language-bash">annolid --help
-annolid-run --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
+annolid-run<span class="w"> </span>--help
+</code></pre></div>
 <p>Launch the GUI:</p>
-<pre><code class="language-bash">annolid
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid
+</code></pre></div>
 <p>List available model plugins:</p>
-<pre><code class="language-bash">annolid-run list-models
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>list-models
+</code></pre></div>
 <h2 id="common-post-install-notes">Common Post-install Notes<a class="headerlink" href="#common-post-install-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Install FFmpeg if video import/export or codec support is incomplete.</li>

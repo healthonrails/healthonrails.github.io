@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1173,6 +1192,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1465,15 +1511,15 @@
 <h2 id="3-cli-model-workflow">3. CLI Model Workflow<a class="headerlink" href="#3-cli-model-workflow" title="Permanent link">&para;</a></h2>
 <p>The current terminal entry point is <code>annolid-run</code>.</p>
 <p>Useful commands:</p>
-<pre><code class="language-bash">annolid-run --help
-annolid-run list-models
-annolid-run train &lt;model&gt; --help-model
-annolid-run predict &lt;model&gt; --help-model
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>--help
+annolid-run<span class="w"> </span>list-models
+annolid-run<span class="w"> </span>train<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--help-model
+annolid-run<span class="w"> </span>predict<span class="w"> </span>&lt;model&gt;<span class="w"> </span>--help-model
+</code></pre></div>
 <p>Annolid supports plugin-oriented train/predict flows for multiple backends. Shared YAML run-config templates live under <code>annolid/configs/runs/</code>.</p>
 <p>Example:</p>
-<pre><code class="language-bash">annolid-run train dino_kpseg --run-config annolid/configs/runs/dino_kpseg_train.yaml
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>train<span class="w"> </span>dino_kpseg<span class="w"> </span>--run-config<span class="w"> </span>annolid/configs/runs/dino_kpseg_train.yaml
+</code></pre></div>
 <h2 id="4-behavior-analysis-workflow">4. Behavior Analysis Workflow<a class="headerlink" href="#4-behavior-analysis-workflow" title="Permanent link">&para;</a></h2>
 <p>For behavior-centric projects, a typical path is:</p>
 <ol>
@@ -1483,11 +1529,11 @@ annolid-run predict &lt;model&gt; --help-model
 <li>summarize or post-process results with the CLI utilities.</li>
 </ol>
 <p>Example time-budget command:</p>
-<pre><code class="language-bash">python -m annolid.behavior.time_budget exported_events.csv \
-    --schema project.annolid.json \
-    --bin-size 60 \
-    -o time_budget.csv
-</code></pre>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>exported_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-o<span class="w"> </span>time_budget.csv
+</code></pre></div>
 <h2 id="5-depth-workflow">5. Depth Workflow<a class="headerlink" href="#5-depth-workflow" title="Permanent link">&para;</a></h2>
 <p>The current GUI includes Video Depth Anything integration.</p>
 <p>Use:</p>

@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://annolid.com/sam3d/">
       
       
-        <link rel="prev" href="../agent_security/">
+        <link rel="prev" href="../memory/">
       
       
         <link rel="next" href="../deployment/">
@@ -427,6 +427,25 @@
     
   
   Agent Security
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
 
       </a>
     </li>
@@ -1046,6 +1065,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -1416,12 +1462,12 @@
 </ul>
 <h2 id="typical-setup">Typical Setup<a class="headerlink" href="#typical-setup" title="Permanent link">&para;</a></h2>
 <p>Create a dedicated environment for upstream SAM 3D dependencies:</p>
-<pre><code class="language-bash">conda create -n sam3d-env python=3.10
-conda activate sam3d-env
-git clone https://github.com/facebookresearch/sam-3d-objects.git
-cd sam-3d-objects
-pip install -e .
-</code></pre>
+<div class="highlight"><pre><span></span><code>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>sam3d-env<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+conda<span class="w"> </span>activate<span class="w"> </span>sam3d-env
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/facebookresearch/sam-3d-objects.git
+<span class="nb">cd</span><span class="w"> </span>sam-3d-objects
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre></div>
 <p>Then record:</p>
 <ul>
 <li>the SAM 3D repository path</li>
@@ -1429,16 +1475,16 @@ pip install -e .
 </ul>
 <h2 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h2>
 <p>The current integration supports values such as:</p>
-<pre><code class="language-yaml">sam3d:
-  repo_path: /path/to/sam-3d-objects
-  checkpoints_dir: /path/to/sam-3d-objects/checkpoints
-  checkpoint_tag: hf
-  python_executable: /path/to/sam3d-env/bin/python
-  output_dir: /path/to/sam3d_outputs
-  seed: 42
-  compile: false
-  timeout_s: 600
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nt">sam3d</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">repo_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/sam-3d-objects</span>
+<span class="w">  </span><span class="nt">checkpoints_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/sam-3d-objects/checkpoints</span>
+<span class="w">  </span><span class="nt">checkpoint_tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hf</span>
+<span class="w">  </span><span class="nt">python_executable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/sam3d-env/bin/python</span>
+<span class="w">  </span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/sam3d_outputs</span>
+<span class="w">  </span><span class="nt">seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
+<span class="w">  </span><span class="nt">compile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">timeout_s</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">600</span>
+</code></pre></div>
 <p>Environment-variable fallbacks:</p>
 <ul>
 <li><code>SAM3D_HOME</code></li>

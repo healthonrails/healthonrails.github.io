@@ -16,7 +16,7 @@
         <link rel="prev" href="../agent_secrets/">
       
       
-        <link rel="next" href="../sam3d/">
+        <link rel="next" href="../memory/">
       
       
         
@@ -429,6 +429,25 @@
     
   
   Agent Security
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
 
       </a>
     </li>
@@ -1295,6 +1314,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1673,15 +1719,15 @@
 <p>Use this page together with <a href="../agent_secrets/">Agent Secrets</a> when hardening a local or shared Annolid agent deployment.</p>
 <h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
 <p>Primary security commands:</p>
-<pre><code class="language-bash">annolid-run agent-security-check
-annolid-run agent-security-audit
-annolid-run agent-security-audit --fix
-annolid-run agent-secrets-audit
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-security-check
+annolid-run<span class="w"> </span>agent-security-audit
+annolid-run<span class="w"> </span>agent-security-audit<span class="w"> </span>--fix
+annolid-run<span class="w"> </span>agent-secrets-audit
+</code></pre></div>
 <p>Operator-style aliases are also supported:</p>
-<pre><code class="language-bash">annolid-run agent security audit
-annolid-run agent security audit --fix
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent<span class="w"> </span>security<span class="w"> </span>audit
+annolid-run<span class="w"> </span>agent<span class="w"> </span>security<span class="w"> </span>audit<span class="w"> </span>--fix
+</code></pre></div>
 <h2 id="what-each-command-does">What Each Command Does<a class="headerlink" href="#what-each-command-does" title="Permanent link">&para;</a></h2>
 <h3 id="annolid-run-agent-security-check"><code>annolid-run agent-security-check</code><a class="headerlink" href="#annolid-run-agent-security-check" title="Permanent link">&para;</a></h3>
 <p>Runs a focused configuration hygiene check. It reports:</p>
@@ -1725,12 +1771,12 @@ annolid-run agent security audit --fix
 <h3 id="plaintext-secrets">Plaintext Secrets<a class="headerlink" href="#plaintext-secrets" title="Permanent link">&para;</a></h3>
 <p>The audit reports plaintext secrets still stored in <code>~/.annolid/config.json</code>.</p>
 <p>Recommended action:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-migrate
-annolid-run agent-secrets-migrate --apply
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-migrate
+annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>--apply
+</code></pre></div>
 <p>Or attach explicit refs:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-set --path tools.zulip.api_key --env ZULIP_API_KEY
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.zulip.api_key<span class="w"> </span>--env<span class="w"> </span>ZULIP_API_KEY
+</code></pre></div>
 <h3 id="unresolved-secret-refs">Unresolved Secret Refs<a class="headerlink" href="#unresolved-secret-refs" title="Permanent link">&para;</a></h3>
 <p>If a secret ref exists but its environment variable or local-store value is missing, the audit reports it as unresolved.</p>
 <p>Recommended action:</p>
@@ -1806,17 +1852,17 @@ annolid-run agent-secrets-migrate --apply
 <p><code>annolid-run agent-security-audit --fix</code> can repair these modes when the files are writable by the current user.</p>
 <h2 id="recommended-hardening-flow">Recommended Hardening Flow<a class="headerlink" href="#recommended-hardening-flow" title="Permanent link">&para;</a></h2>
 <p>For a local but security-conscious setup:</p>
-<pre><code class="language-bash">annolid-run agent-secrets-audit
-annolid-run agent-secrets-migrate --apply
-annolid-run agent-security-check
-annolid-run agent-security-audit
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-audit
+annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>--apply
+annolid-run<span class="w"> </span>agent-security-check
+annolid-run<span class="w"> </span>agent-security-audit
+</code></pre></div>
 <p>If the audit reports only permission issues:</p>
-<pre><code class="language-bash">annolid-run agent-security-audit --fix
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-security-audit<span class="w"> </span>--fix
+</code></pre></div>
 <p>Then re-run:</p>
-<pre><code class="language-bash">annolid-run agent-security-audit
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-security-audit
+</code></pre></div>
 <h2 id="example-operator-review">Example Operator Review<a class="headerlink" href="#example-operator-review" title="Permanent link">&para;</a></h2>
 <p>Typical findings worth fixing before enabling shared messaging:</p>
 <ul>

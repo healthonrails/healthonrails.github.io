@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1162,6 +1181,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1409,21 +1455,21 @@
 <p><code>~/.annolid/agent/config.json</code></p>
 <p>The schema currently stores MCP servers under the agent tools block as <code>mcpServers</code> / <code>mcp_servers</code>.</p>
 <h2 id="minimal-example">Minimal Example<a class="headerlink" href="#minimal-example" title="Permanent link">&para;</a></h2>
-<pre><code class="language-json">{
-  &quot;tools&quot;: {
-    &quot;mcpServers&quot;: {
-      &quot;filesystem&quot;: {
-        &quot;command&quot;: &quot;npx&quot;,
-        &quot;args&quot;: [
-          &quot;-y&quot;,
-          &quot;@modelcontextprotocol/server-filesystem&quot;,
-          &quot;/path/to/allowed/directory&quot;
-        ]
-      }
-    }
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;filesystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;-y&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;@modelcontextprotocol/server-filesystem&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;/path/to/allowed/directory&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="supported-shape">Supported Shape<a class="headerlink" href="#supported-shape" title="Permanent link">&para;</a></h2>
 <p>Each server entry can define:</p>
 <ul>

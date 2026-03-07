@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1268,6 +1287,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1619,11 +1665,11 @@
 <h2 id="default-one-liner-most-users">Default one-liner (most users)<a class="headerlink" href="#default-one-liner-most-users" title="Permanent link">&para;</a></h2>
 <p>Use this first unless you have a specific requirement.</p>
 <h3 id="macos-linux">macOS / Linux<a class="headerlink" href="#macos-linux" title="Permanent link">&para;</a></h3>
-<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | bash
-</code></pre>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
 <h3 id="windows-powershell">Windows (PowerShell)<a class="headerlink" href="#windows-powershell" title="Permanent link">&para;</a></h3>
-<pre><code class="language-powershell">irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1 | iex
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">healthonrails</span><span class="p">/</span><span class="n">annolid</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="p">|</span> <span class="nb">iex</span>
+</code></pre></div>
 <p>What the installer does:</p>
 <ul>
 <li>Clones Annolid.</li>
@@ -1692,18 +1738,18 @@
 <li><code>--help</code></li>
 </ul>
 <p>Examples:</p>
-<pre><code class="language-bash"># Non-interactive CPU-only install to a custom directory
-curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | \
-  bash -s -- --install-dir ~/tools/annolid --no-gpu --no-interactive
+<div class="highlight"><pre><span></span><code><span class="c1"># Non-interactive CPU-only install to a custom directory</span>
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--install-dir<span class="w"> </span>~/tools/annolid<span class="w"> </span>--no-gpu<span class="w"> </span>--no-interactive
 
-# Use Conda instead of venv
-curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | \
-  bash -s -- --use-conda
+<span class="c1"># Use Conda instead of venv</span>
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--use-conda
 
-# Install with optional features
-curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh | \
-  bash -s -- --extras sam3,image_editing,text_to_speech
-</code></pre>
+<span class="c1"># Install with optional features</span>
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--extras<span class="w"> </span>sam3,image_editing,text_to_speech
+</code></pre></div>
 <h2 id="windows-options-in-detail">Windows options in detail<a class="headerlink" href="#windows-options-in-detail" title="Permanent link">&para;</a></h2>
 <p><code>install.ps1</code> supports:</p>
 <ul>
@@ -1715,15 +1761,15 @@ curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.s
 <li><code>-Help</code></li>
 </ul>
 <p>For extra options, run:</p>
-<pre><code class="language-powershell">Get-Help .\install.ps1 -Detailed
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">Get-Help</span> <span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Detailed</span>
+</code></pre></div>
 <p>Examples:</p>
-<pre><code class="language-powershell"># Run installer from local script with explicit options
-.\install.ps1 -InstallDir C:\annolid -NoGpu -NoInteractive
+<div class="highlight"><pre><span></span><code><span class="c"># Run installer from local script with explicit options</span>
+<span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-InstallDir</span> <span class="n">C</span><span class="p">:\</span><span class="n">annolid</span> <span class="n">-NoGpu</span> <span class="n">-NoInteractive</span>
 
-# Install optional features
-.\install.ps1 -Extras sam3,image_editing,text_to_speech
-</code></pre>
+<span class="c"># Install optional features</span>
+<span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Extras</span> <span class="n">sam3</span><span class="p">,</span><span class="n">image_editing</span><span class="p">,</span><span class="n">text_to_speech</span>
+</code></pre></div>
 <h2 id="optional-extras-extras-extras">Optional extras (<code>--extras</code> / <code>-Extras</code>)<a class="headerlink" href="#optional-extras-extras-extras" title="Permanent link">&para;</a></h2>
 <p><code>gui</code> is installed by default by the one-line installers, so <code>annolid</code> launches without additional flags.</p>
 <p>Current supported extras:</p>
@@ -1781,8 +1827,8 @@ curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.s
 <li>If you use Annolid Bot integrations, add <code>annolid_bot</code>.</li>
 </ul>
 <p>Use comma-separated values with no spaces, for example:</p>
-<pre><code class="language-bash">--extras sam3,text_to_speech
-</code></pre>
+<div class="highlight"><pre><span></span><code>--extras<span class="w"> </span>sam3,text_to_speech
+</code></pre></div>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stable workstation install:
@@ -1834,11 +1880,11 @@ curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.s
 </ul>
 <h2 id="verify-installation">Verify installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h2>
 <p>After install:</p>
-<pre><code class="language-bash">annolid --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
+</code></pre></div>
 <p>Launch GUI:</p>
-<pre><code class="language-bash">annolid
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid
+</code></pre></div>
 <p>If <code>annolid</code> is not found, activate the environment printed by the installer and retry.</p>
 <h2 id="security-note">Security note<a class="headerlink" href="#security-note" title="Permanent link">&para;</a></h2>
 <p>Piping scripts from the internet is convenient but trust-based. For stricter security:</p>

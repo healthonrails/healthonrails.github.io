@@ -441,6 +441,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../memory/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Memory Subsystem
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../sam3d/" class="md-tabs__link">
         
   
@@ -1307,6 +1326,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1743,9 +1789,9 @@
 <li><code>websockets</code></li>
 </ul>
 <p>Example install inside the project environment:</p>
-<pre><code class="language-bash">source .venv/bin/activate
-pip install oauth-cli-kit httpx websockets
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span class="w"> </span>httpx<span class="w"> </span>websockets
+</code></pre></div>
 <h3 id="2-codex_cli-local-provider">2. <code>codex_cli</code> Local Provider<a class="headerlink" href="#2-codex_cli-local-provider" title="Permanent link">&para;</a></h3>
 <p>This mode uses the local <code>codex</code> executable instead of Annolid’s cloud provider stack.</p>
 <p>Current behavior:</p>
@@ -1761,8 +1807,8 @@ pip install oauth-cli-kit httpx websockets
 <li><code>codex</code> must be available on <code>PATH</code></li>
 </ul>
 <p>Check it with:</p>
-<pre><code class="language-bash">codex --help
-</code></pre>
+<div class="highlight"><pre><span></span><code>codex<span class="w"> </span>--help
+</code></pre></div>
 <h2 id="transport-behavior-for-openai_codex">Transport Behavior for <code>openai_codex</code><a class="headerlink" href="#transport-behavior-for-openai_codex" title="Permanent link">&para;</a></h2>
 <p>Annolid’s <code>openai_codex</code> provider now supports the same transport model users expect from OpenClaw-style Codex integration:</p>
 <ul>
@@ -1777,15 +1823,15 @@ pip install oauth-cli-kit httpx websockets
 <li><code>auto</code> gives the best default for most users.</li>
 </ul>
 <p>Advanced users can set this in <code>~/.annolid/llm_settings.json</code>:</p>
-<pre><code class="language-json">{
-  &quot;provider&quot;: &quot;openai_codex&quot;,
-  &quot;openai_codex&quot;: {
-    &quot;base_url&quot;: &quot;https://chatgpt.com/backend-api/codex/responses&quot;,
-    &quot;transport&quot;: &quot;auto&quot;,
-    &quot;preferred_models&quot;: [&quot;openai-codex/gpt-5.4&quot;]
-  }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;openai_codex&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;openai_codex&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;base_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://chatgpt.com/backend-api/codex/responses&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;transport&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;preferred_models&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;openai-codex/gpt-5.4&quot;</span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
 <p>If the websocket attempt fails in <code>auto</code> mode, Annolid falls back to SSE automatically.</p>
 <h2 id="long-lived-acp-sessions">Long-Lived ACP Sessions<a class="headerlink" href="#long-lived-acp-sessions" title="Permanent link">&para;</a></h2>
 <p>ACP stands for Agent Client Protocol. In Annolid, ACP is the session-oriented runtime for external coding harness workflows.</p>
@@ -1816,8 +1862,8 @@ pip install oauth-cli-kit httpx websockets
 <h2 id="stdio-acp-bridge-for-ides">Stdio ACP Bridge for IDEs<a class="headerlink" href="#stdio-acp-bridge-for-ides" title="Permanent link">&para;</a></h2>
 <p>Annolid now exposes a formal stdio ACP bridge.</p>
 <p>Run it with:</p>
-<pre><code class="language-bash">annolid-run agent acp bridge --workspace /path/to/repo
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent<span class="w"> </span>acp<span class="w"> </span>bridge<span class="w"> </span>--workspace<span class="w"> </span>/path/to/repo
+</code></pre></div>
 <p>This starts a stdio server that external tools can spawn and communicate with.</p>
 <p>Current ACP-native methods supported:</p>
 <ul>
@@ -1848,8 +1894,8 @@ pip install oauth-cli-kit httpx websockets
 <p>Annolid also bounds idle ACP client sessions so a long-running IDE process does not grow an unbounded in-memory session map.</p>
 <h2 id="example-ide-launch-pattern">Example IDE Launch Pattern<a class="headerlink" href="#example-ide-launch-pattern" title="Permanent link">&para;</a></h2>
 <p>If your editor supports custom stdio agent servers, the command usually looks like:</p>
-<pre><code class="language-bash">annolid-run agent acp bridge --workspace /absolute/path/to/repo
-</code></pre>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent<span class="w"> </span>acp<span class="w"> </span>bridge<span class="w"> </span>--workspace<span class="w"> </span>/absolute/path/to/repo
+</code></pre></div>
 <p>The editor then sends ACP messages over stdin/stdout.</p>
 <h2 id="recommended-setup-paths">Recommended Setup Paths<a class="headerlink" href="#recommended-setup-paths" title="Permanent link">&para;</a></h2>
 <h3 id="cloud-codex-as-main-model">Cloud Codex as Main Model<a class="headerlink" href="#cloud-codex-as-main-model" title="Permanent link">&para;</a></h3>
