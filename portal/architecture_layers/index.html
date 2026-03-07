@@ -1230,6 +1230,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#next-migration-tranche" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next migration tranche
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1290,11 +1301,43 @@
 <li>Used by GUI frame-similarity/embedding search worker.</li>
 <li>Shared service in place: <code>annolid.services.tracking.*</code></li>
 <li>Used by GUI and background tracking setup/execution paths (<code>prediction_execution_mixin</code>, <code>TrackAllWorker</code>, <code>jobs/tracking_worker.py</code>).</li>
+<li>Shared service in place: <code>annolid.services.agent_admin.*</code></li>
+<li>Used by the CLI agent security/secret-management commands instead of direct <code>core.agent</code> imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.agent_workspace.*</code></li>
+<li>Used by the CLI agent skills/feedback/memory commands instead of direct <code>core.agent</code> imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.agent_eval.*</code></li>
+<li>Used by the CLI agent eval commands instead of direct <code>core.agent.eval.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.agent_update.*</code></li>
+<li>Used by the CLI update commands instead of direct <code>core.agent.update_manager.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.agent_bridge.run_agent_acp_bridge</code></li>
+<li>Used by the CLI ACP bridge command instead of direct <code>core.agent.acp_stdio_bridge</code> imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.agent_cron.*</code></li>
+<li>Used by the CLI agent onboard/status/cron commands instead of direct <code>core.agent.cron</code>, workspace bootstrap, and utils imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.agent_tooling.validate_agent_tools</code></li>
+<li>Used by the CLI agent tool validation command instead of direct <code>core.agent.tools.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.chat_runtime.*</code></li>
+<li>Used by the GUI chat backend for workspace/config root resolution instead of embedding that bootstrap logic directly in <code>annolid/gui/widgets/ai_chat_backend.py</code>.</li>
+<li>Shared service in place: <code>annolid.services.chat_provider_runtime.*</code></li>
+<li>Used by the GUI chat backend for provider kind resolution, fast-mode execution, provider fallback, and direct provider chat calls instead of importing <code>core.agent.gui_backend.provider_*</code> modules directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_session.*</code></li>
+<li>Used by the GUI chat backend for session-store bootstrap, outbound chat event emission, history loading, and turn persistence instead of importing <code>core.agent.session_manager</code> and <code>core.agent.gui_backend.session_io</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_widget_bridge.*</code></li>
+<li>Used by the GUI chat backend for widget slot invocation, GUI context payload assembly, direct-command dispatch, and sync-awaitable bridging instead of importing <code>core.agent.gui_backend.widget_bridge</code>, <code>direct_commands</code>, and the direct-command router directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_web_pdf.*</code></li>
+<li>Used by the GUI chat backend for web view actions, PDF actions, and URL/PDF opener orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_web_pdf</code> and <code>tool_handlers_openers</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_video.*</code></li>
+<li>Used by the GUI chat backend for video open/resolve flow and segment-track/behavior-label workflow orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_video</code> and <code>tool_handlers_video_workflow</code> directly.</li>
 <li>Stable architecture wrappers in place:</li>
 <li><code>annolid.domain.*</code> re-exports canonical schema/event/track/keypoint/timeline/dataset types.</li>
 <li><code>annolid.services.*</code> exposes inference/training/export/search/tracking/agent APIs.</li>
 <li><code>annolid.interfaces.*</code> exposes GUI/CLI/background/bot entry points.</li>
 <li><code>annolid.infrastructure.*</code> exposes filesystem/persistence/runtime/download/API adapters.</li>
+</ul>
+<h2 id="next-migration-tranche">Next migration tranche<a class="headerlink" href="#next-migration-tranche" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Continue decomposing <code>annolid/gui/widgets/ai_chat_backend.py</code>, with the remaining realtime, shape/action, and citation/arXiv tool-handler clusters as the next service seams.</li>
+<li>Keep moving GUI modules toward <code>annolid.domain</code>, <code>annolid.services</code>, and <code>annolid.infrastructure</code> wrappers instead of direct <code>core</code> or <code>utils</code> imports.</li>
+<li>Keep <code>annolid/interfaces.*</code> as the public entry surfaces; avoid importing <code>annolid.interfaces</code> from the concrete GUI/CLI implementation modules themselves to prevent cycles.</li>
 </ul>
 
 
