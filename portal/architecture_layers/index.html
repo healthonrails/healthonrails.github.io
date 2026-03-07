@@ -1353,6 +1353,13 @@
 <li><code>annolid/gui/widgets/llm_settings_dialog.py</code></li>
 <li><code>annolid/gui/widgets/web_viewer.py</code></li>
 <li>These now consume <code>annolid.services</code> and <code>annolid.infrastructure</code> wrappers rather than <code>annolid.core.agent</code> directly.</li>
+<li>GUI feature setup extraction in place:</li>
+<li><code>annolid/gui/features/video.py</code></li>
+<li><code>annolid/gui/features/viewers.py</code></li>
+<li><code>annolid/gui/features/annotation.py</code></li>
+<li><code>annolid/gui/features/search.py</code></li>
+<li><code>annolid/gui/features/timeline.py</code></li>
+<li><code>AnnolidWindow</code> now composes these through <code>GuiFeatureDeps</code> and records typed feature state objects in <code>self.feature_states</code>.</li>
 <li>Stable architecture wrappers in place:</li>
 <li><code>annolid.domain.*</code> re-exports canonical schema/event/track/keypoint/timeline/dataset types.</li>
 <li><code>annolid.services.*</code> exposes inference/training/export/search/tracking/agent APIs.</li>
