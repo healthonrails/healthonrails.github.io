@@ -1327,6 +1327,32 @@
 <li>Used by the GUI chat backend for web view actions, PDF actions, and URL/PDF opener orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_web_pdf</code> and <code>tool_handlers_openers</code> directly.</li>
 <li>Shared service in place: <code>annolid.services.chat_video.*</code></li>
 <li>Used by the GUI chat backend for video open/resolve flow and segment-track/behavior-label workflow orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_video</code> and <code>tool_handlers_video_workflow</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_controls.*</code></li>
+<li>Used by the GUI chat backend for chat control actions such as prompt/model/frame updates, AI text segmentation, and next-frame tracking instead of importing <code>core.agent.gui_backend.tool_handlers_chat_controls</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_arxiv.*</code></li>
+<li>Used by the GUI chat backend for arXiv search and local PDF discovery instead of importing <code>core.agent.gui_backend.tool_handlers_arxiv</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_citations.*</code></li>
+<li>Used by the GUI chat backend for citation extraction, normalization, listing, and persistence orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_citations</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_filesystem.*</code></li>
+<li>Used by the GUI chat backend for filesystem rename actions instead of importing <code>core.agent.gui_backend.tool_handlers_filesystem</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_realtime.*</code></li>
+<li>Used by the GUI chat backend for realtime stream/log actions instead of importing <code>core.agent.gui_backend.tool_handlers_realtime</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_shapes.*</code></li>
+<li>Used by the GUI chat backend for in-canvas shape selection/listing/edit actions instead of importing <code>core.agent.gui_backend.tool_handlers_shapes</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_shape_files.*</code></li>
+<li>Used by the GUI chat backend for shape-file listing/relabel/delete actions instead of importing <code>core.agent.gui_backend.tool_handlers_shape_files</code> directly.</li>
+<li>Shared service in place: <code>annolid.services.chat_agent_core.*</code>, <code>chat_backend_support.*</code>, <code>chat_devtools.*</code>, and <code>chat_manager_runtime.*</code></li>
+<li>Used by the GUI chat backend, chat widget, and chat manager for provider state, tool registry/policy, GUI backend helper logic, dev-tool execution, and background messaging/channel runtime instead of importing <code>core.agent</code> modules directly from GUI code.</li>
+<li>Infrastructure wrappers in place: <code>annolid.infrastructure.agent_config.*</code> and <code>agent_workspace.*</code></li>
+<li>Used by the chat backend, chat widget, settings dialog, web viewer, and chat manager for config/workspace access instead of importing <code>core.agent.config</code> and <code>core.agent.utils</code> directly from GUI code.</li>
+<li>GUI chat surfaces migrated:</li>
+<li><code>annolid/gui/widgets/ai_chat_backend.py</code></li>
+<li><code>annolid/gui/widgets/ai_chat_widget.py</code></li>
+<li><code>annolid/gui/widgets/ai_chat_manager.py</code></li>
+<li><code>annolid/gui/widgets/ai_chat_session_dialog.py</code></li>
+<li><code>annolid/gui/widgets/llm_settings_dialog.py</code></li>
+<li><code>annolid/gui/widgets/web_viewer.py</code></li>
+<li>These now consume <code>annolid.services</code> and <code>annolid.infrastructure</code> wrappers rather than <code>annolid.core.agent</code> directly.</li>
 <li>Stable architecture wrappers in place:</li>
 <li><code>annolid.domain.*</code> re-exports canonical schema/event/track/keypoint/timeline/dataset types.</li>
 <li><code>annolid.services.*</code> exposes inference/training/export/search/tracking/agent APIs.</li>
@@ -1335,8 +1361,8 @@
 </ul>
 <h2 id="next-migration-tranche">Next migration tranche<a class="headerlink" href="#next-migration-tranche" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Continue decomposing <code>annolid/gui/widgets/ai_chat_backend.py</code>, with the remaining realtime, shape/action, and citation/arXiv tool-handler clusters as the next service seams.</li>
-<li>Keep moving GUI modules toward <code>annolid.domain</code>, <code>annolid.services</code>, and <code>annolid.infrastructure</code> wrappers instead of direct <code>core</code> or <code>utils</code> imports.</li>
+<li>Keep moving remaining GUI modules toward <code>annolid.domain</code>, <code>annolid.services</code>, and <code>annolid.infrastructure</code> wrappers instead of direct <code>core</code> or <code>utils</code> imports.</li>
+<li>When new chat/tooling features are added, land them in the service/infrastructure facades first rather than importing <code>annolid.core.agent</code> from widgets or dialogs.</li>
 <li>Keep <code>annolid/interfaces.*</code> as the public entry surfaces; avoid importing <code>annolid.interfaces</code> from the concrete GUI/CLI implementation modules themselves to prevent cycles.</li>
 </ul>
 
