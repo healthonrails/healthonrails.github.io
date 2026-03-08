@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/architecture_layers/">
+        <link rel="canonical" href="https://annolid.com/coco_data_flow/">
       
       
-        <link rel="prev" href="../migration/">
+        <link rel="prev" href="../workflows/">
       
       
-        <link rel="next" href="../redirects/">
+        <link rel="next" href="../tutorials/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Architecture Layers - Annolid Docs</title>
+        <title>COCO Data Flow - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-layers" class="md-skip">
+        <a href="#coco-data-flow" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture Layers
+              COCO Data Flow
             
           </span>
         </div>
@@ -247,10 +247,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../workflows/" class="md-tabs__link">
           
   
@@ -291,12 +293,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../operations/" class="md-tabs__link">
           
   
@@ -616,8 +616,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -639,21 +641,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -671,7 +674,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -714,10 +717,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../coco_data_flow/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -733,6 +763,192 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accepted-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accepted Inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accepted-annotation-filenames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accepted Annotation Filenames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinokpseg-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DinoKPSEG workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask-r-cnn-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mask R-CNN workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-and-auto-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Auto-Splitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-coco-yamls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended COCO YAMLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typical Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui-yolo-training-from-coco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUI YOLO training from COCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-and-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI and tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Note
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1222,10 +1438,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1243,22 +1457,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1276,7 +1489,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1375,37 +1588,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture Layers
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../architecture_layers/" class="md-nav__link">
         
   
   
@@ -1421,70 +1607,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#layer-responsibilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layer responsibilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#migration-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Migration status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-migration-tranche" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next migration tranche
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1672,10 +1794,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#layer-responsibilities" class="md-nav__link">
+  <a href="#accepted-inputs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer responsibilities
+        Accepted Inputs
       
     </span>
   </a>
@@ -1683,10 +1805,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rules" class="md-nav__link">
+  <a href="#accepted-annotation-filenames" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rules
+        Accepted Annotation Filenames
       
     </span>
   </a>
@@ -1694,10 +1816,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#migration-status" class="md-nav__link">
+  <a href="#task-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Migration status
+        Task Detection
       
     </span>
   </a>
@@ -1705,10 +1827,132 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-migration-tranche" class="md-nav__link">
+  <a href="#model-support" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next migration tranche
+        Model Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dinokpseg-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DinoKPSEG workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mask-r-cnn-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mask R-CNN workflows
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-and-auto-splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation and Auto-Splitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-coco-yamls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended COCO YAMLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Typical Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gui-yolo-training-from-coco" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GUI YOLO training from COCO
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-and-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI and tooling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation Note
       
     </span>
   </a>
@@ -1758,10 +2002,10 @@
     
     
       <li class="md-path__item">
-        <a href="../operations/" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Operations
+    Workflows
   </span>
 
         </a>
@@ -1780,7 +2024,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/architecture_layers.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/coco_data_flow.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1789,124 +2033,110 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/architecture_layers.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/coco_data_flow.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="architecture-layers">Architecture Layers<a class="headerlink" href="#architecture-layers" title="Permanent link">&para;</a></h1>
-<p>Annolid now defines four top-level layers with explicit intent:</p>
+<h1 id="coco-data-flow">COCO Data Flow<a class="headerlink" href="#coco-data-flow" title="Permanent link">&para;</a></h1>
+<p>Annolid now uses one shared COCO dataset layer across YOLO, DinoKPSEG, conversion tooling, and Mask R-CNN metadata readers. This page explains what inputs are accepted, how Annolid interprets them, and what each model workflow expects.</p>
+<h2 id="accepted-inputs">Accepted Inputs<a class="headerlink" href="#accepted-inputs" title="Permanent link">&para;</a></h2>
+<p>Annolid can start from either of these COCO inputs:</p>
+<ul>
+<li>a COCO spec YAML</li>
+<li>a COCO annotations directory</li>
+</ul>
+<p>Annolid treats a dataset as COCO when either is true:</p>
+<ul>
+<li><code>format</code> or <code>type</code> is <code>coco</code>, <code>coco_pose</code>, or <code>coco_keypoints</code></li>
+<li>one of <code>train</code>, <code>val</code>, or <code>test</code> points to a <code>.json</code> annotations file</li>
+</ul>
+<h2 id="accepted-annotation-filenames">Accepted Annotation Filenames<a class="headerlink" href="#accepted-annotation-filenames" title="Permanent link">&para;</a></h2>
+<p>When you point Annolid at an annotations directory, it will look for these common COCO filenames:</p>
+<ul>
+<li><code>train.json</code>, <code>val.json</code>, <code>test.json</code></li>
+<li><code>instances_train.json</code>, <code>instances_val.json</code>, <code>instances_test.json</code></li>
+<li><code>person_keypoints_train.json</code>, <code>person_keypoints_val.json</code>, <code>person_keypoints_test.json</code></li>
+</ul>
+<p>This means you can usually select the COCO <code>annotations/</code> directory directly instead of writing a YAML first.</p>
+<h2 id="task-detection">Task Detection<a class="headerlink" href="#task-detection" title="Permanent link">&para;</a></h2>
+<p>Annolid infers whether a COCO dataset is pose or detection:</p>
+<ul>
+<li><code>pose</code>: keypoint information is present in the YAML or in COCO categories/annotations</li>
+<li><code>detect</code>: no keypoint information is present</li>
+</ul>
+<p>This inference is shared, so different model entry points no longer make different decisions about the same COCO dataset.</p>
+<h2 id="model-support">Model Support<a class="headerlink" href="#model-support" title="Permanent link">&para;</a></h2>
+<h3 id="yolo-workflows">YOLO workflows<a class="headerlink" href="#yolo-workflows" title="Permanent link">&para;</a></h3>
+<p>YOLO training can start from:</p>
+<ul>
+<li>COCO pose</li>
+<li>COCO detection</li>
+<li>staged YOLO datasets</li>
+</ul>
+<p>If the source is COCO, Annolid materializes a temporary YOLO-style dataset with:</p>
+<ul>
+<li><code>images/</code></li>
+<li><code>labels/</code></li>
+<li><code>data.yaml</code></li>
+</ul>
+<h3 id="dinokpseg-workflows">DinoKPSEG workflows<a class="headerlink" href="#dinokpseg-workflows" title="Permanent link">&para;</a></h3>
+<p>DinoKPSEG COCO workflows are pose-only.</p>
+<p>If you pass a COCO detection spec to a DinoKPSEG flow, Annolid now fails early with a clear error instead of getting farther into training and failing in a less obvious place.</p>
+<h3 id="mask-r-cnn-workflows">Mask R-CNN workflows<a class="headerlink" href="#mask-r-cnn-workflows" title="Permanent link">&para;</a></h3>
+<p>Mask R-CNN still uses torchvision-specific dataset wrappers, but category names, keypoint metadata, and category-id mapping now come from the same shared COCO utilities used elsewhere in Annolid.</p>
+<h2 id="validation-and-auto-splitting">Validation and Auto-Splitting<a class="headerlink" href="#validation-and-auto-splitting" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If a staged YOLO dataset needs both <code>train</code> and <code>val</code>, Annolid validates that those splits are present before launching training.</li>
+<li>If a COCO spec provides <code>train</code> but no <code>val</code>, Annolid may auto-split validation during COCO to YOLO staging when the workflow allows it.</li>
+<li>Pose-only consumers explicitly enforce <code>expected_task="pose"</code>.</li>
+</ul>
+<h2 id="recommended-coco-yamls">Recommended COCO YAMLs<a class="headerlink" href="#recommended-coco-yamls" title="Permanent link">&para;</a></h2>
+<p>COCO pose spec:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coco</span>
+<span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/dataset_root</span>
+<span class="nt">image_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images</span>
+<span class="nt">train</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations/person_keypoints_train.json</span>
+<span class="nt">val</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations/person_keypoints_val.json</span>
+</code></pre></div>
+<p>COCO detection spec:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coco</span>
+<span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/dataset_root</span>
+<span class="nt">image_root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images</span>
+<span class="nt">train</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations/instances_train.json</span>
+<span class="nt">val</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations/instances_val.json</span>
+</code></pre></div>
+<h2 id="typical-workflows">Typical Workflows<a class="headerlink" href="#typical-workflows" title="Permanent link">&para;</a></h2>
+<h3 id="gui-yolo-training-from-coco">GUI YOLO training from COCO<a class="headerlink" href="#gui-yolo-training-from-coco" title="Permanent link">&para;</a></h3>
 <ol>
-<li><code>annolid.domain</code></li>
-<li><code>annolid.services</code></li>
-<li><code>annolid.interfaces</code></li>
-<li><code>annolid.infrastructure</code></li>
+<li>Open <code>File -&gt; Train models</code>.</li>
+<li>Choose <code>YOLO</code>.</li>
+<li>Select either:</li>
+<li>a COCO spec YAML, or</li>
+<li>a COCO annotations directory</li>
+<li>Start training as usual.</li>
 </ol>
-<h2 id="layer-responsibilities">Layer responsibilities<a class="headerlink" href="#layer-responsibilities" title="Permanent link">&para;</a></h2>
+<p>Annolid will stage the COCO dataset into a YOLO-compatible temporary dataset before invoking Ultralytics.</p>
+<h3 id="cli-and-tooling">CLI and tooling<a class="headerlink" href="#cli-and-tooling" title="Permanent link">&para;</a></h3>
+<p>Shared COCO staging is also used by:</p>
 <ul>
-<li><code>annolid.domain</code></li>
-<li>Business schema/types and invariant-centric models (project schema, events, tracks, keypoints, timelines, datasets).</li>
-<li>Concrete modules: <code>project_schema</code>, <code>behavior_events</code>, <code>tracks</code>, <code>keypoints</code>, <code>timelines</code>, <code>datasets</code>.</li>
-<li><code>annolid.services</code></li>
-<li>Orchestration use-cases that interfaces call (<code>agent</code> pipeline, behavior <code>time_budget</code>, and future tracking/export/search workflows).</li>
-<li>Concrete modules: <code>inference</code>, <code>training</code>, <code>export</code>, <code>search</code>, <code>tracking</code>, <code>agent</code>.</li>
-<li><code>annolid.interfaces</code></li>
-<li>User-facing and transport-facing adapters (GUI, CLI, bots, background jobs).</li>
-<li>Concrete modules: <code>gui</code>, <code>cli</code>, <code>background</code>, <code>bot</code>.</li>
-<li><code>annolid.infrastructure</code></li>
-<li>Filesystem/persistence/runtime patching/model download/external API adapters.</li>
-<li>Concrete modules: <code>filesystem</code>, <code>persistence</code>, <code>runtime</code>, <code>model_downloads</code>, <code>external_apis</code>.</li>
+<li><code>annolid-run</code> model workflows that consume the shared dataset layer</li>
+<li>the dataset conversion helper script in <code>annolid/core/agent/skills/dataset-convert/scripts/convert_dataset.py</code></li>
 </ul>
-<h2 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>If COCO training fails, check these first:</p>
 <ul>
-<li>Interfaces call services, not each other.</li>
-<li>Services may depend on domain and infrastructure.</li>
-<li>Domain must stay framework-agnostic.</li>
-<li>Infrastructure must not import GUI code.</li>
+<li><code>path</code> points to the dataset root, not just the annotations directory</li>
+<li><code>image_root</code> matches where images actually live</li>
+<li><code>train</code> and <code>val</code> annotation JSONs exist</li>
+<li>pose datasets include keypoints in the COCO categories or annotations</li>
+<li>DinoKPSEG inputs are COCO pose, not COCO detection</li>
 </ul>
-<h2 id="migration-status">Migration status<a class="headerlink" href="#migration-status" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Shared service in place: <code>annolid.services.agent.run_agent_pipeline</code></li>
-<li>Used by both GUI (<code>AgentAnalysisMixin</code>) and CLI (<code>annolid-run agent</code>).</li>
-<li>Shared service in place: <code>annolid.services.time_budget.compute_behavior_time_budget_report</code></li>
-<li>Used by GUI behavior time-budget dialog/export path.</li>
-<li>Shared service in place: <code>annolid.services.embedding_search.run_embedding_search</code></li>
-<li>Used by GUI frame-similarity/embedding search worker.</li>
-<li>Shared service in place: <code>annolid.services.tracking.*</code></li>
-<li>Used by GUI and background tracking setup/execution paths (<code>prediction_execution_mixin</code>, <code>TrackAllWorker</code>, <code>jobs/tracking_worker.py</code>).</li>
-<li>Shared service in place: <code>annolid.services.agent_admin.*</code></li>
-<li>Used by the CLI agent security/secret-management commands instead of direct <code>core.agent</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_workspace.*</code></li>
-<li>Used by the CLI agent skills/feedback/memory commands instead of direct <code>core.agent</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_eval.*</code></li>
-<li>Used by the CLI agent eval commands instead of direct <code>core.agent.eval.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_update.*</code></li>
-<li>Used by the CLI update commands instead of direct <code>core.agent.update_manager.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_bridge.run_agent_acp_bridge</code></li>
-<li>Used by the CLI ACP bridge command instead of direct <code>core.agent.acp_stdio_bridge</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_cron.*</code></li>
-<li>Used by the CLI agent onboard/status/cron commands instead of direct <code>core.agent.cron</code>, workspace bootstrap, and utils imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_tooling.validate_agent_tools</code></li>
-<li>Used by the CLI agent tool validation command instead of direct <code>core.agent.tools.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.chat_runtime.*</code></li>
-<li>Used by the GUI chat backend for workspace/config root resolution instead of embedding that bootstrap logic directly in <code>annolid/gui/widgets/ai_chat_backend.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.chat_provider_runtime.*</code></li>
-<li>Used by the GUI chat backend for provider kind resolution, fast-mode execution, provider fallback, and direct provider chat calls instead of importing <code>core.agent.gui_backend.provider_*</code> modules directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_session.*</code></li>
-<li>Used by the GUI chat backend for session-store bootstrap, outbound chat event emission, history loading, and turn persistence instead of importing <code>core.agent.session_manager</code> and <code>core.agent.gui_backend.session_io</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_widget_bridge.*</code></li>
-<li>Used by the GUI chat backend for widget slot invocation, GUI context payload assembly, direct-command dispatch, and sync-awaitable bridging instead of importing <code>core.agent.gui_backend.widget_bridge</code>, <code>direct_commands</code>, and the direct-command router directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_web_pdf.*</code></li>
-<li>Used by the GUI chat backend for web view actions, PDF actions, and URL/PDF opener orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_web_pdf</code> and <code>tool_handlers_openers</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_video.*</code></li>
-<li>Used by the GUI chat backend for video open/resolve flow and segment-track/behavior-label workflow orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_video</code> and <code>tool_handlers_video_workflow</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_controls.*</code></li>
-<li>Used by the GUI chat backend for chat control actions such as prompt/model/frame updates, AI text segmentation, and next-frame tracking instead of importing <code>core.agent.gui_backend.tool_handlers_chat_controls</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_arxiv.*</code></li>
-<li>Used by the GUI chat backend for arXiv search and local PDF discovery instead of importing <code>core.agent.gui_backend.tool_handlers_arxiv</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_citations.*</code></li>
-<li>Used by the GUI chat backend for citation extraction, normalization, listing, and persistence orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_citations</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_filesystem.*</code></li>
-<li>Used by the GUI chat backend for filesystem rename actions instead of importing <code>core.agent.gui_backend.tool_handlers_filesystem</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_realtime.*</code></li>
-<li>Used by the GUI chat backend for realtime stream/log actions instead of importing <code>core.agent.gui_backend.tool_handlers_realtime</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_shapes.*</code></li>
-<li>Used by the GUI chat backend for in-canvas shape selection/listing/edit actions instead of importing <code>core.agent.gui_backend.tool_handlers_shapes</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_shape_files.*</code></li>
-<li>Used by the GUI chat backend for shape-file listing/relabel/delete actions instead of importing <code>core.agent.gui_backend.tool_handlers_shape_files</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_agent_core.*</code>, <code>chat_backend_support.*</code>, <code>chat_devtools.*</code>, and <code>chat_manager_runtime.*</code></li>
-<li>Used by the GUI chat backend, chat widget, and chat manager for provider state, tool registry/policy, GUI backend helper logic, dev-tool execution, and background messaging/channel runtime instead of importing <code>core.agent</code> modules directly from GUI code.</li>
-<li>Infrastructure wrappers in place: <code>annolid.infrastructure.agent_config.*</code> and <code>agent_workspace.*</code></li>
-<li>Used by the chat backend, chat widget, settings dialog, web viewer, and chat manager for config/workspace access instead of importing <code>core.agent.config</code> and <code>core.agent.utils</code> directly from GUI code.</li>
-<li>GUI chat surfaces migrated:</li>
-<li><code>annolid/gui/widgets/ai_chat_backend.py</code></li>
-<li><code>annolid/gui/widgets/ai_chat_widget.py</code></li>
-<li><code>annolid/gui/widgets/ai_chat_manager.py</code></li>
-<li><code>annolid/gui/widgets/ai_chat_session_dialog.py</code></li>
-<li><code>annolid/gui/widgets/llm_settings_dialog.py</code></li>
-<li><code>annolid/gui/widgets/web_viewer.py</code></li>
-<li>These now consume <code>annolid.services</code> and <code>annolid.infrastructure</code> wrappers rather than <code>annolid.core.agent</code> directly.</li>
-<li>GUI feature setup extraction in place:</li>
-<li><code>annolid/gui/features/video.py</code></li>
-<li><code>annolid/gui/features/viewers.py</code></li>
-<li><code>annolid/gui/features/annotation.py</code></li>
-<li><code>annolid/gui/features/search.py</code></li>
-<li><code>annolid/gui/features/timeline.py</code></li>
-<li><code>AnnolidWindow</code> now composes these through <code>GuiFeatureDeps</code> and records typed feature state objects in <code>self.feature_states</code>.</li>
-<li>Stable architecture wrappers in place:</li>
-<li><code>annolid.domain.*</code> re-exports canonical schema/event/track/keypoint/timeline/dataset types.</li>
-<li><code>annolid.services.*</code> exposes inference/training/export/search/tracking/agent APIs.</li>
-<li><code>annolid.interfaces.*</code> exposes GUI/CLI/background/bot entry points.</li>
-<li><code>annolid.infrastructure.*</code> exposes filesystem/persistence/runtime/download/API adapters.</li>
-</ul>
-<h2 id="next-migration-tranche">Next migration tranche<a class="headerlink" href="#next-migration-tranche" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Keep moving remaining GUI modules toward <code>annolid.domain</code>, <code>annolid.services</code>, and <code>annolid.infrastructure</code> wrappers instead of direct <code>core</code> or <code>utils</code> imports.</li>
-<li>When new chat/tooling features are added, land them in the service/infrastructure facades first rather than importing <code>annolid.core.agent</code> from widgets or dialogs.</li>
-<li>Keep <code>annolid/interfaces.*</code> as the public entry surfaces; avoid importing <code>annolid.interfaces</code> from the concrete GUI/CLI implementation modules themselves to prevent cycles.</li>
-</ul>
+<h2 id="implementation-note">Implementation Note<a class="headerlink" href="#implementation-note" title="Permanent link">&para;</a></h2>
+<p>The shared COCO implementation lives in <code>annolid/datasets/coco.py</code>.</p>
+<p>For backward compatibility, <code>annolid/yolo/dataset_prep.py</code> remains as a thin re-export shim.</p>
 
 
 
