@@ -2048,6 +2048,7 @@
 <li>a COCO spec YAML</li>
 <li>a COCO annotations directory</li>
 <li>a COCO dataset root that contains an <code>annotations/</code> folder</li>
+<li>a COCO dataset root with split-local annotations such as <code>train/annotations.json</code> and <code>val/annotations.json</code></li>
 </ul>
 <p>Annolid treats a dataset as COCO when either is true:</p>
 <ul>
@@ -2063,6 +2064,13 @@
 </ul>
 <p>This means you can usually select the COCO <code>annotations/</code> directory directly instead of writing a YAML first.
 Annolid also accepts a dataset root and will auto-discover <code>annotations/</code> when possible.</p>
+<p>Annolid also accepts split-local COCO layouts such as:</p>
+<ul>
+<li><code>train/annotations.json</code></li>
+<li><code>val/annotations.json</code></li>
+<li><code>test/annotations.json</code></li>
+</ul>
+<p>In that layout, images can live next to each split-local JSON file, and Annolid will resolve them during COCO to YOLO staging.</p>
 <h2 id="task-detection">Task Detection<a class="headerlink" href="#task-detection" title="Permanent link">&para;</a></h2>
 <p>Annolid infers whether a COCO dataset is pose or detection:</p>
 <ul>
