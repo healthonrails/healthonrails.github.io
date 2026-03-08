@@ -2047,6 +2047,7 @@
 <ul>
 <li>a COCO spec YAML</li>
 <li>a COCO annotations directory</li>
+<li>a COCO dataset root that contains an <code>annotations/</code> folder</li>
 </ul>
 <p>Annolid treats a dataset as COCO when either is true:</p>
 <ul>
@@ -2060,7 +2061,8 @@
 <li><code>instances_train.json</code>, <code>instances_val.json</code>, <code>instances_test.json</code></li>
 <li><code>person_keypoints_train.json</code>, <code>person_keypoints_val.json</code>, <code>person_keypoints_test.json</code></li>
 </ul>
-<p>This means you can usually select the COCO <code>annotations/</code> directory directly instead of writing a YAML first.</p>
+<p>This means you can usually select the COCO <code>annotations/</code> directory directly instead of writing a YAML first.
+Annolid also accepts a dataset root and will auto-discover <code>annotations/</code> when possible.</p>
 <h2 id="task-detection">Task Detection<a class="headerlink" href="#task-detection" title="Permanent link">&para;</a></h2>
 <p>Annolid infers whether a COCO dataset is pose or detection:</p>
 <ul>
@@ -2082,6 +2084,7 @@
 <li><code>labels/</code></li>
 <li><code>data.yaml</code></li>
 </ul>
+<p>If the selected directory is a dataset root (not the annotations folder), Annolid will auto-locate COCO annotations before staging.</p>
 <h3 id="dinokpseg-workflows">DinoKPSEG workflows<a class="headerlink" href="#dinokpseg-workflows" title="Permanent link">&para;</a></h3>
 <p>DinoKPSEG COCO workflows are pose-only.</p>
 <p>If you pass a COCO detection spec to a DinoKPSEG flow, Annolid now fails early with a clear error instead of getting farther into training and failing in a less obvious place.</p>
@@ -2092,6 +2095,7 @@
 <li>If a staged YOLO dataset needs both <code>train</code> and <code>val</code>, Annolid validates that those splits are present before launching training.</li>
 <li>If a COCO spec provides <code>train</code> but no <code>val</code>, Annolid may auto-split validation during COCO to YOLO staging when the workflow allows it.</li>
 <li>Pose-only consumers explicitly enforce <code>expected_task="pose"</code>.</li>
+<li>If a YOLO-facing YAML is missing <code>names</code>/<code>nc</code>, Annolid attempts to infer class names from nearby COCO annotation JSON categories before falling back to defaults.</li>
 </ul>
 <h2 id="recommended-coco-yamls">Recommended COCO YAMLs<a class="headerlink" href="#recommended-coco-yamls" title="Permanent link">&para;</a></h2>
 <p>COCO pose spec:</p>
@@ -2115,7 +2119,8 @@
 <li>Choose <code>YOLO</code>.</li>
 <li>Select either:</li>
 <li>a COCO spec YAML, or</li>
-<li>a COCO annotations directory</li>
+<li>a COCO annotations directory, or</li>
+<li>a COCO dataset root containing <code>annotations/</code></li>
 <li>Start training as usual.</li>
 </ol>
 <p>Annolid will stage the COCO dataset into a YOLO-compatible temporary dataset before invoking Ultralytics.</p>
@@ -2133,6 +2138,7 @@
 <li><code>train</code> and <code>val</code> annotation JSONs exist</li>
 <li>pose datasets include keypoints in the COCO categories or annotations</li>
 <li>DinoKPSEG inputs are COCO pose, not COCO detection</li>
+<li>if your YAML has no <code>names</code>/<code>nc</code>, ensure COCO <code>categories</code> contain valid names for class inference</li>
 </ul>
 <h2 id="implementation-note">Implementation Note<a class="headerlink" href="#implementation-note" title="Permanent link">&para;</a></h2>
 <p>The shared COCO implementation lives in <code>annolid/datasets/coco.py</code>.</p>
