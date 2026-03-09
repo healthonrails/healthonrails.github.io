@@ -859,6 +859,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3a-view-flybody-output-in-the-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3A. View FlyBody Output in the GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3b-flybody-example-uses-the-local-repo-when-present" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3B. FlyBody Example Uses the Local Repo When Present
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#4-add-depth-for-3d-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1911,6 +1933,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3a-view-flybody-output-in-the-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3A. View FlyBody Output in the GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3b-flybody-example-uses-the-local-repo-when-present" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3B. FlyBody Example Uses the Local Repo When Present
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#4-add-depth-for-3d-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2193,6 +2237,132 @@ write Annolid-compatible NDJSON output:</p>
 <p>This writes simulation metadata under:</p>
 <div class="highlight"><pre><span></span><code>otherData.simulation
 </code></pre></div>
+<h2 id="3a-view-flybody-output-in-the-gui">3A. View FlyBody Output in the GUI<a class="headerlink" href="#3a-view-flybody-output-in-the-gui" title="Permanent link">&para;</a></h2>
+<p>The Annolid GUI can now open simulation/FlyBody NDJSON directly in the embedded
+Three.js viewer.</p>
+<p>Menu path:</p>
+<div class="highlight"><pre><span></span><code>View -&gt; 3D Examples -&gt; Open Simulation Output…
+</code></pre></div>
+<p>What it shows:</p>
+<ul>
+<li>3D FlyBody site targets from <code>otherData.simulation.state.site_targets</code></li>
+<li>per-frame playback with a scrubber</li>
+<li>short trajectory trails for each site</li>
+<li>optional skeleton edges from <code>mapping_metadata.metadata.viewer_edges</code></li>
+</ul>
+<p>The generic simulation viewer now also honors optional payload display flags, so
+example payloads can suppress debug overlays like:</p>
+<ul>
+<li>point markers</li>
+<li>text labels</li>
+<li>skeleton edges</li>
+<li>trails</li>
+</ul>
+<p>This is additive:</p>
+<ul>
+<li>regular Annolid 2D annotation still works unchanged</li>
+<li>generic Three.js mesh/point-cloud viewing still works unchanged</li>
+<li>FlyBody runtime is still optional; dry-run NDJSON is enough for visualization</li>
+</ul>
+<p>If you do not already have simulation NDJSON, the GUI can run the workflow for
+you:</p>
+<div class="highlight"><pre><span></span><code>View -&gt; 3D Examples -&gt; Run Simulation to 3D Viewer…
+</code></pre></div>
+<p>That dialog accepts:</p>
+<ul>
+<li>pose input (<code>.json</code> or <code>.ndjson</code>)</li>
+<li>simulation mapping (<code>.json</code> / <code>.yaml</code>)</li>
+<li>optional depth sidecar</li>
+<li>optional pose schema</li>
+<li>backend choice (<code>flybody</code> or <code>identity</code>)</li>
+</ul>
+<p>The result is written to a temporary NDJSON path by default and opened
+immediately in the Three.js viewer.</p>
+<p>To inspect whether the optional FlyBody runtime is actually ready before
+launching the example:</p>
+<div class="highlight"><pre><span></span><code>View -&gt; 3D Examples -&gt; FlyBody Status…
+</code></pre></div>
+<p>The setup dialog reports:</p>
+<ul>
+<li>whether a local FlyBody repo was found</li>
+<li>which Python runtimes were checked</li>
+<li>whether each runtime can import FlyBody and create <code>walk_imitation()</code></li>
+<li>and gives one-place actions to:</li>
+<li>refresh status</li>
+<li>open the FlyBody example</li>
+<li>install or update FlyBody</li>
+</ul>
+<p>Runtime discovery order currently prefers:</p>
+<ul>
+<li><code>&lt;flybody repo&gt;/.venv/bin/python</code></li>
+<li><code>annolid/.venv311/bin/python</code></li>
+<li><code>annolid/.venv/bin/python</code></li>
+<li>the current interpreter</li>
+</ul>
+<h2 id="3b-flybody-example-uses-the-local-repo-when-present">3B. FlyBody Example Uses the Local Repo When Present<a class="headerlink" href="#3b-flybody-example-uses-the-local-repo-when-present" title="Permanent link">&para;</a></h2>
+<p>The <code>View -&gt; 3D Examples -&gt; FlyBody 3D Example</code> entry is now the fast path. It
+opens the FlyBody mesh/example immediately and does not block on a live rollout.</p>
+<p>If you want the expensive runtime-backed path, use:</p>
+<div class="highlight"><pre><span></span><code>View -&gt; 3D Examples -&gt; Start Live FlyBody Simulation…
+</code></pre></div>
+<p>The live action remains optional and can take longer because it generates a
+real FlyBody rollout first.</p>
+<p>The FlyBody 3D example still prefers a real local FlyBody checkout for mesh
+assets.</p>
+<p>Resolution order:</p>
+<ul>
+<li><code>ANNOLID_FLYBODY_PATH</code></li>
+<li><code>~/Downloads/flybody</code></li>
+</ul>
+<p>When found, Annolid:</p>
+<ul>
+<li>reads <code>flybody/fruitfly/assets/fruitfly.xml</code></li>
+<li>reads <code>flybody/fruitfly/assets/floor.xml</code></li>
+<li>combines the referenced OBJ meshes into a temporary assembled fly mesh</li>
+<li>loads the FlyBody floor plane into the Three.js scene</li>
+<li>opens a clean presentation view:</li>
+<li>assembled fly body</li>
+<li>floor/grid</li>
+<li>walking loop animation</li>
+<li>no point markers, label text, edges, or trails in the static example</li>
+<li>checks the optional FlyBody runtime in <code>.venv311</code>, <code>.venv</code>, and the current
+  interpreter</li>
+<li>if a usable FlyBody runtime is available, runs a live <code>walk_imitation()</code>
+  rollout and opens that real site-state playback in the 3D viewer</li>
+<li><code>Start Live FlyBody Simulation…</code> now opens the static FlyBody 3D example
+  immediately, then replaces it with the live rollout when that background job
+  finishes</li>
+<li>when the local repo mesh is available, the viewer now loads FlyBody body-part
+  meshes and applies per-body MuJoCo poses for articulated playback</li>
+<li>FlyBody body parts also receive stable material categories and colors
+  (thorax, head, wings, antennae, abdomen, legs, mouthparts) for clearer 3D
+  structure during playback</li>
+<li>the 3D viewer now includes:</li>
+<li>a part legend</li>
+<li>per-category visibility toggles so you can hide wings, legs, antennae,
+    abdomen, or other body groups while scrubbing playback</li>
+<li>if the runtime is not available, falls back to the bundled example playback
+  while still using the real fly mesh when the repo is present</li>
+</ul>
+<p>If no local FlyBody checkout is available, the example still opens using the
+built-in skeleton-only fallback.</p>
+<p>To install FlyBody from the GUI instead of doing it manually:</p>
+<div class="highlight"><pre><span></span><code>View -&gt; 3D Examples -&gt; Install FlyBody…
+</code></pre></div>
+<p>That action:</p>
+<ul>
+<li>clones FlyBody from GitHub if the checkout is missing</li>
+<li>runs <code>scripts/setup_flybody_uv.sh</code></li>
+<li>keeps the setup opt-in and separate from normal Annolid workflows</li>
+</ul>
+<p>If you already created a repo-local FlyBody environment, for example:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/path/to/flybody
+uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+</code></pre></div>
+<p>Annolid will now detect that repo-local <code>.venv</code> automatically in the FlyBody
+status dialog and when launching the live FlyBody example.</p>
 <h2 id="4-add-depth-for-3d-targets">4. Add Depth for 3D Targets<a class="headerlink" href="#4-add-depth-for-3d-targets" title="Permanent link">&para;</a></h2>
 <p>If you have already generated Annolid depth sidecars, pass them in directly:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
