@@ -2305,12 +2305,9 @@ the 3D viewer uses the built-in fallback path unless you explicitly choose
 dialog.</p>
 <h2 id="3b-flybody-example-uses-the-local-repo-when-present">3B. FlyBody Example Uses the Local Repo When Present<a class="headerlink" href="#3b-flybody-example-uses-the-local-repo-when-present" title="Permanent link">&para;</a></h2>
 <p>The <code>View -&gt; 3D Examples -&gt; FlyBody 3D Example</code> entry is now the fast path. It
-opens the FlyBody mesh/example immediately and does not block on a live rollout.</p>
-<p>If you want the expensive runtime-backed path, use:</p>
-<div class="highlight"><pre><span></span><code>View -&gt; 3D Examples -&gt; Start Live FlyBody Simulation…
-</code></pre></div>
-<p>The live action remains optional and can take longer because it generates a
-real FlyBody rollout first.</p>
+opens the FlyBody mesh/example immediately and does not block on a live rollout.
+The same Three.js viewer now owns FlyBody live controls, so Annolid no longer
+needs separate menu items for each behavior.</p>
 <p>The FlyBody 3D example still prefers a real local FlyBody checkout for mesh
 assets.</p>
 <p>Resolution order:</p>
@@ -2331,20 +2328,25 @@ assets.</p>
 <li>no point markers, label text, edges, or trails in the static example</li>
 <li>checks the optional FlyBody runtime in <code>.venv311</code>, <code>.venv</code>, and the current
   interpreter</li>
-<li>if a usable FlyBody runtime is available, runs a live <code>walk_imitation()</code>
-  rollout and opens that real site-state playback in the 3D viewer</li>
-<li><code>Start Live FlyBody Simulation…</code> now opens the static FlyBody 3D example
-  immediately, then replaces it with the live rollout when that background job
-  finishes</li>
-<li>when the local repo mesh is available, the viewer now loads FlyBody body-part
-  meshes and applies per-body MuJoCo poses for articulated playback</li>
-<li>FlyBody body parts also receive stable material categories and colors
-  (thorax, head, wings, antennae, abdomen, legs, mouthparts) for clearer 3D
-  structure during playback</li>
+<li>if a usable FlyBody runtime is available, the FlyBody viewer shows in-viewer
+  live buttons for these FlyBody repo behaviors:</li>
+<li><code>walk_imitation</code></li>
+<li><code>walk_on_ball</code></li>
+<li><code>flight_imitation</code></li>
+<li><code>vision_guided_flight</code></li>
+<li><code>template_task</code></li>
+<li>clicking a behavior button keeps the same Three.js view open, starts the
+  optional live rollout in the background, and replaces the static example when
+  the rollout is ready</li>
+<li>live payload playback now autostarts and loops until you click <code>Pause</code>
+  in the timeline or <code>Stop</code> in the FlyBody control panel</li>
+<li>live payloads are cached per behavior and older payload formats are ignored,
+  so Annolid does not keep reopening stale broken FlyBody live JSON</li>
+<li>the live viewer keeps the same floor/body world frame as the static example,
+  so the floor plane stays under the fly instead of slicing through it</li>
 <li>the 3D viewer now includes:</li>
-<li>a part legend</li>
-<li>per-category visibility toggles so you can hide wings, legs, antennae,
-    abdomen, or other body groups while scrubbing playback</li>
+<li>a FlyBody behavior control strip in the viewer itself</li>
+<li>looped timeline playback with play/pause</li>
 <li>if the runtime is not available, falls back to the bundled example playback
   while still using the real fly mesh when the repo is present</li>
 </ul>
