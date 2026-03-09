@@ -633,6 +633,8 @@
       
         
       
+        
+      
     
     
     
@@ -695,6 +697,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation_flybody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and FlyBody
   
 
     
@@ -1628,6 +1658,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#simulation-backend-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Backend Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plugin-author-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1729,6 +1770,17 @@
     <span class="md-ellipsis">
       
         Plugin Author Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulation-backend-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation Backend Pattern
       
     </span>
   </a>
@@ -1895,6 +1947,54 @@ flag grouping.</p>
     <span class="p">(</span><span class="s2">&quot;Training controls&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;--epochs&quot;</span><span class="p">,</span> <span class="s2">&quot;--batch&quot;</span><span class="p">)),</span>
 <span class="p">)</span>
 </code></pre></div>
+<p>Annolid now also discovers third-party model plugins from the Python entry
+point group <code>annolid.model_plugins</code>. This lets heavy optional backends stay in a
+separate package while still appearing in:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>list-models
+annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> </span>predict<span class="w"> </span>&lt;model&gt;
+annolid-run<span class="w"> </span>predict<span class="w"> </span>&lt;model&gt;<span class="w"> </span>...
+</code></pre></div>
+<p>Example <code>pyproject.toml</code> for an external plugin package:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[project.entry-points.</span><span class="s2">&quot;annolid.model_plugins&quot;</span><span class="k">]</span>
+<span class="n">flybody</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;annolid_flybody.plugin:FlyBodyPlugin&quot;</span>
+</code></pre></div>
+<h2 id="simulation-backend-pattern">Simulation Backend Pattern<a class="headerlink" href="#simulation-backend-pattern" title="Permanent link">&para;</a></h2>
+<p>For physics or kinematics integrations, prefer keeping backend-specific code in a
+plugin package and reuse the core helpers under <code>annolid.simulation</code> for:</p>
+<ul>
+<li>typed pose frames (<code>Pose2DFrame</code>, <code>Pose3DFrame</code>),</li>
+<li>adapter contracts (<code>SimulationAdapter</code>),</li>
+<li>mapping/config loading (<code>load_simulation_mapping</code>),</li>
+<li>LabelMe or NDJSON pose ingestion (<code>read_pose_frames</code>),</li>
+<li>schema-valid simulation export (<code>write_simulation_ndjson</code>).</li>
+</ul>
+<p>That split keeps Annolid core responsible for stable IO contracts while the
+simulation package owns heavy runtime dependencies and backend behavior.</p>
+<p>Current built-in examples:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> </span>predict<span class="w"> </span>simulation_runner
+annolid-run<span class="w"> </span>predict<span class="w"> </span>simulation_runner<span class="w"> </span>--backend<span class="w"> </span>identity<span class="w"> </span>--input<span class="w"> </span>pose.json<span class="w"> </span>--mapping<span class="w"> </span>sim.json<span class="w"> </span>--out-ndjson<span class="w"> </span>sim.ndjson
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span>--pose-schema<span class="w"> </span>pose_schema.json<span class="w"> </span>--write-mapping-template<span class="w"> </span>flybody.yaml
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span>--dry-run
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span>--depth-ndjson<span class="w"> </span>depth.ndjson<span class="w"> </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span>--dry-run
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span>--depth-ndjson<span class="w"> </span>depth.ndjson<span class="w"> </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span>--smooth-mode<span class="w"> </span>ema<span class="w"> </span>--max-gap-frames<span class="w"> </span><span class="m">2</span><span class="w"> </span>--dry-run
+</code></pre></div>
+<p>If you install the optional FlyBody runtime into <code>.venv</code>, verify that stack
+before the first non-<code>--dry-run</code> invocation:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>dm-control<span class="w"> </span>mujoco<span class="w"> </span>dm-tree<span class="w"> </span>mediapy<span class="w"> </span>h5py
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>--no-deps<span class="w"> </span>-e<span class="w"> </span>/path/to/flybody
+python<span class="w"> </span>scripts/check_flybody_runtime.py
+</code></pre></div>
+<p>Wrapper:</p>
+<div class="highlight"><pre><span></span><code>scripts/setup_flybody_uv.sh<span class="w"> </span>--flybody-path<span class="w"> </span>/path/to/flybody
+</code></pre></div>
+<p>Use <code>--venv-dir .venv311 --python 3.11</code> if you want an isolated FlyBody env
+without modifying the default <code>.venv</code>.</p>
+<p>Checked example template:</p>
+<div class="highlight"><pre><span></span><code>annolid/configs/flybody_template.yaml
+</code></pre></div>
+<p>Use it directly as a starting point, or generate a project-specific copy with:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span>--pose-schema<span class="w"> </span>pose_schema.json<span class="w"> </span>--write-mapping-template<span class="w"> </span>flybody.yaml
+</code></pre></div>
 <h2 id="plugin-author-guidelines">Plugin Author Guidelines<a class="headerlink" href="#plugin-author-guidelines" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Add explicit help sections for every supported mode.</li>
@@ -1906,6 +2006,8 @@ flag grouping.</p>
 <li>train or predict tuning knobs.</li>
 <li>Keep the section names stable and human-readable.</li>
 <li>Treat the full parser output as the detailed reference, not the primary UX.</li>
+<li>Keep module imports light so discovery does not pull in heavy runtime
+  dependencies before the user actually runs <code>train()</code> or <code>predict()</code>.</li>
 </ul>
 <h2 id="fallback-behavior">Fallback Behavior<a class="headerlink" href="#fallback-behavior" title="Permanent link">&para;</a></h2>
 <p>Third-party or older plugins that do not declare explicit help sections still

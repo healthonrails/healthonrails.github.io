@@ -674,6 +674,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#optional-flybody-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional FlyBody Checkout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5-launch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -773,6 +784,8 @@
       
         
       
+        
+      
     
     
     
@@ -835,6 +848,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation_flybody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and FlyBody
   
 
     
@@ -1771,6 +1812,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#optional-flybody-checkout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional FlyBody Checkout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5-launch" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1917,6 +1969,26 @@
 annolid-run<span class="w"> </span>--help
 annolid-run<span class="w"> </span>list-models
 </code></pre></div>
+<h2 id="optional-flybody-checkout">Optional FlyBody Checkout<a class="headerlink" href="#optional-flybody-checkout" title="Permanent link">&para;</a></h2>
+<p>If you want the simulation/FlyBody plugin path in the same <code>.venv</code>, install the
+optional runtime explicitly with <code>uv pip</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>dm-control<span class="w"> </span>mujoco<span class="w"> </span>dm-tree<span class="w"> </span>mediapy<span class="w"> </span>h5py
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>--no-deps<span class="w"> </span>-e<span class="w"> </span>/path/to/flybody
+python<span class="w"> </span>scripts/check_flybody_runtime.py
+</code></pre></div>
+<p>Equivalent helper:</p>
+<div class="highlight"><pre><span></span><code>scripts/setup_flybody_uv.sh<span class="w"> </span>--flybody-path<span class="w"> </span>/path/to/flybody
+</code></pre></div>
+<p>Alternative isolated environment:</p>
+<div class="highlight"><pre><span></span><code>scripts/setup_flybody_uv.sh<span class="w"> </span>--venv-dir<span class="w"> </span>.venv311<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11<span class="w"> </span>--flybody-path<span class="w"> </span>/path/to/flybody
+</code></pre></div>
+<p>Notes:</p>
+<ul>
+<li>Prefer Python 3.11 for this setup.</li>
+<li>Python 3.13 can still require a <code>labmaze</code> compatibility workaround upstream.</li>
+<li>The Annolid plugin docs are in <a href="../simulation_flybody/">Simulation and FlyBody</a>.</li>
+</ul>
 <h2 id="5-launch">5. Launch<a class="headerlink" href="#5-launch" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>annolid
 </code></pre></div>

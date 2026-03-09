@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/operations/">
+        <link rel="canonical" href="https://annolid.com/simulation_flybody/">
       
       
-        <link rel="prev" href="../memory/">
+        <link rel="prev" href="../workflows/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../coco_data_flow/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Overview - Annolid Docs</title>
+        <title>Simulation and FlyBody - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operations" class="md-skip">
+        <a href="#simulation-and-flybody" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Simulation and FlyBody
             
           </span>
         </div>
@@ -247,10 +247,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../workflows/" class="md-tabs__link">
           
   
@@ -291,13 +293,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../operations/" class="md-tabs__link">
           
   
   
@@ -616,8 +616,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -641,21 +643,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -673,7 +676,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -716,10 +719,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../simulation_flybody/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and FlyBody
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -735,6 +765,202 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-exists-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Exists Today
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-setup-with-uv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Setup with uv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-start-from-the-checked-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start From the Checked Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generate-a-project-specific-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Generate a Project-Specific Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-validate-mapping-without-flybody-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Validate Mapping Without FlyBody Installed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-add-depth-for-3d-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Add Depth for 3D Targets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-smooth-and-fill-small-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Smooth and Fill Small Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-run-the-backend-neutral-validation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Run the Backend-Neutral Validation Path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-move-to-real-flybody-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Move to Real FlyBody Runtime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-runtime-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Runtime Test Coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-end-to-end-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal End-to-End Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1252,10 +1478,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1273,22 +1497,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1306,7 +1529,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1321,37 +1544,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
         
   
   
@@ -1367,59 +1563,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#core-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Paths
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-sequence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Sequence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-lives-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Lives Here
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1691,10 +1834,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-paths" class="md-nav__link">
+  <a href="#workflow-diagram" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Paths
+        Workflow Diagram
       
     </span>
   </a>
@@ -1702,10 +1845,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-sequence" class="md-nav__link">
+  <a href="#what-exists-today" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Sequence
+        What Exists Today
       
     </span>
   </a>
@@ -1713,10 +1856,153 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-lives-here" class="md-nav__link">
+  <a href="#runtime-setup-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Lives Here
+        Runtime Setup with uv
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-start-from-the-checked-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Start From the Checked Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generate-a-project-specific-template" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Generate a Project-Specific Template
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-validate-mapping-without-flybody-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Validate Mapping Without FlyBody Installed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-add-depth-for-3d-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Add Depth for 3D Targets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-smooth-and-fill-small-gaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Smooth and Fill Small Gaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-run-the-backend-neutral-validation-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Run the Backend-Neutral Validation Path
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-move-to-real-flybody-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Move to Real FlyBody Runtime
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-runtime-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optional Runtime Test Coverage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimal-end-to-end-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimal End-to-End Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Limits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
       
     </span>
   </a>
@@ -1766,10 +2052,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Operations
+    Workflows
   </span>
 
         </a>
@@ -1788,7 +2074,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/operations.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/simulation_flybody.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1797,53 +2083,246 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/operations.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/simulation_flybody.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h1>
-<p>Use this section for deployment, migration, architecture, and long-term
-maintenance flows.</p>
-<h2 id="core-paths">Core Paths<a class="headerlink" href="#core-paths" title="Permanent link">&para;</a></h2>
-<div class="ann-grid">
-  <article class="ann-card">
-    <h3>Deployment</h3>
-    <p>Build, publish, and operate the documentation and release-facing surfaces.</p>
-    <a href="../deployment/">Open deployment guide</a>
-  </article>
-  <article class="ann-card">
-    <h3>Migration</h3>
-    <p>Track migrations and compatibility changes for memory, settings, and workflow surfaces.</p>
-    <a href="../migration/">Open migration guide</a>
-  </article>
-  <article class="ann-card">
-    <h3>Architecture</h3>
-    <p>Review boundaries and layering rules before making larger structural changes.</p>
-    <a href="../architecture_layers/">Open architecture guide</a>
-  </article>
-  <article class="ann-card">
-    <h3>Reference</h3>
-    <p>Jump to command, config, and important path references for ongoing maintenance.</p>
-    <a href="../reference/">Open reference</a>
-  </article>
-</div>
-
-<h2 id="recommended-sequence">Recommended Sequence<a class="headerlink" href="#recommended-sequence" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Use <a href="../deployment/">Deployment</a> for site and release-facing workflows.</li>
-<li>Check <a href="../migration/">Migration Plan</a> when behavior or storage contracts are changing.</li>
-<li>Review <a href="../architecture_layers/">Architecture Layers</a> before broad refactors.</li>
-<li>Use <a href="../reference/">Reference</a> for command and config lookup during maintenance work.</li>
-</ol>
-<h2 id="what-lives-here">What Lives Here<a class="headerlink" href="#what-lives-here" title="Permanent link">&para;</a></h2>
+<h1 id="simulation-and-flybody">Simulation and FlyBody<a class="headerlink" href="#simulation-and-flybody" title="Permanent link">&para;</a></h1>
+<p>This page documents the current Annolid simulation workflow, with FlyBody as
+the first concrete backend.</p>
+<p>Simulation support is additive and optional. Default Annolid GUI/CLI workflows
+continue to work without FlyBody, MuJoCo, or <code>dm_control</code>.</p>
+<h2 id="workflow-diagram">Workflow Diagram<a class="headerlink" href="#workflow-diagram" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+  A["Annolid pose input&lt;br/&gt;LabelMe JSON or pose.ndjson"] --&gt; B["Optional preprocessing&lt;br/&gt;gap fill + smoothing"]
+  B --&gt; C{"depth.ndjson provided?"}
+  C -- "no" --&gt; D["2D path&lt;br/&gt;default_z fallback"]
+  C -- "yes" --&gt; E["3D lifting&lt;br/&gt;depth sampling + camera intrinsics"]
+  D --&gt; F["Simulation adapter&lt;br/&gt;identity or flybody"]
+  E --&gt; F
+  F --&gt; G["Dry run&lt;br/&gt;site target validation"]
+  F --&gt; H["Real backend run&lt;br/&gt;optional FlyBody IK"]
+  G --&gt; I["Annolid NDJSON output&lt;br/&gt;otherData.simulation"]
+  H --&gt; I</code></pre>
+<h2 id="what-exists-today">What Exists Today<a class="headerlink" href="#what-exists-today" title="Permanent link">&para;</a></h2>
+<p>Annolid now supports:</p>
 <ul>
-<li>deployment and publishing guidance,</li>
-<li>migration notes and compatibility planning,</li>
-<li>architecture boundaries,</li>
-<li>operational references and redirects.</li>
+<li>backend-neutral simulation IO through <code>annolid.simulation</code>,</li>
+<li>a built-in <code>simulation_runner</code> plugin for contract validation,</li>
+<li>a built-in <code>flybody</code> plugin for FlyBody-oriented mappings and outputs,</li>
+<li>optional depth-assisted 2D-to-3D lifting from Annolid <code>depth.ndjson</code>,</li>
+<li>temporal preprocessing before fitting:</li>
+<li>gap filling,</li>
+<li>EMA smoothing,</li>
+<li>One Euro smoothing,</li>
+<li>Kalman smoothing.</li>
+</ul>
+<p>The current FlyBody path is designed to stay import-light. If FlyBody,
+<code>dm_control</code>, or MuJoCo are not installed, <code>--dry-run</code> still works so you can
+validate mappings and output contracts.</p>
+<h2 id="runtime-setup-with-uv">Runtime Setup with <code>uv</code><a class="headerlink" href="#runtime-setup-with-uv" title="Permanent link">&para;</a></h2>
+<p>Use a repository-local <code>.venv</code> and install the optional FlyBody stack with
+<code>uv pip</code>, not whatever global <code>pip</code> happens to resolve to:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>dm-control<span class="w"> </span>mujoco<span class="w"> </span>dm-tree<span class="w"> </span>mediapy<span class="w"> </span>h5py
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--python<span class="w"> </span>.venv/bin/python<span class="w"> </span>--no-deps<span class="w"> </span>-e<span class="w"> </span>/path/to/flybody
+python<span class="w"> </span>scripts/check_flybody_runtime.py
+</code></pre></div>
+<p>Or use the repo helper:</p>
+<div class="highlight"><pre><span></span><code>scripts/setup_flybody_uv.sh<span class="w"> </span>--flybody-path<span class="w"> </span>/path/to/flybody
+</code></pre></div>
+<p>To keep your current <code>.venv</code> untouched, point to a separate environment:</p>
+<div class="highlight"><pre><span></span><code>scripts/setup_flybody_uv.sh<span class="w"> </span>--venv-dir<span class="w"> </span>.venv311<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11<span class="w"> </span>--flybody-path<span class="w"> </span>/path/to/flybody
+</code></pre></div>
+<p>Practical notes:</p>
+<ul>
+<li>Python 3.10 to 3.12 is the cleanest FlyBody target today.</li>
+<li>Python 3.13 can still require a local <code>labmaze</code> compatibility workaround.</li>
+<li><code>--no-deps</code> on the editable FlyBody install keeps Annolid in control of the
+  already-installed runtime packages inside <code>.venv</code>.</li>
+<li><code>scripts/check_flybody_runtime.py</code> verifies import resolution and FlyBody
+  environment creation before you run the Annolid plugin.</li>
+<li><code>scripts/setup_flybody_uv.sh</code> wraps the same setup flow for a local FlyBody
+  checkout.</li>
+</ul>
+<h2 id="core-commands">Core Commands<a class="headerlink" href="#core-commands" title="Permanent link">&para;</a></h2>
+<p>Discover the plugins:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>list-models
+annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> </span>predict<span class="w"> </span>simulation_runner
+annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> </span>predict<span class="w"> </span>flybody
+</code></pre></div>
+<h2 id="1-start-from-the-checked-template">1. Start From the Checked Template<a class="headerlink" href="#1-start-from-the-checked-template" title="Permanent link">&para;</a></h2>
+<p>Annolid ships a checked example config:</p>
+<div class="highlight"><pre><span></span><code>annolid/configs/flybody_template.yaml
+</code></pre></div>
+<p>Use it directly or copy it into your project and edit the site names to match
+your FlyBody model.</p>
+<p>Template fields:</p>
+<ul>
+<li><code>keypoint_to_site</code>: Annolid keypoint label to FlyBody site name</li>
+<li><code>site_to_joint</code>: optional site-to-joint lookup for diagnostics</li>
+<li><code>coordinate_system.camera_intrinsics</code>: used for depth-assisted 3D lifting</li>
+<li><code>metadata</code>: notes, provenance, and project-specific hints</li>
+</ul>
+<h2 id="2-generate-a-project-specific-template">2. Generate a Project-Specific Template<a class="headerlink" href="#2-generate-a-project-specific-template" title="Permanent link">&para;</a></h2>
+<p>If you already have a pose schema, generate a mapping template from it:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pose-schema<span class="w"> </span>pose_schema.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--write-mapping-template<span class="w"> </span>flybody.yaml
+</code></pre></div>
+<p>If you do not have a pose schema yet, provide keypoints directly:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>simulation_runner<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--template-keypoints<span class="w"> </span>nose,thorax,abdomen_tip,left_front_leg_tip,right_front_leg_tip<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--write-mapping-template<span class="w"> </span>flybody.yaml
+</code></pre></div>
+<h2 id="3-validate-mapping-without-flybody-installed">3. Validate Mapping Without FlyBody Installed<a class="headerlink" href="#3-validate-mapping-without-flybody-installed" title="Permanent link">&para;</a></h2>
+<p>Use <code>--dry-run</code> to convert Annolid keypoints into FlyBody-style site targets and
+write Annolid-compatible NDJSON output:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run
+</code></pre></div>
+<p>This writes simulation metadata under:</p>
+<div class="highlight"><pre><span></span><code>otherData.simulation
+</code></pre></div>
+<h2 id="4-add-depth-for-3d-targets">4. Add Depth for 3D Targets<a class="headerlink" href="#4-add-depth-for-3d-targets" title="Permanent link">&para;</a></h2>
+<p>If you have already generated Annolid depth sidecars, pass them in directly:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--depth-ndjson<span class="w"> </span>depth.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run
+</code></pre></div>
+<p>When <code>coordinate_system.camera_intrinsics</code> is populated in the mapping file,
+Annolid lifts image coordinates into 3D camera coordinates. If intrinsics are
+missing, Annolid falls back to:</p>
+<div class="highlight"><pre><span></span><code>(x_px, y_px, depth)
+</code></pre></div>
+<p>Recommended intrinsics fields:</p>
+<ul>
+<li><code>fx</code></li>
+<li><code>fy</code></li>
+<li><code>cx</code></li>
+<li><code>cy</code></li>
+</ul>
+<h2 id="5-smooth-and-fill-small-gaps">5. Smooth and Fill Small Gaps<a class="headerlink" href="#5-smooth-and-fill-small-gaps" title="Permanent link">&para;</a></h2>
+<p>Preprocess pose tracks before lifting or fitting:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--depth-ndjson<span class="w"> </span>depth.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--smooth-mode<span class="w"> </span>ema<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-gap-frames<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run
+</code></pre></div>
+<p>Supported smoothing modes:</p>
+<ul>
+<li><code>none</code></li>
+<li><code>ema</code></li>
+<li><code>one_euro</code></li>
+<li><code>kalman</code></li>
+</ul>
+<p>Practical defaults:</p>
+<ul>
+<li>use <code>--max-gap-frames 1</code> or <code>2</code> for short occlusions,</li>
+<li>start with <code>--smooth-mode ema</code>,</li>
+<li>only move to <code>kalman</code> when tracks are noisy enough to justify prediction.</li>
+</ul>
+<h2 id="6-run-the-backend-neutral-validation-path">6. Run the Backend-Neutral Validation Path<a class="headerlink" href="#6-run-the-backend-neutral-validation-path" title="Permanent link">&para;</a></h2>
+<p>Use the lightweight <code>identity</code> backend when you want to test data flow without
+FlyBody-specific assumptions:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>simulation_runner<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>identity<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>sim.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>sim.ndjson
+</code></pre></div>
+<h2 id="7-move-to-real-flybody-runtime">7. Move to Real FlyBody Runtime<a class="headerlink" href="#7-move-to-real-flybody-runtime" title="Permanent link">&para;</a></h2>
+<p>The non-<code>--dry-run</code> path is already wired for optional backend imports and has
+been validated locally against a FlyBody checkout in <code>.venv</code>:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--depth-ndjson<span class="w"> </span>depth.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ik-max-steps<span class="w"> </span><span class="m">4000</span>
+</code></pre></div>
+<p>Current expectation:</p>
+<ul>
+<li>FlyBody must be installed separately.</li>
+<li><code>dm_control</code> and MuJoCo must be available in the same environment.</li>
+<li>Run <code>python scripts/check_flybody_runtime.py</code> before the first real backend
+  invocation if you changed the environment.</li>
+<li>You may need to override callable locations if your FlyBody checkout differs:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--env-factory<span class="w"> </span>flybody.fly_envs:walk_imitation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ik-function<span class="w"> </span>flybody.inverse_kinematics:qpos_from_site_xpos
+</code></pre></div>
+<h2 id="output-contract">Output Contract<a class="headerlink" href="#output-contract" title="Permanent link">&para;</a></h2>
+<p>Simulation runs preserve Annolid NDJSON compatibility and add backend data to:</p>
+<div class="highlight"><pre><span></span><code>otherData.simulation.adapter
+otherData.simulation.state
+otherData.simulation.diagnostics
+otherData.simulation.run_metadata
+otherData.simulation.mapping_metadata
+</code></pre></div>
+<p>This keeps simulation results usable by existing Annolid tooling while exposing
+backend-specific metadata for downstream analysis.</p>
+<h2 id="optional-runtime-test-coverage">Optional Runtime Test Coverage<a class="headerlink" href="#optional-runtime-test-coverage" title="Permanent link">&para;</a></h2>
+<p>Run the optional real-runtime smoke test locally:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<span class="nv">ANNOLID_RUN_FLYBODY_RUNTIME</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>pytest<span class="w"> </span>-m<span class="w"> </span>simulation<span class="w"> </span>tests/test_flybody_runtime_optional.py
+</code></pre></div>
+<p>This is intentionally excluded from default test runs and is covered by the
+optional GitHub Actions workflow:</p>
+<div class="highlight"><pre><span></span><code>.github/workflows/simulation-optional.yml
+</code></pre></div>
+<p>That workflow uses a headless MuJoCo configuration (<code>MUJOCO_GL=osmesa</code>) so
+default Annolid CI does not need simulator graphics dependencies.</p>
+<h2 id="minimal-end-to-end-example">Minimal End-to-End Example<a class="headerlink" href="#minimal-end-to-end-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pose-schema<span class="w"> </span>pose_schema.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--write-mapping-template<span class="w"> </span>flybody.yaml
+
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--input<span class="w"> </span>pose.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--depth-ndjson<span class="w"> </span>depth.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mapping<span class="w"> </span>flybody.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>flybody.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--smooth-mode<span class="w"> </span>ema<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-gap-frames<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dry-run
+</code></pre></div>
+<h2 id="current-limits">Current Limits<a class="headerlink" href="#current-limits" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A clean Python 3.13 FlyBody install is still weaker than Python 3.10 to 3.12
+  because upstream <code>labmaze</code> packaging may require a local workaround.</li>
+<li>Depth lifting currently uses nearest-pixel sampling.</li>
+<li>Multi-view lifting and camera extrinsics are not implemented yet.</li>
+<li>The current simulation frame model assumes one point per normalized label.</li>
+</ul>
+<h2 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../workflows/">Workflows</a></li>
+<li><a href="../reference/">Reference</a></li>
+<li><a href="../model_plugin_help/">Model Plugin Help</a></li>
 </ul>
 
 
