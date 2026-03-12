@@ -1091,6 +1091,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bot-training-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bot Training Workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bot-evaluation-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bot Evaluation Reports
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1723,6 +1745,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#bot-training-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bot Training Workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bot-evaluation-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bot Evaluation Reports
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1851,6 +1895,7 @@ or running repeatable workflows through the agent stack.</p>
 <h2 id="what-lives-here">What Lives Here<a class="headerlink" href="#what-lives-here" title="Permanent link">&para;</a></h2>
 <ul>
 <li>typed agent tool execution,</li>
+<li>bot-assisted model discovery, training help, and background fine-tuning runs,</li>
 <li>MCP connectivity,</li>
 <li>Codex and ACP integration notes,</li>
 <li>calendar and workspace integrations,</li>
@@ -1858,6 +1903,59 @@ or running repeatable workflows through the agent stack.</p>
 <li>memory-backed agent behavior,</li>
 <li>security and operational guardrails.</li>
 </ul>
+<h2 id="bot-training-workflows">Bot Training Workflows<a class="headerlink" href="#bot-training-workflows" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot now exposes typed training tools for model discovery and launch:</p>
+<ul>
+<li><code>annolid_dataset_inspect</code> inspects a dataset folder, summarizes raw LabelMe annotations, detects external formats such as DeepLabCut, COCO, and YOLO folders, distinguishes between saved trainable specs and inferred dataset layouts, and recommends the next prep/training step.</li>
+<li><code>annolid_dataset_prepare</code> prepares a dataset folder for training by generating a LabelMe spec with train/val/test splits, inferring and writing a reusable COCO spec, importing DeepLabCut training data into LabelMe plus an Annolid index, or exporting a YOLO dataset from raw LabelMe or COCO annotations.</li>
+<li><code>annolid_train_models</code> lists trainable model families, aliases, and task hints.</li>
+<li><code>annolid_train_help</code> returns plugin-specific training help such as <code>dino_kpseg</code> flags.</li>
+<li><code>annolid_train_start</code> launches long-running <code>annolid-run train ...</code> jobs in the background and returns a managed shell <code>session_id</code> for follow-up polling through <code>exec_process</code>. It can now accept <code>dataset_folder</code>, auto-resolve saved dataset configs, and for DinoKPSEG it can stage an inferred COCO spec into the workspace cache when the folder is structurally valid but <code>coco_spec.yaml</code> has not been written yet.</li>
+</ul>
+<p>This is intended for workflows such as:</p>
+<ul>
+<li>DINOv3-based keypoint segmentation fine-tuning with <code>dino_kpseg</code></li>
+<li>Ultralytics YOLO pose fine-tuning with the <code>pose</code> task preset</li>
+<li>Ultralytics YOLO segmentation or detection runs with the matching task preset</li>
+</ul>
+<p>Typical dataset-to-training flow:</p>
+<ol>
+<li>Inspect the folder with <code>annolid_dataset_inspect</code></li>
+<li>If the folder only has inferred COCO structure or raw LabelMe annotations, run <code>annolid_dataset_prepare</code></li>
+<li>Start training with <code>annolid_train_start</code> and pass <code>dataset_folder</code></li>
+</ol>
+<p>For external pose datasets, the first prep step can now stay inside the bot workflow. In particular, a DeepLabCut project with <code>labeled-data/**/CollectedData_*.csv</code> can be converted through <code>annolid_dataset_prepare(mode="deeplabcut_import")</code>, which writes LabelMe JSON sidecars, an optional pose schema, and an Annolid label index that can then feed the rest of the dataset/training pipeline. COCO folders can be turned into <code>coco_spec.yaml</code> with <code>mode="coco_spec"</code> or materialized into YOLO <code>data.yaml</code> datasets with <code>mode="coco_to_yolo"</code> when the target model family expects Ultralytics layout. If the target model is <code>dino_kpseg</code>, the bot can also stage an inferred COCO spec automatically under the workspace cache during <code>annolid_train_start</code>.</p>
+<p>The training launcher prefers the workspace <code>.venv</code> interpreter when present so bot-initiated runs use the same dependency environment recommended for local validation.</p>
+<h2 id="bot-evaluation-reports">Bot Evaluation Reports<a class="headerlink" href="#bot-evaluation-reports" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot also exposes a typed evaluation reporting tool:</p>
+<ul>
+<li><code>annolid_eval_start</code> launches supported evaluation jobs such as DinoKPSEG evaluation or YOLO validation and returns a managed shell session</li>
+<li><code>annolid_eval_report</code> reads saved evaluation artifacts such as DinoKPSEG eval JSON, YOLO <code>results.csv</code> and <code>predictions.json</code>, or behavior-classifier <code>metrics.json</code></li>
+<li>it normalizes core metrics into a paper-style summary table</li>
+<li>it can write JSON, Markdown, CSV, and LaTeX report files when a report directory is provided</li>
+</ul>
+<p>Typical bot evaluation flow:</p>
+<ol>
+<li>Start the eval job with <code>annolid_eval_start</code></li>
+<li>Poll the background session with <code>exec_process</code></li>
+<li>Turn the produced artifacts into a paper-ready summary with <code>annolid_eval_report</code></li>
+</ol>
+<p>Supported eval launch families today:</p>
+<ul>
+<li><code>dino_kpseg</code></li>
+<li><code>yolo</code></li>
+<li><code>behavior_classifier</code></li>
+</ul>
+<p>The report output is designed to support common ML reporting practice:</p>
+<ul>
+<li>explicit dataset/model/split metadata</li>
+<li>primary test metrics in a compact table</li>
+<li>confidence intervals when the source metrics support them</li>
+<li>artifact inventory for confusion matrices, curves, and raw metric files</li>
+<li>reproducibility notes so the bot reports from saved artifacts instead of handwritten numbers</li>
+</ul>
+<p>For <code>yolo</code>, prefer launching evaluation with <code>save_json=true</code> so Ultralytics writes <code>predictions.json</code>. When the run directory also lets the report tool resolve a COCO-style annotation file from <code>args.yaml</code> and the dataset YAML, <code>annolid_eval_report</code> can add deterministic bootstrap confidence intervals for mAP@50 and mAP@50-95 instead of leaving those cells as <code>NA</code>.</p>
+<p>For <code>behavior_classifier</code>, the eval launcher can now also write confusion-matrix and precision-recall curve figures directly during evaluation via <code>--plot-dir</code>, so the resulting run is closer to paper-ready without a separate plotting step.</p>
 
 
 
