@@ -752,6 +752,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#large_image-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        large_image runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -859,6 +870,8 @@
       
         
       
+        
+      
     
     
     
@@ -921,6 +934,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas_overlay_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large TIFF and Atlas Overlays
   
 
     
@@ -1935,6 +1976,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#large_image-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        large_image runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2196,6 +2248,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p><code>gui</code> is installed by default by the one-line installers, so <code>annolid</code> launches without additional flags.</p>
 <p>Current supported extras:</p>
 <ul>
+<li><code>large_image</code></li>
 <li><code>sam3</code></li>
 <li><code>image_editing</code></li>
 <li><code>text_to_speech</code></li>
@@ -2212,6 +2265,11 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>large_image</code></td>
+<td>TIFF/OME-TIFF metadata and optional region-streaming backends</td>
+<td>You want large TIFF, BigTIFF, OME-TIFF, or virtual-slide style viewing without forcing those native libraries into every install. Leave it out for the default GUI install.</td>
+</tr>
 <tr>
 <td><code>sam3</code></td>
 <td>the SAM3-related segmentation workflow/features in Annolid</td>
@@ -2251,6 +2309,9 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>Use comma-separated values with no spaces, for example:</p>
 <div class="highlight"><pre><span></span><code>--extras<span class="w"> </span>sam3,text_to_speech
 </code></pre></div>
+<h3 id="large_image-runtime-note"><code>large_image</code> runtime note<a class="headerlink" href="#large_image-runtime-note" title="Permanent link">&para;</a></h3>
+<p>The <code>large_image</code> extra installs the Python bindings, but <code>pyvips</code> and <code>openslide-python</code> may still require native system runtimes on your machine. This extra is optional; Annolid's normal GUI workflows do not depend on it.</p>
+<p>If those runtimes are not available, Annolid will still open the file and will fall back to <code>tifffile</code> when available, but navigation can be slower on very large TIFF files.</p>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stable workstation install:

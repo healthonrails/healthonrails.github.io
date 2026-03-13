@@ -660,6 +660,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Optional Extras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-on-large_image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on large_image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -792,6 +809,8 @@
       
         
       
+        
+      
     
     
     
@@ -854,6 +873,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas_overlay_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large TIFF and Atlas Overlays
   
 
     
@@ -1832,6 +1879,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Optional Extras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#note-on-large_image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on large_image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2003,6 +2067,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>Useful extras currently defined in <code>pyproject.toml</code> include:</p>
 <ul>
 <li><code>gui</code>: Qt bindings for the desktop application</li>
+<li><code>large_image</code>: TIFF/OME-TIFF metadata and optional streaming backends (<code>tifffile</code>, <code>pyvips</code>, <code>openslide-python</code>)</li>
 <li><code>sam3</code>: SAM3-related dependencies</li>
 <li><code>image_editing</code>: diffusion/image-editing features</li>
 <li><code>text_to_speech</code>: read-aloud and narration features</li>
@@ -2012,8 +2077,16 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>annolid_bot</code>: Annolid Bot integrations such as MCP, Playwright, WhatsApp bridge support, and Google Calendar dependencies</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,annolid_bot,text_to_speech]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,large_image,annolid_bot,text_to_speech]&quot;</span>
 </code></pre></div>
+<h3 id="note-on-large_image">Note on <code>large_image</code><a class="headerlink" href="#note-on-large_image" title="Permanent link">&para;</a></h3>
+<p><code>large_image</code> is optional. A normal <code>annolid[gui]</code> install does not require these dependencies, and Annolid's standard image/video annotation workflows continue to work without them.</p>
+<p>The <code>large_image</code> extra installs the Python packages, but some platforms also need native runtimes for the fastest backends:</p>
+<ul>
+<li><code>pyvips</code> needs a working <code>libvips</code> runtime</li>
+<li><code>openslide-python</code> needs a working OpenSlide runtime</li>
+</ul>
+<p>If those native libraries are missing, Annolid falls back to <code>tifffile</code> when available. If the full <code>large_image</code> extra is not installed, Annolid still starts normally and falls back to the standard Qt/Pillow image path instead of requiring large-image packages at startup.</p>
 <h2 id="verify-the-install">Verify the Install<a class="headerlink" href="#verify-the-install" title="Permanent link">&para;</a></h2>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
