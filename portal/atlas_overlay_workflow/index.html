@@ -16,7 +16,7 @@
         <link rel="prev" href="../workflows/">
       
       
-        <link rel="next" href="../simulation_flybody/">
+        <link rel="next" href="../large_image_guide/">
       
       
         
@@ -641,6 +641,8 @@
       
         
       
+        
+      
     
     
     
@@ -914,6 +916,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../large_image_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2048,7 +2078,7 @@
 <li>PDF-compatible Illustrator <code>.ai</code> files</li>
 </ul>
 <p>Annolid can now import PDF-compatible Illustrator <code>.ai</code> files directly by converting the embedded PDF page to SVG during import. Exporting <code>SVG</code> from Illustrator is still the cleanest path when you want the most predictable interchange.</p>
-<p>On import, Annolid ignores non-rendered SVG definition content such as clip paths in <code>&lt;defs&gt;</code>, converts PDF-compatible <code>.ai</code> files through an SVG import path, and can automatically fit a small atlas drawing to the currently open image when the document coordinates are clearly not already in image space.</p>
+<p>On import, Annolid ignores non-rendered SVG definition content such as clip paths in <code>&lt;defs&gt;</code>, converts PDF-compatible <code>.ai</code> files through an SVG import path, and can automatically fit a small atlas drawing to the currently open image when the document coordinates are clearly not already in image space. For PDF-compatible <code>.ai</code> and <code>.pdf</code> files, Annolid also extracts visible text from the source page and uses it as region labels when the text can be matched to nearby imported shapes.</p>
 <h2 id="install-the-optional-large-image-dependencies">Install the optional large-image dependencies<a class="headerlink" href="#install-the-optional-large-image-dependencies" title="Permanent link">&para;</a></h2>
 <p>This workflow is optional. Annolid's regular GUI install and normal image/video annotation workflows do not require any of the large-image packages below.</p>
 <p>If you work with large TIFF-family images, install the optional extra:</p>
@@ -2086,7 +2116,7 @@
 <li>Import your Illustrator <code>SVG</code>, <code>.ai</code>, or <code>.pdf</code> file with <code>File -&gt; Import Vector Overlay...</code>.</li>
 <li>For very large flat TIFF files, optionally run <code>File -&gt; Optimize Large TIFF for Fast Viewing...</code>.</li>
 <li>If you need to inspect or clean up disk usage later, use the TIFF cache actions in the <code>File</code> menu.</li>
-<li>If the image is open in the tiled large-image viewer, imported overlay shapes remain editable directly in that viewer. You can select overlay shapes, drag them, drag their vertices, and create native point/line/linestrip/polygon annotations without leaving the large-image view.</li>
+<li>If the image is open in the tiled large-image viewer, polygons and other supported vector shapes remain editable directly in that viewer. You can select shapes, drag them, drag their vertices, and create native point/line/linestrip/polygon/rectangle/circle annotations without leaving the large-image view.</li>
 <li>Use the <code>Vector Overlays</code> dock to adjust visibility, opacity, transform, and z-order.</li>
 <li>Create or select corresponding point landmarks on the image and overlay.</li>
 <li>Pair landmarks in the dock with <code>Pair Selected</code>, or click existing pair guide lines to inspect them.</li>
@@ -2137,10 +2167,11 @@
 </ul>
 <h2 id="current-limitations">Current limitations<a class="headerlink" href="#current-limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Tile-native creation currently covers point, line, linestrip, and polygon tools. Rectangle, circle, and AI-assisted create modes still fall back to the existing canvas workflow.</li>
+<li>Tile-native creation currently covers point, line, linestrip, polygon, rectangle, and circle tools. AI-assisted create modes still fall back to the existing canvas workflow.</li>
 <li>Exported corrected SVG preserves corrected geometry, but not full Illustrator Bézier editing semantics.</li>
 <li>Landmark alignment is affine only in the current GUI workflow.</li>
 </ul>
+<p>For a broader overview of large TIFF support, viewing backends, caches, tile-native editing, and canvas fallback behavior, see <a href="../large_image_guide/">Large Image Guide</a>.</p>
 <h2 id="output-formats">Output formats<a class="headerlink" href="#output-formats" title="Permanent link">&para;</a></h2>
 <p>You can export corrected overlays as:</p>
 <ul>

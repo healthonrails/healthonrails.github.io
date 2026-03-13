@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/architecture_layers/">
+        <link rel="canonical" href="https://annolid.com/large_image_guide/">
       
       
-        <link rel="prev" href="../migration/">
+        <link rel="prev" href="../atlas_overlay_workflow/">
       
       
-        <link rel="next" href="../redirects/">
+        <link rel="next" href="../simulation_flybody/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Architecture Layers - Annolid Docs</title>
+        <title>Large Image Guide - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-layers" class="md-skip">
+        <a href="#large-image-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture Layers
+              Large Image Guide
             
           </span>
         </div>
@@ -247,10 +247,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../workflows/" class="md-tabs__link">
           
   
@@ -291,12 +293,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../operations/" class="md-tabs__link">
           
   
@@ -616,8 +616,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -645,21 +647,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -677,7 +680,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -748,10 +751,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../large_image_guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -767,6 +797,308 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-counts-as-a-large-image-in-annolid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What counts as a large image in Annolid
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-image-support-is-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large-image support is optional
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-annolid-opens-large-tiff-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Annolid opens large TIFF files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backends-and-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backends and performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backends and performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tifffile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tifffile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyvips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyvips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openslide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenSlide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-large-tiff-files-for-fast-viewing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimizing large TIFF files for fast viewing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-tiff-cache-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large TIFF cache management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-viewer-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two viewer surfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two viewer surfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiled-large-image-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiled large-image viewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-tile-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is tile-native
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-still-switches-to-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What still switches to canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-during-canvas-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens during canvas fallback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atlas-and-vector-overlay-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atlas and vector overlay workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-image-opens-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The image opens slowly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-viewer-changed-unexpectedly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The viewer changed unexpectedly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-can-see-a-shape-but-cannot-edit-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I can see a shape but cannot edit it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-imported-an-atlas-overlay-and-want-to-edit-vertices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I imported an atlas overlay and want to edit vertices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-want-the-fastest-repeated-viewing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I want the fastest repeated viewing workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1312,10 +1644,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1333,22 +1663,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1366,7 +1695,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1465,37 +1794,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture Layers
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../architecture_layers/" class="md-nav__link">
         
   
   
@@ -1511,70 +1813,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#layer-responsibilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Layer responsibilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#migration-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Migration status
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-migration-tranche" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next migration tranche
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1762,10 +2000,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#layer-responsibilities" class="md-nav__link">
+  <a href="#what-counts-as-a-large-image-in-annolid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Layer responsibilities
+        What counts as a large image in Annolid
       
     </span>
   </a>
@@ -1773,10 +2011,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rules" class="md-nav__link">
+  <a href="#large-image-support-is-optional" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rules
+        Large-image support is optional
       
     </span>
   </a>
@@ -1784,10 +2022,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#migration-status" class="md-nav__link">
+  <a href="#how-annolid-opens-large-tiff-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Migration status
+        How Annolid opens large TIFF files
       
     </span>
   </a>
@@ -1795,10 +2033,248 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-migration-tranche" class="md-nav__link">
+  <a href="#backends-and-performance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Next migration tranche
+        Backends and performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backends and performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tifffile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tifffile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pyvips" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pyvips
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openslide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenSlide
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimizing-large-tiff-files-for-fast-viewing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimizing large TIFF files for fast viewing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-tiff-cache-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large TIFF cache management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-viewer-surfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two viewer surfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Two viewer surfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tiled-large-image-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tiled large-image viewer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-tile-native" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is tile-native
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-still-switches-to-canvas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What still switches to canvas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-happens-during-canvas-fallback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What happens during canvas fallback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atlas-and-vector-overlay-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atlas and vector overlay workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-image-opens-slowly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The image opens slowly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-viewer-changed-unexpectedly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The viewer changed unexpectedly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-can-see-a-shape-but-cannot-edit-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I can see a shape but cannot edit it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-imported-an-atlas-overlay-and-want-to-edit-vertices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I imported an atlas overlay and want to edit vertices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-want-the-fastest-repeated-viewing-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I want the fastest repeated viewing workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current scope
       
     </span>
   </a>
@@ -1848,10 +2324,10 @@
     
     
       <li class="md-path__item">
-        <a href="../operations/" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Operations
+    Workflows
   </span>
 
         </a>
@@ -1870,7 +2346,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/architecture_layers.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/large_image_guide.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1879,124 +2355,219 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/architecture_layers.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/large_image_guide.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="architecture-layers">Architecture Layers<a class="headerlink" href="#architecture-layers" title="Permanent link">&para;</a></h1>
-<p>Annolid now defines four top-level layers with explicit intent:</p>
+<h1 id="large-image-guide">Large Image Guide<a class="headerlink" href="#large-image-guide" title="Permanent link">&para;</a></h1>
+<p>This guide explains how Annolid works with large TIFF-family images, including opening files, navigating them efficiently, editing annotations, working with atlas overlays, and understanding when the app stays in the tiled viewer versus when it falls back to the canvas workflow.</p>
+<h2 id="what-counts-as-a-large-image-in-annolid">What counts as a large image in Annolid<a class="headerlink" href="#what-counts-as-a-large-image-in-annolid" title="Permanent link">&para;</a></h2>
+<p>In practice, this guide is for:</p>
+<ul>
+<li><code>.tif</code></li>
+<li><code>.tiff</code></li>
+<li><code>.ome.tif</code></li>
+<li><code>.ome.tiff</code></li>
+<li>BigTIFF</li>
+<li>large flat TIFF files</li>
+<li>tiled or pyramidal TIFF files</li>
+</ul>
+<p>Annolid treats these differently from ordinary images because they may be too large to load comfortably as one full in-memory raster.</p>
+<h2 id="large-image-support-is-optional">Large-image support is optional<a class="headerlink" href="#large-image-support-is-optional" title="Permanent link">&para;</a></h2>
+<p>Annolid still works normally without the large-image extras. A standard GUI install is enough for ordinary image and video annotation workflows.</p>
+<p>Install the optional large-image extras when you want better TIFF-family metadata support and better large-image performance:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[large_image]&quot;</span>
+</code></pre></div>
+<p>From a source checkout:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[large_image]&quot;</span>
+</code></pre></div>
+<p>These extras enable optional backends such as:</p>
+<ul>
+<li><code>tifffile</code></li>
+<li><code>pyvips</code></li>
+<li><code>openslide-python</code></li>
+</ul>
+<p>If they are not available, Annolid falls back gracefully to simpler image-loading paths when possible.</p>
+<h2 id="how-annolid-opens-large-tiff-files">How Annolid opens large TIFF files<a class="headerlink" href="#how-annolid-opens-large-tiff-files" title="Permanent link">&para;</a></h2>
+<p>When you open a large TIFF-family image, Annolid:</p>
 <ol>
-<li><code>annolid.domain</code></li>
-<li><code>annolid.services</code></li>
-<li><code>annolid.interfaces</code></li>
-<li><code>annolid.infrastructure</code></li>
+<li>Detects whether it should use the large-image path.</li>
+<li>Chooses the best available backend.</li>
+<li>Opens the image in the tiled large-image viewer when appropriate.</li>
+<li>Keeps metadata about the large image in project state.</li>
 </ol>
-<h2 id="layer-responsibilities">Layer responsibilities<a class="headerlink" href="#layer-responsibilities" title="Permanent link">&para;</a></h2>
+<p>If an optimized pyramidal cache already exists for that image, Annolid may reuse it automatically for faster viewing.</p>
+<h2 id="backends-and-performance">Backends and performance<a class="headerlink" href="#backends-and-performance" title="Permanent link">&para;</a></h2>
+<p>Annolid may use different backends depending on what is installed and what kind of TIFF you open.</p>
+<h3 id="tifffile"><code>tifffile</code><a class="headerlink" href="#tifffile" title="Permanent link">&para;</a></h3>
+<p>Best for:</p>
 <ul>
-<li><code>annolid.domain</code></li>
-<li>Business schema/types and invariant-centric models (project schema, events, tracks, keypoints, timelines, datasets).</li>
-<li>Concrete modules: <code>project_schema</code>, <code>behavior_events</code>, <code>tracks</code>, <code>keypoints</code>, <code>timelines</code>, <code>datasets</code>.</li>
-<li><code>annolid.services</code></li>
-<li>Orchestration use-cases that interfaces call (<code>agent</code> pipeline, behavior <code>time_budget</code>, and future tracking/export/search workflows).</li>
-<li>Concrete modules: <code>inference</code>, <code>training</code>, <code>export</code>, <code>search</code>, <code>tracking</code>, <code>agent</code>.</li>
-<li><code>annolid.interfaces</code></li>
-<li>User-facing and transport-facing adapters (GUI, CLI, bots, background jobs).</li>
-<li>Concrete modules: <code>gui</code>, <code>cli</code>, <code>background</code>, <code>bot</code>.</li>
-<li><code>annolid.infrastructure</code></li>
-<li>Filesystem/persistence/runtime patching/model download/external API adapters.</li>
-<li>Concrete modules: <code>filesystem</code>, <code>persistence</code>, <code>runtime</code>, <code>model_downloads</code>, <code>external_apis</code>.</li>
+<li>scientific TIFF metadata</li>
+<li>OME-TIFF</li>
+<li>BigTIFF</li>
+<li>reliable baseline TIFF support</li>
 </ul>
-<h2 id="rules">Rules<a class="headerlink" href="#rules" title="Permanent link">&para;</a></h2>
+<h3 id="pyvips"><code>pyvips</code><a class="headerlink" href="#pyvips" title="Permanent link">&para;</a></h3>
+<p>Best for:</p>
 <ul>
-<li>Interfaces call services, not each other.</li>
-<li>Services may depend on domain and infrastructure.</li>
-<li>Domain must stay framework-agnostic.</li>
-<li>Infrastructure must not import GUI code.</li>
+<li>efficient region reads</li>
+<li>low-memory navigation</li>
+<li>building optimized pyramidal TIFF caches</li>
 </ul>
-<h2 id="migration-status">Migration status<a class="headerlink" href="#migration-status" title="Permanent link">&para;</a></h2>
+<h3 id="openslide"><code>OpenSlide</code><a class="headerlink" href="#openslide" title="Permanent link">&para;</a></h3>
+<p>Best for:</p>
 <ul>
-<li>Shared service in place: <code>annolid.services.agent.run_agent_pipeline</code></li>
-<li>Used by both GUI (<code>AgentAnalysisMixin</code>) and CLI (<code>annolid-run agent</code>).</li>
-<li>Shared service in place: <code>annolid.services.time_budget.compute_behavior_time_budget_report</code></li>
-<li>Used by GUI behavior time-budget dialog/export path.</li>
-<li>Shared service in place: <code>annolid.services.embedding_search.run_embedding_search</code></li>
-<li>Used by GUI frame-similarity/embedding search worker.</li>
-<li>Shared service in place: <code>annolid.services.tracking.*</code></li>
-<li>Used by GUI and background tracking setup/execution paths (<code>prediction_execution_mixin</code>, <code>TrackAllWorker</code>, <code>jobs/tracking_worker.py</code>).</li>
-<li>Shared service in place: <code>annolid.services.agent_admin.*</code></li>
-<li>Used by the CLI agent security/secret-management commands instead of direct <code>core.agent</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_workspace.*</code></li>
-<li>Used by the CLI agent skills/feedback/memory commands instead of direct <code>core.agent</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_eval.*</code></li>
-<li>Used by the CLI agent eval commands instead of direct <code>core.agent.eval.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_update.*</code></li>
-<li>Used by the CLI update commands instead of direct <code>core.agent.update_manager.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_bridge.run_agent_acp_bridge</code></li>
-<li>Used by the CLI ACP bridge command instead of direct <code>core.agent.acp_stdio_bridge</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_cron.*</code></li>
-<li>Used by the CLI agent onboard/status/cron commands instead of direct <code>core.agent.cron</code>, workspace bootstrap, and utils imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.agent_tooling.validate_agent_tools</code></li>
-<li>Used by the CLI agent tool validation command instead of direct <code>core.agent.tools.*</code> imports in <code>annolid/engine/cli.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.chat_runtime.*</code></li>
-<li>Used by the GUI chat backend for workspace/config root resolution instead of embedding that bootstrap logic directly in <code>annolid/gui/widgets/ai_chat_backend.py</code>.</li>
-<li>Shared service in place: <code>annolid.services.chat_provider_runtime.*</code></li>
-<li>Used by the GUI chat backend for provider kind resolution, fast-mode execution, provider fallback, and direct provider chat calls instead of importing <code>core.agent.gui_backend.provider_*</code> modules directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_session.*</code></li>
-<li>Used by the GUI chat backend for session-store bootstrap, outbound chat event emission, history loading, and turn persistence instead of importing <code>core.agent.session_manager</code> and <code>core.agent.gui_backend.session_io</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_widget_bridge.*</code></li>
-<li>Used by the GUI chat backend for widget slot invocation, GUI context payload assembly, direct-command dispatch, and sync-awaitable bridging instead of importing <code>core.agent.gui_backend.widget_bridge</code>, <code>direct_commands</code>, and the direct-command router directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_web_pdf.*</code></li>
-<li>Used by the GUI chat backend for web view actions, PDF actions, and URL/PDF opener orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_web_pdf</code> and <code>tool_handlers_openers</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_video.*</code></li>
-<li>Used by the GUI chat backend for video open/resolve flow and segment-track/behavior-label workflow orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_video</code> and <code>tool_handlers_video_workflow</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_controls.*</code></li>
-<li>Used by the GUI chat backend for chat control actions such as prompt/model/frame updates, AI text segmentation, and next-frame tracking instead of importing <code>core.agent.gui_backend.tool_handlers_chat_controls</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_arxiv.*</code></li>
-<li>Used by the GUI chat backend for arXiv search and local PDF discovery instead of importing <code>core.agent.gui_backend.tool_handlers_arxiv</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_citations.*</code></li>
-<li>Used by the GUI chat backend for citation extraction, normalization, listing, and persistence orchestration instead of importing <code>core.agent.gui_backend.tool_handlers_citations</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_filesystem.*</code></li>
-<li>Used by the GUI chat backend for filesystem rename actions instead of importing <code>core.agent.gui_backend.tool_handlers_filesystem</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_realtime.*</code></li>
-<li>Used by the GUI chat backend for realtime stream/log actions instead of importing <code>core.agent.gui_backend.tool_handlers_realtime</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_shapes.*</code></li>
-<li>Used by the GUI chat backend for in-canvas shape selection/listing/edit actions instead of importing <code>core.agent.gui_backend.tool_handlers_shapes</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_shape_files.*</code></li>
-<li>Used by the GUI chat backend for shape-file listing/relabel/delete actions instead of importing <code>core.agent.gui_backend.tool_handlers_shape_files</code> directly.</li>
-<li>Shared service in place: <code>annolid.services.chat_agent_core.*</code>, <code>chat_backend_support.*</code>, <code>chat_devtools.*</code>, and <code>chat_manager_runtime.*</code></li>
-<li>Used by the GUI chat backend, chat widget, and chat manager for provider state, tool registry/policy, GUI backend helper logic, dev-tool execution, and background messaging/channel runtime instead of importing <code>core.agent</code> modules directly from GUI code.</li>
-<li>Infrastructure wrappers in place: <code>annolid.infrastructure.agent_config.*</code> and <code>agent_workspace.*</code></li>
-<li>Used by the chat backend, chat widget, settings dialog, web viewer, and chat manager for config/workspace access instead of importing <code>core.agent.config</code> and <code>core.agent.utils</code> directly from GUI code.</li>
-<li>GUI chat surfaces migrated:</li>
-<li><code>annolid/gui/widgets/ai_chat_backend.py</code></li>
-<li><code>annolid/gui/widgets/ai_chat_widget.py</code></li>
-<li><code>annolid/gui/widgets/ai_chat_manager.py</code></li>
-<li><code>annolid/gui/widgets/ai_chat_session_dialog.py</code></li>
-<li><code>annolid/gui/widgets/llm_settings_dialog.py</code></li>
-<li><code>annolid/gui/widgets/web_viewer.py</code></li>
-<li>These now consume <code>annolid.services</code> and <code>annolid.infrastructure</code> wrappers rather than <code>annolid.core.agent</code> directly.</li>
-<li>GUI feature setup extraction in place:</li>
-<li><code>annolid/gui/features/video.py</code></li>
-<li><code>annolid/gui/features/viewers.py</code></li>
-<li><code>annolid/gui/features/annotation.py</code></li>
-<li><code>annolid/gui/features/search.py</code></li>
-<li><code>annolid/gui/features/timeline.py</code></li>
-<li><code>AnnolidWindow</code> now composes these through <code>GuiFeatureDeps</code> and records typed feature state objects in <code>self.feature_states</code>.</li>
-<li>Stable architecture wrappers in place:</li>
-<li><code>annolid.domain.*</code> re-exports canonical schema/event/track/keypoint/timeline/dataset types.</li>
-<li><code>annolid.services.*</code> exposes inference/training/export/search/tracking/agent APIs.</li>
-<li><code>annolid.interfaces.*</code> exposes GUI/CLI/background/bot entry points.</li>
-<li><code>annolid.infrastructure.*</code> exposes filesystem/persistence/runtime/download/API adapters.</li>
+<li>whole-slide style pyramidal images</li>
+<li>pathology-style slide workflows</li>
 </ul>
-<h2 id="next-migration-tranche">Next migration tranche<a class="headerlink" href="#next-migration-tranche" title="Permanent link">&para;</a></h2>
+<p>If Annolid has to fall back to a slower backend, it reports that in the status message when the image opens.</p>
+<h2 id="optimizing-large-tiff-files-for-fast-viewing">Optimizing large TIFF files for fast viewing<a class="headerlink" href="#optimizing-large-tiff-files-for-fast-viewing" title="Permanent link">&para;</a></h2>
+<p>If you open a large flat TIFF repeatedly, the source format itself may be the bottleneck. Annolid can generate a pyramidal viewing cache.</p>
+<p>Use:</p>
 <ul>
-<li>Keep moving remaining GUI modules toward <code>annolid.domain</code>, <code>annolid.services</code>, and <code>annolid.infrastructure</code> wrappers instead of direct <code>core</code> or <code>utils</code> imports.</li>
-<li>When new chat/tooling features are added, land them in the service/infrastructure facades first rather than importing <code>annolid.core.agent</code> from widgets or dialogs.</li>
-<li>Keep <code>annolid/interfaces.*</code> as the public entry surfaces; avoid importing <code>annolid.interfaces</code> from the concrete GUI/CLI implementation modules themselves to prevent cycles.</li>
+<li><code>File -&gt; Optimize Large TIFF for Fast Viewing...</code></li>
 </ul>
+<p>This creates an optimized cache file that later opens can reuse while still keeping the original TIFF as the project source image.</p>
+<h2 id="large-tiff-cache-management">Large TIFF cache management<a class="headerlink" href="#large-tiff-cache-management" title="Permanent link">&para;</a></h2>
+<p>Annolid includes cache-management tools in the <code>File</code> menu:</p>
+<ul>
+<li><code>Optimize Large TIFF for Fast Viewing...</code></li>
+<li><code>Large TIFF Cache Info...</code></li>
+<li><code>Open Large TIFF Cache Folder</code></li>
+<li><code>Clear Current TIFF Cache...</code></li>
+<li><code>Clear All TIFF Caches...</code></li>
+<li><code>Configure Large TIFF Cache Limits...</code></li>
+</ul>
+<p>Annolid also prunes old optimized caches automatically when the configured cache size or cache count limits are exceeded.</p>
+<h2 id="two-viewer-surfaces">Two viewer surfaces<a class="headerlink" href="#two-viewer-surfaces" title="Permanent link">&para;</a></h2>
+<p>Annolid uses two image-editing surfaces for large-image workflows:</p>
+<ul>
+<li><code>Tiled large-image viewer</code></li>
+<li><code>Canvas</code></li>
+</ul>
+<h3 id="tiled-large-image-viewer">Tiled large-image viewer<a class="headerlink" href="#tiled-large-image-viewer" title="Permanent link">&para;</a></h3>
+<p>Best for:</p>
+<ul>
+<li>very large TIFF navigation</li>
+<li>zooming and panning</li>
+<li>editing supported manual annotations directly on the large image</li>
+<li>editing imported vector overlays</li>
+</ul>
+<h3 id="canvas">Canvas<a class="headerlink" href="#canvas" title="Permanent link">&para;</a></h3>
+<p>Best for:</p>
+<ul>
+<li>legacy drawing workflows</li>
+<li>AI-assisted creation tools that still depend on canvas-specific logic</li>
+</ul>
+<p>For normal manual large-image work, Annolid now keeps you in the tiled viewer as much as possible.</p>
+<h2 id="what-is-tile-native">What is tile-native<a class="headerlink" href="#what-is-tile-native" title="Permanent link">&para;</a></h2>
+<p>These workflows now work directly in the tiled large-image viewer:</p>
+<ul>
+<li>select shapes</li>
+<li>move shapes</li>
+<li>drag vertices</li>
+<li>edit imported vector overlays</li>
+<li>create <code>point</code></li>
+<li>create <code>line</code></li>
+<li>create <code>linestrip</code></li>
+<li>create <code>polygon</code></li>
+<li>create <code>rectangle</code></li>
+<li>create <code>circle</code></li>
+</ul>
+<p>Polygon drawing in the tiled viewer follows the same basic interaction as the
+normal canvas: as you draw, Annolid shows the in-progress path and point
+markers, and when the cursor gets close to the first point it highlights the
+close target so you can finish the polygon confidently.</p>
+<p>When editing an existing polygon or linestrip in the tiled viewer, clicking on
+an edge inserts a new point at that location so you can refine the path
+directly. At high zoom, Annolid also reduces point-highlight glow and halo
+intensity so the image detail stays visible while you edit.</p>
+<p>This lets you stay in the large-image navigation workflow for common annotation tasks.</p>
+<h2 id="what-still-switches-to-canvas">What still switches to canvas<a class="headerlink" href="#what-still-switches-to-canvas" title="Permanent link">&para;</a></h2>
+<p>These tools still fall back to the canvas workflow on purpose:</p>
+<ul>
+<li><code>AI Polygon</code></li>
+<li><code>AI Mask</code></li>
+<li><code>Grounding SAM</code></li>
+<li><code>Polygon SAM</code></li>
+</ul>
+<p>Why:</p>
+<ul>
+<li>they depend on canvas-specific preview and model wiring</li>
+<li>they use older tool flows that are not yet ported to the tiled viewer</li>
+</ul>
+<p>When this happens, Annolid now shows a status message explaining that it switched to canvas preview mode for that tool.</p>
+<h2 id="what-happens-during-canvas-fallback">What happens during canvas fallback<a class="headerlink" href="#what-happens-during-canvas-fallback" title="Permanent link">&para;</a></h2>
+<p>If you choose an unsupported tool while working on a large TIFF:</p>
+<ol>
+<li>Annolid keeps the current image and shapes.</li>
+<li>It switches from the tiled viewer to the canvas preview.</li>
+<li>It enables the requested tool there.</li>
+<li>You continue working in the same project.</li>
+</ol>
+<p>This is a workflow handoff, not a data conversion.</p>
+<h2 id="atlas-and-vector-overlay-workflows">Atlas and vector overlay workflows<a class="headerlink" href="#atlas-and-vector-overlay-workflows" title="Permanent link">&para;</a></h2>
+<p>Large-image work is often paired with atlas overlays.</p>
+<p>Annolid supports:</p>
+<ul>
+<li>Illustrator-exported <code>SVG</code></li>
+<li>PDF-compatible Illustrator <code>.ai</code></li>
+<li>supported vector import through the overlay workflow</li>
+</ul>
+<p>Imported atlas overlays can now be:</p>
+<ul>
+<li>displayed on top of large TIFF images</li>
+<li>selected in the tiled viewer</li>
+<li>moved and edited</li>
+<li>aligned with landmarks</li>
+<li>exported after correction</li>
+</ul>
+<p>For the atlas-specific step-by-step workflow, see <a href="../atlas_overlay_workflow/">Large TIFF and Atlas Overlay Workflow</a>.</p>
+<h2 id="recommended-workflow">Recommended workflow<a class="headerlink" href="#recommended-workflow" title="Permanent link">&para;</a></h2>
+<p>For most large-image users:</p>
+<ol>
+<li>Open the TIFF-family image.</li>
+<li>Stay in the tiled viewer for navigation.</li>
+<li>Use tile-native manual tools for ordinary annotations.</li>
+<li>Import atlas overlays if needed.</li>
+<li>Use the overlay dock for visibility, opacity, transform, and alignment.</li>
+<li>Only switch to AI/SAM tools when you actually need them.</li>
+<li>Build an optimized TIFF cache if the same flat TIFF will be opened often.</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="the-image-opens-slowly">The image opens slowly<a class="headerlink" href="#the-image-opens-slowly" title="Permanent link">&para;</a></h3>
+<p>Check:</p>
+<ul>
+<li>whether the file is a flat non-pyramidal TIFF</li>
+<li>whether <code>annolid[large_image]</code> is installed</li>
+<li>whether <code>pyvips</code> is available</li>
+<li>whether an optimized TIFF cache has been built</li>
+</ul>
+<h3 id="the-viewer-changed-unexpectedly">The viewer changed unexpectedly<a class="headerlink" href="#the-viewer-changed-unexpectedly" title="Permanent link">&para;</a></h3>
+<p>If you selected an AI/SAM tool, that is expected. Those tools still use the canvas fallback path.</p>
+<h3 id="i-can-see-a-shape-but-cannot-edit-it">I can see a shape but cannot edit it<a class="headerlink" href="#i-can-see-a-shape-but-cannot-edit-it" title="Permanent link">&para;</a></h3>
+<p>Check:</p>
+<ul>
+<li>the shape is visible</li>
+<li>the overlay is not locked</li>
+<li>you are in edit mode, not a create mode</li>
+<li>the shape is not a mask-only object</li>
+</ul>
+<h3 id="i-imported-an-atlas-overlay-and-want-to-edit-vertices">I imported an atlas overlay and want to edit vertices<a class="headerlink" href="#i-imported-an-atlas-overlay-and-want-to-edit-vertices" title="Permanent link">&para;</a></h3>
+<p>Stay in the tiled viewer and use normal shape selection. Imported overlays are editable there.</p>
+<h3 id="i-want-the-fastest-repeated-viewing-workflow">I want the fastest repeated viewing workflow<a class="headerlink" href="#i-want-the-fastest-repeated-viewing-workflow" title="Permanent link">&para;</a></h3>
+<p>Use:</p>
+<ol>
+<li>local SSD storage</li>
+<li><code>annolid[large_image]</code></li>
+<li>optimized pyramidal TIFF caches</li>
+<li>tiled or pyramidal TIFF exports when you control the source pipeline</li>
+</ol>
+<h2 id="current-scope">Current scope<a class="headerlink" href="#current-scope" title="Permanent link">&para;</a></h2>
+<p>Annolid’s tiled large-image workflow is now strongest for manual geometry editing and atlas-style overlay work. AI-assisted large-image creation tools still rely on the older canvas path, which is the main remaining functional split.</p>
 
 
 
