@@ -2062,6 +2062,8 @@
 <li>Tile-native overlay editing for large TIFF sessions.</li>
 <li>Explicit landmark pairing between overlay points and image points.</li>
 <li>Affine alignment from landmark pairs.</li>
+<li>Immutable import provenance for SVG / AI / PDF overlays.</li>
+<li>Editable correction layers derived from the imported source overlay.</li>
 <li>Export of corrected overlays as <code>SVG</code>, overlay <code>JSON</code>, or LabelMe-like <code>JSON</code>.</li>
 </ul>
 <h2 id="recommended-source-formats">Recommended source formats<a class="headerlink" href="#recommended-source-formats" title="Permanent link">&para;</a></h2>
@@ -2079,6 +2081,7 @@
 </ul>
 <p>Annolid can now import PDF-compatible Illustrator <code>.ai</code> files directly by converting the embedded PDF page to SVG during import. Exporting <code>SVG</code> from Illustrator is still the cleanest path when you want the most predictable interchange.</p>
 <p>On import, Annolid ignores non-rendered SVG definition content such as clip paths in <code>&lt;defs&gt;</code>, converts PDF-compatible <code>.ai</code> files through an SVG import path, and can automatically fit a small atlas drawing to the currently open image when the document coordinates are clearly not already in image space. For PDF-compatible <code>.ai</code> and <code>.pdf</code> files, Annolid also extracts visible text from the source page and uses it as region labels when the text can be matched to nearby imported shapes.</p>
+<p>Internally, Annolid now normalizes <code>SVG</code>, PDF-compatible <code>.ai</code>, and <code>.pdf</code> imports into the same overlay model. The imported source geometry is preserved as immutable provenance data, and the shapes you edit in the viewer are treated as the derived correction layer for that overlay.</p>
 <h2 id="install-the-optional-large-image-dependencies">Install the optional large-image dependencies<a class="headerlink" href="#install-the-optional-large-image-dependencies" title="Permanent link">&para;</a></h2>
 <p>This workflow is optional. Annolid's regular GUI install and normal image/video annotation workflows do not require any of the large-image packages below.</p>
 <p>If you work with large TIFF-family images, install the optional extra:</p>
@@ -2125,6 +2128,7 @@
 </ol>
 <h2 id="landmark-pairing-options">Landmark pairing options<a class="headerlink" href="#landmark-pairing-options" title="Permanent link">&para;</a></h2>
 <p>Annolid supports two pairing modes.</p>
+<p>Explicit landmark pairs are now stored as overlay-layer state, not only as temporary point-shape flags. That means the overlay model keeps the pair list, the pair labels, and the current alignment inputs together with the overlay record itself.</p>
 <h3 id="explicit-pairing">Explicit pairing<a class="headerlink" href="#explicit-pairing" title="Permanent link">&para;</a></h3>
 <p>This is the recommended mode for atlas alignment.</p>
 <ol>

@@ -969,6 +969,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#layer-model-and-layer-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer model and layer dock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-is-tile-native" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -995,6 +1006,28 @@
     <span class="md-ellipsis">
       
         What happens during canvas fallback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewer-status-and-debugging-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewer status and debugging overlay
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressive-tile-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progressive tile loading
       
     </span>
   </a>
@@ -2177,6 +2210,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#layer-model-and-layer-dock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Layer model and layer dock
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-is-tile-native" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2203,6 +2247,28 @@
     <span class="md-ellipsis">
       
         What happens during canvas fallback
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewer-status-and-debugging-overlay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewer status and debugging overlay
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#progressive-tile-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Progressive tile loading
       
     </span>
   </a>
@@ -2490,6 +2556,18 @@ viewer workflow.</p>
 <li>pathology-style slide workflows</li>
 </ul>
 <p>If Annolid has to fall back to a slower backend, it reports that in the status message when the image opens.</p>
+<p>Annolid also tracks backend capabilities explicitly, so the UI can adapt
+without guessing. In practice, the important capability differences are:</p>
+<ul>
+<li>page navigation support</li>
+<li>pyramid/level support</li>
+<li>region-read support</li>
+<li>metadata-axis support</li>
+<li>optimized-cache generation support</li>
+<li>label-stack suitability</li>
+</ul>
+<p>That is why, for example, TIFF page navigation only appears when the active
+backend actually reports paged-stack support.</p>
 <h2 id="optimizing-large-tiff-files-for-fast-viewing">Optimizing large TIFF files for fast viewing<a class="headerlink" href="#optimizing-large-tiff-files-for-fast-viewing" title="Permanent link">&para;</a></h2>
 <p>If you open a large flat TIFF repeatedly, the source format itself may be the bottleneck. Annolid can generate a pyramidal viewing cache.</p>
 <p>Use:</p>
@@ -2517,6 +2595,15 @@ annotation folder described above.</p>
 <li><code>Tiled large-image viewer</code></li>
 <li><code>Canvas</code></li>
 </ul>
+<p>For large TIFF workflows, the status bar is now kept intentionally minimal so
+page navigation remains clear. In practice, it should only show the page
+controls such as:</p>
+<ul>
+<li>play/pause</li>
+<li>page slider</li>
+</ul>
+<p>Large-image mode/debug information lives in the viewer overlay instead of the
+status bar.</p>
 <h3 id="tiled-large-image-viewer">Tiled large-image viewer<a class="headerlink" href="#tiled-large-image-viewer" title="Permanent link">&para;</a></h3>
 <p>Best for:</p>
 <ul>
@@ -2540,12 +2627,39 @@ audio, caption, and video-list docks.</p>
 <ul>
 <li>Files</li>
 <li>Flags</li>
+<li>Layers</li>
 <li>Labels</li>
 <li>Label Instances</li>
 <li>Vector Overlays, when overlays are present</li>
 </ul>
 <p>When you leave the large-image workflow and go back to ordinary image or video
 work, those hidden docks are restored.</p>
+<h2 id="layer-model-and-layer-dock">Layer model and layer dock<a class="headerlink" href="#layer-model-and-layer-dock" title="Permanent link">&para;</a></h2>
+<p>Annolid now treats the large-image viewer as a true layer-based workflow even
+though it still preserves the existing annotation data model underneath.</p>
+<p>The current runtime layer stack includes:</p>
+<ul>
+<li>raster image layer</li>
+<li>label-image overlay layer</li>
+<li>vector overlay layer</li>
+<li>landmark layer</li>
+<li>annotation layer</li>
+</ul>
+<p>The <code>Layers</code> dock reflects that runtime model directly. Today it gives you a
+single place to inspect and control the current layer stack, including:</p>
+<ul>
+<li>hiding/showing label-image overlays</li>
+<li>hiding/showing imported vector overlays</li>
+<li>hiding/showing landmark-pair guide layers</li>
+<li>hiding/showing manual annotation layers</li>
+<li>adjusting opacity for label-image and vector-overlay layers</li>
+</ul>
+<p>Selecting a vector-overlay or landmark layer in the <code>Layers</code> dock also keeps
+the vector overlay dock aligned with that overlay, so the layer list and the
+overlay/alignment tools do not drift out of sync.</p>
+<p>That layer dock is intentionally built on top of the shared
+<code>ViewerLayerModel</code>/<code>LargeImageDocument</code> path rather than introducing another
+overlay-specific state store.</p>
 <h2 id="what-is-tile-native">What is tile-native<a class="headerlink" href="#what-is-tile-native" title="Permanent link">&para;</a></h2>
 <p>These workflows now work directly in the tiled large-image viewer:</p>
 <ul>
@@ -2583,6 +2697,8 @@ intensity so the image detail stays visible while you edit.</p>
 <li>they use older tool flows that are not yet ported to the tiled viewer</li>
 </ul>
 <p>When this happens, Annolid now shows a status message explaining that it switched to canvas preview mode for that tool.</p>
+<p>The fallback reason is reflected in the large-image viewer state and overlay,
+without adding more persistent status-bar text.</p>
 <h2 id="what-happens-during-canvas-fallback">What happens during canvas fallback<a class="headerlink" href="#what-happens-during-canvas-fallback" title="Permanent link">&para;</a></h2>
 <p>If you choose an unsupported tool while working on a large TIFF:</p>
 <ol>
@@ -2592,6 +2708,44 @@ intensity so the image detail stays visible while you edit.</p>
 <li>You continue working in the same project.</li>
 </ol>
 <p>This is a workflow handoff, not a data conversion.</p>
+<p>After you finish the canvas-only step, you can switch back to the tiled
+large-image surface without reopening the TIFF.</p>
+<h2 id="viewer-status-and-debugging-overlay">Viewer status and debugging overlay<a class="headerlink" href="#viewer-status-and-debugging-overlay" title="Permanent link">&para;</a></h2>
+<p>The tiled viewer now shows a compact translucent status overlay in the
+upper-left corner. This is useful both for everyday troubleshooting and for
+understanding which backend/path Annolid is using.</p>
+<p>The overlay reports:</p>
+<ul>
+<li>backend in use</li>
+<li>current page</li>
+<li>current level</li>
+<li>current zoom</li>
+<li>visible raster tile count</li>
+<li>visible label tile count</li>
+<li>outstanding tile requests</li>
+<li>cache hits and misses</li>
+<li>whether you are viewing the source image or an optimized TIFF cache</li>
+</ul>
+<p>This is especially useful when comparing behavior between:</p>
+<ul>
+<li><code>tifffile</code></li>
+<li><code>pyvips</code></li>
+<li><code>OpenSlide</code></li>
+<li>source TIFF vs optimized pyramidal cache</li>
+</ul>
+<h2 id="progressive-tile-loading">Progressive tile loading<a class="headerlink" href="#progressive-tile-loading" title="Permanent link">&para;</a></h2>
+<p>Tile loading is now split into planning and scheduling instead of being treated
+as one paint-time action.</p>
+<p>In practice, Annolid now uses a progressive strategy:</p>
+<ol>
+<li>show the thumbnail/preview immediately</li>
+<li>load a small set of center-priority visible tiles first</li>
+<li>queue the remaining visible tiles in the background</li>
+<li>prefetch nearby tiles after that</li>
+<li>drop stale queued work when the viewport changes</li>
+</ol>
+<p>This keeps the viewer responsive during fast pan/zoom/page changes while still
+preserving deterministic visible results once the queued work settles.</p>
 <h2 id="atlas-and-vector-overlay-workflows">Atlas and vector overlay workflows<a class="headerlink" href="#atlas-and-vector-overlay-workflows" title="Permanent link">&para;</a></h2>
 <p>Large-image work is often paired with atlas overlays.</p>
 <p>Annolid supports:</p>
