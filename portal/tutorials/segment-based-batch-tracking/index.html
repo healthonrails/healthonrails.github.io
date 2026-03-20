@@ -1025,6 +1025,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#9-retrack-a-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Retrack a Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1927,6 +1938,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#9-retrack-a-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Retrack a Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tips" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2086,6 +2108,28 @@
 <li>CSV exports summarising the tracking run.</li>
 <li>Optional overlay videos when enabled in tracking settings.</li>
 </ul>
+<h2 id="9-retrack-a-video">9. Retrack a Video<a class="headerlink" href="#9-retrack-a-video" title="Permanent link">&para;</a></h2>
+<p>If you want to rerun tracking, remove only the auto-generated tracking outputs, then run tracking again.</p>
+<p>Delete these generated files next to the video:</p>
+<ul>
+<li><code>&lt;video_name&gt;*_tracking.csv</code></li>
+<li><code>&lt;video_name&gt;*_tracked.csv</code></li>
+<li><code>&lt;video_name&gt;*_gaps_report.csv</code></li>
+<li><code>&lt;video_name&gt;*_tracking_gaps_report.md</code></li>
+<li><code>&lt;video_name&gt;/&lt;video_name&gt;_annotations.ndjson</code> (if present)</li>
+</ul>
+<p>Keep these manual labels inside <code>&lt;video_name&gt;/</code>:</p>
+<ul>
+<li>Labeled <code>.png</code> frame images</li>
+<li>Matching <code>.json</code> annotation files</li>
+</ul>
+<p>After deleting generated outputs:</p>
+<ol>
+<li>Reopen Annolid.</li>
+<li>Import videos</li>
+<li>Run <strong>Track All</strong> again to regenerate tracking from your existing manual labels.</li>
+</ol>
+<p>If you only need to retrack one video, load that video directly from the toolbar/Video Manager and run tracking for that video only. This avoids reprocessing videos that are already correct.</p>
 <h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li>If the dialog reports a missing annotation, open that frame in the main window, save the polygon (<code>Ctrl+S</code>), then re-open the Segment Editor.</li>
