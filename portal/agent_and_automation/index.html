@@ -1173,6 +1173,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#citation-integrity-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citation Integrity Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#novelty-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Novelty Preflight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unified-paper-run-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unified Paper-Run Report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unified Paper-Run Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paper-ready-quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paper-Ready Quality Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1827,6 +1877,56 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#citation-integrity-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Citation Integrity Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#novelty-preflight" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Novelty Preflight
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unified-paper-run-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unified Paper-Run Report
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unified Paper-Run Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paper-ready-quality-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paper-Ready Quality Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2011,11 +2111,63 @@ or running repeatable workflows through the agent stack.</p>
 <li>explicit dataset/model/split metadata</li>
 <li>primary test metrics in a compact table</li>
 <li>confidence intervals when the source metrics support them</li>
+<li>explicit quality checks that flag missing CI coverage, weak sample size, or run-stability gaps</li>
 <li>artifact inventory for confusion matrices, curves, and raw metric files</li>
 <li>reproducibility notes so the bot reports from saved artifacts instead of handwritten numbers</li>
 </ul>
 <p>For <code>yolo</code>, prefer launching evaluation with <code>save_json=true</code> so Ultralytics writes <code>predictions.json</code>. When the run directory also lets the report tool resolve a COCO-style annotation file from <code>args.yaml</code> and the dataset YAML, <code>annolid_eval_report</code> can add deterministic bootstrap confidence intervals for mAP@50 and mAP@50-95 instead of leaving those cells as <code>NA</code>.</p>
 <p>For <code>behavior_classifier</code>, the eval launcher can now also write confusion-matrix and precision-recall curve figures directly during evaluation via <code>--plot-dir</code>, so the resulting run is closer to paper-ready without a separate plotting step.</p>
+<h2 id="citation-integrity-workflow">Citation Integrity Workflow<a class="headerlink" href="#citation-integrity-workflow" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot and the Citation Manager now support citation verification reports for research-pipeline quality checks.</p>
+<ul>
+<li><code>gui_save_citation</code> supports <code>verify_after_save=true</code> to emit a per-entry integrity result and report artifact.</li>
+<li><code>gui_verify_citations</code> verifies an existing <code>.bib</code> file in batch and returns <code>verified/suspicious/hallucinated/skipped</code> counts plus an aggregate integrity score.</li>
+<li>Direct command example: <code>verify citations from refs.bib limit 200</code></li>
+<li>Citation Manager dialog now includes:</li>
+<li><code>Verify after save</code> for context saves</li>
+<li><code>Verify .bib</code> for batch verification of the selected BibTeX file</li>
+</ul>
+<p>Report artifacts are written under <code>.annolid_cache/citation_verification/</code> next to the selected <code>.bib</code> file.</p>
+<p><code>annolid_eval_report</code> can optionally enforce citation-quality gates when generating paper-ready model reports:</p>
+<ul>
+<li><code>citation_gate=true</code> enables citation checks</li>
+<li><code>citation_report_path</code> points to a batch verification report JSON (or auto-discovery can be used)</li>
+<li><code>citation_hallucinated_max</code> sets a hard fail threshold</li>
+<li><code>citation_suspicious_rate_warn</code> and <code>citation_integrity_min_warn</code> set warning thresholds</li>
+<li><code>citation_gate_required=true</code> upgrades missing citation reports from warn to fail</li>
+</ul>
+<h2 id="novelty-preflight">Novelty Preflight<a class="headerlink" href="#novelty-preflight" title="Permanent link">&para;</a></h2>
+<p>For paper-drafting workflows, use <code>annolid_novelty_check</code> before writing claims.</p>
+<ul>
+<li>It scores lexical overlap between your proposed idea and related-work summaries.</li>
+<li>It reports coverage quality (<code>low/medium/high</code>) for the provided literature context.</li>
+<li>It returns a recommendation:</li>
+<li><code>proceed</code> when overlap is low and coverage is acceptable</li>
+<li><code>differentiate</code> when overlap is moderate or literature coverage is weak</li>
+<li><code>abort</code> when overlap crosses the configured high-risk threshold</li>
+</ul>
+<p>You can provide related work inline (<code>related_work</code>) or via <code>related_work_json_path</code>.</p>
+<h2 id="unified-paper-run-report">Unified Paper-Run Report<a class="headerlink" href="#unified-paper-run-report" title="Permanent link">&para;</a></h2>
+<p>To consolidate paper-drafting signals in one artifact, use <code>annolid_paper_run_report</code>.</p>
+<ul>
+<li>It keeps <code>annolid_eval_report</code> unchanged and composes a new additive report.</li>
+<li>It merges:</li>
+<li>model evaluation table from <code>annolid_eval_report</code>,</li>
+<li>citation verification batch summary,</li>
+<li>novelty preflight summary,</li>
+<li>warnings and reproducibility checklist.</li>
+<li>Inputs can be passed as an in-memory eval report object or as <code>eval_report_json_path</code>, plus optional <code>citation_report_path</code> and <code>novelty_report_path</code>.</li>
+<li>It returns a unified markdown+JSON payload and can optionally write files when <code>report_dir</code> is provided with <code>allow_mutation=true</code>.</li>
+</ul>
+<h3 id="paper-ready-quality-gates">Paper-Ready Quality Gates<a class="headerlink" href="#paper-ready-quality-gates" title="Permanent link">&para;</a></h3>
+<p>For export-time paper readiness, <code>annolid_paper_run_report</code> supports configurable gates:</p>
+<ul>
+<li><code>paper_ready_gate=true</code> enables gating checks.</li>
+<li><code>citation_integrity_floor</code> sets the minimum allowed citation integrity score (<code>0.0</code> to <code>1.0</code>).</li>
+<li><code>novelty_coverage_floor</code> sets the minimum allowed novelty coverage score (<code>idea_token_coverage</code>, <code>0.0</code> to <code>1.0</code>).</li>
+<li><code>require_citation_summary</code> and <code>require_novelty_summary</code> control whether missing summaries are treated as blocking failures.</li>
+</ul>
+<p>When <code>paper_ready_gate=true</code> and a gate check fails, file export to <code>report_dir</code> is blocked and the tool returns <code>ok=false</code> with the assembled report payload for inspection.</p>
 
 
 
