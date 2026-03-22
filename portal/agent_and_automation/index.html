@@ -1174,6 +1174,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#research-paper-swarm-launcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Paper Swarm Launcher
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#citation-integrity-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1878,6 +1889,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#research-paper-swarm-launcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Paper Swarm Launcher
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#citation-integrity-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2117,6 +2139,13 @@ or running repeatable workflows through the agent stack.</p>
 </ul>
 <p>For <code>yolo</code>, prefer launching evaluation with <code>save_json=true</code> so Ultralytics writes <code>predictions.json</code>. When the run directory also lets the report tool resolve a COCO-style annotation file from <code>args.yaml</code> and the dataset YAML, <code>annolid_eval_report</code> can add deterministic bootstrap confidence intervals for mAP@50 and mAP@50-95 instead of leaving those cells as <code>NA</code>.</p>
 <p>For <code>behavior_classifier</code>, the eval launcher can now also write confusion-matrix and precision-recall curve figures directly during evaluation via <code>--plot-dir</code>, so the resulting run is closer to paper-ready without a separate plotting step.</p>
+<h2 id="research-paper-swarm-launcher">Research Paper Swarm Launcher<a class="headerlink" href="#research-paper-swarm-launcher" title="Permanent link">&para;</a></h2>
+<p>The GUI now includes <strong>AI &amp; Models → Draft Research Paper with Swarm…</strong>, which opens Annolid Bot with a prefilled prompt that invokes <code>draft_paper_swarm</code>.</p>
+<ul>
+<li>If a PDF is open, the launcher passes the current PDF title and path into the prompt so the swarm can ground the draft in the active paper.</li>
+<li>The prompt asks the bot to search literature first when needed, then draft a structured paper with outline, sections, and citations.</li>
+<li>This is a thin GUI entry point over the same swarm-backed paper drafting workflow used by the agent tools.</li>
+</ul>
 <h2 id="citation-integrity-workflow">Citation Integrity Workflow<a class="headerlink" href="#citation-integrity-workflow" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot and the Citation Manager now support citation verification reports for research-pipeline quality checks.</p>
 <ul>
