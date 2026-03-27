@@ -1951,7 +1951,14 @@ annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> 
 annolid-run<span class="w"> </span>agent-security-audit
 annolid-run<span class="w"> </span>agent-security-audit<span class="w"> </span>--fix
 annolid-run<span class="w"> </span>agent-secrets-audit
+annolid-run<span class="w"> </span>agent-box-auth-url<span class="w"> </span>--redirect-uri<span class="w"> </span>https://your-app.example.com/oauth/callback
+annolid-run<span class="w"> </span>agent-box-auth-url<span class="w"> </span>--authorize-base-url<span class="w"> </span>https://my_org_xxx.account.box.com<span class="w"> </span>--redirect-uri<span class="w"> </span>https://your-app.example.com/oauth/callback
+annolid-run<span class="w"> </span>agent-box-auth-url<span class="w"> </span>--open-browser<span class="w"> </span>--redirect-uri<span class="w"> </span>https://your-app.example.com/oauth/callback
+annolid-run<span class="w"> </span>agent-box-auth-exchange<span class="w"> </span>--redirect-uri<span class="w"> </span>https://your-app.example.com/oauth/callback<span class="w"> </span>--code<span class="w"> </span>&lt;auth_code&gt;
+annolid-run<span class="w"> </span>agent-box-auth-exchange<span class="w"> </span>--authorize-base-url<span class="w"> </span>https://my_org_xxx.account.box.com<span class="w"> </span>--redirect-uri<span class="w"> </span>https://your-app.example.com/oauth/callback<span class="w"> </span>--code<span class="w"> </span>&lt;auth_code&gt;
+annolid-run<span class="w"> </span>agent-box-token-refresh
 </code></pre></div>
+<p>The Agent Runtime settings dialog includes Box auth host, client ID, client secret, and redirect URI fields so the GUI auth button can reuse the same values after Annolid restarts. The redirect URI defaults to <code>http://localhost:8765/oauth/callback</code> and includes a copy button for pasting into the Box app registration page. When that redirect points to localhost, Annolid starts a temporary local callback listener so Box can complete the OAuth round trip instead of showing a connection error page. Use <code>http://</code> for localhost callbacks; <code>https://localhost/...</code> is not supported by the local listener.</p>
 <p>ACP bridge command:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent<span class="w"> </span>acp<span class="w"> </span>bridge<span class="w"> </span>--workspace<span class="w"> </span>/path/to/repo
 </code></pre></div>
@@ -1985,6 +1992,7 @@ annolid-run<span class="w"> </span>agent-secrets-audit
 <li><a href="../model_plugin_help/">Model Plugin Help</a></li>
 <li><a href="../codex_and_acp/">Codex and ACP</a></li>
 <li><a href="../agent_calendar/">Agent Calendar</a></li>
+<li><a href="../agent_box/">Agent Box</a></li>
 <li><a href="../agent_secrets/">Agent Secrets</a></li>
 <li><a href="../agent_security/">Agent Security</a></li>
 <li><a href="../sam3d/">SAM 3D</a></li>
