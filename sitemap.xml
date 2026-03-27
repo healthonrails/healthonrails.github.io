@@ -117,6 +117,10 @@
          <lastmod>2026-03-27</lastmod>
     </url>
     <url>
+         <loc>https://annolid.com/zone_analysis/</loc>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
          <loc>https://annolid.com/tutorials/Labelme_to_YOLO_class_map/</loc>
          <lastmod>2026-03-27</lastmod>
     </url>
@@ -130,6 +134,10 @@
     </url>
     <url>
          <loc>https://annolid.com/tutorials/video_ffmpeg_processing/</loc>
+         <lastmod>2026-03-27</lastmod>
+    </url>
+    <url>
+         <loc>https://annolid.com/tutorials/zone_analysis_workflow/</loc>
          <lastmod>2026-03-27</lastmod>
     </url>
 </urlset>
