@@ -1108,6 +1108,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prompt-transaction-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt transaction model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-object-prompt-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-object prompt identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#windowed-inference-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1145,6 +1167,17 @@
     <span class="md-ellipsis">
       
         Runtime knobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-session-controls-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive session controls (GUI)
       
     </span>
   </a>
@@ -2100,6 +2133,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#prompt-transaction-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt transaction model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multi-object-prompt-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-object prompt identity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#windowed-inference-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2137,6 +2192,17 @@
     <span class="md-ellipsis">
       
         Runtime knobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-session-controls-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interactive session controls (GUI)
       
     </span>
   </a>
@@ -2347,6 +2413,44 @@
 <li>Uses a text prompt (for example, <code>mouse</code>) and runs SAM3.1 windowed propagation.</li>
 <li>This is the fallback when no usable geometric prompts (box/point/polygon) exist.</li>
 </ol>
+<h2 id="prompt-transaction-model">Prompt transaction model<a class="headerlink" href="#prompt-transaction-model" title="Permanent link">&para;</a></h2>
+<p>Annolid enforces a <strong>single prompt type per SAM3 request</strong> at a common boundary in <code>Sam3SessionManager</code>.</p>
+<p>Transaction rules:</p>
+<ol>
+<li>One request contains exactly one prompt kind:</li>
+<li><code>text</code> <strong>or</strong> <code>boxes</code> <strong>or</strong> <code>points</code></li>
+<li>Mixed inputs are split into an ordered transaction:</li>
+<li><code>text -&gt; boxes -&gt; points</code></li>
+<li>Point prompts are always tracker prompts:</li>
+<li>point transactions use <code>obj_id</code> (required by SAM3.1 point refinement)</li>
+<li>point labels are normalized to binary foreground/background (<code>0/1</code>)</li>
+<li>Box labels are normalized to binary (<code>0/1</code>) for SAM3 geometric prompt compatibility.</li>
+</ol>
+<p>Why this exists:</p>
+<ul>
+<li>SAM3.1 point prompting rejects mixed text/box payloads in the same request.</li>
+<li>Explicit transaction sequencing removes mixed-prompt edge failures and makes behavior deterministic across normal and windowed runs.</li>
+</ul>
+<p>Where implemented:</p>
+<ul>
+<li><code>annolid/segmentation/SAM/sam3/session.py</code></li>
+<li><code>_build_prompt_transaction_steps(...)</code></li>
+<li><code>_execute_prompt_transaction(...)</code></li>
+<li><code>add_prompt(...)</code></li>
+</ul>
+<h2 id="multi-object-prompt-identity">Multi-object prompt identity<a class="headerlink" href="#multi-object-prompt-identity" title="Permanent link">&para;</a></h2>
+<p>For canvas-driven prompting, Annolid maps prompts to stable per-instance object ids.</p>
+<p>Identity priority:</p>
+<ol>
+<li><code>group_id</code> (if present and valid)</li>
+<li>existing label-to-id mapping from loaded annotations/session</li>
+<li>deterministic new id allocation</li>
+</ol>
+<p>Effects:</p>
+<ul>
+<li>point/polygon/box prompts can refine/add-back the correct object instead of collapsing to a single default object id.</li>
+<li>object identity remains stable across repeated prompt edits in the same run.</li>
+</ul>
 <h2 id="windowed-inference-behavior">Windowed inference behavior<a class="headerlink" href="#windowed-inference-behavior" title="Permanent link">&para;</a></h2>
 <p>For text-only runs, Annolid uses a windowed strategy to improve long-video stability.</p>
 <p>Key properties:</p>
@@ -2404,6 +2508,24 @@
 <li><code>sliding_window_size</code></li>
 <li><code>sliding_window_stride</code></li>
 <li><code>use_sliding_window_for_text_prompt</code></li>
+</ul>
+<h2 id="interactive-session-controls-gui">Interactive session controls (GUI)<a class="headerlink" href="#interactive-session-controls-gui" title="Permanent link">&para;</a></h2>
+<p>Annolid exposes notebook-like SAM3 session controls in the GUI:</p>
+<ul>
+<li><code>Reset SAM3 Session</code></li>
+<li><code>Close SAM3 Session</code></li>
+<li><code>Remove SAM3 Object…</code> (by object id)</li>
+</ul>
+<p>These actions are available from:</p>
+<ul>
+<li><strong>AI &amp; Models</strong> menu</li>
+<li>canvas right-click context menu</li>
+</ul>
+<p>Safety behavior:</p>
+<ul>
+<li>controls are blocked while prediction is actively running (stop prediction first)</li>
+<li>remove-object runs at the current frame and refreshes loaded prediction shapes</li>
+<li>remove-object dialog prefills object id from selected shape when possible (<code>group_id</code> first, then label mapping)</li>
 </ul>
 <p>If <code>sliding_window_size</code> and <code>sliding_window_stride</code> are not set explicitly, Annolid now derives them from runtime context:</p>
 <ul>
