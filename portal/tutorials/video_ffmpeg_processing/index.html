@@ -2155,6 +2155,7 @@
 
 <h1 id="video-ffmpeg-processing-with-annolid-bot">Video FFmpeg Processing with Annolid Bot<a class="headerlink" href="#video-ffmpeg-processing-with-annolid-bot" title="Permanent link">&para;</a></h1>
 <p>Annolid provides a built-in agent capability (the <code>video-ffmpeg</code> skill) that allows you to easily process, enhance, and convert videos using natural language commands. Under the hood, this uses FFmpeg and the <code>video_ffmpeg_process</code> tool, but you don't need to write complex command-line arguments.</p>
+<p>If you prefer a direct GUI workflow for folder-based processing, use <strong><code>File</code> &gt; <code>Downsample Videos</code></strong> in the Annolid desktop app. The dialog keeps shared defaults in one place and offers a sequential per-video review button for exceptions.</p>
 <h2 id="what-it-can-do">What it can do<a class="headerlink" href="#what-it-can-do" title="Permanent link">&para;</a></h2>
 <p>You can ask the Annolid bot to perform common video operations, such as:</p>
 <ul>
@@ -2196,6 +2197,7 @@
 <li><strong>Overwriting:</strong> By default, the bot will <em>not</em> overwrite existing processed files to protect your data. If you want it to replace an existing file, explicitly say, "overwrite the existing output file."</li>
 <li><strong>Inspect First:</strong> It is often helpful to ask the bot to "inspect" or "give me info" on a video first. This allows both you and the bot to confirm the source properties (resolution, original FPS) before deciding how to process it.</li>
 <li><strong>FFmpeg Required:</strong> This skill requires FFmpeg to be installed on your system. If the bot reports that FFmpeg is missing, you may need to install it (e.g. <code>brew install ffmpeg</code> on macOS or <code>sudo apt install ffmpeg</code> on Linux).</li>
+<li><strong>GUI Batch Workflow:</strong> For batches where most videos share the same settings and a few need exceptions, the GUI review workflow is usually easier than describing each exception to the bot.</li>
 </ul>
 
 

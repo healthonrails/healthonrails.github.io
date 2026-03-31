@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Behavior classification &#8212; Annolid Start Here</title>
+    <title>Batch downsampling with sequential video review &#8212; Annolid Start Here</title>
   
   
   
@@ -60,11 +60,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Behavior_classification';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Downsample_video_batch_overrides';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Freezing and motion assays" href="Freezing_and%20motion_assays.html" />
-    <link rel="prev" title="Place preference" href="Place_preference.html" />
+    <link rel="next" title="Calculate distances between instances" href="Calculate_distances_between_instances.html" />
+    <link rel="prev" title="DINOv3 Keypoint Tracking" href="DINOv3_keypoint_tracking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -189,10 +189,10 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Place preference</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Behavior classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior classification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Batch downsampling with sequential video review</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
 <ul class="nav bd-sidenav">
@@ -288,7 +288,7 @@
       
       
       
-      <li><a href="https://github.com/healthonrails/annolid/issues/new?title=Issue%20on%20page%20%2Ftutorials/Behavior_classification.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/healthonrails/annolid/issues/new?title=Issue%20on%20page%20%2Ftutorials/Downsample_video_batch_overrides.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +318,7 @@
       
       
       
-      <li><a href="../_sources/tutorials/Behavior_classification.md" target="_blank"
+      <li><a href="../_sources/tutorials/Downsample_video_batch_overrides.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +394,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Behavior classification</h1>
+    <h1>Batch downsampling with sequential video review</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -404,12 +404,20 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-scoring-and-time-budgets-recommended-starting-point">1) Event scoring and time budgets (recommended starting point)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-events-in-the-gui">Record events in the GUI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarise-behavior-duration-time-budget">Summarise behavior duration (“time budget”)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-dialog-callouts">Review dialog callouts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-this-workflow">When to use this workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-workflow-gives-you">What the workflow gives you</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step">Step-by-step</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-tool">1. Open the tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-your-folder">2. Select your folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-folder-defaults">3. Set the folder defaults</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-videos-one-by-one">4. Review videos one by one</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-batch">5. Run the batch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-behavior-classifier-optional-experimental">2) Train a behavior classifier (optional / experimental)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-order">Processing order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-practices">Good practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
             </nav>
         </div>
@@ -421,46 +429,144 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="behavior-classification">
-<h1>Behavior classification<a class="headerlink" href="#behavior-classification" title="Link to this heading">#</a></h1>
-<p>Annolid supports two complementary behavior workflows:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="batch-downsampling-with-sequential-video-review">
+<h1>Batch downsampling with sequential video review<a class="headerlink" href="#batch-downsampling-with-sequential-video-review" title="Link to this heading">#</a></h1>
+<p>This tutorial shows the recommended way to process a folder of videos when most files share the same settings but a few need custom crops or other adjustments.</p>
+<p><img alt="Annolid main window" src="../_images/annolid_gui.png" /></p>
+<p>The main dialog now uses four tabs:</p>
 <ol class="arabic simple">
-<li><p><strong>Event scoring in the GUI</strong> (manual or semi-manual), with exports and summaries.</p></li>
-<li><p><strong>Model-based classification</strong> (optional / experimental), for projects that have labeled training data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">/</span> <span class="pre">Output</span></code> selects the source folder and output folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Processing</span></code> contains the shared defaults for the whole folder and the per-video review entry point.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Summary</span></code> shows a quick review of the current batch before you run it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Run</span></code> starts processing and shows progress.</p></li>
 </ol>
-<section id="event-scoring-and-time-budgets-recommended-starting-point">
-<h2>1) Event scoring and time budgets (recommended starting point)<a class="headerlink" href="#event-scoring-and-time-budgets-recommended-starting-point" title="Link to this heading">#</a></h2>
-<section id="record-events-in-the-gui">
-<h3>Record events in the GUI<a class="headerlink" href="#record-events-in-the-gui" title="Link to this heading">#</a></h3>
+<section id="review-dialog-callouts">
+<h2>Review dialog callouts<a class="headerlink" href="#review-dialog-callouts" title="Link to this heading">#</a></h2>
+<p>The review dialog walks through one video at a time.</p>
 <ol class="arabic simple">
-<li><p>Open a video in Annolid.</p></li>
-<li><p>Use your behavior labels (or launch with <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--flags</span> <span class="pre">&quot;grooming,rearing,freezing&quot;</span></code>).</p></li>
-<li><p>Mark events over time (start/end) and save.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Current</span> <span class="pre">video:</span></code> shows the file you are configuring.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Video</span> <span class="pre">1</span> <span class="pre">of</span> <span class="pre">N</span></code> shows where you are in the folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Load</span> <span class="pre">Folder</span> <span class="pre">Defaults</span></code> resets the current video fields to the batch defaults.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Scale</span> <span class="pre">Factor:</span></code> set a different resize factor for just this video.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Frames</span> <span class="pre">Per</span> <span class="pre">Second</span> <span class="pre">(FPS):</span></code> leave this blank to keep the source FPS, or enter a fixed value for the selected file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Apply</span> <span class="pre">Denoise</span></code>: enable denoising only for this file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Contrast</span> <span class="pre">Enhancement</span></code>: enable contrast correction only for this file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Contrast</span> <span class="pre">Strength:</span></code> tune how strong the contrast correction should be.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">Crop</span> <span class="pre">Region</span></code>: turn on a custom crop for this file.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Crop</span> <span class="pre">Region</span> <span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height):</span></code> enter the exact crop rectangle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Crop</span> <span class="pre">On</span> <span class="pre">Current</span> <span class="pre">Video</span></code>: open the first frame and draw a crop visually.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Previous</span></code>: move back to the previous video.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Skip</span></code>: keep the folder defaults for the current video and move on.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code>: store the current settings for the current video and move on.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Finish</span></code>: save the current video if needed and close the review dialog.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Cancel</span></code>: discard review changes and close the dialog.</p></li>
 </ol>
+<p>The dialog updates the current video label and the custom-override count as you move through the folder.</p>
 </section>
-<section id="summarise-behavior-duration-time-budget">
-<h3>Summarise behavior duration (“time budget”)<a class="headerlink" href="#summarise-behavior-duration-time-budget" title="Link to this heading">#</a></h3>
-<p>After exporting events to CSV, compute summary statistics:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>/path/to/exported_events.csv<span class="w"> </span>-o<span class="w"> </span>time_budget.csv
-</pre></div>
-</div>
-<p>To get a binned time course (e.g., 60-second bins):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>/path/to/exported_events.csv<span class="w"> </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span>-o<span class="w"> </span>time_budget.csv
-</pre></div>
-</div>
+<section id="when-to-use-this-workflow">
+<h2>When to use this workflow<a class="headerlink" href="#when-to-use-this-workflow" title="Link to this heading">#</a></h2>
+<p>Use this approach when:</p>
+<ul class="simple">
+<li><p>the videos come from the same experiment,</p></li>
+<li><p>most of them should share one scale factor and one FPS policy,</p></li>
+<li><p>one or two videos need a different crop or a different output setting,</p></li>
+<li><p>you want a record of the effective settings for each output file.</p></li>
+</ul>
+</section>
+<section id="what-the-workflow-gives-you">
+<h2>What the workflow gives you<a class="headerlink" href="#what-the-workflow-gives-you" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Folder-wide defaults for common settings.</p></li>
+<li><p>A linear review pass for exceptions.</p></li>
+<li><p>Interactive crop preview for any selected video.</p></li>
+<li><p>A processing report for each output video.</p></li>
+</ul>
+</section>
+<section id="step-by-step">
+<h2>Step-by-step<a class="headerlink" href="#step-by-step" title="Link to this heading">#</a></h2>
+<section id="open-the-tool">
+<h3>1. Open the tool<a class="headerlink" href="#open-the-tool" title="Link to this heading">#</a></h3>
+<p>In Annolid, choose <strong><code class="docutils literal notranslate"><span class="pre">File</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">Downsample</span> <span class="pre">Videos</span></code></strong>.</p>
+</section>
+<section id="select-your-folder">
+<h3>2. Select your folder<a class="headerlink" href="#select-your-folder" title="Link to this heading">#</a></h3>
+<p>Choose the folder that contains the input videos.</p>
+<p>Set an output folder now so the processed files stay separate from the originals.</p>
+<p>If you leave the output folder blank, Annolid creates a sibling folder with <code class="docutils literal notranslate"><span class="pre">_downsampled</span></code> appended to the input folder name.</p>
+</section>
+<section id="set-the-folder-defaults">
+<h3>3. Set the folder defaults<a class="headerlink" href="#set-the-folder-defaults" title="Link to this heading">#</a></h3>
+<p>Use the main dialog to set the values that should apply to almost every video:</p>
+<ul class="simple">
+<li><p>scale factor,</p></li>
+<li><p>optional fixed FPS,</p></li>
+<li><p>denoise,</p></li>
+<li><p>auto contrast,</p></li>
+<li><p>shared crop region, if the same crop applies to the whole folder.</p></li>
+</ul>
+<p>If you have only one video, you can stop here and run processing directly.</p>
+</section>
+<section id="review-videos-one-by-one">
+<h3>4. Review videos one by one<a class="headerlink" href="#review-videos-one-by-one" title="Link to this heading">#</a></h3>
+<p>Open the <strong><code class="docutils literal notranslate"><span class="pre">Processing</span></code></strong> tab and click <strong><code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Videos</span> <span class="pre">One</span> <span class="pre">by</span> <span class="pre">One</span> <span class="pre">(Folder</span> <span class="pre">Input)</span></code></strong>.</p>
+<p>For each video:</p>
+<ol class="arabic simple">
+<li><p>Change only the fields that should differ from the folder defaults.</p></li>
+<li><p>Use <strong><code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Crop</span> <span class="pre">On</span> <span class="pre">Current</span> <span class="pre">Video</span></code></strong> when you need to draw a crop visually.</p></li>
+<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> to store a custom override and move forward.</p></li>
+<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> to keep the folder defaults for that video and move forward.</p></li>
+</ol>
+<p>Use <strong><code class="docutils literal notranslate"><span class="pre">Previous</span></code></strong> if you need to correct an earlier video.</p>
+</section>
+<section id="run-the-batch">
+<h3>5. Run the batch<a class="headerlink" href="#run-the-batch" title="Link to this heading">#</a></h3>
+<p>Back in the main dialog:</p>
+<ul class="simple">
+<li><p>check <strong><code class="docutils literal notranslate"><span class="pre">Rescale</span> <span class="pre">Video</span></code></strong>,</p></li>
+<li><p>optionally check <strong><code class="docutils literal notranslate"><span class="pre">Collect</span> <span class="pre">Metadata</span> <span class="pre">Only</span></code></strong>,</p></li>
+<li><p>click <strong><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Processing</span></code></strong>.</p></li>
+</ul>
+<p>Annolid runs through the videos one by one and applies the right settings for each file.</p>
 </section>
 </section>
-<section id="train-a-behavior-classifier-optional-experimental">
-<h2>2) Train a behavior classifier (optional / experimental)<a class="headerlink" href="#train-a-behavior-classifier-optional-experimental" title="Link to this heading">#</a></h2>
-<p>Annolid includes behavior training utilities under <code class="docutils literal notranslate"><span class="pre">annolid/behavior/</span></code>.</p>
-<p>The training entry point is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.training.train<span class="w"> </span>--video_folder<span class="w"> </span>/path/to/labeled_clips
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The training dataset loader expects per-video CSV annotations (same stem as the video file) with columns such as <code class="docutils literal notranslate"><span class="pre">Behavior</span></code> and <code class="docutils literal notranslate"><span class="pre">Trial</span> <span class="pre">time</span></code>. If your data is in a different format, you’ll likely want to adapt <code class="docutils literal notranslate"><span class="pre">annolid/behavior/data_loading/datasets.py</span></code> to your project.</p>
-</div>
+<section id="processing-order">
+<h2>Processing order<a class="headerlink" href="#processing-order" title="Link to this heading">#</a></h2>
+<p>The tool applies settings in this order:</p>
+<ol class="arabic simple">
+<li><p>Start with the folder defaults.</p></li>
+<li><p>Replace them with any selected video’s saved review settings.</p></li>
+<li><p>Run FFmpeg for that one file.</p></li>
+<li><p>Write the report for that output video.</p></li>
+<li><p>Move to the next file.</p></li>
+</ol>
+<p>That order matters because it keeps the output deterministic and the reports easy to audit.</p>
+</section>
+<section id="good-practices">
+<h2>Good practices<a class="headerlink" href="#good-practices" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Start with conservative folder defaults.</p></li>
+<li><p>Save only the files that truly differ.</p></li>
+<li><p>Skip the files that should stay on the batch default.</p></li>
+<li><p>Use one output directory per run.</p></li>
+<li><p>Review the generated <code class="docutils literal notranslate"><span class="pre">.md</span></code> reports if you need to reproduce or audit a batch later.</p></li>
+</ul>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>Suppose you have 12 videos from one experiment.</p>
+<ul class="simple">
+<li><p>11 videos should be scaled to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> and cropped to the same arena region.</p></li>
+<li><p>1 video was recorded from a different camera and needs a custom crop.</p></li>
+</ul>
+<p>The clean workflow is:</p>
+<ol class="arabic simple">
+<li><p>Set the <code class="docutils literal notranslate"><span class="pre">0.5</span></code> scale and the shared crop in the main dialog.</p></li>
+<li><p>Open the review dialog.</p></li>
+<li><p>Review the 11 normal videos and click <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> for each one.</p></li>
+<li><p>Change only the outlier video’s crop.</p></li>
+<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for that file.</p></li>
+<li><p>Run the batch.</p></li>
+</ol>
 </section>
 </section>
 
@@ -495,20 +601,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Place_preference.html"
+       href="DINOv3_keypoint_tracking.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Place preference</p>
+        <p class="prev-next-title">DINOv3 Keypoint Tracking</p>
       </div>
     </a>
     <a class="right-next"
-       href="Freezing_and%20motion_assays.html"
+       href="Calculate_distances_between_instances.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Freezing and motion assays</p>
+        <p class="prev-next-title">Calculate distances between instances</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -530,12 +636,20 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-scoring-and-time-budgets-recommended-starting-point">1) Event scoring and time budgets (recommended starting point)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-events-in-the-gui">Record events in the GUI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarise-behavior-duration-time-budget">Summarise behavior duration (“time budget”)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-dialog-callouts">Review dialog callouts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-this-workflow">When to use this workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-the-workflow-gives-you">What the workflow gives you</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-by-step">Step-by-step</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-tool">1. Open the tool</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-your-folder">2. Select your folder</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set-the-folder-defaults">3. Set the folder defaults</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-videos-one-by-one">4. Review videos one by one</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-batch">5. Run the batch</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-behavior-classifier-optional-experimental">2) Train a behavior classifier (optional / experimental)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#processing-order">Processing order</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#good-practices">Good practices</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
 </ul>
   </nav></div>
 
