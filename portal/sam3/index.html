@@ -2336,23 +2336,29 @@
 <p>SAM3 runs in two main modes.</p>
 <ol>
 <li>Seeded mode (annotation-guided):</li>
+<li>Uses existing per-frame prompts when available.</li>
+<li>Supported prompt shapes: boxes/rectangles, polygons/masks, and points.</li>
 <li>
-<p>Uses existing per-frame prompts (boxes/masks) when available.</p>
+<p>Polygon prompts are converted to robust box/mask seeds for SAM3 propagation.</p>
 </li>
 <li>
 <p>Text-only mode:</p>
 </li>
 <li>Uses a text prompt (for example, <code>mouse</code>) and runs SAM3.1 windowed propagation.</li>
-<li>This is the common fallback when no per-frame JSON prompts exist.</li>
+<li>This is the fallback when no usable geometric prompts (box/point/polygon) exist.</li>
 </ol>
 <h2 id="windowed-inference-behavior">Windowed inference behavior<a class="headerlink" href="#windowed-inference-behavior" title="Permanent link">&para;</a></h2>
 <p>For text-only runs, Annolid uses a windowed strategy to improve long-video stability.</p>
 <p>Key properties:</p>
 <ul>
 <li>Reads frames from the source video timeline when input is an <code>.mp4</code>.</li>
+<li>Streams overlapping windows sequentially from the video instead of seeking back to each window start.</li>
+<li>Reuses the temporary window frame directory and only trims stale tail files between windows.</li>
+<li>Chooses larger default windows automatically for long CPU/CUDA runs when the user did not override <code>window_size</code> or <code>stride</code>.</li>
 <li>Uses overlapping windows by default (<code>stride = window_size - 1</code>) for boundary robustness.</li>
 <li>Carries visual prompt boxes from nearest neighbor mask frames across windows.</li>
 <li>Reacquires missed frames with visual+text prompts after the primary pass.</li>
+<li>Reacquires partially lost instances as well, and merges recovered masks back into the existing frame instead of replacing already tracked instances.</li>
 <li>Finalizes frame coverage by ensuring expected frame JSON outputs exist and are valid.</li>
 </ul>
 <p>This is implemented in <code>Sam3SessionManager</code> in <code>session.py</code>.</p>
@@ -2398,6 +2404,13 @@
 <li><code>sliding_window_size</code></li>
 <li><code>sliding_window_stride</code></li>
 <li><code>use_sliding_window_for_text_prompt</code></li>
+</ul>
+<p>If <code>sliding_window_size</code> and <code>sliding_window_stride</code> are not set explicitly, Annolid now derives them from runtime context:</p>
+<ul>
+<li>short CPU runs: smaller windows</li>
+<li>long CPU runs: moderate windows to reduce session churn</li>
+<li>CUDA runs: larger windows with moderate overlap</li>
+<li>explicit user values still take priority and are normalized to keep at least 1-frame overlap</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="1-missing-dependency-error">1) Missing dependency error<a class="headerlink" href="#1-missing-dependency-error" title="Permanent link">&para;</a></h3>
