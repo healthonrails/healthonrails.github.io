@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/deployment/">
+        <link rel="canonical" href="https://annolid.com/sam3/">
       
       
-        <link rel="prev" href="../operations/">
+        <link rel="prev" href="../tutorials/sandboxed_shell/">
       
       
-        <link rel="next" href="../migration/">
+        <link rel="next" href="../sam3d/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Deployment - Annolid Docs</title>
+        <title>SAM3 - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment" class="md-skip">
+        <a href="#sam3-in-annolid" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deployment
+              SAM3
             
           </span>
         </div>
@@ -247,10 +247,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../workflows/" class="md-tabs__link">
           
   
@@ -291,12 +293,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../operations/" class="md-tabs__link">
           
   
@@ -619,8 +619,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -654,21 +656,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -686,7 +689,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1009,10 +1012,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sam3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM3
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1028,6 +1058,186 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-annolid-uses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Annolid uses
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windowed-inference-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windowed inference behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Device policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-knobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime knobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-missing-dependency-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Missing dependency error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-device-mismatch-errors-cuda-vs-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Device mismatch errors (cuda vs cpu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-malformed-per-frame-json-expecting-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Malformed per-frame JSON (Expecting value ...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-window-boundary-frame-drop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Window-boundary frame drop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1405,10 +1615,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1426,22 +1634,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1459,7 +1666,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1502,37 +1709,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deployment
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
         
   
   
@@ -1548,92 +1728,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#source-of-truth-layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Source-of-truth Layout
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-github-actions-pipelines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current GitHub Actions Pipelines
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#published-targets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Published Targets
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#current-mkdocs-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current MkDocs Scope
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Note
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1973,10 +2067,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#source-of-truth-layout" class="md-nav__link">
+  <a href="#what-annolid-uses" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source-of-truth Layout
+        What Annolid uses
       
     </span>
   </a>
@@ -1984,10 +2078,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-github-actions-pipelines" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current GitHub Actions Pipelines
+        Installation
       
     </span>
   </a>
@@ -1995,10 +2089,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#published-targets" class="md-nav__link">
+  <a href="#input-modes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Published Targets
+        Input modes
       
     </span>
   </a>
@@ -2006,10 +2100,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-mkdocs-scope" class="md-nav__link">
+  <a href="#windowed-inference-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current MkDocs Scope
+        Windowed inference behavior
       
     </span>
   </a>
@@ -2017,10 +2111,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-principles" class="md-nav__link">
+  <a href="#device-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Principles
+        Device policy
       
     </span>
   </a>
@@ -2028,10 +2122,104 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#operational-note" class="md-nav__link">
+  <a href="#output-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Operational Note
+        Output files
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-knobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime knobs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-missing-dependency-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Missing dependency error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-device-mismatch-errors-cuda-vs-cpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Device mismatch errors (cuda vs cpu)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-malformed-per-frame-json-expecting-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Malformed per-frame JSON (Expecting value ...)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-window-boundary-frame-drop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Window-boundary frame drop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debug-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debug checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
       
     </span>
   </a>
@@ -2081,10 +2269,10 @@
     
     
       <li class="md-path__item">
-        <a href="../operations/" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Operations
+    Workflows
   </span>
 
         </a>
@@ -2103,7 +2291,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/deployment.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/sam3.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2112,71 +2300,171 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/deployment.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/sam3.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
-<p>Annolid publishes multiple documentation surfaces from this repository.</p>
-<h2 id="source-of-truth-layout">Source-of-truth Layout<a class="headerlink" href="#source-of-truth-layout" title="Permanent link">&para;</a></h2>
+<h1 id="sam3-in-annolid">SAM3 in Annolid<a class="headerlink" href="#sam3-in-annolid" title="Permanent link">&para;</a></h1>
+<p>This guide documents the <strong>SAM3/SAM3.1 integration in Annolid</strong> for video segmentation and tracking.</p>
+<h2 id="what-annolid-uses">What Annolid uses<a class="headerlink" href="#what-annolid-uses" title="Permanent link">&para;</a></h2>
+<p>Annolid uses the bundled SAM3 runtime under:</p>
 <ul>
-<li><code>website/</code>: landing page content for the site root</li>
-<li><code>docs/</code>: MkDocs source for the docs portal and mirrored docs routes</li>
-<li><code>docs/tutorials/</code>: notebook and markdown tutorial assets tracked in the repo</li>
+<li><code>annolid/segmentation/SAM/sam3/sam3</code></li>
 </ul>
-<h2 id="current-github-actions-pipelines">Current GitHub Actions Pipelines<a class="headerlink" href="#current-github-actions-pipelines" title="Permanent link">&para;</a></h2>
+<p>and integrates it through:</p>
 <ul>
-<li><code>docs-quality.yml</code>
-  Builds the MkDocs site in strict mode and lints the primary docs pages.</li>
-<li><code>docs-pages.yml</code>
-  Builds the MkDocs site and uploads the HTML artifact for review/validation.</li>
-<li><code>healthonrails-site-sync.yml</code>
-  Syncs generated output to <code>healthonrails/healthonrails.github.io</code> for the public site, gated to the appropriate branch/event conditions.</li>
-<li><code>book-pages.yml</code>
-  Builds the notebook/book surface that is published separately.</li>
-<li><code>CI.yml</code>
-  Includes broader repository validation and may run docs checks depending on changes.</li>
+<li><code>annolid/segmentation/SAM/sam3/adapter.py</code></li>
+<li><code>annolid/segmentation/SAM/sam3/session.py</code></li>
+<li><code>annolid/gui/widgets/sam3_manager.py</code></li>
 </ul>
-<h2 id="published-targets">Published Targets<a class="headerlink" href="#published-targets" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>/</code>: landing page from <code>website/</code></li>
-<li><code>/portal/</code>: MkDocs docs homepage</li>
-<li>root docs routes such as <code>/installation</code>, <code>/workflows</code>, and <code>/reference</code> for compatibility</li>
-<li><code>/book/</code>: book/notebook surface</li>
-</ul>
-<h2 id="current-mkdocs-scope">Current MkDocs Scope<a class="headerlink" href="#current-mkdocs-scope" title="Permanent link">&para;</a></h2>
-<p>The active MkDocs nav now includes:</p>
-<ul>
-<li>home</li>
-<li>installation</li>
-<li>uv setup</li>
-<li>one-line installer guide</li>
-<li>workflows</li>
-<li>tutorials</li>
-<li>MCP</li>
-<li>SAM 3D</li>
-<li>deployment</li>
-<li>migration</li>
-<li>redirects</li>
-<li>reference</li>
-</ul>
-<p>That matters because README links should point to docs that are actually published, not pages excluded from the site build.</p>
-<h2 id="deployment-principles">Deployment Principles<a class="headerlink" href="#deployment-principles" title="Permanent link">&para;</a></h2>
-<ul>
-<li>keep <code>docs/</code> as the canonical user-facing documentation source,</li>
-<li>build MkDocs in strict mode,</li>
-<li>keep publication reproducible and debuggable,</li>
-<li>preserve compatibility routes while evolving the docs structure,</li>
-<li>prefer ephemeral generated site output over committed build artifacts.</li>
-</ul>
-<h2 id="operational-note">Operational Note<a class="headerlink" href="#operational-note" title="Permanent link">&para;</a></h2>
-<p>If you change docs pages, <code>mkdocs.yml</code>, or related sync scripts, validate with:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-mkdocs<span class="w"> </span>build<span class="w"> </span>--strict<span class="w"> </span>--clean<span class="w"> </span>--config-file<span class="w"> </span>mkdocs.yml
+<p>The runtime is configured for <strong>inference only</strong> (no training/eval workflow required).</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Install Annolid with SAM3 extras:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[sam3]&quot;</span>
 </code></pre></div>
+<p>Minimum practical runtime dependencies include:</p>
+<ul>
+<li><code>torch</code></li>
+<li><code>iopath</code></li>
+<li><code>ftfy</code></li>
+</ul>
+<p>If a dependency is missing, Annolid raises a startup error from the SAM3 manager/session path.</p>
+<h2 id="input-modes">Input modes<a class="headerlink" href="#input-modes" title="Permanent link">&para;</a></h2>
+<p>SAM3 runs in two main modes.</p>
+<ol>
+<li>Seeded mode (annotation-guided):</li>
+<li>
+<p>Uses existing per-frame prompts (boxes/masks) when available.</p>
+</li>
+<li>
+<p>Text-only mode:</p>
+</li>
+<li>Uses a text prompt (for example, <code>mouse</code>) and runs SAM3.1 windowed propagation.</li>
+<li>This is the common fallback when no per-frame JSON prompts exist.</li>
+</ol>
+<h2 id="windowed-inference-behavior">Windowed inference behavior<a class="headerlink" href="#windowed-inference-behavior" title="Permanent link">&para;</a></h2>
+<p>For text-only runs, Annolid uses a windowed strategy to improve long-video stability.</p>
+<p>Key properties:</p>
+<ul>
+<li>Reads frames from the source video timeline when input is an <code>.mp4</code>.</li>
+<li>Uses overlapping windows by default (<code>stride = window_size - 1</code>) for boundary robustness.</li>
+<li>Carries visual prompt boxes from nearest neighbor mask frames across windows.</li>
+<li>Reacquires missed frames with visual+text prompts after the primary pass.</li>
+<li>Finalizes frame coverage by ensuring expected frame JSON outputs exist and are valid.</li>
+</ul>
+<p>This is implemented in <code>Sam3SessionManager</code> in <code>session.py</code>.</p>
+<h2 id="device-policy">Device policy<a class="headerlink" href="#device-policy" title="Permanent link">&para;</a></h2>
+<p>Annolid applies defensive device handling in SAM3 paths.</p>
+<ul>
+<li>Chooses runtime device from user/default config.</li>
+<li>Falls back from unstable MPS paths to CPU when needed.</li>
+<li>Aligns index tensors and data tensors to the same device before <code>torch.index_select</code>/<code>torch.isin</code> operations.</li>
+<li>Uses strict JSON-safe serialization for frame outputs to avoid malformed files.</li>
+</ul>
+<h2 id="output-files">Output files<a class="headerlink" href="#output-files" title="Permanent link">&para;</a></h2>
+<p>Given video <code>.../mouse.mp4</code>, outputs are written under:</p>
+<ul>
+<li><code>.../mouse/</code></li>
+</ul>
+<p>Primary artifacts:</p>
+<ul>
+<li>Per-frame LabelMe JSON: <code>000000000.json</code>, <code>000000001.json</code>, ...</li>
+<li>Annotation store: <code>mouse_annotations.ndjson</code></li>
+<li>CSV exports (post-processing):</li>
+<li><code>mouse_tracking.csv</code></li>
+<li><code>mouse_tracked.csv</code></li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li>Frames with no masks are still materialized as valid JSON with an empty <code>shapes</code> list.</li>
+<li>CSV files contain object rows. A frame with zero detections will not necessarily have a row in <code>*_tracked.csv</code>.</li>
+</ul>
+<h2 id="runtime-knobs">Runtime knobs<a class="headerlink" href="#runtime-knobs" title="Permanent link">&para;</a></h2>
+<p>SAM3-related runtime settings are read from Annolid config/GUI state (advanced parameters).</p>
+<p>Common knobs:</p>
+<ul>
+<li><code>checkpoint_path</code></li>
+<li><code>max_frame_num_to_track</code></li>
+<li><code>device</code></li>
+<li><code>score_threshold_detection</code></li>
+<li><code>new_det_thresh</code></li>
+<li><code>max_num_objects</code></li>
+<li><code>multiplex_count</code></li>
+<li><code>compile_model</code></li>
+<li><code>offload_video_to_cpu</code></li>
+<li><code>sliding_window_size</code></li>
+<li><code>sliding_window_stride</code></li>
+<li><code>use_sliding_window_for_text_prompt</code></li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="1-missing-dependency-error">1) Missing dependency error<a class="headerlink" href="#1-missing-dependency-error" title="Permanent link">&para;</a></h3>
+<p>Symptoms:</p>
+<ul>
+<li>startup failure mentioning <code>iopath</code>, <code>ftfy</code>, or SAM3 extras.</li>
+</ul>
+<p>Fix:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[sam3]&quot;</span>
+</code></pre></div>
+<h3 id="2-device-mismatch-errors-cuda-vs-cpu">2) Device mismatch errors (<code>cuda</code> vs <code>cpu</code>)<a class="headerlink" href="#2-device-mismatch-errors-cuda-vs-cpu" title="Permanent link">&para;</a></h3>
+<p>Symptoms:</p>
+<ul>
+<li><code>RuntimeError: Expected all tensors to be on the same device ... index_select</code></li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>Patched in SAM3 postprocess paths to align indices/tensors by device.</li>
+</ul>
+<p>If still seen:</p>
+<ul>
+<li>collect traceback + device setting + model config</li>
+<li>verify same Annolid revision is running in target environment</li>
+</ul>
+<h3 id="3-malformed-per-frame-json-expecting-value">3) Malformed per-frame JSON (<code>Expecting value ...</code>)<a class="headerlink" href="#3-malformed-per-frame-json-expecting-value" title="Permanent link">&para;</a></h3>
+<p>Symptoms:</p>
+<ul>
+<li>frame JSON fails to parse in GUI or tracking reports</li>
+</ul>
+<p>Status:</p>
+<ul>
+<li>Frame writes now use strict JSON-safe serialization and atomic replace.</li>
+<li>Coverage finalization repairs missing/corrupt frame JSON files.</li>
+</ul>
+<h3 id="4-window-boundary-frame-drop">4) Window-boundary frame drop<a class="headerlink" href="#4-window-boundary-frame-drop" title="Permanent link">&para;</a></h3>
+<p>Symptoms:</p>
+<ul>
+<li>sparse or unstable detections around boundaries (for example, near frames 15/16 with window size 15)</li>
+</ul>
+<p>Mitigations in current integration:</p>
+<ul>
+<li>forced overlap by default (<code>stride &lt; window_size</code>)</li>
+<li>nearest-neighbor carry prompts</li>
+<li>post-pass reacquisition on missed frames</li>
+</ul>
+<p>If results are still sparse:</p>
+<ul>
+<li>reduce <code>sliding_window_size</code></li>
+<li>keep overlap (do not set <code>stride &gt;= window_size</code>)</li>
+<li>lower detection thresholds conservatively</li>
+</ul>
+<h2 id="debug-checklist">Debug checklist<a class="headerlink" href="#debug-checklist" title="Permanent link">&para;</a></h2>
+<p>When debugging a run, capture:</p>
+<ol>
+<li>Model + runtime options (window size, stride, thresholds, device)</li>
+<li>Session logs from <code>sam3_manager</code> and <code>session</code></li>
+<li>Whether per-frame JSONs are valid JSON for expected frame range</li>
+<li><code>max_frame</code> from GUI prediction summary vs video frame count</li>
+<li>Boundary frame behavior (<code>N-1</code>, <code>N</code>, <code>N+1</code> around each window split)</li>
+</ol>
+<h2 id="related-docs">Related docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../installation/">Installation</a></li>
+<li><a href="../one_line_install_choices/">One-Line Installer</a></li>
+<li><a href="../workflows/">Workflows</a></li>
+<li><a href="../sam3d/">SAM 3D</a></li>
+</ul>
 
 
 
