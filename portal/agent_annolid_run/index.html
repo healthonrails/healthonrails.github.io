@@ -1295,6 +1295,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#workspace-onboarding-and-template-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace Onboarding and Template Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#help-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2039,6 +2050,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#workspace-onboarding-and-template-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workspace Onboarding and Template Updates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#help-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2158,6 +2180,10 @@ instead of falling back to generic shell execution.</p>
 <p>Use read-only commands directly when you want status, discovery, or inspection.</p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code>annolid-run agent-status
+annolid-run agent-onboard
+annolid-run agent-onboard --dry-run
+annolid-run agent-onboard --update
+annolid-run agent-onboard --prune-bootstrap
 annolid-run list-models
 annolid-run help train
 annolid-run help train dino_kpseg
@@ -2206,6 +2232,30 @@ the typed tool path intentionally.</p>
 <li>Use explicit workspaces for agent memory, secrets, eval, and skills commands.</li>
 <li>Start with read-only inspection commands before any <code>train</code>, <code>predict</code>, <code>refresh</code>, or <code>apply</code> action.</li>
 <li>Keep GUI-driven direct commands for discovery and status; reserve typed mutation for deliberate automation.</li>
+</ul>
+<h2 id="workspace-onboarding-and-template-updates">Workspace Onboarding and Template Updates<a class="headerlink" href="#workspace-onboarding-and-template-updates" title="Permanent link">&para;</a></h2>
+<p>Use <code>agent-onboard</code> to initialize or synchronize workspace bootstrap files under
+<code>~/.annolid/workspace</code> (or a custom <code>--workspace</code> path).</p>
+<p>Recommended flow:</p>
+<div class="highlight"><pre><span></span><code>annolid-run agent-onboard --dry-run
+annolid-run agent-onboard
+annolid-run agent-onboard --update
+</code></pre></div>
+<ul>
+<li><code>--dry-run</code>: preview file actions without writing.</li>
+<li><code>--update</code>: overwrite changed template files with current versions.</li>
+<li><code>--overwrite</code>: legacy alias for <code>--update</code>.</li>
+<li><code>--no-backup</code>: when used with <code>--update</code>, skip backup copies.</li>
+<li><code>--backup-dir &lt;path&gt;</code>: write overwritten-file backups to a custom directory.</li>
+<li><code>--prune-bootstrap</code>: remove stale bootstrap-managed files no longer present in current template set.</li>
+</ul>
+<p>By default, update mode creates backup copies in:</p>
+<p><code>&lt;workspace&gt;/.annolid/bootstrap-backups/&lt;timestamp&gt;/</code></p>
+<p>This keeps user-modified files recoverable while allowing template updates.</p>
+<p>GUI workflow:</p>
+<ul>
+<li>Open <code>Settings -&gt; Agent Workspace Onboarding…</code></li>
+<li>Preview actions, apply onboarding/update, optionally prune stale bootstrap files, restore from the latest backup, and verify workspace template status.</li>
 </ul>
 <h2 id="help-patterns">Help Patterns<a class="headerlink" href="#help-patterns" title="Permanent link">&para;</a></h2>
 <p>The CLI and agent tool normalize these help forms to the same underlying
