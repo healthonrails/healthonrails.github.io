@@ -1306,6 +1306,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tool-pool-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Pool and Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-turn-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Turn Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-compaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Compaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#help-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2061,6 +2094,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tool-pool-and-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Pool and Permissions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-turn-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Turn Snapshots
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-compaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prompt Compaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#help-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2255,8 +2321,90 @@ annolid-run agent-onboard --update
 <p>GUI workflow:</p>
 <ul>
 <li>Open <code>Settings -&gt; Agent Workspace Onboarding…</code></li>
-<li>Preview actions, apply onboarding/update, optionally prune stale bootstrap files, restore from the latest backup, and verify workspace template status.</li>
+<li>Select a workspace path (defaults to <code>~/.annolid/workspace</code>), then Preview and Apply.</li>
+<li>The dialog now shows a step guide/progress bar, color-coded action statuses, and workspace-health guidance.</li>
+<li>Use <code>Open Workspace Folder</code> to inspect files directly, and <code>Restore Latest Backup</code> for rollback.</li>
 </ul>
+<p>Onboarding/status payloads now include structured workspace-health fields:</p>
+<ul>
+<li><code>workspace_health_before</code> / <code>workspace_health_after</code> in <code>agent-onboard</code></li>
+<li><code>workspace_health</code> in <code>agent-status</code></li>
+<li><code>template_missing_count</code>, <code>template_missing</code>, and <code>guidance</code> for quick diagnosis and safer updates.</li>
+</ul>
+<h2 id="tool-pool-and-permissions">Tool Pool and Permissions<a class="headerlink" href="#tool-pool-and-permissions" title="Permanent link">&para;</a></h2>
+<p>Use <code>agent-tool-pool</code> to inspect effective tool registration and policy gating:</p>
+<div class="highlight"><pre><span></span><code>annolid-run agent-tool-pool
+annolid-run agent-tool-pool --provider ollama --model qwen3
+annolid-run agent-tool-pool --workspace ~/.annolid/workspace
+</code></pre></div>
+<p>The output includes:</p>
+<ul>
+<li>registered tools (pre-policy),</li>
+<li>allowed and denied tool lists (post-policy),</li>
+<li>resolved policy profile/source,</li>
+<li>a compact permission context (<code>deny_names</code>, <code>deny_prefixes</code>) for runtime checks.</li>
+</ul>
+<p>The GUI also exposes the same data in the <code>Agent Capabilities</code> panel, reachable from the main app menu and the workspace onboarding dialog. It includes tabs for overview, tools, skills, and task-based suggestions.</p>
+<p>The chat composer also supports slash-driven selection:</p>
+<ul>
+<li>type <code>/</code> or <code>@</code> to open a picker for skills, tools, and direct commands,</li>
+<li>choose <code>/skill</code> or <code>/tool</code> to bias the next turn with explicit selections,</li>
+<li>use <code>/capabilities</code> or <code>/caps</code> to open the combined capabilities panel,</li>
+<li>inline quick-suggestion chips appear under the composer as you type,</li>
+<li>selected skills and tools appear as removable chips under the composer,</li>
+<li>skill chips use a distinct highlight from tool chips, and suggested skills use a dashed style,</li>
+<li>keyboard shortcuts: <code>Ctrl+Alt+Left</code> focuses selected chips, <code>Ctrl+Alt+Right</code> focuses suggested skills, <code>Ctrl+Alt+Backspace</code> clears all selections,</li>
+<li>when a chip is focused, <code>Backspace</code> or <code>Delete</code> removes a selected chip, <code>Enter</code> or <code>Space</code> activates a suggested skill, and <code>Esc</code> returns focus to the prompt,</li>
+<li>selected chips can be reordered by dragging one chip onto another,</li>
+<li>the composer header shows a compact active-capabilities summary pill,</li>
+<li>keep selection lines on their own line above the natural-language request.</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>/skill weather
+Check today&#39;s weather
+
+/tool cron
+Schedule an email summary for tomorrow morning
+</code></pre></div>
+<p>Use <code>agent-capabilities</code> when you want both tool policy and skill discovery in one report:</p>
+<div class="highlight"><pre><span></span><code>annolid-run agent-capabilities
+annolid-run agent-capabilities --workspace ~/.annolid/workspace --task-hint &quot;check today&#39;s weather&quot;
+annolid-run agent-capabilities --provider ollama --model qwen3 --task-hint &quot;summarize weather and email report&quot;
+</code></pre></div>
+<p>The output includes:</p>
+<ul>
+<li><code>tool_pool</code> with the registered/allowed/denied tool view,</li>
+<li><code>skill_pool</code> with skill discovery and suggestions,</li>
+<li>a compact <code>summary</code> block for quick inspection.</li>
+</ul>
+<p>Use <code>agent-skill-pool</code> to inspect effective skill discovery and optional scored task matches:</p>
+<div class="highlight"><pre><span></span><code>annolid-run agent-skill-pool
+annolid-run agent-skill-pool --workspace ~/.annolid/workspace --task-hint &quot;summarize weather and email report&quot;
+annolid-run agent-skill-pool --task-hint &quot;debug python traceback&quot; --top-k 3
+</code></pre></div>
+<p>The output includes:</p>
+<ul>
+<li>skill counts (<code>total</code>, <code>available</code>, <code>unavailable</code>, <code>always</code>),</li>
+<li>source distribution (<code>workspace</code>, <code>managed</code>, <code>builtin</code>, <code>extra:*</code>),</li>
+<li>unavailable skill reasons preview,</li>
+<li>scored <code>suggested_skills</code> (<code>name</code>, <code>score</code>, <code>strategy</code>, <code>source</code>) when <code>--task-hint</code> is provided.</li>
+</ul>
+<h2 id="runtime-turn-snapshots">Runtime Turn Snapshots<a class="headerlink" href="#runtime-turn-snapshots" title="Permanent link">&para;</a></h2>
+<p>Agent turns now persist lightweight diagnostic snapshots under:</p>
+<p><code>&lt;sessions_dir&gt;/snapshots/&lt;encoded-session-id&gt;.jsonl</code></p>
+<p>Each snapshot records model/provider, stop reason, iteration/tool counts, bottleneck timing, and a short final-output preview to speed up debugging without parsing full logs.
+Snapshots also include:</p>
+<ul>
+<li><code>tool_usage_counts</code> (per-tool call counts),</li>
+<li><code>context_compaction.runs</code> and <code>context_compaction.messages_trimmed</code> (history compaction telemetry).</li>
+</ul>
+<p>Inspect snapshots from CLI:</p>
+<div class="highlight"><pre><span></span><code>annolid-run agent-turn-snapshots --session-id email:user@example.com
+annolid-run agent-turn-snapshots --session-id email:user@example.com --limit 50
+annolid-run agent-turn-snapshots --workspace ~/.annolid/workspace --session-id gui:annolid_bot:default
+</code></pre></div>
+<h2 id="prompt-compaction">Prompt Compaction<a class="headerlink" href="#prompt-compaction" title="Permanent link">&para;</a></h2>
+<p>The GUI system prompt keeps a compact runtime tooling section by listing a fixed-size preview of available tool names and summarizing any remainder count. This keeps prompts stable when large tool registries are active.</p>
 <h2 id="help-patterns">Help Patterns<a class="headerlink" href="#help-patterns" title="Permanent link">&para;</a></h2>
 <p>The CLI and agent tool normalize these help forms to the same underlying
 behavior:</p>
