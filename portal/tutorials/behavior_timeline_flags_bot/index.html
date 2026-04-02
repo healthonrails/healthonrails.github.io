@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/mcp/">
+        <link rel="canonical" href="https://annolid.com/tutorials/behavior_timeline_flags_bot/">
       
       
-        <link rel="prev" href="../agent_annolid_run/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../codex_and_acp/">
+        <link rel="next" href="../video_ffmpeg_processing/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/icon_annolid.png">
+      <link rel="icon" href="../../assets/images/icon_annolid.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>MCP - Annolid Docs</title>
+        <title>Behavior Labeling (Timeline + Flags + Bot) - Annolid Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#model-context-protocol-mcp" class="md-skip">
+        <a href="#behavior-labeling-with-timeline-flags-and-annolid-bot" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+    <a href="../.." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
       
-  <img src="../assets/images/icon_annolid.png" alt="logo">
+  <img src="../../assets/images/icon_annolid.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MCP
+              Behavior Labeling (Timeline + Flags + Bot)
             
           </span>
         </div>
@@ -208,7 +208,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -229,7 +229,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../getting_started/" class="md-tabs__link">
+        <a href="../../getting_started/" class="md-tabs__link">
           
   
   
@@ -247,11 +247,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../workflows/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../workflows/" class="md-tabs__link">
           
   
   
@@ -269,13 +271,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../agent_and_automation/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../agent_and_automation/" class="md-tabs__link">
           
   
   
@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../operations/" class="md-tabs__link">
+        <a href="../../operations/" class="md-tabs__link">
           
   
   
@@ -319,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../reference/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../model_plugin_help/" class="md-tabs__link">
+        <a href="../../model_plugin_help/" class="md-tabs__link">
           
   
   
@@ -383,9 +383,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+    <a href="../.." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
       
-  <img src="../assets/images/icon_annolid.png" alt="logo">
+  <img src="../../assets/images/icon_annolid.png" alt="logo">
 
     </a>
     Annolid Docs
@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -503,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting_started/" class="md-nav__link">
+      <a href="../../getting_started/" class="md-nav__link">
         
   
   
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../installation/" class="md-nav__link">
+      <a href="../../installation/" class="md-nav__link">
         
   
   
@@ -559,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install_with_uv/" class="md-nav__link">
+      <a href="../../install_with_uv/" class="md-nav__link">
         
   
   
@@ -587,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../one_line_install_choices/" class="md-nav__link">
+      <a href="../../one_line_install_choices/" class="md-nav__link">
         
   
   
@@ -619,6 +619,8 @@
       
   
   
+    
+  
   
   
     
@@ -633,481 +635,6 @@
         
       
         
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workflows
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Workflows
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../workflows/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Workflow Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../atlas_overlay_workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Large TIFF and Atlas Overlays
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../large_image_guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Large Image Guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../simulation_flybody/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Simulation and FlyBody
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../coco_data_flow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    COCO Data Flow
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tutorials Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/behavior_timeline_flags_bot/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Behavior Labeling (Timeline + Flags + Bot)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/video_ffmpeg_processing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Video Processing with FFmpeg
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/segment-based-batch-tracking/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Segment-based Batch Tracking
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/zone_analysis_workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Zone Analysis Workflow
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/Labelme_to_YOLO_class_map/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LabelMe to YOLO Class Map
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tutorials/sandboxed_shell/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sandboxed Shell
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sam3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SAM3
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sam3d/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SAM 3D
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
       
         
       
@@ -1143,17 +670,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Agent and Automation
+    Workflows
   
 
     
@@ -1164,12 +691,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_4">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Agent and Automation
+    Workflows
   
 
           </label>
@@ -1182,14 +709,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_and_automation/" class="md-nav__link">
+      <a href="../../workflows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Workflow Overview
   
 
     
@@ -1210,14 +737,126 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_annolid_run/" class="md-nav__link">
+      <a href="../../atlas_overlay_workflow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Agent CLI with annolid-run
+    Large TIFF and Atlas Overlays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../large_image_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation_flybody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and FlyBody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coco_data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials Overview
   
 
     
@@ -1254,7 +893,7 @@
   <span class="md-ellipsis">
     
   
-    MCP
+    Behavior Labeling (Timeline + Flags + Bot)
   
 
     
@@ -1272,7 +911,7 @@
   <span class="md-ellipsis">
     
   
-    MCP
+    Behavior Labeling (Timeline + Flags + Bot)
   
 
     
@@ -1298,10 +937,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#current-config-path" class="md-nav__link">
+  <a href="#what-is-shared-across-ui-panels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current Config Path
+        What Is Shared Across UI Panels
       
     </span>
   </a>
@@ -1309,10 +948,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minimal-example" class="md-nav__link">
+  <a href="#quick-start-manual-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimal Example
+        Quick Start (Manual Workflow)
       
     </span>
   </a>
@@ -1320,10 +959,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-shape" class="md-nav__link">
+  <a href="#timeline-needle-dragging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Shape
+        Timeline Needle Dragging
       
     </span>
   </a>
@@ -1331,10 +970,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-is-used" class="md-nav__link">
+  <a href="#defining-behaviors-from-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Is Used
+        Defining Behaviors from Timeline
       
     </span>
   </a>
@@ -1342,10 +981,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-notes" class="md-nav__link">
+  <a href="#defining-behaviors-from-flags" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Practical Notes
+        Defining Behaviors from Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-assisted-behavior-labeling-1s-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent-Assisted Behavior Labeling (1s Segments)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-operating-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Operating Loop
       
     </span>
   </a>
@@ -1379,7 +1040,368 @@
   
   
     <li class="md-nav__item">
-      <a href="../codex_and_acp/" class="md-nav__link">
+      <a href="../video_ffmpeg_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Processing with FFmpeg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segment-based-batch-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone_analysis_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zone Analysis Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Labelme_to_YOLO_class_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabelMe to YOLO Class Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sandboxed_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sandboxed Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sam3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sam3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and Automation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent and Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_and_automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_annolid_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent CLI with annolid-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codex_and_acp/" class="md-nav__link">
         
   
   
@@ -1407,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_calendar/" class="md-nav__link">
+      <a href="../../agent_calendar/" class="md-nav__link">
         
   
   
@@ -1435,7 +1457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_workspace/" class="md-nav__link">
+      <a href="../../agent_workspace/" class="md-nav__link">
         
   
   
@@ -1463,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_secrets/" class="md-nav__link">
+      <a href="../../agent_secrets/" class="md-nav__link">
         
   
   
@@ -1491,7 +1513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../agent_security/" class="md-nav__link">
+      <a href="../../agent_security/" class="md-nav__link">
         
   
   
@@ -1519,7 +1541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
+      <a href="../../memory/" class="md-nav__link">
         
   
   
@@ -1620,7 +1642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/" class="md-nav__link">
+      <a href="../../operations/" class="md-nav__link">
         
   
   
@@ -1648,7 +1670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../deployment/" class="md-nav__link">
+      <a href="../../deployment/" class="md-nav__link">
         
   
   
@@ -1676,7 +1698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../migration/" class="md-nav__link">
+      <a href="../../migration/" class="md-nav__link">
         
   
   
@@ -1704,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture_layers/" class="md-nav__link">
+      <a href="../../architecture_layers/" class="md-nav__link">
         
   
   
@@ -1732,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../redirects/" class="md-nav__link">
+      <a href="../../redirects/" class="md-nav__link">
         
   
   
@@ -1827,7 +1849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
+      <a href="../../reference/" class="md-nav__link">
         
   
   
@@ -1855,7 +1877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../zone_analysis/" class="md-nav__link">
+      <a href="../../zone_analysis/" class="md-nav__link">
         
   
   
@@ -1948,7 +1970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../model_plugin_help/" class="md-nav__link">
+      <a href="../../model_plugin_help/" class="md-nav__link">
         
   
   
@@ -2003,10 +2025,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#current-config-path" class="md-nav__link">
+  <a href="#what-is-shared-across-ui-panels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current Config Path
+        What Is Shared Across UI Panels
       
     </span>
   </a>
@@ -2014,10 +2036,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#minimal-example" class="md-nav__link">
+  <a href="#quick-start-manual-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Minimal Example
+        Quick Start (Manual Workflow)
       
     </span>
   </a>
@@ -2025,10 +2047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-shape" class="md-nav__link">
+  <a href="#timeline-needle-dragging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Supported Shape
+        Timeline Needle Dragging
       
     </span>
   </a>
@@ -2036,10 +2058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-is-used" class="md-nav__link">
+  <a href="#defining-behaviors-from-timeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Is Used
+        Defining Behaviors from Timeline
       
     </span>
   </a>
@@ -2047,10 +2069,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#practical-notes" class="md-nav__link">
+  <a href="#defining-behaviors-from-flags" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Practical Notes
+        Defining Behaviors from Flags
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#agent-assisted-behavior-labeling-1s-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agent-Assisted Behavior Labeling (1s Segments)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-operating-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Operating Loop
       
     </span>
   </a>
@@ -2093,7 +2137,7 @@
   
   
     <li class="md-path__item">
-      <a href=".." class="md-path__link">
+      <a href="../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -2111,10 +2155,10 @@
     
     
       <li class="md-path__item">
-        <a href="../agent_and_automation/" class="md-path__link">
+        <a href="../../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Agent and Automation
+    Workflows
   </span>
 
         </a>
@@ -2133,7 +2177,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/mcp.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/tutorials/behavior_timeline_flags_bot.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2142,64 +2186,115 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/mcp.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/tutorials/behavior_timeline_flags_bot.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="model-context-protocol-mcp">Model Context Protocol (MCP)<a class="headerlink" href="#model-context-protocol-mcp" title="Permanent link">&para;</a></h1>
-<p>Annolid Bot can register tools and resources from Model Context Protocol servers.</p>
-<h2 id="current-config-path">Current Config Path<a class="headerlink" href="#current-config-path" title="Permanent link">&para;</a></h2>
-<p>Configure MCP in the Annolid agent config:</p>
-<p><code>~/.annolid/agent/config.json</code></p>
-<p>The schema currently stores MCP servers under the agent tools block as <code>mcpServers</code> / <code>mcp_servers</code>.</p>
-<h2 id="minimal-example">Minimal Example<a class="headerlink" href="#minimal-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;mcpServers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;filesystem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;npx&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">          </span><span class="s2">&quot;-y&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;@modelcontextprotocol/server-filesystem&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="s2">&quot;/path/to/allowed/directory&quot;</span>
-<span class="w">        </span><span class="p">]</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
+<h1 id="behavior-labeling-with-timeline-flags-and-annolid-bot">Behavior Labeling with Timeline, Flags, and Annolid Bot<a class="headerlink" href="#behavior-labeling-with-timeline-flags-and-annolid-bot" title="Permanent link">&para;</a></h1>
+<p>This tutorial shows how to use Annolid's behavior workflow end-to-end:</p>
+<ol>
+<li>define behavior names once,</li>
+<li>use those names consistently in Flags and Timeline,</li>
+<li>drag the timeline needle/playhead for fast review,</li>
+<li>run agent-assisted segment labeling,</li>
+<li>save outputs for analysis.</li>
+</ol>
+<h2 id="what-is-shared-across-ui-panels">What Is Shared Across UI Panels<a class="headerlink" href="#what-is-shared-across-ui-panels" title="Permanent link">&para;</a></h2>
+<p>Annolid uses a canonical behavior catalog in the project schema (<code>project.annolid.json</code>).</p>
+<ul>
+<li><strong>Flags dock</strong> behavior names are synced into the catalog.</li>
+<li><strong>Timeline dock</strong> behavior definitions are synced into the catalog.</li>
+<li><strong>Annolid Bot</strong> behavior labeling uses the same catalog.</li>
+</ul>
+<p>This keeps behavior names consistent across manual scoring and agent-generated labels.</p>
+<h2 id="quick-start-manual-workflow">Quick Start (Manual Workflow)<a class="headerlink" href="#quick-start-manual-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open a video in Annolid.</li>
+<li>Open the <strong>Flags</strong> dock and add your behavior names (for example: <code>walking</code>, <code>grooming</code>, <code>rearing</code>).</li>
+<li>Click <strong>Save All</strong> in Flags to persist names/states.</li>
+<li>Open the <strong>Timeline</strong> dock and verify behaviors appear in the behavior selector.</li>
+<li>Record events using Start/End in Flags or by creating timeline segments.</li>
+</ol>
+<h2 id="timeline-needle-dragging">Timeline Needle Dragging<a class="headerlink" href="#timeline-needle-dragging" title="Permanent link">&para;</a></h2>
+<p>The timeline playhead (red vertical line + red triangle marker) supports direct dragging.</p>
+<p>How to use:</p>
+<ol>
+<li>Move your mouse over the red marker near the timeline header.</li>
+<li>Press and hold left mouse button.</li>
+<li>Drag left/right to scrub frames.</li>
+<li>Release to stop at the target frame.</li>
+</ol>
+<p>Behavior notes:</p>
+<ul>
+<li>Frame updates are continuous while dragging.</li>
+<li>The active frame in the main video view follows the playhead.</li>
+<li>Segment editing (dragging behavior bars) still works independently.</li>
+</ul>
+<h2 id="defining-behaviors-from-timeline">Defining Behaviors from Timeline<a class="headerlink" href="#defining-behaviors-from-timeline" title="Permanent link">&para;</a></h2>
+<p>You can add behavior names directly from Timeline.</p>
+<ol>
+<li>Type a behavior name in the behavior combo.</li>
+<li>Use the define/add action in Timeline.</li>
+<li>The behavior is added to the shared catalog and saved to schema.</li>
+<li>Flags and Bot can reuse it immediately.</li>
+</ol>
+<h2 id="defining-behaviors-from-flags">Defining Behaviors from Flags<a class="headerlink" href="#defining-behaviors-from-flags" title="Permanent link">&para;</a></h2>
+<p>Flags can also serve as a behavior editor.</p>
+<ol>
+<li>Add or rename rows in the Flags table.</li>
+<li>Save flags with <strong>Save All</strong> (<code>Ctrl+S</code>).</li>
+<li>Row changes and saves sync behavior names into the shared catalog.</li>
+</ol>
+<h2 id="agent-assisted-behavior-labeling-1s-segments">Agent-Assisted Behavior Labeling (1s Segments)<a class="headerlink" href="#agent-assisted-behavior-labeling-1s-segments" title="Permanent link">&para;</a></h2>
+<p>Once behaviors are defined, you can ask Annolid Bot to label segments.</p>
+<p>Recommended pattern:</p>
+<ol>
+<li>Open <strong>Annolid Bot</strong> from the GUI.</li>
+<li>Use your defined behavior list from schema/flags/timeline.</li>
+<li>Ask for segment labeling (for example every 1 second).</li>
+</ol>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Label behavior in /path/to/video.mp4 from defined list every 1s
 </code></pre></div>
-<h2 id="supported-shape">Supported Shape<a class="headerlink" href="#supported-shape" title="Permanent link">&para;</a></h2>
-<p>Each server entry can define:</p>
+<p>You can also provide explicit labels:</p>
+<div class="highlight"><pre><span></span><code>Label behavior in /path/to/video.mp4 with labels grooming, rearing, walking every 1s
+</code></pre></div>
+<p>What Annolid writes:</p>
 <ul>
-<li><code>command</code>: executable to launch the server</li>
-<li><code>args</code>: argument list</li>
-<li><code>env</code>: optional environment variables</li>
-<li><code>url</code>: optional remote server URL for HTTP/SSE-style MCP servers</li>
+<li>timeline intervals per segment label,</li>
+<li>behavior timestamps CSV,</li>
+<li>segment-level behavior log JSON.</li>
 </ul>
-<h2 id="how-it-is-used">How It Is Used<a class="headerlink" href="#how-it-is-used" title="Permanent link">&para;</a></h2>
-<p>Once configured, Annolid Bot can connect to those MCP servers during chat sessions and expose their tools/resources to the agent.</p>
-<p>Typical uses:</p>
-<ul>
-<li>restricted filesystem access</li>
-<li>external search or data APIs</li>
-<li>research or lab-specific internal tooling</li>
-</ul>
-<h2 id="practical-notes">Practical Notes<a class="headerlink" href="#practical-notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Install the <code>annolid_bot</code> extra if you want the common Annolid Bot integration stack.</li>
-<li>Make sure the runtime needed by your MCP server exists locally, for example <code>node</code>, <code>npx</code>, or <code>python</code>.</li>
-<li>Prefer narrow filesystem/server scopes over broad access.</li>
-</ul>
+<h2 id="recommended-operating-loop">Recommended Operating Loop<a class="headerlink" href="#recommended-operating-loop" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Define behavior names first (Flags or Timeline).</li>
+<li>Save once so schema is canonical.</li>
+<li>Label a short window manually to validate naming.</li>
+<li>Run agent segment labeling for a larger window.</li>
+<li>Review timeline quickly by dragging the playhead and correcting edge cases.</li>
+<li>Export/report once labels are stable.</li>
+</ol>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Check Annolid Bot logs and startup output for MCP registration failures.</li>
-<li>Verify the config path is correct: <code>~/.annolid/agent/config.json</code>.</li>
-<li>Confirm required environment variables are present in the server definition.</li>
-<li>If a server starts but tools do not appear useful, test the server independently outside Annolid first.</li>
-</ul>
+<p>If a behavior is missing in one panel:</p>
+<ol>
+<li>Save flags (<code>Save All</code>) or re-define it in Timeline.</li>
+<li>Ensure a project schema is loaded (or created next to the video).</li>
+<li>Reopen Timeline popup to refresh behavior choices.</li>
+</ol>
+<p>If bot labeling says no labels are available:</p>
+<ol>
+<li>Define behaviors in Flags/Timeline first.</li>
+<li>Retry with <code>from defined list</code>, or pass labels explicitly in the prompt.</li>
+</ol>
+<p>If timeline scrubbing does not move frame:</p>
+<ol>
+<li>Drag from the red marker area near the header.</li>
+<li>Confirm a video is loaded and frame range is set.</li>
+<li>Retry after switching focus back to the Timeline panel.</li>
+</ol>
 
 
 
@@ -2273,10 +2368,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
