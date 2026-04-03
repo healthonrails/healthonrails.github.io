@@ -441,9 +441,10 @@
 <li><p>set one folder-wide default configuration,</p></li>
 <li><p>override only the videos that need special treatment,</p></li>
 <li><p>crop videos interactively or by coordinates,</p></li>
+<li><p>assign a different crop to one specific video during folder review,</p></li>
 <li><p>keep a per-video processing record for reproducibility.</p></li>
 </ul>
-<p>If you only have a single video, the same dialog works as a simple one-off rescale tool. Folder input unlocks the per-video review workflow.</p>
+<p>If you only have a single video, the same dialog works as a simple one-off rescale tool. Folder input unlocks the per-video review workflow, including custom crops for individual videos.</p>
 <p>For a visual walkthrough of the full batch workflow, see <a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html"><span class="std std-doc">Batch downsampling with sequential video review</span></a>.</p>
 <section id="recommended-workflow">
 <h2>Recommended workflow<a class="headerlink" href="#recommended-workflow" title="Link to this heading">#</a></h2>
@@ -453,7 +454,7 @@
 <li><p>Open the <strong><code class="docutils literal notranslate"><span class="pre">Processing</span></code></strong> tab and set the default values that should apply to most videos.</p></li>
 <li><p>If one or more videos need different settings, click <strong><code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Videos</span> <span class="pre">One</span> <span class="pre">by</span> <span class="pre">One</span> <span class="pre">(Folder</span> <span class="pre">Input)</span></code></strong>.</p></li>
 <li><p>Review the <strong><code class="docutils literal notranslate"><span class="pre">Summary</span></code></strong> tab to confirm the batch settings before you run it.</p></li>
-<li><p>Use <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for exceptions and <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> for videos that should keep the folder defaults.</p></li>
+<li><p>Use <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for exceptions, including a one-off crop on a single video, and <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> for videos that should keep the folder defaults.</p></li>
 <li><p>Open the <strong><code class="docutils literal notranslate"><span class="pre">Run</span></code></strong> tab and start processing.</p></li>
 </ol>
 <p>This pattern keeps the default case simple and makes the unusual cases explicit.</p>
@@ -467,6 +468,7 @@
 <p>Use a separate output folder. That keeps the source data unchanged and makes the output easier to review.</p>
 <p>If you leave the output folder blank, Annolid writes to a sibling folder with the same name plus <code class="docutils literal notranslate"><span class="pre">_downsampled</span></code> appended.</p>
 <p>If you choose a single video instead of a folder, the tool behaves like a one-file processor and writes to a sibling <code class="docutils literal notranslate"><span class="pre">_downsampled</span></code> folder unless you choose a custom output directory.</p>
+<p><img alt="Annolid downsample dialog - Processing tab" src="../_images/downsample_gui_processing.png" /></p>
 </section>
 <section id="step-2-set-folder-wide-defaults">
 <h2>Step 2: Set folder-wide defaults<a class="headerlink" href="#step-2-set-folder-wide-defaults" title="Link to this heading">#</a></h2>
@@ -501,12 +503,14 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">width</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">height</span></code></p></li>
 </ul>
-<p>The crop is only applied when the checkbox is enabled and all four values are valid integers.</p>
+<p>The crop is only applied when the checkbox is enabled and all four values are valid integers.
+When you review a folder one video at a time, you can replace that shared crop with a custom crop on just the selected video.</p>
 </section>
 </section>
 <section id="step-4-customize-individual-videos">
 <h2>Step 4: Customize individual videos<a class="headerlink" href="#step-4-customize-individual-videos" title="Link to this heading">#</a></h2>
 <p>Click <strong><code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Videos</span> <span class="pre">One</span> <span class="pre">by</span> <span class="pre">One</span> <span class="pre">(Folder</span> <span class="pre">Input)</span></code></strong> to open the sequential review dialog.</p>
+<p><img alt="Annolid downsample dialog - per-video review" src="../_images/downsample_gui_review.png" /></p>
 <p>Inside that dialog:</p>
 <ul class="simple">
 <li><p>review one video at a time,</p></li>
@@ -567,7 +571,7 @@
 <li><p>Open the per-video review dialog.</p></li>
 <li><p>Review videos in order.</p></li>
 <li><p>Change only the outlier video.</p></li>
-<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for that file.</p></li>
+<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for that file to store its custom crop or other override.</p></li>
 <li><p>Run processing.</p></li>
 </ol>
 </section>

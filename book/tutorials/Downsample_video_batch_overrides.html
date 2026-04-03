@@ -432,7 +432,7 @@
   <section class="tex2jax_ignore mathjax_ignore" id="batch-downsampling-with-sequential-video-review">
 <h1>Batch downsampling with sequential video review<a class="headerlink" href="#batch-downsampling-with-sequential-video-review" title="Link to this heading">#</a></h1>
 <p>This tutorial shows the recommended way to process a folder of videos when most files share the same settings but a few need custom crops or other adjustments.</p>
-<p><img alt="Annolid main window" src="../_images/annolid_gui.png" /></p>
+<p><img alt="Annolid downsample dialog - Processing tab" src="../_images/downsample_gui_processing.png" /></p>
 <p>The main dialog now uses four tabs:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">/</span> <span class="pre">Output</span></code> selects the source folder and output folder.</p></li>
@@ -452,9 +452,9 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">Apply</span> <span class="pre">Denoise</span></code>: enable denoising only for this file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Contrast</span> <span class="pre">Enhancement</span></code>: enable contrast correction only for this file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Auto</span> <span class="pre">Contrast</span> <span class="pre">Strength:</span></code> tune how strong the contrast correction should be.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">Crop</span> <span class="pre">Region</span></code>: turn on a custom crop for this file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Crop</span> <span class="pre">Region</span> <span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height):</span></code> enter the exact crop rectangle.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Crop</span> <span class="pre">On</span> <span class="pre">Current</span> <span class="pre">Video</span></code>: open the first frame and draw a crop visually.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Enable</span> <span class="pre">Crop</span> <span class="pre">Region</span></code>: turn on a custom crop for this file without affecting the rest of the folder.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Crop</span> <span class="pre">Region</span> <span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">width,</span> <span class="pre">height):</span></code> enter the exact crop rectangle for the current video.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Crop</span> <span class="pre">On</span> <span class="pre">Current</span> <span class="pre">Video</span></code>: open the first frame and draw a crop visually for the current video.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Previous</span></code>: move back to the previous video.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Skip</span></code>: keep the folder defaults for the current video and move on.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code>: store the current settings for the current video and move on.</p></li>
@@ -512,11 +512,12 @@
 <p>For each video:</p>
 <ol class="arabic simple">
 <li><p>Change only the fields that should differ from the folder defaults.</p></li>
-<li><p>Use <strong><code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Crop</span> <span class="pre">On</span> <span class="pre">Current</span> <span class="pre">Video</span></code></strong> when you need to draw a crop visually.</p></li>
+<li><p>Use <strong><code class="docutils literal notranslate"><span class="pre">Preview</span> <span class="pre">Crop</span> <span class="pre">On</span> <span class="pre">Current</span> <span class="pre">Video</span></code></strong> when you need to draw a crop visually for that specific video.</p></li>
 <li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> to store a custom override and move forward.</p></li>
 <li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> to keep the folder defaults for that video and move forward.</p></li>
 </ol>
 <p>Use <strong><code class="docutils literal notranslate"><span class="pre">Previous</span></code></strong> if you need to correct an earlier video.</p>
+<p><img alt="Annolid downsample dialog - per-video review" src="../_images/downsample_gui_review.png" /></p>
 </section>
 <section id="run-the-batch">
 <h3>5. Run the batch<a class="headerlink" href="#run-the-batch" title="Link to this heading">#</a></h3>
@@ -564,7 +565,7 @@
 <li><p>Open the review dialog.</p></li>
 <li><p>Review the 11 normal videos and click <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> for each one.</p></li>
 <li><p>Change only the outlier video’s crop.</p></li>
-<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for that file.</p></li>
+<li><p>Click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for that file to save its custom crop.</p></li>
 <li><p>Run the batch.</p></li>
 </ol>
 </section>
