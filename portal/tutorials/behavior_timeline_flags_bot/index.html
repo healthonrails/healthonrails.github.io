@@ -1003,6 +1003,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#caption-widget-describe-behavior-timeline-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caption Widget: Describe Behavior Timeline (Background)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recommended-operating-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2091,6 +2102,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#caption-widget-describe-behavior-timeline-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caption Widget: Describe Behavior Timeline (Background)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recommended-operating-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2267,6 +2289,28 @@
 <li>timeline intervals per segment label,</li>
 <li>behavior timestamps CSV,</li>
 <li>segment-level behavior log JSON.</li>
+</ul>
+<p>Prompting behavior used by Annolid Bot labeling:</p>
+<ul>
+<li>The model is instructed to act as an animal behavior observer.</li>
+<li>It must describe only observable mouse posture/motion facts (2–4 concise sentences).</li>
+<li>It must classify each segment to exactly one label from your defined behavior list.</li>
+<li>Output is constrained to strict JSON (<code>label</code>, <code>confidence</code>, <code>description</code>) before Annolid writes timeline/log outputs.</li>
+</ul>
+<h2 id="caption-widget-describe-behavior-timeline-background">Caption Widget: Describe Behavior Timeline (Background)<a class="headerlink" href="#caption-widget-describe-behavior-timeline-background" title="Permanent link">&para;</a></h2>
+<p>You can also run per-step behavior description directly from the caption panel:</p>
+<ol>
+<li>In the caption widget, click <strong>Describe behavior</strong>.</li>
+<li>Set <strong>Run mode</strong> to <strong>Timeline (describe every N seconds)</strong>.</li>
+<li>Set <strong>Describe every (s)</strong> to <code>1</code> for 1-second segments.</li>
+<li>Pick your start/end range and click <strong>OK</strong>.</li>
+</ol>
+<p>The run is queued in background and saves incrementally, so long videos can continue from existing saved points.</p>
+<p>Outputs written next to the video:</p>
+<ul>
+<li><code>&lt;video_stem&gt;_timestamps.csv</code></li>
+<li><code>&lt;video_stem&gt;_behavior_segment_labels.json</code></li>
+<li><code>&lt;video_filename&gt;.behavior_timeline.json</code></li>
 </ul>
 <h2 id="recommended-operating-loop">Recommended Operating Loop<a class="headerlink" href="#recommended-operating-loop" title="Permanent link">&para;</a></h2>
 <ol>
