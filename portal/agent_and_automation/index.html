@@ -654,6 +654,8 @@
       
         
       
+        
+      
     
     
     
@@ -1100,6 +1102,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../sam3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1309,6 +1339,17 @@
     <span class="md-ellipsis">
       
         Bot Training Workflows
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sam3-long-video-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAM3 Long-Video Tracking
       
     </span>
   </a>
@@ -2127,6 +2168,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sam3-long-video-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAM3 Long-Video Tracking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bot-evaluation-reports" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2357,6 +2409,38 @@ or running repeatable workflows through the agent stack.</p>
 </ol>
 <p>For external pose datasets, the first prep step can now stay inside the bot workflow. In particular, a DeepLabCut project with <code>labeled-data/**/CollectedData_*.csv</code> can be converted through <code>annolid_dataset_prepare(mode="deeplabcut_import")</code>, which writes LabelMe JSON sidecars, an optional pose schema, and an Annolid label index that can then feed the rest of the dataset/training pipeline. COCO folders can be turned into <code>coco_spec.yaml</code> with <code>mode="coco_spec"</code> or materialized into YOLO <code>data.yaml</code> datasets with <code>mode="coco_to_yolo"</code> when the target model family expects Ultralytics layout. If the target model is <code>dino_kpseg</code>, the bot can also stage an inferred COCO spec automatically under the workspace cache during <code>annolid_train_start</code>.</p>
 <p>The training launcher prefers the workspace <code>.venv</code> interpreter when present so bot-initiated runs use the same dependency environment recommended for local validation.</p>
+<h2 id="sam3-long-video-tracking">SAM3 Long-Video Tracking<a class="headerlink" href="#sam3-long-video-tracking" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot can run SAM3 Agent on long videos through the <code>sam3_agent_video_track</code> tool.</p>
+<p>Use it when the video needs windowed tracking and the same object must survive:</p>
+<ul>
+<li>occlusion</li>
+<li>drift</li>
+<li>repeated reappearance</li>
+<li>identity carry-over across windows</li>
+</ul>
+<p>Recommended decision rule:</p>
+<ol>
+<li>Use <code>video_info</code> if you only need metadata.</li>
+<li>Use <code>video_run_model_inference</code> if you want a generic <code>annolid-run predict ...</code> flow.</li>
+<li>Use <code>gui_segment_track_video</code> if you are already inside the GUI and want the interactive open+track path.</li>
+<li>Use <code>sam3_agent_video_track</code> if you want Annolid Bot to refine the first frame of each window with SAM3 Agent before propagation.</li>
+</ol>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Track the mouse in /path/to/video.mp4 with SAM3 Agent.
+Use a window size of 5, stride 5, and save the summary to the default output folder.
+</code></pre></div>
+<p>What the tool returns:</p>
+<ul>
+<li>a JSON summary</li>
+<li><code>frames_processed</code></li>
+<li><code>masks_written</code></li>
+<li><code>summary_path</code></li>
+</ul>
+<p>Default artifact path:</p>
+<ul>
+<li><code>&lt;video_stem&gt;_sam3_agent/&lt;video_stem&gt;_sam3_agent_tracking.json</code></li>
+</ul>
+<p>Use <code>dry_run=true</code> first if you want to confirm paths and settings without running the model.</p>
 <h2 id="bot-evaluation-reports">Bot Evaluation Reports<a class="headerlink" href="#bot-evaluation-reports" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot also exposes a typed evaluation reporting tool:</p>
 <ul>
