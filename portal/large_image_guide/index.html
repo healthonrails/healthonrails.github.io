@@ -2957,10 +2957,17 @@ overlay-specific state store.</p>
 normal canvas: as you draw, Annolid shows the in-progress path and point
 markers, and when the cursor gets close to the first point it highlights the
 close target so you can finish the polygon confidently.</p>
+<p>The tiled viewer also mirrors the regular canvas hover feedback more closely:
+hovering a polygon vertex, edge, or body shows the same move/create prompts and
+cursor changes you get in the standard canvas editor.</p>
 <p>When editing an existing polygon or linestrip in the tiled viewer, clicking on
 an edge inserts a new point at that location so you can refine the path
 directly. At high zoom, Annolid also reduces point-highlight glow and halo
 intensity so the image detail stays visible while you edit.</p>
+<p>For adjoining regions such as atlas or brain-area mapping, you can right-click
+an existing polygon edge and choose <strong>Start Adjoining Polygon</strong>. Annolid seeds
+the new polygon from that exact edge so neighboring regions can share a clean
+boundary without merging into one saved polygon.</p>
 <p>This lets you stay in the large-image navigation workflow for common annotation tasks.</p>
 <h2 id="what-still-switches-to-canvas">What still switches to canvas<a class="headerlink" href="#what-still-switches-to-canvas" title="Permanent link">&para;</a></h2>
 <p>These tools still fall back to the canvas workflow on purpose:</p>
