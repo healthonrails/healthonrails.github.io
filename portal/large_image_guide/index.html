@@ -2946,13 +2946,25 @@ overlay-specific state store.</p>
 <li>move shapes</li>
 <li>drag vertices</li>
 <li>edit imported vector overlays</li>
-<li>create <code>point</code></li>
-<li>create <code>line</code></li>
-<li>create <code>linestrip</code></li>
-<li>create <code>polygon</code></li>
-<li>create <code>rectangle</code></li>
-<li>create <code>circle</code></li>
 </ul>
+<p>For polygon-heavy workflows such as brain-area mapping, Annolid supports
+shared vertices and shared boundary edges between adjacent polygons. When you
+drag a polygon vertex onto another polygon vertex, or place a new point close
+enough to an existing polygon vertex, Annolid snaps them together and keeps
+both polygons on the same vertex coordinate. When two polygons share the same
+sequence of linked vertices along a boundary, Annolid also links those edges as
+a shared topological boundary while still storing each region as a separate
+polygon. The editor keeps this topology in an explicit shared-topology
+registry so boundary-linked edits stay synchronized across related polygons.
+For already shared borders, the right-click menu includes <strong>Reshape Shared
+Boundary</strong>, which lets you drag that boundary segment and update every linked
+polygon together.
+- create <code>point</code>
+- create <code>line</code>
+- create <code>linestrip</code>
+- create <code>polygon</code>
+- create <code>rectangle</code>
+- create <code>circle</code></p>
 <p>Polygon drawing in the tiled viewer follows the same basic interaction as the
 normal canvas: as you draw, Annolid shows the in-progress path and point
 markers, and when the cursor gets close to the first point it highlights the
@@ -2965,9 +2977,12 @@ an edge inserts a new point at that location so you can refine the path
 directly. At high zoom, Annolid also reduces point-highlight glow and halo
 intensity so the image detail stays visible while you edit.</p>
 <p>For adjoining regions such as atlas or brain-area mapping, you can right-click
-an existing polygon edge and choose <strong>Start Adjoining Polygon</strong>. Annolid seeds
-the new polygon from that exact edge so neighboring regions can share a clean
-boundary without merging into one saved polygon.</p>
+an existing polygon and choose <strong>Start Adjoining Polygon</strong>. Annolid switches
+into polygon drawing mode with that polygon as the boundary source, and each
+click snaps to the shared boundary so you can trace across multiple touching
+edges without having to preselect a single edge first.</p>
+<p>This keeps neighboring regions as separate saved polygons while letting their
+shared border reuse the same boundary points and coordinates.</p>
 <p>This lets you stay in the large-image navigation workflow for common annotation tasks.</p>
 <h2 id="what-still-switches-to-canvas">What still switches to canvas<a class="headerlink" href="#what-still-switches-to-canvas" title="Permanent link">&para;</a></h2>
 <p>These tools still fall back to the canvas workflow on purpose:</p>
