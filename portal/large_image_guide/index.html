@@ -2970,13 +2970,29 @@ polygon. The editor keeps this topology in an explicit shared-topology
 registry so boundary-linked edits stay synchronized across related polygons.
 For already shared borders, the right-click menu includes <strong>Reshape Shared
 Boundary</strong>, which lets you drag that boundary segment and update every linked
-polygon together.
-- create <code>point</code>
-- create <code>line</code>
-- create <code>linestrip</code>
-- create <code>polygon</code>
-- create <code>rectangle</code>
-- create <code>circle</code></p>
+polygon together.</p>
+<p>For sagittal section workflows, Annolid can also infer polygon outlines for
+the pages between explicitly annotated sections. When a TIFF page does not yet
+have its own annotation JSON, Annolid can load an inferred polygon set from
+the nearest annotated pages so you can open the page and tweak the boundaries
+instead of redrawing everything from scratch.</p>
+<ul>
+<li><code>Infer Page Polygons</code> loads inferred page shapes for a missing section</li>
+<li><code>Collapse Selected Polygons</code> hides a polygon without deleting it, which is
+  useful when a small region should vanish during manual cleanup</li>
+<li>
+<p>checking a collapsed polygon back on in the <code>Label Instances</code> dock restores
+  it to normal visibility</p>
+</li>
+<li>
+<p>create <code>point</code></p>
+</li>
+<li>create <code>line</code></li>
+<li>create <code>linestrip</code></li>
+<li>create <code>polygon</code></li>
+<li>create <code>rectangle</code></li>
+<li>create <code>circle</code></li>
+</ul>
 <p>Polygon drawing in the tiled viewer follows the same basic interaction as the
 normal canvas: as you draw, Annolid shows the in-progress path and point
 markers, and when the cursor gets close to the first point it highlights the
