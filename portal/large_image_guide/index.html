@@ -2932,7 +2932,19 @@ single place to inspect and control the current layer stack, including:</p>
 <li>hiding/showing landmark-pair guide layers</li>
 <li>hiding/showing manual annotation layers</li>
 <li>adjusting opacity for label-image and vector-overlay layers</li>
+<li>manually aligning imported raster overlay layers with drag or the dock's
+  <code>Align / Nudge</code> controls, which persist <code>tx/ty/sx/sy</code> transform values in
+  the project state</li>
+<li>resetting a raster overlay layer back to identity alignment from the dock</li>
+<li>keyboard shortcuts in the Layers dock:</li>
+<li><code>Alt+Left</code> / <code>Alt+Right</code> / <code>Alt+Up</code> / <code>Alt+Down</code> for nudging the selected
+    raster overlay layer</li>
+<li><code>Alt+0</code> for resetting the selected raster overlay alignment</li>
+<li>the dock also shows a small hint next to the alignment controls</li>
 </ul>
+<p>When you align a raster overlay by lowering its opacity or dragging it in the
+tiled viewer, Annolid now keeps the selected overlay and the reference raster
+layer beneath it visible so the comparison stays usable during alignment.</p>
 <p>Selecting a vector-overlay or landmark layer in the <code>Layers</code> dock also keeps
 the vector overlay dock aligned with that overlay, so the layer list and the
 overlay/alignment tools do not drift out of sync.</p>
