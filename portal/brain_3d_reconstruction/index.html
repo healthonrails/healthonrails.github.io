@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/operations/">
+        <link rel="canonical" href="https://annolid.com/brain_3d_reconstruction/">
       
       
-        <link rel="prev" href="../memory/">
+        <link rel="prev" href="../large_image_guide/">
       
       
-        <link rel="next" href="../deployment/">
+        <link rel="next" href="../simulation_flybody/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Overview - Annolid Docs</title>
+        <title>Brain 3D Reconstruction - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#operations" class="md-skip">
+        <a href="#brain-3d-reconstruction-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Brain 3D Reconstruction
             
           </span>
         </div>
@@ -247,10 +247,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../workflows/" class="md-tabs__link">
           
   
@@ -291,13 +293,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../operations/" class="md-tabs__link">
           
   
   
@@ -619,8 +619,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -662,21 +664,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -694,7 +697,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -793,10 +796,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../brain_3d_reconstruction/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brain 3D Reconstruction
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -812,6 +842,197 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-workflow-is-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Workflow Is For
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Actions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-settings-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Settings Explained
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-editing-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Editing Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#region-presence-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Region Presence Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronization-and-persistence-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronization and Persistence Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3d-preview-selection-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D Preview Selection Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-reference-tiff-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Reference TIFF Alignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-brain-3d-model-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “No Brain 3D model found”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coronal-edits-do-not-seem-to-persist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coronal edits do not seem to persist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-invalidated-after-manual-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model invalidated after manual edits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region-not-visible-on-a-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Region not visible on a plane
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer API Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1525,10 +1746,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1546,22 +1765,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1579,7 +1797,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1594,37 +1812,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
         
   
   
@@ -1640,59 +1831,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#core-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Paths
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-sequence" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Sequence
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-lives-here" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Lives Here
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2060,10 +2198,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-paths" class="md-nav__link">
+  <a href="#what-this-workflow-is-for" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Paths
+        What This Workflow Is For
       
     </span>
   </a>
@@ -2071,10 +2209,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recommended-sequence" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recommended Sequence
+        Quick Start
       
     </span>
   </a>
@@ -2082,10 +2220,148 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-lives-here" class="md-nav__link">
+  <a href="#main-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Lives Here
+        Main Actions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-settings-explained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build Settings Explained
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typical-editing-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Editing Loop
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#region-presence-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Region Presence Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchronization-and-persistence-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Synchronization and Persistence Rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3d-preview-selection-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3D Preview Selection Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-for-reference-tiff-alignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips for Reference TIFF Alignment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-brain-3d-model-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        “No Brain 3D model found”
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coronal-edits-do-not-seem-to-persist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coronal edits do not seem to persist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-invalidated-after-manual-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model invalidated after manual edits
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#region-not-visible-on-a-plane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Region not visible on a plane
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer API Reference
       
     </span>
   </a>
@@ -2135,10 +2411,10 @@
     
     
       <li class="md-path__item">
-        <a href="./" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Operations
+    Workflows
   </span>
 
         </a>
@@ -2157,7 +2433,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/operations.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/brain_3d_reconstruction.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2166,54 +2442,151 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/operations.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/brain_3d_reconstruction.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h1>
-<p>Use this section for deployment, migration, architecture, and long-term
-maintenance flows.</p>
-<h2 id="core-paths">Core Paths<a class="headerlink" href="#core-paths" title="Permanent link">&para;</a></h2>
-<div class="ann-grid">
-  <article class="ann-card">
-    <h3>Deployment</h3>
-    <p>Build, publish, and operate the documentation and release-facing surfaces.</p>
-    <a href="../deployment/">Open deployment guide</a>
-  </article>
-  <article class="ann-card">
-    <h3>Migration</h3>
-    <p>Track migrations and compatibility changes for memory, settings, and workflow surfaces.</p>
-    <a href="../migration/">Open migration guide</a>
-  </article>
-  <article class="ann-card">
-    <h3>Architecture</h3>
-    <p>Review boundaries and layering rules before making larger structural changes.</p>
-    <a href="../architecture_layers/">Open architecture guide</a>
-  </article>
-  <article class="ann-card">
-    <h3>Reference</h3>
-    <p>Jump to command, config, and important path references for ongoing maintenance.</p>
-    <a href="../reference/">Open reference</a>
-  </article>
-</div>
-
-<h2 id="recommended-sequence">Recommended Sequence<a class="headerlink" href="#recommended-sequence" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Use <a href="../deployment/">Deployment</a> for site and release-facing workflows.</li>
-<li>Check <a href="../migration/">Migration Plan</a> when behavior or storage contracts are changing.</li>
-<li>Review <a href="../architecture_layers/">Architecture Layers</a> before broad refactors.</li>
-<li>Use <a href="../reference/">Reference</a> for command and config lookup during maintenance work.</li>
-</ol>
-<h2 id="what-lives-here">What Lives Here<a class="headerlink" href="#what-lives-here" title="Permanent link">&para;</a></h2>
+<h1 id="brain-3d-reconstruction-workflow">Brain 3D Reconstruction Workflow<a class="headerlink" href="#brain-3d-reconstruction-workflow" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to build and edit a Brain 3D model from sagittal polygon annotations, generate coronal planes, and keep everything synchronized with normal page-based Annolid annotations.</p>
+<h2 id="what-this-workflow-is-for">What This Workflow Is For<a class="headerlink" href="#what-this-workflow-is-for" title="Permanent link">&para;</a></h2>
+<p>Use this when you have sagittal section polygons and want to:</p>
 <ul>
-<li>deployment and publishing guidance,</li>
-<li>migration notes and compatibility planning,</li>
-<li>architecture boundaries,</li>
-<li>operational references and redirects.</li>
+<li>reconstruct a canonical 3D region model,</li>
+<li>generate candidate coronal contours automatically,</li>
+<li>edit coronal contours directly in Annolid,</li>
+<li>preview and inspect the 3D result,</li>
+<li>keep the result compatible with existing LabelMe-style page workflows.</li>
 </ul>
+<p>This is an additive workflow. Existing 2D annotation projects still work as before.</p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open your sagittal stack and annotations in Annolid.</li>
+<li>Go to <code>View -&gt; Build Brain 3D Model...</code>.</li>
+<li>Configure output and smoothing/snapping settings.</li>
+<li>Click OK to build the canonical model.</li>
+<li>Open the dock with <code>View -&gt; Open Brain 3D Session</code>.</li>
+<li>Generate or refresh coronal planes with <code>View -&gt; Regenerate Coronal Planes</code>.</li>
+<li>Optionally open the 3D preview with <code>View -&gt; Open Brain 3D Preview</code>.</li>
+</ol>
+<h2 id="main-actions">Main Actions<a class="headerlink" href="#main-actions" title="Permanent link">&para;</a></h2>
+<p>These actions are available in <code>View</code>:</p>
+<ul>
+<li><code>Build Brain 3D Model...</code></li>
+<li><code>Open Brain 3D Session</code></li>
+<li><code>Regenerate Coronal Planes</code></li>
+<li><code>Apply Current Coronal Edits to Brain 3D</code></li>
+<li><code>Open Brain 3D Preview</code></li>
+<li><code>Create Region On Plane</code></li>
+<li><code>Hide Region On Plane</code></li>
+<li><code>Restore Region On Plane</code></li>
+</ul>
+<p>The Brain 3D Session dock also includes Create/Hide/Restore buttons.</p>
+<h2 id="build-settings-explained">Build Settings Explained<a class="headerlink" href="#build-settings-explained" title="Permanent link">&para;</a></h2>
+<p>When you run <code>Build Brain 3D Model...</code>, the dialog includes:</p>
+<ul>
+<li><code>Coronal output</code>:
+  choose spacing-based or plane-count-based reslicing.</li>
+<li><code>Coronal spacing</code>:
+  distance between generated coronal planes.</li>
+<li><code>Coronal plane count</code>:
+  total number of generated coronal planes.</li>
+<li><code>Contour point count</code>:
+  resampling density for each polygon contour.</li>
+<li><code>Interpolation density</code>:
+  how many virtual interpolation steps are inserted between sagittal source sections.</li>
+<li><code>Longitudinal smoothing</code>:
+  smoothing strength along the sagittal-to-coronal reconstruction path.</li>
+<li><code>Coronal in-plane smoothing</code>:
+  contour smoothing applied after coronal extraction.</li>
+<li><code>Enable reference snapping</code>:
+  turns guided snapping on/off for coronal edit application.</li>
+<li><code>Snapping strength</code>:
+  blend amount toward guide/reference points.</li>
+<li><code>Snapping max distance</code>:
+  distance threshold for snapping influence.</li>
+</ul>
+<h2 id="typical-editing-loop">Typical Editing Loop<a class="headerlink" href="#typical-editing-loop" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Select a coronal plane in the Brain 3D Session dock.</li>
+<li>Edit polygons on that plane.</li>
+<li>Click <code>Apply Current Edits</code> (or save, which also synchronizes generated coronal pages).</li>
+<li>Annolid updates the canonical Brain 3D model first.</li>
+<li>Annolid regenerates affected nearby coronal pages.</li>
+<li>Review in both 2D and 3D preview.</li>
+</ol>
+<h2 id="region-presence-controls">Region Presence Controls<a class="headerlink" href="#region-presence-controls" title="Permanent link">&para;</a></h2>
+<p>For each region on a plane, choose one:</p>
+<ul>
+<li><code>Create Region On Plane</code>: region should exist here.</li>
+<li><code>Hide Region On Plane</code>: region should not appear on this plane.</li>
+<li><code>Restore Region On Plane</code>: return to present/default visible state.</li>
+</ul>
+<p>These states are persisted in the Brain 3D artifact and reflected during regeneration.</p>
+<h2 id="synchronization-and-persistence-rules">Synchronization and Persistence Rules<a class="headerlink" href="#synchronization-and-persistence-rules" title="Permanent link">&para;</a></h2>
+<p>Annolid persists both:</p>
+<ul>
+<li>the canonical Brain 3D artifact (<code>otherData["brain_3d_model"]</code>),</li>
+<li>generated coronal page polygons (normal page annotations).</li>
+</ul>
+<p>Rules:</p>
+<ul>
+<li>Coronal edits update the 3D artifact first, then regenerate affected coronal pages.</li>
+<li>Manual edits on original sagittal source pages invalidate the Brain 3D artifact and require rebuild/regeneration.</li>
+<li>Existing LabelMe-style data is not silently reinterpreted.</li>
+</ul>
+<h2 id="3d-preview-selection-sync">3D Preview Selection Sync<a class="headerlink" href="#3d-preview-selection-sync" title="Permanent link">&para;</a></h2>
+<p>When you click a region in the Three.js Brain 3D preview:</p>
+<ul>
+<li>Annolid resolves the region id,</li>
+<li>selects the region in the Brain 3D Session dock,</li>
+<li>moves to the nearest plane where that region is available,</li>
+<li>highlights/selects matching polygons on the active view.</li>
+</ul>
+<h2 id="tips-for-reference-tiff-alignment">Tips for Reference TIFF Alignment<a class="headerlink" href="#tips-for-reference-tiff-alignment" title="Permanent link">&para;</a></h2>
+<p>When comparing generated coronal contours to reference coronal TIFF overlays:</p>
+<ul>
+<li>keep overlay and annotations visible together,</li>
+<li>lower top-layer opacity to inspect alignment,</li>
+<li>apply snapping conservatively first (<code>0.2</code> to <code>0.5</code>),</li>
+<li>use small local edits and regenerate iteratively.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="no-brain-3d-model-found">“No Brain 3D model found”<a class="headerlink" href="#no-brain-3d-model-found" title="Permanent link">&para;</a></h3>
+<p>Run <code>View -&gt; Build Brain 3D Model...</code> first.</p>
+<h3 id="coronal-edits-do-not-seem-to-persist">Coronal edits do not seem to persist<a class="headerlink" href="#coronal-edits-do-not-seem-to-persist" title="Permanent link">&para;</a></h3>
+<p>Use <code>Apply Current Coronal Edits to Brain 3D</code>, then regenerate planes.
+Saving generated coronal pages also triggers pre-save synchronization.</p>
+<h3 id="model-invalidated-after-manual-edits">Model invalidated after manual edits<a class="headerlink" href="#model-invalidated-after-manual-edits" title="Permanent link">&para;</a></h3>
+<p>If you changed sagittal source polygons, this is expected. Rebuild the Brain 3D model from the updated sagittal pages.</p>
+<h3 id="region-not-visible-on-a-plane">Region not visible on a plane<a class="headerlink" href="#region-not-visible-on-a-plane" title="Permanent link">&para;</a></h3>
+<p>Check state controls:</p>
+<ul>
+<li>it may be hidden or zero-area on that plane,</li>
+<li>use <code>Restore Region On Plane</code> or <code>Create Region On Plane</code>.</li>
+</ul>
+<h2 id="developer-api-reference">Developer API Reference<a class="headerlink" href="#developer-api-reference" title="Permanent link">&para;</a></h2>
+<p>Core internal interfaces:</p>
+<div class="highlight"><pre><span></span><code><span class="n">build_brain_3d_model</span><span class="p">(</span><span class="n">sagittal_pages</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Brain3DModel</span>
+
+<span class="n">reslice_brain_model</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s2">&quot;coronal&quot;</span><span class="p">,</span>
+    <span class="n">spacing</span><span class="o">=...</span><span class="p">,</span>
+    <span class="n">plane_count</span><span class="o">=...</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">PlanePolygonSet</span><span class="p">]</span>
+
+<span class="n">apply_coronal_polygon_edit</span><span class="p">(</span>
+    <span class="n">model</span><span class="p">,</span>
+    <span class="n">plane_index</span><span class="p">,</span>
+    <span class="n">region_id</span><span class="p">,</span>
+    <span class="n">edited_shape</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Brain3DModel</span>
+
+<span class="n">export_brain_model_mesh</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">smoothing</span><span class="o">=...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MeshPayload</span>
+</code></pre></div>
 
 
 

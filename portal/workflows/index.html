@@ -658,6 +658,8 @@
       
         
       
+        
+      
     
     
     
@@ -828,10 +830,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-optional-3d-workflow" class="md-nav__link">
+  <a href="#6-optional-3d-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Optional 3D Workflow
+        6. Optional 3D Workflows
       
     </span>
   </a>
@@ -912,6 +914,34 @@
     
   
     Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brain_3d_reconstruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brain 3D Reconstruction
   
 
     
@@ -2140,10 +2170,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-optional-3d-workflow" class="md-nav__link">
+  <a href="#6-optional-3d-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Optional 3D Workflow
+        6. Optional 3D Workflows
       
     </span>
   </a>
@@ -2340,15 +2370,15 @@ invoke Annolid-native commands, use the dedicated typed tool flow described in
 <li><code>View -&gt; Depth Settings...</code></li>
 </ul>
 <p>The current implementation can auto-download checkpoints when needed and writes a <code>depth.ndjson</code> sidecar plus optional rendered outputs depending on the selected save options.</p>
-<h2 id="6-optional-3d-workflow">6. Optional 3D Workflow<a class="headerlink" href="#6-optional-3d-workflow" title="Permanent link">&para;</a></h2>
-<p>Annolid includes an optional SAM 3D reconstruction path from the GUI when configured.</p>
-<p>Use cases:</p>
+<h2 id="6-optional-3d-workflows">6. Optional 3D Workflows<a class="headerlink" href="#6-optional-3d-workflows" title="Permanent link">&para;</a></h2>
+<p>Annolid supports two separate optional 3D paths:</p>
 <ul>
-<li>reconstruct a selected instance on the current frame,</li>
-<li>save a PLY result and sidecar metadata,</li>
-<li>optionally view the result in the bundled VTK-based viewer if available.</li>
+<li>SAM 3D reconstruction from a video/object workflow, documented in <a href="../sam3d/">SAM 3D</a>.</li>
+<li>Brain 3D reconstruction from sagittal polygon annotations, documented in
+  <a href="../brain_3d_reconstruction/">Brain 3D Reconstruction</a>.</li>
 </ul>
-<p>See <a href="../sam3d/">SAM 3D</a>.</p>
+<p>Use the Brain 3D path when you need canonical sagittal-to-coronal reconstruction,
+region presence controls per plane, and synchronized 2D/3D editing loops.</p>
 <h2 id="7-simulation-and-flybody-workflow">7. Simulation and FlyBody Workflow<a class="headerlink" href="#7-simulation-and-flybody-workflow" title="Permanent link">&para;</a></h2>
 <p>Annolid now includes a simulation-oriented CLI path for converting pose tracks
 into backend-specific targets and enriched NDJSON outputs.</p>
