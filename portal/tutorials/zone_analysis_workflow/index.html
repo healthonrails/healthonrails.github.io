@@ -2603,6 +2603,16 @@
 <li><code>video_stem_zones.json</code></li>
 </ul>
 <p>Annolid keeps the zone file in LabelMe-compatible JSON so it can be reloaded later and edited on the live canvas.</p>
+<p>The zone dock now separates authoring into three views:</p>
+<ul>
+<li><strong>Define Zones</strong></li>
+<li>review the current frame, target JSON path, and every zone already on the canvas</li>
+<li><strong>Zone Details</strong></li>
+<li>edit the selected zone label, description, kind, phase, occupant role, access state, tags, and barrier-adjacent flag</li>
+<li>reuse a tuned zone as the default template for the next zones you draw</li>
+<li><strong>Metrics</strong></li>
+<li>preview zone area and see which downstream metrics the selected zone will affect before you run analysis</li>
+</ul>
 <h2 id="step-5-run-zone-analysis">Step 5: Run Zone Analysis<a class="headerlink" href="#step-5-run-zone-analysis" title="Permanent link">&para;</a></h2>
 <p>Open <strong>Video Tools → Zone Analysis</strong>.</p>
 <p>Pick the assay profile:</p>
@@ -2613,7 +2623,12 @@
 </ul>
 <p>Then choose one of the outputs:</p>
 <ul>
-<li><strong>Export Legacy CSV</strong></li>
+<li>
+<p>you can use <strong>Output Mode</strong> plus <strong>Run Selected Export</strong> for a guided single-action workflow, or use the dedicated quick buttons.</p>
+</li>
+<li>
+<p><strong>Export Legacy CSV</strong></p>
+</li>
 <li>Historical format, one column per zone.</li>
 <li><strong>Export Zone Metrics</strong></li>
 <li>Generic metrics CSV with occupancy, dwell, entries, transitions, and barrier-adjacent counts.</li>
