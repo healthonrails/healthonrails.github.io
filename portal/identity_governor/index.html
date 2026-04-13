@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/memory/">
+        <link rel="canonical" href="https://annolid.com/identity_governor/">
       
       
-        <link rel="prev" href="../agent_security/">
+        <link rel="prev" href="../zone_analysis/">
       
       
-        <link rel="next" href="../operations/">
+        <link rel="next" href="../model_plugin_help/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Memory Subsystem - Annolid Docs</title>
+        <title>Identity Governor Workflow - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#annolid-memory" class="md-skip">
+        <a href="#identity-governor" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Memory Subsystem
+              Identity Governor Workflow
             
           </span>
         </div>
@@ -269,12 +269,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../agent_and_automation/" class="md-tabs__link">
           
   
@@ -315,10 +313,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../reference/" class="md-tabs__link">
           
   
@@ -1047,10 +1047,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../identity_governor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Governor Workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1066,6 +1093,225 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prepare Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Define a Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-dry-run-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run Dry-Run First
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-inspect-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inspect Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-apply-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Apply Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometry-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condition Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-safety-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Safety Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id-repair-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID Repair Behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1222,10 +1468,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1251,22 +1495,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -1284,7 +1527,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1523,37 +1766,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Memory Subsystem
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -1569,186 +1785,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#current-scope" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Current Scope
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gui-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GUI Workflow
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="GUI Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#migration-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Migration dashboard
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Quick Start
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-contract" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Data Contract
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#retrieval-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Retrieval Behavior
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cli-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CLI Usage
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#developer-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Developer API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adapters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adapters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintenance-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maintenance Operations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jsonl-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        JSONL Format
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-constraints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Constraints
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1978,8 +2014,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1993,21 +2031,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -2025,7 +2064,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2096,10 +2135,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../identity_governor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Governor Workflow
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2115,6 +2181,225 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What It Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prepare Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Define a Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-dry-run-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run Dry-Run First
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-inspect-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inspect Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-apply-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Apply Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometry-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condition Operators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scope-and-safety-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope and Safety Controls
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#id-repair-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ID Repair Behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2247,10 +2532,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#current-scope" class="md-nav__link">
+  <a href="#what-it-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current Scope
+        What It Does
       
     </span>
   </a>
@@ -2258,30 +2543,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gui-workflow" class="md-nav__link">
+  <a href="#current-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GUI Workflow
+        Current Interface
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="GUI Workflow">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#migration-dashboard" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Migration dashboard
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2294,13 +2562,124 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-prepare-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Prepare Inputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-define-a-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Define a Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-dry-run-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run Dry-Run First
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-inspect-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Inspect Report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-apply-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Apply Changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#supported-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        Supported Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Supported Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Distance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zone-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geometry-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Geometry Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#condition-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Condition Operators
       
     </span>
   </a>
@@ -2308,10 +2687,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-contract" class="md-nav__link">
+  <a href="#scope-and-safety-controls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data Contract
+        Scope and Safety Controls
       
     </span>
   </a>
@@ -2319,10 +2698,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#retrieval-behavior" class="md-nav__link">
+  <a href="#id-repair-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Retrieval Behavior
+        ID Repair Behavior
       
     </span>
   </a>
@@ -2330,10 +2709,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cli-usage" class="md-nav__link">
+  <a href="#recommended-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CLI Usage
+        Recommended Workflow
       
     </span>
   </a>
@@ -2341,65 +2720,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#developer-api" class="md-nav__link">
+  <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Developer API
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#adapters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Adapters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintenance-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maintenance Operations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jsonl-format" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        JSONL Format
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-constraints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Design Constraints
+        Troubleshooting
       
     </span>
   </a>
@@ -2449,10 +2773,10 @@
     
     
       <li class="md-path__item">
-        <a href="../agent_and_automation/" class="md-path__link">
+        <a href="../reference/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Agent and Automation
+    Reference
   </span>
 
         </a>
@@ -2471,7 +2795,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/memory.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/identity_governor.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2480,272 +2804,214 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/memory.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/identity_governor.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="annolid-memory">Annolid Memory<a class="headerlink" href="#annolid-memory" title="Permanent link">&para;</a></h1>
-<p>Annolid memory is an optional, local-first retrieval layer for reusable context:
-project notes, annotation conventions, workflow recipes, settings snapshots, and
-agent-facing memory.</p>
-<p>Memory is support context, not source of truth. Canonical project files,
-annotations, datasets, and configs remain authoritative.</p>
-<h2 id="current-scope">Current Scope<a class="headerlink" href="#current-scope" title="Permanent link">&para;</a></h2>
-<p>Implemented:</p>
+<h1 id="identity-governor">Identity Governor<a class="headerlink" href="#identity-governor" title="Permanent link">&para;</a></h1>
+<p>The Identity Governor is a post-processing pass that repairs identity swaps in frame JSON annotations using user-defined evidence rules.</p>
+<p>It is generic by design:</p>
 <ul>
-<li>Layered modules in <code>annolid/domain/memory</code>, <code>annolid/services/memory</code>,
-  <code>annolid/infrastructure/memory/lancedb</code>, and <code>annolid/interfaces/memory</code></li>
-<li>LanceDB-backed storage with optional semantic retrieval</li>
-<li>Scope/category/source taxonomy</li>
-<li>Persistence helpers and interface adapters</li>
-<li><code>annolid-run memory ...</code> CLI commands (<code>stats</code>, <code>search</code>, <code>delete</code>, <code>distill</code>, <code>cleanup</code>)</li>
-<li>Maintenance scripts for export/import, migration, and re-embedding</li>
-<li>GUI Memory Manager with CRUD operations</li>
-<li>One-click settings profile apply actions for all Settings panels</li>
-<li>One-click "save current settings as profile" actions for all Settings panels</li>
-<li>Structured settings profiles (<code>SettingsProfile</code>) in addition to snapshots</li>
-<li>Automated multi-source migration collectors (JSON, markdown memory logs, project schemas)</li>
-<li>In-app migration report dashboard (scan + counts + import)</li>
+<li>no hardcoded rover/tether labels,</li>
+<li>configurable metrics and thresholds,</li>
+<li>configurable zones and interesting instances,</li>
+<li>conservative repair with audit output.</li>
 </ul>
-<p>Not yet complete:</p>
-<ul>
-<li>Cross-workspace profile browsing/pinning in GUI</li>
-<li>Incremental migration history with rollback checkpoints</li>
-</ul>
-<h2 id="gui-workflow">GUI Workflow<a class="headerlink" href="#gui-workflow" title="Permanent link">&para;</a></h2>
-<p>Open the Memory Manager from the desktop app:</p>
+<h2 id="what-it-does">What It Does<a class="headerlink" href="#what-it-does" title="Permanent link">&para;</a></h2>
+<p>Given a folder of LabelMe-style frame JSON files, the governor:</p>
 <ol>
-<li><code>Settings -&gt; Memory Manager...</code></li>
-<li>Search by query and optional scope (<code>workspace:&lt;id&gt;</code>, <code>project:&lt;id&gt;</code>, <code>dataset:&lt;id&gt;</code>)</li>
-<li>Use <code>Add</code>, <code>Edit</code>, and <code>Delete</code> for CRUD operations</li>
+<li>reads per-shape observations (<code>label</code>, <code>instance_label</code>, IDs, geometry),</li>
+<li>computes metrics per frame (distance, zone, area),</li>
+<li>evaluates your rules to produce identity evidence,</li>
+<li>backtracks to the last ambiguous frame when configured,</li>
+<li>forward-propagates through short uncertainty gaps,</li>
+<li>writes a report (always),</li>
+<li>optionally rewrites JSON atomically (apply mode).</li>
 </ol>
-<p>Notes:</p>
+<h2 id="current-interface">Current Interface<a class="headerlink" href="#current-interface" title="Permanent link">&para;</a></h2>
+<p>Current entry point is Python API:</p>
 <ul>
-<li>edits are validated before write (required text/scope, metadata JSON validation)</li>
-<li>delete requires confirmation</li>
-<li>operations refresh the result table immediately</li>
+<li><code>annolid.postprocessing.run_identity_governor</code></li>
+<li><code>annolid.postprocessing.IdentityGovernor</code></li>
+<li><code>annolid.postprocessing.GovernorPolicy</code></li>
 </ul>
-<h3 id="migration-dashboard">Migration dashboard<a class="headerlink" href="#migration-dashboard" title="Permanent link">&para;</a></h3>
-<p>In the same Memory Manager dialog, open <code>Migration Dashboard</code>:</p>
-<ol>
-<li>Select a legacy source directory</li>
-<li>Click <code>Scan Sources</code> to collect and preview import candidates</li>
-<li>Review source counts and record previews</li>
-<li>Click <code>Import Scanned</code> to ingest records into the active memory backend</li>
-</ol>
+<p>GUI entry points:</p>
+<ul>
+<li><code>Video Tools -&gt; Identity Governor...</code></li>
+<li><code>Analysis -&gt; Identity Governor...</code></li>
+</ul>
+<p>Built-in GUI policy snippets:</p>
+<ul>
+<li>Generic identity template</li>
+<li>2-subject arena (zone + distance)</li>
+<li>3-vole social assay</li>
+<li>Distance-only fallback</li>
+</ul>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<p>Install optional memory dependencies:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[memory]&quot;</span>
-</code></pre></div>
-<p>For local development in this repository, activate <code>.venv</code> first:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-</code></pre></div>
-<p>Enable memory via environment variables:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_ENABLED</span><span class="o">=</span><span class="nb">true</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_BACKEND</span><span class="o">=</span>lancedb
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_LANCEDB_PATH</span><span class="o">=</span>~/.annolid/memory/lancedb
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_EMBEDDING_PROVIDER</span><span class="o">=</span>jina
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_EMBEDDING_MODEL</span><span class="o">=</span>jina-embeddings-v3
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_VECTOR_WEIGHT</span><span class="o">=</span><span class="m">0</span>.65
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_BM25_WEIGHT</span><span class="o">=</span><span class="m">0</span>.35
-<span class="nb">export</span><span class="w"> </span><span class="nv">ANNOLID_MEMORY_RERANK_PROVIDER</span><span class="o">=</span>none
-</code></pre></div>
-<p>Supported backend values today:</p>
+<h3 id="1-prepare-inputs">1. Prepare Inputs<a class="headerlink" href="#1-prepare-inputs" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>lancedb</code></li>
-<li><code>none</code></li>
+<li>Annotation directory: one JSON per frame (for example <code>session_000000123.json</code>)</li>
+<li>Optional zone file: <code>*_zones.json</code> created from Annolid zone tools</li>
 </ul>
-<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>annolid/
-  domain/memory/
-  services/memory/
-  infrastructure/memory/lancedb/
-  interfaces/memory/
-</code></pre></div>
-<p>Layer responsibilities:</p>
+<h3 id="2-define-a-policy">2. Define a Policy<a class="headerlink" href="#2-define-a-policy" title="Permanent link">&para;</a></h3>
+<p>Use a plain dictionary (or JSON) with:</p>
 <ul>
-<li><code>domain</code>: backend-agnostic models, protocols, scopes, taxonomy</li>
-<li><code>services</code>: store/retrieve orchestration, context building, persistence workflows</li>
-<li><code>infrastructure</code>: LanceDB config/backend/retriever/embedder/reranker/migration</li>
-<li><code>interfaces</code>: registry, CLI, and adapters (bot/annotation/project/workflow/workspace)</li>
+<li><code>rules</code>: evidence rules that assign a corrected label,</li>
+<li><code>metric_aliases</code>: optional readable aliases,</li>
+<li><code>ambiguity_conditions</code>: conditions for backtracking window,</li>
+<li><code>interesting_labels</code> / <code>interesting_track_ids</code>: optional scope filter,</li>
+<li><code>canonical_track_ids</code>: optional label-to-canonical-ID mapping.</li>
 </ul>
-<h2 id="data-contract">Data Contract<a class="headerlink" href="#data-contract" title="Permanent link">&para;</a></h2>
-<p>Primary models:</p>
-<ul>
-<li><code>MemoryRecord</code>: write model for new records</li>
-<li><code>MemoryHit</code>: read model returned by list/search</li>
-</ul>
-<p>Key fields:</p>
-<ul>
-<li><code>text</code>: short human-readable memory statement</li>
-<li><code>scope</code>: for example <code>global</code>, <code>project:&lt;id&gt;</code>, <code>dataset:&lt;id&gt;</code>, <code>workspace:&lt;id&gt;</code></li>
-<li><code>category</code>: for example <code>project_note</code>, <code>annotation_rule</code>, <code>setting</code>, <code>workflow_recipe</code></li>
-<li><code>metadata</code>: structured references back to canonical artifacts and context</li>
-</ul>
-<h2 id="retrieval-behavior">Retrieval Behavior<a class="headerlink" href="#retrieval-behavior" title="Permanent link">&para;</a></h2>
-<p>The LanceDB retriever can combine:</p>
-<ul>
-<li>vector similarity</li>
-<li>full-text retrieval (when available)</li>
-<li>recency weighting</li>
-<li>length normalization</li>
-<li>optional reranking</li>
-</ul>
-<p>Blank-query retrieval is supported for scoped context calls (for example,
-"show project memory" with no semantic query text).</p>
-<h2 id="cli-usage">CLI Usage<a class="headerlink" href="#cli-usage" title="Permanent link">&para;</a></h2>
-<p>Use memory commands through the main runner:</p>
-<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>memory<span class="w"> </span>stats<span class="w"> </span>--scope<span class="w"> </span>global
-annolid-run<span class="w"> </span>memory<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;segmentation conventions&quot;</span><span class="w"> </span>--top_k<span class="w"> </span><span class="m">5</span>
-annolid-run<span class="w"> </span>memory<span class="w"> </span>delete<span class="w"> </span>&lt;memory_id&gt;
-annolid-run<span class="w"> </span>memory<span class="w"> </span>distill<span class="w"> </span>project:demo<span class="w"> </span>--max_records<span class="w"> </span><span class="m">50</span>
-annolid-run<span class="w"> </span>memory<span class="w"> </span>cleanup<span class="w"> </span>workspace:default<span class="w"> </span>--older_than_days<span class="w"> </span><span class="m">30</span><span class="w"> </span>--min_importance<span class="w"> </span><span class="m">0</span>.2
-</code></pre></div>
-<p>Notes:</p>
-<ul>
-<li><code>search</code> uses semantic retrieval when embeddings are enabled</li>
-<li><code>cleanup</code> removes low-importance/old records within a scope</li>
-<li><code>distill</code> requires summarization service availability</li>
-</ul>
-<h2 id="developer-api">Developer API<a class="headerlink" href="#developer-api" title="Permanent link">&para;</a></h2>
-<p>Store memory directly:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.domain.memory.scopes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemoryCategory</span><span class="p">,</span> <span class="n">MemoryScope</span><span class="p">,</span> <span class="n">MemorySource</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_memory_service</span>
+<h3 id="3-run-dry-run-first">3. Run Dry-Run First<a class="headerlink" href="#3-run-dry-run-first" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.postprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_identity_governor</span>
 
-<span class="n">service</span> <span class="o">=</span> <span class="n">get_memory_service</span><span class="p">()</span>
-<span class="n">service</span><span class="o">.</span><span class="n">store_memory</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Use tail_base instead of tailroot for this dataset.&quot;</span><span class="p">,</span>
-    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">&quot;mouse-session-a&quot;</span><span class="p">),</span>
-    <span class="n">category</span><span class="o">=</span><span class="n">MemoryCategory</span><span class="o">.</span><span class="n">ANNOTATION_RULE</span><span class="p">,</span>
-    <span class="n">source</span><span class="o">=</span><span class="n">MemorySource</span><span class="o">.</span><span class="n">ANNOTATION</span><span class="p">,</span>
-    <span class="n">importance</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="s2">&quot;mouse&quot;</span><span class="p">},</span>
+<span class="n">policy</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;metric_aliases&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;in_left&quot;</span><span class="p">:</span> <span class="s2">&quot;zone.inside.left_zone&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;in_right&quot;</span><span class="p">:</span> <span class="s2">&quot;zone.inside.right_zone&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nearest&quot;</span><span class="p">:</span> <span class="s2">&quot;distance.nearest&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;area_px&quot;</span><span class="p">:</span> <span class="s2">&quot;area&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha_when_right_and_large&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;assign_label&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;conditions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;in_right&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;area_px&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;gte&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;min_streak_frames&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;beta_when_left_and_large&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;assign_label&quot;</span><span class="p">:</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;conditions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;in_left&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;area_px&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;gte&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;min_streak_frames&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;ambiguity_conditions&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;lte&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;max_backtrack_frames&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">&quot;max_forward_gap_frames&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;min_correction_span_frames&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;canonical_track_ids&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">run_identity_governor</span><span class="p">(</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/session&quot;</span><span class="p">,</span>
+    <span class="n">policy</span><span class="o">=</span><span class="n">policy</span><span class="p">,</span>
+    <span class="n">zone_file</span><span class="o">=</span><span class="s2">&quot;/path/to/session_zones.json&quot;</span><span class="p">,</span>  <span class="c1"># optional</span>
+    <span class="n">apply_changes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># dry-run</span>
 <span class="p">)</span>
-</code></pre></div>
-<p>Build scoped context:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_context_service</span>
 
-<span class="n">context</span> <span class="o">=</span> <span class="n">get_context_service</span><span class="p">()</span><span class="o">.</span><span class="n">build_project_context</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="s2">&quot;demo-project&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">report_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">proposed_corrections</span><span class="p">))</span>
 </code></pre></div>
-<p>Use persistence helpers:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.domain.memory.scopes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemoryScope</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_persistence_service</span>
-
-<span class="n">persistence</span> <span class="o">=</span> <span class="n">get_persistence_service</span><span class="p">()</span>
-<span class="n">persistence</span><span class="o">.</span><span class="n">save_settings_snapshot</span><span class="p">(</span>
-    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">workspace</span><span class="p">(</span><span class="s2">&quot;lab-a&quot;</span><span class="p">),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Known-good export setup&quot;</span><span class="p">,</span>
-    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fps&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">},</span>
-    <span class="n">context</span><span class="o">=</span><span class="s2">&quot;Infrared videos&quot;</span><span class="p">,</span>
+<h3 id="4-inspect-report">4. Inspect Report<a class="headerlink" href="#4-inspect-report" title="Permanent link">&para;</a></h3>
+<p><code>identity_governor_report.json</code> includes:</p>
+<ul>
+<li>scanned files/observations,</li>
+<li>proposed correction spans,</li>
+<li>corrected label per span,</li>
+<li>trigger rule and evidence span,</li>
+<li>dry-run/apply mode and update counts.</li>
+</ul>
+<h3 id="5-apply-changes">5. Apply Changes<a class="headerlink" href="#5-apply-changes" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">run_identity_governor</span><span class="p">(</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/session&quot;</span><span class="p">,</span>
+    <span class="n">policy</span><span class="o">=</span><span class="n">policy</span><span class="p">,</span>
+    <span class="n">zone_file</span><span class="o">=</span><span class="s2">&quot;/path/to/session_zones.json&quot;</span><span class="p">,</span>
+    <span class="n">apply_changes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">updated_files</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">updated_shapes</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="adapters">Adapters<a class="headerlink" href="#adapters" title="Permanent link">&para;</a></h2>
-<p>Available interface adapters:</p>
+<h2 id="supported-metrics">Supported Metrics<a class="headerlink" href="#supported-metrics" title="Permanent link">&para;</a></h2>
+<p>You can reference these directly in rule conditions.</p>
+<h3 id="distance-metrics">Distance Metrics<a class="headerlink" href="#distance-metrics" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>BotMemoryAdapter</code></li>
-<li><code>AnnotationMemoryAdapter</code></li>
-<li><code>ProjectMemoryAdapter</code></li>
-<li><code>WorkflowMemoryAdapter</code></li>
-<li><code>WorkspaceMemoryAdapter</code></li>
+<li><code>distance.nearest</code></li>
+<li><code>distance.to_track.&lt;track_id&gt;</code></li>
+<li><code>distance.to_label.&lt;instance_label&gt;</code></li>
 </ul>
-<p>Adapters isolate callers from backend-specific implementation details.</p>
-<p><code>WorkspaceMemoryAdapter</code> now supports both:</p>
-<ul>
-<li><code>SettingsSnapshot</code> for point-in-time captures</li>
-<li><code>SettingsProfile</code> for reusable typed workflow configurations</li>
-</ul>
-<p>Profile apply is available from <code>Settings</code> menu with one-click actions for:</p>
-<ul>
-<li>Advanced Parameters</li>
-<li>Optical Flow</li>
-<li>Depth</li>
-<li>SAM 3D</li>
-<li>Patch Similarity</li>
-<li>PCA Feature Map</li>
-</ul>
-<p>Profile save actions are available in the same menu for the same workflows, so
-you can save current panel state and later apply it with one click.</p>
-<p>Minimal profile example:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.adapters.settings_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">SettingsProfile</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.adapters.workspace</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkspaceMemoryAdapter</span>
-
-<span class="n">adapter</span> <span class="o">=</span> <span class="n">WorkspaceMemoryAdapter</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
-<span class="n">profile</span> <span class="o">=</span> <span class="n">SettingsProfile</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Infrared tracking preset&quot;</span><span class="p">,</span>
-    <span class="n">workflow</span><span class="o">=</span><span class="s2">&quot;tracking&quot;</span><span class="p">,</span>
-    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;bytetrack&quot;</span><span class="p">,</span> <span class="s2">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">},</span>
-    <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;infrared&quot;</span><span class="p">,</span> <span class="s2">&quot;tracking&quot;</span><span class="p">],</span>
-<span class="p">)</span>
-<span class="n">adapter</span><span class="o">.</span><span class="n">store_settings_profile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;distance.to_track.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gte&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">50.0</span><span class="p">}</span>
 </code></pre></div>
-<h2 id="maintenance-operations">Maintenance Operations<a class="headerlink" href="#maintenance-operations" title="Permanent link">&para;</a></h2>
-<p>Scripts:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>scripts/export_memory.py<span class="w"> </span><span class="nb">export</span><span class="w"> </span>/tmp/annolid_memory.jsonl
-python<span class="w"> </span>scripts/export_memory.py<span class="w"> </span>import<span class="w"> </span>/tmp/annolid_memory.jsonl
-python<span class="w"> </span>scripts/migrate_memory.py<span class="w"> </span>--source-dir<span class="w"> </span>/path/to/legacy/json
-python<span class="w"> </span>scripts/reembed_memory.py
+<h3 id="zone-metrics">Zone Metrics<a class="headerlink" href="#zone-metrics" title="Permanent link">&para;</a></h3>
+<p>From the loaded zone file:</p>
+<ul>
+<li><code>zone.inside.&lt;zone_name&gt;</code> (boolean)</li>
+<li><code>zone.distance.&lt;zone_name&gt;</code> (float pixels)</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zone.inside.right_zone&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
 </code></pre></div>
-<p>Purpose:</p>
+<h3 id="geometry-metrics">Geometry Metrics<a class="headerlink" href="#geometry-metrics" title="Permanent link">&para;</a></h3>
 <ul>
-<li><code>export_memory.py</code>: export/import JSONL memory records</li>
-<li><code>migrate_memory.py</code>: recursively collect and import legacy memory sources</li>
-<li><code>reembed_memory.py</code>: regenerate vectors using current embedding settings</li>
+<li><code>area</code> (shape area in pixels)</li>
+<li><code>x</code>, <code>y</code> (shape centroid)</li>
 </ul>
-<p><code>migrate_memory.py</code> source coverage:</p>
+<h2 id="condition-operators">Condition Operators<a class="headerlink" href="#condition-operators" title="Permanent link">&para;</a></h2>
+<p>Supported operators:</p>
 <ul>
-<li>JSON memory records with top-level <code>text</code></li>
-<li><code>memory/MEMORY.md</code> and <code>memory/HISTORY.md</code></li>
-<li><code>project.annolid.json|yaml|yml</code></li>
+<li><code>eq</code>, <code>==</code></li>
+<li><code>ne</code>, <code>!=</code></li>
+<li><code>gt</code>, <code>&gt;</code></li>
+<li><code>gte</code>, <code>&gt;=</code></li>
+<li><code>lt</code>, <code>&lt;</code></li>
+<li><code>lte</code>, <code>&lt;=</code></li>
+<li><code>in</code></li>
+<li><code>not_in</code></li>
 </ul>
-<h2 id="jsonl-format">JSONL Format<a class="headerlink" href="#jsonl-format" title="Permanent link">&para;</a></h2>
-<p>Export output is newline-delimited JSON. Each line is one record without vector
-payloads.</p>
-<p>Expected fields:</p>
+<h2 id="scope-and-safety-controls">Scope and Safety Controls<a class="headerlink" href="#scope-and-safety-controls" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>id</code></li>
-<li><code>text</code></li>
-<li><code>scope</code></li>
-<li><code>category</code></li>
-<li><code>source</code></li>
-<li><code>timestamp_ms</code></li>
-<li><code>importance</code></li>
-<li><code>token_count</code></li>
-<li><code>tags</code></li>
-<li><code>metadata_json</code></li>
+<li><code>interesting_labels</code>: only evaluate listed labels</li>
+<li><code>interesting_track_ids</code>: only evaluate listed track IDs</li>
+<li><code>min_streak_frames</code>: require evidence persistence before correction</li>
+<li><code>ambiguity_conditions</code>: define what counts as uncertain overlap</li>
+<li><code>max_backtrack_frames</code>: bound reverse extension</li>
+<li><code>max_forward_gap_frames</code>: allow short forward missing gaps</li>
+<li><code>min_correction_span_frames</code>: minimum relabeled span length</li>
 </ul>
-<p>Notes:</p>
+<h2 id="id-repair-behavior">ID Repair Behavior<a class="headerlink" href="#id-repair-behavior" title="Permanent link">&para;</a></h2>
+<p>When <code>canonical_track_ids</code> is set, apply mode also normalizes ID fields for corrected shapes:</p>
 <ul>
-<li>vectors are omitted by design (recomputable)</li>
-<li><code>metadata_json</code> is stored as JSON text for backend compatibility</li>
-<li>import regenerates embeddings via <code>store_memory(...)</code></li>
-<li>duplicate handling follows service-layer dedupe behavior</li>
+<li>top-level: <code>track_id</code>, <code>tracking_id</code>, <code>instance_id</code>, <code>group_id</code></li>
+<li>flags: same keys when present</li>
 </ul>
-<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
-<p>Run targeted memory tests:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pytest<span class="w"> </span>tests/services/test_memory_service.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/test_memory_cli.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/test_memory_cli_commands.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/test_memory_scripts.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/services/test_persistence_service.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/interfaces/test_adapters.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/interfaces/test_workspace_memory_adapter.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/memory/test_taxonomy.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/memory/lancedb/test_migration.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/memory/lancedb/test_backend.py<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>tests/memory/lancedb/test_backend_admin.py
-</code></pre></div>
-<h2 id="design-constraints">Design Constraints<a class="headerlink" href="#design-constraints" title="Permanent link">&para;</a></h2>
-<p>The subsystem is intentionally conservative:</p>
+<p>This keeps labels and numeric IDs aligned.</p>
+<h2 id="recommended-workflow">Recommended Workflow<a class="headerlink" href="#recommended-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Start with strict rules and dry-run.</li>
+<li>Review report spans against a few key frames.</li>
+<li>Relax thresholds only when needed.</li>
+<li>Apply changes.</li>
+<li>Re-run downstream CSV/zone summaries.</li>
+</ol>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
-<li>writes are explicit, not implicit side effects</li>
-<li>stored memory should be compact and summary-oriented</li>
-<li>canonical project artifacts remain source of truth</li>
-<li>optional dependencies must degrade gracefully when unavailable</li>
+<li>No corrections proposed:</li>
+<li>verify IDs and labels are present in shapes,</li>
+<li>verify metric names/aliases match policy,</li>
+<li>inspect zone names from your saved <code>*_zones.json</code>.</li>
+<li>Too many corrections:</li>
+<li>increase <code>min_streak_frames</code>,</li>
+<li>tighten distance/area thresholds,</li>
+<li>restrict <code>interesting_labels</code> or <code>interesting_track_ids</code>.</li>
+<li>Unexpected backtracking:</li>
+<li>tighten <code>ambiguity_conditions</code>,</li>
+<li>reduce <code>max_backtrack_frames</code>.</li>
 </ul>
 
 

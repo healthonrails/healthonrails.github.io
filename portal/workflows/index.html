@@ -660,6 +660,8 @@
       
         
       
+        
+      
     
     
     
@@ -812,6 +814,17 @@
     <span class="md-ellipsis">
       
         4. Behavior Analysis Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-repair-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Repair Workflow
       
     </span>
   </a>
@@ -1166,6 +1179,34 @@
     
   
     Zone Analysis Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Governor Workflow
   
 
     
@@ -1885,6 +1926,8 @@
       
         
       
+        
+      
     
     
     
@@ -1975,6 +2018,34 @@
     
   
     Zone Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Governor Workflow
   
 
     
@@ -2152,6 +2223,17 @@
     <span class="md-ellipsis">
       
         4. Behavior Analysis Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#identity-repair-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Identity Repair Workflow
       
     </span>
   </a>
@@ -2362,6 +2444,16 @@ invoke Annolid-native commands, use the dedicated typed tool flow described in
 <span class="w">    </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-o<span class="w"> </span>time_budget.csv
 </code></pre></div>
+<h2 id="identity-repair-workflow">Identity Repair Workflow<a class="headerlink" href="#identity-repair-workflow" title="Permanent link">&para;</a></h2>
+<p>For difficult multi-animal sessions where identity can flip after overlap/occlusion:</p>
+<ol>
+<li>run tracking as usual,</li>
+<li>define a policy for your assay (distance/zone/area thresholds),</li>
+<li>run Identity Governor in dry-run mode,</li>
+<li>inspect the generated correction report,</li>
+<li>apply corrections and regenerate downstream summaries.</li>
+</ol>
+<p>See <a href="../identity_governor/">Identity Governor</a>.</p>
 <h2 id="5-depth-workflow">5. Depth Workflow<a class="headerlink" href="#5-depth-workflow" title="Permanent link">&para;</a></h2>
 <p>The current GUI includes Video Depth Anything integration.</p>
 <p>Use:</p>
