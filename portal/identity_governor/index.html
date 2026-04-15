@@ -660,6 +660,8 @@
       
         
       
+        
+      
     
     
     
@@ -1002,6 +1004,34 @@
     
   
     Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Zones Quickstart (GUI)
   
 
     
@@ -2953,6 +2983,12 @@
 <ul>
 <li><code>zone.inside.&lt;zone_name&gt;</code> (boolean)</li>
 <li><code>zone.distance.&lt;zone_name&gt;</code> (float pixels)</li>
+<li><code>zone.inside_kind.&lt;zone_kind&gt;</code> (boolean; inside any zone of that kind)</li>
+<li><code>zone.distance_kind.&lt;zone_kind&gt;</code> (float pixels; min distance to that kind)</li>
+<li><code>zone.inside_role.&lt;occupant_role&gt;</code> (boolean; inside any zone with that role)</li>
+<li><code>zone.distance_role.&lt;occupant_role&gt;</code> (float pixels; min distance to that role)</li>
+<li><code>zone.inside.stim_chamber</code> / <code>zone.distance.stim_chamber</code> (aggregate stim chamber metric)</li>
+<li><code>zone.inside.neutral_transit</code> / <code>zone.distance.neutral_transit</code> (aggregate neutral tube/transit metric)</li>
 </ul>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zone.inside.right_zone&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>

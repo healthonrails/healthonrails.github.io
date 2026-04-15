@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://annolid.com/tutorials/zone_analysis_workflow/">
       
       
-        <link rel="prev" href="../segment-based-batch-tracking/">
+        <link rel="prev" href="../draw_zones_quickstart/">
       
       
         <link rel="next" href="../../identity_governor/">
@@ -662,6 +662,8 @@
       
         
       
+        
+      
     
     
     
@@ -1005,6 +1007,34 @@
     
   
     Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../draw_zones_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Zones Quickstart (GUI)
   
 
     
@@ -2594,8 +2624,9 @@
 <li>blocked areas: <code>access_state=blocked</code></li>
 <li>open areas: <code>access_state=open</code></li>
 <li>phase-specific layouts: <code>phase=phase_1</code> or <code>phase=phase_2</code></li>
+<li>connecting tubes (neutral transit): <code>zone_kind=connector_tube</code> and/or <code>occupant_role=neutral</code></li>
 </ul>
-<p>The dialog pre-fills these fields for new zones so you do not need to hand-edit JSON.</p>
+<p>Use the Zone Details defaults to prefill classification metadata, then classify selected canvas shapes as zones so you do not need to hand-edit JSON.</p>
 <h2 id="step-4-save-the-zone-file">Step 4: Save the Zone File<a class="headerlink" href="#step-4-save-the-zone-file" title="Permanent link">&para;</a></h2>
 <p>Click <strong>Save Zone JSON</strong> in the Zone Dock.</p>
 <p>Recommended naming:</p>
@@ -2631,7 +2662,7 @@
 </li>
 <li>Historical format, one column per zone.</li>
 <li><strong>Export Zone Metrics</strong></li>
-<li>Generic metrics CSV with occupancy, dwell, entries, transitions, and barrier-adjacent counts.</li>
+<li>Generic metrics CSV with occupancy, dwell, entries, transitions, barrier-adjacent counts, and aggregate chamber/stim/neutral-transit metrics.</li>
 <li><strong>Export Assay Summary</strong></li>
 <li>Markdown report plus CSV metrics that explain the zones, phase rules, and metrics in plain language.</li>
 </ul>
@@ -2657,6 +2688,7 @@
 <li><strong>Barrier-adjacent time</strong>: frames spent in zones marked as barrier-edge or similar access-control regions</li>
 <li><strong>Latency</strong>: the first frame or timestamp at which a vole enters a zone; if you do not set a reference frame, the social summary uses the first analyzed frame as the reference point</li>
 </ul>
+<p>For tube-heavy arenas, social summaries exclude neutral connector/tube zones by default. If you want one included, tag it as social or set <code>include_in_social=true</code> in the zone flags.</p>
 <h2 id="phase-1-vs-phase-2">Phase 1 vs Phase 2<a class="headerlink" href="#phase-1-vs-phase-2" title="Permanent link">&para;</a></h2>
 <p>Use the same saved zone file for both phases if the physical layout is shared.</p>
 <ul>

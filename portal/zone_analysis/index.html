@@ -660,6 +660,8 @@
       
         
       
+        
+      
     
     
     
@@ -1002,6 +1004,34 @@
     
   
     Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Zones Quickstart (GUI)
   
 
     
@@ -2410,6 +2440,12 @@
 <li><code>occupant_role</code></li>
 <li><code>access_state</code></li>
 </ul>
+<p>For three-chamber social setups, mark connecting tubes as neutral transit with either:</p>
+<ul>
+<li><code>zone_kind=connector_tube</code>, or</li>
+<li><code>occupant_role=neutral</code>, or</li>
+<li><code>flags.neutral_zone=true</code>.</li>
+</ul>
 <p>Legacy zone JSON files are still accepted when they use bounded compatibility hints, but explicit metadata is the preferred contract for new projects.</p>
 <h2 id="supported-outputs">Supported Outputs<a class="headerlink" href="#supported-outputs" title="Permanent link">&para;</a></h2>
 <h3 id="legacy-place-preference-csv">Legacy Place-Preference CSV<a class="headerlink" href="#legacy-place-preference-csv" title="Permanent link">&para;</a></h3>
@@ -2420,6 +2456,8 @@
 <li>occupancy frames and seconds</li>
 <li>dwell frames and seconds</li>
 <li>entry counts</li>
+<li>aggregate chamber occupancy/entries (<code>all_chambers</code>, <code>stim_chambers</code>)</li>
+<li>aggregate neutral-transit occupancy/entries (<code>neutral_transit_zones</code>)</li>
 <li>transition counts</li>
 <li>barrier-adjacent frames and seconds</li>
 <li>outside-zone counts</li>
@@ -2442,6 +2480,7 @@
 <li>pairwise centroid proximity across tracked voles</li>
 <li>the anchor source used for each instance</li>
 </ul>
+<p>Neutral connector/tube zones are excluded from social scoring by default unless you explicitly opt in with social tags or <code>include_in_social=true</code>.</p>
 <p>Latency is measured from the first analyzed frame unless you supply an explicit reference frame in the Zone Analysis dialog.</p>
 <h2 id="available-assay-profiles">Available Assay Profiles<a class="headerlink" href="#available-assay-profiles" title="Permanent link">&para;</a></h2>
 <ul>
