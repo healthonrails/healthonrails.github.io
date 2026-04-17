@@ -3053,8 +3053,11 @@ single place to inspect and control the current layer stack, including:</p>
 <li>hiding/showing manual annotation layers</li>
 <li>adjusting opacity for label-image and vector-overlay layers</li>
 <li>manually aligning imported raster overlay layers with drag or the dock's
-  <code>Align / Nudge</code> controls, which persist <code>tx/ty/sx/sy</code> transform values in
-  the project state</li>
+  <code>Align / Nudge</code> controls, which persist <code>tx/ty/sx/sy/rotation_deg</code>
+  transform values in the project state</li>
+<li>rotating imported raster overlay layers with:</li>
+<li>quick <code>Rotate -</code> / <code>Rotate +</code> controls in <code>Align / Nudge</code></li>
+<li>exact <code>Rotation</code> value in <code>Layer Settings</code> for reproducible alignment</li>
 <li>resetting a raster overlay layer back to identity alignment from the dock</li>
 <li>keyboard shortcuts in the Layers dock:</li>
 <li><code>Alt+Left</code> / <code>Alt+Right</code> / <code>Alt+Up</code> / <code>Alt+Down</code> for nudging the selected
@@ -3065,6 +3068,19 @@ single place to inspect and control the current layer stack, including:</p>
 <p>When you align a raster overlay by lowering its opacity or dragging it in the
 tiled viewer, Annolid now keeps the selected overlay and the reference raster
 layer beneath it visible so the comparison stays usable during alignment.</p>
+<p>For cross-modality section alignment (for example slightly angled myelin and
+Nissl overlays), use this sequence:</p>
+<ol>
+<li>Select the overlay layer in <code>Layers</code>.</li>
+<li>Lower opacity so you can see the reference raster beneath it.</li>
+<li>Use <code>Rotate -</code> / <code>Rotate +</code> to match angle first.</li>
+<li>Use nudge + scale (or direct drag in tiled view) to finish registration.</li>
+<li>Save layer settings so the transform can be reapplied later.</li>
+</ol>
+<p>In <code>Interactive Resize</code> mode, Annolid draws a transform box that follows the
+current overlay rotation plus a rotate handle above the top edge. Drag the
+rotate handle directly on-canvas, then use edge/corner handles to resize along
+the rotated axes.</p>
 <p>Selecting a vector-overlay or landmark layer in the <code>Layers</code> dock also keeps
 the vector overlay dock aligned with that overlay, so the layer list and the
 overlay/alignment tools do not drift out of sync.</p>
