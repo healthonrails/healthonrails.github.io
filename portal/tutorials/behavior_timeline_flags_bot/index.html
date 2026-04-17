@@ -2759,6 +2759,15 @@ focus points: Count aggression bouts, identify initiator/responder, and mark unc
 <li><code>&lt;video_stem&gt;_timestamps.csv</code></li>
 <li><code>&lt;video_stem&gt;_behavior_segment_labels.json</code></li>
 </ul>
+<p>When the segment label is <code>aggression_bout</code>, the JSON log now includes additive
+metadata for scoring:</p>
+<ul>
+<li><code>event_schema</code>: canonical sub-event schema (<code>slap_in_face</code>, <code>run_away</code>,
+  <code>fight_initiation</code>)</li>
+<li><code>aggression_bout_summary</code>: stable aggregate counts (<code>bout_count</code>,
+  <code>sub_event_counts</code>, <code>sub_event_bout_counts</code>, <code>bouts_with_initiation</code>)</li>
+</ul>
+<p>Existing CSV exports (<code>_timestamps.csv</code>) remain unchanged.</p>
 <h2 id="recommended-operating-loop">Recommended Operating Loop<a class="headerlink" href="#recommended-operating-loop" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Define behavior names first (Flags or Timeline).</li>
