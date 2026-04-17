@@ -3288,6 +3288,9 @@ automatically.</p>
 <li>whether <code>pyvips</code> is available</li>
 <li>whether an optimized TIFF cache has been built</li>
 </ul>
+<p>Annolid now reuses the first large-image preview when switching into tiled
+view, so it avoids rebuilding the same thumbnail twice during open. On very
+large TIFFs this should noticeably reduce startup latency.</p>
 <h3 id="the-viewer-changed-unexpectedly">The viewer changed unexpectedly<a class="headerlink" href="#the-viewer-changed-unexpectedly" title="Permanent link">&para;</a></h3>
 <p>If you selected an AI/SAM tool, that is expected. Those tools still use the canvas fallback path.</p>
 <h3 id="my-annotations-do-not-follow-the-tiff-page">My annotations do not follow the TIFF page<a class="headerlink" href="#my-annotations-do-not-follow-the-tiff-page" title="Permanent link">&para;</a></h3>
