@@ -1425,6 +1425,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dream-memory-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dream Memory Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bot-training-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2277,6 +2288,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dream-memory-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dream Memory Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bot-training-workflows" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2506,6 +2528,41 @@ or running repeatable workflows through the agent stack.</p>
 <li>memory-backed agent behavior,</li>
 <li>security and operational guardrails.</li>
 </ul>
+<h2 id="dream-memory-runs">Dream Memory Runs<a class="headerlink" href="#dream-memory-runs" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot now supports phase-based Dreaming memory maintenance commands in chat:</p>
+<ul>
+<li><code>/dream</code> runs one full dreaming sweep over new <code>memory/HISTORY.md</code> entries (<code>light -&gt; REM -&gt; deep</code>).</li>
+<li><code>/dreaming status</code> shows cursor + latest run/phase status.</li>
+<li><code>/dreaming help</code> shows direct command help.</li>
+<li><code>/dream-log</code> shows the latest Dream run.</li>
+<li><code>/dream-log &lt;run_id&gt;</code> shows a specific run.</li>
+<li><code>/dream-restore</code> lists recent Dream runs.</li>
+<li><code>/dream-restore &lt;run_id&gt;</code> restores the pre-run memory snapshot.</li>
+</ul>
+<p>Runtime artifacts:</p>
+<ul>
+<li>Cursor: <code>memory/.dream_cursor</code></li>
+<li>Machine state: <code>memory/.dreams/ingestion.json</code>, <code>memory/.dreams/recall-store.json</code>, <code>memory/.dreams/phase-signals.json</code></li>
+<li>Run log: <code>memory/dream_runs.jsonl</code></li>
+<li>Snapshots: <code>memory/.dream_snapshots/&lt;run_id&gt;/</code></li>
+<li>Dream diary/report output: <code>memory/DREAMS.md</code> (or existing <code>memory/dreams.md</code>) and <code>memory/dreaming/deep/YYYY-MM-DD.md</code></li>
+<li>Long-term promotions: <code>memory/MEMORY.md</code> (deep phase only)</li>
+</ul>
+<p>Behavior notes:</p>
+<ul>
+<li>Light and REM phases do not write to <code>MEMORY.md</code>.</li>
+<li>Deep phase promotions use internal threshold gates (<code>min score</code>, <code>min recall count</code>, <code>min unique query contexts</code>) and skip duplicates already present in <code>MEMORY.md</code>.</li>
+<li>Existing <code>/dream</code>, <code>/dream-log</code>, <code>/dream-restore</code>, and cron wiring remain backward compatible; <code>/dream</code> now executes the full phase pipeline.</li>
+</ul>
+<p>Background scheduling is optional and config-driven under:</p>
+<ul>
+<li><code>agents.defaults.dream.enabled</code></li>
+<li><code>agents.defaults.dream.interval_hours</code></li>
+<li><code>agents.defaults.dream.max_batch_entries</code></li>
+<li><code>agents.defaults.dream.initialize_cursor_to_end</code></li>
+</ul>
+<p>When enabled, Annolid Bot registers a protected system cron job (<code>dream</code>) that
+executes Dream runs directly (no model guesswork).</p>
 <h2 id="bot-training-workflows">Bot Training Workflows<a class="headerlink" href="#bot-training-workflows" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot now exposes typed training tools for model discovery and launch:</p>
 <ul>
