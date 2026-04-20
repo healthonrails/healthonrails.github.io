@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/redirects/">
+        <link rel="canonical" href="https://annolid.com/behavior_agent_user_guide/">
       
       
-        <link rel="prev" href="../architecture_layers/">
+        <link rel="prev" href="../tutorials/segment-based-batch-tracking/">
       
       
-        <link rel="next" href="../reference/">
+        <link rel="next" href="../tutorials/draw_zones_quickstart/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Redirect Map - Annolid Docs</title>
+        <title>Behavior Agent User Guide - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#redirect-and-deprecation-map" class="md-skip">
+        <a href="#behavior-agent-user-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Redirect Map
+              Behavior Agent User Guide
             
           </span>
         </div>
@@ -247,10 +247,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../workflows/" class="md-tabs__link">
           
   
@@ -291,12 +293,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../operations/" class="md-tabs__link">
           
   
@@ -619,8 +619,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -668,21 +670,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -700,7 +703,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1023,10 +1026,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../behavior_agent_user_guide/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Agent User Guide
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1042,6 +1072,142 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-this-feature-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What this feature does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-aggression-sub-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported aggression sub-events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-a-cli-workflow-annolid-run-agent-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: CLI workflow (annolid-run agent-behavior)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A: CLI workflow (annolid-run agent-behavior)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-output-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI output summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-b-annolid-bot-workflow-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Annolid Bot workflow (GUI)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#output-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output layout
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-operating-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended operating pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1615,10 +1781,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1638,22 +1802,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   
@@ -1671,7 +1834,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1826,37 +1989,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Redirect Map
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../redirects/" class="md-nav__link">
         
   
   
@@ -1872,103 +2008,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#migration-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Migration Policy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#canonical-public-paths" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Canonical Public Paths
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#legacy-to-canonical-url-mapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Legacy to Canonical URL Mapping
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#route-ownership-and-mirrors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Route Ownership and Mirrors
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#repository-source-mapping-legacy-content-to-canonical-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repository Source Mapping (Legacy Content to Canonical Docs)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generated-legacy-redirect-stubs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Generated Legacy Redirect Stubs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment Notes
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2254,10 +2293,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#migration-policy" class="md-nav__link">
+  <a href="#what-this-feature-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Migration Policy
+        What this feature does
       
     </span>
   </a>
@@ -2265,10 +2304,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#canonical-public-paths" class="md-nav__link">
+  <a href="#supported-aggression-sub-events" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canonical Public Paths
+        Supported aggression sub-events
       
     </span>
   </a>
@@ -2276,10 +2315,49 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#legacy-to-canonical-url-mapping" class="md-nav__link">
+  <a href="#option-a-cli-workflow-annolid-run-agent-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Legacy to Canonical URL Mapping
+        Option A: CLI workflow (annolid-run agent-behavior)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option A: CLI workflow (annolid-run agent-behavior)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#useful-flags" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Useful flags
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-output-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI output summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-b-annolid-bot-workflow-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Annolid Bot workflow (GUI)
       
     </span>
   </a>
@@ -2287,10 +2365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#route-ownership-and-mirrors" class="md-nav__link">
+  <a href="#output-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Route Ownership and Mirrors
+        Output layout
       
     </span>
   </a>
@@ -2298,10 +2376,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#repository-source-mapping-legacy-content-to-canonical-docs" class="md-nav__link">
+  <a href="#validation-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Repository Source Mapping (Legacy Content to Canonical Docs)
+        Validation behavior
       
     </span>
   </a>
@@ -2309,10 +2387,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generated-legacy-redirect-stubs" class="md-nav__link">
+  <a href="#recommended-operating-pattern" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Generated Legacy Redirect Stubs
+        Recommended operating pattern
       
     </span>
   </a>
@@ -2320,10 +2398,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-notes" class="md-nav__link">
+  <a href="#related-docs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Notes
+        Related docs
       
     </span>
   </a>
@@ -2373,10 +2451,10 @@
     
     
       <li class="md-path__item">
-        <a href="../operations/" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Operations
+    Workflows
   </span>
 
         </a>
@@ -2395,7 +2473,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/redirects.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/behavior_agent_user_guide.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2404,132 +2482,118 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/redirects.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/behavior_agent_user_guide.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="redirect-and-deprecation-map">Redirect and Deprecation Map<a class="headerlink" href="#redirect-and-deprecation-map" title="Permanent link">&para;</a></h1>
-<p>This page defines migration targets from legacy Annolid URLs to the current
-canonical documentation and site paths.</p>
-<h2 id="migration-policy">Migration Policy<a class="headerlink" href="#migration-policy" title="Permanent link">&para;</a></h2>
+<h1 id="behavior-agent-user-guide">Behavior Agent User Guide<a class="headerlink" href="#behavior-agent-user-guide" title="Permanent link">&para;</a></h1>
+<p>Use this guide when you want Annolid to run typed behavior-agent analysis with
+replayable artifacts, especially for aggression bout scoring from counted
+sub-events.</p>
+<h2 id="what-this-feature-does">What this feature does<a class="headerlink" href="#what-this-feature-does" title="Permanent link">&para;</a></h2>
+<p>The behavior-agent flow:</p>
+<ol>
+<li>infers or accepts an assay context,</li>
+<li>reads track/perception artifacts,</li>
+<li>segments behavior intervals,</li>
+<li>aggregates aggression bout counts from sub-events,</li>
+<li>writes an immutable run manifest and artifacts.</li>
+</ol>
+<p>The run output is designed for reproducibility and review, not just one-off chat
+responses.</p>
+<h2 id="supported-aggression-sub-events">Supported aggression sub-events<a class="headerlink" href="#supported-aggression-sub-events" title="Permanent link">&para;</a></h2>
+<p>Aggression bout aggregation uses canonical counted sub-events:</p>
 <ul>
-<li>Keep legacy pages available during transition.</li>
-<li>Add canonical links on legacy pages.</li>
-<li>Prefer stable docs URLs for new links and external references.</li>
-<li>Retire duplicated legacy content only after one full release cycle with clear notice.</li>
+<li><code>slap_in_face</code></li>
+<li><code>run_away</code></li>
+<li><code>fight_initiation</code></li>
 </ul>
-<h2 id="canonical-public-paths">Canonical Public Paths<a class="headerlink" href="#canonical-public-paths" title="Permanent link">&para;</a></h2>
+<p>Common aliases (for example <code>slap in the face</code>) are normalized automatically.</p>
+<h2 id="option-a-cli-workflow-annolid-run-agent-behavior">Option A: CLI workflow (<code>annolid-run agent-behavior</code>)<a class="headerlink" href="#option-a-cli-workflow-annolid-run-agent-behavior" title="Permanent link">&para;</a></h2>
+<p>Basic command:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-behavior<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--video<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--results-dir<span class="w"> </span>/path/to/results<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--run-id<span class="w"> </span>run_001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--context-prompt<span class="w"> </span><span class="s2">&quot;analyze aggression bouts&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--default-assay<span class="w"> </span>aggression
+</code></pre></div>
+<p>If you already have replayable perception artifacts, pass them directly:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-behavior<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--video<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--results-dir<span class="w"> </span>/path/to/results<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--artifacts-ndjson<span class="w"> </span>/path/to/artifacts.ndjson<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--run-id<span class="w"> </span>run_002<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--default-assay<span class="w"> </span>aggression<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bout-frame-gap<span class="w"> </span><span class="m">20</span>
+</code></pre></div>
+<h3 id="useful-flags">Useful flags<a class="headerlink" href="#useful-flags" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Landing page: <code>https://annolid.com/</code></li>
-<li>Docs canonical entry: <code>https://annolid.com/portal/</code></li>
-<li>Docs compatibility routes: <code>https://annolid.com/installation/</code>,
-  <code>https://annolid.com/reference/</code>, <code>https://annolid.com/tutorials/</code>, etc.</li>
-<li>Book canonical entry: <code>https://annolid.com/book/</code></li>
-<li>Landing assets: <code>https://annolid.com/website-assets/</code></li>
+<li><code>--artifacts-ndjson</code>: replays typed <code>TrackArtifact</code> input instead of live perception.</li>
+<li><code>--bout-frame-gap</code>: frame-gap threshold used to group sub-events into bouts.</li>
+<li><code>--no-memory</code>: skip memory record writes.</li>
+<li><code>--no-analysis</code>: skip analysis code/metrics stage.</li>
+<li><code>--fail-on-validation-error</code>: return non-zero exit when bout validation fails.</li>
 </ul>
-<h2 id="legacy-to-canonical-url-mapping">Legacy to Canonical URL Mapping<a class="headerlink" href="#legacy-to-canonical-url-mapping" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Legacy URL</th>
-<th>Canonical URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>https://annolid.com/content/README.html</code></td>
-<td><code>https://annolid.com/</code></td>
-</tr>
-<tr>
-<td><code>https://annolid.com/content/how_to_install.html</code></td>
-<td><code>https://annolid.com/installation/</code></td>
-</tr>
-<tr>
-<td><code>https://annolid.com/extract_frames.html</code></td>
-<td><code>https://annolid.com/workflows/</code></td>
-</tr>
-<tr>
-<td><code>https://annolid.com/install.html</code></td>
-<td><code>https://annolid.com/installation/</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="route-ownership-and-mirrors">Route Ownership and Mirrors<a class="headerlink" href="#route-ownership-and-mirrors" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Public Path Prefix</th>
-<th>Source</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>/</code></td>
-<td><code>website/</code> + docs compatibility routes</td>
-<td>Landing page at root; root docs routes are preserved for compatibility.</td>
-</tr>
-<tr>
-<td><code>/portal/</code></td>
-<td><code>docs/</code> (MkDocs)</td>
-<td>Canonical docs namespace for stable links.</td>
-</tr>
-<tr>
-<td><code>/book/</code></td>
-<td><code>book/</code> (Jupyter Book)</td>
-<td>Dedicated Jupyter Book surface.</td>
-</tr>
-<tr>
-<td><code>/website-assets/</code></td>
-<td><code>website/assets/</code></td>
-<td>Landing-only static assets.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="repository-source-mapping-legacy-content-to-canonical-docs">Repository Source Mapping (Legacy Content to Canonical Docs)<a class="headerlink" href="#repository-source-mapping-legacy-content-to-canonical-docs" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Legacy Source File</th>
-<th>Canonical File</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>book/content/how_to_install.md</code></td>
-<td><code>docs/installation.md</code></td>
-</tr>
-<tr>
-<td><code>docs/source/install.md</code></td>
-<td><code>docs/installation.md</code></td>
-</tr>
-<tr>
-<td><code>book/content/extract_frames.md</code></td>
-<td><code>docs/workflows.md</code></td>
-</tr>
-<tr>
-<td><code>docs/source/extract_frames.md</code></td>
-<td><code>docs/workflows.md</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="generated-legacy-redirect-stubs">Generated Legacy Redirect Stubs<a class="headerlink" href="#generated-legacy-redirect-stubs" title="Permanent link">&para;</a></h2>
-<p>The following HTML redirect stubs are generated automatically during deploy by
-<code>scripts/write_legacy_redirects.sh</code>:</p>
+<h3 id="cli-output-summary">CLI output summary<a class="headerlink" href="#cli-output-summary" title="Permanent link">&para;</a></h3>
+<p>The command prints JSON with fields including:</p>
 <ul>
-<li><code>/content/README.html</code> -&gt; <code>/</code></li>
-<li><code>/content/how_to_install.html</code> -&gt; <code>/installation/</code></li>
-<li><code>/extract_frames.html</code> -&gt; <code>/workflows/</code></li>
-<li><code>/install.html</code> -&gt; <code>/installation/</code></li>
+<li><code>manifest_path</code></li>
+<li><code>episode_id</code></li>
+<li><code>task_plan_assay</code></li>
+<li><code>artifact_count</code></li>
+<li><code>segment_count</code></li>
+<li><code>validation_errors</code></li>
+<li><code>bout_counts</code></li>
 </ul>
-<h2 id="deployment-notes">Deployment Notes<a class="headerlink" href="#deployment-notes" title="Permanent link">&para;</a></h2>
+<h2 id="option-b-annolid-bot-workflow-gui">Option B: Annolid Bot workflow (GUI)<a class="headerlink" href="#option-b-annolid-bot-workflow-gui" title="Permanent link">&para;</a></h2>
+<p>In the GUI chat dock, ask Annolid Bot to score aggression bouts for the current
+video or a specific path.</p>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Score aggression bouts for /path/to/video.mp4 using counted sub-events.
+Use run id run_gui_001 and frame gap 20.
+</code></pre></div>
+<p>The bot uses the typed <code>gui_score_aggression_bouts</code> tool and returns a summary
+including the immutable manifest location.</p>
+<h2 id="output-layout">Output layout<a class="headerlink" href="#output-layout" title="Permanent link">&para;</a></h2>
+<p>Each run is immutable and written under:</p>
+<p><code>&lt;results-dir&gt;/analysis_runs/&lt;run-id&gt;/</code></p>
+<p>Key files:</p>
 <ul>
-<li>External sync workflow: <code>.github/workflows/healthonrails-site-sync.yml</code></li>
-<li>Redirect generation: <code>scripts/write_legacy_redirects.sh</code></li>
-<li>Book path sync target: <code>/book/</code></li>
+<li><code>manifest.json</code></li>
+<li><code>artifacts/tracks.ndjson</code></li>
+<li><code>artifacts/behaviors.ndjson</code></li>
+<li><code>artifacts/memory.ndjson</code></li>
+<li><code>artifacts/metrics.ndjson</code></li>
+<li><code>artifacts/metrics.parquet</code> (optional)</li>
+<li><code>artifacts/analysis.py</code> (when analysis is enabled)</li>
+<li><code>artifacts/report.md</code> and <code>artifacts/report.html</code> (when reporting is enabled)</li>
+<li><code>artifacts/evidence.ndjson</code> (when evidence rows are emitted)</li>
+</ul>
+<h2 id="validation-behavior">Validation behavior<a class="headerlink" href="#validation-behavior" title="Permanent link">&para;</a></h2>
+<p>Bout validation is intentionally focused on aggression bout count rows. Typical
+validation checks include canonical event codes and non-negative counts.</p>
+<p>If validation fails:</p>
+<ul>
+<li>the summary includes <code>validation_errors</code>,</li>
+<li>and with <code>--fail-on-validation-error</code>, the CLI exits with code <code>1</code>.</li>
+</ul>
+<h2 id="recommended-operating-pattern">Recommended operating pattern<a class="headerlink" href="#recommended-operating-pattern" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Start with a short clip and deterministic <code>--run-id</code>.</li>
+<li>Verify <code>manifest.json</code> and <code>artifacts/behaviors.ndjson</code>.</li>
+<li>Check <code>bout_counts</code> in CLI/Bot response.</li>
+<li>Scale to full videos once schema and counts look correct.</li>
+</ol>
+<h2 id="related-docs">Related docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../workflows/">Workflow Overview</a></li>
+<li><a href="../tutorials/behavior_timeline_flags_bot/">Behavior labeling with Timeline, Flags, and Annolid Bot</a></li>
+<li><a href="../agent_annolid_run/">Agent CLI with annolid-run</a></li>
+<li><a href="../architecture/behavior_analysis_architecture/">Behavior-Agent Architecture</a></li>
 </ul>
 
 
