@@ -1158,6 +1158,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Option B: Annolid Bot workflow (GUI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-a-specific-behavior-analysis-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force a specific behavior-analysis skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior-analysis-bot-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior-analysis bot skills
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2362,6 +2390,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Option B: Annolid Bot workflow (GUI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#force-a-specific-behavior-analysis-skill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Force a specific behavior-analysis skill
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior-analysis-bot-skills" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behavior-analysis bot skills
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2558,6 +2614,50 @@ Use run id run_gui_001 and frame gap 20.
 </code></pre></div>
 <p>The bot uses the typed <code>gui_score_aggression_bouts</code> tool and returns a summary
 including the immutable manifest location.</p>
+<h3 id="force-a-specific-behavior-analysis-skill">Force a specific behavior-analysis skill<a class="headerlink" href="#force-a-specific-behavior-analysis-skill" title="Permanent link">&para;</a></h3>
+<p>If you want to steer the bot more explicitly, use the normal Annolid chat skill
+selection syntax before your prompt text.</p>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code>/skill behavior-assay-taxonomy
+Infer the assay type for the current video and explain the evidence.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/skill behavior-segmentation
+/skill timeline-reasoning
+Segment aggression bouts from the current run artifacts and explain why nearby sub-events were merged.
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/skill scientific-reporting
+/skill provenance
+Write a concise behavior-analysis report with manifest and artifact references.
+</code></pre></div>
+<p>Use explicit skill selection when you want predictable bot behavior for assay
+inference, segmentation, derived metrics, or report writing.</p>
+<h2 id="behavior-analysis-bot-skills">Behavior-analysis bot skills<a class="headerlink" href="#behavior-analysis-bot-skills" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot now exposes builtin behavior-analysis skills that can be selected
+explicitly or auto-suggested from the task text. These skills reuse the standard
+Annolid skill loader and subagent runtime; they are not a separate plugin
+system.</p>
+<p>Examples include:</p>
+<ul>
+<li><code>behavior-assay-taxonomy</code></li>
+<li><code>behavior-feature-selection</code></li>
+<li><code>perception-routing</code></li>
+<li><code>behavior-segmentation</code></li>
+<li><code>timeline-reasoning</code></li>
+<li><code>sandboxed-analysis</code></li>
+<li><code>scientific-reporting</code></li>
+<li><code>provenance</code></li>
+</ul>
+<p>These skills are used by the specialized behavior subagents for assay
+inference, feature planning, routing, segmentation, analysis coding, and
+reporting.</p>
+<p>The Agent Capabilities dialog (<code>/capabilities</code>) also includes behavior presets
+for:</p>
+<ul>
+<li>assay inference,</li>
+<li>aggression segmentation,</li>
+<li>scientific reporting.</li>
+</ul>
+<p>Each preset sets a focused task hint and refreshes suggested skills.</p>
 <h2 id="output-layout">Output layout<a class="headerlink" href="#output-layout" title="Permanent link">&para;</a></h2>
 <p>Each run is immutable and written under:</p>
 <p><code>&lt;results-dir&gt;/analysis_runs/&lt;run-id&gt;/</code></p>
