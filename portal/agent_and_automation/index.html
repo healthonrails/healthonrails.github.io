@@ -2660,6 +2660,7 @@ executes Dream runs directly (no model guesswork).</p>
 <li>Use <code>video_info</code> if you only need metadata.</li>
 <li>Use <code>video_run_model_inference</code> if you want a generic <code>annolid-run predict ...</code> flow.</li>
 <li>Use <code>gui_segment_track_video</code> if you are already inside the GUI and want the interactive open+track path.</li>
+<li>Use <code>video_segment_frame_grid</code> to sample a bounded video segment into one annotated image grid before asking a multimodal model to describe visible events or behaviors. The tool returns the grid path plus frame/timestamp metadata for each tile.</li>
 <li>Use <code>sam3_agent_video_track</code> if you want Annolid Bot to refine the first frame of each window with SAM3 Agent before propagation.</li>
 </ol>
 <p>Example prompt:</p>
