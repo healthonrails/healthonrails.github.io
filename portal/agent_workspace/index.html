@@ -1658,6 +1658,84 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-upload-workflows-google-drive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Upload Workflows (Google Drive)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Video Upload Workflows (Google Drive)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-one-video-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload one video file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-saved-videos-in-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload saved videos in bulk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-realtime-detect-videos-in-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload realtime-detect videos in bulk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realtime-gui-auto-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realtime GUI Auto-Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Realtime GUI Auto-Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reliability-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliability behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2411,6 +2489,84 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#video-upload-workflows-google-drive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video Upload Workflows (Google Drive)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Video Upload Workflows (Google Drive)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-one-video-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload one video file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-saved-videos-in-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload saved videos in bulk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-realtime-detect-videos-in-bulk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Upload realtime-detect videos in bulk
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realtime-gui-auto-upload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Realtime GUI Auto-Upload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Realtime GUI Auto-Upload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reliability-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliability behavior
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#troubleshooting" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2654,6 +2810,47 @@
 <li><code>Create a Google Drive folder named Lab Notes</code></li>
 <li><code>Delete Google Drive file &lt;file_id&gt;</code></li>
 <li><code>List my calendar events for this week</code></li>
+</ul>
+<h2 id="video-upload-workflows-google-drive">Video Upload Workflows (Google Drive)<a class="headerlink" href="#video-upload-workflows-google-drive" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot supports resumable, retry-safe video uploads to Google Drive.</p>
+<h3 id="upload-one-video-file">Upload one video file<a class="headerlink" href="#upload-one-video-file" title="Permanent link">&para;</a></h3>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Use google_drive upload_file for /path/to/video.mp4 into remote_folder_path annolid/saved_videos
+</code></pre></div>
+<p>Recommended fields:</p>
+<ul>
+<li><code>local_path</code></li>
+<li><code>remote_folder_id</code> or <code>remote_folder_path</code></li>
+<li><code>chunk_size_mb</code> (default 8)</li>
+<li><code>skip_if_exists</code> (default true, name+size dedupe)</li>
+</ul>
+<h3 id="upload-saved-videos-in-bulk">Upload saved videos in bulk<a class="headerlink" href="#upload-saved-videos-in-bulk" title="Permanent link">&para;</a></h3>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Upload saved videos from /path/to/project/output to Drive folder annolid/saved_videos
+</code></pre></div>
+<p>This uses <code>upload_saved_videos</code> and filters to recent non-realtime video files.</p>
+<h3 id="upload-realtime-detect-videos-in-bulk">Upload realtime-detect videos in bulk<a class="headerlink" href="#upload-realtime-detect-videos-in-bulk" title="Permanent link">&para;</a></h3>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Upload realtime detect videos from ~/.annolid/realtime to Drive folder annolid/realtime_detect
+</code></pre></div>
+<p>This uses <code>upload_realtime_videos</code> and focuses on realtime/detection-like paths and names.</p>
+<h2 id="realtime-gui-auto-upload">Realtime GUI Auto-Upload<a class="headerlink" href="#realtime-gui-auto-upload" title="Permanent link">&para;</a></h2>
+<p>In <code>Realtime Control</code> -&gt; <code>Run &amp; Output</code>:</p>
+<ol>
+<li>Enable <code>Save MP4 segments on detections</code>.</li>
+<li>Use <code>Check Auth</code> to verify Google OAuth readiness.</li>
+<li>Use <code>Login</code> to run browser auth if needed.</li>
+<li>Enable <code>Auto-upload saved segments to Google Drive</code>.</li>
+<li>Set <code>Upload Delay</code> and <code>Drive Folder Path</code> (for example <code>annolid/realtime_detect</code>).</li>
+<li>Start realtime inference.</li>
+</ol>
+<p>When a detection segment is saved to disk, Annolid schedules an automatic Drive upload after the configured delay.</p>
+<h3 id="reliability-behavior">Reliability behavior<a class="headerlink" href="#reliability-behavior" title="Permanent link">&para;</a></h3>
+<ul>
+<li>resumable uploads with chunked transfer</li>
+<li>retry on transient Drive errors (<code>429</code>, <code>500</code>, <code>502</code>, <code>503</code>, <code>504</code>)</li>
+<li>optional skip when same name and size already exists in destination</li>
+<li>batch result summary with uploaded/skipped/failed counts</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="google-tool-not-registered">Google tool not registered<a class="headerlink" href="#google-tool-not-registered" title="Permanent link">&para;</a></h3>
