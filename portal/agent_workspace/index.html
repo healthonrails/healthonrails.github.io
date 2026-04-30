@@ -27,7 +27,7 @@
     
     
       
-        <title>Google Workspace - Annolid Docs</title>
+        <title>Google Integrations - Annolid Docs</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#google-workspace-integration" class="md-skip">
+        <a href="#google-integrations" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Google Workspace
+              Google Integrations
             
           </span>
         </div>
@@ -1548,7 +1548,7 @@
   <span class="md-ellipsis">
     
   
-    Google Workspace
+    Google Integrations
   
 
     
@@ -1566,7 +1566,7 @@
   <span class="md-ellipsis">
     
   
-    Google Workspace
+    Google Integrations
   
 
     
@@ -1592,6 +1592,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1603,63 +1614,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#shared-oauth-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        Shared OAuth Files
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-install-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Install the CLI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-authenticate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Authenticate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-in-annolid-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable in Annolid Config
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-link-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Link Skills
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1675,43 +1636,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#first-time-oauth-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Skills
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gws-setup-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GWS Setup Tool
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calendar-with-gws-backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Calendar with GWS Backend
+        First-Time OAuth Setup
       
     </span>
   </a>
@@ -1723,17 +1651,6 @@
     <span class="md-ellipsis">
       
         Example Prompts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Skills
       
     </span>
   </a>
@@ -1753,10 +1670,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gws-command-not-found" class="md-nav__link">
+  <a href="#google-tool-not-registered" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gws command not found
+        Google tool not registered
       
     </span>
   </a>
@@ -1764,10 +1681,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#authentication-errors" class="md-nav__link">
+  <a href="#oauth-token-missing-and-no-browser-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication errors
+        OAuth token missing and no browser prompt
       
     </span>
   </a>
@@ -1775,10 +1692,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#skills-not-appearing" class="md-nav__link">
+  <a href="#access-blocked-error-403-access_denied" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Skills not appearing
+        Access blocked (Error 403: access_denied)
       
     </span>
   </a>
@@ -1786,10 +1703,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tool-not-registered" class="md-nav__link">
+  <a href="#credentialstoken-path-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tool not registered
+        Credentials/token path issues
       
     </span>
   </a>
@@ -2428,6 +2345,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#what-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Changed
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2439,63 +2367,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
+  <a href="#shared-oauth-files" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Start
+        Shared OAuth Files
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-install-the-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Install the CLI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-authenticate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Authenticate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-in-annolid-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable in Annolid Config
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-link-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Link Skills
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2511,43 +2389,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
+  <a href="#first-time-oauth-setup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Skills
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gws-setup-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GWS Setup Tool
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#calendar-with-gws-backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Calendar with GWS Backend
+        First-Time OAuth Setup
       
     </span>
   </a>
@@ -2559,17 +2404,6 @@
     <span class="md-ellipsis">
       
         Example Prompts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Updating Skills
       
     </span>
   </a>
@@ -2589,10 +2423,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#gws-command-not-found" class="md-nav__link">
+  <a href="#google-tool-not-registered" class="md-nav__link">
     <span class="md-ellipsis">
       
-        gws command not found
+        Google tool not registered
       
     </span>
   </a>
@@ -2600,10 +2434,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#authentication-errors" class="md-nav__link">
+  <a href="#oauth-token-missing-and-no-browser-prompt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authentication errors
+        OAuth token missing and no browser prompt
       
     </span>
   </a>
@@ -2611,10 +2445,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#skills-not-appearing" class="md-nav__link">
+  <a href="#access-blocked-error-403-access_denied" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Skills not appearing
+        Access blocked (Error 403: access_denied)
       
     </span>
   </a>
@@ -2622,10 +2456,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#tool-not-registered" class="md-nav__link">
+  <a href="#credentialstoken-path-issues" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tool not registered
+        Credentials/token path issues
       
     </span>
   </a>
@@ -2729,271 +2563,140 @@
   
 
 
-<h1 id="google-workspace-integration">Google Workspace Integration<a class="headerlink" href="#google-workspace-integration" title="Permanent link">&para;</a></h1>
-<p>Annolid Bot can interact with Google Workspace services (Drive, Gmail, Calendar, Sheets, Docs, Chat and more) through the <a href="https://github.com/googleworkspace/cli">Google Workspace CLI (gws)</a>.</p>
+<h1 id="google-integrations">Google Integrations<a class="headerlink" href="#google-integrations" title="Permanent link">&para;</a></h1>
+<p>Annolid Bot now supports native Google API integrations with shared OAuth credentials.</p>
+<p>Current tools:</p>
+<ul>
+<li><code>google_drive</code> (optional, enabled by config)</li>
+<li><code>google_calendar</code> (optional, enabled by config)</li>
+</ul>
+<p>The Google OAuth token/credentials are shared so Drive and Calendar use one local auth setup. This also prepares a single auth surface for future Gmail tooling.</p>
+<h2 id="what-changed">What Changed<a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h2>
+<p>The legacy Google Workspace CLI (<code>gws</code>) path and <code>gws_setup</code> tool are removed.</p>
+<ul>
+<li>no <code>gws</code> install step</li>
+<li>no <code>tools.gws</code> config block</li>
+<li>no <code>gws-*</code> skill symlinks</li>
+</ul>
+<p>Use the native <code>google_drive</code> and <code>google_calendar</code> tools instead.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Install Annolid with the bot integrations bundle:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[annolid_bot]&quot;</span>
+</code></pre></div>
+<p>(Equivalent editable install works too: <code>pip install -e ".[annolid_bot]"</code>.)</p>
+<h2 id="shared-oauth-files">Shared OAuth Files<a class="headerlink" href="#shared-oauth-files" title="Permanent link">&para;</a></h2>
+<p>Default paths:</p>
 <ul>
-<li><a href="https://nodejs.org/">Node.js</a> 18 or later</li>
-<li>npm (included with Node.js)</li>
+<li>OAuth client credentials: <code>~/.annolid/agent/google_oauth_credentials.json</code></li>
+<li>Cached OAuth token: <code>~/.annolid/agent/google_oauth_token.json</code></li>
 </ul>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<h3 id="1-install-the-cli">1. Install the CLI<a class="headerlink" href="#1-install-the-cli" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@googleworkspace/cli
-</code></pre></div>
-<h3 id="2-authenticate">2. Authenticate<a class="headerlink" href="#2-authenticate" title="Permanent link">&para;</a></h3>
-<p>If you have <code>gcloud</code> installed:</p>
-<div class="highlight"><pre><span></span><code>gws<span class="w"> </span>auth<span class="w"> </span>setup
-</code></pre></div>
-<p>If you do not have <code>gcloud</code>, use the manual OAuth flow and then:</p>
-<div class="highlight"><pre><span></span><code>gws<span class="w"> </span>auth<span class="w"> </span>login
-</code></pre></div>
-<p>Verify authentication:</p>
-<div class="highlight"><pre><span></span><code>gws<span class="w"> </span>auth<span class="w"> </span>status
-</code></pre></div>
-<h3 id="3-enable-in-annolid-config">3. Enable in Annolid Config<a class="headerlink" href="#3-enable-in-annolid-config" title="Permanent link">&para;</a></h3>
-<p>Add the <code>gws</code> block to <code>~/.annolid/config.json</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;gws&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;drive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gmail&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sheets&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;slides&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h3 id="4-link-skills">4. Link Skills<a class="headerlink" href="#4-link-skills" title="Permanent link">&para;</a></h3>
-<p>The agent can set up skills automatically. Ask the bot:</p>
-<div class="highlight"><pre><span></span><code>Set up Google Workspace skills
-</code></pre></div>
-<p>This clones the <a href="https://github.com/googleworkspace/cli">gws repo</a> to <code>~/.annolid/gws-cli/</code> and symlinks the <code>gws-*</code> skill directories into <code>~/.annolid/workspace/skills/</code>.</p>
-<p>You can also do it manually:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="w"> </span><span class="m">1</span><span class="w"> </span>https://github.com/googleworkspace/cli.git<span class="w"> </span>~/.annolid/gws-cli
-mkdir<span class="w"> </span>-p<span class="w"> </span>~/.annolid/workspace/skills
-ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-shared<span class="w"> </span>~/.annolid/workspace/skills/
-ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-drive<span class="w"> </span>~/.annolid/workspace/skills/
-ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-gmail<span class="w"> </span>~/.annolid/workspace/skills/
-ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-calendar<span class="w"> </span>~/.annolid/workspace/skills/
-ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-sheets<span class="w"> </span>~/.annolid/workspace/skills/
-ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-slides<span class="w"> </span>~/.annolid/workspace/skills/
-</code></pre></div>
+<p><code>google_oauth_credentials.json</code> is your Google Cloud OAuth client JSON.
+<code>google_oauth_token.json</code> is generated locally after successful OAuth auth.</p>
+<p>Annolid tries to keep them private:</p>
+<ul>
+<li>file mode: <code>0600</code></li>
+<li>parent dir mode: <code>0700</code></li>
+</ul>
 <h2 id="config-reference">Config Reference<a class="headerlink" href="#config-reference" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>enabled</code></td>
-<td>bool</td>
-<td><code>false</code></td>
-<td>Register the Google Workspace tool</td>
-</tr>
-<tr>
-<td><code>auto_install</code></td>
-<td>bool</td>
-<td><code>false</code></td>
-<td>Register the setup tool even when <code>gws</code> is not on PATH</td>
-</tr>
-<tr>
-<td><code>services</code></td>
-<td>list</td>
-<td><code>["drive", "gmail", "calendar", "sheets"]</code></td>
-<td>Workspace services to expose</td>
-</tr>
-</tbody>
-</table>
-<p>Full example with all options:</p>
+<p>Configure in <code>~/.annolid/config.json</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;gws&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;autoInstall&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;services&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;drive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;gmail&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;calendar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;sheets&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;docs&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;chat&quot;</span><span class="p">]</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>Agent decides it needs a Google Workspace action
-  → Invokes a gws-* skill for guidance
-  → Calls the google_workspace tool
-  → Tool shells out to the gws CLI
-  → gws uses stored OAuth credentials
-  → Structured JSON result returned to agent
-</code></pre></div>
-<p>The <code>google_workspace</code> tool accepts:</p>
-<ul>
-<li><strong>service</strong> — which Workspace API (drive, gmail, calendar, sheets, docs, chat, etc.)</li>
-<li><strong>resource</strong> — API resource within the service (e.g. <code>files</code>, <code>users</code>, <code>events</code>)</li>
-<li><strong>method</strong> — method to invoke (e.g. <code>list</code>, <code>create</code>, <code>get</code>, <code>send</code>)</li>
-<li><strong>params</strong> — JSON-encoded query parameters</li>
-<li><strong>json_body</strong> — JSON-encoded request body</li>
-<li><strong>extra_flags</strong> — additional CLI flags like <code>--page-all</code> or <code>--dry-run</code></li>
-</ul>
-<h2 id="available-skills">Available Skills<a class="headerlink" href="#available-skills" title="Permanent link">&para;</a></h2>
-<p>Recommended starter set:</p>
-<table>
-<thead>
-<tr>
-<th>Skill</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gws-shared</code></td>
-<td>Shared auth patterns, global flags, auto-install block</td>
-</tr>
-<tr>
-<td><code>gws-drive</code></td>
-<td>List, upload, download, manage Drive files and folders</td>
-</tr>
-<tr>
-<td><code>gws-gmail</code></td>
-<td>Send, read, list, and search email</td>
-</tr>
-<tr>
-<td><code>gws-calendar</code></td>
-<td>List, create, and manage calendar events</td>
-</tr>
-<tr>
-<td><code>gws-sheets</code></td>
-<td>Read, write, and append to spreadsheets</td>
-</tr>
-</tbody>
-</table>
-<p>Additional skills available in the gws repo:</p>
-<table>
-<thead>
-<tr>
-<th>Skill</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>gws-docs</code></td>
-<td>Read and write Google Docs</td>
-</tr>
-<tr>
-<td><code>gws-slides</code></td>
-<td>Read and write presentations</td>
-</tr>
-<tr>
-<td><code>gws-chat</code></td>
-<td>Manage Chat spaces and messages</td>
-</tr>
-<tr>
-<td><code>gws-tasks</code></td>
-<td>Manage task lists and tasks</td>
-</tr>
-<tr>
-<td><code>gws-people</code></td>
-<td>Manage contacts and profiles</td>
-</tr>
-<tr>
-<td><code>gws-forms</code></td>
-<td>Read and write Google Forms</td>
-</tr>
-<tr>
-<td><code>gws-meet</code></td>
-<td>Manage Google Meet conferences</td>
-</tr>
-</tbody>
-</table>
-<p>To link all available skills at once:</p>
-<div class="highlight"><pre><span></span><code>ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-*<span class="w"> </span>~/.annolid/workspace/skills/
-</code></pre></div>
-<h2 id="gws-setup-tool">GWS Setup Tool<a class="headerlink" href="#gws-setup-tool" title="Permanent link">&para;</a></h2>
-<p>The <code>gws_setup</code> tool provides bootstrap actions:</p>
-<table>
-<thead>
-<tr>
-<th>Action</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>check</code></td>
-<td>Verify gws is installed, npm is available, check linked skills</td>
-</tr>
-<tr>
-<td><code>install</code></td>
-<td>Install gws via <code>npm install -g @googleworkspace/cli</code></td>
-</tr>
-<tr>
-<td><code>auth_status</code></td>
-<td>Run <code>gws auth status</code> to check authentication</td>
-</tr>
-<tr>
-<td><code>link_skills</code></td>
-<td>Clone the gws repo and symlink skills into <code>~/.annolid/workspace/skills/</code></td>
-</tr>
-<tr>
-<td><code>update_skills</code></td>
-<td>Pull latest changes in the cloned repo</td>
-</tr>
-</tbody>
-</table>
-<h2 id="calendar-with-gws-backend">Calendar with GWS Backend<a class="headerlink" href="#calendar-with-gws-backend" title="Permanent link">&para;</a></h2>
-<p>Instead of the OAuth-based <code>GoogleCalendarTool</code>, you can use <code>gws</code> as the calendar backend:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;google_auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;credentialsFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/.annolid/agent/google_oauth_credentials.json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;tokenFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/.annolid/agent/google_oauth_token.json&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;allowInteractiveAuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;google_drive&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;calendar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;provider&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gws&quot;</span>
+<span class="w">      </span><span class="nt">&quot;calendarId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;primary&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;defaultEventDurationMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>This delegates calendar operations to the <code>gws</code> CLI, using its own stored credentials instead of separate Google API OAuth tokens.</p>
-<h2 id="example-prompts">Example Prompts<a class="headerlink" href="#example-prompts" title="Permanent link">&para;</a></h2>
-<p>Once set up, try these prompts with the agent:</p>
+<p>Field summary:</p>
 <ul>
-<li><em>"List my latest 5 Drive files"</em></li>
-<li><em>"Send an email to alice@example.com about the meeting tomorrow"</em></li>
-<li><em>"Show my calendar events for this week"</em></li>
-<li><em>"Read the first 10 rows from my Budget spreadsheet"</em></li>
-<li><em>"Create a new Google Doc called Meeting Notes"</em></li>
-<li><em>"Check my Google Workspace setup status"</em></li>
+<li><code>tools.google_auth.credentialsFile</code>: shared Google OAuth client file.</li>
+<li><code>tools.google_auth.tokenFile</code>: shared cached token file.</li>
+<li><code>tools.google_auth.allowInteractiveAuth</code>: allow browser OAuth when token is missing/invalid.</li>
+<li><code>tools.google_drive.enabled</code>: register <code>google_drive</code> tool.</li>
+<li><code>tools.calendar.enabled</code>: register <code>google_calendar</code> tool.</li>
 </ul>
-<h2 id="updating-skills">Updating Skills<a class="headerlink" href="#updating-skills" title="Permanent link">&para;</a></h2>
-<p>Skills are symlinked from the cloned repo, so updating is a single command:</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>-C<span class="w"> </span>~/.annolid/gws-cli<span class="w"> </span>pull
+<h2 id="first-time-oauth-setup">First-Time OAuth Setup<a class="headerlink" href="#first-time-oauth-setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Put your Google OAuth client JSON at <code>credentialsFile</code>.</li>
+<li>Set <code>tools.google_auth.allowInteractiveAuth=true</code>.</li>
+<li>Start Annolid from an interactive terminal:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>annolid
 </code></pre></div>
-<p>Or ask the agent:</p>
-<div class="highlight"><pre><span></span><code>Update my Google Workspace skills
+<ol>
+<li>Trigger a Drive or Calendar action in Annolid Bot, for example:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>List my latest 5 Google Drive files
 </code></pre></div>
+<p>or</p>
+<div class="highlight"><pre><span></span><code>List my next 3 Google Calendar events
+</code></pre></div>
+<ol>
+<li>Complete browser OAuth.</li>
+<li>Confirm token is created at <code>tokenFile</code>.</li>
+<li>Optionally set <code>allowInteractiveAuth=false</code> again for safer background operation.</li>
+</ol>
+<h2 id="example-prompts">Example Prompts<a class="headerlink" href="#example-prompts" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>List my latest 5 Google Drive files</code></li>
+<li><code>Show details for Google Drive file &lt;file_id&gt;</code></li>
+<li><code>Create a Google Drive folder named Lab Notes</code></li>
+<li><code>Delete Google Drive file &lt;file_id&gt;</code></li>
+<li><code>List my calendar events for this week</code></li>
+</ul>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="gws-command-not-found">gws command not found<a class="headerlink" href="#gws-command-not-found" title="Permanent link">&para;</a></h3>
-<p>Install the CLI:</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@googleworkspace/cli
+<h3 id="google-tool-not-registered">Google tool not registered<a class="headerlink" href="#google-tool-not-registered" title="Permanent link">&para;</a></h3>
+<p>Check:</p>
+<ul>
+<li><code>tools.google_drive.enabled=true</code> for Drive</li>
+<li><code>tools.calendar.enabled=true</code> for Calendar</li>
+<li>required Python deps installed (<code>annolid[annolid_bot]</code>)</li>
+</ul>
+<p>Restart Annolid after config changes.</p>
+<h3 id="oauth-token-missing-and-no-browser-prompt">OAuth token missing and no browser prompt<a class="headerlink" href="#oauth-token-missing-and-no-browser-prompt" title="Permanent link">&para;</a></h3>
+<p>Set:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;google_auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;allowInteractiveAuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
-<p>Confirm it is on your PATH:</p>
-<div class="highlight"><pre><span></span><code>which<span class="w"> </span>gws
+<p>Then relaunch Annolid from an interactive terminal and retry a Google action.</p>
+<h3 id="access-blocked-error-403-access_denied">Access blocked (Error 403: access_denied)<a class="headerlink" href="#access-blocked-error-403-access_denied" title="Permanent link">&para;</a></h3>
+<p>If Google shows:</p>
+<div class="highlight"><pre><span></span><code>Access blocked: &lt;your app&gt; has not completed the Google verification process
+Error 403: access_denied
 </code></pre></div>
-<h3 id="authentication-errors">Authentication errors<a class="headerlink" href="#authentication-errors" title="Permanent link">&para;</a></h3>
-<p>Re-authenticate:</p>
-<div class="highlight"><pre><span></span><code>gws<span class="w"> </span>auth<span class="w"> </span>login
-</code></pre></div>
-<p>Or set up from scratch:</p>
-<div class="highlight"><pre><span></span><code>gws<span class="w"> </span>auth<span class="w"> </span>setup
-</code></pre></div>
-<h3 id="skills-not-appearing">Skills not appearing<a class="headerlink" href="#skills-not-appearing" title="Permanent link">&para;</a></h3>
-<p>Verify symlinks exist:</p>
-<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-la<span class="w"> </span>~/.annolid/workspace/skills/gws-*
-</code></pre></div>
-<p>If empty, re-link:</p>
-<div class="highlight"><pre><span></span><code>ln<span class="w"> </span>-s<span class="w"> </span>~/.annolid/gws-cli/skills/gws-*<span class="w"> </span>~/.annolid/workspace/skills/
-</code></pre></div>
-<h3 id="tool-not-registered">Tool not registered<a class="headerlink" href="#tool-not-registered" title="Permanent link">&para;</a></h3>
-<p>Check that <code>tools.gws.enabled</code> is <code>true</code> in <code>~/.annolid/config.json</code> and restart Annolid.</p>
+<p>your OAuth app is usually in <code>Testing</code> mode and the signed-in Gmail account is not approved.</p>
+<p>Fix:</p>
+<ol>
+<li>Open <a href="https://console.cloud.google.com/">Google Cloud Console</a> for the same project as your OAuth client.</li>
+<li>Go to <code>APIs &amp; Services</code> -&gt; <code>OAuth consent screen</code>.</li>
+<li>Check <code>Publishing status</code>.</li>
+<li>If status is <code>Testing</code>, add your Gmail account under <code>Test users</code>.</li>
+<li>Save changes and retry Annolid auth.</li>
+<li>If you need broader user access, publish to <code>Production</code> and complete Google verification for sensitive/restricted scopes.</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li><code>Internal</code> app type only allows users in the same Google Workspace organization.</li>
+<li>Workspace org policies can block external OAuth clients until an admin approves them.</li>
+</ul>
+<h3 id="credentialstoken-path-issues">Credentials/token path issues<a class="headerlink" href="#credentialstoken-path-issues" title="Permanent link">&para;</a></h3>
+<p>Verify configured paths in <code>~/.annolid/config.json</code> and ensure files are readable/writable.</p>
 <h2 id="related-docs">Related Docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../agent_calendar/">Agent Calendar</a></li>
