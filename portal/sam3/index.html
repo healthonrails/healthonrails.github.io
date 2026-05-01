@@ -668,6 +668,8 @@
       
         
       
+        
+      
     
     
     
@@ -1039,6 +1041,34 @@
     
   
     Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/tracking_correction_with_sam3_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking Correction with SAM3 Bot
   
 
     
@@ -3167,6 +3197,11 @@
 )
 </code></pre></div>
 <p>When the settings look right, rerun with <code>dry_run=false</code>.</p>
+<p>If a saved tracking NDJSON already exists and you need to fill missed shapes or
+repair short occlusion/ID-switch errors, use
+<a href="../tutorials/tracking_correction_with_sam3_bot/">Tracking Correction with SAM3 Agent and Annolid Bot</a>.
+That workflow can merge SAM3 agent artifacts into an existing NDJSON and write a
+reviewable corrected copy.</p>
 <h3 id="output-artifacts">Output artifacts<a class="headerlink" href="#output-artifacts" title="Permanent link">&para;</a></h3>
 <p>The tool returns a JSON summary and writes the same summary to disk.</p>
 <p>Default output folder:</p>
