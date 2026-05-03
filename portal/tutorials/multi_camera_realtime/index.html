@@ -10,13 +10,9 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/tutorials/realtime_wireless_camera_detection/">
+        <link rel="canonical" href="https://annolid.com/tutorials/multi_camera_realtime/">
       
       
-        <link rel="prev" href="../behavior_timeline_flags_bot/">
-      
-      
-        <link rel="next" href="../video_ffmpeg_processing/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Realtime Wireless Camera Detection (GUI) - Annolid Docs</title>
+        <title>Multi-Camera Realtime Detection - Annolid Docs</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#realtime-detection-with-wireless-cameras-gui" class="md-skip">
+        <a href="#multi-camera-realtime-detection" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Realtime Wireless Camera Detection (GUI)
+              Multi-Camera Realtime Detection
             
           </span>
         </div>
@@ -247,12 +243,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../../workflows/" class="md-tabs__link">
           
   
@@ -619,10 +613,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -674,22 +666,21 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -707,7 +698,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -974,37 +965,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Realtime Wireless Camera Detection (GUI)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../realtime_wireless_camera_detection/" class="md-nav__link">
         
   
   
@@ -1020,181 +984,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#open-realtime-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Realtime Control
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-tab" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup Tab
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup Tab">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-select-a-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Select a model
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-enter-camera-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Enter camera source
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-configure-transport-and-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Configure transport and endpoints
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-output-tab" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run &amp; Output Tab
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run &amp; Output Tab">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-tune-realtime-performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Tune realtime performance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-choose-output-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Choose output behavior
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-save-mp4-on-detections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Save MP4 on detections
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-and-stop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start and Stop
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-wireless-camera-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Wireless Camera Preset
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2385,169 +2174,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#open-realtime-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Open Realtime Control
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-tab" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup Tab
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Setup Tab">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-select-a-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Select a model
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-enter-camera-source" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Enter camera source
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-configure-transport-and-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Configure transport and endpoints
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-output-tab" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Run &amp; Output Tab
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run &amp; Output Tab">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-tune-realtime-performance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Tune realtime performance
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-choose-output-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Choose output behavior
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-save-mp4-on-detections" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Save MP4 on detections
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#start-and-stop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Start and Stop
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommended-wireless-camera-preset" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Recommended Wireless Camera Preset
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2564,46 +2190,6 @@
   
 
 
-  <nav class="md-path" aria-label="Navigation" >
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../workflows/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Workflows
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -2611,7 +2197,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/tutorials/realtime_wireless_camera_detection.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/tutorials/multi_camera_realtime.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2620,107 +2206,51 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/tutorials/realtime_wireless_camera_detection.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/tutorials/multi_camera_realtime.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="realtime-detection-with-wireless-cameras-gui">Realtime Detection with Wireless Cameras (GUI)<a class="headerlink" href="#realtime-detection-with-wireless-cameras-gui" title="Permanent link">&para;</a></h1>
-<p>This guide shows how to run realtime YOLO detection from USB cameras, RTSP streams, and MJPEG URLs, then save MP4 event segments when selected objects are detected.</p>
-<h2 id="open-realtime-control">Open Realtime Control<a class="headerlink" href="#open-realtime-control" title="Permanent link">&para;</a></h2>
-<p>In Annolid desktop, open the realtime window and use the control panel on the left.</p>
-<p>The panel now has two tabs:</p>
-<ol>
-<li><code>Setup</code></li>
-<li><code>Run &amp; Output</code></li>
-</ol>
-<h2 id="setup-tab">Setup Tab<a class="headerlink" href="#setup-tab" title="Permanent link">&para;</a></h2>
-<h3 id="1-select-a-model">1. Select a model<a class="headerlink" href="#1-select-a-model" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Choose a preset YOLO model from <strong>Preset</strong>, or</li>
-<li>Select <strong>Custom…</strong> and browse to your own <code>*.pt</code>, <code>*.onnx</code>, <code>*.engine</code>, or <code>*.mlpackage</code> model.</li>
-<li>Enable <strong>View only (no detection or inference)</strong> when you only want to watch a camera or video stream. In this mode Annolid does not load a model, run detections, send bot detection reports, or save detection-triggered clips.</li>
-</ul>
-<h3 id="2-enter-camera-source">2. Enter camera source<a class="headerlink" href="#2-enter-camera-source" title="Permanent link">&para;</a></h3>
-<p>In <strong>Camera / Stream</strong>, you can use:</p>
-<ul>
-<li>USB camera index: <code>0</code></li>
-<li>RTSP: <code>rtsp://camera-host:554/stream1</code></li>
-<li>RTP multicast: <code>rtp://@239.0.0.1:5004</code></li>
-<li>MJPEG URL: <code>http://camera-host/img/video.mjpeg</code></li>
-<li>Local video file path</li>
-</ul>
-<p>For many IP cameras that expose a control page such as <code>http://camera.local/img/main.cgi?next_file=main.htm</code>, Annolid automatically normalizes it to <code>.../img/video.mjpeg</code>.</p>
-<h3 id="3-configure-transport-and-endpoints">3. Configure transport and endpoints<a class="headerlink" href="#3-configure-transport-and-endpoints" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>RTSP Transport</strong>: <code>Auto</code> (default), <code>TCP</code>, or <code>UDP</code></li>
-<li><strong>Publisher Bind</strong> and <strong>Subscriber Address</strong>: keep defaults unless you use a custom pipeline.</li>
-<li><strong>Target Behaviours</strong>: optional comma-separated labels to focus reporting.</li>
-</ul>
-<h2 id="run-output-tab">Run &amp; Output Tab<a class="headerlink" href="#run-output-tab" title="Permanent link">&para;</a></h2>
-<h3 id="1-tune-realtime-performance">1. Tune realtime performance<a class="headerlink" href="#1-tune-realtime-performance" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Frame Width / Height</strong></li>
-<li><strong>Max FPS</strong></li>
-<li><strong>Confidence</strong> threshold</li>
-</ul>
-<h3 id="2-choose-output-behavior">2. Choose output behavior<a class="headerlink" href="#2-choose-output-behavior" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Publish frames to GUI</strong></li>
-<li><strong>Send annotated frames</strong></li>
-<li>Optional bot digest/email reporting</li>
-</ul>
-<h3 id="3-save-mp4-on-detections">3. Save MP4 on detections<a class="headerlink" href="#3-save-mp4-on-detections" title="Permanent link">&para;</a></h3>
-<p>Enable <strong>Save MP4 segments on detections</strong> and set:</p>
-<ul>
-<li><strong>Segment Targets</strong>: default <code>animal,car,person</code></li>
-<li><strong>Segment Output</strong>: folder path for event clips</li>
-<li><strong>Prebuffer</strong>: seconds before first detection</li>
-<li><strong>Postbuffer</strong>: seconds after last detection</li>
-<li><strong>Min Duration / Max Duration</strong>: clip length bounds</li>
-</ul>
-<p>This records only when detections match the target classes.</p>
-<h2 id="start-and-stop">Start and Stop<a class="headerlink" href="#start-and-stop" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Click <strong>Start Realtime</strong> to launch</li>
-<li>Check status text for errors or runtime state</li>
-<li>Click <strong>Stop</strong> to end realtime inference or viewing</li>
-</ul>
-<h2 id="recommended-wireless-camera-preset">Recommended Wireless Camera Preset<a class="headerlink" href="#recommended-wireless-camera-preset" title="Permanent link">&para;</a></h2>
-<p>Use this as a starting point for IP cameras:</p>
-<ul>
-<li>Source: <code>http://camera-host/img/video.mjpeg</code></li>
-<li>Max FPS: <code>15</code></li>
-<li>Confidence: <code>0.25</code></li>
-<li>Save segments: enabled</li>
-<li>Segment targets: <code>animal,car,person</code></li>
-<li>Pre/Post buffer: <code>2.0 / 3.0</code></li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Stream does not open:</li>
-<li>verify camera URL in browser first,</li>
-<li>try RTSP with <code>TCP</code> transport,</li>
-<li>check firewall/network route from Annolid host to camera.</li>
-<li>Black or stuttering frames:</li>
-<li>lower <strong>Frame Width/Height</strong>,</li>
-<li>reduce <strong>Max FPS</strong>,</li>
-<li>prefer <code>TCP</code> for unstable Wi‑Fi.</li>
-<li>No MP4 clips saved:</li>
-<li>confirm <strong>Save MP4 segments on detections</strong> is enabled,</li>
-<li>ensure detected class names match <strong>Segment Targets</strong>,</li>
-<li>verify output folder is writable.</li>
-<li>High latency:</li>
-<li>reduce input resolution and FPS,</li>
-<li>use wired Ethernet for camera uplink when possible.</li>
-</ul>
-<h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../video_ffmpeg_processing/">Video Processing with FFmpeg</a></li>
-<li><a href="../">Tutorials Overview</a></li>
-</ul>
+<h1 id="multi-camera-realtime-detection">Multi-Camera Realtime Detection<a class="headerlink" href="#multi-camera-realtime-detection" title="Permanent link">&para;</a></h1>
+<p>Annolid realtime detection supports one camera per perception worker. For
+multi-camera experiments, launch one worker per camera with a stable <code>camera_id</code>,
+separate ZeroMQ ports, and separate output folders.</p>
+<p>Example configuration shape:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">realtime</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">cameras</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">front_cam</span>
+<span class="w">      </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">      </span><span class="nt">publisher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp://*:5555</span>
+<span class="w">      </span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runs/realtime/front_cam</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">side_cam</span>
+<span class="w">      </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rtsp://user:pass@192.168.1.50:554/stream1</span>
+<span class="w">      </span><span class="nt">publisher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tcp://*:5556</span>
+<span class="w">      </span><span class="nt">output_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">runs/realtime/side_cam</span>
+</code></pre></div>
+<p>Each camera session publishes <code>camera_id</code> in frame metadata, detection metadata,
+and status messages. Treat object IDs as camera-local unless the cameras are
+hardware synchronized and a separate cross-camera re-identification step is used.</p>
+<p>For command-line use, run one process per camera:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+python<span class="w"> </span>-m<span class="w"> </span>annolid.realtime.perception<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--camera-index<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--publisher<span class="w"> </span>tcp://*:5555<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>yolo11n-seg.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--targets<span class="w"> </span>mouse<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-detection-segments<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--detection-segment-output-dir<span class="w"> </span>runs/realtime/front_cam
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+python<span class="w"> </span>-m<span class="w"> </span>annolid.realtime.perception<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--camera-index<span class="w"> </span><span class="s1">&#39;rtsp://user:pass@192.168.1.50:554/stream1&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--publisher<span class="w"> </span>tcp://*:5556<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>yolo11n-seg.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--targets<span class="w"> </span>mouse<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-detection-segments<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--detection-segment-output-dir<span class="w"> </span>runs/realtime/side_cam
+</code></pre></div>
 
 
 
