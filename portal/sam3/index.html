@@ -3345,6 +3345,9 @@ model.</p>
 <ul>
 <li>Frames with no masks are still materialized as valid JSON with an empty <code>shapes</code> list.</li>
 <li>CSV files contain object rows. A frame with zero detections will not necessarily have a row in <code>*_tracked.csv</code>.</li>
+<li>If zone shapes are defined and saved from manual LabelMe JSON (including any valid <code>png+json</code> seed pair in the video folder), <code>*_tracked.csv</code> includes one additional column per zone label:</li>
+<li><code>1</code> when an instance center is inside that zone on that row.</li>
+<li><code>0</code> when an instance center is outside that zone on that row.</li>
 </ul>
 <h2 id="runtime-knobs">Runtime knobs<a class="headerlink" href="#runtime-knobs" title="Permanent link">&para;</a></h2>
 <p>SAM3-related runtime settings are read from Annolid config/GUI state (advanced parameters).</p>

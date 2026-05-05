@@ -1199,6 +1199,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#show-zones-across-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Zones Across Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-good-defaults-first" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2375,6 +2386,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#show-zones-across-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Show Zones Across Frames
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#set-good-defaults-first" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2554,8 +2576,8 @@
 <h2 id="before-you-start">Before You Start<a class="headerlink" href="#before-you-start" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open Annolid.</li>
-<li>Load your video (or image) and move to a representative frame.</li>
-<li>Open <strong>Video Tools → Zones</strong>.</li>
+<li>Load your video (or image) and move to a representative seed frame (commonly frame <code>0</code>).</li>
+<li>Optional: open <strong>Video Tools → Zones</strong> if you want zone inventory/defaults/presets while editing.</li>
 </ol>
 <p>If no frame is loaded, the zone panel will stay read-only.</p>
 <h2 id="fast-drawing-flow">Fast Drawing Flow<a class="headerlink" href="#fast-drawing-flow" title="Permanent link">&para;</a></h2>
@@ -2563,12 +2585,22 @@
 <ol>
 <li>Choose a draw mode from the main Annolid toolbar or canvas context menu.</li>
 <li>Draw any shape(s) on the live frame.</li>
-<li>In <strong>Video Tools → Zones</strong>, select a shape from <strong>Zone Inventory</strong>.</li>
-<li>In <strong>Zone Details</strong>, click <strong>Use as Zone</strong>.</li>
+<li>Name the shape in the label dialog and enable zone classification:</li>
+<li>mark <strong>Zone type</strong> in the label dialog, or</li>
+<li>use a zone label name such as <code>left_zone</code>, <code>right_chamber</code>, <code>tube_zone</code>.</li>
+<li>Save the shape.</li>
+<li>Optional: in <strong>Video Tools → Zones</strong>, review/edit zone semantics from <strong>Zone Inventory</strong> and <strong>Zone Details</strong>.</li>
 </ol>
 <p>The Zone Dock no longer duplicates draw controls; it focuses on classification and zone metadata management.
 If your label/description includes zone words (for example <code>zone</code>, <code>chamber</code>, <code>doorway</code>, <code>tube</code>, <code>passage</code>), Annolid will recognize it as a zone candidate (<code>zone (keyword)</code>) in the inventory.
 Defined zones are displayed across all video frames so you can navigate and annotate without redrawing zone boundaries on each frame.</p>
+<h2 id="show-zones-across-frames">Show Zones Across Frames<a class="headerlink" href="#show-zones-across-frames" title="Permanent link">&para;</a></h2>
+<p>Use <strong>View → Show Zones On All Frames</strong>:</p>
+<ul>
+<li>enabled: zone overlays remain visible on every frame.</li>
+<li>disabled: zone overlays are hidden on non-local frames unless explicitly saved on that frame.</li>
+</ul>
+<p>This toggle only affects zone overlays. It does not duplicate non-zone instance polygons across frames.</p>
 <h2 id="set-good-defaults-first">Set Good Defaults First<a class="headerlink" href="#set-good-defaults-first" title="Permanent link">&para;</a></h2>
 <p>In <strong>Zone Details → Defaults for New Zones</strong>, set:</p>
 <ul>
@@ -2589,7 +2621,7 @@ When you mark a selected shape as a zone, these defaults are applied unless you 
 </ol>
 <p>Useful actions for the selected zone:</p>
 <ul>
-<li><strong>Use as Zone</strong>: convert the selected annotation shape into a zone.</li>
+<li><strong>Use as Zone</strong>: convert an existing non-zone annotation into a zone.</li>
 <li><strong>Apply Zone Details</strong>: save label/metadata edits on an already classified zone.</li>
 <li><strong>Use Selected as Defaults</strong>: copy current zone semantics for future drawings.</li>
 <li><strong>Duplicate</strong>: clone zone + semantics (offset slightly for immediate editing).</li>
@@ -2617,13 +2649,14 @@ If you want one included in social metrics, add social tags or set <code>include
 <ul>
 <li>Drawing before setting defaults, then having to retag every zone manually.</li>
 <li>Saving zones from the wrong frame/layout.</li>
-<li>Forgetting to click <strong>Use as Zone</strong> after drawing shapes.</li>
+<li>Forgetting to enable <strong>Zone type</strong> in the label dialog when creating zone shapes.</li>
 <li>Reusing one zone JSON across sessions with different crops or geometry.</li>
 </ul>
 <h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
 <p>After drawing and saving zones, run:</p>
 <ul>
 <li><strong>Video Tools → Zone Analysis</strong> for zone metrics and assay/social summaries.</li>
+<li><strong>Convert → Save CSV</strong> with <code>Generate *_tracked.csv</code> enabled to include one zone-occupancy column per zone label (<code>1</code> if center is inside, <code>0</code> if outside).</li>
 </ul>
 
 
