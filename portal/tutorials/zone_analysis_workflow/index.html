@@ -1349,6 +1349,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zone-occupancy-policy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Occupancy Policy Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practical-workflow-for-vole-assays" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2558,6 +2569,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zone-occupancy-policy-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Occupancy Policy Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practical-workflow-for-vole-assays" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2687,7 +2709,7 @@
   E --&gt; F["Choose profile"]
   F --&gt; G["Export CSV/Markdown summaries"]</code></pre>
 <h2 id="what-you-get">What You Get<a class="headerlink" href="#what-you-get" title="Permanent link">&para;</a></h2>
-<p>Annolid now supports three related outputs:</p>
+<p>Annolid supports these related outputs:</p>
 <ul>
 <li><strong>Legacy place-preference CSV</strong></li>
 <li>Keeps the historical one-column-per-zone export.</li>
@@ -2695,6 +2717,9 @@
 <li><strong>Generic zone metrics CSV</strong></li>
 <li>Adds occupancy, dwell time, entry counts, transition counts, and barrier-adjacent time.</li>
 <li>Works with any valid saved zone set.</li>
+<li><strong>Zone-corrected tracked CSV</strong></li>
+<li>Applies a zone occupancy policy without moving centroids or rewriting JSON.</li>
+<li>Writes an audit CSV describing every changed zone membership row.</li>
 <li><strong>Assay summary Markdown + CSV</strong></li>
 <li>Explains which zones were used.</li>
 <li>Shows which phase rules were applied.</li>
@@ -2735,6 +2760,7 @@
 <p>Each saved zone shape should carry explicit semantics:</p>
 <ul>
 <li><code>zone_kind</code></li>
+<li><code>zone_group</code></li>
 <li><code>phase</code></li>
 <li><code>occupant_role</code></li>
 <li><code>access_state</code></li>
@@ -2747,7 +2773,11 @@
 <li>phase-specific layouts: <code>phase=phase_1</code> or <code>phase=phase_2</code></li>
 <li>connecting tubes (neutral transit): <code>zone_kind=connector_tube</code> and/or <code>occupant_role=neutral</code></li>
 </ul>
-<p>Use the Zone Details defaults to prefill classification metadata, then classify selected canvas shapes as zones so you do not need to hand-edit JSON.</p>
+<p>Use the Zone Details defaults to prefill classification metadata, then classify selected canvas shapes as zones so you do not need to hand-edit JSON.
+Use <code>zone_group</code> to identify mutually exclusive zones within the same scoring
+concept. For example, chambers should usually share <code>zone_group=chamber</code>; a
+tether reach area can use <code>zone_group=tether</code> even when it overlaps chamber
+geometry.</p>
 <h2 id="step-4-save-the-zone-file">Step 4: Save the Zone File<a class="headerlink" href="#step-4-save-the-zone-file" title="Permanent link">&para;</a></h2>
 <p>Click <strong>Save Zone JSON</strong> in the Zone Dock.</p>
 <p>Recommended naming:</p>
@@ -2760,14 +2790,19 @@
 <li><strong>Define Zones</strong></li>
 <li>review the current frame, target JSON path, and every zone already on the canvas</li>
 <li><strong>Zone Details</strong></li>
-<li>edit the selected zone label, description, kind, phase, occupant role, access state, tags, and barrier-adjacent flag</li>
+<li>edit the selected zone label, description, kind, group, phase, occupant role, access state, tags, and barrier-adjacent flag</li>
 <li>reuse a tuned zone as the default template for the next zones you draw</li>
+<li><strong>Zone Policies</strong></li>
+<li>define instance-specific zone occupancy rules such as force, allow, prefer, or deny</li>
+<li>save a policy JSON that can be selected during zone analysis</li>
 <li><strong>Metrics</strong></li>
 <li>preview zone area and see which downstream metrics the selected zone will affect before you run analysis</li>
 </ul>
 <h2 id="step-5-run-zone-analysis">Step 5: Run Zone Analysis<a class="headerlink" href="#step-5-run-zone-analysis" title="Permanent link">&para;</a></h2>
 <p>Open <strong>Video Tools → Zone Analysis</strong>.
-If a video is already open in Annolid, the dialog now pre-fills the current video path, FPS, and a best-match zone JSON candidate.</p>
+If a video is already open in Annolid, the dialog now pre-fills the current video path, FPS, and a best-match zone JSON candidate.
+If you saved a policy from the Zone Dock, the policy path is also carried into
+the analysis dialog.</p>
 <p>Pick the assay profile:</p>
 <ul>
 <li><strong>Generic</strong> for a profile-neutral analysis</li>
@@ -2799,6 +2834,7 @@ If a video is already open in Annolid, the dialog now pre-fills the current vide
   C --&gt;|No| E["Use Generic"]</code></pre>
 <ul>
 <li>Use <strong>Generic</strong> when you want the raw zone set without phase filtering.</li>
+<li>Use <strong>Zone-Corrected Tracked CSV</strong> when camera projection or transparent-wall overlap requires known-prior zone scoring.</li>
 <li>Use <strong>Phase 1</strong> when some chambers or connections are blocked by mesh.</li>
 <li>Use <strong>Phase 2</strong> when the arena is fully open.</li>
 <li>Use <strong>Export Assay Summary</strong> when you want a report that explains the chosen zones and phase rules in plain language.</li>
@@ -2825,6 +2861,36 @@ If a video is already open in Annolid, the dialog now pre-fills the current vide
 <li>summaries reflect direct interactions across the full arena</li>
 </ul>
 <p>The assay summary report lists the selected profile, the included zones, the blocked zones, and the computed metrics so the output is self-documenting.</p>
+<h2 id="zone-occupancy-policy-example">Zone Occupancy Policy Example<a class="headerlink" href="#zone-occupancy-policy-example" title="Permanent link">&para;</a></h2>
+<p>Use a policy when an instance has a known legal zone that should override
+ambiguous centroid-based zone membership. The policy changes only zone columns in
+the exported CSV; raw centroid coordinates and JSON annotations remain unchanged.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;instance_policies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;instance_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stim_D&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stim_D_always_chamber_D&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;zone_group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chamber&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;force_one&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chamber_D&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stim_D_tether_raw_membership&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;zone_group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tether&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preserve_if_inside&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;allowed_zones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tether_D&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>For overlapping zones, assign separate groups such as <code>chamber</code> and <code>tether</code> so
+Annolid can correct chamber occupancy without erasing valid tether occupancy.
+The same policy can be built from <strong>Video Tools → Zones → Zone Policies</strong>:
+choose the instance, group, mode, and zone labels, then save the policy JSON.</p>
 <h2 id="practical-workflow-for-vole-assays">Practical Workflow for Vole Assays<a class="headerlink" href="#practical-workflow-for-vole-assays" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Load the phase video.</li>

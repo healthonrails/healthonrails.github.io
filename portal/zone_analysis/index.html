@@ -2119,6 +2119,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zone-corrected-tracked-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone-Corrected Tracked CSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#assay-summary-markdown-csv" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2183,6 +2194,17 @@
     <span class="md-ellipsis">
       
         GUI Entry Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zone-occupancy-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Occupancy Policies
       
     </span>
   </a>
@@ -2398,6 +2420,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#zone-corrected-tracked-csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone-Corrected Tracked CSV
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#assay-summary-markdown-csv" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2462,6 +2495,17 @@
     <span class="md-ellipsis">
       
         GUI Entry Points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zone-occupancy-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zone Occupancy Policies
       
     </span>
   </a>
@@ -2556,6 +2600,7 @@
 <ul>
 <li><code>semantic_type=zone</code></li>
 <li><code>zone_kind</code></li>
+<li><code>zone_group</code></li>
 <li><code>phase</code></li>
 <li><code>occupant_role</code></li>
 <li><code>access_state</code></li>
@@ -2582,6 +2627,21 @@
 <li>barrier-adjacent frames and seconds</li>
 <li>outside-zone counts</li>
 </ul>
+<p>If a <code>*_tracked.csv</code> file already contains zone columns, Annolid uses those
+explicit membership columns for occupancy scoring. Otherwise it falls back to
+centroid-in-zone geometry.</p>
+<h3 id="zone-corrected-tracked-csv">Zone-Corrected Tracked CSV<a class="headerlink" href="#zone-corrected-tracked-csv" title="Permanent link">&para;</a></h3>
+<p>This output applies an optional zone occupancy policy and writes a corrected CSV
+without changing frame JSON files or centroid coordinates. It is intended for
+camera-projection cases where a known prior constrains an animal to a legal
+zone even when the raw centroid crosses a simple boundary.</p>
+<p>Outputs:</p>
+<ul>
+<li><code>session_tracked_zone_corrected.csv</code></li>
+<li><code>session_tracked_zone_corrected_audit.csv</code></li>
+</ul>
+<p>The audit CSV records the frame, instance, rule name, raw membership, corrected
+membership, and changed zone columns.</p>
 <h3 id="assay-summary-markdown-csv">Assay Summary Markdown + CSV<a class="headerlink" href="#assay-summary-markdown-csv" title="Permanent link">&para;</a></h3>
 <p>This output explains:</p>
 <ul>
@@ -2630,7 +2690,10 @@
 <ul>
 <li>Video: <code>session.mp4</code></li>
 <li>Zone JSON: <code>session_zones.json</code></li>
+<li>Zone occupancy policy JSON: <code>session_zones_policy.json</code></li>
 <li>Generic metrics CSV: <code>session_zone_metrics.csv</code></li>
+<li>Zone-corrected tracked CSV: <code>session_tracked_zone_corrected.csv</code></li>
+<li>Zone-corrected audit CSV: <code>session_tracked_zone_corrected_audit.csv</code></li>
 <li>Assay summary Markdown: <code>session_phase_1_assay_summary.md</code></li>
 <li>Assay summary CSV: <code>session_phase_1_assay_summary.csv</code></li>
 <li>Social summary Markdown: <code>session_generic_social_summary.md</code></li>
@@ -2643,13 +2706,57 @@
 <li>optionally open the zone dock to manage/edit zones on the current frame</li>
 <li>zone shapes can also be created directly on canvas and marked in the label popup via <strong>Zone type</strong></li>
 <li>use the <strong>Define Zones</strong> tab to review frame context and the current zone inventory</li>
-<li>use the <strong>Zone Details</strong> tab to edit the selected zone label, kind, phase, access state, and barrier-adjacent behavior</li>
+<li>use the <strong>Zone Details</strong> tab to edit the selected zone label, kind, group, phase, access state, and barrier-adjacent behavior</li>
+<li>use the <strong>Zone Policies</strong> tab to build and save known-prior occupancy rules for tracked instances</li>
 <li>use the <strong>Metrics</strong> tab to preview zone area plus the occupancy, dwell, entry, transition, and barrier metrics that the selected zone will influence</li>
 <li><strong>Video Tools → Zone Analysis</strong></li>
 <li>select session inputs (video, zone JSON, FPS, optional latency reference)</li>
+<li>optionally select a zone occupancy policy JSON for corrected zone scoring</li>
 <li>choose an assay profile and output mode from one dialog</li>
-<li>run one-click export for legacy CSV, generic metrics, assay summary, or social summary reports</li>
+<li>run one-click export for legacy CSV, generic metrics, corrected tracked CSV, assay summary, or social summary reports</li>
 </ul>
+<h2 id="zone-occupancy-policies">Zone Occupancy Policies<a class="headerlink" href="#zone-occupancy-policies" title="Permanent link">&para;</a></h2>
+<p>A zone occupancy policy changes only zone membership columns for analysis. It
+does not move centroids and does not rewrite LabelMe JSON.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;instance_policies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;instance_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stim_D&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stim_D_legal_chamber&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;zone_group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chamber&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;force_one&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;zone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;chamber_D&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;stim_D_tether_membership&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;zone_group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;tether&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;preserve_if_inside&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;allowed_zones&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tether_D&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Supported rule modes:</p>
+<ul>
+<li><code>force_one</code>: set exactly one zone in a group to <code>1</code> and the other group zones to <code>0</code>.</li>
+<li><code>force_all</code>: set listed zones to <code>1</code>.</li>
+<li><code>deny</code>: set listed zones to <code>0</code>.</li>
+<li><code>allow_only</code>: clear all zones in the group except the listed zones.</li>
+<li><code>preserve_if_inside</code>: keep raw membership for listed zones and clear other zones in the group.</li>
+<li><code>prefer</code>: when several zones in a group are active, keep the first active preferred zone.</li>
+</ul>
+<p>Use <code>zone_group</code> metadata on zone shapes when overlapping zones represent
+different concepts. For example, chamber zones can use group <code>chamber</code>, while
+tether-reach zones can use group <code>tether</code>; this allows the same frame to count
+as both <code>chamber_D</code> and <code>tether_D</code> when that is the intended scoring rule.</p>
+<p>You can author these policy files from <strong>Video Tools → Zones → Zone Policies</strong>.
+The dock writes the same JSON structure shown above, so users do not need to
+hand-edit policy files for common force, allow, prefer, and deny rules.</p>
 
 
 

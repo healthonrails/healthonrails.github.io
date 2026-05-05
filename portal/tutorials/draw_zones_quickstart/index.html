@@ -1243,6 +1243,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#define-zone-occupancy-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define Zone Occupancy Policies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practical-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2430,6 +2441,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#define-zone-occupancy-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Define Zone Occupancy Policies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#practical-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2608,10 +2630,15 @@ Defined zones are displayed across all video frames so you can navigate and anno
 <li><code>phase</code></li>
 <li><code>occupant_role</code></li>
 <li><code>access_state</code></li>
+<li><code>zone_group</code> when zones are mutually exclusive within one scoring concept</li>
 <li>optional tags</li>
 </ul>
 <p>Every new zone you draw will inherit these values, which avoids repetitive editing.
 When you mark a selected shape as a zone, these defaults are applied unless you override them in the selected-zone form.</p>
+<p>Use <code>zone_group</code> to separate overlapping concepts. For example, chamber zones can
+use <code>zone_group=chamber</code>, while tether-reach zones can use
+<code>zone_group=tether</code>. This lets one frame count as both a chamber occupancy and a
+tether occupancy when that is the intended analysis.</p>
 <h2 id="manage-zones-efficiently">Manage Zones Efficiently<a class="headerlink" href="#manage-zones-efficiently" title="Permanent link">&para;</a></h2>
 <p>In <strong>Zone Inventory</strong>:</p>
 <ol>
@@ -2635,6 +2662,28 @@ When you mark a selected shape as a zone, these defaults are applied unless you 
 <li><code>video_stem_zones.json</code></li>
 </ul>
 <p>The file stays LabelMe-compatible and can be reloaded with <strong>Load Zone JSON</strong>.</p>
+<h2 id="define-zone-occupancy-policies">Define Zone Occupancy Policies<a class="headerlink" href="#define-zone-occupancy-policies" title="Permanent link">&para;</a></h2>
+<p>Use <strong>Zone Policies</strong> in the Zone Dock when a known prior should correct zone
+membership for a tracked instance without moving centroids. A typical example is
+a stimulus animal that is known to remain in <code>chamber_D</code> even when transparent
+walls make its centroid overlap another chamber boundary.</p>
+<ol>
+<li>Enter the tracked instance name, such as <code>stim_D</code>.</li>
+<li>Choose the zone group, such as <code>chamber</code>.</li>
+<li>Choose a mode:</li>
+<li><code>force_one</code>: exactly one listed zone is active in the group.</li>
+<li><code>preserve_if_inside</code>: keep listed zones only when the raw membership is already inside.</li>
+<li><code>allow_only</code>: clear all group zones except the listed zones.</li>
+<li><code>prefer</code>: if multiple group zones are active, keep the first listed active zone.</li>
+<li><code>force_all</code>: set listed zones active.</li>
+<li><code>deny</code>: set listed zones inactive.</li>
+<li>Enter one or more zone labels.</li>
+<li>Click <strong>Add Rule</strong>, then <strong>Save Policy JSON</strong>.</li>
+</ol>
+<p>The saved policy JSON can be selected in <strong>Video Tools → Zone Analysis</strong> for
+<strong>Zone-Corrected Tracked CSV</strong> or other policy-aware zone exports. The correction
+changes only zone columns and writes an audit CSV; it does not rewrite the
+manual label JSON files.</p>
 <h2 id="practical-patterns">Practical Patterns<a class="headerlink" href="#practical-patterns" title="Permanent link">&para;</a></h2>
 <h3 id="three-chamber-assays">Three-chamber assays<a class="headerlink" href="#three-chamber-assays" title="Permanent link">&para;</a></h3>
 <ul>
