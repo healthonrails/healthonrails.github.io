@@ -826,6 +826,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Behavior Analysis Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polygon-classifier-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polygon Classifier Workbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2377,6 +2394,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Behavior Analysis Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#polygon-classifier-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polygon Classifier Workbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2599,6 +2633,47 @@ invoke Annolid-native commands, use the dedicated typed tool flow described in
 <span class="w">    </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-o<span class="w"> </span>time_budget.csv
 </code></pre></div>
+<h3 id="polygon-classifier-workbench">Polygon Classifier Workbench<a class="headerlink" href="#polygon-classifier-workbench" title="Permanent link">&para;</a></h3>
+<p>For frame-level behavior classifiers based on two animal polygons, use:</p>
+<ul>
+<li><code>AI &amp; Models -&gt; Polygon Classifier Workbench...</code></li>
+</ul>
+<p>The workbench has four tabs:</p>
+<ol>
+<li><code>Polygon CSV</code>: merges Annolid predicted polygon JSON or annotation-store
+   NDJSON files with a manual one-hot label CSV and writes a polygon-points CSV.</li>
+<li><code>Legacy Dataset</code>: builds <code>train_dataset.csv</code> and <code>test_dataset.csv</code> from LabelMe
+   frame folders.</li>
+<li><code>Train</code>: trains the temporal polygon-frame classifier and writes a run
+   folder with checkpoint, metrics, and test predictions.</li>
+<li><code>Inference</code>: loads a checkpoint and writes per-frame predicted labels,
+   confidence, and class probabilities to CSV.</li>
+</ol>
+<p>Expected dataset layout:</p>
+<div class="highlight"><pre><span></span><code>train/
+  video_001/
+    frame_000001.json
+    frame_000002.json
+test/
+  video_002/
+    frame_000001.json
+</code></pre></div>
+<p>Each LabelMe JSON needs one truthy behavior flag and polygon shapes labeled
+<code>intruder</code> and <code>resident</code>. Optional <code>&lt;video_name&gt;_tracked.csv</code> files beside the
+video folders can provide motion-index features; missing files default motion
+features to <code>0</code>.</p>
+<p>For predicted-shape workflows where labels live in a separate manual CSV, use
+the <code>Polygon CSV</code> tab instead. It accepts:</p>
+<ul>
+<li>an Annolid frame folder containing predicted polygon JSON files and/or
+  <code>*_annotations.ndjson</code> predicted polygon records,</li>
+<li>a manual one-hot behavior label CSV with frame numbers in <code>frame_number</code>,
+  <code>frame</code>, or the first column,</li>
+<li>an output CSV path.</li>
+</ul>
+<p>The generated polygon-points CSV contains <code>video</code>, <code>frame</code>, <code>frame_number</code>,
+<code>label</code>, and one <code>&lt;shape_label&gt;_features</code> column per polygon label, plus area,
+centroid, perimeter, and <code>&lt;shape_label&gt;_motion_index</code> columns when available.</p>
 <h2 id="identity-repair-workflow">Identity Repair Workflow<a class="headerlink" href="#identity-repair-workflow" title="Permanent link">&para;</a></h2>
 <p>For difficult multi-animal sessions where identity can flip after overlap/occlusion:</p>
 <ol>
