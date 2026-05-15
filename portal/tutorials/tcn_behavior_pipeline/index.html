@@ -2192,6 +2192,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#polygon-classifier-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polygon Classifier Workbench
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#train" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2324,6 +2335,14 @@ polygon-derived features plus sparse one-hot behavior labels.</p>
 frame index named <code>frame</code>, <code>frames</code>, <code>frame_index</code>, or <code>index</code>. Generic feature
 CSVs may also include one of those frame-index columns; it will be dropped before
 training. The first listed label is treated as background by convention.</p>
+<h2 id="polygon-classifier-workbench">Polygon Classifier Workbench<a class="headerlink" href="#polygon-classifier-workbench" title="Permanent link">&para;</a></h2>
+<p>Users who start from Annolid polygon annotations do not need to hand-convert
+polygon CSVs into TCN feature and label files. In the GUI, open
+<strong>Tools -&gt; Polygon Classifier Workbench</strong>, generate or select a polygon feature
+CSV, then choose <strong>TCN</strong> in the training tab's model selector. Annolid preserves
+the polygon CSV format, builds temporary dense per-video TCN inputs inside the
+run directory, and saves a <code>polygon_tcn_classifier_best.pt</code> checkpoint that can
+be used from the same inference tab.</p>
 <h2 id="train">Train<a class="headerlink" href="#train" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>train<span class="w"> </span>tcn_behavior<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--config<span class="w"> </span>/path/to/tcn_behavior.yaml<span class="w"> </span><span class="se">\</span>
