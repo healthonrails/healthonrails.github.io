@@ -662,6 +662,8 @@
       
         
       
+        
+      
     
     
     
@@ -948,6 +950,34 @@
     
   
     Behavior Labeling (Timeline + Flags + Bot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polygon_tcn_video_collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polygon TCN Video Collection
   
 
     
@@ -2343,6 +2373,9 @@ CSV, then choose <strong>TCN</strong> in the training tab's model selector. Anno
 the polygon CSV format, builds temporary dense per-video TCN inputs inside the
 run directory, and saves a <code>polygon_tcn_classifier_best.pt</code> checkpoint that can
 be used from the same inference tab.</p>
+<p>For a step-by-step guide to collecting compatible training and test videos with
+Annolid polygon tracking, see
+<a href="../polygon_tcn_video_collection/">Collect Videos for Polygon TCN Training and Testing</a>.</p>
 <h2 id="train">Train<a class="headerlink" href="#train" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>train<span class="w"> </span>tcn_behavior<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--config<span class="w"> </span>/path/to/tcn_behavior.yaml<span class="w"> </span><span class="se">\</span>
