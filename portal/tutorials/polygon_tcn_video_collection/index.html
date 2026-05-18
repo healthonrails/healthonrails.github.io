@@ -2788,7 +2788,35 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <p>Both lists should be empty. If not, fix tracking labels or choose a compatible
 held-out test video.</p>
 <h2 id="6-train-tcn-and-evaluate-on-a-held-out-video">6. Train TCN and Evaluate on a Held-Out Video<a class="headerlink" href="#6-train-tcn-and-evaluate-on-a-held-out-video" title="Permanent link">&para;</a></h2>
-<p>Train on the training CSV and evaluate on the held-out test CSV:</p>
+<p>The CLI can generate compatible train/test polygon CSVs from one or more
+annotated videos, then train the classifier in one command:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+annolid-run<span class="w"> </span>train<span class="w"> </span>polygon_classifier<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-type<span class="w"> </span>tcn<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--train-video<span class="w"> </span>/path/to/project/videos/2019_08_20_fly2<span class="w"> </span>/path/to/project/labels-hand-paper-matched/2019_08_20_fly2_labels.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--train-video<span class="w"> </span>/path/to/project/videos/2019_08_14_fly1<span class="w"> </span>/path/to/project/labels-hand-paper-matched/2019_08_14_fly1_labels.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--test-video<span class="w"> </span>/path/to/project/videos/2019_06_26_fly2<span class="w"> </span>/path/to/project/labels-hand-paper-matched/2019_06_26_fly2_labels.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--csv-output-dir<span class="w"> </span>/path/to/project/logs/polygon_tcn_train_test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>/path/to/project/logs/runs/polygon_classifier/train<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--run-name<span class="w"> </span>fly_polygon_tcn
+</code></pre></div>
+<p>By default, <code>--model-type tcn</code> uses <code>--num-epochs 500</code>,
+<code>--learning-rate 1e-6</code>, <code>--batch-size 64</code>, <code>--window-size 11</code>, and
+<code>--hidden-dim 128</code>. Override any of these flags when a smaller smoke test or
+different training profile is needed.</p>
+<p>If you already created <code>train_polygon_points.csv</code> and
+<code>test_polygon_points.csv</code>, train directly from those CSVs:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+annolid-run<span class="w"> </span>train<span class="w"> </span>polygon_classifier<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model-type<span class="w"> </span>tcn<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--train-csv<span class="w"> </span>/path/to/project/logs/polygon_tcn_train_test/train_polygon_points.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--test-csv<span class="w"> </span>/path/to/project/logs/polygon_tcn_train_test/test_polygon_points.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>/path/to/project/logs/runs/polygon_classifier/train<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--run-name<span class="w"> </span>fly_polygon_tcn
+</code></pre></div>
+<p>The command prints JSON with the generated CSV paths, run directory,
+checkpoint, metrics path, and training parameters.</p>
+<p>The same workflow is available from Python when scripting inside notebooks:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
 <span class="s">from pathlib import Path</span>
