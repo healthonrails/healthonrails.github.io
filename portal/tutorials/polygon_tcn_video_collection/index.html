@@ -2800,9 +2800,11 @@ annolid-run<span class="w"> </span>train<span class="w"> </span>polygon_classifi
 <span class="w">  </span>--output-dir<span class="w"> </span>/path/to/project/logs/runs/polygon_classifier/train<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--run-name<span class="w"> </span>fly_polygon_tcn
 </code></pre></div>
-<p>By default, <code>--model-type tcn</code> uses <code>--num-epochs 500</code>,
-<code>--learning-rate 1e-6</code>, <code>--batch-size 64</code>, <code>--window-size 11</code>, and
-<code>--hidden-dim 128</code>. Override any of these flags when a smaller smoke test or
+<p>By default, <code>--model-type tcn</code> follows the DAART supervised TCN reproduction
+settings: <code>--num-epochs 500</code>, <code>--learning-rate 1e-4</code>, <code>--batch-size 8</code>,
+<code>--window-size 1000</code> for sequence length, <code>--hidden-dim 32</code>,
+<code>--num-residual-blocks 2</code>, <code>--kernel-size 9</code> (<code>n_lags=4</code>), and
+<code>--dropout 0.1</code>. Override any of these flags when a smaller smoke test or
 different training profile is needed.</p>
 <p>If you already created <code>train_polygon_points.csv</code> and
 <code>test_polygon_points.csv</code>, train directly from those CSVs:</p>
@@ -2830,12 +2832,13 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <span class="s">    model_type=&quot;tcn&quot;,</span>
 <span class="s">    run_name=&quot;fly2_train_20190626_test_tcn&quot;,</span>
 <span class="s">    num_epochs=500,</span>
-<span class="s">    batch_size=64,</span>
-<span class="s">    learning_rate=1e-6,</span>
-<span class="s">    window_size=11,</span>
-<span class="s">    hidden_dim=128,</span>
-<span class="s">    num_residual_blocks=6,</span>
-<span class="s">    dropout=0.3,</span>
+<span class="s">    batch_size=8,</span>
+<span class="s">    learning_rate=1e-4,</span>
+<span class="s">    window_size=1000,</span>
+<span class="s">    hidden_dim=32,</span>
+<span class="s">    num_residual_blocks=2,</span>
+<span class="s">    kernel_size=9,</span>
+<span class="s">    dropout=0.1,</span>
 <span class="s">    device=&quot;auto&quot;,</span>
 <span class="s">)</span>
 <span class="s">print(outcome)</span>
