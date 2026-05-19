@@ -2657,10 +2657,14 @@ tracking so Annolid writes:</p>
 <div class="highlight"><pre><span></span><code>/path/to/videos/&lt;video_name&gt;/
   &lt;video_name&gt;_000000000.json
   &lt;video_name&gt;_annotations.ndjson
+  &lt;video_name&gt;_tracking.csv
   &lt;video_name&gt;_tracking_stats.json
 </code></pre></div>
 <p>The seed JSON should contain one polygon per body part. The NDJSON file should
-then contain tracked polygons for the same labels across frames.</p>
+then contain tracked polygons for the same labels across frames.
+If the annotation store contains frame records without polygon shapes, Annolid
+falls back to the sibling <code>*_tracking.csv</code> file and converts COCO RLE
+<code>segmentation</code> masks into polygon points for classifier training.</p>
 <p>Check the annotation schema before training:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
