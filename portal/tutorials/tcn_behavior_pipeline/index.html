@@ -2390,7 +2390,8 @@ Annolid polygon tracking, see
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>tcn_behavior<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--config<span class="w"> </span>/path/to/tcn_behavior.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--checkpoint-path<span class="w"> </span>/path/to/run_dir/best_model.pt<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output-csv<span class="w"> </span>/path/to/predictions.csv
+<span class="w">  </span>--output-csv<span class="w"> </span>/path/to/predictions.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--smoothing-window<span class="w"> </span><span class="m">51</span>
 </code></pre></div>
 <p>The prediction CSV contains one row per frame:</p>
 <div class="highlight"><pre><span></span><code>session_id,frame,predicted_index,predicted_label
@@ -2400,8 +2401,12 @@ Annolid polygon tracking, see
 <span class="w">  </span>--config<span class="w"> </span>/path/to/tcn_behavior.yaml<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--checkpoint-path<span class="w"> </span>/path/to/run_dir/best_model.pt<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--output-csv<span class="w"> </span>/path/to/predictions.csv<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--metrics-json<span class="w"> </span>/path/to/test_metrics.json
+<span class="w">  </span>--metrics-json<span class="w"> </span>/path/to/test_metrics.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--smoothing-window<span class="w"> </span><span class="m">51</span>
 </code></pre></div>
+<p>Use <code>--smoothing-window 1</code> to disable temporal smoothing. Larger odd-valued
+windows average neighboring class probabilities before the final label choice;
+choose the window on validation data rather than on the final test set.</p>
 <h2 id="citation">Citation<a class="headerlink" href="#citation" title="Permanent link">&para;</a></h2>
 <p>Blau, A., Schaffer, E. S., Mishra, N., Miska, N. J., The International Brain
 Laboratory, Paninski, L., &amp; Whiteway, M. R. (2024). A study of animal action

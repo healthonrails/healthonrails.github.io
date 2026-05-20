@@ -2902,12 +2902,14 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <span class="s">    checkpoint_path=run / &quot;polygon_tcn_classifier_best.pt&quot;,</span>
 <span class="s">    output_csv=run / &quot;new_video_predictions.csv&quot;,</span>
 <span class="s">    device=&quot;auto&quot;,</span>
+<span class="s">    smoothing_window=51,</span>
 <span class="s">)</span>
 <span class="s">print(outcome)</span>
 <span class="s">PY</span>
 </code></pre></div>
 <p>The input CSV must use the same polygon labels and feature schema used during
-training.</p>
+training. Set <code>smoothing_window=1</code> to disable temporal smoothing. Select larger
+windows on validation videos, not on the final test videos.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="test-video-has-only-one-full-body-polygon">Test video has only one full-body polygon<a class="headerlink" href="#test-video-has-only-one-full-body-polygon" title="Permanent link">&para;</a></h3>
 <p>If the train video has <code>head</code>, <code>thorax</code>, and <code>abdomen</code>, but the test video only
