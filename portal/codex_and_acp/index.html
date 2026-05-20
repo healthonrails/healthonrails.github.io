@@ -2829,10 +2829,12 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 <ul>
 <li>default model: <code>codex-cli/gpt-5.3-codex</code></li>
 <li>text-first runtime</li>
+<li>default sandbox: <code>read-only</code></li>
+<li>optional coding sandbox: <code>workspace-write</code></li>
 <li>Codex CLI thread IDs are persisted so later turns can resume the same Codex thread</li>
 <li>GUI chat sessions pass the Annolid session ID through to preserve continuity</li>
 </ul>
-<p>This mode is useful when the local Codex CLI is already installed and you want a simpler runtime path.</p>
+<p>This mode is useful when the local Codex CLI is already installed and you want a simpler runtime path. Use the default <code>read-only</code> sandbox for review, explanation, and planning tasks. Use <code>workspace-write</code> only when the user explicitly wants Codex to make code changes in the selected workspace.</p>
 <p>Requirements:</p>
 <ul>
 <li><code>codex</code> must be available on <code>PATH</code></li>
@@ -2872,6 +2874,7 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 <li>keep it open across prompts,</li>
 <li>queue follow-up requests into the same session,</li>
 <li>cancel the active turn without destroying the whole session,</li>
+<li>run in either <code>read-only</code> or <code>workspace-write</code> Codex CLI sandbox mode,</li>
 <li>expose the session over stdio for IDE integrations.</li>
 </ul>
 <p>This is different from one-shot provider chat. ACP is for ongoing coding work.</p>
@@ -2882,7 +2885,7 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 </ul>
 <p>Annolid also tracks Codex CLI thread continuity for ACP-backed Codex CLI runs, so follow-up prompts can resume the same Codex context instead of starting a fresh local thread each time.</p>
 <h3 id="cancel-behavior">Cancel Behavior<a class="headerlink" href="#cancel-behavior" title="Permanent link">&para;</a></h3>
-<p>ACP <code>cancel</code> does not tear down the whole session anymore.</p>
+<p>ACP <code>cancel</code>, and the Annolid Bot <code>coding_session_abort</code> tool, do not tear down the whole session.</p>
 <p>Current behavior:</p>
 <ul>
 <li>the active turn is aborted,</li>
@@ -2904,6 +2907,7 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 <li><code>prompt</code></li>
 <li><code>cancel</code></li>
 <li><code>listSessions</code></li>
+<li><code>health</code></li>
 <li><code>shutdown</code></li>
 </ul>
 <p>Annolid also accepts compatibility aliases used by OpenClaw-style clients, including:</p>
@@ -2943,6 +2947,7 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 <li>Install the <code>codex</code> CLI.</li>
 <li>Set provider to <code>codex_cli</code>.</li>
 <li>Keep using the same Annolid chat session to preserve Codex CLI thread continuity.</li>
+<li>For implementation tasks, start a coding session with <code>sandbox</code> set to <code>workspace-write</code>; for review and explanation, keep <code>read-only</code>.</li>
 </ol>
 <h3 id="ide-or-thread-oriented-coding-work">IDE or Thread-Oriented Coding Work<a class="headerlink" href="#ide-or-thread-oriented-coding-work" title="Permanent link">&para;</a></h3>
 <p>Use this if you want persistent coding sessions:</p>
