@@ -2821,7 +2821,7 @@ annolid-run<span class="w"> </span>train<span class="w"> </span>polygon_classifi
 <span class="w">  </span>--run-name<span class="w"> </span>fly_polygon_tcn
 </code></pre></div>
 <p>The command prints JSON with the generated CSV paths, run directory,
-checkpoint, metrics path, and training parameters.</p>
+checkpoint, metrics path, Markdown report path, and training parameters.</p>
 <p>The same workflow is available from Python when scripting inside notebooks:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
@@ -2854,6 +2854,7 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <p>Each run writes:</p>
 <div class="highlight"><pre><span></span><code>&lt;run_dir&gt;/
   metrics.json
+  report.md
   polygon_tcn_classifier_best.pt
   test_predictions.csv
   tcn_inputs/
