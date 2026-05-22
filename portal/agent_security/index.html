@@ -1847,6 +1847,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#runtime-network-and-workspace-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Network and Workspace Guards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#unsigned-auto-updates" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2605,6 +2616,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#runtime-network-and-workspace-guards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime Network and Workspace Guards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#unsigned-auto-updates" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2862,6 +2884,15 @@ annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>
 <li>keep runtime execution separate from messaging and scheduling where possible,</li>
 <li>require signed skills in production-like environments.</li>
 </ul>
+<h3 id="runtime-network-and-workspace-guards">Runtime Network and Workspace Guards<a class="headerlink" href="#runtime-network-and-workspace-guards" title="Permanent link">&para;</a></h3>
+<p>Annolid Bot blocks shell commands that target private or internal HTTP(S)
+addresses, including local hosts and cloud metadata ranges. Workspace-scoped
+shell execution also treats the configured workspace as the trusted root, so a
+tool call cannot widen access by passing a different <code>working_dir</code>.</p>
+<p>Filesystem tools report workspace-boundary failures as hard policy boundaries.
+If the same outside target is retried across equivalent tools, the tool registry
+returns a refusal that tells the agent to ask the user how to proceed instead of
+trying shell or path-workaround variants.</p>
 <h3 id="unsigned-auto-updates">Unsigned Auto Updates<a class="headerlink" href="#unsigned-auto-updates" title="Permanent link">&para;</a></h3>
 <p>If automatic updates are enabled without strict signature requirements, the audit flags it.</p>
 <p>Recommended action:</p>
