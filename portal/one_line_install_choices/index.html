@@ -791,7 +791,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="GPU and device suggestions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onnx-runtime-cpugpu-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ONNX Runtime CPU/GPU behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ONNX Runtime CPU/GPU behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2621,7 +2632,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="GPU and device suggestions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onnx-runtime-cpugpu-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ONNX Runtime CPU/GPU behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ONNX Runtime CPU/GPU behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2759,6 +2781,7 @@
 <li>Creates an isolated environment (<code>.venv</code> by default).</li>
 <li>Installs dependencies and Annolid.</li>
 <li>Detects GPU and installs CUDA-enabled PyTorch when appropriate.</li>
+<li>Installs and validates ONNX Runtime providers.</li>
 <li>Prompts for optional extras and launch.</li>
 </ul>
 <h2 id="quick-decision-table">Quick decision table<a class="headerlink" href="#quick-decision-table" title="Permanent link">&para;</a></h2>
@@ -2963,6 +2986,16 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </tr>
 </tbody>
 </table>
+<h2 id="onnx-runtime-cpugpu-behavior">ONNX Runtime CPU/GPU behavior<a class="headerlink" href="#onnx-runtime-cpugpu-behavior" title="Permanent link">&para;</a></h2>
+<p>Annolid uses ONNX Runtime for several model paths. The one-line installers keep the provider choice explicit:</p>
+<ul>
+<li>Linux and Windows with an NVIDIA driver reporting CUDA 12.x or newer: install <code>onnxruntime-gpu</code> from the CUDA 12 package feed and validate that <code>CUDAExecutionProvider</code> is available.</li>
+<li>Linux and Windows with CUDA 13.x driver reports: use the same stable CUDA 12 ONNX Runtime GPU wheel because NVIDIA drivers are backward compatible with CUDA 12 runtimes.</li>
+<li>Linux and Windows without a CUDA 12-compatible NVIDIA driver: install CPU <code>onnxruntime</code> for compatibility.</li>
+<li>macOS: install <code>onnxruntime</code>; ONNX acceleration uses <code>CoreMLExecutionProvider</code> when the installed wheel and macOS runtime expose it. There is no CUDA ONNX Runtime wheel for macOS.</li>
+<li><code>--no-gpu</code> / <code>-NoGpu</code>: skip GPU detection and install CPU ONNX Runtime.</li>
+</ul>
+<p>If a CUDA 12-compatible NVIDIA driver is detected but <code>CUDAExecutionProvider</code> is missing after installation, the installer exits with a repair command instead of silently accepting a CPU-only ONNX Runtime install.</p>
 <h3 id="device-specific-tips">Device-specific tips<a class="headerlink" href="#device-specific-tips" title="Permanent link">&para;</a></h3>
 <ul>
 <li>If you have an NVIDIA GPU, verify drivers and CUDA runtime before install (<code>nvidia-smi</code> should work).</li>
