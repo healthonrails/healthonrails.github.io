@@ -766,6 +766,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#remote_video-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remote_video runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2607,6 +2618,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#remote_video-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remote_video runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2803,22 +2825,22 @@
 <tr>
 <td>Skip GPU detection</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --no-gpu</code></td>
-<td><code>.\install.ps1 -NoGpu</code></td>
+<td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -NoGpu</code></td>
 </tr>
 <tr>
 <td>Non-interactive install</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --no-interactive</code></td>
-<td><code>.\install.ps1 -NoInteractive</code></td>
+<td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -NoInteractive</code></td>
 </tr>
 <tr>
 <td>Install to custom folder</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --install-dir /path/to/annolid</code></td>
-<td><code>.\install.ps1 -InstallDir C:\\path\\to\\annolid</code></td>
+<td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -InstallDir C:\\path\\to\\annolid</code></td>
 </tr>
 <tr>
 <td>Custom venv location</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --venv-dir /path/to/.venv</code></td>
-<td><code>.\install.ps1 -VenvDir C:\\path\\to\\.venv</code></td>
+<td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -VenvDir C:\\path\\to\\.venv</code></td>
 </tr>
 <tr>
 <td>Use Conda env</td>
@@ -2828,7 +2850,7 @@
 <tr>
 <td>Enable optional extras</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --extras sam3,text_to_speech</code></td>
-<td><code>.\install.ps1 -Extras sam3,text_to_speech</code></td>
+<td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -Extras sam3,text_to_speech</code></td>
 </tr>
 </tbody>
 </table>
@@ -2867,11 +2889,14 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <li><code>-Help</code></li>
 </ul>
 <p>For extra options, run:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">Get-Help</span> <span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Detailed</span>
+<div class="highlight"><pre><span></span><code><span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Help</span>
 </code></pre></div>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code><span class="c"># Run installer from local script with explicit options</span>
 <span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-InstallDir</span> <span class="n">C</span><span class="p">:\</span><span class="n">annolid</span> <span class="n">-NoGpu</span> <span class="n">-NoInteractive</span>
+
+<span class="c"># Run remote installer with explicit options</span>
+<span class="p">&amp;</span> <span class="p">(</span><span class="no">[scriptblock]</span><span class="p">::</span><span class="n">Create</span><span class="p">((</span><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">healthonrails</span><span class="p">/</span><span class="n">annolid</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span><span class="p">)))</span> <span class="n">-NoGpu</span> <span class="n">-NoInteractive</span>
 
 <span class="c"># Install optional features</span>
 <span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Extras</span> <span class="n">sam3</span><span class="p">,</span><span class="n">image_editing</span><span class="p">,</span><span class="n">text_to_speech</span>
@@ -2881,6 +2906,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>Current supported extras:</p>
 <ul>
 <li><code>large_image</code></li>
+<li><code>remote_video</code></li>
 <li><code>sam3</code></li>
 <li><code>image_editing</code></li>
 <li><code>text_to_speech</code></li>
@@ -2901,6 +2927,11 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <td><code>large_image</code></td>
 <td>TIFF/OME-TIFF metadata and optional region-streaming backends</td>
 <td>You want large TIFF, BigTIFF, OME-TIFF, or virtual-slide style viewing without forcing those native libraries into every install. Leave it out for the default GUI install.</td>
+</tr>
+<tr>
+<td><code>remote_video</code></td>
+<td>network/remote video decoding through <code>ffpyplayer</code></td>
+<td>You receive frames from Annolid's remote video player path. Leave it out for normal local video files and Python 3.14 default installs.</td>
 </tr>
 <tr>
 <td><code>sam3</code></td>
@@ -2935,6 +2966,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <li>Most common research annotation setup: start with <code>sam3</code>.</li>
 <li>Accessibility or narrated review: add <code>text_to_speech</code>.</li>
 <li>Data augmentation/image synthesis workflows: add <code>image_editing</code>.</li>
+<li>Remote network video decoding: add <code>remote_video</code>.</li>
 <li>Only install <code>qwen3_embedding</code> if you explicitly use those embedding features.</li>
 <li>If you use Annolid Bot integrations, add <code>annolid_bot</code>.</li>
 </ul>
@@ -2944,6 +2976,8 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <h3 id="large_image-runtime-note"><code>large_image</code> runtime note<a class="headerlink" href="#large_image-runtime-note" title="Permanent link">&para;</a></h3>
 <p>The <code>large_image</code> extra installs the Python bindings, but <code>pyvips</code> and <code>openslide-python</code> may still require native system runtimes on your machine. This extra is optional; Annolid's normal GUI workflows do not depend on it.</p>
 <p>If those runtimes are not available, Annolid will still open the file and will fall back to <code>tifffile</code> when available, but navigation can be slower on very large TIFF files.</p>
+<h3 id="remote_video-runtime-note"><code>remote_video</code> runtime note<a class="headerlink" href="#remote_video-runtime-note" title="Permanent link">&para;</a></h3>
+<p>The <code>remote_video</code> extra installs <code>ffpyplayer</code>. On Python 3.14, <code>ffpyplayer</code> may need to build from source and require native FFmpeg development headers such as <code>libpostproc</code>. The default installer leaves this extra out so core GUI and local video workflows can install cleanly on Python 3.14.</p>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stable workstation install:
@@ -2996,6 +3030,10 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <li><code>--no-gpu</code> / <code>-NoGpu</code>: skip GPU detection and install CPU ONNX Runtime.</li>
 </ul>
 <p>If a CUDA 12-compatible NVIDIA driver is detected but <code>CUDAExecutionProvider</code> is missing after installation, the installer exits with a repair command instead of silently accepting a CPU-only ONNX Runtime install.</p>
+<p>Manual repair inside the installer-created environment:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import onnxruntime as ort; print(ort.get_available_providers())&quot;</span>
+</code></pre></div>
 <h3 id="device-specific-tips">Device-specific tips<a class="headerlink" href="#device-specific-tips" title="Permanent link">&para;</a></h3>
 <ul>
 <li>If you have an NVIDIA GPU, verify drivers and CUDA runtime before install (<code>nvidia-smi</code> should work).</li>

@@ -677,6 +677,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#onnx-runtime-gpu-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ONNX Runtime GPU Provider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-flybody-checkout" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2451,6 +2462,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#onnx-runtime-gpu-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ONNX Runtime GPU Provider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-flybody-checkout" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2579,7 +2601,7 @@
 <p>This is the recommended development-style setup for this repository and matches the local validation guidance used in the repo instructions.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Python 3.10 to 3.13 on your <code>PATH</code></li>
+<li>Python 3.10 to 3.14 on your <code>PATH</code></li>
 <li><code>git</code></li>
 <li><code>ffmpeg</code> recommended for video-heavy workflows</li>
 <li><code>uv</code> installed from <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a></li>
@@ -2607,6 +2629,15 @@
 <div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
 annolid-run<span class="w"> </span>--help
 annolid-run<span class="w"> </span>list-models
+</code></pre></div>
+<h2 id="onnx-runtime-gpu-provider">ONNX Runtime GPU Provider<a class="headerlink" href="#onnx-runtime-gpu-provider" title="Permanent link">&para;</a></h2>
+<p>The editable install brings in CPU <code>onnxruntime</code> by default. On Linux or Windows machines with an NVIDIA driver reporting CUDA 12.x or newer, add the GPU provider after installing Annolid:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import onnxruntime as ort; print(ort.get_available_providers())&quot;</span>
+</code></pre></div>
+<p>The provider list should include <code>CUDAExecutionProvider</code>. If it does not, keep the CPU install until the NVIDIA driver/runtime mismatch is resolved:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>onnxruntime-gpu
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime
 </code></pre></div>
 <h2 id="optional-flybody-checkout">Optional FlyBody Checkout<a class="headerlink" href="#optional-flybody-checkout" title="Permanent link">&para;</a></h2>
 <p>If you want the simulation/FlyBody plugin path in the same <code>.venv</code>, install the
@@ -2636,6 +2667,7 @@ python<span class="w"> </span>scripts/check_flybody_runtime.py
 <li>The current terminal command is <code>annolid-run</code>, not older <code>annolid-train</code> or <code>annolid-track</code> commands.</li>
 <li>The repo’s local validation instructions assume a repository-local <code>.venv</code>.</li>
 <li>Optional extras are defined in <code>pyproject.toml</code>; install only what you need.</li>
+<li>Python 3.14 works for the default GUI/core install. The optional <code>remote_video</code> extra may require native FFmpeg development headers because it installs <code>ffpyplayer</code>.</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>

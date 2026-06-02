@@ -677,6 +677,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#note-on-remote_video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on remote_video
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2502,6 +2513,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#note-on-remote_video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note on remote_video
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2627,7 +2649,7 @@
 <li><code>annolid</code>: launch the desktop GUI</li>
 <li><code>annolid-run</code>: run model and workflow plugins from the terminal</li>
 </ul>
-<p>Annolid requires Python 3.10 or newer. In practice, Python 3.11 is the safest default for new environments.</p>
+<p>Annolid requires Python 3.10 or newer and supports Python 3.10 through 3.14 for the default GUI/core workflow. In practice, Python 3.11 or 3.12 remains the safest default for new shared lab environments.</p>
 <h2 id="recommended-paths">Recommended Paths<a class="headerlink" href="#recommended-paths" title="Permanent link">&para;</a></h2>
 <h3 id="one-line-installer">One-line installer<a class="headerlink" href="#one-line-installer" title="Permanent link">&para;</a></h3>
 <p>For most users, start with the project installers:</p>
@@ -2643,6 +2665,12 @@
 </code></pre></div>
 <p>See <a href="../one_line_install_choices/">One-Line Installer</a> for flags, extras, CPU/GPU choices, and non-interactive installs.</p>
 <p>The one-line installers also validate ONNX Runtime provider selection. On Linux and Windows, <code>onnxruntime-gpu</code> is installed when an NVIDIA driver reports CUDA 12.x or newer, including CUDA 13.x driver reports; otherwise Annolid uses CPU <code>onnxruntime</code>. On macOS, ONNX acceleration uses CoreML when available rather than a CUDA GPU wheel.</p>
+<p>For a non-interactive CPU baseline, use:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--no-gpu<span class="w"> </span>--no-interactive
+</code></pre></div>
+<p>On Windows PowerShell:</p>
+<div class="highlight"><pre><span></span><code><span class="p">&amp;</span> <span class="p">(</span><span class="no">[scriptblock]</span><span class="p">::</span><span class="n">Create</span><span class="p">((</span><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">healthonrails</span><span class="p">/</span><span class="n">annolid</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span><span class="p">)))</span> <span class="n">-NoGpu</span> <span class="n">-NoInteractive</span>
+</code></pre></div>
 <h3 id="local-venv-with-uv">Local <code>.venv</code> with <code>uv</code><a class="headerlink" href="#local-venv-with-uv" title="Permanent link">&para;</a></h3>
 <p>For development or reproducible local work, use <code>uv</code> and a repository-local <code>.venv</code>:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
@@ -2652,6 +2680,10 @@ uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </sp
 uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
 </code></pre></div>
 <p>The dedicated guide is <a href="../install_with_uv/">uv Setup</a>.</p>
+<p>If you want ONNX Runtime GPU support in a manual <code>uv</code> environment on Linux or Windows, install Annolid first and then add the GPU wheel:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import onnxruntime as ort; print(ort.get_available_providers())&quot;</span>
+</code></pre></div>
 <h3 id="pip-venv">pip / venv<a class="headerlink" href="#pip-venv" title="Permanent link">&para;</a></h3>
 <p>If you prefer standard Python tooling:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
@@ -2684,6 +2716,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>qwen3_embedding</code>: embedding-related utilities</li>
 <li><code>mediapipe</code>: MediaPipe-based workflows</li>
 <li><code>cowtracker</code>: CowTracker backend dependency</li>
+<li><code>remote_video</code>: network/remote video decoding through <code>ffpyplayer</code></li>
 <li><code>annolid_bot</code>: Annolid Bot integrations such as MCP, Playwright, WhatsApp bridge support, and Google Drive/Calendar dependencies</li>
 </ul>
 <p>Example:</p>
@@ -2697,6 +2730,11 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>openslide-python</code> needs a working OpenSlide runtime</li>
 </ul>
 <p>If those native libraries are missing, Annolid falls back to <code>tifffile</code> when available. If the full <code>large_image</code> extra is not installed, Annolid still starts normally and falls back to the standard Qt/Pillow image path instead of requiring large-image packages at startup.</p>
+<h3 id="note-on-remote_video">Note on <code>remote_video</code><a class="headerlink" href="#note-on-remote_video" title="Permanent link">&para;</a></h3>
+<p><code>remote_video</code> is optional. Annolid's default install does not require <code>ffpyplayer</code>, which keeps Python 3.14 installs from failing when no compatible <code>ffpyplayer</code> wheel is available. Install it only if you use Annolid's network/remote video decoding path:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[remote_video]&quot;</span>
+</code></pre></div>
+<p>On Python 3.14, <code>ffpyplayer</code> may build from source and require native FFmpeg development headers such as <code>libpostproc</code>.</p>
 <h2 id="verify-the-install">Verify the Install<a class="headerlink" href="#verify-the-install" title="Permanent link">&para;</a></h2>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
@@ -2711,6 +2749,7 @@ annolid-run<span class="w"> </span>--help
 <h2 id="common-post-install-notes">Common Post-install Notes<a class="headerlink" href="#common-post-install-notes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Install FFmpeg if video import/export or codec support is incomplete.</li>
+<li>If ONNX Runtime GPU validation fails, activate the installer-created environment and rerun the repair command printed by the installer.</li>
 <li>If you use Annolid Bot with MCP or browser automation, install the <code>annolid_bot</code> extra.</li>
 <li>If <code>qtpy.QtBindingsNotFoundError</code> appears, install the <code>gui</code> extra in the active environment.</li>
 <li>The <code>gui</code> extra now installs <code>PySide6</code> as the default Qt binding.</li>
