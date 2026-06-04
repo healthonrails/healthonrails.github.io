@@ -2709,6 +2709,12 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>Useful extras currently defined in <code>pyproject.toml</code> include:</p>
 <ul>
 <li><code>gui</code>: Qt bindings for the desktop application</li>
+<li><code>audio</code>: audio loading/playback helpers (<code>librosa</code>, <code>sounddevice</code>)</li>
+<li><code>ai_chat</code>: OpenAI-compatible and Anthropic SDKs for hosted LLM providers</li>
+<li><code>training</code>: TensorBoard support for training dashboards and projector views</li>
+<li><code>yolo</code>: Ultralytics YOLO/YOLOE workflows and tracker matching helpers</li>
+<li><code>realtime</code>: serial and ZMQ dependencies for realtime/hardware integrations</li>
+<li><code>onnx_gpu</code>: Windows/Linux ONNX Runtime CUDA provider</li>
 <li><code>large_image</code>: TIFF/OME-TIFF metadata and optional streaming backends (<code>tifffile</code>, <code>pyvips</code>, <code>openslide-python</code>)</li>
 <li><code>sam3</code>: SAM3-related dependencies</li>
 <li><code>image_editing</code>: diffusion/image-editing features</li>
@@ -2718,10 +2724,18 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>cowtracker</code>: CowTracker backend dependency</li>
 <li><code>remote_video</code>: network/remote video decoding through <code>ffpyplayer</code></li>
 <li><code>annolid_bot</code>: Annolid Bot integrations such as MCP, Playwright, WhatsApp bridge support, and Google Drive/Calendar dependencies</li>
+<li><code>memory</code>: vector database dependencies for fast Annolid Bot memory</li>
+<li><code>all</code>: convenience profile for full-feature workstations</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,large_image,annolid_bot,text_to_speech]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,sam3,yolo,training,ai_chat]&quot;</span>
 </code></pre></div>
+<p>Annolid follows the same practical split used by mature annotation tools:
+the default install keeps annotation, local video, tracking, and ONNX CPU paths
+usable, while cloud providers, YOLO, audio, realtime hardware, large-image
+backends, and heavyweight integrations are explicit extras. If a feature is
+not installed, Annolid should start normally and show an install hint when that
+feature is opened.</p>
 <h3 id="note-on-large_image">Note on <code>large_image</code><a class="headerlink" href="#note-on-large_image" title="Permanent link">&para;</a></h3>
 <p><code>large_image</code> is optional. A normal <code>annolid[gui]</code> install does not require these dependencies, and Annolid's standard image/video annotation workflows continue to work without them.</p>
 <p>The <code>large_image</code> extra installs the Python packages, but some platforms also need native runtimes for the fastest backends:</p>
@@ -2750,6 +2764,9 @@ annolid-run<span class="w"> </span>--help
 <ul>
 <li>Install FFmpeg if video import/export or codec support is incomplete.</li>
 <li>If ONNX Runtime GPU validation fails, activate the installer-created environment and rerun the repair command printed by the installer.</li>
+<li>If YOLO/YOLOE commands are missing, install <code>annolid[yolo]</code>.</li>
+<li>If hosted LLM providers are unavailable, install <code>annolid[ai_chat]</code>.</li>
+<li>If audio recording/playback is unavailable, install <code>annolid[audio]</code> or <code>annolid[text_to_speech]</code>.</li>
 <li>If you use Annolid Bot with MCP or browser automation, install the <code>annolid_bot</code> extra.</li>
 <li>If <code>qtpy.QtBindingsNotFoundError</code> appears, install the <code>gui</code> extra in the active environment.</li>
 <li>The <code>gui</code> extra now installs <code>PySide6</code> as the default Qt binding.</li>

@@ -2905,6 +2905,11 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p><code>gui</code> is installed by default by the one-line installers, so <code>annolid</code> launches without additional flags.</p>
 <p>Current supported extras:</p>
 <ul>
+<li><code>audio</code></li>
+<li><code>ai_chat</code></li>
+<li><code>training</code></li>
+<li><code>yolo</code></li>
+<li><code>realtime</code></li>
 <li><code>large_image</code></li>
 <li><code>remote_video</code></li>
 <li><code>sam3</code></li>
@@ -2912,6 +2917,8 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <li><code>text_to_speech</code></li>
 <li><code>qwen3_embedding</code></li>
 <li><code>annolid_bot</code></li>
+<li><code>memory</code></li>
+<li><code>all</code></li>
 </ul>
 <h3 id="what-each-extra-is-for-with-example-use-cases">What each extra is for (with example use cases)<a class="headerlink" href="#what-each-extra-is-for-with-example-use-cases" title="Permanent link">&para;</a></h3>
 <table>
@@ -2923,6 +2930,31 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>audio</code></td>
+<td>audio decoding/playback helpers</td>
+<td>You want waveform-derived behavior features, microphone recording, or sound playback without installing audio stacks in every lab workstation.</td>
+</tr>
+<tr>
+<td><code>ai_chat</code></td>
+<td>hosted OpenAI-compatible or Anthropic provider SDKs</td>
+<td>You use GPT/OpenRouter/Claude-style providers instead of only local/Ollama-compatible paths.</td>
+</tr>
+<tr>
+<td><code>training</code></td>
+<td>TensorBoard dashboards and projector views</td>
+<td>You train models from Annolid and want live training curves or embedding projector output.</td>
+</tr>
+<tr>
+<td><code>yolo</code></td>
+<td>Ultralytics YOLO/YOLOE workflows</td>
+<td>You train YOLO models, run YOLOE prompt inference, or export YOLO detections to LabelMe JSON.</td>
+</tr>
+<tr>
+<td><code>realtime</code></td>
+<td>serial/ZMQ realtime hardware integrations</td>
+<td>You use Bpod, realtime streams, or ZMQ control paths.</td>
+</tr>
 <tr>
 <td><code>large_image</code></td>
 <td>TIFF/OME-TIFF metadata and optional region-streaming backends</td>
@@ -2958,15 +2990,28 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <td>bundled Annolid Bot integrations (WhatsApp + Google Drive/Calendar + MCP)</td>
 <td>You want background services/integrations without installing each Bot extra individually.</td>
 </tr>
+<tr>
+<td><code>memory</code></td>
+<td>vector database dependencies for fast Annolid Bot memory</td>
+<td>You want LanceDB-backed semantic memory rather than the lightweight lexical path.</td>
+</tr>
+<tr>
+<td><code>all</code></td>
+<td>full-feature workstation profile</td>
+<td>You are setting up a maintained lab machine where install size is less important than having every optional integration ready.</td>
+</tr>
 </tbody>
 </table>
 <h3 id="practical-install-suggestions">Practical install suggestions<a class="headerlink" href="#practical-install-suggestions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Minimal install (fastest, lowest dependency footprint): no extras.</li>
 <li>Most common research annotation setup: start with <code>sam3</code>.</li>
+<li>Common training workstation: add <code>yolo,training</code>.</li>
+<li>Hosted AI chat providers: add <code>ai_chat</code>.</li>
 <li>Accessibility or narrated review: add <code>text_to_speech</code>.</li>
 <li>Data augmentation/image synthesis workflows: add <code>image_editing</code>.</li>
 <li>Remote network video decoding: add <code>remote_video</code>.</li>
+<li>Realtime hardware/streaming workflows: add <code>realtime</code>.</li>
 <li>Only install <code>qwen3_embedding</code> if you explicitly use those embedding features.</li>
 <li>If you use Annolid Bot integrations, add <code>annolid_bot</code>.</li>
 </ul>
