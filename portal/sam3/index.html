@@ -3224,6 +3224,9 @@
 <p>Text-only mode:</p>
 </li>
 <li>Uses a text prompt (for example, <code>mouse</code>) and runs SAM3.1 windowed propagation.</li>
+<li>Multiple phrases can be entered with commas, periods, semicolons, or new
+  lines. Annolid removes empty and duplicate phrases before sending the prompt
+  to SAM3.</li>
 <li>This is the fallback when no usable geometric prompts (box/point/polygon) exist.</li>
 </ol>
 <h2 id="annolid-bot-workflow-for-long-videos">Annolid Bot workflow for long videos<a class="headerlink" href="#annolid-bot-workflow-for-long-videos" title="Permanent link">&para;</a></h2>
@@ -3313,6 +3316,7 @@ on the selected model.</p>
 <ul>
 <li><code>video=</code> or <code>path=</code> points to the source video</li>
 <li><code>prompt=</code> or <code>text_prompt=</code> provides the text prompt</li>
+<li>Use commas, periods, semicolons, or new lines to separate multiple phrases.</li>
 <li><code>model=</code> selects from the AI Models dropdown list in the main window</li>
 <li><code>to_frame=</code> jumps tracking to a target frame when you want a bounded run</li>
 </ul>
