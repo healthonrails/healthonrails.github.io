@@ -777,6 +777,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sam-hq-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAM-HQ runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2629,6 +2640,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sam-hq-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAM-HQ runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2833,6 +2855,11 @@
 <td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -NoInteractive</code></td>
 </tr>
 <tr>
+<td>Named profile</td>
+<td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --profile workstation</code></td>
+<td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -Profile workstation</code></td>
+</tr>
+<tr>
 <td>Install to custom folder</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --install-dir /path/to/annolid</code></td>
 <td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -InstallDir C:\\path\\to\\annolid</code></td>
@@ -2859,6 +2886,7 @@
 <ul>
 <li><code>--install-dir DIR</code></li>
 <li><code>--venv-dir DIR</code></li>
+<li><code>--profile minimal|gui|workstation|full</code></li>
 <li><code>--extras EXTRAS</code></li>
 <li><code>--no-gpu</code></li>
 <li><code>--use-conda</code></li>
@@ -2883,6 +2911,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <ul>
 <li><code>-InstallDir DIR</code></li>
 <li><code>-VenvDir DIR</code></li>
+<li><code>-Profile minimal|gui|workstation|full</code></li>
 <li><code>-Extras EXTRAS</code></li>
 <li><code>-NoGpu</code></li>
 <li><code>-NoInteractive</code></li>
@@ -2903,6 +2932,41 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </code></pre></div>
 <h2 id="optional-extras-extras-extras">Optional extras (<code>--extras</code> / <code>-Extras</code>)<a class="headerlink" href="#optional-extras-extras-extras" title="Permanent link">&para;</a></h2>
 <p><code>gui</code> is installed by default by the one-line installers, so <code>annolid</code> launches without additional flags.</p>
+<p>Named profiles provide stable defaults for common machines:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Installed optional extras</th>
+<th>Use this for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>minimal</code></td>
+<td>none beyond the required GUI extra</td>
+<td>Fastest default GUI/core annotation setup.</td>
+</tr>
+<tr>
+<td><code>gui</code></td>
+<td>none beyond the required GUI extra</td>
+<td>Default profile; same behavior as omitting <code>--profile</code> / <code>-Profile</code>.</td>
+</tr>
+<tr>
+<td><code>workstation</code></td>
+<td><code>sam3,yolo,training</code></td>
+<td>Maintained research workstations that need promptable segmentation, YOLO workflows, and training dashboards.</td>
+</tr>
+<tr>
+<td><code>full</code></td>
+<td><code>all</code></td>
+<td>Fully provisioned lab machines where dependency size is less important than breadth.</td>
+</tr>
+</tbody>
+</table>
+<p>Explicit extras are merged with the selected profile. For example,
+<code>--profile workstation --extras ai_chat,text_to_speech</code> installs
+<code>gui,sam3,yolo,training,ai_chat,text_to_speech</code>.</p>
 <p>Current supported extras:</p>
 <ul>
 <li><code>audio</code></li>
@@ -2968,7 +3032,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <tr>
 <td><code>sam3</code></td>
 <td>the SAM3-related segmentation workflow/features in Annolid</td>
-<td>You want stronger promptable segmentation on difficult frames and plan to use SAM3 tools in the GUI/CLI pipeline.</td>
+<td>You want stronger promptable segmentation on difficult frames and plan to use SAM3 tools in the GUI/CLI pipeline. The installer also attempts the optional SAM-HQ dependency for this profile.</td>
 </tr>
 <tr>
 <td><code>image_editing</code></td>
@@ -3005,7 +3069,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <h3 id="practical-install-suggestions">Practical install suggestions<a class="headerlink" href="#practical-install-suggestions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Minimal install (fastest, lowest dependency footprint): no extras.</li>
-<li>Most common research annotation setup: start with <code>sam3</code>.</li>
+<li>Most common research annotation setup: start without extras; add <code>sam3</code> only when promptable SAM workflows are needed.</li>
 <li>Common training workstation: add <code>yolo,training</code>.</li>
 <li>Hosted AI chat providers: add <code>ai_chat</code>.</li>
 <li>Accessibility or narrated review: add <code>text_to_speech</code>.</li>
@@ -3023,6 +3087,8 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>If those runtimes are not available, Annolid will still open the file and will fall back to <code>tifffile</code> when available, but navigation can be slower on very large TIFF files.</p>
 <h3 id="remote_video-runtime-note"><code>remote_video</code> runtime note<a class="headerlink" href="#remote_video-runtime-note" title="Permanent link">&para;</a></h3>
 <p>The <code>remote_video</code> extra installs <code>ffpyplayer</code>. On Python 3.14, <code>ffpyplayer</code> may need to build from source and require native FFmpeg development headers such as <code>libpostproc</code>. The default installer leaves this extra out so core GUI and local video workflows can install cleanly on Python 3.14.</p>
+<h3 id="sam-hq-runtime-note">SAM-HQ runtime note<a class="headerlink" href="#sam-hq-runtime-note" title="Permanent link">&para;</a></h3>
+<p>The one-line installers no longer install SAM-HQ during the default GUI setup. SAM-HQ is attempted only when a SAM-related profile such as <code>--extras sam3</code> / <code>-Extras sam3</code> or <code>all</code> is selected. This keeps the default installer independent of an extra GitHub source install and makes locked-down lab workstations easier to bootstrap.</p>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stable workstation install:

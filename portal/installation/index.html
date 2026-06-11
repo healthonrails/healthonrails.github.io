@@ -2665,6 +2665,15 @@
 </code></pre></div>
 <p>See <a href="../one_line_install_choices/">One-Line Installer</a> for flags, extras, CPU/GPU choices, and non-interactive installs.</p>
 <p>The one-line installers also validate ONNX Runtime provider selection. On Linux and Windows, <code>onnxruntime-gpu</code> is installed when an NVIDIA driver reports CUDA 12.x or newer, including CUDA 13.x driver reports; otherwise Annolid uses CPU <code>onnxruntime</code>. On macOS, ONNX acceleration uses CoreML when available rather than a CUDA GPU wheel.</p>
+<p>Named installer profiles keep common setups reproducible:</p>
+<ul>
+<li><code>minimal</code> / <code>gui</code>: default GUI/core annotation setup</li>
+<li><code>workstation</code>: GUI plus <code>sam3,yolo,training</code></li>
+<li><code>full</code>: GUI plus the <code>all</code> extra</li>
+</ul>
+<p>Example workstation install:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--profile<span class="w"> </span>workstation
+</code></pre></div>
 <p>For a non-interactive CPU baseline, use:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>--no-gpu<span class="w"> </span>--no-interactive
 </code></pre></div>
@@ -2737,6 +2746,10 @@ usable, while cloud providers, YOLO, audio, realtime hardware, large-image
 backends, and heavyweight integrations are explicit extras. If a feature is
 not installed, Annolid should start normally and show an install hint when that
 feature is opened.</p>
+<p>The one-line installers also keep optional SAM-HQ out of the default path.
+SAM-HQ is attempted only when a SAM-related extra such as <code>sam3</code> or the <code>all</code>
+profile is selected. This avoids a default GitHub source install on machines
+that only need the GUI/core annotation workflow.</p>
 <h3 id="note-on-large_image">Note on <code>large_image</code><a class="headerlink" href="#note-on-large_image" title="Permanent link">&para;</a></h3>
 <p><code>large_image</code> is optional. A normal <code>annolid[gui]</code> install does not require these dependencies, and Annolid's standard image/video annotation workflows continue to work without them.</p>
 <p>The <code>large_image</code> extra installs the Python packages, but some platforms also need native runtimes for the fastest backends:</p>
