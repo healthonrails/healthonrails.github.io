@@ -2361,7 +2361,7 @@
 <h1 id="packaging-and-distribution">Packaging and Distribution<a class="headerlink" href="#packaging-and-distribution" title="Permanent link">&para;</a></h1>
 <p>This document defines Annolid's install tiers, optional runtime contract, frozen app artifact policy, and release validation expectations.</p>
 <h2 id="install-tiers">Install Tiers<a class="headerlink" href="#install-tiers" title="Permanent link">&para;</a></h2>
-<p>Annolid keeps the default install useful without forcing every model runtime onto every workstation.</p>
+<p>Annolid keeps the default one-line installer useful for common tracking/model workflows while preserving a <code>minimal</code> profile for smaller GUI-only setup.</p>
 <table>
 <thead>
 <tr>
@@ -2374,12 +2374,12 @@
 <tr>
 <td>Core</td>
 <td><code>pip install annolid</code></td>
-<td>Import-safe core package for non-GUI workflows and library use. Heavy model runtimes are not base dependencies.</td>
+<td>Import-safe core package for non-GUI workflows and library use. Includes <code>pycocotools</code> so mask/RLE polygon paths are available by default.</td>
 </tr>
 <tr>
 <td>GUI</td>
 <td><code>pip install "annolid[gui]"</code></td>
-<td>Default desktop annotation and local video baseline. The one-line installers install this tier by default.</td>
+<td>Desktop annotation GUI binding. The one-line installer's default <code>gui</code> profile also installs <code>ml</code>, <code>tracking</code>, and <code>cutie</code>.</td>
 </tr>
 <tr>
 <td>ML</td>
@@ -2425,7 +2425,7 @@
 </tr>
 <tr>
 <td><code>gui</code></td>
-<td><code>gui</code> only</td>
+<td><code>gui,ml,tracking,cutie</code></td>
 </tr>
 <tr>
 <td><code>workstation</code></td>

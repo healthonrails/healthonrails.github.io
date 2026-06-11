@@ -2953,7 +2953,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Extras</span> <span class="n">sam3</span><span class="p">,</span><span class="n">image_editing</span><span class="p">,</span><span class="n">text_to_speech</span>
 </code></pre></div>
 <h2 id="optional-extras-extras-extras">Optional extras (<code>--extras</code> / <code>-Extras</code>)<a class="headerlink" href="#optional-extras-extras-extras" title="Permanent link">&para;</a></h2>
-<p><code>gui</code> is installed by default by the one-line installers, so <code>annolid</code> launches without additional flags.</p>
+<p><code>gui</code> is the default one-line installer profile. It installs GUI support plus the <code>ml</code>, <code>tracking</code>, and <code>cutie</code> extras so common model and tracking workflows are available immediately.</p>
 <p>Named profiles provide stable defaults for common machines:</p>
 <table>
 <thead>
@@ -2967,11 +2967,11 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <tr>
 <td><code>minimal</code></td>
 <td>none beyond the required GUI extra</td>
-<td>Fastest default GUI/core annotation setup.</td>
+<td>Fastest GUI/core annotation setup when model runtimes should be avoided.</td>
 </tr>
 <tr>
 <td><code>gui</code></td>
-<td>none beyond the required GUI extra</td>
+<td><code>ml,tracking,cutie</code></td>
 <td>Default profile; same behavior as omitting <code>--profile</code> / <code>-Profile</code>.</td>
 </tr>
 <tr>
@@ -3114,8 +3114,8 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </table>
 <h3 id="practical-install-suggestions">Practical install suggestions<a class="headerlink" href="#practical-install-suggestions" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Minimal install (fastest, lowest dependency footprint): no extras.</li>
-<li>Most common research annotation setup: start without extras; add <code>cutie</code> or <code>sam3</code> only when those workflows are needed.</li>
+<li>Minimal install (fastest, lowest dependency footprint): use <code>--profile minimal</code> / <code>-Profile minimal</code>.</li>
+<li>Most common research annotation and tracking setup: use the default installer profile.</li>
 <li>Common training workstation: add <code>yolo,training</code>.</li>
 <li>Hosted AI chat providers: add <code>ai_chat</code>.</li>
 <li>Accessibility or narrated review: add <code>text_to_speech</code>.</li>
@@ -3137,11 +3137,11 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>The one-line installers no longer install SAM-HQ during the default GUI setup. SAM-HQ is attempted only when a SAM-related profile such as <code>--extras sam3</code> / <code>-Extras sam3</code> or <code>all</code> is selected. This keeps the default installer independent of an extra GitHub source install and makes locked-down lab workstations easier to bootstrap.</p>
 <h3 id="cutie-runtime-note">Cutie runtime note<a class="headerlink" href="#cutie-runtime-note" title="Permanent link">&para;</a></h3>
 <p>The <code>cutie</code> extra installs the Python runtime packages used by Cutie tracking.
-If a minimal/default install tries to run Cutie tracking and one of those
-packages is missing, Annolid attempts to install the missing packages into the
-active environment before loading the tracker. Set
-<code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to disable that automatic repair and show
-the exact <code>python -m pip install ...</code> command instead.</p>
+The default <code>gui</code> profile installs this extra up front. If a minimal install
+tries to run Cutie tracking and one of those packages is missing, Annolid
+attempts to install the missing packages into the active environment before
+loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to disable that
+automatic repair and show the exact install command instead.</p>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stable workstation install:

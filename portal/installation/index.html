@@ -2668,7 +2668,8 @@
 <p>The one-line installers also validate ONNX Runtime provider selection. On Linux and Windows, <code>onnxruntime-gpu</code> is installed when an NVIDIA driver reports CUDA 12.x or newer, including CUDA 13.x driver reports; otherwise Annolid uses CPU <code>onnxruntime</code>. On macOS, ONNX acceleration uses CoreML when available rather than a CUDA GPU wheel.</p>
 <p>Named installer profiles keep common setups reproducible:</p>
 <ul>
-<li><code>minimal</code> / <code>gui</code>: default GUI/core annotation setup</li>
+<li><code>minimal</code>: GUI/core annotation setup with the smallest optional footprint</li>
+<li><code>gui</code>: default GUI plus <code>ml,tracking,cutie</code></li>
 <li><code>workstation</code>: GUI plus <code>tracking,sam3,training</code></li>
 <li><code>full</code>: GUI plus the <code>all</code> extra</li>
 </ul>
@@ -2745,20 +2746,21 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,sam3,yolo,training,ai_chat]&quot;</span>
 </code></pre></div>
-<p>Annolid follows the same practical split used by mature annotation tools:
-the base <code>annolid</code> package is the core tier, and <code>annolid[gui]</code> is the default
-desktop tier. The default installer keeps GUI annotation and local video setup
-usable while model-heavy runtimes such as PyTorch, Transformers, YOLO,
-SAM-related packages, Cutie dependencies, hosted AI providers, realtime
-hardware, large-image backends, and Bot integrations are explicit extras. If a
-feature is not installed, Annolid should start normally and show an install
-hint when that feature is opened.</p>
+<p>Annolid's base package includes <code>pycocotools</code> so mask/RLE polygon paths are
+available in default installs. The one-line installer's default <code>gui</code> profile
+also installs the <code>ml</code>, <code>tracking</code>, and <code>cutie</code> extras so common model and
+tracking workflows are available immediately. Use <code>--profile minimal</code> /
+<code>-Profile minimal</code> only when you need the smallest GUI/core annotation setup.</p>
+<p>SAM-related packages, hosted AI providers, realtime hardware, large-image
+backends, Bot integrations, audio helpers, image editing, and text-to-speech
+remain explicit extras. If one of those features is not installed, Annolid
+should start normally and show an install hint when that feature is opened.</p>
 <p>The one-line installers also keep optional SAM-HQ out of the default path.
 SAM-HQ is attempted only when a SAM-related extra such as <code>sam3</code> or the <code>all</code>
 profile is selected. This avoids a default GitHub source install on machines
 that only need the GUI/core annotation workflow.</p>
-<p>Cutie tracking is also repairable from a minimal/default install. If a user
-starts Cutie tracking and one of the Cutie runtime packages is missing, Annolid
+<p>Cutie tracking is also repairable from a minimal install. If a user starts
+Cutie tracking and one of the Cutie runtime packages is missing, Annolid
 attempts to install the missing packages into the active environment and then
 continues loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to
 disable automatic installation and show the exact <code>python -m pip install ...</code>
