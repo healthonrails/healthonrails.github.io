@@ -788,6 +788,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cutie-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cutie runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2651,6 +2662,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#cutie-runtime-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cutie runtime note
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2954,8 +2976,8 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </tr>
 <tr>
 <td><code>workstation</code></td>
-<td><code>sam3,yolo,training</code></td>
-<td>Maintained research workstations that need promptable segmentation, YOLO workflows, and training dashboards.</td>
+<td><code>cutie,sam3,yolo,training</code></td>
+<td>Maintained research workstations that need Cutie tracking, promptable segmentation, YOLO workflows, and training dashboards.</td>
 </tr>
 <tr>
 <td><code>full</code></td>
@@ -2973,6 +2995,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <li><code>ai_chat</code></li>
 <li><code>training</code></li>
 <li><code>yolo</code></li>
+<li><code>cutie</code></li>
 <li><code>realtime</code></li>
 <li><code>large_image</code></li>
 <li><code>remote_video</code></li>
@@ -3013,6 +3036,11 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <td><code>yolo</code></td>
 <td>Ultralytics YOLO/YOLOE workflows</td>
 <td>You train YOLO models, run YOLOE prompt inference, or export YOLO detections to LabelMe JSON.</td>
+</tr>
+<tr>
+<td><code>cutie</code></td>
+<td>Cutie video object segmentation tracking runtime</td>
+<td>You run Cutie tracking on minimal installs and want the required Python packages installed up front. Minimal/default installs can still auto-install missing Cutie packages on first use.</td>
 </tr>
 <tr>
 <td><code>realtime</code></td>
@@ -3069,7 +3097,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <h3 id="practical-install-suggestions">Practical install suggestions<a class="headerlink" href="#practical-install-suggestions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Minimal install (fastest, lowest dependency footprint): no extras.</li>
-<li>Most common research annotation setup: start without extras; add <code>sam3</code> only when promptable SAM workflows are needed.</li>
+<li>Most common research annotation setup: start without extras; add <code>cutie</code> or <code>sam3</code> only when those workflows are needed.</li>
 <li>Common training workstation: add <code>yolo,training</code>.</li>
 <li>Hosted AI chat providers: add <code>ai_chat</code>.</li>
 <li>Accessibility or narrated review: add <code>text_to_speech</code>.</li>
@@ -3089,6 +3117,13 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>The <code>remote_video</code> extra installs <code>ffpyplayer</code>. On Python 3.14, <code>ffpyplayer</code> may need to build from source and require native FFmpeg development headers such as <code>libpostproc</code>. The default installer leaves this extra out so core GUI and local video workflows can install cleanly on Python 3.14.</p>
 <h3 id="sam-hq-runtime-note">SAM-HQ runtime note<a class="headerlink" href="#sam-hq-runtime-note" title="Permanent link">&para;</a></h3>
 <p>The one-line installers no longer install SAM-HQ during the default GUI setup. SAM-HQ is attempted only when a SAM-related profile such as <code>--extras sam3</code> / <code>-Extras sam3</code> or <code>all</code> is selected. This keeps the default installer independent of an extra GitHub source install and makes locked-down lab workstations easier to bootstrap.</p>
+<h3 id="cutie-runtime-note">Cutie runtime note<a class="headerlink" href="#cutie-runtime-note" title="Permanent link">&para;</a></h3>
+<p>The <code>cutie</code> extra installs the Python runtime packages used by Cutie tracking.
+If a minimal/default install tries to run Cutie tracking and one of those
+packages is missing, Annolid attempts to install the missing packages into the
+active environment before loading the tracker. Set
+<code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to disable that automatic repair and show
+the exact <code>python -m pip install ...</code> command instead.</p>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Stable workstation install:

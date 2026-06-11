@@ -2668,7 +2668,7 @@
 <p>Named installer profiles keep common setups reproducible:</p>
 <ul>
 <li><code>minimal</code> / <code>gui</code>: default GUI/core annotation setup</li>
-<li><code>workstation</code>: GUI plus <code>sam3,yolo,training</code></li>
+<li><code>workstation</code>: GUI plus <code>cutie,sam3,yolo,training</code></li>
 <li><code>full</code>: GUI plus the <code>all</code> extra</li>
 </ul>
 <p>Example workstation install:</p>
@@ -2723,6 +2723,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>ai_chat</code>: OpenAI-compatible and Anthropic SDKs for hosted LLM providers</li>
 <li><code>training</code>: TensorBoard support for training dashboards and projector views</li>
 <li><code>yolo</code>: Ultralytics YOLO/YOLOE workflows and tracker matching helpers</li>
+<li><code>cutie</code>: Cutie video object segmentation tracking runtime</li>
 <li><code>realtime</code>: serial and ZMQ dependencies for realtime/hardware integrations</li>
 <li><code>onnx_gpu</code>: Windows/Linux ONNX Runtime CUDA provider</li>
 <li><code>large_image</code>: TIFF/OME-TIFF metadata and optional streaming backends (<code>tifffile</code>, <code>pyvips</code>, <code>openslide-python</code>)</li>
@@ -2750,6 +2751,12 @@ feature is opened.</p>
 SAM-HQ is attempted only when a SAM-related extra such as <code>sam3</code> or the <code>all</code>
 profile is selected. This avoids a default GitHub source install on machines
 that only need the GUI/core annotation workflow.</p>
+<p>Cutie tracking is also repairable from a minimal/default install. If a user
+starts Cutie tracking and one of the Cutie runtime packages is missing, Annolid
+attempts to install the missing packages into the active environment and then
+continues loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to
+disable automatic installation and show the exact <code>python -m pip install ...</code>
+command instead.</p>
 <h3 id="note-on-large_image">Note on <code>large_image</code><a class="headerlink" href="#note-on-large_image" title="Permanent link">&para;</a></h3>
 <p><code>large_image</code> is optional. A normal <code>annolid[gui]</code> install does not require these dependencies, and Annolid's standard image/video annotation workflows continue to work without them.</p>
 <p>The <code>large_image</code> extra installs the Python packages, but some platforms also need native runtimes for the fastest backends:</p>
