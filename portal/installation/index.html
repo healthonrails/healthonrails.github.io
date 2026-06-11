@@ -2644,6 +2644,7 @@
 
 
 <h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
+<p>Packaging, installer tiers, frozen app policy, and release artifact rules are documented in <a href="../packaging/">Packaging and Distribution</a>.</p>
 <p>Annolid currently exposes two main commands after install:</p>
 <ul>
 <li><code>annolid</code>: launch the desktop GUI</li>
@@ -2668,7 +2669,7 @@
 <p>Named installer profiles keep common setups reproducible:</p>
 <ul>
 <li><code>minimal</code> / <code>gui</code>: default GUI/core annotation setup</li>
-<li><code>workstation</code>: GUI plus <code>cutie,sam3,yolo,training</code></li>
+<li><code>workstation</code>: GUI plus <code>tracking,sam3,training</code></li>
 <li><code>full</code>: GUI plus the <code>all</code> extra</li>
 </ul>
 <p>Example workstation install:</p>
@@ -2718,12 +2719,14 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <p>Useful extras currently defined in <code>pyproject.toml</code> include:</p>
 <ul>
 <li><code>gui</code>: Qt bindings for the desktop application</li>
+<li><code>ml</code>: general ML/model runtime dependencies such as PyTorch, Transformers, Hugging Face Hub, ONNX Runtime, Hydra/OmegaConf, and COCO tooling</li>
 <li><code>test</code>: dependencies needed to import and run the default test collection</li>
 <li><code>audio</code>: audio loading/playback helpers (<code>librosa</code>, <code>sounddevice</code>)</li>
 <li><code>ai_chat</code>: OpenAI-compatible and Anthropic SDKs for hosted LLM providers</li>
 <li><code>training</code>: TensorBoard support for training dashboards and projector views</li>
 <li><code>yolo</code>: Ultralytics YOLO/YOLOE workflows and tracker matching helpers</li>
 <li><code>cutie</code>: Cutie video object segmentation tracking runtime</li>
+<li><code>tracking</code>: common tracking workstation runtime, including PyTorch, ONNX Runtime, Cutie-style config dependencies, and YOLO matching helpers</li>
 <li><code>realtime</code>: serial and ZMQ dependencies for realtime/hardware integrations</li>
 <li><code>onnx_gpu</code>: Windows/Linux ONNX Runtime CUDA provider</li>
 <li><code>large_image</code>: TIFF/OME-TIFF metadata and optional streaming backends (<code>tifffile</code>, <code>pyvips</code>, <code>openslide-python</code>)</li>
@@ -2735,6 +2738,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>cowtracker</code>: CowTracker backend dependency</li>
 <li><code>remote_video</code>: network/remote video decoding through <code>ffpyplayer</code></li>
 <li><code>annolid_bot</code>: Annolid Bot integrations such as MCP, Playwright, WhatsApp bridge support, and Google Drive/Calendar dependencies</li>
+<li><code>bot</code>: Annolid Bot integrations plus memory dependencies</li>
 <li><code>memory</code>: vector database dependencies for fast Annolid Bot memory</li>
 <li><code>all</code>: convenience profile for full-feature workstations</li>
 </ul>
@@ -2742,11 +2746,13 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,sam3,yolo,training,ai_chat]&quot;</span>
 </code></pre></div>
 <p>Annolid follows the same practical split used by mature annotation tools:
-the default install keeps annotation, local video, tracking, and ONNX CPU paths
-usable, while cloud providers, YOLO, audio, realtime hardware, large-image
-backends, and heavyweight integrations are explicit extras. If a feature is
-not installed, Annolid should start normally and show an install hint when that
-feature is opened.</p>
+the base <code>annolid</code> package is the core tier, and <code>annolid[gui]</code> is the default
+desktop tier. The default installer keeps GUI annotation and local video setup
+usable while model-heavy runtimes such as PyTorch, Transformers, YOLO,
+SAM-related packages, Cutie dependencies, hosted AI providers, realtime
+hardware, large-image backends, and Bot integrations are explicit extras. If a
+feature is not installed, Annolid should start normally and show an install
+hint when that feature is opened.</p>
 <p>The one-line installers also keep optional SAM-HQ out of the default path.
 SAM-HQ is attempted only when a SAM-related extra such as <code>sam3</code> or the <code>all</code>
 profile is selected. This avoids a default GitHub source install on machines
