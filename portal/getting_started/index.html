@@ -788,6 +788,8 @@
       
         
       
+        
+      
     
     
     
@@ -1122,6 +1124,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tutorials/tcn_behavior_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCN Behavior Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/realtime_wireless_camera_detection/" class="md-nav__link">
         
   
@@ -1130,6 +1160,34 @@
     
   
     Realtime Wireless Camera Detection (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/multi_camera_realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Camera Realtime Detection
   
 
     
@@ -1458,34 +1516,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../sam3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SAM3
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1522,6 +1552,8 @@
   
     
     
+      
+        
       
         
       
@@ -1631,6 +1663,34 @@
     
   
     Agent CLI with annolid-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Box Integration
   
 
     
@@ -1868,6 +1928,8 @@
       
         
       
+        
+      
     
     
     
@@ -1958,6 +2020,34 @@
     
   
     Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging and Distribution
   
 
     
@@ -2510,7 +2600,7 @@
 
 
 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>Use this page as the fastest path from install to a working Annolid session.</p>
+<p>Use this page as the fastest path from installation to a verified Annolid session. The goal is not to finish a full project in one pass; it is to prove that your environment opens videos, saves annotations, and can run the command-line tools you will need later.</p>
 <h2 id="20-minute-path">20-Minute Path<a class="headerlink" href="#20-minute-path" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Install Annolid with your preferred method from <a href="../installation/">Installation</a>.</li>
@@ -2523,7 +2613,7 @@
 <li>Run tracking/propagation and review identity consistency.</li>
 <li>Export results for downstream analysis.</li>
 </ol>
-<p>If this flow works, your environment is ready for full projects.</p>
+<p>If this flow works, your environment is ready for full projects. If it fails, keep the video short and resolve the installation or codec issue before scaling to long recordings.</p>
 <h2 id="quick-environment-check">Quick Environment Check<a class="headerlink" href="#quick-environment-check" title="Permanent link">&para;</a></h2>
 <p>Recommended development setup in this repository:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11
@@ -2534,14 +2624,15 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 <div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
 annolid-run<span class="w"> </span>list-models
 </code></pre></div>
+<p>For a user install that does not need source editing, prefer the one-line installer or the <code>pip install "annolid[gui]"</code> path in <a href="../installation/">Installation</a>.</p>
 <h2 id="first-gui-session-checklist">First GUI Session Checklist<a class="headerlink" href="#first-gui-session-checklist" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Open video</li>
-<li>Pick representative frame</li>
-<li>Add labels/shapes/keypoints</li>
-<li>Track forward/backward</li>
-<li>Fix errors early (occlusion, swaps, overlap)</li>
-<li>Save and export</li>
+<li>Open a short video.</li>
+<li>Pick a representative seed frame.</li>
+<li>Add labels, polygons, boxes, keypoints, zones, or behavior flags as needed.</li>
+<li>Track or propagate forward/backward from the seed frame.</li>
+<li>Review overlap, occlusion, swaps, and high-motion sections early.</li>
+<li>Save LabelMe-compatible JSON files and export any analysis CSVs you need.</li>
 </ul>
 <p>See <a href="../workflows/">Workflows</a> for detailed operating patterns.</p>
 <h2 id="first-cli-session-checklist">First CLI Session Checklist<a class="headerlink" href="#first-cli-session-checklist" title="Permanent link">&para;</a></h2>
@@ -2559,6 +2650,9 @@ before the full option list.</p>
 <code>annolid_run</code> path described in <a href="../agent_annolid_run/">Annolid Agent and annolid-run</a>.</p>
 <h2 id="optional-next-layers">Optional Next Layers<a class="headerlink" href="#optional-next-layers" title="Permanent link">&para;</a></h2>
 <ul>
+<li>Zone analysis and assay summaries: <a href="../zone_analysis/">Zone Analysis</a></li>
+<li>TAPNext ONNX point tracking: <a href="../tapnext/">TAPNext ONNX Point Tracking</a></li>
+<li>SAM3 tracking and correction: <a href="../sam3/">SAM3</a></li>
 <li>Memory subsystem for reusable context: <a href="../memory/">Memory Subsystem</a></li>
 <li>Agent integrations and MCP tools: <a href="../mcp/">MCP</a></li>
 <li>Security hardening for agents/secrets: <a href="../agent_security/">Agent Security</a></li>
@@ -2570,6 +2664,7 @@ before the full option list.</p>
 <li><code>qtpy.QtBindingsNotFoundError</code>: install with <code>.[gui]</code> extra.</li>
 <li>Missing codecs or video issues: install FFmpeg for your platform.</li>
 <li>Plugin/model command errors: check active environment and run <code>annolid-run --help</code>.</li>
+<li>Model downloads fail on first use: keep the exact traceback and retry from the active environment; many model paths download into <code>~/.annolid/workspace/downloads/</code>.</li>
 </ul>
 
 

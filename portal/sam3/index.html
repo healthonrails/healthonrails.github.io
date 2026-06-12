@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://annolid.com/sam3/">
       
       
-        <link rel="prev" href="./">
+        <link rel="prev" href="../tutorials/sandboxed_shell/">
       
       
         <link rel="next" href="../sam3d/">
@@ -674,6 +674,8 @@
       
         
       
+        
+      
     
     
     
@@ -1009,6 +1011,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tutorials/tcn_behavior_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCN Behavior Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/realtime_wireless_camera_detection/" class="md-nav__link">
         
   
@@ -1017,6 +1047,34 @@
     
   
     Realtime Wireless Camera Detection (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/multi_camera_realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Camera Realtime Detection
   
 
     
@@ -1643,335 +1701,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SAM3
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SAM3
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-annolid-uses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Annolid uses
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#input-modes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Input modes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#annolid-bot-workflow-for-long-videos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Annolid Bot workflow for long videos
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Annolid Bot workflow for long videos">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#output-artifacts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output artifacts
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#choosing-the-right-tool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing the right tool
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gui-slash-track" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GUI slash track
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prompt-transaction-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prompt transaction model
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#multi-object-prompt-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multi-object prompt identity
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windowed-inference-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Windowed inference behavior
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#device-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Device policy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#output-files" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Output files
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#runtime-knobs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runtime knobs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-session-controls-gui" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interactive session controls (GUI)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-missing-dependency-error" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Missing dependency error
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-device-mismatch-errors-cuda-vs-cpu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Device mismatch errors (cuda vs cpu)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-malformed-per-frame-json-expecting-value" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) Malformed per-frame JSON (Expecting value ...)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-window-boundary-frame-drop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) Window-boundary frame drop
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-annolid-bot-run-succeeds-but-the-summary-file-is-missing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) Annolid Bot run succeeds but the summary file is missing
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#debug-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Debug checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-docs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related docs
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -2011,6 +1740,8 @@
   
     
     
+      
+        
       
         
       
@@ -2120,6 +1851,34 @@
     
   
     Agent CLI with annolid-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Box Integration
   
 
     
@@ -2357,6 +2116,8 @@
       
         
       
+        
+      
     
     
     
@@ -2447,6 +2208,34 @@
     
   
     Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging and Distribution
   
 
     

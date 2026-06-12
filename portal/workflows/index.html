@@ -674,6 +674,8 @@
       
         
       
+        
+      
     
     
     
@@ -787,6 +789,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Selection
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#1-standard-gui-video-workflow" class="md-nav__link">
@@ -1172,6 +1185,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../tutorials/tcn_behavior_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCN Behavior Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/realtime_wireless_camera_detection/" class="md-nav__link">
         
   
@@ -1180,6 +1221,34 @@
     
   
     Realtime Wireless Camera Detection (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/multi_camera_realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Camera Realtime Detection
   
 
     
@@ -1508,34 +1577,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../sam3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    SAM3
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../sam3d/" class="md-nav__link">
         
   
@@ -1572,6 +1613,8 @@
   
     
     
+      
+        
       
         
       
@@ -1681,6 +1724,34 @@
     
   
     Agent CLI with annolid-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Box Integration
   
 
     
@@ -1918,6 +1989,8 @@
       
         
       
+        
+      
     
     
     
@@ -2008,6 +2081,34 @@
     
   
     Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging and Distribution
   
 
     
@@ -2413,6 +2514,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#workflow-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Selection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#1-standard-gui-video-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2610,7 +2722,42 @@
 
 
 <h1 id="workflows">Workflows<a class="headerlink" href="#workflows" title="Permanent link">&para;</a></h1>
-<p>This page summarizes the main workflows that are supported by the current Annolid codebase.</p>
+<p>This page summarizes the main workflows supported by Annolid today. Start with the standard GUI workflow unless you already know you need a CLI, agent, or specialized model path.</p>
+<h2 id="workflow-selection">Workflow Selection<a class="headerlink" href="#workflow-selection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Start Here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Label and track animals in a video</td>
+<td><a href="#1-standard-gui-video-workflow">Standard GUI Video Workflow</a></td>
+</tr>
+<tr>
+<td>Run model training, prediction, or evaluation from scripts</td>
+<td><a href="#3-cli-model-workflow">CLI Model Workflow</a></td>
+</tr>
+<tr>
+<td>Score behavior events or time budgets</td>
+<td><a href="#4-behavior-analysis-workflow">Behavior Analysis Workflow</a></td>
+</tr>
+<tr>
+<td>Repair identity switches after tracking</td>
+<td><a href="#identity-repair-workflow">Identity Repair Workflow</a></td>
+</tr>
+<tr>
+<td>Use Annolid Bot or external tools</td>
+<td><a href="#2-annolid-bot-workflow">Annolid Bot Workflow</a></td>
+</tr>
+<tr>
+<td>Estimate depth or build 3D outputs</td>
+<td><a href="#5-depth-workflow">Depth Workflow</a> and <a href="#6-optional-3d-workflows">Optional 3D Workflows</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="1-standard-gui-video-workflow">1. Standard GUI Video Workflow<a class="headerlink" href="#1-standard-gui-video-workflow" title="Permanent link">&para;</a></h2>
 <p>This remains the core Annolid path for most users.</p>
 <ol>
@@ -2626,11 +2773,13 @@
 <ul>
 <li>Direct video labeling is supported; frame extraction is optional, not mandatory.</li>
 <li>Use stable instance labels when cross-frame identity matters.</li>
+<li>Save early and often; the LabelMe-compatible JSON files are the reviewable project contract.</li>
 <li>When using shape propagation, <code>Rename &amp; Propagate</code> can switch a selected
   shape to another existing shape label from the dialog. If two shapes with
   different labels are selected, Annolid swaps those labels across the
   propagation range instead of renaming both identities to one label.</li>
 <li>Review overlap, occlusion, and high-motion segments before scaling to long runs.</li>
+<li>Validate a small representative segment before committing compute time to an entire recording.</li>
 </ul>
 <h2 id="2-annolid-bot-workflow">2. Annolid Bot Workflow<a class="headerlink" href="#2-annolid-bot-workflow" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot runs inside the GUI as a dedicated right-side dock.</p>
@@ -2644,6 +2793,7 @@
 <li>Box file operations through natural-language requests such as listing, searching, downloading, or uploading project files,</li>
 <li>draft-and-send support for configured Zulip targets from the bot UI.</li>
 </ul>
+<p>Install optional Bot dependencies only when you need them. See <a href="../installation/">Installation</a> for the <code>annolid_bot</code>, <code>bot</code>, <code>ai_chat</code>, and related extras.</p>
 <p>When you use background integrations such as Zulip, WhatsApp, calendar services, or Box, the agent config is loaded from the Annolid agent config path, not the LLM settings file.</p>
 <p>For Google Calendar, Annolid now prefers an existing cached token by default. If you want the agent to perform first-run OAuth authorization, set <code>tools.google_auth.allowInteractiveAuth=true</code> explicitly in the agent config and run that flow from an interactive session.</p>
 <p>For Box, you can bootstrap OAuth with <code>agent-box-auth-url</code> and <code>agent-box-auth-exchange</code>; when Box uses an org-specific auth host, pass <code>--authorize-base-url</code> such as <code>https://ent.box.com</code> or <code>https://my_org_xxx.account.box.com</code>. The GUI also exposes editable Box auth fields for the same settings, including client secret, suggests <code>http://localhost:8765/oauth/callback</code> as the local redirect URI, persists the callback URL across sessions, and starts a temporary local callback listener so Box does not bounce the browser to a dead <code>localhost</code> page. Use <code>http://</code> for local redirects; <code>https://localhost/...</code> will not work with the local listener. When <code>tools.box.auto_refresh=true</code>, the Box tool will refresh expired access tokens using <code>tools.box.refresh_token</code>.</p>
@@ -2674,6 +2824,12 @@ annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> 
 <p>If you want the GUI agent to perform read-only CLI inspection or explicitly
 invoke Annolid-native commands, use the dedicated typed tool flow described in
 <a href="../agent_annolid_run/">Annolid Agent and annolid-run</a>.</p>
+<p>Recommended practice:</p>
+<ul>
+<li>Run <code>annolid-run help &lt;command&gt; &lt;model&gt;</code> before a new job.</li>
+<li>Keep run configs under version control for repeated studies.</li>
+<li>Validate on a small dataset split before scaling training or inference.</li>
+</ul>
 <h2 id="4-behavior-analysis-workflow">4. Behavior Analysis Workflow<a class="headerlink" href="#4-behavior-analysis-workflow" title="Permanent link">&para;</a></h2>
 <p>For behavior-centric projects, a typical path is:</p>
 <ol>
@@ -2744,6 +2900,7 @@ centroid, perimeter, and <code>&lt;shape_label&gt;_motion_index</code> columns w
 <li>apply corrections and regenerate downstream summaries.</li>
 </ol>
 <p>See <a href="../identity_governor/">Identity Governor</a>.</p>
+<p>Dry-run the policy first. Review the generated correction report before applying changes to downstream analysis files.</p>
 <h2 id="5-depth-workflow">5. Depth Workflow<a class="headerlink" href="#5-depth-workflow" title="Permanent link">&para;</a></h2>
 <p>The current GUI includes Video Depth Anything integration.</p>
 <p>Use:</p>
@@ -2779,10 +2936,11 @@ annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span c
 <p>See <a href="../simulation_flybody/">Simulation and FlyBody</a>.</p>
 <h2 id="recommended-operating-pattern">Recommended Operating Pattern<a class="headerlink" href="#recommended-operating-pattern" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Keep changes incremental.</li>
+<li>Keep annotation and model changes incremental.</li>
 <li>Prefer short label -&gt; run -&gt; review loops.</li>
 <li>Treat on-disk annotation files as the contract.</li>
 <li>Validate new model workflows on a small subset before scaling to a full dataset.</li>
+<li>Record model weights, run configs, prompts, and exported CSV locations with the project so results can be reproduced later.</li>
 </ul>
 
 
