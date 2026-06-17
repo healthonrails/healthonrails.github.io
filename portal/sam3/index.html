@@ -3165,7 +3165,8 @@ model.</p>
 <li>Reads frames from the source video timeline when input is an <code>.mp4</code>.</li>
 <li>Streams overlapping windows sequentially from the video instead of seeking back to each window start.</li>
 <li>Reuses the temporary window frame directory and only trims stale tail files between windows.</li>
-<li>Chooses larger default windows automatically for long CPU/CUDA runs when the user did not override <code>window_size</code> or <code>stride</code>.</li>
+<li>Chooses larger default windows automatically for long CPU/CUDA runs when <code>window_size</code> and <code>stride</code> are not configured.</li>
+<li>Uses the configured <code>window_size</code> and <code>stride</code> exactly when you set them from the GUI config, advanced parameters, or bot/tool arguments.</li>
 <li>Uses overlapping windows by default (<code>stride = window_size - 1</code>) for boundary robustness.</li>
 <li>Carries visual prompt boxes from nearest neighbor mask frames across windows.</li>
 <li>Reacquires missed frames with visual+text prompts after the primary pass.</li>
