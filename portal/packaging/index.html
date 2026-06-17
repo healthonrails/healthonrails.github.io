@@ -2009,6 +2009,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#desktop-bundle-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Bundle Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-runtime-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2486,6 +2497,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#desktop-bundle-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Bundle Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#optional-runtime-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2702,6 +2724,18 @@
 </table>
 <p>The default profile is <code>gui</code>. SAM-HQ is attempted only when a SAM-related extra such as <code>sam</code>, <code>sam3</code>, <code>segment_anything</code>, or <code>all</code> is selected. This keeps default installs independent of optional GitHub source installs.</p>
 <p>Each successful installer run writes <code>annolid-install-report.json</code> in the install directory. The report includes the selected profile, resolved extras, Python version, OS, architecture, package manager, GPU decision, ONNX Runtime providers, SAM-HQ status, and failed optional steps.</p>
+<h2 id="desktop-bundle-contract">Desktop Bundle Contract<a class="headerlink" href="#desktop-bundle-contract" title="Permanent link">&para;</a></h2>
+<p>The frozen desktop archives are intentionally lean Unix-style annotation
+bundles. Current release binaries are built for macOS and Linux only, and their
+baseline contract is opening media/annotations and drawing/editing polygons.
+They must not bundle ML frameworks, training stacks, model checkpoints,
+generated runs, or optional service clients.</p>
+<p>When a user opens a model, tracking, bot, large-image, remote-video, or other
+optional workflow, Annolid checks that workflow's runtime at the boundary where
+the feature is launched. In a normal Python environment, missing optional
+packages may be installed into that active environment. In a frozen desktop
+bundle, Annolid reports the missing imports and the matching <code>pip install</code>
+command instead of mutating the bundle.</p>
 <h2 id="optional-runtime-behavior">Optional Runtime Behavior<a class="headerlink" href="#optional-runtime-behavior" title="Permanent link">&para;</a></h2>
 <p>Frozen apps and lean installs intentionally exclude heavy optional runtimes. Code that opens optional workflows should use the central capability checker in <code>annolid.infrastructure.capabilities</code> to report:</p>
 <ul>
@@ -2710,7 +2744,14 @@
 <li>the exact install command,</li>
 <li>and the documentation link.</li>
 </ul>
-<p>Cutie tracking also has first-use dependency repair. If Cutie packages are missing and <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS</code> is not disabled, Annolid attempts to install the required packages into the active environment before loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to make the workflow fail fast with an install command instead.</p>
+<p>Optional runtime repair is controlled by <code>ANNOLID_AUTO_INSTALL_OPTIONAL_DEPS</code>.
+Set <code>ANNOLID_AUTO_INSTALL_OPTIONAL_DEPS=0</code> to make optional workflows fail fast
+with an install command instead of trying to install missing packages.</p>
+<p>Cutie tracking keeps its narrower compatibility switch as well. If Cutie
+packages are missing and <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS</code> is not disabled,
+Annolid attempts to install the required packages into the active environment
+before loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to make the
+workflow fail fast with an install command instead.</p>
 <h2 id="artifact-policy">Artifact Policy<a class="headerlink" href="#artifact-policy" title="Permanent link">&para;</a></h2>
 <p>Source distributions, wheels, PyInstaller folders, and final release archives must not include local checkpoints, model weights, generated runs, or heavyweight optional runtimes. The shared guard is:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>scripts/check_distribution_artifacts.py<span class="w"> </span>dist/*
@@ -2721,7 +2762,6 @@ python<span class="w"> </span>scripts/check_distribution_artifacts.py<span class
 <p>Current GitHub release binaries are PyInstaller onedir archives:</p>
 <ul>
 <li>macOS: <code>Annolid-macOS.zip</code></li>
-<li>Windows: <code>Annolid-Windows.zip</code></li>
 <li>Linux: <code>Annolid-Linux.tar.gz</code></li>
 </ul>
 <p>Each archive is uploaded with:</p>
@@ -2733,7 +2773,8 @@ python<span class="w"> </span>scripts/check_distribution_artifacts.py<span class
 <p>Signing and native installer packaging are staged but not yet treated as complete:</p>
 <ul>
 <li>macOS target: signed <code>.app</code>, notarized <code>.dmg</code>, with an explicit arm64/x86_64 or universal binary decision.</li>
-<li>Windows target: signed <code>.msi</code> or MSIX, plus zip fallback.</li>
+<li>Windows target: source/venv installation remains supported, but frozen
+  Windows desktop archives are not published by the current release workflow.</li>
 <li>Linux target: AppImage first, then <code>.deb</code>/<code>.rpm</code> if demand justifies maintaining native packages.</li>
 </ul>
 <p>Until signing identities and native packaging jobs are configured, release manifests mark CI-built desktop archives as <code>unsigned-ci-build</code>.</p>
