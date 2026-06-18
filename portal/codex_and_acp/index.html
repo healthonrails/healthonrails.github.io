@@ -3047,6 +3047,10 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 <li>supports long-lived coding workflows over stdio.</li>
 </ul>
 <p>Annolid also bounds idle ACP client sessions so a long-running IDE process does not grow an unbounded in-memory session map.</p>
+<p>ACP session workspaces are bounded by the bridge workspace. Client <code>cwd</code> and
+<code>sessions.spawn.workspace</code> values may be the bridge root or a subdirectory under
+it; paths outside that root are rejected. Launch the bridge at the repository or
+parent workspace that should be available to the external client.</p>
 <h2 id="example-ide-launch-pattern">Example IDE Launch Pattern<a class="headerlink" href="#example-ide-launch-pattern" title="Permanent link">&para;</a></h2>
 <p>If your editor supports custom stdio agent servers, the command usually looks like:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent<span class="w"> </span>acp<span class="w"> </span>bridge<span class="w"> </span>--workspace<span class="w"> </span>/absolute/path/to/repo
