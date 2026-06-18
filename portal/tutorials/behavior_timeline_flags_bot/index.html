@@ -2944,6 +2944,11 @@
 <p>You can also provide explicit labels:</p>
 <div class="highlight"><pre><span></span><code>Label behavior in /path/to/video.mp4 with labels grooming, rearing, walking every 1s
 </code></pre></div>
+<p>Explicit labels may be comma-, semicolon-, or newline-separated. Annolid trims
+duplicates and accepts case, space, hyphen, and underscore variants in model
+responses. The reserved label <code>no_behavior</code> is not written as a timeline
+behavior; it marks a reviewed segment where none of the listed behaviors is
+clearly visible.</p>
 <p>What Annolid writes:</p>
 <ul>
 <li>timeline intervals per segment label,</li>
