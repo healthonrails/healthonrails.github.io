@@ -676,6 +676,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -863,6 +867,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#viewer-status-and-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewer status and layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -969,6 +984,34 @@
     
   
     Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_depth_anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Depth Anything
   
 
     
@@ -1361,6 +1404,34 @@
     
   
     TAPNext ONNX Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cowtracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoWTracker Point Tracking
   
 
     
@@ -2558,6 +2629,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#viewer-status-and-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Viewer status and layers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#quick-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2772,6 +2854,9 @@
 </ul>
 <p>Large, flat TIFF files still work, but pyramidal or tiled TIFF files remain the best format for repeated zoom-and-pan workflows.</p>
 <p>If <code>pyvips</code> is available, you can now choose <code>File -&gt; Optimize Large TIFF for Fast Viewing...</code> to build a pyramidal cached TIFF. Annolid can reuse that optimized cache on later opens while keeping your original image path as the project source.</p>
+<p>When Annolid opens a large TIFF, it reports which backend it used. If it reports
+<code>tifffile</code> for a very large file, installing the native <code>libvips</code> or OpenSlide
+runtime can improve pan and zoom responsiveness.</p>
 <p>Annolid also includes basic cache management for this workflow:</p>
 <ul>
 <li><code>File -&gt; Large TIFF Cache Info...</code> shows the cache folder, current cache path, and total disk usage.</li>
@@ -2781,6 +2866,14 @@
 <li><code>File -&gt; Clear All TIFF Caches...</code> removes every optimized TIFF cache created by Annolid.</li>
 </ul>
 <p>Annolid also prunes old optimized TIFF caches automatically after creating a new one. The newest cache is kept, and older caches are removed only when the cache grows beyond the configured size/count limit.</p>
+<h2 id="viewer-status-and-layers">Viewer status and layers<a class="headerlink" href="#viewer-status-and-layers" title="Permanent link">&para;</a></h2>
+<p>During large-image work, Annolid keeps the status bar minimal so it mainly
+carries page controls. Backend, page, zoom, tile, cache, and mode information
+are shown in the tiled viewer's debug/status overlay instead.</p>
+<p>Large TIFF sessions also expose a unified <code>Layers</code> dock built from the shared
+large-image layer model. Use it to inspect and toggle label-image overlays,
+vector overlays, and manual annotations from one place instead of only through
+specialized overlay actions.</p>
 <h2 id="quick-workflow">Quick workflow<a class="headerlink" href="#quick-workflow" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open Annolid.</li>
