@@ -3032,7 +3032,9 @@ prompt context, and run the same resumable segment-labeling workflow.</p>
 <p>The GUI now includes <strong>AI &amp; Models → Draft Research Paper with Swarm…</strong>, which opens Annolid Bot with a prefilled prompt that invokes <code>draft_paper_swarm</code>.</p>
 <ul>
 <li>If a PDF is open, the launcher passes the current PDF title and path into the prompt so the swarm can ground the draft in the active paper.</li>
-<li>The prompt asks the bot to search literature first when needed, then draft a structured paper with outline, sections, and citations.</li>
+<li>The bot can build a <code>build_research_packet</code> preflight first. The packet combines collected literature, novelty risk, a manuscript review rubric, writing checklist, and guardrails against fabricated citations or numbers.</li>
+<li><code>draft_paper_swarm</code> searches literature by default, passes the collected references into the swarm, and adds the research packet guardrails to the drafting task. Set <code>max_literature_results=0</code> only when you intentionally want to skip search.</li>
+<li>Use <code>assess_paper_draft</code> on generated markdown to flag placeholder text, missing manuscript sections, weak citation coverage, and numeric-claim risk before treating the draft as paper-ready.</li>
 <li>This is a thin GUI entry point over the same swarm-backed paper drafting workflow used by the agent tools.</li>
 </ul>
 <h2 id="citation-integrity-workflow">Citation Integrity Workflow<a class="headerlink" href="#citation-integrity-workflow" title="Permanent link">&para;</a></h2>
