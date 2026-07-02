@@ -1325,10 +1325,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-stop-when-an-animal-is-lost" class="md-nav__link">
+  <a href="#10-repair-id-switches-with-manual-seed-frames" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Stop When an Animal Is Lost
+        10. Repair ID Switches With Manual Seed Frames
       
     </span>
   </a>
@@ -1336,10 +1336,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-repair-missing-sections-without-starting-over" class="md-nav__link">
+  <a href="#11-stop-when-an-animal-is-lost" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Repair Missing Sections Without Starting Over
+        11. Stop When an Animal Is Lost
       
     </span>
   </a>
@@ -1347,10 +1347,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-overnight-runs-and-computer-sleep" class="md-nav__link">
+  <a href="#12-repair-missing-sections-without-starting-over" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Overnight Runs and Computer Sleep
+        12. Repair Missing Sections Without Starting Over
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-overnight-runs-and-computer-sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Overnight Runs and Computer Sleep
       
     </span>
   </a>
@@ -1559,7 +1570,7 @@
   <span class="md-ellipsis">
     
   
-    Identity Governor Workflow
+    Identity Repair and Governor
   
 
     
@@ -2460,7 +2471,7 @@
   <span class="md-ellipsis">
     
   
-    Identity Governor Workflow
+    Identity Repair and Governor
   
 
     
@@ -2711,10 +2722,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#10-stop-when-an-animal-is-lost" class="md-nav__link">
+  <a href="#10-repair-id-switches-with-manual-seed-frames" class="md-nav__link">
     <span class="md-ellipsis">
       
-        10. Stop When an Animal Is Lost
+        10. Repair ID Switches With Manual Seed Frames
       
     </span>
   </a>
@@ -2722,10 +2733,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-repair-missing-sections-without-starting-over" class="md-nav__link">
+  <a href="#11-stop-when-an-animal-is-lost" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Repair Missing Sections Without Starting Over
+        11. Stop When an Animal Is Lost
       
     </span>
   </a>
@@ -2733,10 +2744,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#12-overnight-runs-and-computer-sleep" class="md-nav__link">
+  <a href="#12-repair-missing-sections-without-starting-over" class="md-nav__link">
     <span class="md-ellipsis">
       
-        12. Overnight Runs and Computer Sleep
+        12. Repair Missing Sections Without Starting Over
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-overnight-runs-and-computer-sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Overnight Runs and Computer Sleep
       
     </span>
   </a>
@@ -2925,7 +2947,30 @@
 <li>Run <strong>Track All</strong> again to regenerate tracking from your existing manual labels.</li>
 </ol>
 <p>If you only need to retrack one video, load that video directly from the toolbar/Video Manager and run tracking for that video only. This avoids reprocessing videos that are already correct.</p>
-<h2 id="10-stop-when-an-animal-is-lost">10. Stop When an Animal Is Lost<a class="headerlink" href="#10-stop-when-an-animal-is-lost" title="Permanent link">&para;</a></h2>
+<h2 id="10-repair-id-switches-with-manual-seed-frames">10. Repair ID Switches With Manual Seed Frames<a class="headerlink" href="#10-repair-id-switches-with-manual-seed-frames" title="Permanent link">&para;</a></h2>
+<p>For CUTIE ID switches, the recommended workflow is to insert a corrected manual
+seed frame and run CUTIE forward from that point, either for a short window or to
+the next corrected seed/end of video.</p>
+<p>Use this when one animal takes another animal's label after overlap, crossing, or
+occlusion:</p>
+<ol>
+<li>Find the first frame where the IDs are wrong.</li>
+<li>Correct the polygons/labels on that frame and save the frame. Annolid writes a
+   PNG+JSON pair, which CUTIE treats as a manual seed.</li>
+<li>Rerun CUTIE from that corrected frame, or define a segment/window ending before
+   the next already-correct section.</li>
+<li>Review the next crossing. If another switch occurs, add another corrected seed
+   frame and rerun from there.</li>
+</ol>
+<p>Manual seed frames supersede automatic prediction. During a rerun, Annolid does
+not overwrite frames that already have saved annotations, and CUTIE builds
+tracking windows from one seed to the frame before the next seed. This means you
+can also pre-label several difficult frames before running tracking; each saved
+manual frame becomes a reset point for the following window.</p>
+<p>This is the practical "identity repair workflow" for most home-cage CUTIE ID
+switches. It is not a separate model or a separate correction algorithm; it is a
+productive way to use the existing save/retrack tools.</p>
+<h2 id="11-stop-when-an-animal-is-lost">11. Stop When an Animal Is Lost<a class="headerlink" href="#11-stop-when-an-animal-is-lost" title="Permanent link">&para;</a></h2>
 <p>To make CUTIE tracking stop when an expected animal disappears:</p>
 <ol>
 <li>Open <strong>Advanced Parameters</strong> before starting tracking.</li>
@@ -2936,23 +2981,39 @@
 seeded instances. If a seeded animal is missing from the prediction output,
 tracking pauses at that frame so you can review the image, correct or add the
 missing instance, save the annotation, and continue from that point.</p>
+<p>If CUTIE missing-instance recovery is enabled, Annolid may first try to recover
+the missing mask from a recent complete frame or a recent instance mask. Recovered
+frames are still worth reviewing; the later Temporal continuity repair can audit
+those recovery notes and fix label/ID continuity if the mask comes back with the
+wrong identity.</p>
 <p>This is a tracking safety check, not a biological event detector. It detects
 missing tracked instances in the annotation output. It does not prove the animal
 left the arena or became invisible for a specific scientific reason.</p>
 <p>Do not use <code>T_max</code> for this purpose. <code>T_max</code> controls tracker memory/window
 behavior; it is not the "stop when lost" setting.</p>
-<h2 id="11-repair-missing-sections-without-starting-over">11. Repair Missing Sections Without Starting Over<a class="headerlink" href="#11-repair-missing-sections-without-starting-over" title="Permanent link">&para;</a></h2>
+<h2 id="12-repair-missing-sections-without-starting-over">12. Repair Missing Sections Without Starting Over<a class="headerlink" href="#12-repair-missing-sections-without-starting-over" title="Permanent link">&para;</a></h2>
 <p>You usually do not need to delete all predictions and start over if only a few
 sections are missing.</p>
 <p>Use one of these workflows:</p>
 <ul>
 <li>If tracking paused at the first bad frame, correct the missing animal on that
   frame, save the annotation, then continue tracking from there.</li>
+<li>If IDs switch after crossing or occlusion, use the manual seed-frame workflow
+  above first. It gives CUTIE a new ground-truth starting point and is usually the
+  most reliable correction.</li>
 <li>If the saved NDJSON has empty frames, use Annolid Bot tracking correction with
   <code>replace_only_empty_shapes=true</code> to fill only frames that currently have no
   shapes.</li>
-<li>If the problem is a short occlusion gap or likely ID switch, use temporal
-  repair with <code>temporal_repair=true</code>, <code>expected_instance_count</code>,
+<li>If the problem is a short occlusion gap or likely ID switch in CUTIE frame
+  JSON output, open <strong>Video Tools -&gt; Identity Governor...</strong>, choose
+  <strong>Temporal continuity</strong>, and tune <code>expected_instance_count</code>, <code>max_gap_frames</code>,
+  and <code>max_match_distance</code>. This repair pass uses multi-cue temporal assignment:
+  centroid motion, constant-velocity prediction, motion-compensated shape
+  overlap, area, and orientation when polygon geometry is available. Its report
+  also flags duplicate IDs, missing expected IDs, unexpected IDs, implausible
+  jumps, and CUTIE recovery/fallback notes.</li>
+<li>If the problem is in an NDJSON correction workflow, use Annolid Bot tracking
+  correction with <code>temporal_repair=true</code>, <code>expected_instance_count</code>,
   <code>max_gap_frames</code>, and <code>max_match_distance</code>.</li>
 <li>If drift or identity corruption is widespread, do a full retrack using the
   cleanup steps in the previous section.</li>
@@ -2961,7 +3022,7 @@ sections are missing.</p>
 <a href="../tracking_correction_with_sam3_bot/">Tracking Correction with SAM3 Bot</a>. Write
 repairs to a new NDJSON first, review the result, then replace the original only
 after the corrected file is verified.</p>
-<h2 id="12-overnight-runs-and-computer-sleep">12. Overnight Runs and Computer Sleep<a class="headerlink" href="#12-overnight-runs-and-computer-sleep" title="Permanent link">&para;</a></h2>
+<h2 id="13-overnight-runs-and-computer-sleep">13. Overnight Runs and Computer Sleep<a class="headerlink" href="#13-overnight-runs-and-computer-sleep" title="Permanent link">&para;</a></h2>
 <p>Annolid does not currently wrap long tracking jobs in an operating-system sleep
 prevention command. On macOS or Windows, a sleeping computer pauses CPU/GPU work
 and can make an overnight run look like it barely progressed.</p>

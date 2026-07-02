@@ -1532,7 +1532,7 @@
   <span class="md-ellipsis">
     
   
-    Identity Governor Workflow
+    Identity Repair and Governor
   
 
     
@@ -2433,7 +2433,7 @@
   <span class="md-ellipsis">
     
   
-    Identity Governor Workflow
+    Identity Repair and Governor
   
 
     
@@ -2956,13 +2956,20 @@ centroid, perimeter, and <code>&lt;shape_label&gt;_motion_index</code> columns w
 <p>For difficult multi-animal sessions where identity can flip after overlap/occlusion:</p>
 <ol>
 <li>run tracking as usual,</li>
-<li>define a policy for your assay (distance/zone/area thresholds),</li>
-<li>run Identity Governor in dry-run mode,</li>
-<li>inspect the generated correction report,</li>
-<li>apply corrections and regenerate downstream summaries.</li>
+<li>find the first frame where an ID switch or missing-instance error appears,</li>
+<li>manually correct the labels/polygons on that frame and save it,</li>
+<li>rerun CUTIE from that corrected frame, using a short window or running to the
+   next corrected seed/end of video,</li>
+<li>repeat for later switches and regenerate downstream summaries only after the
+   tracking JSON has been reviewed.</li>
 </ol>
-<p>See <a href="../identity_governor/">Identity Governor</a>.</p>
-<p>Dry-run the policy first. Review the generated correction report before applying changes to downstream analysis files.</p>
+<p>Manual seed frames supersede automatic prediction and become new CUTIE reset
+points. If you know difficult crossing or occlusion frames ahead of time, save
+corrected manual labels at those frames before running the full tracking pass.</p>
+<p>Use <a href="../identity_governor/">Identity Governor</a> only for advanced post-processing
+cases where the IDs can be inferred from explicit assay logic or where you need a
+batch audit/report. Dry-run the policy or temporal repair first, then review the
+generated report before applying changes to downstream analysis files.</p>
 <h2 id="5-depth-workflow">5. Depth Workflow<a class="headerlink" href="#5-depth-workflow" title="Permanent link">&para;</a></h2>
 <p>The current GUI includes Video Depth Anything integration. For setup,
 checkpoint handling, output formats, and troubleshooting, see
