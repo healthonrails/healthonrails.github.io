@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://annolid.com/tutorials/Labelme_to_YOLO_class_map/">
+        <link rel="canonical" href="https://annolid.com/dinov3_keypoint_tracking/">
       
       
-        <link rel="prev" href="../../identity_governor/">
+        <link rel="prev" href="../tutorials/tracking_correction_with_sam3_bot/">
       
       
-        <link rel="next" href="../sandboxed_shell/">
+        <link rel="next" href="../tapnext/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/icon_annolid.png">
+      <link rel="icon" href="../assets/images/icon_annolid.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>LabelMe to YOLO Class Map - Annolid Docs</title>
+        <title>DINOv3 Keypoint Tracking - Annolid Docs</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#step-by-step-tutorial-from-annolid-behavior-labeling-to-a-yolo-pose-dataset" class="md-skip">
+        <a href="#dinov3-keypoint-tracking" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +96,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+    <a href=".." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
       
-  <img src="../../assets/images/icon_annolid.png" alt="logo">
+  <img src="../assets/images/icon_annolid.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LabelMe to YOLO Class Map
+              DINOv3 Keypoint Tracking
             
           </span>
         </div>
@@ -208,7 +208,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link">
         
   
   
@@ -229,7 +229,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting_started/" class="md-tabs__link">
+        <a href="../getting_started/" class="md-tabs__link">
           
   
   
@@ -253,7 +253,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../workflows/" class="md-tabs__link">
+        <a href="../workflows/" class="md-tabs__link">
           
   
   
@@ -275,7 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../agent_and_automation/" class="md-tabs__link">
+        <a href="../agent_and_automation/" class="md-tabs__link">
           
   
   
@@ -297,7 +297,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../operations/" class="md-tabs__link">
+        <a href="../operations/" class="md-tabs__link">
           
   
   
@@ -319,7 +319,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../reference/" class="md-tabs__link">
+        <a href="../reference/" class="md-tabs__link">
           
   
   
@@ -341,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../model_plugin_help/" class="md-tabs__link">
+        <a href="../model_plugin_help/" class="md-tabs__link">
           
   
   
@@ -383,9 +383,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+    <a href=".." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
       
-  <img src="../../assets/images/icon_annolid.png" alt="logo">
+  <img src="../assets/images/icon_annolid.png" alt="logo">
 
     </a>
     Annolid Docs
@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -503,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting_started/" class="md-nav__link">
+      <a href="../getting_started/" class="md-nav__link">
         
   
   
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../installation/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
@@ -559,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../install_with_uv/" class="md-nav__link">
+      <a href="../install_with_uv/" class="md-nav__link">
         
   
   
@@ -587,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../one_line_install_choices/" class="md-nav__link">
+      <a href="../one_line_install_choices/" class="md-nav__link">
         
   
   
@@ -737,7 +737,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../workflows/" class="md-nav__link">
+      <a href="../workflows/" class="md-nav__link">
         
   
   
@@ -765,7 +765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../atlas_overlay_workflow/" class="md-nav__link">
+      <a href="../atlas_overlay_workflow/" class="md-nav__link">
         
   
   
@@ -793,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../large_image_guide/" class="md-nav__link">
+      <a href="../large_image_guide/" class="md-nav__link">
         
   
   
@@ -821,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../video_depth_anything/" class="md-nav__link">
+      <a href="../video_depth_anything/" class="md-nav__link">
         
   
   
@@ -849,7 +849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../brain_3d_reconstruction/" class="md-nav__link">
+      <a href="../brain_3d_reconstruction/" class="md-nav__link">
         
   
   
@@ -877,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../simulation_flybody/" class="md-nav__link">
+      <a href="../simulation_flybody/" class="md-nav__link">
         
   
   
@@ -905,7 +905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../coco_data_flow/" class="md-nav__link">
+      <a href="../coco_data_flow/" class="md-nav__link">
         
   
   
@@ -933,7 +933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
   
   
@@ -961,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../video_downsample_workflow/" class="md-nav__link">
+      <a href="../tutorials/video_downsample_workflow/" class="md-nav__link">
         
   
   
@@ -989,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../behavior_timeline_flags_bot/" class="md-nav__link">
+      <a href="../tutorials/behavior_timeline_flags_bot/" class="md-nav__link">
         
   
   
@@ -1017,7 +1017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../polygon_tcn_video_collection/" class="md-nav__link">
+      <a href="../tutorials/polygon_tcn_video_collection/" class="md-nav__link">
         
   
   
@@ -1045,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tcn_behavior_pipeline/" class="md-nav__link">
+      <a href="../tutorials/tcn_behavior_pipeline/" class="md-nav__link">
         
   
   
@@ -1073,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../realtime_wireless_camera_detection/" class="md-nav__link">
+      <a href="../tutorials/realtime_wireless_camera_detection/" class="md-nav__link">
         
   
   
@@ -1101,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../multi_camera_realtime/" class="md-nav__link">
+      <a href="../tutorials/multi_camera_realtime/" class="md-nav__link">
         
   
   
@@ -1129,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../video_ffmpeg_processing/" class="md-nav__link">
+      <a href="../tutorials/video_ffmpeg_processing/" class="md-nav__link">
         
   
   
@@ -1157,7 +1157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../segment-based-batch-tracking/" class="md-nav__link">
+      <a href="../tutorials/segment-based-batch-tracking/" class="md-nav__link">
         
   
   
@@ -1185,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracking_correction_with_sam3_bot/" class="md-nav__link">
+      <a href="../tutorials/tracking_correction_with_sam3_bot/" class="md-nav__link">
         
   
   
@@ -1193,202 +1193,6 @@
     
   
     Tracking Correction with SAM3 Bot
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dinov3_keypoint_tracking/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    DINOv3 Keypoint Tracking
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../tapnext/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    TAPNext ONNX Point Tracking
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../cowtracker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CoWTracker Point Tracking
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../behavior_agent_user_guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Behavior Agent User Guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../draw_zones_quickstart/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Draw Zones Quickstart (GUI)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../zone_analysis_workflow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Zone Analysis Workflow
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../identity_governor/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity Repair and Governor
   
 
     
@@ -1425,7 +1229,7 @@
   <span class="md-ellipsis">
     
   
-    LabelMe to YOLO Class Map
+    DINOv3 Keypoint Tracking
   
 
     
@@ -1443,7 +1247,7 @@
   <span class="md-ellipsis">
     
   
-    LabelMe to YOLO Class Map
+    DINOv3 Keypoint Tracking
   
 
     
@@ -1469,10 +1273,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-the-workflow" class="md-nav__link">
+  <a href="#when-to-use-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview of the Workflow
+        When To Use It
       
     </span>
   </a>
@@ -1480,10 +1284,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-0-prerequisites" class="md-nav__link">
+  <a href="#what-it-tracks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 0 – Prerequisites
+        What It Tracks
       
     </span>
   </a>
@@ -1491,10 +1295,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-configure-behaviors-in-the-annolid-gui" class="md-nav__link">
+  <a href="#how-the-backend-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 – Configure Behaviors in the Annolid GUI
+        How The Backend Works
       
     </span>
   </a>
@@ -1502,10 +1306,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-label-behaviors-in-annolid" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 – Label Behaviors in Annolid
+        Requirements
       
     </span>
   </a>
@@ -1513,10 +1317,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-optional-refine-in-labelme" class="md-nav__link">
+  <a href="#choose-a-feature-backbone" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 – Optional: Refine in LabelMe
+        Choose A Feature Backbone
       
     </span>
   </a>
@@ -1524,49 +1328,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-convert-to-yolo-format" class="md-nav__link">
+  <a href="#gui-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 – Convert to YOLO Format
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4 – Convert to YOLO Format">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cli-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CLI Path
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gui-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GUI Path
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-inspect-the-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5 – Inspect the Output
+        GUI Workflow
       
     </span>
   </a>
@@ -1574,10 +1339,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-troubleshooting" class="md-nav__link">
+  <a href="#presets-and-important-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6 – Troubleshooting
+        Presets And Important Parameters
       
     </span>
   </a>
@@ -1585,10 +1350,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-next-steps" class="md-nav__link">
+  <a href="#outputs-and-review-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 7 – Next Steps
+        Outputs And Review Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-among-point-and-mask-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Among Point And Mask Backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmatic Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -1611,7 +1409,203 @@
   
   
     <li class="md-nav__item">
-      <a href="../sandboxed_shell/" class="md-nav__link">
+      <a href="../tapnext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TAPNext ONNX Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cowtracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoWTracker Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behavior_agent_user_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Agent User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Zones Quickstart (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/zone_analysis_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zone Analysis Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Repair and Governor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/Labelme_to_YOLO_class_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabelMe to YOLO Class Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/sandboxed_shell/" class="md-nav__link">
         
   
   
@@ -1639,7 +1633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sam3/" class="md-nav__link">
+      <a href="../sam3/" class="md-nav__link">
         
   
   
@@ -1667,7 +1661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sam3d/" class="md-nav__link">
+      <a href="../sam3d/" class="md-nav__link">
         
   
   
@@ -1778,7 +1772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_and_automation/" class="md-nav__link">
+      <a href="../agent_and_automation/" class="md-nav__link">
         
   
   
@@ -1806,7 +1800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_annolid_run/" class="md-nav__link">
+      <a href="../agent_annolid_run/" class="md-nav__link">
         
   
   
@@ -1834,7 +1828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_box/" class="md-nav__link">
+      <a href="../agent_box/" class="md-nav__link">
         
   
   
@@ -1862,7 +1856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mcp/" class="md-nav__link">
+      <a href="../mcp/" class="md-nav__link">
         
   
   
@@ -1890,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../codex_and_acp/" class="md-nav__link">
+      <a href="../codex_and_acp/" class="md-nav__link">
         
   
   
@@ -1918,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_calendar/" class="md-nav__link">
+      <a href="../agent_calendar/" class="md-nav__link">
         
   
   
@@ -1946,7 +1940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_workspace/" class="md-nav__link">
+      <a href="../agent_workspace/" class="md-nav__link">
         
   
   
@@ -1974,7 +1968,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_secrets/" class="md-nav__link">
+      <a href="../agent_secrets/" class="md-nav__link">
         
   
   
@@ -2002,7 +1996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../agent_security/" class="md-nav__link">
+      <a href="../agent_security/" class="md-nav__link">
         
   
   
@@ -2030,7 +2024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../memory/" class="md-nav__link">
+      <a href="../memory/" class="md-nav__link">
         
   
   
@@ -2135,7 +2129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/" class="md-nav__link">
+      <a href="../operations/" class="md-nav__link">
         
   
   
@@ -2163,7 +2157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../deployment/" class="md-nav__link">
+      <a href="../deployment/" class="md-nav__link">
         
   
   
@@ -2191,7 +2185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../packaging/" class="md-nav__link">
+      <a href="../packaging/" class="md-nav__link">
         
   
   
@@ -2219,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../migration/" class="md-nav__link">
+      <a href="../migration/" class="md-nav__link">
         
   
   
@@ -2247,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/behavior_analysis_architecture/" class="md-nav__link">
+      <a href="../architecture/behavior_analysis_architecture/" class="md-nav__link">
         
   
   
@@ -2275,7 +2269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture_layers/" class="md-nav__link">
+      <a href="../architecture_layers/" class="md-nav__link">
         
   
   
@@ -2303,7 +2297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../redirects/" class="md-nav__link">
+      <a href="../redirects/" class="md-nav__link">
         
   
   
@@ -2400,7 +2394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference/" class="md-nav__link">
+      <a href="../reference/" class="md-nav__link">
         
   
   
@@ -2428,7 +2422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../zone_analysis/" class="md-nav__link">
+      <a href="../zone_analysis/" class="md-nav__link">
         
   
   
@@ -2456,7 +2450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../identity_governor/" class="md-nav__link">
+      <a href="../identity_governor/" class="md-nav__link">
         
   
   
@@ -2549,7 +2543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../model_plugin_help/" class="md-nav__link">
+      <a href="../model_plugin_help/" class="md-nav__link">
         
   
   
@@ -2604,10 +2598,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-of-the-workflow" class="md-nav__link">
+  <a href="#when-to-use-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview of the Workflow
+        When To Use It
       
     </span>
   </a>
@@ -2615,10 +2609,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-0-prerequisites" class="md-nav__link">
+  <a href="#what-it-tracks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 0 – Prerequisites
+        What It Tracks
       
     </span>
   </a>
@@ -2626,10 +2620,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-configure-behaviors-in-the-annolid-gui" class="md-nav__link">
+  <a href="#how-the-backend-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 – Configure Behaviors in the Annolid GUI
+        How The Backend Works
       
     </span>
   </a>
@@ -2637,10 +2631,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-label-behaviors-in-annolid" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 – Label Behaviors in Annolid
+        Requirements
       
     </span>
   </a>
@@ -2648,10 +2642,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-optional-refine-in-labelme" class="md-nav__link">
+  <a href="#choose-a-feature-backbone" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 – Optional: Refine in LabelMe
+        Choose A Feature Backbone
       
     </span>
   </a>
@@ -2659,49 +2653,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-convert-to-yolo-format" class="md-nav__link">
+  <a href="#gui-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4 – Convert to YOLO Format
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4 – Convert to YOLO Format">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cli-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        CLI Path
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#gui-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GUI Path
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-inspect-the-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5 – Inspect the Output
+        GUI Workflow
       
     </span>
   </a>
@@ -2709,10 +2664,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-troubleshooting" class="md-nav__link">
+  <a href="#presets-and-important-parameters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6 – Troubleshooting
+        Presets And Important Parameters
       
     </span>
   </a>
@@ -2720,10 +2675,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-next-steps" class="md-nav__link">
+  <a href="#outputs-and-review-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 7 – Next Steps
+        Outputs And Review Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-among-point-and-mask-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Among Point And Mask Backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Programmatic Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
       
     </span>
   </a>
@@ -2755,7 +2743,7 @@
   
   
     <li class="md-path__item">
-      <a href="../.." class="md-path__link">
+      <a href=".." class="md-path__link">
         
   <span class="md-ellipsis">
     Home
@@ -2773,7 +2761,7 @@
     
     
       <li class="md-path__item">
-        <a href="../../workflows/" class="md-path__link">
+        <a href="../workflows/" class="md-path__link">
           
   <span class="md-ellipsis">
     Workflows
@@ -2795,7 +2783,7 @@
 
 
   
-    <a href="https://github.com/healthonrails/annolid/edit/main/docs/tutorials/Labelme_to_YOLO_class_map.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/dinov3_keypoint_tracking.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2804,151 +2792,343 @@
     
       
     
-    <a href="https://github.com/healthonrails/annolid/raw/main/docs/tutorials/Labelme_to_YOLO_class_map.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/dinov3_keypoint_tracking.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="step-by-step-tutorial-from-annolid-behavior-labeling-to-a-yolo-pose-dataset">Step-by-Step Tutorial: From Annolid Behavior Labeling to a YOLO Pose Dataset<a class="headerlink" href="#step-by-step-tutorial-from-annolid-behavior-labeling-to-a-yolo-pose-dataset" title="Permanent link">&para;</a></h1>
-<p>Use this walkthrough to move seamlessly from interactive behavior labeling in Annolid to a YOLO-ready pose dataset with stable class IDs. The process ties directly into Annolid’s project schema, so the behaviors you flag in the GUI end up with matching IDs in your training data and downstream analytics.</p>
-<h2 id="overview-of-the-workflow">Overview of the Workflow<a class="headerlink" href="#overview-of-the-workflow" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Configure behavior definitions in the Annolid project schema.</li>
-<li>Label frames or videos in the Annolid GUI.</li>
-<li>Convert them to Ultralytics YOLO format. The converter reuses the schema automatically, or you can provide a custom class map if needed.</li>
-<li>Inspect the generated dataset and continue with training or analysis.</li>
-</ol>
-<hr />
-<h2 id="step-0-prerequisites">Step 0 – Prerequisites<a class="headerlink" href="#step-0-prerequisites" title="Permanent link">&para;</a></h2>
+<h1 id="dinov3-keypoint-tracking">DINOv3 Keypoint Tracking<a class="headerlink" href="#dinov3-keypoint-tracking" title="Permanent link">&para;</a></h1>
+<p>DINOv3 Keypoint Tracker propagates manually labeled body-part points through a
+video without training a pose-estimation model for the target dataset. It uses
+frozen DINO-family patch descriptors for appearance matching, a local
+motion-prior search, optional mask constraints, stateful track memory, and
+Lucas-Kanade pixel refinement for sub-patch motion.</p>
+<p>This backend is a sparse-label accelerator. It is useful when you need
+reviewable keypoint trajectories from a few manual seed frames. It is not a new
+DINO model, and it is not a replacement for supervised pose estimation when you
+need a reusable model trained across many videos, camera setups, or animals.</p>
+<h2 id="when-to-use-it">When To Use It<a class="headerlink" href="#when-to-use-it" title="Permanent link">&para;</a></h2>
+<p>Use DINOv3 Keypoint Tracker when:</p>
 <ul>
-<li>Annolid installed with GUI and CLI access.</li>
-<li>Video files or extracted frames you plan to label.</li>
-<li>Optional: an existing <code>project.annolid.json/.yaml</code> file describing your behaviors, modifiers, and keyboard bindings.</li>
+<li>you have a video-specific tracking job and want to avoid dense manual
+  keypoint labeling;</li>
+<li>the same landmarks are visible across nearby frames;</li>
+<li>you can review and correct occasional drift;</li>
+<li>masks or polygons are available, or the local appearance around each
+  keypoint is distinctive enough to track without masks.</li>
 </ul>
-<p>Keep the schema file in (or above) the directory where you store LabelMe annotations—Annolid tools now auto-discover it to lock in class IDs.</p>
-<hr />
-<h2 id="step-1-configure-behaviors-in-the-annolid-gui">Step 1 – Configure Behaviors in the Annolid GUI<a class="headerlink" href="#step-1-configure-behaviors-in-the-annolid-gui" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Launch Annolid and open <strong>File → Project Schema…</strong>.</li>
-<li>Load your existing schema (<code>project.annolid.json</code>) or create a new one. The <code>code</code> field of each behavior becomes the primary identifier everywhere (flags, converter, analytics).</li>
-<li>Assign colors, categories, modifiers, and key bindings if you plan to use keyboard-driven labeling.</li>
-<li>Save the schema near your project assets (for example, root of the project or the folder that will hold LabelMe annotations).</li>
-</ol>
-<p>As soon as a schema is loaded, the <strong>Pinned Flags</strong> panel synchronizes to the same behavior list automatically—no more juggling the legacy <code>configs/behaviors.yaml</code> file.</p>
-<hr />
-<h2 id="step-2-label-behaviors-in-annolid">Step 2 – Label Behaviors in Annolid<a class="headerlink" href="#step-2-label-behaviors-in-annolid" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Open a video or an image sequence.</li>
-<li>Confirm the behavior flags panel reflects the schema from Step 1. If not, reload the schema.</li>
-<li>Label behaviors using your configured shortcuts. The flags controller enforces exclusivity rules and updates modifier toggles automatically.</li>
-<li>When satisfied, export to LabelMe:</li>
-<li>Choose <strong>File → Export → LabelMe JSON…</strong> (or trigger the equivalent CLI command).</li>
-<li>Annolid writes paired <code>frame_XXXXX.png</code> and <code>frame_XXXXX.json</code> files per labeled frame.</li>
-</ol>
-<p>You now have a LabelMe-compatible dataset with behavior codes already aligned to the project schema.</p>
-<hr />
-<h2 id="step-3-optional-refine-in-labelme">Step 3 – Optional: Refine in LabelMe<a class="headerlink" href="#step-3-optional-refine-in-labelme" title="Permanent link">&para;</a></h2>
-<p>If you want to adjust annotations manually or add pose keypoints:</p>
-<ol>
-<li>Open the exported dataset in the LabelMe desktop app.</li>
-<li>For each instance, make sure the <strong>label</strong> (or <code>flags.display_label</code>) matches the behavior <code>code</code> defined in Step 1.</li>
-<li>Add polygons or keypoints as needed. The converter groups shapes by instance label and preserves keypoint order.</li>
-</ol>
-<p>Keep the folder’s contents clean—only <code>*.json</code> + <code>*.png</code> pairs belong in this directory.</p>
-<hr />
-<h2 id="step-4-convert-to-yolo-format">Step 4 – Convert to YOLO Format<a class="headerlink" href="#step-4-convert-to-yolo-format" title="Permanent link">&para;</a></h2>
-<h3 id="cli-path">CLI Path<a class="headerlink" href="#cli-path" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--labelme2yolo<span class="w"> </span>/path/to/labelme_dataset<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--test_size<span class="w"> </span><span class="m">0</span>.1
-</code></pre></div>
+<p>Use a pose-estimation workflow instead when:</p>
 <ul>
-<li><code>--labelme2yolo</code> points at the folder filled with LabelMe annotations.</li>
-<li>The converter walks up from that folder until it finds <code>project.annolid.json/.yaml</code>, then uses the schema’s behavior order as the class map. No extra flag required.</li>
-<li>Supply <code>--labelme2yolo-class-map</code> (JSON/YAML/TXT) only if you need to override the schema or you are working outside Annolid.</li>
-<li><code>--val_size</code> and <code>--test_size</code> are optional fractions for splitting the dataset.</li>
+<li>you need a reusable model for many unseen videos;</li>
+<li>the animal undergoes large viewpoint changes not represented by the seed
+  frames;</li>
+<li>you need high-throughput inference after a labeled training set is already
+  available;</li>
+<li>you need benchmarked pose-model outputs rather than per-video reviewed
+  propagation.</li>
 </ul>
-<p>Need a fully automated run? Use the new builder:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--build_pose_dataset<span class="w"> </span>/path/to/labelme_dataset<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--pose_output<span class="w"> </span>/path/to/output_dataset<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--test_size<span class="w"> </span><span class="m">0</span>.1
-</code></pre></div>
-<p>The builder pulls in your schema automatically, enforces class IDs, writes subject metadata companions, and drops a <code>dataset_summary.json</code> so you can review class and subject coverage without opening any files.</p>
-<h3 id="gui-path">GUI Path<a class="headerlink" href="#gui-path" title="Permanent link">&para;</a></h3>
+<h2 id="what-it-tracks">What It Tracks<a class="headerlink" href="#what-it-tracks" title="Permanent link">&para;</a></h2>
+<p>The tracker starts from saved LabelMe-compatible Annolid annotations:</p>
+<ul>
+<li><code>point</code> shapes become named keypoints to track;</li>
+<li><code>polygon</code> or mask shapes are optional but recommended because they constrain
+  ambiguous points to the instance;</li>
+<li>later manually corrected frames can be used as new seed frames when you rerun
+  tracking.</li>
+</ul>
+<p>For multi-animal videos, avoid repeated plain point labels such as <code>nose</code> with
+no instance context. Annolid preserves <code>instance_label</code> and <code>display_label</code>
+metadata when those flags are present, and uses them to keep output labels
+reviewable. In scripted LabelMe JSON, set those flags explicitly for each point;
+in the GUI, check the saved frame before a long run to confirm the point belongs
+to the intended animal.</p>
+<p>Keep display labels stable across frames and animals. Labels such as <code>nose</code>,
+<code>leftear</code>, <code>rightear</code>, <code>tail_base</code>, <code>fore_top</code>, or <code>abdomen_bot</code> should mean the
+same anatomical point every time.</p>
+<h2 id="how-the-backend-works">How The Backend Works<a class="headerlink" href="#how-the-backend-works" title="Permanent link">&para;</a></h2>
+<p>The implementation separates the DINO-family feature backbone from the tracker
+logic:</p>
+<ul>
+<li><code>annolid/features/dino_models.py</code> defines the supported DINOv3, DINOv2, and
+  RADIO-compatible feature backbones.</li>
+<li><code>annolid/features/dinov3_extractor.py</code> loads the selected Hugging Face model,
+  selects CPU, CUDA, or MPS, snaps image sizes to ViT patch multiples, removes
+  special tokens, and returns normalized patch grids.</li>
+<li><code>annolid/tracking/dino_keypoint_tracker.py</code> turns those patch grids into
+  stateful point tracks.</li>
+</ul>
+<p>Each manual point initializes a track with its current descriptor, reference
+descriptor, manual-anchor codebook, appearance codebook, support probes,
+velocity, quality state, and optional structural or symmetry state. On each new
+frame, Annolid:</p>
 <ol>
-<li>In Annolid, open <strong>File → Convert LabelMe to YOLO</strong>.</li>
-<li>Select the annotation directory.</li>
-<li>Leave “Optional Class Map” blank to rely on the schema. Provide a file only if you want a custom order.</li>
-<li>Adjust validation/test split fields if desired.</li>
-<li>Click <strong>Convert to YOLO Format</strong> and wait for the success message.</li>
+<li>extracts the current DINO feature grid;</li>
+<li>optionally debiases coordinate-correlated DINO responses;</li>
+<li>estimates motion using previous velocity, dense Farneback flow, and
+   per-point pyramidal Lucas-Kanade flow;</li>
+<li>searches a bounded candidate region around the motion prior;</li>
+<li>scores candidates with DINO similarity, appearance/context/support evidence,
+   mask or structure priors, backward consistency, and a motion penalty;</li>
+<li>resolves one-to-one assignments so two tracks do not claim the same best
+   candidate;</li>
+<li>optionally blends the DINO-selected point with a valid Lucas-Kanade point
+   estimate for sub-patch refinement;</li>
+<li>updates descriptors, velocity, quality, support probes, and output
+   annotation metadata.</li>
 </ol>
-<p>Both paths emit the same dataset layout.</p>
-<hr />
-<h2 id="step-5-inspect-the-output">Step 5 – Inspect the Output<a class="headerlink" href="#step-5-inspect-the-output" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>labelme_dataset/
-└── YOLO_dataset/
-    ├── images/{train,val,test}/
-    ├── labels/{train,val,test}/
-    └── data.yaml
+<p>This split matters in practice: DINO descriptors provide robust coarse
+appearance correspondence, while optical flow handles small movements inside a
+16-pixel ViT patch.</p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<p>Install Annolid with GUI, model, and tracking dependencies:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,ml,tracking]&quot;</span>
 </code></pre></div>
-<p>Validate the contents:</p>
-<ol>
-<li><code>labels/train/*.txt</code>: first number is the class ID defined by the schema, followed by YOLO bbox values and pose keypoints (x, y, visibility).</li>
-<li><code>data.yaml</code>: the <code>names</code> list mirrors your behavior codes; <code>kpt_shape</code> and <code>kpt_labels</code> reflect the keypoint layout detected from your annotations.</li>
-<li>Confirm the splits (train/val/test) contain the expected number of files.</li>
-</ol>
-<p>Once verified, follow the existing pose training tutorial (<code>docs/tutorials/Annolid_Pose_Estimation_on_YOLO11_Tutorial.ipynb</code>) or the IntegraPose workflows to fine-tune YOLO for simultaneous pose and behavior predictions.</p>
-<hr />
-<h2 id="step-6-troubleshooting">Step 6 – Troubleshooting<a class="headerlink" href="#step-6-troubleshooting" title="Permanent link">&para;</a></h2>
+<p>For a local checkout, use the repository environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,ml,tracking]&quot;</span>
+</code></pre></div>
+<p>The one-line installer default <code>gui</code> profile also installs the model and
+tracking extras used by this workflow. The first DINOv3 run may need Hugging
+Face access. For gated DINOv3 checkpoints, accept the model license on Hugging
+Face and authenticate once:</p>
+<div class="highlight"><pre><span></span><code>hf<span class="w"> </span>auth<span class="w"> </span>login
+</code></pre></div>
+<p>You can also set <code>HF_TOKEN</code> in the active environment. To use a shared local
+Hugging Face cache:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">DINOV3_LOCATION</span><span class="o">=</span>/path/to/hf-cache
+</code></pre></div>
+<p>The optional RADIO backbone requires <code>open-clip-torch</code>; choose a DINOv2 or
+DINOv3 backbone if that package is not installed.</p>
+<h2 id="choose-a-feature-backbone">Choose A Feature Backbone<a class="headerlink" href="#choose-a-feature-backbone" title="Permanent link">&para;</a></h2>
+<p>Open <strong>Tools -&gt; Advanced Parameters -&gt; Tracker -&gt; DINO feature model</strong> and pick
+a model. The default is the small DINOv3 ViT-S/16 checkpoint because it is the
+best starting point for interactive tracking.</p>
+<p>Common choices:</p>
 <table>
 <thead>
 <tr>
-<th>Symptom</th>
-<th>Likely Cause</th>
-<th>Suggested Fix</th>
+<th>Model</th>
+<th>Best use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Label 'XYZ' is not defined in the provided class map.</code></td>
-<td>The annotation references a behavior missing from the schema.</td>
-<td>Add the behavior to <code>project.annolid.json</code> or adjust the LabelMe label.</td>
+<td><code>facebook/dinov3-vits16-pretrain-lvd1689m</code></td>
+<td>Default interactive tracking; fastest DINOv3 option.</td>
 </tr>
 <tr>
-<td><code>Class map indices must be contiguous…</code></td>
-<td>Manual class map (JSON/YAML/TXT) skips numbers or starts at a non-zero value.</td>
-<td>Rewrite the mapping with IDs <code>0..N-1</code>.</td>
+<td><code>facebook/dinov3-vits16plus-pretrain-lvd1689m</code></td>
+<td>Slightly stronger small DINOv3 descriptors.</td>
 </tr>
 <tr>
-<td>Converter silently adds new classes</td>
-<td>No schema or class map was found.</td>
-<td>Move <code>project.annolid.json</code> into or above the dataset folder, or pass <code>--labelme2yolo-class-map</code>.</td>
+<td><code>facebook/dinov3-vitb16-pretrain-lvd1426</code></td>
+<td>Medium offline runs when ViT-S is not distinctive enough.</td>
 </tr>
 <tr>
-<td>GUI warns about missing PyYAML</td>
-<td>You loaded a YAML class map but PyYAML isn’t installed.</td>
-<td><code>pip install pyyaml</code>, or use JSON/TXT instead.</td>
+<td><code>facebook/dinov3-vitl16-pretrain-lvd1689m</code></td>
+<td>Higher-memory offline runs.</td>
 </tr>
 <tr>
-<td>Keypoints missing or zeroed</td>
-<td>Instances in LabelMe lacked those keypoints.</td>
-<td>Ensure each instance contains the same keypoint names and re-export.</td>
+<td><code>facebook/dinov2-base</code> or <code>facebook/dinov2-large</code></td>
+<td>Open fallback when DINOv3 access is unavailable.</td>
+</tr>
+<tr>
+<td><code>nvidia/C-RADIOv4-SO400M</code></td>
+<td>Compatible feature backbone for specialized workflows.</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="step-7-next-steps">Step 7 – Next Steps<a class="headerlink" href="#step-7-next-steps" title="Permanent link">&para;</a></h2>
+<p>List the supported catalog from the active environment:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--list
+</code></pre></div>
+<p>Pre-download or verify a model before opening the GUI:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<span class="w"> </span>facebook/dinov3-vits16-pretrain-lvd1689m
+annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--local-files-only<span class="w"> </span>--model<span class="w"> </span>facebook/dinov3-vits16-pretrain-lvd1689m
+</code></pre></div>
+<h2 id="gui-workflow">GUI Workflow<a class="headerlink" href="#gui-workflow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open a video in Annolid.</li>
+<li>Navigate to a frame where the landmarks are visible and sharp.</li>
+<li>Add <code>point</code> labels for the keypoints you want to track.</li>
+<li>For multi-animal videos, verify that each point has the intended instance
+   association before starting a long run.</li>
+<li>Add polygons or masks for the animal instances when available.</li>
+<li>Save the annotation for that frame.</li>
+<li>Open <strong>Tools -&gt; Advanced Parameters -&gt; Tracker</strong>.</li>
+<li>Choose <strong>DINO feature model</strong> and, if useful, a <strong>Tracker preset</strong>.</li>
+<li>Select <strong>DINOv3 Keypoint Tracker</strong> from the model dropdown.</li>
+<li>Click the prediction button to track from the current frame.</li>
+<li>Review the generated JSON files, correct drift, save the corrected frame,
+    and rerun from that frame when needed.</li>
+</ol>
+<p>For long videos, validate a short difficult segment first. Confirm that the
+tracked points survive crossings, occlusions, and fast motion before processing
+the full recording.</p>
+<h2 id="presets-and-important-parameters">Presets And Important Parameters<a class="headerlink" href="#presets-and-important-parameters" title="Permanent link">&para;</a></h2>
+<p>The tracker exposes presets through <strong>Tools -&gt; Advanced Parameters -&gt; Tracker</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Preset</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fly_70fps_keypoints</code></td>
+<td>Small, fast motions such as high-frame-rate fly keypoints. Uses tight search, positional debiasing, backward consistency, coherent peak refinement, support probes, context descriptors, and a small Lucas-Kanade window.</td>
+</tr>
+<tr>
+<td><code>rodent_30fps_occlusions</code></td>
+<td>Larger animal motion and occlusions. Uses wider search, stronger mask/structure support, larger appearance bundles, more support probes, and a larger Lucas-Kanade window.</td>
+</tr>
+</tbody>
+</table>
+<p>Key settings:</p>
 <ul>
-<li>Keep the project schema versioned alongside your dataset—consistency of behavior IDs is crucial for multitask learning and analytics.</li>
-<li>Install pytest and run <code>python -m pytest tests/test_labelme2yolo_pose.py</code> to validate conversions in CI.</li>
-<li>Explore downstream analytics (bout smoothing, gait metrics, LSTM refiners) now that the YOLO outputs share the exact class IDs used during labeling.</li>
+<li><strong>DINO feature model</strong>: selects the frozen feature backbone.</li>
+<li><strong>Clamp keypoints to instance mask</strong> and <strong>Mask snap radius</strong>: keep points
+  inside the selected instance when masks are available.</li>
+<li><strong>Search tighten</strong>, <strong>Velocity gain</strong>, <strong>Flow gain</strong>, and <strong>Min/Max radius</strong>:
+  control the local motion-prior search.</li>
+<li><strong>DINOv3 positional debias</strong>: suppresses coordinate-correlated feature
+  responses that can pin points to image locations.</li>
+<li><strong>DINOv3 backward consistency</strong>: prefers candidates that map back to the
+  previous feature location.</li>
+<li><strong>Coherent peak refinement</strong>: refines around the connected similarity peak
+  instead of unrelated nearby peaks.</li>
+<li><strong>Pixel refinement</strong> settings: control Lucas-Kanade sub-patch correction,
+  including blend weight, window size, error threshold, and max jump.</li>
 </ul>
-<p>You’re ready to train multi-task YOLO models (pose + behavior) without ever hand-editing class maps—the schema-driven workflow keeps every tool in sync. Happy labeling!</p>
+<h2 id="outputs-and-review-contract">Outputs And Review Contract<a class="headerlink" href="#outputs-and-review-contract" title="Permanent link">&para;</a></h2>
+<p>DINOv3 Keypoint Tracker writes LabelMe-compatible JSON files into the standard
+Annolid result folder:</p>
+<div class="highlight"><pre><span></span><code>&lt;video_name&gt;/&lt;video_name&gt;_000000001.json
+&lt;video_name&gt;/&lt;video_name&gt;_000000002.json
+...
+</code></pre></div>
+<p>Predicted point shapes keep their labels and include tracking metadata such as
+backend description, quality, velocity, miss count, display label, and instance
+label. The tracker itself does not write a summary CSV; export or summarize the
+reviewed JSON files through the usual Annolid analysis tools after corrections
+are complete.</p>
+<p>The recommended correction loop is:</p>
+<ol>
+<li>run tracking from a clean seed frame;</li>
+<li>inspect the first frame where a keypoint drifts or swaps;</li>
+<li>correct the point manually and save that frame;</li>
+<li>rerun tracking from the corrected frame;</li>
+<li>keep corrections as sparse reseed frames rather than relabeling every frame.</li>
+</ol>
+<h2 id="choosing-among-point-and-mask-backends">Choosing Among Point And Mask Backends<a class="headerlink" href="#choosing-among-point-and-mask-backends" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Backend</th>
+<th>Use it when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DINOv3 Keypoint Tracker</td>
+<td>You want sparse, named keypoint propagation with reviewable LabelMe outputs and optional masks.</td>
+</tr>
+<tr>
+<td>TAPNext (ONNX)</td>
+<td>You want an ONNX point tracker with fixed model assets and no DINO/Hugging Face feature backbone. See <a href="../tapnext/">TAPNext ONNX Point Tracking</a>.</td>
+</tr>
+<tr>
+<td>CoTracker</td>
+<td>You want joint point tracking through a chunk using the official CoTracker model.</td>
+</tr>
+<tr>
+<td>CoWTracker</td>
+<td>You want an alternative dense/windowed point tracker and can install the optional runtime. See <a href="../cowtracker/">CoWTracker Point Tracking</a>.</td>
+</tr>
+<tr>
+<td>YOLO pose or DinoKPSEG</td>
+<td>You want a trainable pose/keypoint model for repeated inference on future videos.</td>
+</tr>
+<tr>
+<td>INSID3 Video</td>
+<td>You want DINOv3 in-context segmentation masks, not direct point tracking. Masks from segmentation workflows can still help constrain keypoints.</td>
+</tr>
+<tr>
+<td>Cutie or SAM3</td>
+<td>You need masks or polygons rather than point trajectories. See <a href="../sam3/">SAM3</a> for SAM3 tracking and correction.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="programmatic-use">Programmatic Use<a class="headerlink" href="#programmatic-use" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.tracking.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">CutieDinoTrackerConfig</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.tracking.dino_keypoint_tracker</span><span class="w"> </span><span class="kn">import</span> <span class="n">DinoKeypointVideoProcessor</span>
+
+<span class="n">runtime</span> <span class="o">=</span> <span class="n">CutieDinoTrackerConfig</span><span class="o">.</span><span class="n">from_preset</span><span class="p">(</span>
+    <span class="s2">&quot;rodent_30fps_occlusions&quot;</span><span class="p">,</span>
+    <span class="n">patch_model_name</span><span class="o">=</span><span class="s2">&quot;facebook/dinov3-vits16-pretrain-lvd1689m&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">processor</span> <span class="o">=</span> <span class="n">DinoKeypointVideoProcessor</span><span class="p">(</span>
+    <span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;/path/to/video.mp4&quot;</span><span class="p">,</span>
+    <span class="n">result_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;facebook/dinov3-vits16-pretrain-lvd1689m&quot;</span><span class="p">,</span>
+    <span class="n">short_side</span><span class="o">=</span><span class="mi">768</span><span class="p">,</span>
+    <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">runtime_config</span><span class="o">=</span><span class="n">runtime</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">processor</span><span class="o">.</span><span class="n">process_video</span><span class="p">()</span>
+</code></pre></div>
+<p>The processor reads the saved seed annotation from the video result folder,
+tracks forward, and writes per-frame JSON outputs.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>No manual PNG+JSON seed pairs found</code></td>
+<td>Save a labeled seed frame in the video result folder before starting tracking.</td>
+</tr>
+<tr>
+<td>DINOv3 model download fails</td>
+<td>Accept the gated model license, run <code>hf auth login</code>, set <code>HF_TOKEN</code>, or choose an open DINOv2 fallback.</td>
+</tr>
+<tr>
+<td>RADIO model import fails</td>
+<td>Install <code>open-clip-torch</code> or switch back to a DINO-family feature model.</td>
+</tr>
+<tr>
+<td>Model dropdown uses the wrong DINO backbone</td>
+<td>Reopen <strong>Tools -&gt; Advanced Parameters -&gt; Tracker</strong>, confirm <strong>DINO feature model</strong>, and check the log for the resolved model id.</td>
+</tr>
+<tr>
+<td>Points snap to the same image location</td>
+<td>Enable DINOv3 positional debias and reduce search radius if motion is small.</td>
+</tr>
+<tr>
+<td>Small joints appear stuck inside one patch</td>
+<td>Keep pixel refinement enabled and use the fly preset or a smaller Lucas-Kanade window.</td>
+</tr>
+<tr>
+<td>Left/right landmarks swap</td>
+<td>Add masks when possible, keep labels consistent, add more anchor points, and configure symmetry pairs in scripted workflows.</td>
+</tr>
+<tr>
+<td>Tracking drifts after occlusion</td>
+<td>Correct the first bad frame, save it, and rerun from that correction frame.</td>
+</tr>
+<tr>
+<td>CPU runs are slow</td>
+<td>Use CUDA or MPS when available, reduce <code>short_side</code>, validate short segments first, and pre-download the model before long runs.</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -3022,10 +3202,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

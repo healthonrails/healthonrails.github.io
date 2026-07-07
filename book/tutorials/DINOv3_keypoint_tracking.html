@@ -406,10 +406,11 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-initial-frame">1. Prepare the initial frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-and-cache-the-dinov3-backbone">2. Choose and cache the DINOv3 backbone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-and-cache-the-dino-family-feature-backbone">2. Choose and cache the DINO-family feature backbone</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-dinov3-keypoint-tracking">3. Start DINOv3 keypoint tracking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-parameters-optional">4. Advanced parameters (optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-and-correct">5. Inspect and correct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-tracker-differs-from-pose-estimation">6. How the tracker differs from pose estimation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmatic-use-optional">Programmatic use (optional)</a></li>
 </ul>
@@ -425,19 +426,21 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dinov3-keypoint-tracking">
 <h1>DINOv3 Keypoint Tracking<a class="headerlink" href="#dinov3-keypoint-tracking" title="Link to this heading">#</a></h1>
-<p>This tutorial shows how to track labeled body-part keypoints through a video using DINOv3 patch descriptors, optionally constrained by per-instance masks propagated by Cutie.</p>
+<p>This tutorial shows how to track labeled body-part keypoints through a video using frozen DINO-family patch descriptors, local motion-prior search, optional mask constraints, and Lucas-Kanade pixel refinement. The backend is a sparse-label tracker: it propagates manual seed points and correction frames, but it does not train a new pose-estimation model.</p>
 <section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Annolid v1.2.2+ installed and the GUI launches (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>).</p></li>
+<li><p>Annolid installed with the GUI, model, and tracking runtime dependencies, and
+the GUI launches (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>).</p></li>
 <li><p>One saved annotation JSON on the starting frame containing:</p>
 <ul>
-<li><p>A polygon per tracked instance (e.g., each animal).</p></li>
 <li><p>One or more point keypoints per instance (e.g., <code class="docutils literal notranslate"><span class="pre">nose</span></code>, <code class="docutils literal notranslate"><span class="pre">leftear</span></code>, <code class="docutils literal notranslate"><span class="pre">rightear</span></code>).</p></li>
+<li><p>Optional polygons or masks for each tracked instance. These are recommended when nearby body parts look similar, but point-only tracking is supported.</p></li>
 </ul>
 </li>
-<li><p>Internet access for the first run to download DINOv3 weights from Hugging Face, or a local cache at <code class="docutils literal notranslate"><span class="pre">DINOV3_LOCATION</span></code>.</p></li>
-<li><p>Python package <code class="docutils literal notranslate"><span class="pre">transformers&gt;=4.39</span></code> available in your environment (required by the DINOv3 extractor).</p></li>
+<li><p>Internet access for the first run to download DINO-family weights from Hugging Face, or a local cache at <code class="docutils literal notranslate"><span class="pre">DINOV3_LOCATION</span></code>.</p></li>
+<li><p>Python packages from Annolid’s <code class="docutils literal notranslate"><span class="pre">ml</span></code> and <code class="docutils literal notranslate"><span class="pre">tracking</span></code> extras available in your
+environment.</p></li>
 </ul>
 <p>Tip: If the DINOv3 checkpoint is gated, accept the model license on Hugging Face and run <code class="docutils literal notranslate"><span class="pre">hf</span> <span class="pre">auth</span> <span class="pre">login</span></code> once in your shell, or set <code class="docutils literal notranslate"><span class="pre">HF_TOKEN</span></code>.</p>
 </section>
@@ -445,8 +448,8 @@
 <h2>1. Prepare the initial frame<a class="headerlink" href="#prepare-the-initial-frame" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Open your video in Annolid and navigate to the frame you want to start from.</p></li>
-<li><p>Draw a polygon around each instance you want to track (Tools → Create Polygons, or use Segment Anything to speed up).</p></li>
 <li><p>Add point keypoints for each instance (use the Point tool). Keep names consistent across frames, e.g., <code class="docutils literal notranslate"><span class="pre">nose</span></code>, <code class="docutils literal notranslate"><span class="pre">leftear</span></code>, <code class="docutils literal notranslate"><span class="pre">rightear</span></code>, <code class="docutils literal notranslate"><span class="pre">tail_base</span></code>.</p></li>
+<li><p>When available, draw a polygon around each instance you want to track (Tools → Create Polygons, or use Segment Anything to speed up). Masks help constrain ambiguous keypoints.</p></li>
 <li><p>Save (<code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code>). This creates <code class="docutils literal notranslate"><span class="pre">&lt;video_name&gt;/&lt;video_name&gt;_#########.json</span></code> next to your video.</p></li>
 </ol>
 <p>Notes on keypoint naming:</p>
@@ -455,8 +458,8 @@
 <li><p>Annolid stores instance/keypoint association in the shape list; adding points while your instance is selected ensures correct linkage.</p></li>
 </ul>
 </section>
-<section id="choose-and-cache-the-dinov3-backbone">
-<h2>2. Choose and cache the DINOv3 backbone<a class="headerlink" href="#choose-and-cache-the-dinov3-backbone" title="Link to this heading">#</a></h2>
+<section id="choose-and-cache-the-dino-family-feature-backbone">
+<h2>2. Choose and cache the DINO-family feature backbone<a class="headerlink" href="#choose-and-cache-the-dino-family-feature-backbone" title="Link to this heading">#</a></h2>
 <p>Open <strong>Tools → Advanced Parameters → Tracker → DINO feature model</strong> and pick a model. Recommended starting point: <strong>DINOv3 ViT-S/16 (gated, recommended)</strong>. You can also paste a Hugging Face model id into this editable field.</p>
 <p>Common choices:</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -480,6 +483,12 @@
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">facebook/dinov3-vith16plus-pretrain-lvd1689m</span></code> or <code class="docutils literal notranslate"><span class="pre">facebook/dinov3-vit7b16-pretrain-lvd1689m</span></code></p></td>
 <td><p>Specialized high-memory workflows; pre-download before long videos.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">facebook/dinov2-base</span></code> or <code class="docutils literal notranslate"><span class="pre">facebook/dinov2-large</span></code></p></td>
+<td><p>Open fallback if DINOv3 access is unavailable.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nvidia/C-RADIOv4-SO400M</span></code></p></td>
+<td><p>Compatible feature backbone for specialized workflows.</p></td>
 </tr>
 </tbody>
 </table>
@@ -505,8 +514,9 @@ annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<
 <li><p>In the model dropdown (top toolbar), select “DINOv3 Keypoint Tracker”.</p></li>
 <li><p>Press Pred button. Annolid will:</p>
 <ul class="simple">
-<li><p>Load the DINO model and extract dense patch features for each frame.</p></li>
-<li><p>Use your labeled points as anchors and follow them using cosine‑similarity in feature space.</p></li>
+<li><p>Load the selected DINO-family model and extract dense patch features for each frame.</p></li>
+<li><p>Use your labeled points as anchors and follow them with feature similarity, motion priors, and stateful track memory.</p></li>
+<li><p>Use dense Farneback flow plus per-point pyramidal Lucas-Kanade flow to guide local search and sub-patch refinement.</p></li>
 <li><p>Optionally constrain search to the instance mask (from your polygon, or propagated by Cutie if enabled).</p></li>
 </ul>
 </li>
@@ -515,14 +525,15 @@ annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<
 <p>Outputs (written live):</p>
 <ul class="simple">
 <li><p>Per‑frame LabelMe JSONs with updated keypoint locations (and masks if present) in <code class="docutils literal notranslate"><span class="pre">&lt;video_name&gt;/</span></code>.</p></li>
-<li><p>A CSV summary for downstream analysis in the same folder.</p></li>
+<li><p>Point metadata includes backend description, quality, velocity, miss count, instance label, and display label when available.</p></li>
 </ul>
 </section>
 <section id="advanced-parameters-optional">
 <h2>4. Advanced parameters (optional)<a class="headerlink" href="#advanced-parameters-optional" title="Link to this heading">#</a></h2>
 <p>Open Tools → Advanced Parameters to fine‑tune tracking:</p>
 <ul class="simple">
-<li><p>DINO feature model: choose the DINOv3 backbone used for video keypoint tracking. Larger models can improve matching but increase download size, startup time, and memory use.</p></li>
+<li><p>Tracker preset: choose a tuned preset such as <code class="docutils literal notranslate"><span class="pre">fly_70fps_keypoints</span></code> or <code class="docutils literal notranslate"><span class="pre">rodent_30fps_occlusions</span></code>, or keep custom values.</p></li>
+<li><p>DINO feature model: choose the DINO-family backbone used for video keypoint tracking. Larger models can improve matching but increase download size, startup time, and memory use.</p></li>
 <li><p>Clamp keypoints to instance mask and Mask snap radius: keep points inside their masks; increase radius to be more permissive near edges.</p></li>
 <li><p>Search tighten, Velocity gain, Flow gain, Min/Max radius, Miss boost: tune the motion prior (uses optical flow and recent velocity).</p></li>
 <li><p>Motion prior weight/soft radius/factor/miss relief/flow relief: adjust how strongly the motion prior penalizes unlikely jumps.</p></li>
@@ -530,6 +541,8 @@ annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<
 <li><p>DINOv3 backward consistency: prefer candidates whose nearest match in the previous frame maps back to the prior keypoint patch.</p></li>
 <li><p>Coherent peak refinement: refine a keypoint using the connected local similarity peak around the selected seed, rather than unrelated nearby peaks.</p></li>
 <li><p>Keypoint refine radius/sigma/temperature: track a small patch neighborhood around each keypoint and report the Gaussian‑weighted centroid (sub‑patch smoothing).</p></li>
+<li><p>Pixel refinement weight/window/error/jump: blend the DINO-selected point with a valid Lucas-Kanade estimate to recover motion inside one ViT patch.</p></li>
+<li><p>Appearance bundle, context, support probes, and structural consistency: add local state that helps distinguish similar landmarks and recover after short misses.</p></li>
 </ul>
 <p>Defaults work well on most videos; increase Search tighten and reduce Max radius for tighter, slower motion; do the opposite for fast motion.</p>
 </section>
@@ -537,14 +550,21 @@ annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<
 <h2>5. Inspect and correct<a class="headerlink" href="#inspect-and-correct" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Step through frames to verify trajectories. Edit any point or polygon and press Save — the tracker will resume from that updated ground truth if you run it again.</p></li>
+<li><p>Treat corrections as sparse reseed frames. Correct the first frame where drift begins, then rerun from that frame instead of relabeling every frame.</p></li>
 <li><p>Use Tools → Patch Similarity to click a region and visualize DINO similarity heatmaps if you need to diagnose difficult frames.</p></li>
 </ul>
+</section>
+<section id="how-the-tracker-differs-from-pose-estimation">
+<h2>6. How the tracker differs from pose estimation<a class="headerlink" href="#how-the-tracker-differs-from-pose-estimation" title="Link to this heading">#</a></h2>
+<p>DINOv3 Keypoint Tracker is best for video-specific propagation from sparse manual seeds. It is useful when you need reviewable trajectories quickly and can correct drift. It is not a reusable pose model trained across many videos.</p>
+<p>Choose a supervised pose-estimation workflow when you already have enough labeled training frames, need a reusable model for unseen sessions, or need standardized pose-model benchmarks. Choose TAPNext, CoTracker, or CoWTracker when you want another point-tracking backend under the same reviewable Annolid output contract. INSID3 is adjacent: it uses DINOv3 for in-context segmentation masks, not direct point tracking.</p>
 </section>
 <section id="tips">
 <h2>Tips<a class="headerlink" href="#tips" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Keep keypoint labels consistent across individuals and sessions.</p></li>
 <li><p>Add 2–4 reliable anchor keypoints per instance (e.g., nose, ears, tail_base) for robust tracking.</p></li>
+<li><p>Use masks or polygons when similar body parts are close together.</p></li>
 <li><p>Good lighting and moderate resolution (short side ≈ 768 px) help DINO descriptors remain distinctive.</p></li>
 <li><p>If DINO downloads are blocked, run <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">dinov3-models</span> <span class="pre">--local-files-only</span> <span class="pre">--model</span> <span class="pre">&lt;model-id&gt;</span></code> to verify that the checkpoint is already cached; see the log for the exact model id in use.</p></li>
 </ul>
@@ -561,12 +581,12 @@ annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<
     <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;facebook/dinov3-vits16-pretrain-lvd1689m&quot;</span><span class="p">,</span>
     <span class="n">short_side</span><span class="o">=</span><span class="mi">768</span><span class="p">,</span>
     <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="c1"># auto-selects CUDA/MPS/CPU</span>
-    <span class="n">runtime_config</span><span class="o">=</span><span class="n">CutieDinoTrackerConfig</span><span class="p">(</span><span class="n">tracker_preset</span><span class="o">=</span><span class="s2">&quot;rodent_30fps_occlusions&quot;</span><span class="p">),</span>
+    <span class="n">runtime_config</span><span class="o">=</span><span class="n">CutieDinoTrackerConfig</span><span class="o">.</span><span class="n">from_preset</span><span class="p">(</span><span class="s2">&quot;rodent_30fps_occlusions&quot;</span><span class="p">),</span>
 <span class="p">)</span>
 <span class="n">vp</span><span class="o">.</span><span class="n">process_video</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The processor reads your initial JSON from the video’s output folder, tracks to the end, and writes updated JSON/CSV files.</p>
+<p>The processor reads your initial JSON from the video’s output folder, tracks to the end, and writes updated JSON files.</p>
 <hr class="docutils" />
 <p>If you run into issues loading DINOv3 weights, ensure <code class="docutils literal notranslate"><span class="pre">transformers</span></code> is installed and that you have access to the selected Hugging Face checkpoint.</p>
 </section>
@@ -640,10 +660,11 @@ annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--model<
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prepare-the-initial-frame">1. Prepare the initial frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-and-cache-the-dinov3-backbone">2. Choose and cache the DINOv3 backbone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-and-cache-the-dino-family-feature-backbone">2. Choose and cache the DINO-family feature backbone</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-dinov3-keypoint-tracking">3. Start DINOv3 keypoint tracking</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-parameters-optional">4. Advanced parameters (optional)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-and-correct">5. Inspect and correct</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-tracker-differs-from-pose-estimation">6. How the tracker differs from pose estimation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips">Tips</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programmatic-use-optional">Programmatic use (optional)</a></li>
 </ul>

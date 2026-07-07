@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://annolid.com/tapnext/">
       
       
-        <link rel="prev" href="../tutorials/tracking_correction_with_sam3_bot/">
+        <link rel="prev" href="../dinov3_keypoint_tracking/">
       
       
         <link rel="next" href="../cowtracker/">
@@ -680,6 +680,8 @@
       
         
       
+        
+      
     
     
     
@@ -1191,6 +1193,34 @@
     
   
     Tracking Correction with SAM3 Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dinov3_keypoint_tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINOv3 Keypoint Tracking
   
 
     
@@ -2742,13 +2772,15 @@ a full segmentation mask.</p>
 labels such as <code>head</code>, <code>tail_base</code>, <code>left_wing</code>, or <code>fly_body</code> are written back
 to the predicted frame JSON files.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>TAPNext uses ONNX Runtime. Standard Annolid installs include the required
-runtime dependency:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>annolid
+<p>TAPNext uses ONNX Runtime. For GUI tracking, install Annolid with the GUI and
+tracking extras:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,tracking]&quot;</span>
 </code></pre></div>
 <p>If you are working from a local checkout, install the project environment first:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,tracking]&quot;</span>
 </code></pre></div>
+<p>The one-line installer default <code>gui</code> profile also includes the tracking runtime.</p>
 <p>The model file is large, about 938 MB. The first run needs an internet
 connection and enough disk space for the cached ONNX model.</p>
 <h2 id="model-download-and-cache">Model Download and Cache<a class="headerlink" href="#model-download-and-cache" title="Permanent link">&para;</a></h2>

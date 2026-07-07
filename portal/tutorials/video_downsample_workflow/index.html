@@ -680,6 +680,8 @@
       
         
       
+        
+      
     
     
     
@@ -1125,10 +1127,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#preset-a-fast-review-copies" class="md-nav__link">
+  <a href="#preset-a-cutie-tracking-speed-copy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset A: Fast review copies
+        Preset A: CUTIE tracking speed copy
       
     </span>
   </a>
@@ -1136,10 +1138,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preset-b-low-light-behavior-recordings" class="md-nav__link">
+  <a href="#preset-b-fast-review-copies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset B: Low-light behavior recordings
+        Preset B: Fast review copies
       
     </span>
   </a>
@@ -1147,10 +1149,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preset-c-arena-only-crop-batch" class="md-nav__link">
+  <a href="#preset-c-low-light-behavior-recordings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset C: Arena-only crop batch
+        Preset C: Low-light behavior recordings
       
     </span>
   </a>
@@ -1158,10 +1160,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preset-d-one-outlier-video-with-a-different-crop" class="md-nav__link">
+  <a href="#preset-d-arena-only-crop-batch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset D: One outlier video with a different crop
+        Preset D: Arena-only crop batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preset-e-one-outlier-video-with-a-different-crop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset E: One outlier video with a different crop
       
     </span>
   </a>
@@ -1415,6 +1428,34 @@
     
   
     Tracking Correction with SAM3 Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dinov3_keypoint_tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINOv3 Keypoint Tracking
   
 
     
@@ -2730,10 +2771,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#preset-a-fast-review-copies" class="md-nav__link">
+  <a href="#preset-a-cutie-tracking-speed-copy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset A: Fast review copies
+        Preset A: CUTIE tracking speed copy
       
     </span>
   </a>
@@ -2741,10 +2782,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preset-b-low-light-behavior-recordings" class="md-nav__link">
+  <a href="#preset-b-fast-review-copies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset B: Low-light behavior recordings
+        Preset B: Fast review copies
       
     </span>
   </a>
@@ -2752,10 +2793,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preset-c-arena-only-crop-batch" class="md-nav__link">
+  <a href="#preset-c-low-light-behavior-recordings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset C: Arena-only crop batch
+        Preset C: Low-light behavior recordings
       
     </span>
   </a>
@@ -2763,10 +2804,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#preset-d-one-outlier-video-with-a-different-crop" class="md-nav__link">
+  <a href="#preset-d-arena-only-crop-batch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Preset D: One outlier video with a different crop
+        Preset D: Arena-only crop batch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preset-e-one-outlier-video-with-a-different-crop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preset E: One outlier video with a different crop
       
     </span>
   </a>
@@ -2976,7 +3028,19 @@ If one recording was captured from a different camera angle, use the review dial
 <li>resulting metadata.</li>
 </ul>
 <h2 id="practical-presets">Practical Presets<a class="headerlink" href="#practical-presets" title="Permanent link">&para;</a></h2>
-<h3 id="preset-a-fast-review-copies">Preset A: Fast review copies<a class="headerlink" href="#preset-a-fast-review-copies" title="Permanent link">&para;</a></h3>
+<h3 id="preset-a-cutie-tracking-speed-copy">Preset A: CUTIE tracking speed copy<a class="headerlink" href="#preset-a-cutie-tracking-speed-copy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Scale factor: <code>1.0</code> for <code>480 x 270</code> source videos</li>
+<li>Override FPS: on, FPS: <code>5</code></li>
+<li>Denoise: off unless the animals are hard to separate</li>
+<li>Auto contrast: off unless contrast is poor</li>
+<li>Crop: optional, only to remove unused space outside the cage</li>
+</ul>
+<p>Use when tracking ordinary home-cage behavior where 5 FPS is enough temporal
+resolution. Keep the original video unchanged and run CUTIE on the downsampled
+copy. If the behavior is brief or fast, test a short segment at <code>30</code>, <code>10</code>, and
+<code>5</code> FPS before processing the full batch.</p>
+<h3 id="preset-b-fast-review-copies">Preset B: Fast review copies<a class="headerlink" href="#preset-b-fast-review-copies" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Scale factor: <code>0.5</code></li>
 <li>Override FPS: on, FPS: <code>15</code></li>
@@ -2985,7 +3049,7 @@ If one recording was captured from a different camera angle, use the review dial
 <li>Crop: off</li>
 </ul>
 <p>Use when you want lightweight videos for annotation speed.</p>
-<h3 id="preset-b-low-light-behavior-recordings">Preset B: Low-light behavior recordings<a class="headerlink" href="#preset-b-low-light-behavior-recordings" title="Permanent link">&para;</a></h3>
+<h3 id="preset-c-low-light-behavior-recordings">Preset C: Low-light behavior recordings<a class="headerlink" href="#preset-c-low-light-behavior-recordings" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Scale factor: <code>0.5</code></li>
 <li>Override FPS: off</li>
@@ -2994,7 +3058,7 @@ If one recording was captured from a different camera angle, use the review dial
 <li>Strength: <code>1.1</code> to <code>1.3</code></li>
 </ul>
 <p>Use for noisy, dim recordings where object visibility is poor.</p>
-<h3 id="preset-c-arena-only-crop-batch">Preset C: Arena-only crop batch<a class="headerlink" href="#preset-c-arena-only-crop-batch" title="Permanent link">&para;</a></h3>
+<h3 id="preset-d-arena-only-crop-batch">Preset D: Arena-only crop batch<a class="headerlink" href="#preset-d-arena-only-crop-batch" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Scale factor: <code>0.5</code></li>
 <li>Override FPS: off</li>
@@ -3004,7 +3068,7 @@ If one recording was captured from a different camera angle, use the review dial
 <li>Per-video review: only for camera-shift outliers</li>
 </ul>
 <p>Use when most videos share a stable camera angle.</p>
-<h3 id="preset-d-one-outlier-video-with-a-different-crop">Preset D: One outlier video with a different crop<a class="headerlink" href="#preset-d-one-outlier-video-with-a-different-crop" title="Permanent link">&para;</a></h3>
+<h3 id="preset-e-one-outlier-video-with-a-different-crop">Preset E: One outlier video with a different crop<a class="headerlink" href="#preset-e-one-outlier-video-with-a-different-crop" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Scale factor: <code>0.5</code></li>
 <li>Override FPS: off</li>

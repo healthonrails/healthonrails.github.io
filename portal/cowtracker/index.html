@@ -680,6 +680,8 @@
       
         
       
+        
+      
     
     
     
@@ -1191,6 +1193,34 @@
     
   
     Tracking Correction with SAM3 Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dinov3_keypoint_tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINOv3 Keypoint Tracking
   
 
     
@@ -2666,12 +2696,13 @@ reviewable Annolid point-tracking contract as CoTracker and TAPNext: manually
 saved point prompts, optional polygon-derived grid points, and LabelMe-compatible
 JSON outputs.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>For a workstation that needs the model runtime plus the CoWTracker-specific
-dependency, install Annolid with both tracking extras:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[tracking,cowtracker]&quot;</span>
+<p>For a workstation that needs the GUI, common tracking runtime, and
+CoWTracker-specific dependency, install Annolid with these extras:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,tracking,cowtracker]&quot;</span>
 </code></pre></div>
 <p>If you are working from a local checkout:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[tracking,cowtracker]&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,tracking,cowtracker]&quot;</span>
 </code></pre></div>
 <p>If Annolid is already installed in an environment that has the tracking runtime,
 you can add only the CoWTracker dependency:</p>
@@ -2737,7 +2768,7 @@ packaging checks live in <code>annolid/tracker/cowtracker/README.md</code>.</p>
 </tr>
 <tr>
 <td>Dependency error mentions <code>safetensors</code></td>
-<td>Install <code>pip install "annolid[tracking,cowtracker]"</code> or <code>pip install "safetensors&gt;=0.4.0"</code> in the active environment.</td>
+<td>Install <code>pip install "annolid[gui,tracking,cowtracker]"</code> or <code>pip install "safetensors&gt;=0.4.0"</code> in the active environment.</td>
 </tr>
 <tr>
 <td>Dependency error mentions VGGT</td>

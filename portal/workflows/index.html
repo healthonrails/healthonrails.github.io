@@ -680,6 +680,8 @@
       
         
       
+        
+      
     
     
     
@@ -817,6 +819,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sparse-keypoint-tracking-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sparse Keypoint Tracking Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-annolid-bot-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -871,6 +884,17 @@
     <span class="md-ellipsis">
       
         Identity Repair Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cutie-analysis-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUTIE Analysis Speed
       
     </span>
   </a>
@@ -1365,6 +1389,34 @@
     
   
     Tracking Correction with SAM3 Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dinov3_keypoint_tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINOv3 Keypoint Tracking
   
 
     
@@ -2596,6 +2648,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sparse-keypoint-tracking-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sparse Keypoint Tracking Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#2-annolid-bot-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2650,6 +2713,17 @@
     <span class="md-ellipsis">
       
         Identity Repair Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cutie-analysis-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CUTIE Analysis Speed
       
     </span>
   </a>
@@ -2797,6 +2871,10 @@
 <td><a href="#1-standard-gui-video-workflow">Standard GUI Video Workflow</a></td>
 </tr>
 <tr>
+<td>Track sparse body-part points without training a pose model</td>
+<td><a href="#sparse-keypoint-tracking-workflow">Sparse Keypoint Tracking Workflow</a></td>
+</tr>
+<tr>
 <td>Run model training, prediction, or evaluation from scripts</td>
 <td><a href="#3-cli-model-workflow">CLI Model Workflow</a></td>
 </tr>
@@ -2842,6 +2920,24 @@
 <li>Validate a small representative segment before committing compute time to an entire recording.</li>
 </ul>
 <p><img alt="Annolid GUI running Segment Anything assisted polygon creation" src="../imgs/annolid_with_segment_anything.gif" /></p>
+<h2 id="sparse-keypoint-tracking-workflow">Sparse Keypoint Tracking Workflow<a class="headerlink" href="#sparse-keypoint-tracking-workflow" title="Permanent link">&para;</a></h2>
+<p>Use sparse point tracking when you need reviewable body-part trajectories from
+one or a few labeled seed frames, not a reusable pose model trained across many
+videos.</p>
+<p>Start with <a href="../dinov3_keypoint_tracking/">DINOv3 Keypoint Tracking</a> when you can
+use DINO-family feature descriptors and want named keypoints with optional
+instance masks. Use <a href="../tapnext/">TAPNext ONNX Point Tracking</a> when you prefer a
+fixed ONNX point tracker, or <a href="../cowtracker/">CoWTracker Point Tracking</a> when you
+need the optional CoWTracker backend.</p>
+<p>For all point trackers:</p>
+<ol>
+<li>label a sharp seed frame;</li>
+<li>use stable keypoint names such as <code>nose</code>, <code>tail_base</code>, or <code>left_wing</code>;</li>
+<li>preserve instance association for multi-animal videos;</li>
+<li>run a short difficult segment first;</li>
+<li>correct the first frame where drift begins, save it, and rerun from that
+   correction frame.</li>
+</ol>
 <h2 id="2-annolid-bot-workflow">2. Annolid Bot Workflow<a class="headerlink" href="#2-annolid-bot-workflow" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot runs inside the GUI as a dedicated right-side dock.</p>
 <p><img alt="Annolid GUI with the Annolid Bot dock open" src="../imgs/annolid_bot_gui_dock.png" /></p>
@@ -2970,6 +3066,24 @@ corrected manual labels at those frames before running the full tracking pass.</
 cases where the IDs can be inferred from explicit assay logic or where you need a
 batch audit/report. Dry-run the policy or temporal repair first, then review the
 generated report before applying changes to downstream analysis files.</p>
+<h2 id="cutie-analysis-speed">CUTIE Analysis Speed<a class="headerlink" href="#cutie-analysis-speed" title="Permanent link">&para;</a></h2>
+<p>If CUTIE tracking is slow, reduce the number of frames before changing model
+settings. A 5-minute video at 30 FPS has about <code>9,000</code> frames; at 5 FPS it has
+about <code>1,500</code> frames.</p>
+<p>Recommended starting point for ordinary home-cage tracking:</p>
+<ol>
+<li>keep the original recording unchanged,</li>
+<li>make a downsampled analysis copy with <strong>File -&gt; Downsample Video(s)...</strong>,</li>
+<li>set the copy to <code>5</code> FPS,</li>
+<li>keep <code>480 x 270</code> videos at scale factor <code>1.0</code> unless a pilot shows lower
+   resolution still separates all animals,</li>
+<li>crop unused space outside the cage when possible,</li>
+<li>confirm the log says <code>Running device: cuda</code> on NVIDIA workstations.</li>
+</ol>
+<p>Disable <strong>Use CPU Only</strong>, overlay video export, and optical-flow motion-index
+calculation when they are not needed. See
+<a href="../tutorials/segment-based-batch-tracking/#11-reduce-cutie-analysis-time">Reduce CUTIE Analysis Time</a>
+for the full checklist.</p>
 <h2 id="5-depth-workflow">5. Depth Workflow<a class="headerlink" href="#5-depth-workflow" title="Permanent link">&para;</a></h2>
 <p>The current GUI includes Video Depth Anything integration. For setup,
 checkpoint handling, output formats, and troubleshooting, see
