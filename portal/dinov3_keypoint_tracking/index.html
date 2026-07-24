@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../assets/images/icon_annolid.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2835,6 +2835,8 @@ need a reusable model trained across many videos, camera setups, or animals.</p>
 <li><code>point</code> shapes become named keypoints to track;</li>
 <li><code>polygon</code> or mask shapes are optional but recommended because they constrain
   ambiguous points to the instance;</li>
+<li>a plain point without instance metadata is associated with the single polygon
+  that contains it, while explicit <code>instance_label</code> metadata always wins;</li>
 <li>later manually corrected frames can be used as new seed frames when you rerun
   tracking.</li>
 </ul>
@@ -2843,7 +2845,8 @@ no instance context. Annolid preserves <code>instance_label</code> and <code>dis
 metadata when those flags are present, and uses them to keep output labels
 reviewable. In scripted LabelMe JSON, set those flags explicitly for each point;
 in the GUI, check the saved frame before a long run to confirm the point belongs
-to the intended animal.</p>
+to the intended animal. Points inside overlapping polygons, or outside every
+polygon, remain unassociated unless their instance metadata is explicit.</p>
 <p>Keep display labels stable across frames and animals. Labels such as <code>nose</code>,
 <code>leftear</code>, <code>rightear</code>, <code>tail_base</code>, <code>fore_top</code>, or <code>abdomen_bot</code> should mean the
 same anatomical point every time.</p>
@@ -2866,8 +2869,9 @@ frame, Annolid:</p>
 <ol>
 <li>extracts the current DINO feature grid;</li>
 <li>optionally debiases coordinate-correlated DINO responses;</li>
-<li>estimates motion using previous velocity, dense Farneback flow, and
-   per-point pyramidal Lucas-Kanade flow;</li>
+<li>estimates the current point from valid per-point pyramidal Lucas-Kanade
+   flow, otherwise uses dense Farneback flow at the last emitted point, and
+   falls back to previous velocity when neither flow observation is valid;</li>
 <li>searches a bounded candidate region around the motion prior;</li>
 <li>scores candidates with DINO similarity, appearance/context/support evidence,
    mask or structure priors, backward consistency, and a motion penalty;</li>
@@ -2999,8 +3003,9 @@ the full recording.</p>
   previous feature location.</li>
 <li><strong>Coherent peak refinement</strong>: refines around the connected similarity peak
   instead of unrelated nearby peaks.</li>
-<li><strong>Pixel refinement</strong> settings: control Lucas-Kanade sub-patch correction,
-  including blend weight, window size, error threshold, and max jump.</li>
+<li><strong>Pixel refinement</strong>: the tracker presets configure Lucas-Kanade sub-patch
+  correction; programmatic callers can tune its blend weight, window size,
+  error threshold, and max jump through the <code>pixel_refine_*</code> runtime fields.</li>
 </ul>
 <h2 id="outputs-and-review-contract">Outputs And Review Contract<a class="headerlink" href="#outputs-and-review-contract" title="Permanent link">&para;</a></h2>
 <p>DINOv3 Keypoint Tracker writes LabelMe-compatible JSON files into the standard
@@ -3205,7 +3210,7 @@ tracks forward, and writes per-frame JSON outputs.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
