@@ -1705,6 +1705,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GUI Startup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-only-and-multimodal-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text-only and Multimodal Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-call-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Call Reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1712,6 +1740,17 @@
     <span class="md-ellipsis">
       
         Dream Memory Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-subagent-consultations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline Subagent Consultations
       
     </span>
   </a>
@@ -2667,6 +2706,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GUI Startup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-only-and-multimodal-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text-only and Multimodal Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-call-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Call Reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2674,6 +2741,17 @@
     <span class="md-ellipsis">
       
         Dream Memory Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-subagent-consultations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inline Subagent Consultations
       
     </span>
   </a>
@@ -2924,6 +3002,42 @@ restore hidden startup for a configured Windows automation machine, set:</p>
 </code></pre></div>
 <p><code>ANNOLID_DISABLE_BOT_AUTOSTART=1</code> still disables hidden startup on every
 platform.</p>
+<h3 id="text-only-and-multimodal-models">Text-only and Multimodal Models<a class="headerlink" href="#text-only-and-multimodal-models" title="Permanent link">&para;</a></h3>
+<p>The GUI may attach the current canvas or window to a chat turn. If an
+OpenAI-compatible model is known to be text-only, Annolid removes multimodal
+blocks before the request while preserving the text and adding an explicit note
+that the attachment was omitted. If an endpoint independently reports that its
+selected model is not multimodal, Annolid retries once with the same text-only
+conversion. This lets models such as NVIDIA Nemotron 3 Ultra handle ordinary
+chat without requiring a multimodal server flag.</p>
+<p>Annolid does not hide the same error for a vision-language model whose server
+was started without multimodal processing. In that case, enable multimodal
+processing in the model server or choose a text-only turn/model as appropriate.</p>
+<h3 id="model-call-reliability">Model Call Reliability<a class="headerlink" href="#model-call-reliability" title="Permanent link">&para;</a></h3>
+<p>Annolid normalizes model calls across OpenAI-compatible, Anthropic, OpenAI
+Codex, and Codex CLI runtimes:</p>
+<ul>
+<li>transient failures such as connection errors, timeouts, HTTP 429 responses,
+  and server errors receive one bounded retry before normal GUI or channel
+  fallback handling;</li>
+<li>provider <code>Retry-After</code> values up to 30 seconds are respected, while longer
+  waits are surfaced immediately so the GUI and channel workers do not hang;</li>
+<li>a stream is never retried after visible content has been emitted, avoiding
+  duplicated partial answers;</li>
+<li>empty successful responses are treated as retryable provider failures rather
+  than saved as blank assistant turns;</li>
+<li>provider errors are bounded and common credential forms are redacted before
+  they reach logs or user-facing error handling; and</li>
+<li>session-only metadata and internal <code>_meta</code> paths are removed from outbound
+  messages and tool schemas.</li>
+</ul>
+<p>Configured provider credentials are passed directly to the selected SDK client;
+model resolution does not copy them into process-wide environment variables.
+Existing environment-based configuration remains supported when loading
+settings.</p>
+<p>Inline images sent through an API data URL are limited to 20 MiB. Larger images
+must be resized before sending. Codex CLI image paths are not base64-encoded by
+Annolid and keep the CLI runtime's own input limits.</p>
 <h2 id="dream-memory-runs">Dream Memory Runs<a class="headerlink" href="#dream-memory-runs" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot now supports phase-based Dreaming memory maintenance commands in chat:</p>
 <ul>
@@ -2959,6 +3073,19 @@ platform.</p>
 </ul>
 <p>When enabled, Annolid Bot registers a protected system cron job (<code>dream</code>) that
 executes Dream runs directly (no model guesswork).</p>
+<h2 id="inline-subagent-consultations">Inline Subagent Consultations<a class="headerlink" href="#inline-subagent-consultations" title="Permanent link">&para;</a></h2>
+<p>The <code>spawn</code> tool supports both independent background work and blocking
+consultation:</p>
+<ul>
+<li><code>wait=false</code> (default) starts a background task and reports its task ID.</li>
+<li><code>wait=true</code> runs a native subagent consultation and returns the result to the
+  current agent turn so it can inform the final answer.</li>
+</ul>
+<p>Inline consultations are tracked by the same task lifecycle and cancellation
+manager while running, then removed after completion so they do not appear as
+stale background tasks. <code>wait=true</code> is intentionally unavailable for ACP
+sessions, which are long-lived interactive coding sessions. Specialized
+<code>spawn_behavior_subagent</code> calls support the same <code>wait</code> option.</p>
 <h2 id="bot-training-workflows">Bot Training Workflows<a class="headerlink" href="#bot-training-workflows" title="Permanent link">&para;</a></h2>
 <p>Annolid Bot now exposes typed training tools for model discovery and launch:</p>
 <ul>

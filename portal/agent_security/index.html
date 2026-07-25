@@ -2038,6 +2038,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#whatsapp-webhook-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WhatsApp Webhook Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#unsigned-auto-updates" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2837,6 +2848,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#whatsapp-webhook-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WhatsApp Webhook Authentication
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#unsigned-auto-updates" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3040,6 +3062,11 @@ annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>
 <p>Or attach explicit refs:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.zulip.api_key<span class="w"> </span>--env<span class="w"> </span>ZULIP_API_KEY
 </code></pre></div>
+<p>For a WhatsApp Cloud API webhook, store the Meta app secret through a ref:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--path<span class="w"> </span>tools.whatsapp.app_secret<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--env<span class="w"> </span>WHATSAPP_APP_SECRET
+</code></pre></div>
 <h3 id="unresolved-secret-refs">Unresolved Secret Refs<a class="headerlink" href="#unresolved-secret-refs" title="Permanent link">&para;</a></h3>
 <p>If a secret ref exists but its environment variable or local-store value is missing, the audit reports it as unresolved.</p>
 <p>Recommended action:</p>
@@ -3099,10 +3126,39 @@ annolid-run<span class="w"> </span>agent-secrets-migrate<span class="w"> </span>
 addresses, including local hosts and cloud metadata ranges. Workspace-scoped
 shell execution also treats the configured workspace as the trusted root, so a
 tool call cannot widen access by passing a different <code>working_dir</code>.</p>
+<p>Agent web-fetch and download clients apply the same public-target validation to
+every outgoing request, including each redirect hop. Redirect targets that
+resolve to localhost, private networks, or cloud metadata services are rejected
+before the redirected request is sent. The validated public DNS result is pinned
+to the actual HTTP connection to prevent DNS rebinding between validation and
+connect. Environment proxies are disabled for these requests because a proxy
+would resolve the destination outside Annolid's pinned connection boundary.</p>
+<p>Workspace restriction is enabled by default. Annolid does not register the host-backed
+<code>exec_start</code> and <code>exec_process</code> tools. The Docker-backed <code>exec</code> tool also fails
+closed when Docker is unavailable instead of silently falling back to the host.
+Shell guards also inspect absolute paths after option separators such as
+<code>--output=/outside/path</code>.</p>
+<p>The default Docker image is pinned to a reviewed immutable SHA-256 digest.
+Floating image tags are refused at execution time and reported by
+<code>agent-security-audit</code>. Existing configurations can explicitly set
+<code>tools.restrict_to_workspace=false</code>, but doing so re-enables host-backed managed
+shell sessions and is reported as a high-severity finding.</p>
 <p>Filesystem tools report workspace-boundary failures as hard policy boundaries.
 If the same outside target is retried across equivalent tools, the tool registry
 returns a refusal that tells the agent to ask the user how to proceed instead of
 trying shell or path-workaround variants.</p>
+<p>Text read/edit tools reject files larger than 100 MiB before loading them into
+memory. Use a format-specific or streaming workflow for larger artifacts.</p>
+<h3 id="whatsapp-webhook-authentication">WhatsApp Webhook Authentication<a class="headerlink" href="#whatsapp-webhook-authentication" title="Permanent link">&para;</a></h3>
+<p>When <code>tools.whatsapp.app_secret</code> is configured, POST requests must carry a valid
+Meta <code>X-Hub-Signature-256</code> signature over the exact request body. Invalid or
+missing signatures are rejected before the payload reaches the message bus.</p>
+<p>Annolid refuses to start an unsigned listener, including on loopback. This
+prevents another local process or a browser-originated cross-site request from
+injecting a message into the agent. Configure the app secret before enabling
+the webhook or forwarding it through a public HTTPS tunnel.</p>
+<p>Outbound WhatsApp Cloud API calls also require an HTTPS, publicly resolvable
+<code>graph.facebook.com</code> endpoint before Annolid attaches the access token.</p>
 <h3 id="unsigned-auto-updates">Unsigned Auto Updates<a class="headerlink" href="#unsigned-auto-updates" title="Permanent link">&para;</a></h3>
 <p>If automatic updates are enabled without strict signature requirements, the audit flags it.</p>
 <p>Recommended action:</p>

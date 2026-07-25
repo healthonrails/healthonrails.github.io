@@ -2819,7 +2819,7 @@
 <li>provider API keys,</li>
 <li>Zulip API keys,</li>
 <li>email passwords,</li>
-<li>WhatsApp access and verify tokens,</li>
+<li>WhatsApp access tokens, verify tokens, and webhook app secrets,</li>
 <li>Box access tokens,</li>
 <li>other agent channel credentials.</li>
 </ul>
@@ -2892,6 +2892,7 @@ annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--pa
 annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.box.access_token<span class="w"> </span>--env<span class="w"> </span>BOX_ACCESS_TOKEN
 annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.box.client_secret<span class="w"> </span>--env<span class="w"> </span>BOX_CLIENT_SECRET
 annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.box.refresh_token<span class="w"> </span>--env<span class="w"> </span>BOX_REFRESH_TOKEN
+annolid-run<span class="w"> </span>agent-secrets-set<span class="w"> </span>--path<span class="w"> </span>tools.whatsapp.app_secret<span class="w"> </span>--env<span class="w"> </span>WHATSAPP_APP_SECRET
 </code></pre></div>
 <h3 id="annolid-run-agent-secrets-remove"><code>annolid-run agent-secrets-remove</code><a class="headerlink" href="#annolid-run-agent-secrets-remove" title="Permanent link">&para;</a></h3>
 <p>Removes a secret ref from a config path. By default this removes only the ref metadata. Use <code>--delete-local-value</code> to also delete the local stored secret value.</p>
