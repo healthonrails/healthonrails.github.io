@@ -2868,24 +2868,24 @@
 <span class="nb">cd</span><span class="w"> </span>annolid
 uv<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.11
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui]"</span>
 </code></pre></div>
 <p>The dedicated guide is <a href="../install_with_uv/">uv Setup</a>.</p>
 <p>If you want ONNX Runtime GPU support in a manual <code>uv</code> environment on Linux or Windows, install Annolid first and then add the GPU wheel:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
-python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import onnxruntime as ort; print(ort.get_available_providers())&quot;</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import onnxruntime as ort; print(ort.get_available_providers())"</span>
 </code></pre></div>
 <h3 id="pip-venv">pip / venv<a class="headerlink" href="#pip-venv" title="Permanent link">&para;</a></h3>
 <p>If you prefer standard Python tooling:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[gui]"</span>
 </code></pre></div>
 <p>To install from source:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
 <span class="nb">cd</span><span class="w"> </span>annolid
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui]"</span>
 </code></pre></div>
 <h3 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h3>
 <p>Conda still works well when you want environment management plus FFmpeg and native libraries from conda-forge:</p>
@@ -2894,7 +2894,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>annolid-env
 conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ffmpeg<span class="w"> </span>git
 git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
 <span class="nb">cd</span><span class="w"> </span>annolid
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui]"</span>
 </code></pre></div>
 <h2 id="optional-extras">Optional Extras<a class="headerlink" href="#optional-extras" title="Permanent link">&para;</a></h2>
 <p>Useful extras currently defined in <code>pyproject.toml</code> include:</p>
@@ -2924,7 +2924,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </s
 <li><code>all</code>: convenience profile for full-feature workstations</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,sam3,yolo,training,ai_chat]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui,sam3,yolo,training,ai_chat]"</span>
 </code></pre></div>
 <p>Annolid's base package includes <code>pycocotools</code> so mask/RLE polygon paths are
 available in default installs. The one-line installer's default <code>gui</code> profile
@@ -2955,7 +2955,7 @@ command instead.</p>
 <p>If those native libraries are missing, Annolid falls back to <code>tifffile</code> when available. If the full <code>large_image</code> extra is not installed, Annolid still starts normally and falls back to the standard Qt/Pillow image path instead of requiring large-image packages at startup.</p>
 <h3 id="note-on-remote_video">Note on <code>remote_video</code><a class="headerlink" href="#note-on-remote_video" title="Permanent link">&para;</a></h3>
 <p><code>remote_video</code> is optional. Annolid's default install does not require <code>ffpyplayer</code>, which keeps Python 3.14 installs from failing when no compatible <code>ffpyplayer</code> wheel is available. Install it only if you use Annolid's network/remote video decoding path:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[remote_video]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[remote_video]"</span>
 </code></pre></div>
 <p>On Python 3.14, <code>ffpyplayer</code> may build from source and require native FFmpeg development headers such as <code>libpostproc</code>.</p>
 <h2 id="verify-the-install">Verify the Install<a class="headerlink" href="#verify-the-install" title="Permanent link">&para;</a></h2>

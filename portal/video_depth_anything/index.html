@@ -2744,12 +2744,12 @@ cloud export, or later 2D-to-3D workflows such as FlyBody.</p>
 Annolid's ML workflows, including PyTorch and <code>huggingface-hub</code> for checkpoint
 downloads. Use an environment created by the one-line installer, or install the
 GUI and ML extras:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,ml]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[gui,ml]"</span>
 </code></pre></div>
 <p>For script-only use without the desktop GUI, <code>pip install "annolid[ml]"</code> is
 enough.</p>
 <p>If you are working from a local checkout:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,ml]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui,ml]"</span>
 </code></pre></div>
 <p>For EXR export, also install <code>OpenEXR</code> and <code>Imath</code> in the active environment.</p>
 <h2 id="checkpoints">Checkpoints<a class="headerlink" href="#checkpoints" title="Permanent link">&para;</a></h2>
@@ -2786,13 +2786,13 @@ memory use lower on long videos, and emits records incrementally.</p>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">annolid.depth</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_video_depth_anything</span>
 
-<span class="n">input_video</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;videos/mice.mp4&quot;</span><span class="p">)</span>
-<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;outputs/mice_depth&quot;</span><span class="p">)</span>
+<span class="n">input_video</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"videos/mice.mp4"</span><span class="p">)</span>
+<span class="n">output_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"outputs/mice_depth"</span><span class="p">)</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">run_video_depth_anything</span><span class="p">(</span>
     <span class="n">input_video</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">input_video</span><span class="p">),</span>
     <span class="n">output_dir</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">output_dir</span><span class="p">),</span>
-    <span class="n">encoder</span><span class="o">=</span><span class="s2">&quot;vitb&quot;</span><span class="p">,</span>
+    <span class="n">encoder</span><span class="o">=</span><span class="s2">"vitb"</span><span class="p">,</span>
     <span class="n">max_res</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
     <span class="n">max_len</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
     <span class="n">target_fps</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
@@ -2801,7 +2801,7 @@ memory use lower on long videos, and emits records incrementally.</p>
     <span class="n">save_point_clouds</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;depth_ndjson&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="s2">"depth_ndjson"</span><span class="p">])</span>
 </code></pre></div>
 <h2 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
 <p>Every run writes outputs to the selected output directory. The primary artifact
@@ -2834,14 +2834,14 @@ floating-point depth array:</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 
-<span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;outputs/mice_depth/depth.ndjson&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">&quot;otherData&quot;</span><span class="p">][</span><span class="s2">&quot;depth_map&quot;</span><span class="p">]</span>
-<span class="n">scale</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;scale&quot;</span><span class="p">]</span>
+<span class="n">record</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s2">"outputs/mice_depth/depth.ndjson"</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="n">record</span><span class="p">[</span><span class="s2">"otherData"</span><span class="p">][</span><span class="s2">"depth_map"</span><span class="p">]</span>
+<span class="n">scale</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="s2">"scale"</span><span class="p">]</span>
 
-<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">&quot;image_data&quot;</span><span class="p">])))</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">"image_data"</span><span class="p">])))</span>
 <span class="n">depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mf">65535.0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span>
-    <span class="n">scale</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">scale</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">]</span>
-<span class="p">)</span> <span class="o">+</span> <span class="n">scale</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">]</span>
+    <span class="n">scale</span><span class="p">[</span><span class="s2">"max"</span><span class="p">]</span> <span class="o">-</span> <span class="n">scale</span><span class="p">[</span><span class="s2">"min"</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">+</span> <span class="n">scale</span><span class="p">[</span><span class="s2">"min"</span><span class="p">]</span>
 </code></pre></div>
 <h2 id="settings-reference">Settings Reference<a class="headerlink" href="#settings-reference" title="Permanent link">&para;</a></h2>
 <table>

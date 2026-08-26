@@ -2840,9 +2840,9 @@ Only fill frames that currently have empty shapes.
 </code></pre></div>
 <p>Equivalent structured tool fields:</p>
 <div class="highlight"><pre><span></span><code>gui_correct_tracking_ndjson(
-  ndjson_path=&quot;/data/session1/session1_annotations.ndjson&quot;,
-  source_ndjson_path=&quot;/data/session1/sam3_predictions.ndjson&quot;,
-  output_ndjson_path=&quot;/data/session1/session1_corrected.ndjson&quot;,
+  ndjson_path="/data/session1/session1_annotations.ndjson",
+  source_ndjson_path="/data/session1/sam3_predictions.ndjson",
+  output_ndjson_path="/data/session1/session1_corrected.ndjson",
   replace_only_empty_shapes=true
 )
 </code></pre></div>
@@ -2857,18 +2857,18 @@ Only fill frames that currently have empty shapes.
 <p>Use this when you want Annolid Bot to run SAM3 agent tracking and merge the
 result into your target NDJSON.</p>
 <p>Example prompt:</p>
-<div class="highlight"><pre><span></span><code>Run SAM3 Agent on /data/session1/video.mp4 for prompt &quot;mouse&quot;,
+<div class="highlight"><pre><span></span><code>Run SAM3 Agent on /data/session1/video.mp4 for prompt "mouse",
 then correct /data/session1/session1_annotations.ndjson.
 Write /data/session1/session1_corrected.ndjson.
 Only fill empty frames.
 </code></pre></div>
 <p>Equivalent structured tool fields:</p>
 <div class="highlight"><pre><span></span><code>gui_correct_tracking_ndjson(
-  ndjson_path=&quot;/data/session1/session1_annotations.ndjson&quot;,
-  video_path=&quot;/data/session1/video.mp4&quot;,
-  agent_prompt=&quot;mouse&quot;,
+  ndjson_path="/data/session1/session1_annotations.ndjson",
+  video_path="/data/session1/video.mp4",
+  agent_prompt="mouse",
   run_sam3_agent=true,
-  output_ndjson_path=&quot;/data/session1/session1_corrected.ndjson&quot;,
+  output_ndjson_path="/data/session1/session1_corrected.ndjson",
   window_size=5,
   stride=5
 )
@@ -2886,8 +2886,8 @@ distance 80 pixels. Write /data/session1/session1_temporal_repair.ndjson.
 </code></pre></div>
 <p>Equivalent structured tool fields:</p>
 <div class="highlight"><pre><span></span><code>gui_correct_tracking_ndjson(
-  ndjson_path=&quot;/data/session1/session1_annotations.ndjson&quot;,
-  output_ndjson_path=&quot;/data/session1/session1_temporal_repair.ndjson&quot;,
+  ndjson_path="/data/session1/session1_annotations.ndjson",
+  output_ndjson_path="/data/session1/session1_temporal_repair.ndjson",
   temporal_repair=true,
   start_frame=500,
   expected_instance_count=4,

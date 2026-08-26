@@ -2774,11 +2774,11 @@ to the predicted frame JSON files.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>TAPNext uses ONNX Runtime. For GUI tracking, install Annolid with the GUI and
 tracking extras:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,tracking]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[gui,tracking]"</span>
 </code></pre></div>
 <p>If you are working from a local checkout, install the project environment first:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,tracking]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui,tracking]"</span>
 </code></pre></div>
 <p>The one-line installer default <code>gui</code> profile also includes the tracking runtime.</p>
 <p>The model file is large, about 938 MB. The first run needs an internet
@@ -2798,10 +2798,10 @@ caches it at:</p>
 <p>If a file already exists at the default cache path but the checksum does not
 match, Annolid replaces it with the verified release asset.</p>
 <p>To verify the cached file manually:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">from annolid.utils.model_assets import sha256sum</span>
-<span class="s">print(sha256sum(Path(&quot;~/.annolid/workspace/downloads/tapnext.onnx&quot;).expanduser()))</span>
+<span class="s">print(sha256sum(Path("~/.annolid/workspace/downloads/tapnext.onnx").expanduser()))</span>
 <span class="s">PY</span>
 </code></pre></div>
 <h2 id="gui-workflow">GUI Workflow<a class="headerlink" href="#gui-workflow" title="Permanent link">&para;</a></h2>

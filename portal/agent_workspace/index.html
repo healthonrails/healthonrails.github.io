@@ -3007,7 +3007,7 @@
 <p>Use the native <code>google_drive</code> and <code>google_calendar</code> tools instead.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Install Annolid with the bot integrations bundle:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[annolid_bot]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[annolid_bot]"</span>
 </code></pre></div>
 <p>(Equivalent editable install works too: <code>pip install -e ".[annolid_bot]"</code>.)</p>
 <h2 id="shared-oauth-files">Shared OAuth Files<a class="headerlink" href="#shared-oauth-files" title="Permanent link">&para;</a></h2>
@@ -3026,20 +3026,20 @@
 <h2 id="config-reference">Config Reference<a class="headerlink" href="#config-reference" title="Permanent link">&para;</a></h2>
 <p>Configure in <code>~/.annolid/config.json</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;google_auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;credentialsFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/.annolid/agent/google_oauth_credentials.json&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;tokenFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;~/.annolid/agent/google_oauth_token.json&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;allowInteractiveAuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="nt">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"google_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"credentialsFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~/.annolid/agent/google_oauth_credentials.json"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tokenFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~/.annolid/agent/google_oauth_token.json"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"allowInteractiveAuth"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;google_drive&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="nt">"google_drive"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;calendar&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;calendarId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;primary&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;timezone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;America/New_York&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;defaultEventDurationMinutes&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
+<span class="w">    </span><span class="nt">"calendar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"calendarId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"primary"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"America/New_York"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"defaultEventDurationMinutes"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
@@ -3134,9 +3134,9 @@
 <h3 id="oauth-token-missing-and-no-browser-prompt">OAuth token missing and no browser prompt<a class="headerlink" href="#oauth-token-missing-and-no-browser-prompt" title="Permanent link">&para;</a></h3>
 <p>Set:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;tools&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;google_auth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;allowInteractiveAuth&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span><span class="nt">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"google_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"allowInteractiveAuth"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

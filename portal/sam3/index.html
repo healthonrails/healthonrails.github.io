@@ -3081,7 +3081,7 @@
 <p>The runtime is configured for <strong>inference only</strong> (no training/eval workflow required).</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Install Annolid with SAM3 extras:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[sam3]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">".[sam3]"</span>
 </code></pre></div>
 <p>Minimum practical runtime dependencies include:</p>
 <ul>
@@ -3130,11 +3130,11 @@
 </ol>
 <p>Example bot call:</p>
 <div class="highlight"><pre><span></span><code>sam3_agent_video_track(
-  video_path=&quot;/path/to/video.mp4&quot;,
-  agent_prompt=&quot;mouse&quot;,
+  video_path="/path/to/video.mp4",
+  agent_prompt="mouse",
   window_size=5,
   stride=5,
-  propagation_direction=&quot;forward&quot;,
+  propagation_direction="forward",
   dry_run=true
 )
 </code></pre></div>
@@ -3187,8 +3187,8 @@ routes to either <code>gui_segment_track_video</code> or <code>sam3_agent_video_
 on the selected model.</p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code>/track
-/track video=/path/to/video.mp4 prompt=&quot;mouse&quot; model=Cutie
-/track video=/path/to/video.mp4 prompt=&quot;mouse&quot; model=Cutie to_frame=400
+/track video=/path/to/video.mp4 prompt="mouse" model=Cutie
+/track video=/path/to/video.mp4 prompt="mouse" model=Cutie to_frame=400
 /track /path/to/video.mp4 mouse
 </code></pre></div>
 <p>Field guide:</p>
@@ -3361,7 +3361,7 @@ error if the active environment is too old.</p>
 <li>startup failure mentioning <code>iopath</code>, <code>ftfy</code>, or SAM3 extras.</li>
 </ul>
 <p>Fix:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;.[sam3]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">".[sam3]"</span>
 </code></pre></div>
 <h3 id="2-device-mismatch-errors-cuda-vs-cpu">2) Device mismatch errors (<code>cuda</code> vs <code>cpu</code>)<a class="headerlink" href="#2-device-mismatch-errors-cuda-vs-cpu" title="Permanent link">&para;</a></h3>
 <p>Symptoms:</p>

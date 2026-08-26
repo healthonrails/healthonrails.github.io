@@ -2887,11 +2887,11 @@ appearance correspondence, while optical flow handles small movements inside a
 16-pixel ViT patch.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>Install Annolid with GUI, model, and tracking dependencies:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,ml,tracking]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[gui,ml,tracking]"</span>
 </code></pre></div>
 <p>For a local checkout, use the repository environment:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,ml,tracking]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui,ml,tracking]"</span>
 </code></pre></div>
 <p>The one-line installer default <code>gui</code> profile also installs the model and
 tracking extras used by this workflow. The first DINOv3 run may need Hugging
@@ -3071,14 +3071,14 @@ are complete.</p>
 <span class="kn">from</span><span class="w"> </span><span class="nn">annolid.tracking.dino_keypoint_tracker</span><span class="w"> </span><span class="kn">import</span> <span class="n">DinoKeypointVideoProcessor</span>
 
 <span class="n">runtime</span> <span class="o">=</span> <span class="n">CutieDinoTrackerConfig</span><span class="o">.</span><span class="n">from_preset</span><span class="p">(</span>
-    <span class="s2">&quot;rodent_30fps_occlusions&quot;</span><span class="p">,</span>
-    <span class="n">patch_model_name</span><span class="o">=</span><span class="s2">&quot;facebook/dinov3-vits16-pretrain-lvd1689m&quot;</span><span class="p">,</span>
+    <span class="s2">"rodent_30fps_occlusions"</span><span class="p">,</span>
+    <span class="n">patch_model_name</span><span class="o">=</span><span class="s2">"facebook/dinov3-vits16-pretrain-lvd1689m"</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">processor</span> <span class="o">=</span> <span class="n">DinoKeypointVideoProcessor</span><span class="p">(</span>
-    <span class="n">video_path</span><span class="o">=</span><span class="s2">&quot;/path/to/video.mp4&quot;</span><span class="p">,</span>
+    <span class="n">video_path</span><span class="o">=</span><span class="s2">"/path/to/video.mp4"</span><span class="p">,</span>
     <span class="n">result_folder</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;facebook/dinov3-vits16-pretrain-lvd1689m&quot;</span><span class="p">,</span>
+    <span class="n">model_name</span><span class="o">=</span><span class="s2">"facebook/dinov3-vits16-pretrain-lvd1689m"</span><span class="p">,</span>
     <span class="n">short_side</span><span class="o">=</span><span class="mi">768</span><span class="p">,</span>
     <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
     <span class="n">runtime_config</span><span class="o">=</span><span class="n">runtime</span><span class="p">,</span>

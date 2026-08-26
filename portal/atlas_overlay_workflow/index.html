@@ -2866,10 +2866,10 @@
 <h2 id="install-the-optional-large-image-dependencies">Install the optional large-image dependencies<a class="headerlink" href="#install-the-optional-large-image-dependencies" title="Permanent link">&para;</a></h2>
 <p>This workflow is optional. Annolid's regular GUI install and normal image/video annotation workflows do not require any of the large-image packages below.</p>
 <p>If you work with large TIFF-family images, install the optional extra:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[large_image]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[large_image]"</span>
 </code></pre></div>
 <p>From a source checkout:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[large_image]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[large_image]"</span>
 </code></pre></div>
 <p>This enables the optional <code>tifffile</code>, <code>pyvips</code>, and <code>openslide-python</code> backends when available.</p>
 <p>If you do not install <code>large_image</code>, Annolid still launches and works as usual. Large TIFF-family files may fall back to the standard image loader path, which is acceptable for smaller TIFFs but less capable for metadata-rich or very large whole-slide workflows.</p>

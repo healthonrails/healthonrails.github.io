@@ -2698,15 +2698,15 @@ JSON outputs.</p>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>For a workstation that needs the GUI, common tracking runtime, and
 CoWTracker-specific dependency, install Annolid with these extras:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;annolid[gui,tracking,cowtracker]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[gui,tracking,cowtracker]"</span>
 </code></pre></div>
 <p>If you are working from a local checkout:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,tracking,cowtracker]&quot;</span>
+pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui,tracking,cowtracker]"</span>
 </code></pre></div>
 <p>If Annolid is already installed in an environment that has the tracking runtime,
 you can add only the CoWTracker dependency:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;safetensors&gt;=0.4.0&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"safetensors&gt;=0.4.0"</span>
 </code></pre></div>
 <p>The first run needs an internet connection so Annolid can fetch the CoWTracker
 checkpoint from Hugging Face.</p>

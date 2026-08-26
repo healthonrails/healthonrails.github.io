@@ -2870,12 +2870,12 @@ python<span class="w"> </span>scripts/check_distribution_artifacts.py<span class
 <p>Until signing identities and native packaging jobs are configured, release manifests mark CI-built desktop archives as <code>unsigned-ci-build</code>.</p>
 <h2 id="update-and-uninstall">Update and Uninstall<a class="headerlink" href="#update-and-uninstall" title="Permanent link">&para;</a></h2>
 <p>For pip/venv installs:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">&quot;annolid[gui]&quot;</span>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">"annolid[gui]"</span>
 python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>annolid
 </code></pre></div>
 <p>For one-line installer source checkouts, activate the printed environment and update from the install directory:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>pull<span class="w"> </span>--recurse-submodules
-python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui]"</span>
 </code></pre></div>
 <p>To remove a one-line installer setup, delete the install directory after saving any user data stored inside it.</p>
 <h2 id="release-validation">Release Validation<a class="headerlink" href="#release-validation" title="Permanent link">&para;</a></h2>

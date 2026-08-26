@@ -2868,30 +2868,30 @@
 <h3 id="1-generate-an-auth-url">1) Generate an auth URL<a class="headerlink" href="#1-generate-an-auth-url" title="Permanent link">&para;</a></h3>
 <p>Use your org host if Box routes your users through an enterprise login or 2FA page:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-box-auth-url<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--client-id<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BOX_CLIENT_ID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--authorize-base-url<span class="w"> </span><span class="s2">&quot;https://my_org_xxx.account.box.com&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">&quot;https://your-app.example.com/oauth/callback&quot;</span>
+<span class="w">  </span>--client-id<span class="w"> </span><span class="s2">"</span><span class="nv">$BOX_CLIENT_ID</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--authorize-base-url<span class="w"> </span><span class="s2">"https://my_org_xxx.account.box.com"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">"https://your-app.example.com/oauth/callback"</span>
 </code></pre></div>
 <p>If you omit <code>--authorize-base-url</code>, Annolid uses the standard Box host.</p>
 <p>Add <code>--open-browser</code> to launch the consent page immediately:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-box-auth-url<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--open-browser<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--client-id<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BOX_CLIENT_ID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">&quot;https://your-app.example.com/oauth/callback&quot;</span>
+<span class="w">  </span>--client-id<span class="w"> </span><span class="s2">"</span><span class="nv">$BOX_CLIENT_ID</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">"https://your-app.example.com/oauth/callback"</span>
 </code></pre></div>
 <h3 id="2-exchange-the-authorization-code">2) Exchange the authorization code<a class="headerlink" href="#2-exchange-the-authorization-code" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-box-auth-exchange<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--client-id<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BOX_CLIENT_ID</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--client-secret<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BOX_CLIENT_SECRET</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--authorize-base-url<span class="w"> </span><span class="s2">&quot;https://my_org_xxx.account.box.com&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">&quot;https://your-app.example.com/oauth/callback&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--code<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BOX_AUTH_CODE</span><span class="s2">&quot;</span>
+<span class="w">  </span>--client-id<span class="w"> </span><span class="s2">"</span><span class="nv">$BOX_CLIENT_ID</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--client-secret<span class="w"> </span><span class="s2">"</span><span class="nv">$BOX_CLIENT_SECRET</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--authorize-base-url<span class="w"> </span><span class="s2">"https://my_org_xxx.account.box.com"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">"https://your-app.example.com/oauth/callback"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--code<span class="w"> </span><span class="s2">"</span><span class="nv">$BOX_AUTH_CODE</span><span class="s2">"</span>
 </code></pre></div>
 <h3 id="3-persist-into-agent-config">3) Persist into agent config<a class="headerlink" href="#3-persist-into-agent-config" title="Permanent link">&para;</a></h3>
 <p>Add <code>--persist</code> to write the tokens and Box settings into <code>tools.box.*</code>.</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-box-auth-exchange<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">&quot;https://your-app.example.com/oauth/callback&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--code<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$BOX_AUTH_CODE</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--redirect-uri<span class="w"> </span><span class="s2">"https://your-app.example.com/oauth/callback"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--code<span class="w"> </span><span class="s2">"</span><span class="nv">$BOX_AUTH_CODE</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--persist
 </code></pre></div>
 <h3 id="4-refresh-an-access-token-manually">4) Refresh an access token manually<a class="headerlink" href="#4-refresh-an-access-token-manually" title="Permanent link">&para;</a></h3>

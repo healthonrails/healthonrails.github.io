@@ -2856,9 +2856,9 @@ the typed tool path intentionally.</p>
 </ul>
 <p>Typical typed invocation shape:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;annolid-run update check --channel stable&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;working_dir&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/Users/you/project&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;allow_mutation&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"annolid-run update check --channel stable"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"working_dir"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/Users/you/project"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"allow_mutation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="good-patterns">Good Patterns<a class="headerlink" href="#good-patterns" title="Permanent link">&para;</a></h2>
@@ -2933,15 +2933,15 @@ annolid-run agent-tool-pool --workspace ~/.annolid/workspace
 <p><img alt="Annolid Bot prompt toolbar with suggested skills and sharing controls" src="../imgs/annolid_bot_prompt_tools.png" /></p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code>/skill weather
-Check today&#39;s weather
+Check today's weather
 
 /tool cron
 Schedule an email summary for tomorrow morning
 </code></pre></div>
 <p>Use <code>agent-capabilities</code> when you want both tool policy and skill discovery in one report:</p>
 <div class="highlight"><pre><span></span><code>annolid-run agent-capabilities
-annolid-run agent-capabilities --workspace ~/.annolid/workspace --task-hint &quot;check today&#39;s weather&quot;
-annolid-run agent-capabilities --provider ollama --model qwen3 --task-hint &quot;summarize weather and email report&quot;
+annolid-run agent-capabilities --workspace ~/.annolid/workspace --task-hint "check today's weather"
+annolid-run agent-capabilities --provider ollama --model qwen3 --task-hint "summarize weather and email report"
 </code></pre></div>
 <p>The output includes:</p>
 <ul>
@@ -2951,8 +2951,8 @@ annolid-run agent-capabilities --provider ollama --model qwen3 --task-hint &quot
 </ul>
 <p>Use <code>agent-skill-pool</code> to inspect effective skill discovery and optional scored task matches:</p>
 <div class="highlight"><pre><span></span><code>annolid-run agent-skill-pool
-annolid-run agent-skill-pool --workspace ~/.annolid/workspace --task-hint &quot;summarize weather and email report&quot;
-annolid-run agent-skill-pool --task-hint &quot;debug python traceback&quot; --top-k 3
+annolid-run agent-skill-pool --workspace ~/.annolid/workspace --task-hint "summarize weather and email report"
+annolid-run agent-skill-pool --task-hint "debug python traceback" --top-k 3
 </code></pre></div>
 <p>The output includes:</p>
 <ul>

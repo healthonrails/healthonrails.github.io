@@ -2800,10 +2800,10 @@
 </code></pre></div>
 <h2 id="3-install-annolid">3. Install Annolid<a class="headerlink" href="#3-install-annolid" title="Permanent link">&para;</a></h2>
 <p>GUI-capable editable install:</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui]&quot;</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui]"</span>
 </code></pre></div>
 <p>If you also need Annolid Bot integrations:</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[gui,annolid_bot]&quot;</span>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[gui,annolid_bot]"</span>
 </code></pre></div>
 <h2 id="4-verify">4. Verify<a class="headerlink" href="#4-verify" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>annolid<span class="w"> </span>--help
@@ -2813,7 +2813,7 @@ annolid-run<span class="w"> </span>list-models
 <h2 id="onnx-runtime-gpu-provider">ONNX Runtime GPU Provider<a class="headerlink" href="#onnx-runtime-gpu-provider" title="Permanent link">&para;</a></h2>
 <p>The editable install brings in CPU <code>onnxruntime</code> by default. On Linux or Windows machines with an NVIDIA driver reporting CUDA 12.x or newer, add the GPU provider after installing Annolid:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
-python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import onnxruntime as ort; print(ort.get_available_providers())&quot;</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import onnxruntime as ort; print(ort.get_available_providers())"</span>
 </code></pre></div>
 <p>The provider list should include <code>CUDAExecutionProvider</code>. If it does not, keep the CPU install until the NVIDIA driver/runtime mismatch is resolved:</p>
 <div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>onnxruntime-gpu

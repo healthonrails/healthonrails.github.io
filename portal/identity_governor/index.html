@@ -3338,50 +3338,50 @@ API, or may not include the temporal repair mode.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.postprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_identity_governor</span>
 
 <span class="n">policy</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;metric_aliases&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;in_left&quot;</span><span class="p">:</span> <span class="s2">&quot;zone.inside.left_zone&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;in_right&quot;</span><span class="p">:</span> <span class="s2">&quot;zone.inside.right_zone&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;nearest&quot;</span><span class="p">:</span> <span class="s2">&quot;distance.nearest&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;area_px&quot;</span><span class="p">:</span> <span class="s2">&quot;area&quot;</span><span class="p">,</span>
+    <span class="s2">"metric_aliases"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"in_left"</span><span class="p">:</span> <span class="s2">"zone.inside.left_zone"</span><span class="p">,</span>
+        <span class="s2">"in_right"</span><span class="p">:</span> <span class="s2">"zone.inside.right_zone"</span><span class="p">,</span>
+        <span class="s2">"nearest"</span><span class="p">:</span> <span class="s2">"distance.nearest"</span><span class="p">,</span>
+        <span class="s2">"area_px"</span><span class="p">:</span> <span class="s2">"area"</span><span class="p">,</span>
     <span class="p">},</span>
-    <span class="s2">&quot;rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha_when_right_and_large&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;assign_label&quot;</span><span class="p">:</span> <span class="s2">&quot;alpha&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;conditions&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;in_right&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;area_px&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;gte&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"alpha_when_right_and_large"</span><span class="p">,</span>
+            <span class="s2">"assign_label"</span><span class="p">:</span> <span class="s2">"alpha"</span><span class="p">,</span>
+            <span class="s2">"conditions"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"in_right"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"eq"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"area_px"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"gte"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
             <span class="p">],</span>
-            <span class="s2">&quot;min_streak_frames&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="s2">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">"min_streak_frames"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">"priority"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="p">{</span>
-            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;beta_when_left_and_large&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;assign_label&quot;</span><span class="p">:</span> <span class="s2">&quot;beta&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;conditions&quot;</span><span class="p">:</span> <span class="p">[</span>
-                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;in_left&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
-                <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;area_px&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;gte&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"beta_when_left_and_large"</span><span class="p">,</span>
+            <span class="s2">"assign_label"</span><span class="p">:</span> <span class="s2">"beta"</span><span class="p">,</span>
+            <span class="s2">"conditions"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"in_left"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"eq"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"area_px"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"gte"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
             <span class="p">],</span>
-            <span class="s2">&quot;min_streak_frames&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="s2">&quot;priority&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">"min_streak_frames"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">"priority"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">],</span>
-    <span class="s2">&quot;ambiguity_conditions&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span><span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="s2">&quot;nearest&quot;</span><span class="p">,</span> <span class="s2">&quot;op&quot;</span><span class="p">:</span> <span class="s2">&quot;lte&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">}</span>
+    <span class="s2">"ambiguity_conditions"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"nearest"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"lte"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">}</span>
     <span class="p">],</span>
-    <span class="s2">&quot;max_backtrack_frames&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
-    <span class="s2">&quot;max_forward_gap_frames&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">&quot;min_correction_span_frames&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-    <span class="s2">&quot;canonical_track_ids&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+    <span class="s2">"max_backtrack_frames"</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">"max_forward_gap_frames"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"min_correction_span_frames"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">"canonical_track_ids"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"alpha"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+        <span class="s2">"beta"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">,</span>
     <span class="p">},</span>
 <span class="p">}</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">run_identity_governor</span><span class="p">(</span>
-    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/session&quot;</span><span class="p">,</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">"/path/to/session"</span><span class="p">,</span>
     <span class="n">policy</span><span class="o">=</span><span class="n">policy</span><span class="p">,</span>
-    <span class="n">zone_file</span><span class="o">=</span><span class="s2">&quot;/path/to/session_zones.json&quot;</span><span class="p">,</span>  <span class="c1"># optional</span>
+    <span class="n">zone_file</span><span class="o">=</span><span class="s2">"/path/to/session_zones.json"</span><span class="p">,</span>  <span class="c1"># optional</span>
     <span class="n">apply_changes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>  <span class="c1"># dry-run</span>
 <span class="p">)</span>
 
@@ -3399,9 +3399,9 @@ API, or may not include the temporal repair mode.</p>
 </ul>
 <h3 id="5-apply-changes">5. Apply Changes<a class="headerlink" href="#5-apply-changes" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">run_identity_governor</span><span class="p">(</span>
-    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/session&quot;</span><span class="p">,</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">"/path/to/session"</span><span class="p">,</span>
     <span class="n">policy</span><span class="o">=</span><span class="n">policy</span><span class="p">,</span>
-    <span class="n">zone_file</span><span class="o">=</span><span class="s2">&quot;/path/to/session_zones.json&quot;</span><span class="p">,</span>
+    <span class="n">zone_file</span><span class="o">=</span><span class="s2">"/path/to/session_zones.json"</span><span class="p">,</span>
     <span class="n">apply_changes</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">updated_files</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">updated_shapes</span><span class="p">)</span>
@@ -3457,7 +3457,7 @@ recovered mask came back attached to the wrong identity.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.postprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_temporal_identity_repair</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">run_temporal_identity_repair</span><span class="p">(</span>
-    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/cutie_results/session&quot;</span><span class="p">,</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">"/path/to/cutie_results/session"</span><span class="p">,</span>
     <span class="n">start_frame</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">expected_instance_count</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">max_gap_frames</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
@@ -3470,7 +3470,7 @@ recovered mask came back attached to the wrong identity.</p>
 </code></pre></div>
 <p>After reviewing the report:</p>
 <div class="highlight"><pre><span></span><code><span class="n">run_temporal_identity_repair</span><span class="p">(</span>
-    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">&quot;/path/to/cutie_results/session&quot;</span><span class="p">,</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">"/path/to/cutie_results/session"</span><span class="p">,</span>
     <span class="n">expected_instance_count</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">max_gap_frames</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">max_match_distance</span><span class="o">=</span><span class="mf">80.0</span><span class="p">,</span>
@@ -3495,7 +3495,7 @@ if no safe correction was made.</p>
 <li><code>distance.to_label.&lt;instance_label&gt;</code></li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;distance.to_track.2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gte&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">50.0</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"metric"</span><span class="p">:</span><span class="w"> </span><span class="s2">"distance.to_track.2"</span><span class="p">,</span><span class="w"> </span><span class="nt">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gte"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">50.0</span><span class="p">}</span>
 </code></pre></div>
 <h3 id="zone-metrics">Zone Metrics<a class="headerlink" href="#zone-metrics" title="Permanent link">&para;</a></h3>
 <p>From the loaded zone file:</p>
@@ -3510,7 +3510,7 @@ if no safe correction was made.</p>
 <li><code>zone.inside.neutral_transit</code> / <code>zone.distance.neutral_transit</code> (aggregate neutral tube/transit metric)</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;metric&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;zone.inside.right_zone&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;op&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eq&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">"metric"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zone.inside.right_zone"</span><span class="p">,</span><span class="w"> </span><span class="nt">"op"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eq"</span><span class="p">,</span><span class="w"> </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span>
 </code></pre></div>
 <h3 id="geometry-metrics">Geometry Metrics<a class="headerlink" href="#geometry-metrics" title="Permanent link">&para;</a></h3>
 <ul>

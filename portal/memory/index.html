@@ -2928,7 +2928,7 @@ annotations, datasets, and configs remain authoritative.</p>
 </ol>
 <h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <p>Install optional memory dependencies:</p>
-<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;.[memory]&quot;</span>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span><span class="s2">".[memory]"</span>
 </code></pre></div>
 <p>For local development in this repository, activate <code>.venv</code> first:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
@@ -2989,7 +2989,7 @@ annotations, datasets, and configs remain authoritative.</p>
 <h2 id="cli-usage">CLI Usage<a class="headerlink" href="#cli-usage" title="Permanent link">&para;</a></h2>
 <p>Use memory commands through the main runner:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>memory<span class="w"> </span>stats<span class="w"> </span>--scope<span class="w"> </span>global
-annolid-run<span class="w"> </span>memory<span class="w"> </span>search<span class="w"> </span><span class="s2">&quot;segmentation conventions&quot;</span><span class="w"> </span>--top_k<span class="w"> </span><span class="m">5</span>
+annolid-run<span class="w"> </span>memory<span class="w"> </span>search<span class="w"> </span><span class="s2">"segmentation conventions"</span><span class="w"> </span>--top_k<span class="w"> </span><span class="m">5</span>
 annolid-run<span class="w"> </span>memory<span class="w"> </span>delete<span class="w"> </span>&lt;memory_id&gt;
 annolid-run<span class="w"> </span>memory<span class="w"> </span>distill<span class="w"> </span>project:demo<span class="w"> </span>--max_records<span class="w"> </span><span class="m">50</span>
 annolid-run<span class="w"> </span>memory<span class="w"> </span>cleanup<span class="w"> </span>workspace:default<span class="w"> </span>--older_than_days<span class="w"> </span><span class="m">30</span><span class="w"> </span>--min_importance<span class="w"> </span><span class="m">0</span>.2
@@ -3007,18 +3007,18 @@ annolid-run<span class="w"> </span>memory<span class="w"> </span>cleanup<span cl
 
 <span class="n">service</span> <span class="o">=</span> <span class="n">get_memory_service</span><span class="p">()</span>
 <span class="n">service</span><span class="o">.</span><span class="n">store_memory</span><span class="p">(</span>
-    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Use tail_base instead of tailroot for this dataset.&quot;</span><span class="p">,</span>
-    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">&quot;mouse-session-a&quot;</span><span class="p">),</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">"Use tail_base instead of tailroot for this dataset."</span><span class="p">,</span>
+    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">dataset</span><span class="p">(</span><span class="s2">"mouse-session-a"</span><span class="p">),</span>
     <span class="n">category</span><span class="o">=</span><span class="n">MemoryCategory</span><span class="o">.</span><span class="n">ANNOTATION_RULE</span><span class="p">,</span>
     <span class="n">source</span><span class="o">=</span><span class="n">MemorySource</span><span class="o">.</span><span class="n">ANNOTATION</span><span class="p">,</span>
     <span class="n">importance</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="s2">&quot;mouse&quot;</span><span class="p">},</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"species"</span><span class="p">:</span> <span class="s2">"mouse"</span><span class="p">},</span>
 <span class="p">)</span>
 </code></pre></div>
 <p>Build scoped context:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.registry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_context_service</span>
 
-<span class="n">context</span> <span class="o">=</span> <span class="n">get_context_service</span><span class="p">()</span><span class="o">.</span><span class="n">build_project_context</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="s2">&quot;demo-project&quot;</span><span class="p">)</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">get_context_service</span><span class="p">()</span><span class="o">.</span><span class="n">build_project_context</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="s2">"demo-project"</span><span class="p">)</span>
 </code></pre></div>
 <p>Use persistence helpers:</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.domain.memory.scopes</span><span class="w"> </span><span class="kn">import</span> <span class="n">MemoryScope</span>
@@ -3026,10 +3026,10 @@ annolid-run<span class="w"> </span>memory<span class="w"> </span>cleanup<span cl
 
 <span class="n">persistence</span> <span class="o">=</span> <span class="n">get_persistence_service</span><span class="p">()</span>
 <span class="n">persistence</span><span class="o">.</span><span class="n">save_settings_snapshot</span><span class="p">(</span>
-    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">workspace</span><span class="p">(</span><span class="s2">&quot;lab-a&quot;</span><span class="p">),</span>
-    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Known-good export setup&quot;</span><span class="p">,</span>
-    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;fps&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;csv&quot;</span><span class="p">},</span>
-    <span class="n">context</span><span class="o">=</span><span class="s2">&quot;Infrared videos&quot;</span><span class="p">,</span>
+    <span class="n">scope</span><span class="o">=</span><span class="n">MemoryScope</span><span class="o">.</span><span class="n">workspace</span><span class="p">(</span><span class="s2">"lab-a"</span><span class="p">),</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">"Known-good export setup"</span><span class="p">,</span>
+    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">"fps"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"format"</span><span class="p">:</span> <span class="s2">"csv"</span><span class="p">},</span>
+    <span class="n">context</span><span class="o">=</span><span class="s2">"Infrared videos"</span><span class="p">,</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="adapters">Adapters<a class="headerlink" href="#adapters" title="Permanent link">&para;</a></h2>
@@ -3062,12 +3062,12 @@ you can save current panel state and later apply it with one click.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.adapters.settings_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">SettingsProfile</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">annolid.interfaces.memory.adapters.workspace</span><span class="w"> </span><span class="kn">import</span> <span class="n">WorkspaceMemoryAdapter</span>
 
-<span class="n">adapter</span> <span class="o">=</span> <span class="n">WorkspaceMemoryAdapter</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+<span class="n">adapter</span> <span class="o">=</span> <span class="n">WorkspaceMemoryAdapter</span><span class="p">(</span><span class="s2">"default"</span><span class="p">)</span>
 <span class="n">profile</span> <span class="o">=</span> <span class="n">SettingsProfile</span><span class="p">(</span>
-    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Infrared tracking preset&quot;</span><span class="p">,</span>
-    <span class="n">workflow</span><span class="o">=</span><span class="s2">&quot;tracking&quot;</span><span class="p">,</span>
-    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;tracker&quot;</span><span class="p">:</span> <span class="s2">&quot;bytetrack&quot;</span><span class="p">,</span> <span class="s2">&quot;confidence&quot;</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">},</span>
-    <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;infrared&quot;</span><span class="p">,</span> <span class="s2">&quot;tracking&quot;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"Infrared tracking preset"</span><span class="p">,</span>
+    <span class="n">workflow</span><span class="o">=</span><span class="s2">"tracking"</span><span class="p">,</span>
+    <span class="n">settings</span><span class="o">=</span><span class="p">{</span><span class="s2">"tracker"</span><span class="p">:</span> <span class="s2">"bytetrack"</span><span class="p">,</span> <span class="s2">"confidence"</span><span class="p">:</span> <span class="mf">0.45</span><span class="p">},</span>
+    <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">"infrared"</span><span class="p">,</span> <span class="s2">"tracking"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">adapter</span><span class="o">.</span><span class="n">store_settings_profile</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
 </code></pre></div>

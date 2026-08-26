@@ -2877,46 +2877,46 @@ falls back to the sibling <code>*_tracking.csv</code> file and converts COCO RLE
 <code>segmentation</code> masks into polygon points for classifier training.</p>
 <p>Check the annotation schema before training:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">import json</span>
 <span class="s">from collections import Counter, defaultdict</span>
 
-<span class="s">video_dir = Path(&quot;/path/to/videos/2019_08_20_fly2&quot;)</span>
+<span class="s">video_dir = Path("/path/to/videos/2019_08_20_fly2")</span>
 <span class="s">name = video_dir.name</span>
 <span class="s">counts = Counter()</span>
 <span class="s">frames = defaultdict(set)</span>
 
-<span class="s">for path in sorted(video_dir.glob(&quot;*.json&quot;)):</span>
-<span class="s">    if path.name.endswith(&quot;_tracking_stats.json&quot;):</span>
+<span class="s">for path in sorted(video_dir.glob("*.json")):</span>
+<span class="s">    if path.name.endswith("_tracking_stats.json"):</span>
 <span class="s">        continue</span>
 <span class="s">    data = json.loads(path.read_text())</span>
-<span class="s">    frame = data.get(&quot;frame&quot;)</span>
+<span class="s">    frame = data.get("frame")</span>
 <span class="s">    if frame is None:</span>
-<span class="s">        frame = int(path.stem.split(&quot;_&quot;)[-1])</span>
-<span class="s">    for shape in data.get(&quot;shapes&quot;) or []:</span>
-<span class="s">        label = str(shape.get(&quot;label&quot;))</span>
-<span class="s">        points = shape.get(&quot;points&quot;) or []</span>
-<span class="s">        if str(shape.get(&quot;shape_type&quot;, &quot;polygon&quot;)).lower() == &quot;polygon&quot; and len(points) &gt;= 3:</span>
+<span class="s">        frame = int(path.stem.split("_")[-1])</span>
+<span class="s">    for shape in data.get("shapes") or []:</span>
+<span class="s">        label = str(shape.get("label"))</span>
+<span class="s">        points = shape.get("points") or []</span>
+<span class="s">        if str(shape.get("shape_type", "polygon")).lower() == "polygon" and len(points) &gt;= 3:</span>
 <span class="s">            counts[label] += 1</span>
 <span class="s">            frames[label].add(int(frame))</span>
 
-<span class="s">ndjson = video_dir / f&quot;{name}_annotations.ndjson&quot;</span>
+<span class="s">ndjson = video_dir / f"{name}_annotations.ndjson"</span>
 <span class="s">with ndjson.open() as f:</span>
 <span class="s">    for line in f:</span>
 <span class="s">        if not line.strip():</span>
 <span class="s">            continue</span>
 <span class="s">        data = json.loads(line)</span>
-<span class="s">        frame = int(data.get(&quot;frame&quot;, -1))</span>
-<span class="s">        for shape in data.get(&quot;shapes&quot;) or []:</span>
-<span class="s">            label = str(shape.get(&quot;label&quot;))</span>
-<span class="s">            points = shape.get(&quot;points&quot;) or []</span>
-<span class="s">            if str(shape.get(&quot;shape_type&quot;, &quot;polygon&quot;)).lower() == &quot;polygon&quot; and len(points) &gt;= 3:</span>
+<span class="s">        frame = int(data.get("frame", -1))</span>
+<span class="s">        for shape in data.get("shapes") or []:</span>
+<span class="s">            label = str(shape.get("label"))</span>
+<span class="s">            points = shape.get("points") or []</span>
+<span class="s">            if str(shape.get("shape_type", "polygon")).lower() == "polygon" and len(points) &gt;= 3:</span>
 <span class="s">                counts[label] += 1</span>
 <span class="s">                frames[label].add(frame)</span>
 
 <span class="s">print(counts)</span>
-<span class="s">for label in (&quot;head&quot;, &quot;thorax&quot;, &quot;abdomen&quot;):</span>
+<span class="s">for label in ("head", "thorax", "abdomen"):</span>
 <span class="s">    seen = frames.get(label, set())</span>
 <span class="s">    print(label, len(seen), (min(seen), max(seen)) if seen else None)</span>
 <span class="s">PY</span>
@@ -2937,16 +2937,16 @@ columns identical across train and test videos. Put unlabeled frames in
 <code>background</code> unless you intentionally want to exclude them before training.</p>
 <p>Check label counts:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">import pandas as pd</span>
 
-<span class="s">label_csv = Path(&quot;/path/to/labels/2019_08_20_fly2_labels.csv&quot;)</span>
+<span class="s">label_csv = Path("/path/to/labels/2019_08_20_fly2_labels.csv")</span>
 <span class="s">df = pd.read_csv(label_csv)</span>
 <span class="s">label_cols = [</span>
 <span class="s">    c for c in df.columns</span>
-<span class="s">    if not str(c).startswith(&quot;Unnamed&quot;)</span>
-<span class="s">    and str(c).lower() not in {&quot;frame&quot;, &quot;frames&quot;, &quot;frame_number&quot;, &quot;index&quot;}</span>
+<span class="s">    if not str(c).startswith("Unnamed")</span>
+<span class="s">    and str(c).lower() not in {"frame", "frames", "frame_number", "index"}</span>
 <span class="s">]</span>
 <span class="s">print(df.shape)</span>
 <span class="s">print({c: int(df[c].sum()) for c in label_cols})</span>
@@ -2956,21 +2956,21 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <p>Use the Annolid polygon classifier workflow helper to merge tracked polygons
 with manual behavior labels. This writes one feature CSV per video.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">from annolid.behavior.polygon_classifier_workflow import generate_polygon_points_csv</span>
 
-<span class="s">base = Path(&quot;/path/to/project&quot;)</span>
-<span class="s">videos = base / &quot;videos&quot;</span>
-<span class="s">labels = base / &quot;labels-hand-paper-matched&quot;</span>
-<span class="s">out = base / &quot;logs&quot; / &quot;polygon_tcn_train_test&quot;</span>
+<span class="s">base = Path("/path/to/project")</span>
+<span class="s">videos = base / "videos"</span>
+<span class="s">labels = base / "labels-hand-paper-matched"</span>
+<span class="s">out = base / "logs" / "polygon_tcn_train_test"</span>
 <span class="s">out.mkdir(parents=True, exist_ok=True)</span>
 
-<span class="s">for name in (&quot;2019_08_20_fly2&quot;, &quot;2019_06_26_fly2&quot;):</span>
+<span class="s">for name in ("2019_08_20_fly2", "2019_06_26_fly2"):</span>
 <span class="s">    result = generate_polygon_points_csv(</span>
 <span class="s">        annotation_dir=videos / name,</span>
-<span class="s">        label_csv=labels / f&quot;{name}_labels.csv&quot;,</span>
-<span class="s">        output_csv=out / f&quot;{name}_polygon_points.csv&quot;,</span>
+<span class="s">        label_csv=labels / f"{name}_labels.csv",</span>
+<span class="s">        output_csv=out / f"{name}_polygon_points.csv",</span>
 <span class="s">        num_points=50,</span>
 <span class="s">        include_unlabeled=False,</span>
 <span class="s">    )</span>
@@ -2978,25 +2978,25 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <span class="s">PY</span>
 </code></pre></div>
 <p>The output should list the same polygon columns for every video:</p>
-<div class="highlight"><pre><span></span><code>polygon_columns=(&#39;abdomen_features&#39;, &#39;head_features&#39;, &#39;thorax_features&#39;)
+<div class="highlight"><pre><span></span><code>polygon_columns=('abdomen_features', 'head_features', 'thorax_features')
 </code></pre></div>
 <h2 id="5-validate-traintest-compatibility">5. Validate Train/Test Compatibility<a class="headerlink" href="#5-validate-traintest-compatibility" title="Permanent link">&para;</a></h2>
 <p>Before training, confirm the train and test CSVs have the same feature schema:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">import pandas as pd</span>
 
-<span class="s">root = Path(&quot;/path/to/project/logs/polygon_tcn_train_test&quot;)</span>
-<span class="s">train = pd.read_csv(root / &quot;2019_08_20_fly2_polygon_points.csv&quot;, nrows=0)</span>
-<span class="s">test = pd.read_csv(root / &quot;2019_06_26_fly2_polygon_points.csv&quot;, nrows=0)</span>
+<span class="s">root = Path("/path/to/project/logs/polygon_tcn_train_test")</span>
+<span class="s">train = pd.read_csv(root / "2019_08_20_fly2_polygon_points.csv", nrows=0)</span>
+<span class="s">test = pd.read_csv(root / "2019_06_26_fly2_polygon_points.csv", nrows=0)</span>
 
-<span class="s">feature_suffixes = (&quot;_features&quot;, &quot;_area&quot;, &quot;_centroid&quot;, &quot;_perimeter&quot;, &quot;_motion_index&quot;)</span>
+<span class="s">feature_suffixes = ("_features", "_area", "_centroid", "_perimeter", "_motion_index")</span>
 <span class="s">train_features = {c for c in train.columns if c.endswith(feature_suffixes)}</span>
 <span class="s">test_features = {c for c in test.columns if c.endswith(feature_suffixes)}</span>
 
-<span class="s">print(&quot;missing_from_test&quot;, sorted(train_features - test_features))</span>
-<span class="s">print(&quot;extra_in_test&quot;, sorted(test_features - train_features))</span>
+<span class="s">print("missing_from_test", sorted(train_features - test_features))</span>
+<span class="s">print("extra_in_test", sorted(test_features - train_features))</span>
 <span class="s">PY</span>
 </code></pre></div>
 <p>Both lists should be empty. If not, fix tracking labels or choose a compatible
@@ -3034,17 +3034,17 @@ annolid-run<span class="w"> </span>train<span class="w"> </span>polygon_classifi
 checkpoint, metrics path, Markdown report path, and training parameters.</p>
 <p>The same workflow is available from Python when scripting inside notebooks:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">from annolid.behavior.polygon_classifier_workflow import train_polygon_classifier</span>
 
-<span class="s">root = Path(&quot;/path/to/project/logs/polygon_tcn_train_test&quot;)</span>
+<span class="s">root = Path("/path/to/project/logs/polygon_tcn_train_test")</span>
 <span class="s">outcome = train_polygon_classifier(</span>
-<span class="s">    train_csv=root / &quot;2019_08_20_fly2_polygon_points.csv&quot;,</span>
-<span class="s">    test_csv=root / &quot;2019_06_26_fly2_polygon_points.csv&quot;,</span>
-<span class="s">    output_dir=Path(&quot;/path/to/project/logs/runs/polygon_classifier/train&quot;),</span>
-<span class="s">    model_type=&quot;tcn&quot;,</span>
-<span class="s">    run_name=&quot;fly2_train_20190626_test_tcn&quot;,</span>
+<span class="s">    train_csv=root / "2019_08_20_fly2_polygon_points.csv",</span>
+<span class="s">    test_csv=root / "2019_06_26_fly2_polygon_points.csv",</span>
+<span class="s">    output_dir=Path("/path/to/project/logs/runs/polygon_classifier/train"),</span>
+<span class="s">    model_type="tcn",</span>
+<span class="s">    run_name="fly2_train_20190626_test_tcn",</span>
 <span class="s">    num_epochs=500,</span>
 <span class="s">    batch_size=8,</span>
 <span class="s">    learning_rate=1e-4,</span>
@@ -3053,7 +3053,7 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <span class="s">    num_residual_blocks=2,</span>
 <span class="s">    kernel_size=9,</span>
 <span class="s">    dropout=0.1,</span>
-<span class="s">    device=&quot;auto&quot;,</span>
+<span class="s">    device="auto",</span>
 <span class="s">)</span>
 <span class="s">print(outcome)</span>
 <span class="s">PY</span>
@@ -3072,28 +3072,28 @@ python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&
 <p>Check that training did not produce non-finite values and that the prediction
 CSV has the expected number of rows:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">import json</span>
 <span class="s">import math</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">import pandas as pd</span>
 
-<span class="s">run = Path(&quot;/path/to/run_dir&quot;)</span>
-<span class="s">text = (run / &quot;metrics.json&quot;).read_text()</span>
+<span class="s">run = Path("/path/to/run_dir")</span>
+<span class="s">text = (run / "metrics.json").read_text()</span>
 <span class="s">payload = json.loads(text)</span>
-<span class="s">history = payload[&quot;history&quot;]</span>
-<span class="s">losses = [float(row[&quot;loss&quot;]) for row in history]</span>
-<span class="s">pred = pd.read_csv(run / &quot;test_predictions.csv&quot;)</span>
+<span class="s">history = payload["history"]</span>
+<span class="s">losses = [float(row["loss"]) for row in history]</span>
+<span class="s">pred = pd.read_csv(run / "test_predictions.csv")</span>
 
-<span class="s">print(&quot;contains_NaN_token&quot;, &quot;NaN&quot; in text)</span>
-<span class="s">print(&quot;epochs&quot;, len(history))</span>
-<span class="s">print(&quot;loss_all_finite&quot;, all(math.isfinite(v) for v in losses))</span>
-<span class="s">print(&quot;loss_first&quot;, losses[0])</span>
-<span class="s">print(&quot;loss_last&quot;, losses[-1])</span>
-<span class="s">print(&quot;test_metrics&quot;, json.dumps(payload[&quot;test_metrics&quot;], indent=2))</span>
-<span class="s">print(&quot;prediction_rows&quot;, len(pred))</span>
-<span class="s">print(&quot;prediction_missing_cells&quot;, int(pred.isna().sum().sum()))</span>
-<span class="s">print(pred[&quot;predicted_label&quot;].value_counts().to_string())</span>
+<span class="s">print("contains_NaN_token", "NaN" in text)</span>
+<span class="s">print("epochs", len(history))</span>
+<span class="s">print("loss_all_finite", all(math.isfinite(v) for v in losses))</span>
+<span class="s">print("loss_first", losses[0])</span>
+<span class="s">print("loss_last", losses[-1])</span>
+<span class="s">print("test_metrics", json.dumps(payload["test_metrics"], indent=2))</span>
+<span class="s">print("prediction_rows", len(pred))</span>
+<span class="s">print("prediction_missing_cells", int(pred.isna().sum().sum()))</span>
+<span class="s">print(pred["predicted_label"].value_counts().to_string())</span>
 <span class="s">PY</span>
 </code></pre></div>
 <p>Use <code>macro_f1</code>, per-class F1, and non-background accuracy to judge behavior
@@ -3103,16 +3103,16 @@ background.</p>
 <p>After training, run the saved checkpoint on another compatible polygon feature
 CSV:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;&#39;PY&#39;</span>
+python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
 <span class="s">from pathlib import Path</span>
 <span class="s">from annolid.behavior.polygon_classifier_workflow import predict_polygon_classifier_csv</span>
 
-<span class="s">run = Path(&quot;/path/to/run_dir&quot;)</span>
+<span class="s">run = Path("/path/to/run_dir")</span>
 <span class="s">outcome = predict_polygon_classifier_csv(</span>
-<span class="s">    feature_csv=Path(&quot;/path/to/new_video_polygon_points.csv&quot;),</span>
-<span class="s">    checkpoint_path=run / &quot;polygon_tcn_classifier_best.pt&quot;,</span>
-<span class="s">    output_csv=run / &quot;new_video_predictions.csv&quot;,</span>
-<span class="s">    device=&quot;auto&quot;,</span>
+<span class="s">    feature_csv=Path("/path/to/new_video_polygon_points.csv"),</span>
+<span class="s">    checkpoint_path=run / "polygon_tcn_classifier_best.pt",</span>
+<span class="s">    output_csv=run / "new_video_predictions.csv",</span>
+<span class="s">    device="auto",</span>
 <span class="s">    smoothing_window=51,</span>
 <span class="s">)</span>
 <span class="s">print(outcome)</span>
