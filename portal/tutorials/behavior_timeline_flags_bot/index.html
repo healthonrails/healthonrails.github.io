@@ -1261,6 +1261,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#review-annotations-in-behavior-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review annotations in Behavior Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recommended-operating-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2893,6 +2904,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#review-annotations-in-behavior-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review annotations in Behavior Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recommended-operating-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3163,6 +3185,31 @@ metadata for scoring:</p>
   <code>sub_event_counts</code>, <code>sub_event_bout_counts</code>, <code>bouts_with_initiation</code>)</li>
 </ul>
 <p>Existing CSV exports (<code>_timestamps.csv</code>) remain unchanged.</p>
+<h2 id="review-annotations-in-behavior-log">Review annotations in Behavior Log<a class="headerlink" href="#review-annotations-in-behavior-log" title="Permanent link">&para;</a></h2>
+<p>The <strong>Behavior Log</strong> dock provides a searchable list of recorded boundaries:</p>
+<ol>
+<li>Search by behavior, subject, modifier, or category (case insensitive). Combine
+   search with the <strong>Subject</strong> and <strong>Category</strong> filters to focus on one animal or
+   behavior group.</li>
+<li>Choose <strong>Unconfirmed</strong> to review proposed labels. Select a row and use
+   <strong>Jump to frame</strong>, <strong>Edit interval…</strong>, or <strong>Confirm interval</strong>. A confirmed
+   interval can be marked unconfirmed again. These buttons use the existing
+   timeline interval editing and confirmation workflow.</li>
+<li>Choose <strong>Pairing issues</strong> to locate missing starts, missing ends, repeated
+   starts, or backwards timestamps. An open start during ongoing scoring is
+   expected to show <strong>Missing end</strong> until its end is recorded. Warnings do not
+   repair or change annotations automatically.</li>
+<li>Use <strong>All events</strong> and clear the search to restore the full list. The summary
+   shows visible/total boundaries and total unconfirmed and problematic
+   boundaries; these counts are events, not bouts.</li>
+</ol>
+<p>Durations are shown in seconds on end rows, matching starts by behavior,
+subject, and modifiers across the full log. Filtering out a start does not change
+the duration of its end. Ambiguous pairs have no estimated duration. These are
+log review checks; they do not change the timeline's storage or export format.
+Opening another video resets the log's filters and selection.</p>
+<p>This review workflow is inspired by BORIS's
+<a href="https://www.boris.unito.it/user_guide/coding/">event search, filtering, and state-event checks</a>.</p>
 <h2 id="recommended-operating-loop">Recommended Operating Loop<a class="headerlink" href="#recommended-operating-loop" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Define behavior names first (Flags or Timeline).</li>
