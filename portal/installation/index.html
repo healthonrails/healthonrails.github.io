@@ -617,6 +617,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#launch-and-update-without-activating-an-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch and update without activating an environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#local-venv-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2663,6 +2674,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#launch-and-update-without-activating-an-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Launch and update without activating an environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#local-venv-with-uv" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2892,6 +2914,58 @@
 <p>On Windows PowerShell:</p>
 <div class="highlight"><pre><span></span><code><span class="p">&amp;</span> <span class="p">(</span><span class="no">[scriptblock]</span><span class="p">::</span><span class="n">Create</span><span class="p">((</span><span class="nb">irm </span><span class="n">https</span><span class="p">://</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">healthonrails</span><span class="p">/</span><span class="n">annolid</span><span class="p">/</span><span class="n">main</span><span class="p">/</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span><span class="p">)))</span> <span class="n">-NoGpu</span> <span class="n">-NoInteractive</span>
 </code></pre></div>
+<h3 id="launch-and-update-without-activating-an-environment">Launch and update without activating an environment<a class="headerlink" href="#launch-and-update-without-activating-an-environment" title="Permanent link">&para;</a></h3>
+<p>After a successful one-line <strong>venv</strong> installation, open the install folder:</p>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Launch</th>
+<th>Upgrade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS</td>
+<td>Double-click <code>Launch Annolid.command</code></td>
+<td>Double-click <code>Update Annolid.command</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>Double-click <code>Launch Annolid.cmd</code></td>
+<td>Double-click <code>Update Annolid.cmd</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>Open <code>Launch Annolid.desktop</code></td>
+<td>Open <code>Update Annolid.desktop</code></td>
+</tr>
+</tbody>
+</table>
+<p>Linux file managers may require marking the <code>.desktop</code> file as trusted or allowing
+it to launch. The adjacent <code>Launch Annolid.sh</code> and <code>Update Annolid.sh</code> can also be
+run from a terminal. Shortcuts remain in the install folder; you can create an
+alias/link to them on your desktop. Keep Windows <code>.cmd</code> files next to their
+matching <code>.ps1</code> files. No administrator access or global PATH change is needed
+for shortcut generation. Conda installs continue to use <code>conda activate annolid-env</code>.</p>
+<p>Before updating, save your annotations and close Annolid. The update shortcut asks
+you to continue, then reruns the installer with the same environment path, profile,
+extras, and CPU/GPU preference. It updates the checkout's current tracking branch
+using a fast-forward-only Git pull and reinstalls package requirements in the
+existing environment. This follows the source branch, not a pinned release channel.
+Network access is required. Non-interactive installs and updates finish without
+opening the GUI; use the launch shortcut afterward.</p>
+<p>Updates stop on tracked local edits, divergent Git history, or a failed pull.
+Commit or stash your code edits, or resolve the reported Git/network problem,
+then rerun. Existing directories that are not Annolid checkouts are refused rather
+than deleted. An invalid existing environment is also refused rather than replaced;
+repair it or select a different <code>--venv-dir</code> / <code>-VenvDir</code>. Annotation files and
+user settings are not deliberately rewritten by these installer steps.</p>
+<p>These are source-install shortcuts, not a signed native installer or an atomic
+updater. If dependency installation fails after Git updates, the checkout may
+already be updated and the environment may be partly changed; review the terminal
+error and rerun after resolving it. There is no automatic rollback. Frozen desktop
+archives retain their separate <a href="../packaging/#desktop-bundle-contract">bundle contract</a>.</p>
 <h3 id="local-venv-with-uv">Local <code>.venv</code> with <code>uv</code><a class="headerlink" href="#local-venv-with-uv" title="Permanent link">&para;</a></h3>
 <p>For development or reproducible local work, use <code>uv</code> and a repository-local <code>.venv</code>:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>--recurse-submodules<span class="w"> </span>https://github.com/healthonrails/annolid.git
