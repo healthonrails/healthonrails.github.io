@@ -1291,6 +1291,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resuming-agent-segment-labeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resuming agent segment labeling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2934,6 +2951,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resuming-agent-segment-labeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resuming agent segment labeling
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3237,6 +3271,16 @@ Opening another video resets the log's filters and selection.</p>
 <li>Confirm a video is loaded and frame range is set.</li>
 <li>Retry after switching focus back to the Timeline panel.</li>
 </ol>
+<h3 id="resuming-agent-segment-labeling">Resuming agent segment labeling<a class="headerlink" href="#resuming-agent-segment-labeling" title="Permanent link">&para;</a></h3>
+<p>When you rerun labeling without <code>overwrite_existing</code>, Annolid reuses saved
+observations that match both the frame range and the subject. Accepted labels
+and explicit <code>no_behavior</code> observations skip repeat model calls. Unsupported or
+<code>unclassified</code> responses are retried, since they do not establish that a behavior
+was absent. Legacy records without a subject use the requested default subject.</p>
+<p>If the existing segment-label JSON cannot be read, labeling stops before changing
+the timeline or progress log. Repair the file, or back it up and remove it before
+retrying. Use <code>overwrite_existing</code> only when you intend to clear existing timeline
+behavior data and relabel.</p>
 
 
 
