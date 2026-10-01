@@ -2873,7 +2873,9 @@ need a reusable model trained across many videos, camera setups, or animals.</p>
 <p>For multi-animal videos, avoid repeated plain point labels such as <code>nose</code> with
 no instance context. Annolid preserves <code>instance_label</code> and <code>display_label</code>
 metadata when those flags are present, and uses them to keep output labels
-reviewable. In scripted LabelMe JSON, set those flags explicitly for each point;
+reviewable. Same-named points with distinct instance metadata remain separate
+when saving predictions or rerunning tracking. In scripted LabelMe JSON, set
+those flags explicitly for each point;
 in the GUI, check the saved frame before a long run to confirm the point belongs
 to the intended animal. Points inside overlapping polygons, or outside every
 polygon, remain unassociated unless their instance metadata is explicit.</p>
@@ -3057,6 +3059,9 @@ are complete.</p>
 <li>rerun tracking from the corrected frame;</li>
 <li>keep corrections as sparse reseed frames rather than relabeling every frame.</li>
 </ol>
+<p>At a correction frame, a saved manual polygon takes precedence over the previous
+tracked mask. When the correction contains only points, the previous mask is
+reused for that instance when available.</p>
 <h2 id="choosing-among-point-and-mask-backends">Choosing Among Point And Mask Backends<a class="headerlink" href="#choosing-among-point-and-mask-backends" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
