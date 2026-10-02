@@ -1158,6 +1158,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Implementation Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo-runtime-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO runtime safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -2836,6 +2853,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Implementation Note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo-runtime-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO runtime safeguards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3035,6 +3069,23 @@ Annolid also accepts a dataset root and will auto-discover <code>annotations/</c
 <h2 id="implementation-note">Implementation Note<a class="headerlink" href="#implementation-note" title="Permanent link">&para;</a></h2>
 <p>The shared COCO implementation lives in <code>annolid/datasets/coco.py</code>.</p>
 <p>For backward compatibility, <code>annolid/yolo/dataset_prep.py</code> remains as a thin re-export shim.</p>
+<h3 id="yolo-runtime-safeguards">YOLO runtime safeguards<a class="headerlink" href="#yolo-runtime-safeguards" title="Permanent link">&para;</a></h3>
+<p>The GUI requires dataset YAML to contain a mapping of keys such as <code>train</code>,
+<code>val</code>, and <code>names</code>. Empty files, lists, and scalar values are rejected with a
+Dataset Error before training starts; the source file is left unchanged.</p>
+<p>YOLO training and validation subprocesses monitor cancellation even when the
+model is not printing output. On cancellation or an output-handling failure,
+Annolid terminates and waits for the process, escalating to a forced shutdown
+if it does not exit within five seconds. On POSIX systems this signals the
+process group; on Windows forced shutdown targets the main process.
+Training logs retain a bounded tail for failure diagnostics. Numeric GPU index
+<code>0</code> is preserved when supplied through the shared command builders.</p>
+<p>When exporting YOLO inference to LabelMe, detection-only results are saved as
+rectangles with class labels, confidence scores, and instance IDs. This applies
+to both streamed inference and selected video frame ranges. Segmentation
+results retain polygon export; pose results retain keypoints and the existing
+optional bounding-box behavior. The pose bounding-box option does not suppress
+rectangles from detection-only models.</p>
 
 
 
