@@ -2748,6 +2748,11 @@ annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> 
 <ul>
 <li><a href="../agent_annolid_run/">Annolid Agent and annolid-run</a></li>
 </ul>
+<p>Behavior analytics, quality control, and inter-rater reliability commands:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>time-budget<span class="w"> </span>exported_events.csv<span class="w"> </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span>-o<span class="w"> </span>time_budget.csv
+annolid-run<span class="w"> </span>behavior-qc<span class="w"> </span>exported_events.csv<span class="w"> </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span>--strict<span class="w"> </span>--out<span class="w"> </span>qc_report.json
+annolid-run<span class="w"> </span>behavior-irr<span class="w"> </span>rater_1.csv<span class="w"> </span>rater_2.csv<span class="w"> </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span>--bin-seconds<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--csv-out<span class="w"> </span>irr_summary.csv
+</code></pre></div>
 <p>Security-focused agent commands:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>agent-security-check
 annolid-run<span class="w"> </span>agent-security-audit

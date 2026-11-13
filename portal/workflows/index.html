@@ -3040,12 +3040,27 @@ invoke Annolid-native commands, use the dedicated typed tool flow described in
 <li><a href="../tutorials/behavior_timeline_flags_bot/">Behavior labeling with Timeline, Flags, and Annolid Bot</a></li>
 <li><a href="../behavior_agent_user_guide/">Behavior Agent User Guide</a></li>
 </ul>
-<p>Example time-budget command:</p>
-<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>exported_events.csv<span class="w"> </span><span class="se">\</span>
+<p>Example headless behavior analytics commands via <code>annolid-run</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Validate ethogram consistency (unpaired states, point/state mismatches, exclusive_with overlaps)</span>
+annolid-run<span class="w"> </span>behavior-qc<span class="w"> </span>exported_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--out<span class="w"> </span>qc_report.json
+
+<span class="c1"># 2. Compute time-budget and bout summaries</span>
+annolid-run<span class="w"> </span>time-budget<span class="w"> </span>exported_events.csv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-o<span class="w"> </span>time_budget.csv
+
+<span class="c1"># 3. Compute Inter-Rater Reliability (Cohen's kappa, Fleiss' kappa, PABAK, onset F1) across 2+ raters</span>
+annolid-run<span class="w"> </span>behavior-irr<span class="w"> </span>rater_a.csv<span class="w"> </span>rater_b.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--bin-seconds<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--min-kappa<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--out<span class="w"> </span>irr_report.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--csv-out<span class="w"> </span>irr_summary.csv
 </code></pre></div>
+<p>The standalone module invocation <code>python -m annolid.behavior.time_budget ...</code> remains supported for backward compatibility.</p>
 <h3 id="polygon-classifier-workbench">Polygon Classifier Workbench<a class="headerlink" href="#polygon-classifier-workbench" title="Permanent link">&para;</a></h3>
 <p>For frame-level behavior classifiers based on two animal polygons, use:</p>
 <ul>
