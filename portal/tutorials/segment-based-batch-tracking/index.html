@@ -1376,6 +1376,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="11. Reduce CUTIE Analysis Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-multi-instance-tracking-colonies-schools-and-255-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Multi-Instance Tracking (Colonies, Schools, and 255+ Instances)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2812,6 +2829,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="11. Reduce CUTIE Analysis Time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#large-multi-instance-tracking-colonies-schools-and-255-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Multi-Instance Tracking (Colonies, Schools, and 255+ Instances)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3106,6 +3140,49 @@ processing the full batch.</p>
   important than motion-index features.</li>
 <li>Run one GPU-heavy tracking job at a time unless each job has a separate GPU or
   enough VRAM.</li>
+</ul>
+<h3 id="large-multi-instance-tracking-colonies-schools-and-255-instances">Large Multi-Instance Tracking (Colonies, Schools, and 255+ Instances)<a class="headerlink" href="#large-multi-instance-tracking-colonies-schools-and-255-instances" title="Permanent link">&para;</a></h3>
+<p>When tracking large groups (for example, fish schools, insect colonies, or dense
+multi-well assays):</p>
+<ul>
+<li><strong>Automatic object-batch chunking (<code>chunk_size</code>)</strong>: When <code>chunk_size</code> is left
+  at its default (<code>-1</code>), CUTIE automatically chunks per-object memory readout,
+  mask encoding (including <code>MaskEncoder</code> input distribution), object
+  summarization, query-transformer decoding, and mask decoding into batches of
+  <code>16</code> objects whenever more than <code>16</code> instances are active, and streams
+  indexed seed frames, non-memory propagation frames, and memory-commit
+  propagation frames without allocating full-resolution <code>(N + 1, H, W)</code>
+  probability or one-hot buffers. This bounds peak GPU/MPS/CPU working memory
+  while preserving exact cross-object foreground competition. Python callers
+  (<code>CutieCoreVideoProcessor</code>, <code>CutieEngine</code>, or <code>SegmentedCutieExecutor</code>) can
+  override <code>chunk_size</code> (for example <code>chunk_size=8</code> on tight-VRAM GPUs or
+  <code>chunk_size=32</code> on high-memory accelerators).</li>
+<li><strong>Compact KV value storage &amp; adaptive KV memory budget (<code>kv_storage_dtype</code>, <code>max_kv_memory_mb</code>)</strong>:
+  When more than <code>16</code> instances are tracked, CUTIE automatically stores working
+  and long-term <code>msk_value</code> banks in compact <code>float16</code> (<code>kv_storage_dtype="auto"</code>)
+  and enforces a configurable total KV memory cap across all active objects —
+  including both permanent seed frames and non-permanent working/long-term
+  tokens (<code>max_kv_memory_mb=2048</code> by default; pass <code>&lt;= 0</code> to disable). At very
+  high instance counts or unresized 4K resolutions (<code>max_internal_size=-1</code>),
+  CUTIE also adaptively 2D-pools per-frame KV tokens and trims excess intermediate
+  permanent tokens while preserving the initial anchor and newest manual seeds,
+  keeping <code>last_mask</code> at stride-16 resolution between frames.</li>
+<li><strong>Optional long-term XMem memory (<code>use_long_term=True</code>)</strong>: Long recordings with
+  many re-entries can opt into CUTIE's prototype-compressed long-term memory via
+  <code>CutieCoreVideoProcessor(..., use_long_term=True)</code> or <code>SegmentedCutieExecutor</code>
+  with <code>processing_config={"use_long_term": True}</code>.</li>
+<li><strong>Noise-gated background aggregation without overlap caps</strong>: Background logit
+  aggregation bounds sub-threshold background noise to <code>16</code> channels while still
+  including every foreground channel above <code>0.05</code> when more than <code>16</code> instances
+  genuinely overlap at the same pixel.</li>
+<li><strong>Above-255 instance IDs</strong>: Indexed seed masks, temporary-to-global ID
+  remapping, and DAVIS/RGBA color overlays support <code>int32</code> instance counts well
+  above <code>255</code> (wrapping overlay colors across the foreground palette without
+  colliding with background <code>0</code>).</li>
+<li><strong>Partial-occlusion memory safety</strong>: When multiple subset instances are
+  simultaneously occluded without a full-frame collapse artifact, failed
+  reseed-recovery attempts roll back to the active <code>InferenceCore</code> and throttle
+  retries so working memory for the remaining visible instances stays intact.</li>
 </ul>
 <p>If a <code>480 x 270</code>, 5-minute, 30 FPS video takes about 20 minutes, that is roughly
 <code>7.5</code> processed frames per second. Whether that is expected depends mostly on

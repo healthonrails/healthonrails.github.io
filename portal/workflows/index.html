@@ -3059,6 +3059,16 @@ annolid-run<span class="w"> </span>behavior-irr<span class="w"> </span>rater_a.c
 <span class="w">    </span>--min-kappa<span class="w"> </span><span class="m">0</span>.70<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--out<span class="w"> </span>irr_report.json<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--csv-out<span class="w"> </span>irr_summary.csv
+
+<span class="c1"># 4. Aggregate cohort endpoints (with blinded-to-unblinded metadata join) and Markov transition matrices</span>
+annolid-run<span class="w"> </span>behavior-cohort<span class="w"> </span>./scored_csvs/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--metadata-csv<span class="w"> </span>unblind_key.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--session-duration<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--summary-csv<span class="w"> </span>cohort_summary.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--subjects-csv<span class="w"> </span>cohort_subjects.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--transitions-csv<span class="w"> </span>cohort_transitions.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--out<span class="w"> </span>cohort_report.json
 </code></pre></div>
 <p>The standalone module invocation <code>python -m annolid.behavior.time_budget ...</code> remains supported for backward compatibility.</p>
 <h3 id="polygon-classifier-workbench">Polygon Classifier Workbench<a class="headerlink" href="#polygon-classifier-workbench" title="Permanent link">&para;</a></h3>
@@ -3120,6 +3130,23 @@ corrected manual labels at those frames before running the full tracking pass.</
 cases where the IDs can be inferred from explicit assay logic or where you need a
 batch audit/report. Dry-run the policy or temporal repair first, then review the
 generated report before applying changes to downstream analysis files.</p>
+<p>Headless multi-animal track quality control, active-learning review queue export,
+and identity repair are also available via <code>annolid-run</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Audit LabelMe frame JSONs or *_tracking.csv and rank high-risk interaction bouts</span>
+annolid-run<span class="w"> </span>track-qc<span class="w"> </span>./video_01/<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--expected-instances<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--pose-schema<span class="w"> </span>pose_schema.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--review-csv<span class="w"> </span>review_queue.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--issues-csv<span class="w"> </span>track_issues.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--out<span class="w"> </span>track_qc_report.json
+
+<span class="c1"># Dry-run temporal multi-cue identity repair first (does not modify frame JSONs)</span>
+annolid-run<span class="w"> </span>repair-tracks<span class="w"> </span>./video_01/<span class="w"> </span>--expected-instances<span class="w"> </span><span class="m">2</span>
+
+<span class="c1"># Apply temporal repair or policy-based Identity Governor corrections</span>
+annolid-run<span class="w"> </span>repair-tracks<span class="w"> </span>./video_01/<span class="w"> </span>--expected-instances<span class="w"> </span><span class="m">2</span><span class="w"> </span>--apply
+annolid-run<span class="w"> </span>repair-tracks<span class="w"> </span>./video_01/<span class="w"> </span>--mode<span class="w"> </span>governor<span class="w"> </span>--policy<span class="w"> </span>policy.json<span class="w"> </span>--zones<span class="w"> </span>zones.json<span class="w"> </span>--apply
+</code></pre></div>
 <h2 id="cutie-analysis-speed">CUTIE Analysis Speed<a class="headerlink" href="#cutie-analysis-speed" title="Permanent link">&para;</a></h2>
 <p>If CUTIE tracking is slow, reduce the number of frames before changing model
 settings. A 5-minute video at 30 FPS has about <code>9,000</code> frames; at 5 FPS it has
