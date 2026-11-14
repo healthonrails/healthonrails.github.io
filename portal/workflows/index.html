@@ -818,6 +818,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Standard GUI Video Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-prompt-segmentation-in-the-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text-Prompt Segmentation in the GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2675,6 +2692,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Standard GUI Video Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-prompt-segmentation-in-the-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text-Prompt Segmentation in the GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2950,6 +2984,16 @@
 <li>Validate a small representative segment before committing compute time to an entire recording.</li>
 </ul>
 <p><img alt="Annolid GUI running Segment Anything assisted polygon creation" src="../imgs/annolid_with_segment_anything.gif" /></p>
+<h3 id="text-prompt-segmentation-in-the-gui">Text-Prompt Segmentation in the GUI<a class="headerlink" href="#text-prompt-segmentation-in-the-gui" title="Permanent link">&para;</a></h3>
+<p>You can seed frame annotations directly from the toolbar <strong>Text Prompt</strong> box (press <strong>Enter</strong> or click <strong>Go</strong>):</p>
+<ul>
+<li><strong>Multi-class prompts</strong>: separate object phrases with commas, semicolons, periods, or newlines (for example, <code>black mouse, white mouse; water spout</code>). GroundingDINO isolates each phrase into its own attention span, deduplicates overlapping boxes via IoU NMS, and assigns per-class indices (<code>black mouse_0</code>, <code>white mouse_0</code>).</li>
+<li><strong>Canonical label mapping (<code>query=label</code> or <code>query -&gt; label</code>)</strong>: decouple visual descriptions from project class names across GroundingDINO + SAM, CountGD, Florence-2, and open-vocabulary YOLOE video prediction (for example, <code>black mouse -&gt; mouse_black, white mouse = mouse_white</code>).</li>
+<li><strong>Output mode &amp; confidence controls</strong>: choose <strong>Polygon</strong>, <strong>Mask</strong>, or <strong>Box</strong> output directly in the toolbar, adjust the minimum confidence threshold (<code>0.05</code>–<code>0.95</code>), toggle <strong>Use CountGD</strong> for dense repeated objects, or enable <strong>Replace</strong> to swap prior text-prompt shapes on the current frame while preserving manual shapes.</li>
+<li><strong>Automatic SAM fallback &amp; caching</strong>: SAM-HQ reuses cached image embeddings when iterating on prompts or thresholds on the same frame, falls back automatically to Annolid's built-in ONNX SAM model when <code>segment_anything</code> is not installed, and supports single-step <strong>Undo</strong> (<code>Ctrl+Z</code>) across an entire prompt batch.</li>
+<li><strong>Responsive background execution &amp; safe cancellation</strong>: interactive toolbar runs and <strong>Florence-2</strong> dock frame/video jobs execute on background worker threads so the GUI stays responsive during first-time weight downloads, model loading, and dense segmentation. Click <strong>Stop</strong> to abort an in-flight checkpoint download, video pass, or ONNX/PyTorch forward pass cleanly (without leaving partial <code>.part</code> files on disk), or switch frames safely—stale background frame runs are discarded so shapes and captions never leak onto another frame.</li>
+<li><strong>Segment-everything &amp; frame flags</strong>: enter <code>every 32 cell</code> to run grid-sampled mask generation with label <code>cell</code>, or <code>flags: grooming, rearing</code> to set frame-level behavior flags.</li>
+</ul>
 <h2 id="sparse-keypoint-tracking-workflow">Sparse Keypoint Tracking Workflow<a class="headerlink" href="#sparse-keypoint-tracking-workflow" title="Permanent link">&para;</a></h2>
 <p>Use sparse point tracking when you need reviewable body-part trajectories from
 one or a few labeled seed frames, not a reusable pose model trained across many
