@@ -2657,9 +2657,12 @@
 <p>Open <strong>Three.js Examples → Two Mice</strong> in the GUI, or ask Annolid Bot:</p>
 <div class="highlight"><pre><span></span><code>open threejs example two mice
 </code></pre></div>
-<p>The scene starts with a black C57BL/6 mouse and a pale BALB/c mouse. Models include
-layered curved fur, articulated paws, thin ear pinnae, whiskers, and a continuous
-tail. Exploration includes wall following, pauses to sniff, social investigation,
+<p>The scene starts with a black C57BL/6 mouse and a snow-ivory BALB/c mouse on a
+matte anti-glare arena floor with curled aspen wood shavings. Models include
+multi-layer clumped fur with anisotropic guard-hair sheen, articulated paws,
+concave vascularized ear pinnae, mystacial and supraorbital vibrissae, almond
+palpebral rims, and a countershaded annular-ringed tail. Exploration includes
+wall following, active rhythmic whisking, pauses to sniff, social investigation,
 rearing, and grooming. This is a procedural visualization, not a validated animal
 biomechanics model. Heart rate and respiration in the HUD are illustrative estimates.</p>
 <h2 id="viewing-and-playback">Viewing and playback<a class="headerlink" href="#viewing-and-playback" title="Permanent link">&para;</a></h2>
@@ -2667,21 +2670,31 @@ biomechanics model. Heart rate and respiration in the HUD are illustrative estim
 overview, a view from above, or a camera that follows either strain. The follow
 camera preserves your orbit angle while moving with the subject.</p>
 <ul>
-<li><strong>Pause Simulation</strong> freezes motion and contact solving. The camera remains usable.</li>
+<li><strong>Pause Simulation</strong> freezes motion and contact solving. The camera and pose-skeleton
+  overlay remain usable while paused.</li>
 <li><strong>Playback Speed</strong> supports slow motion down to 0.25×, up to 1.5×.</li>
 <li><strong>Quality Mode</strong> changes pixel resolution and shadow resolution without changing
-  exposure. Post-processing remains a separate choice.</li>
+  exposure. <strong>Post-Processing</strong> applies ACES tone mapping and sRGB output encoding
+  around the active orbit target so optional vignette, subtle macro depth-of-field,
+  and film grain preserve scene brightness.</li>
 <li><strong>Fur Detail</strong> controls coat density for newly spawned subjects. Reduce it before
   spawning more mice on machines with limited graphics memory.</li>
 <li><strong>Clear All</strong> releases subject-specific GPU resources. <strong>Spawn Subject</strong> uses the
   selected strain and biological traits.</li>
 </ul>
-<p>Appearance controls that require a new subject retain the existing respawn notice.
-Body and motion settings take effect on simulation updates; resume playback to see
-those changes when paused. Physics uses fixed 30 Hz steps independently of rendering.
-Long stalls have bounded catch-up, and hidden tabs do not advance the simulation.</p>
-<p>The viewer needs WebGL and access to its pinned Three.js and lil-gui imports on
-<code>esm.sh</code>. A loading error is displayed if the scene cannot initialize.</p>
+<p>Appearance toggles that recompile material shaders or rebuild fur coats and limb
+chains retain the respawn notice, while continuous shader parameters, ear magnitude,
+pose skeleton overlays, and body/tail proportions update live (including while paused).
+Detailed <strong>Proportions</strong> controls rebuild shared trunk, head, and cervical meshes in
+place and synchronize coat/limb alignment on newly spawned subjects; <strong>Fur</strong> controls
+(<code>Fur Detail</code>, <code>Guard Hair Ratio</code>, <code>Fur Length</code>, and <code>Clumpiness</code>) configure multi-layer
+coat generation on newly spawned subjects. Physics uses fixed 30 Hz steps independently
+of rendering. Long stalls have bounded catch-up, hidden tabs do not advance the
+simulation, and unloading the view releases active and shared WebGL resources.</p>
+<p>The viewer requires WebGL and loads pinned <code>three@0.182.0</code> (<code>OrbitControls</code>,
+<code>RoomEnvironment</code>) and <code>lil-gui@0.18.2</code> ES modules directly from Annolid's bundled
+local assets (<code>annolid/gui/assets/threejs/</code>), so it works offline without external CDN
+access. A loading error is displayed if WebGL initialization fails.</p>
 <h2 id="reproducible-pose-capture">Reproducible pose capture<a class="headerlink" href="#reproducible-pose-capture" title="Permanent link">&para;</a></h2>
 <p>The existing <code>dataset=1</code>, <code>seed</code>, <code>frame</code>, and <code>fps</code> query parameters and
 <code>window.annolidPoseDataset.getFrame()</code> / <code>setFrame(index)</code> API remain available.
@@ -2701,11 +2714,12 @@ articulation, controls, and pose export; <code>two_mice_model.js</code> owns pro
 construction and GPU resource ownership; <code>two_mice_simulation.js</code> supplies the
 independent timing, random-stream, and wall-force helpers. All three modules are
 served by Annolid's desktop asset server and included by the package's JS rules.</p>
-<p>Run deterministic checks without a browser (Node.js is needed for the JS core):</p>
+<p>Run deterministic checks without a browser (uses <code>node</code> on <code>PATH</code> or Playwright's
+bundled Node runtime when installed in <code>.venv</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 pytest<span class="w"> </span>tests/test_two_mice_simulation.py<span class="w"> </span>tests/test_threejs_examples.py
 </code></pre></div>
-<p>Run the optional browser checks with Playwright Chromium installed and CDN access:</p>
+<p>Run the optional offline browser checks with Playwright Chromium installed:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ANNOLID_RUN_THREEJS_BROWSER_TESTS</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
 <span class="nv">ANNOLID_THREEJS_SCREENSHOT_DIR</span><span class="o">=</span>output/playwright<span class="w"> </span><span class="se">\</span>
 .venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_two_mice_browser.py
