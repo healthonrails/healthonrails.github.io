@@ -3077,10 +3077,9 @@
 <ul>
 <li>Clones Annolid.</li>
 <li>Creates an isolated environment (<code>.venv</code> by default).</li>
-<li>Installs dependencies and Annolid.</li>
-<li>Detects GPU and installs CUDA-enabled PyTorch when appropriate.</li>
-<li>Installs and validates ONNX Runtime providers.</li>
-<li>Prompts for optional extras and launch.</li>
+<li>Installs the lean GUI and core annotation shell (<code>gui</code> profile by default).</li>
+<li>When ML/ONNX extras or profiles (<code>tracking</code>, <code>workstation</code>, <code>full</code>) are selected, detects GPU and installs accelerator-matched PyTorch and ONNX Runtime providers.</li>
+<li>Prompts for optional extras and launch (unless <code>--no-interactive</code> / <code>-NoInteractive</code> is passed).</li>
 </ul>
 <h2 id="quick-decision-table">Quick decision table<a class="headerlink" href="#quick-decision-table" title="Permanent link">&para;</a></h2>
 <p>Choose the flag set that matches your goal.</p>
@@ -3114,6 +3113,11 @@
 <td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -Profile workstation</code></td>
 </tr>
 <tr>
+<td>Offline wheelhouse install</td>
+<td><code>./install.sh --install-dir ./annolid --wheelhouse ./wheelhouse --offline</code></td>
+<td><code>.\install.ps1 -InstallDir .\annolid -Wheelhouse .\wheelhouse -Offline</code></td>
+</tr>
+<tr>
 <td>Install to custom folder</td>
 <td><code>curl -sSL https://raw.githubusercontent.com/healthonrails/annolid/main/install.sh \| bash -s -- --install-dir /path/to/annolid</code></td>
 <td><code>&amp; ([scriptblock]::Create((irm https://raw.githubusercontent.com/healthonrails/annolid/main/install.ps1))) -InstallDir C:\\path\\to\\annolid</code></td>
@@ -3140,8 +3144,10 @@
 <ul>
 <li><code>--install-dir DIR</code></li>
 <li><code>--venv-dir DIR</code></li>
-<li><code>--profile minimal|gui|workstation|full</code></li>
+<li><code>--profile minimal|gui|tracking|workstation|full</code></li>
 <li><code>--extras EXTRAS</code></li>
+<li><code>--wheelhouse DIR</code></li>
+<li><code>--offline</code></li>
 <li><code>--no-gpu</code></li>
 <li><code>--use-conda</code></li>
 <li><code>--no-interactive</code></li>
@@ -3165,8 +3171,10 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <ul>
 <li><code>-InstallDir DIR</code></li>
 <li><code>-VenvDir DIR</code></li>
-<li><code>-Profile minimal|gui|workstation|full</code></li>
+<li><code>-Profile minimal|gui|tracking|workstation|full</code></li>
 <li><code>-Extras EXTRAS</code></li>
+<li><code>-Wheelhouse DIR</code></li>
+<li><code>-Offline</code></li>
 <li><code>-NoGpu</code></li>
 <li><code>-NoInteractive</code></li>
 <li><code>-Help</code></li>
@@ -3185,7 +3193,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <span class="p">.\</span><span class="n">install</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Extras</span> <span class="n">sam3</span><span class="p">,</span><span class="n">image_editing</span><span class="p">,</span><span class="n">text_to_speech</span>
 </code></pre></div>
 <h2 id="optional-extras-extras-extras">Optional extras (<code>--extras</code> / <code>-Extras</code>)<a class="headerlink" href="#optional-extras-extras-extras" title="Permanent link">&para;</a></h2>
-<p><code>gui</code> is the default one-line installer profile. It installs GUI support plus the <code>ml</code>, <code>tracking</code>, and <code>cutie</code> extras so common model and tracking workflows are available immediately.</p>
+<p><code>gui</code> is the default one-line installer profile. It installs the lean desktop GUI shell (<code>PySide6-Essentials</code>) and core annotation tools first so you are up and running quickly, and Annolid installs heavy ML/tracking/viewer runtimes on demand when you first open those features.</p>
 <p>Named profiles provide stable defaults for common machines:</p>
 <table>
 <thead>
@@ -3197,19 +3205,19 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </thead>
 <tbody>
 <tr>
-<td><code>minimal</code></td>
-<td>none beyond the required GUI extra</td>
-<td>Fastest GUI/core annotation setup when model runtimes should be avoided.</td>
+<td><code>minimal</code> / <code>gui</code></td>
+<td>none beyond the required <code>gui</code> extra</td>
+<td>Default fast install; optional ML, tracking, and viewer runtimes install on first use.</td>
 </tr>
 <tr>
-<td><code>gui</code></td>
+<td><code>tracking</code></td>
 <td><code>ml,tracking,cutie</code></td>
-<td>Default profile; same behavior as omitting <code>--profile</code> / <code>-Profile</code>.</td>
+<td>Pre-warms PyTorch, ONNX Runtime, DINOv3, YOLO, and Cutie tracking runtimes upfront.</td>
 </tr>
 <tr>
 <td><code>workstation</code></td>
-<td><code>tracking,sam3,training</code></td>
-<td>Maintained research workstations that need common tracking runtimes, promptable segmentation, and training dashboards.</td>
+<td><code>ml,tracking,cutie,sam3,training,webengine,pdf</code></td>
+<td>Maintained research workstations that want tracking, SAM3 segmentation, TensorBoard dashboards, and embedded WebEngine/PDF viewers pre-installed.</td>
 </tr>
 <tr>
 <td><code>full</code></td>
@@ -3219,10 +3227,16 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 </tbody>
 </table>
 <p>Explicit extras are merged with the selected profile. For example,
-<code>--profile workstation --extras ai_chat,text_to_speech</code> installs
-<code>gui,tracking,sam3,training,ai_chat,text_to_speech</code>.</p>
+<code>--profile tracking --extras ai_chat,text_to_speech</code> installs
+<code>gui,ml,tracking,cutie,ai_chat,text_to_speech</code>.</p>
 <p>Current supported extras:</p>
 <ul>
+<li><code>webengine</code></li>
+<li><code>onnx</code></li>
+<li><code>scientific</code></li>
+<li><code>pdf</code></li>
+<li><code>model_downloads</code></li>
+<li><code>sleap</code></li>
 <li><code>audio</code></li>
 <li><code>ai_chat</code></li>
 <li><code>ml</code></li>
@@ -3300,7 +3314,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <tr>
 <td><code>remote_video</code></td>
 <td>network/remote video decoding through <code>ffpyplayer</code></td>
-<td>You receive frames from Annolid's remote video player path. Leave it out for normal local video files and Python 3.14 default installs.</td>
+<td>You receive frames from Annolid's remote video player path. Leave it out for normal local video files and Python 3.14+ default installs.</td>
 </tr>
 <tr>
 <td><code>sam3</code></td>
@@ -3364,7 +3378,7 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>The <code>large_image</code> extra installs the Python bindings, but <code>pyvips</code> and <code>openslide-python</code> may still require native system runtimes on your machine. This extra is optional; Annolid's normal GUI workflows do not depend on it.</p>
 <p>If those runtimes are not available, Annolid will still open the file and will fall back to <code>tifffile</code> when available, but navigation can be slower on very large TIFF files.</p>
 <h3 id="remote_video-runtime-note"><code>remote_video</code> runtime note<a class="headerlink" href="#remote_video-runtime-note" title="Permanent link">&para;</a></h3>
-<p>The <code>remote_video</code> extra installs <code>ffpyplayer</code>. On Python 3.14, <code>ffpyplayer</code> may need to build from source and require native FFmpeg development headers such as <code>libpostproc</code>. The default installer leaves this extra out so core GUI and local video workflows can install cleanly on Python 3.14.</p>
+<p>The <code>remote_video</code> extra installs <code>ffpyplayer</code>. On Python 3.14 and 3.15, <code>ffpyplayer</code> may need to build from source and require native FFmpeg development headers such as <code>libpostproc</code>. The default installer leaves this extra out so core GUI and local video workflows can install cleanly on Python 3.14+.</p>
 <h3 id="sam-hq-runtime-note">SAM-HQ runtime note<a class="headerlink" href="#sam-hq-runtime-note" title="Permanent link">&para;</a></h3>
 <p>The one-line installers no longer install SAM-HQ during the default GUI setup. SAM-HQ is attempted only when a SAM-related profile such as <code>--extras sam3</code> / <code>-Extras sam3</code> or <code>all</code> is selected. This keeps the default installer independent of an extra GitHub source install and makes locked-down lab workstations easier to bootstrap.</p>
 <h3 id="cutie-runtime-note">Cutie runtime note<a class="headerlink" href="#cutie-runtime-note" title="Permanent link">&para;</a></h3>
