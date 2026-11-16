@@ -16,7 +16,7 @@
         <link rel="prev" href="../tutorials/tracking_correction_with_sam3_bot/">
       
       
-        <link rel="next" href="../tapnext/">
+        <link rel="next" href="../body_part_segmentation/">
       
       
         
@@ -625,6 +625,8 @@
   
     
     
+      
+        
       
         
       
@@ -1423,10 +1425,49 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#two-mice-3d-simulation-dataset-tracking-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Mice 3D Simulation Dataset &amp; Tracking Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../body_part_segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instance Body Part Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2748,6 +2789,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#two-mice-3d-simulation-dataset-tracking-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Mice 3D Simulation Dataset &amp; Tracking Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2865,54 +2917,95 @@ need a reusable model trained across many videos, camera setups, or animals.</p>
 <li><code>point</code> shapes become named keypoints to track;</li>
 <li><code>polygon</code> or mask shapes are optional but recommended because they constrain
   ambiguous points to the instance;</li>
-<li>a plain point without instance metadata is associated with the single polygon
-  that contains it, while explicit <code>instance_label</code> metadata always wins;</li>
-<li>later manually corrected frames can be used as new seed frames when you rerun
-  tracking.</li>
+<li>a plain point without instance metadata is associated via matching <code>group_id</code>
+  first and otherwise with the single polygon that contains it, while explicit
+  <code>instance_label</code> metadata always wins;</li>
+<li>occluded keypoint visibility (<code>kp_visibility</code> / <code>kp_visible</code>) is preserved
+  across reads and writes;</li>
+<li>later manually corrected frames act as new seed anchors, and restarting
+  tracking after an already-tracked segment automatically resumes state from the
+  latest persisted frame while keeping manual appearance anchors.</li>
 </ul>
 <p>For multi-animal videos, avoid repeated plain point labels such as <code>nose</code> with
-no instance context. Annolid preserves <code>instance_label</code> and <code>display_label</code>
-metadata when those flags are present, and uses them to keep output labels
-reviewable. Same-named points with distinct instance metadata remain separate
-when saving predictions or rerunning tracking. In scripted LabelMe JSON, set
-those flags explicitly for each point;
-in the GUI, check the saved frame before a long run to confirm the point belongs
-to the intended animal. Points inside overlapping polygons, or outside every
-polygon, remain unassociated unless their instance metadata is explicit.</p>
+no instance or <code>group_id</code> context. Annolid disambiguates same-class polygons
+with distinct <code>group_id</code> values (for example two <code>mouse</code> polygons with
+<code>group_id</code> <code>0</code> and <code>1</code>) while preserving their saved polygon labels and
+<code>group_id</code>s across round-trips, alongside <code>instance_label</code> and <code>display_label</code>
+flags. Same-named points with distinct instance or <code>group_id</code> metadata remain
+separate when saving predictions or rerunning tracking. In scripted LabelMe
+JSON, set <code>group_id</code> or <code>instance_label</code>/<code>display_label</code> explicitly for each
+point; in the GUI, check the saved frame before a long run to confirm the point
+belongs to the intended animal. In the GUI, placing a point inside overlapping
+polygons automatically binds it to the selected polygon, the only containing
+polygon still missing that landmark, or the polygon chosen in the owner prompt.
+When plain points fall inside overlapping or concentric polygons on disk,
+Annolid resolves ownership deterministically via instance prefixes, landmark
+uniqueness, anchored pose clusters / non-overlapping mask cores, temporal
+continuity from prior or neighboring frames, and nested concentric scale /
+interior-depth geometry when one polygon is strictly nested inside a larger
+one. If a single isolated frame still has identical or nearly equal overlapping
+polygons with no instance or temporal cue, the GUI offers to jump directly to
+that frame before starting tracking, <code>annolid-run track-qc &lt;result_dir&gt; --strict</code>
+flags <code>ambiguous_keypoint_ownership</code> (exit code <code>2</code>), and programmatic callers
+can configure <code>CutieDinoTrackerConfig(ambiguous_point_policy=...)</code> (<code>"withhold"</code>
+by default, <code>"error"</code> to raise <code>AmbiguousKeypointError</code> immediately, or
+<code>"polygon_order"</code> for deterministic declaration-order tie-breaking on legacy
+exports).</p>
 <p>Keep display labels stable across frames and animals. Labels such as <code>nose</code>,
 <code>leftear</code>, <code>rightear</code>, <code>tail_base</code>, <code>fore_top</code>, or <code>abdomen_bot</code> should mean the
 same anatomical point every time.</p>
 <h2 id="how-the-backend-works">How The Backend Works<a class="headerlink" href="#how-the-backend-works" title="Permanent link">&para;</a></h2>
-<p>The implementation separates the DINO-family feature backbone from the tracker
-logic:</p>
+<p>The implementation separates the feature backbone from the tracker logic:</p>
 <ul>
-<li><code>annolid/features/dino_models.py</code> defines the supported DINOv3, DINOv2, and
-  RADIO-compatible feature backbones.</li>
-<li><code>annolid/features/dinov3_extractor.py</code> loads the selected Hugging Face model,
-  selects CPU, CUDA, or MPS, snaps image sizes to ViT patch multiples, removes
-  special tokens, and returns normalized patch grids.</li>
+<li><code>annolid/features/dino_models.py</code> defines the supported DINOv3, DINOv2,
+  Google <code>EmbeddingGemma 2</code>, Google <code>SigLIP 2</code>, on-device <code>MobileNetV4</code> /
+  <code>MobileNetV3</code>, and RADIO-compatible feature backbones.</li>
+<li><code>annolid/features/dinov3_extractor.py</code> and
+  <code>annolid/features/google_vision_extractor.py</code> load the selected Hugging Face,
+  <code>timm</code>, or <code>torchvision</code> backbone, select CPU, CUDA, or MPS, snap image sizes
+  to patch/stride multiples, handle modality-selective loading (including direct
+  <code>safetensors</code> vision-tower loading when a cached checkpoint's nested
+  <code>vision_config.model_type</code> is registered in <code>transformers</code>), project
+  multimodal vision tokens into the aligned embedding space before Matryoshka
+  channel truncation (<code>embedding_matryoshka_dim</code>), and return normalized dense
+  patch grids (plus optional Gaussian-vignetted crop embeddings via
+  <code>embed_keypoint_regions</code>).</li>
+<li><code>annolid/tracking/gaussian_region.py</code>, <code>annolid/tracking/dino_keypoint_types.py</code>,
+  <code>annolid/tracking/overlap_assignment.py</code>, and
+  <code>annolid/tracking/video_seed_utils.py</code> define mask-aware Gaussian region
+  descriptors, sub-patch continuous Gaussian sampling, drift-free
+  rotation-tolerant Gaussian pixel-region ZNCC template banks with 2D Hessian
+  sub-pixel refinement, tracker state structures, overlapping-polygon point
+  disambiguation, and shared seed/resume frame orchestration across keypoint
+  processors.</li>
 <li><code>annolid/tracking/dino_keypoint_tracker.py</code> turns those patch grids into
   stateful point tracks.</li>
 </ul>
 <p>Each manual point initializes a track with its current descriptor, reference
-descriptor, manual-anchor codebook, appearance codebook, support probes,
-velocity, quality state, and optional structural or symmetry state. On each new
-frame, Annolid:</p>
+descriptor, manual-anchor codebook, optional Gaussian-weighted pixel/gradient
+template, appearance codebook, support probes, velocity, quality state, and
+optional structural or symmetry state. On each new frame, Annolid:</p>
 <ol>
-<li>extracts the current DINO feature grid;</li>
-<li>optionally debiases coordinate-correlated DINO responses;</li>
-<li>estimates the current point from valid per-point pyramidal Lucas-Kanade
-   flow, otherwise uses dense Farneback flow at the last emitted point, and
-   falls back to previous velocity when neither flow observation is valid;</li>
+<li>extracts the current dense feature grid;</li>
+<li>optionally debiases coordinate-correlated feature responses and builds
+   mask-aware Gaussian regional descriptors around each instance so contour
+   landmarks (nose, ears, paws, tail) integrate foreground neighborhood context
+   without background bleed;</li>
+<li>estimates the current point from batched per-point pyramidal Lucas-Kanade
+   flow, lazily computing dense Farneback flow only if per-point LK is
+   unavailable, and falling back to previous velocity when neither flow
+   observation is valid;</li>
 <li>searches a bounded candidate region around the motion prior;</li>
-<li>scores candidates with DINO similarity, appearance/context/support evidence,
-   mask or structure priors, backward consistency, and a motion penalty;</li>
+<li>scores candidates with vectorized feature similarity, appearance/context/support
+   evidence, mask or structure priors, backward consistency, and a motion
+   penalty;</li>
 <li>resolves one-to-one assignments so two tracks do not claim the same best
    candidate;</li>
-<li>optionally blends the DINO-selected point with a valid Lucas-Kanade point
-   estimate for sub-patch refinement;</li>
-<li>updates descriptors, velocity, quality, support probes, and output
-   annotation metadata.</li>
+<li>refines sub-patch coordinates with connected similarity peaks, Lucas-Kanade
+   optical flow, and optional drift-free Gaussian-weighted pixel/gradient ZNCC
+   template matching anchored to the manual seed;</li>
+<li>updates descriptors (optionally sampled continuously at sub-patch coordinates),
+   velocity, quality, support probes, and output annotation metadata.</li>
 </ol>
 <p>This split matters in practice: DINO descriptors provide robust coarse
 appearance correspondence, while optical flow handles small movements inside a
@@ -2965,6 +3058,18 @@ best starting point for interactive tracking.</p>
 <tr>
 <td><code>facebook/dinov3-vitl16-pretrain-lvd1689m</code></td>
 <td>Higher-memory offline runs.</td>
+</tr>
+<tr>
+<td><code>google/embeddinggemma-2</code></td>
+<td>Open lightweight 170M vision tower (<code>768d</code> with <code>512</code>/<code>256</code>/<code>128</code> Matryoshka dims; selective tower loading in <code>bfloat16</code>/<code>float32</code>; requires <code>transformers&gt;=5.19</code>).</td>
+</tr>
+<tr>
+<td><code>google/siglip2-base-patch16-224</code> or <code>google/siglip2-so400m-patch16-384</code></td>
+<td>Open dense ViT/16 vision encoders with dynamic position interpolation.</td>
+</tr>
+<tr>
+<td><code>timm/mobilenetv4_conv_small.e2400_r224_in1k</code> or <code>torchvision/mobilenet_v3_small</code></td>
+<td>Fast on-device stride-8 multi-scale CNN pyramids (2x finer spatial grid than 16px ViTs) for low-latency CPU/MPS runs.</td>
 </tr>
 <tr>
 <td><code>facebook/dinov2-base</code> or <code>facebook/dinov2-large</code></td>
@@ -3024,9 +3129,49 @@ the full recording.</p>
 </table>
 <p>Key settings:</p>
 <ul>
-<li><strong>DINO feature model</strong>: selects the frozen feature backbone.</li>
+<li><strong>DINO feature model</strong> and <strong>Embedding Matryoshka dim</strong>: select the frozen
+  feature backbone and optional prefix truncation (<code>768</code>, <code>512</code>, <code>256</code>, <code>128</code>)
+  for Matryoshka-trained models such as <code>google/embeddinggemma-2</code> (the dialog
+  displays live runtime readiness via <code>check_dino_model_runtime_support</code>).
+  When switching to a non-Matryoshka backbone (<code>DINOv3</code>, <code>SigLIP 2</code>,
+  <code>MobileNet</code>), <code>embedding_matryoshka_strict_mrl=True</code> (default) safely keeps
+  the full descriptor channels; programmatic callers that explicitly set
+  <code>embedding_matryoshka_strict_mrl=False</code> get deterministic row-orthonormal
+  compression so all channels and multi-scale CNN stages remain represented.</li>
+<li><strong>Gaussian region radius / sigma</strong> and <strong>Sub-patch continuous Gaussian sampling</strong>:
+  aggregate a mask-aware Gaussian patch neighborhood (<code>region_descriptor_radius</code>,
+  <code>region_descriptor_sigma</code>, <code>region_descriptor_blend</code>,
+  <code>region_descriptor_mask_aware</code>) and sample descriptors at continuous
+  sub-patch coordinates (<code>region_subpatch_sampling</code>) instead of snapping to
+  integer patch cells.</li>
+<li><strong>Drift-free Gaussian pixel template refinement</strong>: anchors a zero-mean,
+  unit-weighted-norm multi-orientation Gaussian intensity + signed-Sobel ZNCC
+  template bank around manual seed points (<code>pixel_region_refine_enabled</code>,
+  <code>pixel_region_window</code>, <code>pixel_region_sigma</code>, <code>pixel_region_search_radius_px</code>,
+  <code>pixel_region_weight</code>, <code>pixel_region_num_orientations=12</code>) guided by 2D
+  Procrustes constellation rotation and 2D Hessian sub-pixel peak fitting so
+  small frame-to-frame optical-flow errors do not accumulate even across large
+  in-plane animal turns.</li>
 <li><strong>Clamp keypoints to instance mask</strong> and <strong>Mask snap radius</strong>: keep points
-  inside the selected instance when masks are available.</li>
+  inside the selected instance when masks are available. Patch masks are
+  quantized via area occupancy (<code>cv2.INTER_AREA</code>) so thin appendages (<code>tail_mid</code>,
+  <code>tail_tip</code>, paws) remain represented on the ViT grid, cross-instance foreground
+  masks exclude candidates that land strictly inside another animal during close
+  huddling, and sudden partial mask truncation falls back safely without
+  dropping well-supported skeletal points.</li>
+<li><strong>Occluded seed keypoint handling</strong>: seed points marked occluded
+  (<code>kp_visibility = 1</code> / <code>kp_visible = false</code>) do not pollute manual anchor
+  codebooks or pixel templates with the occluding surface; they inherit clean
+  descriptors from visible homologous landmarks when available, follow 2D
+  Procrustes constellation motion while occluded without stealing active sibling
+  patches, and re-acquire <code>visible = true</code> only when emerging at a distinct,
+  well-supported anatomical position.</li>
+<li><strong>Elongated ROI token cap and accelerator memory resilience</strong>:
+  <code>Dinov3Config(max_long_side=1408)</code> preserves full <code>short_side=768</code> resolution
+  on standard <code>4:3</code> and <code>16:9</code> frames while bounding ViT token count on wide
+  multi-animal band crops; both <code>Dinov3FeatureExtractor</code> and <code>CutieMaskManager</code>
+  automatically flush accelerator memory and migrate to CPU if CUDA/MPS runs out
+  of memory mid-video.</li>
 <li><strong>Search tighten</strong>, <strong>Velocity gain</strong>, <strong>Flow gain</strong>, and <strong>Min/Max radius</strong>:
   control the local motion-prior search.</li>
 <li><strong>DINOv3 positional debias</strong>: suppresses coordinate-correlated feature
@@ -3038,6 +3183,25 @@ the full recording.</p>
 <li><strong>Pixel refinement</strong>: the tracker presets configure Lucas-Kanade sub-patch
   correction; programmatic callers can tune its blend weight, window size,
   error threshold, and max jump through the <code>pixel_refine_*</code> runtime fields.</li>
+<li><strong>Symmetry pairing</strong>: active <code>PoseSchema</code> symmetry pairs (including inferred
+  left/right landmark pairs such as <code>left_forepaw</code> / <code>right_forepaw</code>) are
+  automatically registered per animal instance to discourage left/right swaps.</li>
+<li><strong>Multi-animal assignment and kinematic constraints</strong>: programmatic callers
+  can enable <code>tracking_enable=True</code> to activate Hungarian global candidate
+  assignment (<code>tracking_matcher_algorithm="hungarian"</code>), per-frame velocity
+  gating (<code>tracking_constraint_max_velocity_px</code>), skeletal limb-stretch bounds
+  (<code>tracking_enforce_skeletal_constraints</code>,
+  <code>tracking_constraint_limb_std_multiplier</code>), instance centroid/pose/size
+  penalties, and occlusion template reset
+  (<code>tracking_instance_dropout_timeout_frames</code>).</li>
+<li><strong>Trajectory post-smoothing</strong>: programmatic callers can enable optional
+  confidence-gated <code>one_euro</code>, <code>ema</code>, or innovation-gated <code>kalman</code>
+  post-smoothing via <code>tracking_smoother_enable</code>, <code>tracking_smoother_mode</code>, and
+  the <code>tracking_smoother_*</code> runtime fields.</li>
+<li><strong>Ambiguous point policy</strong>: programmatic callers can set
+  <code>ambiguous_point_policy</code> on <code>CutieDinoTrackerConfig</code> (<code>"withhold"</code> default,
+  <code>"error"</code> fail-fast <code>AmbiguousKeypointError</code>, or <code>"polygon_order"</code>
+  declaration-order tie-breaking).</li>
 </ul>
 <h2 id="outputs-and-review-contract">Outputs And Review Contract<a class="headerlink" href="#outputs-and-review-contract" title="Permanent link">&para;</a></h2>
 <p>DINOv3 Keypoint Tracker writes LabelMe-compatible JSON files into the standard
@@ -3169,6 +3333,16 @@ tracks forward, and writes per-frame JSON outputs.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="two-mice-3d-simulation-dataset-tracking-evaluation">Two-Mice 3D Simulation Dataset &amp; Tracking Evaluation<a class="headerlink" href="#two-mice-3d-simulation-dataset-tracking-evaluation" title="Permanent link">&para;</a></h2>
+<p>To generate deterministic multi-scenario two-mouse <code>.mp4</code> videos, 3D depth-buffered
+instance/body-part masks, LabelMe JSONs, COCO pose + tracking splits, and
+side-by-side ground-truth vs. tracked diagnostic videos:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+python<span class="w"> </span>scripts/generate_two_mice_keypoint_tracking_eval.py<span class="w"> </span>--tag<span class="w"> </span><span class="nb">eval</span>
+</code></pre></div>
+<p>Outputs are written under <code>output/two_mice_keypoint_tracking_eval/</code> (pass
+<code>--generate-only</code> to export the videos and ground-truth dataset without running
+model inference, or <code>--skip-generate</code> to re-benchmark against existing sequences).</p>
 
 
 
