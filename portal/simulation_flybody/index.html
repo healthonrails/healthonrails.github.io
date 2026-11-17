@@ -1040,6 +1040,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3c-connectome-wired-brain-vnc-control-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3C. Connectome-Wired Brain &amp; VNC Control CLI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#4-add-depth-for-3d-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2834,6 +2845,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3c-connectome-wired-brain-vnc-control-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3C. Connectome-Wired Brain &amp; VNC Control CLI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#4-add-depth-for-3d-targets" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3208,12 +3230,27 @@ assets.</p>
 <li>checks the optional FlyBody runtime in <code>.venv311</code>, <code>.venv</code>, and the current
   interpreter</li>
 <li>if a usable FlyBody runtime is available, the FlyBody viewer shows in-viewer
-  live buttons for these FlyBody repo behaviors:</li>
-<li><code>walk_imitation</code></li>
-<li><code>walk_on_ball</code></li>
-<li><code>flight_imitation</code></li>
-<li><code>vision_guided_flight</code></li>
-<li><code>template_task</code></li>
+  live buttons driven by the built-in <strong>Drosophila Brain + VNC Connectome</strong>
+  controller (<code>annolid.simulation.fly_brain</code>, grounded in Google Research /
+  HHMI Janelia <code>male-cns:v1.0</code>, FlyWire, and MANC wiring):</li>
+<li><code>walk_imitation</code> (<code>CX -&gt; DNp09</code> forward pursuit + VNC tripod gait)</li>
+<li><code>forage_walk</code> (<code>ORN -&gt; PFL3 -&gt; DNa01/DNa02</code> chemotaxis &amp; asymmetric steering)</li>
+<li><code>backward_walk</code> (<code>Tactile -&gt; MDN</code> Moonwalker backward locomotion)</li>
+<li><code>grooming</code> (<code>JO -&gt; SEZ -&gt; aDN1 + Pair1</code> locomotor arrest + <code>T1</code> foreleg antennal sweep)</li>
+<li><code>escape_takeoff</code> (<code>LC4 -&gt; Giant Fiber DNp01</code> ballistic <code>T2/T3</code> jump + wing deployment)</li>
+<li><code>walk_on_ball</code> (tethered walking on the spherical treadmill)</li>
+<li><code>flight_imitation</code> (<code>DNg02 + WTct</code> wingbeat power &amp; pitch stabilization)</li>
+<li><code>vision_guided_flight</code> (<code>32x32</code> compound-eye visual salience -&gt; <code>DNg02</code> flight steering)</li>
+<li><code>template_task</code> (exploratory arena locomotion)</li>
+<li>live rollouts attach articulated per-segment body-part meshes (<code>flybody_parts</code>)
+  with part-category visibility controls and real-time Leaky Integrate-and-Fire
+  (LIF) spike &amp; Descending Neuron telemetry (<code>Brain Circuit</code>, <code>LIF Spikes</code>,
+  <code>Active DNs</code>) in the viewer metadata HUD</li>
+<li>aerial tasks (<code>flight_imitation</code>, <code>vision_guided_flight</code>) automatically supply
+  an aerodynamically calibrated <em>Drosophila</em> inclined-stroke-plane wingbeat
+  cycle (<code>ensure_calibrated_wingbeat_path</code>) paired with 5 ms low-pass Haltere +
+  Ocellar attitude stabilization so flight sustains altitude without external
+  HDF5 wingbeat files</li>
 <li>clicking a behavior button keeps the same Three.js view open, starts the
   optional live rollout in the background, and replaces the static example when
   the rollout is ready</li>
@@ -3248,6 +3285,39 @@ uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </s
 </code></pre></div>
 <p>Annolid will now detect that repo-local <code>.venv</code> automatically in the FlyBody
 status dialog and when launching the live FlyBody example.</p>
+<h2 id="3c-connectome-wired-brain-vnc-control-cli">3C. Connectome-Wired Brain &amp; VNC Control CLI<a class="headerlink" href="#3c-connectome-wired-brain-vnc-control-cli" title="Permanent link">&para;</a></h2>
+<p>You can generate connectome-driven FlyBody rollouts directly from the command
+line (either using the built-in Google Research <code>male-cns:v1.0</code> / FlyWire
+canonical sensorimotor circuit or overlaying a custom exported connectome edge
+table in <code>.csv</code>, <code>.tsv</code>, <code>.json</code>, or <code>.npz</code> format):</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>annolid.simulation.flybody_live<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--behavior<span class="w"> </span>forage_walk<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--controller<span class="w"> </span>connectome<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dynamics<span class="w"> </span>spiking<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--steps<span class="w"> </span><span class="m">120</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>forage_rollout.json
+
+python<span class="w"> </span>-m<span class="w"> </span>annolid.simulation.flybody_live<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--behavior<span class="w"> </span>grooming<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dynamics<span class="w"> </span>rate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--connectome-path<span class="w"> </span>malecns_subcircuit.parquet<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--steps<span class="w"> </span><span class="m">120</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>grooming_rollout.json
+
+<span class="c1"># Or emit schema-validated Annolid NDJSON directly via annolid-run:</span>
+annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rollout-steps<span class="w"> </span><span class="m">120</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--behavior<span class="w"> </span>walk_imitation<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dynamics<span class="w"> </span>spiking<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out-ndjson<span class="w"> </span>walk_rollout.ndjson
+</code></pre></div>
+<p>Supported connectome formats include <code>.csv</code>, <code>.tsv</code>, <code>.parquet</code>, <code>.feather</code>,
+<code>.json</code>, and sparse/dense <code>.npz</code> (supporting both cell-type circuits and
+166,700+ neuron-level <code>bodyId</code>/<code>root_id</code> graphs via <code>O(|E|)</code> CSR sparse spike
+propagation). Supported tabular columns include <code>pre</code> / <code>pre_type</code> /
+<code>bodyId_pre</code>, <code>post</code> / <code>post_type</code> / <code>bodyId_post</code>, <code>synapse_count</code> / <code>weight</code>,
+and <code>neurotransmitter</code> / <code>nt_type</code> (<code>acetylcholine</code>, <code>gaba</code>, <code>glutamate</code>,
+<code>octopamine</code>, <code>dopamine</code>, <code>serotonin</code>).</p>
 <h2 id="4-add-depth-for-3d-targets">4. Add Depth for 3D Targets<a class="headerlink" href="#4-add-depth-for-3d-targets" title="Permanent link">&para;</a></h2>
 <p>If you have already generated Annolid depth sidecars, pass them in directly:</p>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>predict<span class="w"> </span>flybody<span class="w"> </span><span class="se">\</span>

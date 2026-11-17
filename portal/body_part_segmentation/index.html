@@ -1405,6 +1405,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#direct-cutie-vos-propagation-with-compact-sam3dinov3-distilled-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct Cutie VOS Propagation with Compact SAM3+DINOv3 Distilled Weights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct Cutie VOS Propagation with Compact SAM3+DINOv3 Distilled Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selecting-custom-cutie-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting Custom Cutie Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducing-direct-weight-compression-distillation-and-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducing Direct Weight Compression, Distillation, and Benchmarks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#saved-data-downstream-compatibility-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2692,6 +2731,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#direct-cutie-vos-propagation-with-compact-sam3dinov3-distilled-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direct Cutie VOS Propagation with Compact SAM3+DINOv3 Distilled Weights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Direct Cutie VOS Propagation with Compact SAM3+DINOv3 Distilled Weights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#selecting-custom-cutie-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting Custom Cutie Weights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reproducing-direct-weight-compression-distillation-and-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reproducing Direct Weight Compression, Distillation, and Benchmarks
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#saved-data-downstream-compatibility-contract" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2926,6 +3004,44 @@ annolid-run<span class="w"> </span>segment-body-parts<span class="w"> </span>/pa
 <span class="nb">print</span><span class="p">(</span><span class="n">summary_message</span><span class="p">,</span> <span class="n">processor</span><span class="o">.</span><span class="n">last_summary</span><span class="p">)</span>
 </code></pre></div>
 <p>For single-frame NumPy arrays in custom pipelines, use <code>InstanceBodyPartSegmenter.fit_seed_frame(...)</code> and <code>InstanceBodyPartSegmenter.segment_frame(...)</code> directly.</p>
+<hr />
+<h2 id="direct-cutie-vos-propagation-with-compact-sam3dinov3-distilled-weights">Direct Cutie VOS Propagation with Compact SAM3+DINOv3 Distilled Weights<a class="headerlink" href="#direct-cutie-vos-propagation-with-compact-sam3dinov3-distilled-weights" title="Permanent link">&para;</a></h2>
+<p>When propagating seeded whole-instance and/or anatomical body-part masks directly with Cutie's temporal memory engine (<code>InferenceCore</code>), Annolid ships a directly compressed and Dual-Teacher (<code>SAM 3.1</code> + <code>DINOv3 ViT-L/16</code>) distilled Cutie checkpoint while keeping <code>CUTIE.load_weights</code> backward-compatible with legacy dense checkpoints:</p>
+<ul>
+<li><strong>Default &amp; SAM3 Body-Parts Cutie (<code>Cutie</code> / <code>Cutie (SAM3 Body Parts)</code>)</strong>: loads <code>annolid/segmentation/cutie_vos/weights/cutie-base-mega.pth</code> (mirrored at <code>cutie-sam3-bodyparts.pth</code>), combining algebraic 48-layer <code>Conv+BN</code> folding, HOSVD Tucker-2 spatial-channel factorization, structured <code>FFN</code> pruning, and mixed-precision <code>FP16</code>/<code>FP32</code> serialization (<code>35.02M -&gt; 15.76M</code> parameters, <code>-55.0%</code>; <code>133.94 MB -&gt; 30.26 MB</code> on disk, <code>4.43x</code> smaller; <code>1.64x</code> faster cold load; <code>1.48x</code> faster CPU propagation and up to <code>2.72x</code> faster on Apple Silicon <code>mps</code>) while improving held-out body-part <code>J&amp;F</code> from <code>0.7798</code> to <code>0.8127</code> (<code>+0.0329</code> macro-average across 5 suites).</li>
+<li><strong>Fresh-Install &amp; Frozen-Bundle Auto-Bootstrap</strong>: On fresh clones, pip wheels, or frozen desktop apps (<code>Annolid.app</code>, which stays strictly read-only by routing downloads/caches to <code>~/.annolid/workspace/downloads</code>), selecting either <code>Cutie</code> or <code>Cutie (SAM3 Body Parts)</code> automatically resolves in order:</li>
+<li>Local <code>weights/</code> or <code>~/.annolid/workspace/downloads/</code> cache,</li>
+<li>Explicit <code>ANNOLID_CUTIE_UPGRADED_WEIGHTS_URL</code> + <code>ANNOLID_CUTIE_UPGRADED_WEIGHTS_SHA256</code> override,</li>
+<li>Canonical GitHub Release asset (<code>SAM3_BODYPARTS_CUTIE_RELEASE_URL</code> verified against <code>SAM3_BODYPARTS_CUTIE_SHA256</code>),</li>
+<li>Seamless fallback to upstream <code>cutie-base-mega.pth</code> (MD5-verified) + automatic <code>&lt; 0.5s</code> <code>Conv+BN</code> folding &amp; HOSVD Tucker-2 <code>30.26 MB</code> compression.</li>
+<li><strong>Immutable Upstream Backup</strong>: <code>annolid/segmentation/cutie_vos/weights/cutie-base-mega.orig.pth</code> preserves the untouched upstream Cutie Base Mega checkpoint (<code>MD5 a6071de6136982e396851903ab4c083a</code>) for reproducible head-to-head comparison or legacy fallback.</li>
+</ul>
+<h3 id="selecting-custom-cutie-weights">Selecting Custom Cutie Weights<a class="headerlink" href="#selecting-custom-cutie-weights" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>GUI</strong>: Select <strong><code>Cutie</code></strong> or <strong><code>Cutie (SAM3 Body Parts)</code></strong> in the top toolbar AI model selector.</li>
+<li><strong>Python API</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.segmentation.cutie_vos.engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">CutieEngine</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.segmentation.cutie_vos.video_processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">CutieVideoProcessor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">annolid.tracking.configuration</span><span class="w"> </span><span class="kn">import</span> <span class="n">CutieDinoTrackerConfig</span>
+
+<span class="n">engine</span> <span class="o">=</span> <span class="n">CutieEngine</span><span class="p">(</span><span class="n">model_weights_path</span><span class="o">=</span><span class="s2">"cutie-sam3-bodyparts.pth"</span><span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">CutieVideoProcessor</span><span class="p">(</span>
+    <span class="s2">"/path/to/video.mp4"</span><span class="p">,</span>
+    <span class="n">model_weights_path</span><span class="o">=</span><span class="s2">"cutie-sam3-bodyparts.pth"</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">tracker_cfg</span> <span class="o">=</span> <span class="n">CutieDinoTrackerConfig</span><span class="p">(</span>
+    <span class="n">cutie_weights_path</span><span class="o">=</span><span class="s2">"cutie-sam3-bodyparts.pth"</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="reproducing-direct-weight-compression-distillation-and-benchmarks">Reproducing Direct Weight Compression, Distillation, and Benchmarks<a class="headerlink" href="#reproducing-direct-weight-compression-distillation-and-benchmarks" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Back up cutie-base-mega.orig.pth, compress via Conv+BN folding + HOSVD Tucker-2,</span>
+<span class="c1"># and distill SAM 3.1 + DINOv3 ViT-L/16 into cutie-base-mega.pth &amp; cutie-sam3-bodyparts.pth</span>
+.venv/bin/python<span class="w"> </span>scripts/upgrade_cutie_weights_with_sam3.py
+
+<span class="c1"># Evaluate cutie-base-mega.orig.pth vs cutie-base-mega.pth on 9 held-out suites (accuracy + FPS)</span>
+.venv/bin/python<span class="w"> </span>scripts/evaluate_cutie_bodyparts_benchmark.py
+</code></pre></div>
 <hr />
 <h2 id="saved-data-downstream-compatibility-contract">Saved Data &amp; Downstream Compatibility Contract<a class="headerlink" href="#saved-data-downstream-compatibility-contract" title="Permanent link">&para;</a></h2>
 <p>To protect LabelMe compatibility, Qt flag editors, and whole-animal post-processing tools, body-part polygons follow an explicit metadata contract (<code>annolid.utils.body_part_shapes</code>):</p>
