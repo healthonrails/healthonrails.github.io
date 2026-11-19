@@ -684,6 +684,8 @@
       
         
       
+        
+      
     
     
     
@@ -1418,6 +1420,34 @@
     
   
     Zone Analysis Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting_and_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting and Statistics
   
 
     
@@ -2997,7 +3027,12 @@ Check today's weather
 
 /tool cron
 Schedule an email summary for tomorrow morning
+
+/stats /path/to/session_tracking.csv px_per_cm=12.5
+/qc /path/to/session_tracking.csv
+/report /path/to/session.mp4 px_per_cm=12.5
 </code></pre></div>
+<p>For dedicated analytics, statistics, QC, and scientific reporting tools (<code>group:analysis</code>), see <a href="../reporting_and_statistics/">Reporting, Statistics &amp; Analysis Studio</a>.</p>
 <p>Use <code>agent-capabilities</code> when you want both tool policy and skill discovery in one report:</p>
 <div class="highlight"><pre><span></span><code>annolid-run agent-capabilities
 annolid-run agent-capabilities --workspace ~/.annolid/workspace --task-hint "check today's weather"
