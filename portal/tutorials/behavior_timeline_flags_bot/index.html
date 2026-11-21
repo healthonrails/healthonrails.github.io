@@ -1336,6 +1336,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#boris-live-coding-ethogram-schema-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BORIS Live Coding, Ethogram Schema &amp; Interoperability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recommended-operating-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3052,6 +3063,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#boris-live-coding-ethogram-schema-interoperability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BORIS Live Coding, Ethogram Schema &amp; Interoperability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#recommended-operating-loop" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3364,6 +3386,30 @@ log review checks; they do not change the timeline's storage or export format.
 Opening another video resets the log's filters and selection.</p>
 <p>This review workflow is inspired by BORIS's
 <a href="https://www.boris.unito.it/user_guide/coding/">event search, filtering, and state-event checks</a>.</p>
+<h2 id="boris-live-coding-ethogram-schema-interoperability">BORIS Live Coding, Ethogram Schema &amp; Interoperability<a class="headerlink" href="#boris-live-coding-ethogram-schema-interoperability" title="Permanent link">&para;</a></h2>
+<p>Annolid includes first-class support for BORIS-style behavioral observation workflows:</p>
+<ol>
+<li><strong>Project Schema &amp; BORIS Ethogram (<code>Settings -&gt; Project Schema</code>)</strong>:</li>
+<li>Configure <strong>State</strong> vs. <strong>Point</strong> (instantaneous) behaviors, shortcut keys, colors, and categories.</li>
+<li>Use the <strong>Exclusion Matrix</strong> tab to define symmetric mutual-exclusion rules (e.g., <code>attack</code> excludes <code>groom</code> and <code>out_of_sight</code>).</li>
+<li>Configure <strong>Modifiers</strong> with named groups, <code>single</code> (radio-button) vs. <code>multi</code> (checkbox) selection modes, shortcut keys, or click <strong>Add Subjects as Modifiers</strong> for directed dyadic behaviors (<code>resident</code> attacks <code>intruder</code>).</li>
+<li>Define <strong>Independent Variables</strong> (<code>text</code>, <code>numeric</code>, <code>value_from_list</code>, <code>timestamp</code>) for experimental factors (<code>Treatment</code>, <code>Genotype</code>, <code>Dose</code>).</li>
+<li><strong>Ethogram Coding Pad &amp; Live Keyboard Coding (<code>Behavior Controls</code> dock)</strong>:</li>
+<li>Toggle <strong><code>⌨ Live Coding: ON</code></strong> to log events directly from single-key shortcuts while watching video:<ul>
+<li>Focal subject keys (e.g. <code>1</code>, <code>2</code>) switch the active animal.</li>
+<li>State behavior keys toggle <code>START</code> / <code>STOP</code> per subject (with active <code>●</code> badges on the Ethogram Pad), automatically closing mutually-exclusive active states when <strong><code>Auto-stop Excluded</code></strong> is checked.</li>
+<li>Point behavior keys log instantaneous <code>POINT</code> markers on both the video slider, Behavior Log, and Timeline (<code>Behavior</code>, <code>Behavior+Instance</code>, or <code>Instance</code> view).</li>
+<li>Modifier keys toggle applicable single- or multi-select modifiers, and optional comments attach to the next recorded event.</li>
+</ul>
+</li>
+<li>Adjust playback rate (<code>0.1x</code>–<code>4x</code>) or step <code>-5s</code> / <code>-1s</code> / <code>+1s</code> / <code>+5s</code> directly from the transport bar.</li>
+<li><strong>Synchronized Secondary Cameras &amp; External Physiological/Hardware Data Streams (<code>Video Tools -&gt; Synchronized Cameras &amp; Data Streams…</code>)</strong>:</li>
+<li>Attach 1..N secondary camera videos (side/bottom/thermal views) with per-camera millisecond <code>Offset (s)</code> controls, per-camera Mute/Unmute (<code>🔇</code>/<code>🔊</code>) + Volume (<code>0–200%</code>) synchronized audio mixing, and live dBFS metering so all viewports and audio tracks scrub/play in lockstep with the main canvas.</li>
+<li>Attach 1..N external CSV/TSV time-series streams (e.g., fiber photometry $\Delta F/F$, heart rate, rotary encoder speed, Bpod analog/TTL traces) with 1-based or named column selection, sandboxed BORIS <code>converters</code> (<code>HHMMSS_2_seconds</code>, <code>ISO8601_2_seconds</code>, safe <code>INPUT</code>/<code>OUTPUT</code> calibration formulas), baseline subtraction, live playhead readouts, shaded behavior intervals, click/drag scrubbing, and SVG export.</li>
+<li><strong>Bidirectional <code>.boris</code> &amp; CSV/TSV Import/Export</strong>:</li>
+<li>Import <code>.boris</code> project files (preserving multi-player media, offsets, external <code>plot_data</code> streams, and sub-frame timestamps with automatic FPS re-indexing on video open), BORIS Tabular CSV/TSVs, or BORIS Aggregated CSV/TSVs via <strong><code>Convert -&gt; Import BORIS Project / Events…</code></strong> or <code>annolid-run boris-import</code>.</li>
+<li>Export active schemas, multi-camera/external stream specs, and observations back to <code>.boris</code>, BORIS Tabular CSV, BORIS Aggregated CSV, or Annolid CSV via <strong><code>Convert -&gt; Export to BORIS (.boris / CSV)…</code></strong> or <code>annolid-run boris-export</code>.</li>
+</ol>
 <h2 id="recommended-operating-loop">Recommended Operating Loop<a class="headerlink" href="#recommended-operating-loop" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Define behavior names first (Flags or Timeline).</li>

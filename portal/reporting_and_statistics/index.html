@@ -2847,26 +2847,46 @@ annolid-run<span class="w"> </span>gap-report<span class="w"> </span>session_tra
 <span class="c1"># 6. Multi-video *_tracking_stats.json telemetry dashboard</span>
 annolid-run<span class="w"> </span>tracking-stats<span class="w"> </span>./project_videos/<span class="w"> </span>--output-dir<span class="w"> </span>./stats_dashboard
 
-<span class="c1"># 7. Behavior time budget with explicit session denominator and binned CSV sidecar</span>
+<span class="c1"># 7. Behavior time budget with BORIS Out-of-Sight subtraction, external photometry/sensor alignment, &amp; SVG/DOT</span>
 annolid-run<span class="w"> </span>time-budget<span class="w"> </span>session_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--session-duration<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--exclude-behaviors<span class="w"> </span>out_of_sight,occluded<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--external-data<span class="w"> </span>photometry_dff.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--external-offset<span class="w"> </span><span class="m">0</span>.25<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--external-data-svg<span class="w"> </span>photometry_aligned.svg<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--cooccurrence-csv<span class="w"> </span>cooccurrence.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--ethogram-svg<span class="w"> </span>ethogram.svg<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--transitions-dot<span class="w"> </span>transitions.dot<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--transitions-svg<span class="w"> </span>transitions.svg<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-o<span class="w"> </span>time_budget.csv
 
-<span class="c1"># 8. Inter-Rater Reliability with bootstrap 95% CIs, Krippendorff's alpha, and disagreement CSV</span>
+<span class="c1"># 8. Bidirectional BORIS (.boris / Tabular CSV / Aggregated CSV) import &amp; export</span>
+annolid-run<span class="w"> </span>boris-import<span class="w"> </span>study.boris<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output-dir<span class="w"> </span>./annolid_from_boris<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--group-variable<span class="w"> </span>Treatment
+
+annolid-run<span class="w"> </span>boris-export<span class="w"> </span>session_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--format<span class="w"> </span>boris<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--output<span class="w"> </span>session.boris
+
+<span class="c1"># 9. Inter-Rater Reliability with bootstrap 95% CIs, Krippendorff's alpha, and disagreement CSV</span>
 annolid-run<span class="w"> </span>behavior-irr<span class="w"> </span>rater1.csv<span class="w"> </span>rater2.csv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--bin-seconds<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--disagreements-csv<span class="w"> </span>disagreements.csv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--out<span class="w"> </span>irr_report.json
 
-<span class="c1"># 9. Multi-recording cohort inferential comparisons (preventing dyadic pseudoreplication)</span>
-annolid-run<span class="w"> </span>behavior-cohort<span class="w"> </span>./scored_csvs/<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--metadata-csv<span class="w"> </span>unblind_key.csv<span class="w"> </span><span class="se">\</span>
+<span class="c1"># 10. Multi-recording cohort inferential comparisons &amp; transition diagrams</span>
+annolid-run<span class="w"> </span>behavior-cohort<span class="w"> </span>./annolid_from_boris/cohort_manifest.json<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--unit<span class="w"> </span>recording<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--session-duration<span class="w"> </span><span class="m">600</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--summary-csv<span class="w"> </span>cohort_summary.csv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--comparisons-csv<span class="w"> </span>cohort_comparisons.csv<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--transitions-csv<span class="w"> </span>cohort_transitions.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--transitions-dot<span class="w"> </span>cohort_transitions.dot<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--transitions-svg<span class="w"> </span>cohort_transitions.svg<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>--out<span class="w"> </span>cohort_report.json
 </code></pre></div>
 <hr />

@@ -997,6 +997,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#motor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-and-observation-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control and observation API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fly-brain-connectome-mode-fly_brain1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fly-brain connectome mode (?fly_brain=1)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#validation-and-maintenance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2682,6 +2721,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#motor-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motor control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#control-and-observation-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control and observation API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fly-brain-connectome-mode-fly_brain1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fly-brain connectome mode (?fly_brain=1)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#validation-and-maintenance" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2779,12 +2857,15 @@
 </code></pre></div>
 <p>The scene starts with a black C57BL/6 mouse and a snow-ivory BALB/c mouse on a
 matte anti-glare arena floor with curled aspen wood shavings. Models include
-multi-layer clumped fur with anisotropic guard-hair sheen, articulated paws,
-concave vascularized ear pinnae, mystacial and supraorbital vibrissae, almond
-palpebral rims, and a countershaded annular-ringed tail. Exploration includes
-wall following, active rhythmic whisking, pauses to sniff, social investigation,
-rearing, and grooming. This is a procedural visualization, not a validated animal
-biomechanics model. Heart rate and respiration in the HUD are illustrative estimates.</p>
+multi-layer clumped fur with anisotropic guard-hair sheen, a sleek tapered skull
+with split upper-lip cushions, recessed oral cleft, curved ivory incisors, and
+tucked lower lip/chin, strain-calibrated rhinarium and almond palpebral rims,
+unified cupped vascularized ear pinnae, a monotonically tapered cervical bridge, crouched furred limbs with grounded articulated paws,
+mystacial and supraorbital vibrissae, and a countershaded annular-ringed tail.
+Exploration includes wall following, active rhythmic whisking, pauses to sniff,
+social investigation, rearing, and grooming. This is a procedural visualization,
+not a validated animal biomechanics model. Heart rate and respiration in the HUD
+are illustrative estimates.</p>
 <h2 id="viewing-and-playback">Viewing and playback<a class="headerlink" href="#viewing-and-playback" title="Permanent link">&para;</a></h2>
 <p>Drag to orbit, scroll to zoom, and use <strong>Simulation Controls → Camera</strong> for an
 overview, a view from above, or a camera that follows either strain. The follow
@@ -2828,16 +2909,95 @@ browser's <code>Math.random</code> function.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 python<span class="w"> </span>scripts/generate_two_mice_pose_dataset.py<span class="w"> </span>--output<span class="w"> </span>/tmp/two_mice_preview
 </code></pre></div>
+<h2 id="motor-control">Motor control<a class="headerlink" href="#motor-control" title="Permanent link">&para;</a></h2>
+<p>Locomotion follows the same layered design as Annolid's FlyBody controller
+(<code>annolid/simulation/fly_brain.py</code>), implemented in <code>two_mice_control.js</code>:</p>
+<pre class="mermaid"><code>flowchart LR
+  A["Behavior state&lt;br/&gt;explore, social, rear, groom&lt;br/&gt;or external command"] --&gt; B["Descending drive&lt;br/&gt;speed, turn, arrest, gait"]
+  B --&gt; C["Limb CPG&lt;br/&gt;4 coupled phase oscillators"]
+  C --&gt; D["Motor decoder&lt;br/&gt;22 named joint targets"]
+  D --&gt; E["Rig + foot-plant IK"]
+  E -- "paw reach / slip" --&gt; C</code></pre>
+<ul>
+<li><strong>Gaits</strong>: lateral-sequence <em>walk</em> (duty ≈ 0.70), diagonal <em>trot</em> (≈ 0.56),
+  and <em>half-bound gallop</em> (≈ 0.42), selected from speed with hysteresis so the
+  gait does not flicker. <strong>Behavior Controls → Gait</strong> forces one gait; the
+  HUD shows the active gait and step frequency.</li>
+<li><strong>Stance and swing</strong> come from the oscillator phase. Paws retract
+  monotonically while planted, swing with knee/wrist flexion, and a lift-off
+  reflex starts the swing early when a planted paw reaches its reach or slip
+  limit. When the drive stops, swings finish and all four paws plant. Turning in
+  place steps rather than skating.</li>
+<li>Rearing and grooming arrest stepping (like the fly's arrest neurons) and
+  blend their postures on top of the locomotor targets.</li>
+</ul>
+<h3 id="control-and-observation-api">Control and observation API<a class="headerlink" href="#control-and-observation-api" title="Permanent link">&para;</a></h3>
+<p><code>window.annolidTwoMice</code> exposes a FlyBody-style task interface in the viewer:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">annolidTwoMice</span><span class="p">;</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">getActionSpec</span><span class="p">();</span><span class="w">            </span><span class="c1">// joint names, ranges, neutral pose, gaits, command spec</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">getObservation</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w">          </span><span class="c1">// egocentric velocity, yaw rate, joint positions/targets,</span>
+<span class="w">                                </span><span class="c1">// foot contacts and slip, CPG phases, behavior state</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">getObservations</span><span class="p">();</span><span class="w">          </span><span class="c1">// all subjects</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">setCommand</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">forwardSpeed</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">turnRate</span><span class="o">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="nx">gait</span><span class="o">:</span><span class="w"> </span><span class="s1">'auto'</span><span class="p">,</span><span class="w"> </span><span class="nx">durationSec</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">clearCommand</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w">            </span><span class="c1">// return to autonomous behavior</span>
+</code></pre></div>
+<ul>
+<li><code>forwardSpeed</code> is in scene units/s (negative walks backward), clipped to
+  <code>-0.25..1.24 × maxSpeed</code>; <code>turnRate</code> is in rad/s, clipped to ±3.
+  <code>durationSec</code> is optional; without it the command holds until cleared.</li>
+<li>Invalid commands throw (<code>TypeError</code>/<code>RangeError</code>) instead of being ignored.</li>
+<li>While a command is active, spontaneous pauses, social steering, rearing, and
+  grooming are suppressed; wall and body contacts are still resolved. A posture
+  already in progress finishes first.</li>
+<li>Seeded dataset captures remain reproducible as long as no command is issued.</li>
+</ul>
+<h2 id="fly-brain-connectome-mode-fly_brain1">Fly-brain connectome mode (<code>?fly_brain=1</code>)<a class="headerlink" href="#fly-brain-connectome-mode-fly_brain1" title="Permanent link">&para;</a></h2>
+<p>Open <strong>3D Examples → Fly-Brain Mouse</strong>, open <code>two_mice.html?fly_brain=1</code>, toggle
+<strong>Fly Brain Control → Enable Fly Brain</strong> in the controls panel, or ask Annolid Bot:</p>
+<div class="highlight"><pre><span></span><code>open threejs example fly brain mouse
+</code></pre></div>
+<p>This mode runs a live biophysical <em>Drosophila</em> LIF spiking connectome
+(<code>two_mice_fly_brain.js</code>, using Shiu et al. 2024 / FlyWire / MaleCNS LIF parameters
+and canonical pathways from <code>annolid/simulation/fly_brain.py</code>) in a closed
+sensorimotor loop driving the 3D mouse rig through <code>two_mice_control.js</code>:</p>
+<ul>
+<li><strong>Sensory → Descending circuits</strong>:</li>
+<li>Golden <strong>Sucrose Reward Zone</strong> radiates an olfactory gradient into <code>ORN_L/R</code> → <code>PFL3_L/R</code> → <code>LAL_Inh</code> → <code>DNa02_L/R</code> (left/right chemotaxis steering) and <code>CX_Forward_Goal</code> → <code>DNp09</code> (forward walking/trotting).</li>
+<li>Partner mouse bearing projects onto <code>Visual_Target_L/R</code> (<code>LC10a</code>) and rapid approach excites <code>LC4_Looming</code> → <code>DNp01</code> (Giant Fiber escape gallop).</li>
+<li>Anterior wall proximity excites <code>Tactile_Ant</code> → <code>MDN</code> → <code>VNC_MDN_Inh</code> (inhibits <code>DNp09</code> and drives backward moonwalking).</li>
+<li><code>Pair1</code> GABAergic arrest freezes locomotion; <code>aDN1</code> triggers 3D face-wash grooming; <code>DNg02</code> triggers vertical rearing.</li>
+<li><strong>Online dopamine plasticity (<code>KC → MBON</code>)</strong>: inspired by <code>nftechie/stonkfly</code>,
+  entering the Reward Zone fires <code>PAM</code> dopamine (strengthening <code>KC_Reward_Zone → MBON_Approach</code>
+  and depressing <code>MBON_Avoid</code>), while entering the red Hazard Zone fires <code>PPL1</code>
+  aversive dopamine (strengthening <code>KC_Hazard_Zone → MBON_Avoid</code> to promote retreat).</li>
+<li><strong>Live Connectome Monitor &amp; Optogenetics</strong>: displays a real-time scrolling LIF
+  spike raster, descending-neuron activity bars, live <code>KC → MBON</code> synaptic weight
+  multipliers, and one-click Chrimson stimulation buttons (<code>Walk</code>, <code>Turn L/R</code>,
+  <code>Moonwalk</code>, <code>Freeze</code>, <code>Groom</code>, <code>Rear</code>, <code>Escape</code>, <code>PAM DA</code>, <code>PPL1 DA</code>).</li>
+<li><strong>JavaScript API</strong> (<code>window.annolidTwoMice</code>):</li>
+<li><code>getFlyBrainMetadata()</code></li>
+<li><code>enableFlyBrain(trackId, { dynamics, plasticityEnabled })</code> / <code>disableFlyBrain(trackId)</code></li>
+<li><code>getFlyBrainState(trackId)</code></li>
+<li><code>stimulateFlyNeuron(trackId, cellType, current, durationSec)</code></li>
+<li><code>applyFlyOptoPreset(trackId, presetId)</code></li>
+<li><code>resetFlyBrainPlasticity(trackId)</code></li>
+</ul>
+<p>Fly Brain mode is <strong>off by default</strong> in <code>two_mice.html</code> so seeded trajectories and
+pose dataset captures remain unchanged. This cross-species controller is an
+illustrative NeuroAI visualization, not a validated mouse brain model.</p>
 <h2 id="validation-and-maintenance">Validation and maintenance<a class="headerlink" href="#validation-and-maintenance" title="Permanent link">&para;</a></h2>
 <p>The HTML is the presentation shell. <code>two_mice_scene.js</code> owns scene assembly,
-articulation, controls, and pose export; <code>two_mice_model.js</code> owns procedural model
-construction and GPU resource ownership; <code>two_mice_simulation.js</code> supplies the
-independent timing, random-stream, and wall-force helpers. All three modules are
-served by Annolid's desktop asset server and included by the package's JS rules.</p>
+articulation, behavior, and pose export; <code>two_mice_model.js</code> owns procedural model
+construction and GPU resource ownership; <code>two_mice_control.js</code> owns the joint/action
+spec, gait library, limb CPG, and motor decoder; <code>two_mice_fly_brain.js</code> owns the
+dependency-free <em>Drosophila</em> LIF connectome and dopamine plasticity controller;
+<code>two_mice_simulation.js</code> supplies the independent timing, random-stream, and
+wall-force helpers. All modules are served by Annolid's desktop asset server and
+included by the package's JS rules.</p>
 <p>Run deterministic checks without a browser (uses <code>node</code> on <code>PATH</code> or Playwright's
 bundled Node runtime when installed in <code>.venv</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pytest<span class="w"> </span>tests/test_two_mice_simulation.py<span class="w"> </span>tests/test_threejs_examples.py
+pytest<span class="w"> </span>tests/test_two_mice_fly_brain.py<span class="w"> </span>tests/test_two_mice_control.py<span class="w"> </span>tests/test_two_mice_simulation.py<span class="w"> </span>tests/test_threejs_examples.py
 </code></pre></div>
 <p>Run the optional offline browser checks with Playwright Chromium installed:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ANNOLID_RUN_THREEJS_BROWSER_TESTS</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
@@ -2845,7 +3005,10 @@ pytest<span class="w"> </span>tests/test_two_mice_simulation.py<span class="w"> 
 .venv/bin/python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>tests/test_two_mice_browser.py
 </code></pre></div>
 <p>These check capture repeatability, contact bounds, deformed fur normals, pause,
-camera controls, resource cleanup, and selected anatomy/rearing/grooming poses.
+camera controls, resource cleanup, selected anatomy/rearing/grooming poses
+(including <code>anatomy_qa</code> views such as <code>torso-side</code>, <code>ears-front</code>, <code>head-side</code>,
+<code>head-three-quarter</code>, <code>head-top</code>, and <code>mouth-front</code>), and the motor-control API
+(in-place turning, commanded walking, foot slip).
 <code>window.annolidTwoMice.getDiagnostics()</code> exposes a read-only snapshot of simulation
 time, subject positions, and renderer resource counts for diagnostics.</p>
 
