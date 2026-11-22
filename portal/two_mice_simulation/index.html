@@ -696,6 +696,8 @@
       
         
       
+        
+      
     
     
     
@@ -759,6 +761,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/mouse083_resident_intruder_showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Walkthrough (mouse083)
   
 
     
@@ -2926,6 +2956,7 @@ Exploration includes wall following, active rhythmic whisking, pauses to sniff,
 social investigation, rearing, and grooming. This is a procedural visualization,
 not a validated animal biomechanics model. Heart rate and respiration in the HUD
 are illustrative estimates.</p>
+<p><img alt="Two-Mouse Three.js 3D simulation showing procedural C57BL/6 and BALB/c mice on an aspen-bedded open-field floor" src="../imgs/showcase/sim_two_mice_arena.png" /></p>
 <h2 id="viewing-and-playback">Viewing and playback<a class="headerlink" href="#viewing-and-playback" title="Permanent link">&para;</a></h2>
 <p>Drag to orbit, scroll to zoom, and use <strong>Simulation Controls → Camera</strong> for an
 overview, a view from above, or a camera that follows either strain. The follow
@@ -2957,6 +2988,7 @@ simulation, and unloading the view releases active and shared WebGL resources.</
 local assets (<code>annolid/gui/assets/threejs/</code>), so it works offline without external CDN
 access. A loading error is displayed if WebGL initialization fails.</p>
 <h2 id="reproducible-pose-capture">Reproducible pose capture<a class="headerlink" href="#reproducible-pose-capture" title="Permanent link">&para;</a></h2>
+<p><img alt="Top-down view of the Two-Mouse Three.js simulation with the 13-keypoint pose skeleton overlay enabled" src="../imgs/showcase/sim_two_mice_pose.png" /></p>
 <p>The existing <code>dataset=1</code>, <code>seed</code>, <code>frame</code>, and <code>fps</code> query parameters and
 <code>window.annolidPoseDataset.getFrame()</code> / <code>setFrame(index)</code> API remain available.
 Frames advance monotonically. Track IDs, 13-keypoint ordering, COCO-style records,
@@ -3020,6 +3052,7 @@ python<span class="w"> </span>scripts/generate_two_mice_pose_dataset.py<span cla
 (<code>two_mice_fly_brain.js</code>, using Shiu et al. 2024 / FlyWire / MaleCNS LIF parameters
 and canonical pathways from <code>annolid/simulation/fly_brain.py</code>) in a closed
 sensorimotor loop driving the 3D mouse rig through <code>two_mice_control.js</code>:</p>
+<p><img alt="Fly-Brain connectome mode in the Two-Mouse Three.js simulation showing the live 264-neuron LIF spike raster, descending neuron activity bars, KC-to-MBON plasticity, Chrimson optogenetics panel, and reward zone" src="../imgs/showcase/sim_fly_brain_connectome.png" /></p>
 <ul>
 <li><strong>Sensory → Descending circuits</strong>:</li>
 <li>Golden <strong>Sucrose Reward Zone</strong> radiates an olfactory gradient into <code>ORN_L/R</code> → <code>PFL3_L/R</code> → <code>LAL_Inh</code> → <code>DNa02_L/R</code> (left/right chemotaxis steering) and <code>CX_Forward_Goal</code> → <code>DNp09</code> (forward walking/trotting).</li>

@@ -1,0 +1,3403 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Unified Annolid documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://annolid.com/tutorials/mouse083_resident_intruder_showcase/">
+      
+      
+        <link rel="prev" href="../../workflows/">
+      
+      
+        <link rel="next" href="../../atlas_overlay_workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/icon_annolid.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Featured Walkthrough (mouse083) - Annolid Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#end-to-end-walkthrough-resident-intruder-social-assay-mouse083_task1_annotator1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/icon_annolid.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Annolid Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Featured Walkthrough (mouse083)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/healthonrails/annolid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    healthonrails/annolid
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../workflows/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workflows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../agent_and_automation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Agent and Automation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../operations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../model_plugin_help/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developer Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+      
+  <img src="../../assets/images/icon_annolid.png" alt="logo">
+
+    </a>
+    Annolid Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/healthonrails/annolid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    healthonrails/annolid
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install_with_uv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uv Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../one_line_install_choices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-Line Installer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Walkthrough (mouse083)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Walkthrough (mouse083)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#animated-tracking-behavior-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animated Tracking &amp; Behavior Preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-files-data-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Files &amp; Data Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-labeling-review-in-the-desktop-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Labeling &amp; Review in the Desktop GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multi-animal-tracking-across-social-states-track-qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Multi-Animal Tracking Across Social States &amp; Track QC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ethogram-timeline-social-proximity-arena-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ethogram Timeline, Social Proximity &amp; Arena Kinematics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-spatial-zone-place-preference-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Spatial Zone &amp; Place-Preference Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-one-command-unified-html5-svg-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. One-Command Unified HTML5 + SVG Report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-pairing-real-assays-with-3d-simulation-twins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Pairing Real Assays with 3D Simulation Twins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Pairing Real Assays with 3D Simulation Twins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-mouse-3d-pose-benchmark-twin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Mouse 3D Pose &amp; Benchmark Twin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-body-part-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical Body-Part Segmentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regenerating-this-showcase-on-your-own-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regenerating This Showcase on Your Own Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../atlas_overlay_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large TIFF and Atlas Overlays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../large_image_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video_depth_anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Depth Anything
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../brain_3d_reconstruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brain 3D Reconstruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../simulation_flybody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and FlyBody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../two_mice_simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-Mouse 3D Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../coco_data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pose_interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeepLabCut, SLEAP & Pose Interoperability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yolo_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YOLO & YOLOE Fine-Tuning and Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../merge_canvas_shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merge Canvas Shapes (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reorder_annotation_lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reorder Annotation Lists (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_downsample_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Downsample Workflow (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behavior_timeline_flags_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Labeling (Timeline + Flags + Bot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../polygon_tcn_video_collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polygon TCN Video Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcn_behavior_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCN Behavior Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../realtime_wireless_camera_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Realtime Wireless Camera Detection (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multi_camera_realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Camera Realtime Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_ffmpeg_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Processing with FFmpeg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../segment-based-batch-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracking_correction_with_sam3_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking Correction with SAM3 Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dinov3_keypoint_tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINOv3 Keypoint Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../body_part_segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instance Body Part Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tapnext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TAPNext ONNX Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cowtracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoWTracker Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../behavior_agent_user_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Agent User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../draw_zones_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Zones Quickstart (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone_analysis_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zone Analysis Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reporting_and_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting and Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Repair and Governor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Labelme_to_YOLO_class_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabelMe to YOLO Class Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sandboxed_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sandboxed Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sam3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sam3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and Automation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent and Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_and_automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_annolid_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent CLI with annolid-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Box Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../codex_and_acp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex and ACP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Integrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging and Distribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/behavior_analysis_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture_layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../redirects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redirect Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zone_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zone Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Repair and Governor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../model_plugin_help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Plugin Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#animated-tracking-behavior-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animated Tracking &amp; Behavior Preview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-files-data-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Project Files &amp; Data Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-labeling-review-in-the-desktop-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Labeling &amp; Review in the Desktop GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-multi-animal-tracking-across-social-states-track-qc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Multi-Animal Tracking Across Social States &amp; Track QC
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ethogram-timeline-social-proximity-arena-kinematics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Ethogram Timeline, Social Proximity &amp; Arena Kinematics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-spatial-zone-place-preference-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Spatial Zone &amp; Place-Preference Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-one-command-unified-html5-svg-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. One-Command Unified HTML5 + SVG Report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-pairing-real-assays-with-3d-simulation-twins" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Pairing Real Assays with 3D Simulation Twins
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Pairing Real Assays with 3D Simulation Twins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-mouse-3d-pose-benchmark-twin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Mouse 3D Pose &amp; Benchmark Twin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hierarchical-body-part-segmentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hierarchical Body-Part Segmentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regenerating-this-showcase-on-your-own-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regenerating This Showcase on Your Own Video
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../workflows/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Workflows
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/tutorials/mouse083_resident_intruder_showcase.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/tutorials/mouse083_resident_intruder_showcase.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="end-to-end-walkthrough-resident-intruder-social-assay-mouse083_task1_annotator1">End-to-End Walkthrough: Resident-Intruder Social Assay (<code>mouse083_task1_annotator1</code>)<a class="headerlink" href="#end-to-end-walkthrough-resident-intruder-social-assay-mouse083_task1_annotator1" title="Permanent link">&para;</a></h1>
+<p>This worked example walks through a complete Annolid analysis pipeline on a real two-mouse resident-intruder home-cage recording (<code>mouse083_task1_annotator1.mp4</code>: <code>1024 × 570</code>, <code>30 FPS</code>, <code>4,881 frames</code>, <code>162.7 s</code>).</p>
+<p>Using one real session, you can see how Annolid connects:</p>
+<ol>
+<li>desktop GUI labeling of instance polygons, 14 anatomical keypoints, and behavior flags,</li>
+<li>multi-animal tracking across challenging close-contact social interactions and tether occlusions,</li>
+<li>automated Track QC and occlusion-gap detection for targeted human-in-the-loop repair,</li>
+<li>spatial zone occupancy and place-preference scoring,</li>
+<li>ethogram time budgets, body-part contact analysis, and self-contained HTML5/SVG reporting, and</li>
+<li>Annolid's matching 3D Two-Mouse and Fly-Brain simulations for synthetic benchmarking.</li>
+</ol>
+<div class="ann-metrics-strip">
+  <div class="ann-stat">
+    <strong>4,881 frames</strong>
+    <span>162.7 s @ 30 FPS (1024 × 570)</span>
+  </div>
+  <div class="ann-stat">
+    <strong>2 masks + 14 keypoints</strong>
+    <span>resident &amp; intruder, 7 landmarks each</span>
+  </div>
+  <div class="ann-stat">
+    <strong>39.1 s / 19.9 s</strong>
+    <span>investigation (25 bouts) · mount (7 bouts)</span>
+  </div>
+  <div class="ann-stat">
+    <strong>5-frame QC alert</strong>
+    <span>intruder occlusion flagged at 3361–3366</span>
+  </div>
+</div>
+
+<div class="ann-cta-bar">
+  <a class="ann-btn ann-btn--primary" href="../../assets/reports/mouse083_report.html" target="_blank" rel="noopener">Open Live Interactive HTML5/SVG Report</a>
+  <a class="ann-btn" href="../../reporting_and_statistics/">Reporting &amp; Analysis Studio Docs</a>
+  <a class="ann-btn" href="../../two_mice_simulation/">Two-Mouse 3D Simulation</a>
+</div>
+
+<h2 id="animated-tracking-behavior-preview">Animated Tracking &amp; Behavior Preview<a class="headerlink" href="#animated-tracking-behavior-preview" title="Permanent link">&para;</a></h2>
+<p><img alt="Animated multi-animal polygon, 14-keypoint skeleton, and behavior tracking demo on mouse083_task1_annotator1" src="../../imgs/showcase/mouse083_tracking_demo.gif" /></p>
+<p>In this 30 FPS home-cage assay, a tethered black resident mouse (<code>resident</code>, cyan contour + 7 keypoints) interacts with a white intruder mouse (<code>intruder</code>, coral contour + 7 keypoints) on textured aspen bedding near a right-wall feeder port.</p>
+<h2 id="1-project-files-data-contract">1. Project Files &amp; Data Contract<a class="headerlink" href="#1-project-files-data-contract" title="Permanent link">&para;</a></h2>
+<p>Annolid keeps every stage reviewable on disk with plain JSON and CSV contracts:</p>
+<div class="highlight"><pre><span></span><code>mouse083_task1_annotator1.mp4                  # Source 30 FPS video (1024 × 570, 4,881 frames)
+mouse083_task1_annotator1/
+  project.annolid.json                         # Canonical ethogram schema (other, investigation, mount)
+  mouse083_task1_annotator1_000000000.json     # Per-frame LabelMe JSON (2 polygons + 14 keypoints + flags)
+  ...
+  mouse083_task1_annotator1_000004880.json
+mouse083_task1_annotator1_tracking.csv         # 78,091 rows: RLE masks, bboxes, centroids for all 16 shapes
+mouse083_task1_annotator1_tracked.csv          # 9,757 rows: per-animal centroids, motion index, timestamps
+</code></pre></div>
+<p>Each frame JSON contains:</p>
+<ul>
+<li><strong>2 whole-animal polygons</strong>: <code>resident</code> and <code>intruder</code></li>
+<li><strong>14 anatomical keypoints</strong> (7 per mouse, grouped by <code>group_id</code> <code>0</code> and <code>1</code>):
+  <code>nose</code>, <code>left_ear</code>, <code>right_ear</code>, <code>neck</code>, <code>left_hip</code>, <code>right_hip</code>, <code>tail_base</code></li>
+<li><strong>Frame-level ethogram flags</strong>: <code>other</code>, <code>investigation</code>, or <code>mount</code></li>
+</ul>
+<h2 id="2-labeling-review-in-the-desktop-gui">2. Labeling &amp; Review in the Desktop GUI<a class="headerlink" href="#2-labeling-review-in-the-desktop-gui" title="Permanent link">&para;</a></h2>
+<p><img alt="Annolid desktop GUI displaying mouse083_task1_annotator1 with instance polygons, 14 keypoints, behavior overlay pill, Flags dock, and Label Instances" src="../../imgs/showcase/mouse083_gui_workspace.png" /></p>
+<p>Inside <code>annolid</code>, the video canvas renders polygons, keypoints, instance badges, and viewport-pinned behavior overlay pills (<code>• investigation</code>), while the right-hand docks synchronize <strong>Flags</strong>, <strong>Label Instances</strong>, <strong>Video List</strong>, <strong>Behavior Log</strong>, and <strong>Behavior Controls</strong>.</p>
+<p>To run a similar session from scratch:</p>
+<ol>
+<li>Open the video directly in the GUI (<code>File → Open Video</code>) — frame extraction is optional.</li>
+<li>Label a clean seed frame (<code>Frame 0000</code>) with instance polygons and optional body-part keypoints.</li>
+<li>Track polygons across the recording using <strong>Cutie</strong>, <strong>SAM3</strong>, or <strong>YOLO</strong>, and propagate sparse keypoints with <a href="../../dinov3_keypoint_tracking/">DINOv3 Keypoint Tracking</a>.</li>
+<li>Score behavior states (<code>investigation</code>, <code>mount</code>, <code>other</code>) using <strong>Flags</strong>, the <strong>Timeline</strong> playhead, <strong>Live Keyboard Coding</strong>, or <strong>Annolid Bot</strong>.</li>
+</ol>
+<h2 id="3-multi-animal-tracking-across-social-states-track-qc">3. Multi-Animal Tracking Across Social States &amp; Track QC<a class="headerlink" href="#3-multi-animal-tracking-across-social-states-track-qc" title="Permanent link">&para;</a></h2>
+<p>Real social-behavior recordings include both clean exploration and difficult high-overlap contact where a mouse temporarily occludes its partner.</p>
+<p><img alt="Four-panel storyboard of mouse083_task1_annotator1 showing Seed Frame, Social Investigation, Mounting Bout, and Track QC Occlusion Alert" src="../../imgs/showcase/mouse083_behavior_storyboard.png" /></p>
+<ul>
+<li><strong>Panel A (Frame 0000 · Seed Frame)</strong>: Both mice are clearly separated (<code>494 px</code> apart), ideal for initializing masks and 14 keypoints.</li>
+<li><strong>Panel B (Frame 0260 · <code>investigation</code>)</strong>: Close nose-to-body sniffing near the right port (<code>143 px</code> centroid distance) with clean identity separation.</li>
+<li><strong>Panel C (Frame 2720 · <code>mount</code>)</strong>: High-overlap dyadic contact where instance polygons and skeletons remain disambiguated.</li>
+<li><strong>Panel D (Frame 3362 · Track QC Occlusion Alert)</strong>: During a close mounting bout (<code>frames 3346–3422</code>), the black resident directly occludes the white intruder, causing a <strong>5-frame <code>intruder</code> polygon dropout</strong> (<code>frames 3361–3364, 3366</code>).</li>
+</ul>
+<p>Rather than silently averaging over tracking errors, run <code>annolid-run track-qc</code> to rank the highest-risk frames for targeted review:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>track-qc<span class="w"> </span>mouse083_task1_annotator1_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--expected-instances<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--review-csv<span class="w"> </span>mouse083_review_queue.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>mouse083_track_qc.json
+</code></pre></div>
+<p>Double-clicking any row in <strong>Analysis → Analysis &amp; Reporting Studio → Track QC &amp; Gaps</strong> jumps the main canvas straight to frame <code>3361</code> so you can repair the single occluded frame and re-propagate cleanly with Cutie or SAM3.</p>
+<h2 id="4-ethogram-timeline-social-proximity-arena-kinematics">4. Ethogram Timeline, Social Proximity &amp; Arena Kinematics<a class="headerlink" href="#4-ethogram-timeline-social-proximity-arena-kinematics" title="Permanent link">&para;</a></h2>
+<p><img alt="Ethogram timeline raster, inter-animal centroid proximity curve, thigmotaxis arena trajectories, and behavior time budget for mouse083_task1_annotator1" src="../../imgs/showcase/mouse083_ethogram_kinematics.png" /></p>
+<p>Running Annolid's kinematics, body-part ethogram, and time-budget analytics on <code>mouse083_task1_annotator1</code> produces:</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th><code>resident</code></th>
+<th><code>intruder</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observed Frames (Coverage)</td>
+<td>4,881 / 4,881 (<code>100.0%</code>)</td>
+<td>4,876 / 4,881 (<code>99.9%</code>)</td>
+</tr>
+<tr>
+<td>Path Distance</td>
+<td><code>27,173.4 px</code></td>
+<td><code>20,957.8 px</code></td>
+</tr>
+<tr>
+<td>Mean Speed</td>
+<td><code>167.06 px/s</code></td>
+<td><code>128.78 px/s</code></td>
+</tr>
+<tr>
+<td>Freezing % (Bouts)</td>
+<td><code>3.5%</code> (<code>7</code> bouts)</td>
+<td><code>4.0%</code> (<code>9</code> bouts)</td>
+</tr>
+<tr>
+<td>Inter-Animal Distance</td>
+<td>Mean <code>280.5 px</code> · Min <code>15.7 px</code></td>
+<td>Close contact (<code>&lt; 100 px</code>): <code>5.7%</code></td>
+</tr>
+</tbody>
+</table>
+<p>Scored behavior time budget across the <code>162.7 s</code> trial:</p>
+<table>
+<thead>
+<tr>
+<th>Behavior</th>
+<th>Bouts</th>
+<th>Total Duration</th>
+<th>Mean Bout</th>
+<th>Median Bout</th>
+<th>% of Session</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td>24</td>
+<td><code>103.70 s</code></td>
+<td><code>4.32 s</code></td>
+<td><code>3.65 s</code></td>
+<td><code>63.7%</code></td>
+</tr>
+<tr>
+<td><code>investigation</code></td>
+<td>25</td>
+<td><code>39.07 s</code></td>
+<td><code>1.56 s</code></td>
+<td><code>0.63 s</code></td>
+<td><code>24.0%</code></td>
+</tr>
+<tr>
+<td><code>mount</code></td>
+<td>7</td>
+<td><code>19.90 s</code></td>
+<td><code>2.84 s</code></td>
+<td><code>2.57 s</code></td>
+<td><code>12.2%</code></td>
+</tr>
+</tbody>
+</table>
+<p>Notice how sharp drops in the resident-to-intruder centroid distance curve align directly with shaded <code>investigation</code> (blue) and <code>mount</code> (orange) bouts, while the full-session trajectory overlay clearly reveals wall-following thigmotaxis around the home-cage perimeter.</p>
+<h2 id="5-spatial-zone-place-preference-analysis">5. Spatial Zone &amp; Place-Preference Analysis<a class="headerlink" href="#5-spatial-zone-place-preference-analysis" title="Permanent link">&para;</a></h2>
+<p>Define reusable arena zones in <strong>Video Tools → Zones</strong> (saved as a LabelMe-compatible <code>*_zones.json</code> with explicit <code>semantic_type=zone</code> metadata) and score occupancy from either the GUI or CLI:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>zone-analysis<span class="w"> </span>mouse083_task1_annotator1_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>zone_metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./mouse083_zone_out
+</code></pre></div>
+<p><img alt="Spatial zone polygons overlaid on mouse083_task1_annotator1 alongside computed zone occupancy durations and entry counts" src="../../imgs/showcase/mouse083_zone_analysis.png" /></p>
+<p>Computed occupancy across three equal-height cage zones (<code>left_nest_zone</code>, <code>center_arena</code>, <code>right_port_zone</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Instance</th>
+<th>Zone</th>
+<th>Occupancy %</th>
+<th>Entries</th>
+<th>Time in Zone</th>
+<th>First Entry Latency</th>
+<th>Mean Visit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>resident</code></td>
+<td><code>left_nest_zone</code></td>
+<td><code>39.0%</code></td>
+<td>12</td>
+<td><code>63.43 s</code></td>
+<td><code>0.00 s</code></td>
+<td><code>5.29 s</code></td>
+</tr>
+<tr>
+<td><code>resident</code></td>
+<td><code>center_arena</code></td>
+<td><code>16.3%</code></td>
+<td>24</td>
+<td><code>26.47 s</code></td>
+<td><code>0.30 s</code></td>
+<td><code>1.10 s</code></td>
+</tr>
+<tr>
+<td><code>resident</code></td>
+<td><code>right_port_zone</code></td>
+<td><code>44.6%</code></td>
+<td>15</td>
+<td><code>72.53 s</code></td>
+<td><code>1.07 s</code></td>
+<td><code>4.84 s</code></td>
+</tr>
+<tr>
+<td><code>intruder</code></td>
+<td><code>left_nest_zone</code></td>
+<td><code>37.6%</code></td>
+<td>13</td>
+<td><code>61.17 s</code></td>
+<td><code>4.00 s</code></td>
+<td><code>4.71 s</code></td>
+</tr>
+<tr>
+<td><code>intruder</code></td>
+<td><code>center_arena</code></td>
+<td><code>21.5%</code></td>
+<td>22</td>
+<td><code>34.97 s</code></td>
+<td><code>2.27 s</code></td>
+<td><code>1.59 s</code></td>
+</tr>
+<tr>
+<td><code>intruder</code></td>
+<td><code>right_port_zone</code></td>
+<td><code>40.9%</code></td>
+<td>12</td>
+<td><code>66.40 s</code></td>
+<td><code>0.00 s</code></td>
+<td><code>5.53 s</code></td>
+</tr>
+</tbody>
+</table>
+<p>Both animals spend over <code>78%</code> of the session in the two end zones (<code>left_nest_zone</code> and <code>right_port_zone</code>), passing rapidly through <code>center_arena</code> (<code>mean visit 1.10–1.59 s</code>) during perimeter circuits and social approaches.</p>
+<h2 id="6-one-command-unified-html5-svg-report">6. One-Command Unified HTML5 + SVG Report<a class="headerlink" href="#6-one-command-unified-html5-svg-report" title="Permanent link">&para;</a></h2>
+<p>Generate a self-contained scientific report combining Track QC, Kinematics, Zone Analysis, Body-Part Ethogram (<code>54</code> anatomical contact bouts), and Behavior Time Budget in one command:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>report<span class="w"> </span>mouse083_task1_annotator1_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--events-csv<span class="w"> </span>mouse083_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--schema<span class="w"> </span>mouse083_task1_annotator1/project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--title<span class="w"> </span><span class="s2">"mouse083_task1_annotator1 — Resident-Intruder Social Assay"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./mouse083_report
+</code></pre></div>
+<p><img alt="Preview of the live self-contained HTML5 and inline SVG report generated by annolid-run report on mouse083_task1_annotator1" src="../../imgs/showcase/mouse083_report_preview.png" /></p>
+<p>Open the actual generated HTML5 report right in your browser:
+<a href="../../assets/reports/mouse083_report.html" rel="noopener" target="_blank">mouse083_report.html (live interactive report)</a>.</p>
+<h2 id="7-pairing-real-assays-with-3d-simulation-twins">7. Pairing Real Assays with 3D Simulation Twins<a class="headerlink" href="#7-pairing-real-assays-with-3d-simulation-twins" title="Permanent link">&para;</a></h2>
+<p>Need ground-truth pose, body-part masks, or controlled occlusion scenarios before running a large cohort? Annolid ships an offline <strong>Two-Mouse 3D Three.js Simulation</strong> (<code>View → 3D Examples → Two Mice</code>) modeled on the same black C57BL/6 + white BALB/c paradigm, plus <strong>Fly-Brain LIF Connectome Mode</strong> and <strong>Instance Body Part Segmentation</strong> evaluation benchmarks.</p>
+<h3 id="two-mouse-3d-pose-benchmark-twin">Two-Mouse 3D Pose &amp; Benchmark Twin<a class="headerlink" href="#two-mouse-3d-pose-benchmark-twin" title="Permanent link">&para;</a></h3>
+<p><img alt="Two-Mouse 3D simulation overhead view with 13-keypoint pose skeleton overlay" src="../../imgs/showcase/sim_two_mice_pose.png" /></p>
+<p>Generate seeded 13-keypoint COCO datasets and occlusion stress tests offline in Three.js. See the <a href="../../two_mice_simulation/">Two-Mouse 3D Simulation Guide</a>.</p>
+<h3 id="hierarchical-body-part-segmentation">Hierarchical Body-Part Segmentation<a class="headerlink" href="#hierarchical-body-part-segmentation" title="Permanent link">&para;</a></h3>
+<p><img alt="Side-by-side 3D ground truth vs Annolid predicted body-part segmentation on resident-intruder mice" src="../../imgs/showcase/sim_body_part_segmentation.png" /></p>
+<p>Decompose tracked whole-animal polygons into non-overlapping <code>head</code>, <code>torso</code>, and <code>tail</code> masks with zero cross-animal bleed. See the <a href="../../body_part_segmentation/">Instance Body Part Segmentation Guide</a>.</p>
+<h2 id="regenerating-this-showcase-on-your-own-video">Regenerating This Showcase on Your Own Video<a class="headerlink" href="#regenerating-this-showcase-on-your-own-video" title="Permanent link">&para;</a></h2>
+<p>You can regenerate these figures, animated tracking GIF, and sanitized HTML5 report for any Annolid-tracked session with one command:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>showcase-video<span class="w"> </span><span class="nv">VIDEO</span><span class="o">=</span>/path/to/your_tracked_video.mp4
+</code></pre></div>
+<p>See <a href="../../deployment/">Deployment &amp; Docs Workflow</a> for local live-preview and validation commands.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/healthonrails/annolid" target="_blank" rel="noopener" title="Annolid on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://annolid.com/" target="_blank" rel="noopener" title="Annolid website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

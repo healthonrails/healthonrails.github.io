@@ -696,6 +696,8 @@
       
         
       
+        
+      
     
     
     
@@ -759,6 +761,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/mouse083_resident_intruder_showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Walkthrough (mouse083)
   
 
     
@@ -1069,10 +1099,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#direct-overlay-playback-in-the-gui" class="md-nav__link">
+  <a href="#direct-overlay-playback-skeleton-visualization-in-the-gui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Direct Overlay Playback in the GUI
+        Direct Overlay Playback &amp; Skeleton Visualization in the GUI
       
     </span>
   </a>
@@ -2832,10 +2862,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#direct-overlay-playback-in-the-gui" class="md-nav__link">
+  <a href="#direct-overlay-playback-skeleton-visualization-in-the-gui" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Direct Overlay Playback in the GUI
+        Direct Overlay Playback &amp; Skeleton Visualization in the GUI
       
     </span>
   </a>
@@ -3039,9 +3069,9 @@
 </tr>
 <tr>
 <td><strong>COCO Keypoints</strong> (<code>.json</code>)</td>
-<td>Keypoints + skeleton edges (with bbox-center fallback)</td>
-<td>Existing COCO export + <code>coco2deeplabcut</code> real DLC CSV export</td>
-<td>Preserves visibility (<code>1=occluded</code>, <code>2=visible</code>).</td>
+<td>Keypoints + skeleton edges (with bbox-center fallback) and optional <code>pose_schema.json</code> export</td>
+<td>COCO keypoints export with canonical <code>PoseSchema</code> order, 1-indexed <code>skeleton</code> edges, and <code>coco2deeplabcut</code> real DLC CSV export</td>
+<td>Preserves visibility (<code>1=occluded</code>, <code>2=visible</code>) in both directions.</td>
 </tr>
 </tbody>
 </table>
@@ -3072,8 +3102,14 @@
 <li>Select a LabelMe folder or <code>*_tracking.csv</code>.</li>
 <li>Export to <strong>SLEAP Analysis HDF5 (<code>.analysis.h5</code>)</strong>, <strong>SLEAP Project (<code>.slp</code>)</strong>, or <strong>Self-Contained Package (<code>.pkg.slp</code>)</strong> with embedded frames.</li>
 </ol>
-<h3 id="direct-overlay-playback-in-the-gui">Direct Overlay Playback in the GUI<a class="headerlink" href="#direct-overlay-playback-in-the-gui" title="Permanent link">&para;</a></h3>
-<p>When opening a video alongside a DeepLabCut or Lightning Pose analysis <code>.csv</code> or <code>.h5</code> (single- or multi-animal), Annolid parses 3- and 4-level headers automatically and overlays labeled points with multi-animal <code>group_id</code>, <code>instance_label</code>, and <code>score</code> metadata.</p>
+<h3 id="direct-overlay-playback-skeleton-visualization-in-the-gui">Direct Overlay Playback &amp; Skeleton Visualization in the GUI<a class="headerlink" href="#direct-overlay-playback-skeleton-visualization-in-the-gui" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Auto-discovery</strong>: Opening a video, an annotation directory, a labeled image, or a DeepLabCut/Lightning Pose overlay automatically loads a sibling <code>pose_schema.json</code> / <code>.yaml</code> / <code>.yml</code> (or <code>project.annolid.json</code> <code>pose_schema_path</code>, or a sibling DLC <code>config.yaml</code> skeleton) onto the canvas and Keypoint Sequencer.</li>
+<li><strong>Skeleton editing &amp; presets</strong>: Both the <strong>Keypoint Sequencer</strong> dock and the <strong>New Project Wizard</strong> provide built-in species presets (Mouse 5/9/11 keypoints, Fly, Fish, Human COCO 17), anatomical edge auto-inference, combo-based and click-to-toggle skeleton edge editing, and an anatomical left/right-aligned skeleton preview.</li>
+<li><strong>Canvas rendering</strong>: When <strong>Show pose skeleton (edges)</strong> is enabled, bones are rendered with per-instance high-contrast colors in multi-animal scenes, dashed lines for occluded (<code>kp_visibility=1</code>) keypoints, skipped bones for missing (<code>kp_visibility=0</code>) keypoints, and emphasized strokes for selected or hovered keypoints.</li>
+<li><strong>DeepLabCut / Lightning Pose playback</strong>: When opening a video alongside a DeepLabCut or Lightning Pose analysis <code>.csv</code> or <code>.h5</code> (single- or multi-animal), Annolid parses 3- and 4-level headers automatically and overlays labeled points and skeleton bones with multi-animal <code>group_id</code>, <code>instance_label</code>, and <code>score</code> metadata.</li>
+<li><strong>COCO Keypoints round-trip</strong>: <strong>Export LabelMe → COCO</strong> in keypoints mode accepts (or auto-discovers) a <code>pose_schema.json</code> to emit canonical keypoint ordering, 1-indexed COCO <code>skeleton</code> pairs, and <code>kp_visibility</code>; <strong>Convert COCO → LabelMe</strong> can write <code>pose_schema.json</code> alongside converted images so skeletons render immediately on open.</li>
+</ul>
 <hr />
 <h2 id="cli-workflows-annolid-run">CLI Workflows (<code>annolid-run</code>)<a class="headerlink" href="#cli-workflows-annolid-run" title="Permanent link">&para;</a></h2>
 <h3 id="import-external-pose-data-import-pose">Import External Pose Data (<code>import-pose</code>)<a class="headerlink" href="#import-external-pose-data-import-pose" title="Permanent link">&para;</a></h3>

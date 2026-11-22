@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deployment" class="md-skip">
+        <a href="#deployment-docs-authoring-workflow" class="md-skip">
           Skip to content
         </a>
       
@@ -694,6 +694,8 @@
       
         
       
+        
+      
     
     
     
@@ -756,6 +758,34 @@
     
   
     Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/mouse083_resident_intruder_showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Walkthrough (mouse083)
   
 
     
@@ -2262,7 +2292,7 @@
   <a href="#source-of-truth-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source-of-truth Layout
+        Source-of-Truth Layout
       
     </span>
   </a>
@@ -2270,13 +2300,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-github-actions-pipelines" class="md-nav__link">
+  <a href="#fast-local-authoring-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current GitHub Actions Pipelines
+        Fast Local Authoring Workflow
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fast Local Authoring Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preview-website-docs-portal-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preview Website + Docs Portal Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validate-before-committing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Validate Before Committing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-regenerate-showcase-screenshots-animations-simulation-captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Regenerate Showcase Screenshots, Animations &amp; Simulation Captures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2292,10 +2361,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-mkdocs-scope" class="md-nav__link">
+  <a href="#github-actions-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current MkDocs Scope
+        GitHub Actions Pipelines
       
     </span>
   </a>
@@ -2307,17 +2376,6 @@
     <span class="md-ellipsis">
       
         Deployment Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Note
       
     </span>
   </a>
@@ -2756,7 +2814,7 @@
   <a href="#source-of-truth-layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Source-of-truth Layout
+        Source-of-Truth Layout
       
     </span>
   </a>
@@ -2764,13 +2822,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-github-actions-pipelines" class="md-nav__link">
+  <a href="#fast-local-authoring-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current GitHub Actions Pipelines
+        Fast Local Authoring Workflow
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Fast Local Authoring Workflow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-preview-website-docs-portal-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Preview Website + Docs Portal Together
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-validate-before-committing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Validate Before Committing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-regenerate-showcase-screenshots-animations-simulation-captures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Regenerate Showcase Screenshots, Animations &amp; Simulation Captures
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2786,10 +2883,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#current-mkdocs-scope" class="md-nav__link">
+  <a href="#github-actions-pipelines" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Current MkDocs Scope
+        GitHub Actions Pipelines
       
     </span>
   </a>
@@ -2801,17 +2898,6 @@
     <span class="md-ellipsis">
       
         Deployment Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational-note" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Note
       
     </span>
   </a>
@@ -2899,64 +2985,81 @@
   
 
 
-<h1 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h1>
-<p>Annolid publishes multiple documentation surfaces from this repository.</p>
-<h2 id="source-of-truth-layout">Source-of-truth Layout<a class="headerlink" href="#source-of-truth-layout" title="Permanent link">&para;</a></h2>
+<h1 id="deployment-docs-authoring-workflow">Deployment &amp; Docs Authoring Workflow<a class="headerlink" href="#deployment-docs-authoring-workflow" title="Permanent link">&para;</a></h1>
+<p>Annolid publishes multiple documentation surfaces from this repository and ships a local workflow so contributors can edit <code>website/</code> and <code>docs/</code> side-by-side with live reload, strict link/asset validation, and reproducible showcase generation.</p>
+<h2 id="source-of-truth-layout">Source-of-Truth Layout<a class="headerlink" href="#source-of-truth-layout" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>website/</code>: landing page content for the site root</li>
-<li><code>docs/</code>: MkDocs source for the docs portal and mirrored docs routes</li>
-<li><code>docs/tutorials/</code>: notebook and markdown tutorial assets tracked in the repo</li>
+<li><code>website/</code>: landing page (<code>index.html</code>) and landing assets (<code>website/assets/</code> → published as <code>/website-assets/</code>)</li>
+<li><code>docs/</code>: canonical MkDocs Material source for <code>/portal/</code> and mirrored root compatibility routes</li>
+<li><code>docs/imgs/showcase/</code>: generated screenshots, animated tracking demos, and offline 3D simulation captures</li>
+<li><code>docs/assets/reports/</code>: self-contained interactive example artifacts (such as <code>mouse083_report.html</code>)</li>
+<li><code>docs/tutorials/</code>: worked walkthroughs, focused markdown guides, and Jupyter notebooks</li>
+<li><code>scripts/site_workflow.py</code>: unified local staging, live preview/watch server, and strict site validator</li>
+<li><code>scripts/generate_docs_showcase.py</code>: reproducible generator for video/tracking showcase visuals, simulation screenshots, and live HTML5 reports</li>
 </ul>
-<h2 id="current-github-actions-pipelines">Current GitHub Actions Pipelines<a class="headerlink" href="#current-github-actions-pipelines" title="Permanent link">&para;</a></h2>
+<h2 id="fast-local-authoring-workflow">Fast Local Authoring Workflow<a class="headerlink" href="#fast-local-authoring-workflow" title="Permanent link">&para;</a></h2>
+<h3 id="1-preview-website-docs-portal-together">1. Preview Website + Docs Portal Together<a class="headerlink" href="#1-preview-website-docs-portal-together" title="Permanent link">&para;</a></h3>
+<p>Because <code>website/index.html</code> references <code>/website-assets/...</code> and <code>/portal/...</code> (matching production <code>annolid.com</code>), use the combined staging preview instead of opening <code>website/index.html</code> directly from disk:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stage combined landing page + /portal/ into .site_preview/ and serve at http://127.0.0.1:8080/</span>
+make<span class="w"> </span>site-preview
+
+<span class="c1"># Same preview with automatic live rebuild when website/, docs/, or mkdocs.yml changes</span>
+make<span class="w"> </span>site-watch
+</code></pre></div>
+<p>You can also invoke the underlying Python tool directly with custom options:</p>
+<div class="highlight"><pre><span></span><code>.venv/bin/python<span class="w"> </span>scripts/site_workflow.py<span class="w"> </span>preview<span class="w"> </span>--watch<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span><span class="w"> </span>--open
+</code></pre></div>
 <ul>
-<li><code>docs-quality.yml</code>
-  Builds the MkDocs site in strict mode and lints the primary docs pages.</li>
-<li><code>docs-pages.yml</code>
-  Builds the MkDocs site and uploads the HTML artifact for review/validation.</li>
-<li><code>healthonrails-site-sync.yml</code>
-  Syncs generated output to <code>healthonrails/healthonrails.github.io</code> for the public site, gated to the appropriate branch/event conditions.</li>
-<li><code>book-pages.yml</code>
-  Builds the notebook/book surface that is published separately.</li>
-<li><code>CI.yml</code>
-  Includes broader repository validation and may run docs checks depending on changes.</li>
+<li>Editing <code>website/</code> syncs instantaneously without waiting for MkDocs.</li>
+<li>Editing <code>docs/</code> or <code>mkdocs.yml</code> triggers an automatic MkDocs rebuild and re-stage.</li>
+<li><code>.site_preview/</code> is gitignored so local preview artifacts never pollute commits.</li>
 </ul>
+<h3 id="2-validate-before-committing">2. Validate Before Committing<a class="headerlink" href="#2-validate-before-committing" title="Permanent link">&para;</a></h3>
+<p>Run one command to validate both <code>website/</code> and <code>docs/</code> locally:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>site-check
+</code></pre></div>
+<p><code>scripts/site_workflow.py check</code> verifies:</p>
+<ol>
+<li>required source files exist (<code>website/index.html</code>, <code>docs/index.md</code>, <code>mkdocs.yml</code>, <code>docs/requirements_mkdocs.txt</code>),</li>
+<li>the production CI title contract in <code>website/index.html</code> (<code>Annolid | Research-Grade Animal Behavior AI</code>) is preserved,</li>
+<li>every <code>website-assets/...</code> reference resolves in <code>website/assets/</code>,</li>
+<li>every <code>/portal/...</code> link in <code>website/index.html</code> resolves inside the built MkDocs output,</li>
+<li>every local image reference across published Markdown docs exists on disk,</li>
+<li><code>mkdocs build --strict --clean</code> succeeds with zero warnings/errors,</li>
+<li>no machine-local absolute paths leaked into <code>docs/</code>, <code>website/</code>, or generated HTML examples, and</li>
+<li>showcase and website assets stay within size budgets (below the pre-commit 6 MB limit).</li>
+</ol>
+<h3 id="3-regenerate-showcase-screenshots-animations-simulation-captures">3. Regenerate Showcase Screenshots, Animations &amp; Simulation Captures<a class="headerlink" href="#3-regenerate-showcase-screenshots-animations-simulation-captures" title="Permanent link">&para;</a></h3>
+<p>Regenerate offline 3D simulation screenshots (<code>Two-Mouse</code>, <code>13-Keypoint Pose</code>, <code>Fly-Brain LIF Connectome</code>, <code>FlyBody 3D</code>) and sync them into <code>website/assets/images/showcase/</code>:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>showcase-sims
+</code></pre></div>
+<p>Regenerate video tracking visuals, animated tracking GIF, behavior storyboard, ethogram/kinematics dashboard, zone analysis chart, offscreen GUI screenshot, and sanitized live HTML5 report from any Annolid-tracked video:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>showcase-video<span class="w"> </span><span class="nv">VIDEO</span><span class="o">=</span>/path/to/your_tracked_video.mp4
+</code></pre></div>
+<p>Both targets wrap <code>scripts/generate_docs_showcase.py</code>, which automatically syncs shared showcase assets from <code>docs/imgs/showcase/</code> into <code>website/assets/images/showcase/</code> so the website and docs portal stay visually aligned.</p>
 <h2 id="published-targets">Published Targets<a class="headerlink" href="#published-targets" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>/</code>: landing page from <code>website/</code></li>
-<li><code>/portal/</code>: MkDocs docs homepage</li>
-<li>root docs routes such as <code>/installation</code>, <code>/workflows</code>, and <code>/reference</code> for compatibility</li>
-<li><code>/book/</code>: book/notebook surface</li>
+<li><code>/</code>: landing page from <code>website/</code> (<code>website/assets/</code> mounted at <code>/website-assets/</code>)</li>
+<li><code>/portal/</code>: canonical MkDocs Material documentation portal</li>
+<li>root docs routes such as <code>/installation/</code>, <code>/workflows/</code>, and <code>/reference/</code> for backward compatibility</li>
+<li><code>/book/</code>: notebook-oriented Jupyter Book surface published separately</li>
 </ul>
-<h2 id="current-mkdocs-scope">Current MkDocs Scope<a class="headerlink" href="#current-mkdocs-scope" title="Permanent link">&para;</a></h2>
-<p>The active MkDocs nav now includes:</p>
+<h2 id="github-actions-pipelines">GitHub Actions Pipelines<a class="headerlink" href="#github-actions-pipelines" title="Permanent link">&para;</a></h2>
 <ul>
-<li>home</li>
-<li>installation</li>
-<li>uv setup</li>
-<li>one-line installer guide</li>
-<li>workflows</li>
-<li>tutorials</li>
-<li>MCP</li>
-<li>SAM 3D</li>
-<li>deployment</li>
-<li>migration</li>
-<li>redirects</li>
-<li>reference</li>
+<li><code>docs-quality.yml</code>: builds MkDocs in strict mode and runs markdownlint across primary docs pages.</li>
+<li><code>docs-pages.yml</code>: builds MkDocs and uploads the HTML artifact for review/validation.</li>
+<li><code>healthonrails-site-sync.yml</code>: syncs landing page, <code>/portal/</code>, root compatibility routes, legacy redirects, and <code>/book/</code> to <code>healthonrails/healthonrails.github.io</code> on <code>main</code>.</li>
+<li><code>book-pages.yml</code>: builds the Jupyter Book surface.</li>
+<li><code>CI.yml</code>: runs repository-wide tests and validation checks.</li>
 </ul>
-<p>That matters because README links should point to docs that are actually published, not pages excluded from the site build.</p>
 <h2 id="deployment-principles">Deployment Principles<a class="headerlink" href="#deployment-principles" title="Permanent link">&para;</a></h2>
 <ul>
-<li>keep <code>docs/</code> as the canonical user-facing documentation source,</li>
-<li>build MkDocs in strict mode,</li>
-<li>keep publication reproducible and debuggable,</li>
-<li>preserve compatibility routes while evolving the docs structure,</li>
-<li>prefer ephemeral generated site output over committed build artifacts.</li>
+<li>Keep <code>docs/</code> as the canonical user-facing documentation source.</li>
+<li>Always run <code>make site-check</code> (or <code>mkdocs build --strict --clean --config-file mkdocs.yml</code>) before merging.</li>
+<li>Keep publication reproducible and debuggable with ephemeral local staging (<code>.site_preview/</code>).</li>
+<li>Preserve compatibility routes and legacy redirect stubs (<code>scripts/write_legacy_redirects.sh</code>).</li>
+<li>Never commit machine-local absolute paths into docs, HTML examples, or scripts.</li>
 </ul>
-<h2 id="operational-note">Operational Note<a class="headerlink" href="#operational-note" title="Permanent link">&para;</a></h2>
-<p>If you change docs pages, <code>mkdocs.yml</code>, or related sync scripts, validate with:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-mkdocs<span class="w"> </span>build<span class="w"> </span>--strict<span class="w"> </span>--clean<span class="w"> </span>--config-file<span class="w"> </span>mkdocs.yml
-</code></pre></div>
 
 
 
