@@ -692,6 +692,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -828,6 +832,17 @@
   
     <nav class="md-nav" aria-label="1. Standard GUI Video Workflow">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#canvas-labeling-editing-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas Labeling &amp; Editing Controls
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#text-prompt-segmentation-in-the-gui" class="md-nav__link">
@@ -1164,6 +1179,62 @@
     
   
     COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pose_interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeepLabCut, SLEAP & Pose Interoperability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yolo_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YOLO & YOLOE Fine-Tuning and Inference
   
 
     
@@ -2816,6 +2887,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#canvas-labeling-editing-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Canvas Labeling &amp; Editing Controls
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#text-prompt-segmentation-in-the-gui" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3059,6 +3141,14 @@
 <td><a href="#sparse-keypoint-tracking-workflow">Sparse Keypoint Tracking Workflow</a></td>
 </tr>
 <tr>
+<td>Import or export DeepLabCut, SLEAP, Lightning Pose, or SimBA pose data</td>
+<td><a href="../pose_interoperability/">DeepLabCut, SLEAP &amp; Pose Interoperability</a></td>
+</tr>
+<tr>
+<td>Fine-tune and run inference with YOLO / YOLOE models</td>
+<td><a href="../yolo_workflow/">YOLO &amp; YOLOE Workflow</a></td>
+</tr>
+<tr>
 <td>Run model training, prediction, or evaluation from scripts</td>
 <td><a href="#3-cli-model-workflow">CLI Model Workflow</a></td>
 </tr>
@@ -3106,6 +3196,14 @@
   propagation range instead of renaming both identities to one label.</li>
 <li>Review overlap, occlusion, and high-motion segments before scaling to long runs.</li>
 <li>Validate a small representative segment before committing compute time to an entire recording.</li>
+</ul>
+<h3 id="canvas-labeling-editing-controls">Canvas Labeling &amp; Editing Controls<a class="headerlink" href="#canvas-labeling-editing-controls" title="Permanent link">&para;</a></h3>
+<p>Annolid's standard canvas and tiled large-image view support LabelMe-compatible annotation workflows with fast keyboard and mouse ergonomics:</p>
+<ul>
+<li><strong>Drawing modes</strong>: <strong>Polygon</strong> (<code>Ctrl+N</code>), <strong>Rectangle</strong> (<code>Ctrl+R</code>), <strong>Oriented Rectangle</strong> (3-click creation; drag any corner to resize orthogonally or <code>Shift+Drag</code> a corner to rotate), <strong>Circle</strong>, <strong>Circle (3-Point)</strong> (3 circumference clicks saved in standard LabelMe <code>circle</code> format), <strong>Line</strong>, <strong>Line Strip</strong>, <strong>Point</strong> (<code>Ctrl+I</code>), and AI-assisted <strong>AI Polygon</strong> / <strong>AI Mask</strong> / <strong>SAM</strong>. All manual geometry tools (including <strong>Oriented Rectangle</strong> and <strong>Circle (3-Point)</strong>) operate natively in both the standard canvas and the tiled large-image view. While drawing, press <code>Backspace</code> or <code>Delete</code> to remove the last placed point.</li>
+<li><strong>Shape locking (<code>Ctrl+Shift+L</code>)</strong>: lock finished shapes from the Edit menu, canvas context menu, or Label Instances context menu to prevent accidental movement, reshaping, relabeling, deletion, or merging (enforced in both standard and tiled views). Lock state is persisted as <code>"locked": true</code> in LabelMe JSON files.</li>
+<li><strong>Clipboard, selection &amp; undo</strong>: <strong>Copy</strong> (<code>Ctrl+C</code>) and <strong>Paste</strong> (<code>Ctrl+V</code>) shapes within a frame (with slight offset) or across frames (preserving exact coordinates), <strong>Duplicate</strong> (<code>Ctrl+D</code>), <strong>Select All</strong> (<code>Ctrl+A</code>), <strong>Add Point to Edge</strong> (<code>Ctrl+Shift+P</code>), <strong>Merge Selected Shapes</strong> (polygons/rectangles/oriented rectangles or mask fragments), and <strong>Undo</strong> (<code>Ctrl+Z</code>, including immediate undo of the first shape on an empty frame and label edits).</li>
+<li><strong>Navigation &amp; display</strong>: <strong>Fit to Selection</strong> (<code>Ctrl+Shift+G</code>, works in both standard and tiled views), cursor-anchored mouse-wheel zoom, spatial neighbor-shape navigation (<code>Ctrl/Cmd + Arrow</code>), <strong>Show Labels on Canvas</strong> badge toggle (<code>View</code> menu), <strong>Allow Points Outside Image</strong> toggle (<code>View</code> menu, for amodal annotations), multi-select bulk checkbox visibility toggle in <strong>Label Instances</strong>, <strong>Toggle All Shapes</strong> (<code>T</code>), <strong>Save As</strong> (<code>Ctrl+Shift+S</code>), and persistent <strong>Auto Save</strong> (<code>Ctrl+Alt+S</code>; legacy <code>~/.labelmerc</code> configs mapping <code>toggle_auto_save</code> to <code>Ctrl+Shift+A</code> are automatically migrated to <code>Ctrl+Alt+S</code> to avoid conflicting with <code>open_prev</code>, and can be customized under <code>shortcuts.toggle_auto_save</code>).</li>
 </ul>
 <p><img alt="Annolid GUI running Segment Anything assisted polygon creation" src="../imgs/annolid_with_segment_anything.gif" /></p>
 <h3 id="text-prompt-segmentation-in-the-gui">Text-Prompt Segmentation in the GUI<a class="headerlink" href="#text-prompt-segmentation-in-the-gui" title="Permanent link">&para;</a></h3>

@@ -690,6 +690,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -948,6 +952,62 @@
     
   
     COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pose_interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeepLabCut, SLEAP & Pose Interoperability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yolo_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YOLO & YOLOE Fine-Tuning and Inference
   
 
     
@@ -2840,10 +2900,10 @@
 
 
 <h1 id="model-context-protocol-mcp">Model Context Protocol (MCP)<a class="headerlink" href="#model-context-protocol-mcp" title="Permanent link">&para;</a></h1>
-<p>Annolid Bot can register tools and resources from Model Context Protocol servers.</p>
+<p>Annolid Bot can register tools from Model Context Protocol servers.</p>
 <h2 id="current-config-path">Current Config Path<a class="headerlink" href="#current-config-path" title="Permanent link">&para;</a></h2>
 <p>Configure MCP in the Annolid agent config:</p>
-<p><code>~/.annolid/agent/config.json</code></p>
+<p><code>~/.annolid/config.json</code></p>
 <p>The schema currently stores MCP servers under the agent tools block as <code>mcpServers</code> / <code>mcp_servers</code>.</p>
 <h2 id="minimal-example">Minimal Example<a class="headerlink" href="#minimal-example" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2870,7 +2930,7 @@
 <li><code>url</code>: optional remote server URL for HTTP/SSE-style MCP servers</li>
 </ul>
 <h2 id="how-it-is-used">How It Is Used<a class="headerlink" href="#how-it-is-used" title="Permanent link">&para;</a></h2>
-<p>Once configured, Annolid Bot can connect to those MCP servers during chat sessions and expose their tools/resources to the agent.</p>
+<p>Once configured, Annolid Bot can connect to those MCP servers during chat sessions and expose their tools to the agent.</p>
 <p>Typical uses:</p>
 <ul>
 <li>restricted filesystem access</li>
@@ -2879,14 +2939,14 @@
 </ul>
 <h2 id="practical-notes">Practical Notes<a class="headerlink" href="#practical-notes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Install the <code>annolid_bot</code> extra if you want the common Annolid Bot integration stack.</li>
+<li>Install the <code>bot</code> (or <code>annolid_bot</code>) extra if you want the common Annolid Bot integration stack.</li>
 <li>Make sure the runtime needed by your MCP server exists locally, for example <code>node</code>, <code>npx</code>, or <code>python</code>.</li>
 <li>Prefer narrow filesystem/server scopes over broad access.</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Check Annolid Bot logs and startup output for MCP registration failures.</li>
-<li>Verify the config path is correct: <code>~/.annolid/agent/config.json</code>.</li>
+<li>Verify the config path is correct: <code>~/.annolid/config.json</code>.</li>
 <li>Confirm required environment variables are present in the server definition.</li>
 <li>If a server starts but tools do not appear useful, test the server independently outside Annolid first.</li>
 </ul>

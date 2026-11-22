@@ -692,6 +692,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -951,6 +955,62 @@
     
   
     COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pose_interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeepLabCut, SLEAP & Pose Interoperability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../yolo_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YOLO & YOLOE Fine-Tuning and Inference
   
 
     
@@ -2664,17 +2724,25 @@
 
 <h1 id="merge-canvas-shapes">Merge canvas shapes<a class="headerlink" href="#merge-canvas-shapes" title="Permanent link">&para;</a></h1>
 <p>Use <strong>Edit Polygons</strong> mode on the standard image/video canvas. Select two or
-more polygons or rectangles in the Label Instances list (use Ctrl/Cmd-click for
-multiple selection), then choose <strong>Edit → Merge Selected Shapes</strong>, or right-click
-on the selected shapes and choose <strong>Merge Selected Shapes</strong>.</p>
-<p>The selected shapes become one polygon covering their exact combined area.
-Overlapping shapes, contained shapes, and shapes sharing an edge are supported.
-The merged shape stays selected; <strong>Undo</strong> restores the original shapes. Save the
-annotation normally to keep the result.</p>
-<p>Shapes must have matching labels, group IDs, flags, descriptions, and custom
-metadata. Edit conflicting values to match before merging. Hidden shapes,
-attached masks, custom vertex labels, invalid polygons, disconnected unions,
-and unions containing holes are rejected with an explanation; the originals
+more matching shapes in the Label Instances list (use Ctrl/Cmd-click for
+multiple selection), then choose <strong>Edit → Merge Selected Shapes</strong>, or
+right-click on the selected shapes and choose <strong>Merge Selected Shapes</strong>.</p>
+<p>Two merge modes are supported:</p>
+<ul>
+<li><strong>Vector shapes (<code>polygon</code>, <code>rectangle</code>, <code>oriented_rectangle</code>)</strong>: the
+  selected shapes become one polygon covering their exact combined area.
+  Overlapping shapes, contained shapes, and shapes sharing an edge are
+  supported.</li>
+<li><strong>Mask fragments (<code>mask</code>)</strong>: two or more selected mask shapes are unioned
+  into a single tight-cropped <code>mask</code> shape.</li>
+</ul>
+<p>The merged shape stays selected; <strong>Undo</strong> (<code>Ctrl+Z</code>) restores the original
+shapes. Save the annotation normally to keep the result.</p>
+<p>Shapes must be unlocked, visible, and share matching labels, group IDs, flags,
+descriptions, and custom metadata. Edit conflicting values or unlock locked
+shapes (<code>Ctrl+Shift+L</code>) before merging. Mixed mask and vector selections,
+custom vertex labels, invalid polygons, disconnected polygon unions, and
+polygon unions containing holes are rejected with an explanation; the originals
 remain unchanged. Points, lines, circles, and the tiled large-image editor are
 not supported by this action.</p>
 
