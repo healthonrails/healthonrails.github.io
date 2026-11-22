@@ -3063,7 +3063,7 @@ python<span class="w"> </span>scripts/check_distribution_artifacts.py<span class
   Windows desktop archives are not published by the current release workflow.</li>
 <li>Linux target: AppImage first, then <code>.deb</code>/<code>.rpm</code> if demand justifies maintaining native packages.</li>
 </ul>
-<p>Until signing identities and native packaging jobs are configured, release manifests mark CI-built desktop archives as <code>unsigned-ci-build</code>.</p>
+<p>Until signing identities and native packaging jobs are configured, release manifests mark CI-built desktop archives as <code>unsigned-ci-build</code>. On macOS, archives are created with <code>ditto</code> so <code>.framework</code> symlinks and ad-hoc signatures remain intact; if macOS Gatekeeper blocks a browser-downloaded <code>Annolid.app</code>, clear the quarantine attribute (<code>xattr -dr com.apple.quarantine Annolid.app</code>) or allow it under <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>.</p>
 <h2 id="update-and-uninstall">Update and Uninstall<a class="headerlink" href="#update-and-uninstall" title="Permanent link">&para;</a></h2>
 <p>For pip/venv installs:</p>
 <div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span><span class="s2">"annolid[gui]"</span>
