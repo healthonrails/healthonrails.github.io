@@ -698,6 +698,8 @@
       
         
       
+        
+      
     
     
     
@@ -985,6 +987,34 @@
     
   
     COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pose_estimation_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pose Estimation Workflow
   
 
     
@@ -1600,6 +1630,17 @@
     <span class="md-ellipsis">
       
         Saved Data &amp; Downstream Compatibility Contract
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body-part-segmentation-datasets-geometric-part-to-pose-decoding-and-compact-temporal-heads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Body-Part Segmentation Datasets, Geometric Part-to-Pose Decoding, and Compact Temporal Heads
       
     </span>
   </a>
@@ -2960,6 +3001,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#body-part-segmentation-datasets-geometric-part-to-pose-decoding-and-compact-temporal-heads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Body-Part Segmentation Datasets, Geometric Part-to-Pose Decoding, and Compact Temporal Heads
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3276,6 +3328,21 @@ annolid-run<span class="w"> </span>segment-body-parts<span class="w"> </span>/pa
 <li><strong>Identity Repair &amp; Governor (<code>temporal_identity_repair</code>, <code>identity_governor</code>)</strong>: Ignores child body-part shapes when computing whole-animal trajectories and swap repairs, while <code>detect_centroid_assignment_ambiguity</code> partitions whole-animal vs. body-part roles so intra-animal posture turns never trigger false swap pauses.</li>
 <li><strong>Zone &amp; Social Postprocessing (<code>GenericZoneEngine</code>, <code>TrackingResultsAnalyzer</code>, <code>compute_pairwise_centroid_summary</code>)</strong>: Excludes <code>&lt;instance&gt;:&lt;part&gt;</code> rows from conspecific animal counts, honors <code>anchor_part</code> (e.g. <code>anchor_part="head"</code>) across assay profiles with per-frame fallback to whole-body or aggregated <code>&lt;instance&gt;:*</code> body-part centroids on body-part-only multi-animal CSVs, and reports both per-frame minimum-distance nearest-neighbor metrics (<code>mean_nearest_neighbor_distance_px</code>) and all-conspecifics group dispersion metrics (<code>mean_pairwise_distance_px</code>).</li>
 </ol>
+<hr />
+<h2 id="body-part-segmentation-datasets-geometric-part-to-pose-decoding-and-compact-temporal-heads">Body-Part Segmentation Datasets, Geometric Part-to-Pose Decoding, and Compact Temporal Heads<a class="headerlink" href="#body-part-segmentation-datasets-geometric-part-to-pose-decoding-and-compact-temporal-heads" title="Permanent link">&para;</a></h2>
+<p>Annolid also provides modular Python building blocks for training chirality-free body-part segmentation models and decoding anatomical keypoints deterministically:</p>
+<ul>
+<li><strong>Multi-Format Dataset Builder (<code>annolid.data.body_part_dataset</code>)</strong>:</li>
+<li>Converts pixel-exact <code>(track_id, fine_part_id, coarse_part_id)</code> maps into synchronized <strong>YOLO-Seg</strong> (7-class hierarchical polygons with <code>overlap_mask=False</code>), <strong>COCO-Seg</strong>, and packed <strong>6-class semantic part masks</strong> (<code>0=bg, 1=head, 2=snout, 3=ear, 4=torso, 5=tail</code>).</li>
+<li>Includes <code>expand_snout_muzzle_mask(...)</code> to expand tiny top-down rhinarium tips (2–4 px) into a scale-adaptive anterior muzzle cap with an occluded-tip fallback.</li>
+<li><strong>Scale-Invariant Geometric Part-to-Pose Solver (<code>annolid.postprocessing.body_part_to_pose</code>)</strong>:</li>
+<li><code>extract_pose_from_part_masks(...)</code> and <code>group_part_detections_to_pose_frame(...)</code> derive CalMS21/MARS 7-keypoint mouse skeletons with analytic spine-axis chirality (<code>chirality="calms21"</code> or <code>"anatomical"</code>), headstage-split fragment merging, and scale-relative boundary thresholds ($s_p = \max(24, \sqrt{|M_p|})$).</li>
+<li>Setting <code>dedup_parents=False</code> supports arbitrary $N \ge 3$ same-class multi-animal scenes with automatic unique instance naming (<code>mouse_1</code>, <code>mouse_2</code>, …) and fragment merging.</li>
+<li><code>extract_insect_pose_from_part_masks(...)</code> decodes chirality-free 3-tagma insect masks (<code>head</code>, <code>thorax</code>, <code>abdomen</code>) into 5 ordered anatomical landmarks (<code>head_tip</code>, <code>neck_joint</code>, <code>thorax_center</code>, <code>thorax_abdomen_joint</code>, <code>abdomen_tip</code>).</li>
+<li><strong>Compact Temporal VOS Decoders (<code>annolid.segmentation.cutie_vos.model</code>)</strong>:</li>
+<li><code>CutieBodyPartSegHead</code> (<code>cutie_body_part_seg.py</code>, ~284K params / 580 KB fp16) decodes dense per-object 6-class semantic body-part masks from frozen compressed Cutie decoder features (<code>CutieDecoderFeatureTap</code>) with warped previous-frame priors and weighted CE + Soft Dice loss.</li>
+<li><code>CutiePoseHead</code> (<code>cutie_pose.py</code>, ~285K params / 582 KB fp16) provides a matched-capacity temporal DSNT keypoint head on the same frozen Cutie backbone.</li>
+</ul>
 
 
 
