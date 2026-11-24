@@ -1011,6 +1011,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#neuroscience-behavioral-arenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neuroscience behavioral arenas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viewing-and-playback" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2819,6 +2830,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#neuroscience-behavioral-arenas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Neuroscience behavioral arenas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#viewing-and-playback" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2987,6 +3009,88 @@ social investigation, rearing, and grooming. This is a procedural visualization,
 not a validated animal biomechanics model. Heart rate and respiration in the HUD
 are illustrative estimates.</p>
 <p><img alt="Two-Mouse Three.js 3D simulation showing procedural C57BL/6 and BALB/c mice on an aspen-bedded open-field floor" src="../imgs/showcase/sim_two_mice_arena.png" /></p>
+<h2 id="neuroscience-behavioral-arenas">Neuroscience behavioral arenas<a class="headerlink" href="#neuroscience-behavioral-arenas" title="Permanent link">&para;</a></h2>
+<p>Switch arenas live from <strong>Simulation Controls → Arena</strong>, launch directly via URL
+query parameter (<code>two_mice.html?arena=&lt;id&gt;</code>), or control them programmatically via
+<code>window.annolidTwoMice.setArena(idOrLabel)</code>. Each arena configures its own 3D
+apparatus, exact wall/cliff/obstacle containment, tail collision wrapping,
+wall-supported rearing eligibility (disabled on exposed cliffs such as Elevated
+Plus Maze open arms and Barnes Maze edges), corridor- and doorway-aware routing
+for both autonomous exploration and Fly-Brain olfactory plume chemotaxis,
+arena-specific Fly-Brain sensory zone locations, camera framing, and live HUD
+<strong>ZONE</strong> readout.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Arena (<code>?arena=</code>)</th>
+<th style="text-align: left;">GUI Label</th>
+<th style="text-align: left;">Behavioral Domain</th>
+<th style="text-align: left;">Key Apparatus Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>open_field</code></td>
+<td style="text-align: left;"><code>Open Field</code></td>
+<td style="text-align: left;">Locomotion &amp; anxiety</td>
+<td style="text-align: left;">Rectangular acrylic open field with matte anti-glare floor and aspen shavings (default)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>home_cage</code></td>
+<td style="text-align: left;"><code>Home Cage (Bedding)</code></td>
+<td style="text-align: left;">Social &amp; ethology</td>
+<td style="text-align: left;">Molded polycarbonate shoebox cage with corncob bedding, shredded nestlet, and stainless water port</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>circular_open_field</code></td>
+<td style="text-align: left;"><code>Circular Open Field</code></td>
+<td style="text-align: left;">Locomotion &amp; anxiety</td>
+<td style="text-align: left;">Cylindrical drum eliminating corner bias, with concentric center/middle/periphery scoring rings</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>elevated_plus_maze</code></td>
+<td style="text-align: left;"><code>Elevated Plus Maze</code></td>
+<td style="text-align: left;">Unconditioned anxiety</td>
+<td style="text-align: left;">Elevated <code>+</code> apparatus on steel pedestal legs with two tall-walled closed arms (±X) and two open cliff arms (±Z)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>y_maze</code></td>
+<td style="text-align: left;"><code>Y-Maze</code></td>
+<td style="text-align: left;">Spatial working memory</td>
+<td style="text-align: left;">Symmetrical 120° three-arm spontaneous alternation maze with intra-maze visual cue cards and floor labels (<code>A</code>/<code>B</code>/<code>C</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>t_maze</code></td>
+<td style="text-align: left;"><code>T-Maze</code></td>
+<td style="text-align: left;">Working memory &amp; choice</td>
+<td style="text-align: left;">Start stem with raised guillotine start-box gate frame, central choice point, and left/right goal-arm reward wells</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>three_chamber</code></td>
+<td style="text-align: left;"><code>Three-Chamber Social</code></td>
+<td style="text-align: left;">Social preference</td>
+<td style="text-align: left;">Crawley three-chamber polycarbonate box with framed central doorways and two cylindrical wire holding cups</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>light_dark_box</code></td>
+<td style="text-align: left;"><code>Light-Dark Box</code></td>
+<td style="text-align: left;">Anxiety &amp; photophobia</td>
+<td style="text-align: left;">Bright white light compartment (2/3) and charcoal dark compartment (1/3) with smoked canopy and transition doorway</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>barnes_maze</code></td>
+<td style="text-align: left;"><code>Barnes Maze</code></td>
+<td style="text-align: left;">Spatial reference memory</td>
+<td style="text-align: left;">Elevated circular white table with 18 perimeter escape holes, under-table target escape box, and 4 distal cue stands</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>novel_object</code></td>
+<td style="text-align: left;"><code>Novel Object (NOR)</code></td>
+<td style="text-align: left;">Recognition memory</td>
+<td style="text-align: left;">Square chamber with a familiar cylindrical lab bottle and a contrasting novel stepped geometric block tower</td>
+</tr>
+</tbody>
+</table>
 <h2 id="viewing-and-playback">Viewing and playback<a class="headerlink" href="#viewing-and-playback" title="Permanent link">&para;</a></h2>
 <p>Drag to orbit, scroll to zoom, and use <strong>Simulation Controls → Camera</strong> for an
 overview, a view from above, or a camera that follows either strain. The follow
@@ -3056,8 +3160,11 @@ python<span class="w"> </span>scripts/generate_two_mice_pose_dataset.py<span cla
 <h3 id="control-and-observation-api">Control and observation API<a class="headerlink" href="#control-and-observation-api" title="Permanent link">&para;</a></h3>
 <p><code>window.annolidTwoMice</code> exposes a FlyBody-style task interface in the viewer:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">api</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">annolidTwoMice</span><span class="p">;</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">getArenas</span><span class="p">();</span><span class="w">                </span><span class="c1">// list all 10 neuroscience arena specs and semantic zones</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">getArena</span><span class="p">();</span><span class="w">                 </span><span class="c1">// active arena metadata</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">setArena</span><span class="p">(</span><span class="s1">'elevated_plus_maze'</span><span class="p">);</span><span class="w"> </span><span class="c1">// switch arena by id, alias, or GUI label (throws RangeError if invalid)</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">getActionSpec</span><span class="p">();</span><span class="w">            </span><span class="c1">// joint names, ranges, neutral pose, gaits, command spec</span>
-<span class="nx">api</span><span class="p">.</span><span class="nx">getObservation</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w">          </span><span class="c1">// egocentric velocity, yaw rate, joint positions/targets,</span>
+<span class="nx">api</span><span class="p">.</span><span class="nx">getObservation</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span><span class="w">          </span><span class="c1">// arena, semantic zone, egocentric velocity, yaw rate, joint positions/targets,</span>
 <span class="w">                                </span><span class="c1">// foot contacts and slip, CPG phases, behavior state</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">getObservations</span><span class="p">();</span><span class="w">          </span><span class="c1">// all subjects</span>
 <span class="nx">api</span><span class="p">.</span><span class="nx">setCommand</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">forwardSpeed</span><span class="o">:</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="nx">turnRate</span><span class="o">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="nx">gait</span><span class="o">:</span><span class="w"> </span><span class="s1">'auto'</span><span class="p">,</span><span class="w"> </span><span class="nx">durationSec</span><span class="o">:</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="p">});</span>
@@ -3111,7 +3218,9 @@ illustrative NeuroAI visualization, not a validated mouse brain model.</p>
 <h2 id="validation-and-maintenance">Validation and maintenance<a class="headerlink" href="#validation-and-maintenance" title="Permanent link">&para;</a></h2>
 <p>The HTML is the presentation shell. <code>two_mice_scene.js</code> owns scene assembly,
 articulation, behavior, and pose export; <code>two_mice_model.js</code> owns procedural model
-construction and GPU resource ownership; <code>two_mice_control.js</code> owns the joint/action
+construction and GPU resource ownership; <code>two_mice_arenas.js</code> owns the neuroscience
+arena catalog, 2D wall/obstacle/tail containment physics, zone classification, and
+lazy 3D apparatus builders; <code>two_mice_control.js</code> owns the joint/action
 spec, gait library, limb CPG, and motor decoder; <code>two_mice_fly_brain.js</code> owns the
 dependency-free <em>Drosophila</em> LIF connectome and dopamine plasticity controller;
 <code>two_mice_simulation.js</code> supplies the independent timing, random-stream, and
@@ -3120,7 +3229,7 @@ included by the package's JS rules.</p>
 <p>Run deterministic checks without a browser (uses <code>node</code> on <code>PATH</code> or Playwright's
 bundled Node runtime when installed in <code>.venv</code>):</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-pytest<span class="w"> </span>tests/test_two_mice_fly_brain.py<span class="w"> </span>tests/test_two_mice_control.py<span class="w"> </span>tests/test_two_mice_simulation.py<span class="w"> </span>tests/test_threejs_examples.py
+pytest<span class="w"> </span>tests/test_two_mice_arenas.py<span class="w"> </span>tests/test_two_mice_fly_brain.py<span class="w"> </span>tests/test_two_mice_control.py<span class="w"> </span>tests/test_two_mice_simulation.py<span class="w"> </span>tests/test_threejs_examples.py
 </code></pre></div>
 <p>Run the optional offline browser checks with Playwright Chromium installed:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ANNOLID_RUN_THREEJS_BROWSER_TESTS</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
