@@ -16,7 +16,7 @@
         <link rel="prev" href="../pose_interoperability/">
       
       
-        <link rel="next" href="../tutorials/">
+        <link rel="next" href="../google_colab/">
       
       
         
@@ -700,6 +700,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1179,6 +1183,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#monitoring-visualization-ctrlshiftv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring &amp; Visualization (Ctrl+Shift+V)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#train-models-dialog-advanced-single-window-form" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1281,6 +1296,62 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_colab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Colab Training and Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sim2real_colab_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sim-to-Real Studio (3D Simulation → Colab)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2958,6 +3029,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#monitoring-visualization-ctrlshiftv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring &amp; Visualization (Ctrl+Shift+V)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#train-models-dialog-advanced-single-window-form" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3235,8 +3317,45 @@ fewer images.</p>
      and optional advanced knobs (<code>lr0</code>, <code>patience</code>, <code>freeze</code>, <code>optimizer</code>,
      <code>cos_lr</code>, <code>cache</code>, <code>plots</code>).</li>
 <li><strong>Review &amp; Launch</strong>: Confirm the summary and optionally open the <strong>Training
-   Dashboard</strong> and <strong>TensorBoard</strong>.</li>
+   Monitor &amp; Visualization Dashboard</strong> (and auto-start embedded <strong>TensorBoard</strong>
+   if desired).</li>
 </ol>
+<h3 id="monitoring-visualization-ctrlshiftv">Monitoring &amp; Visualization (<code>Ctrl+Shift+V</code>)<a class="headerlink" href="#monitoring-visualization-ctrlshiftv" title="Permanent link">&para;</a></h3>
+<p>Open <strong>AI &amp; Models -&gt; Training Monitor &amp; Visualization…</strong> (or click
+<strong>Visualization</strong> / press <code>Ctrl+Shift+V</code> at any time) to inspect live and
+historical runs across YOLO, DINO KPSEG, Mask R-CNN, Keypoint R-CNN, and
+downloaded Colab runs:</p>
+<ul>
+<li><strong>Monitor &amp; Curves</strong>: Inspect live progress, KPI cards, native interactive
+  loss/mAP/PCK/learning-rate curves (with TensorBoard-style EMA smoothing, log
+  Y-scale, hover readout, and PNG export), and check multiple runs to overlay
+  them side by side without launching an external server.</li>
+<li><strong>Compare &amp; Diff</strong>: View a multi-run summary matrix (latest &amp; min losses,
+  best validation metric and step, tags, and health status) alongside a
+  highlighted hyperparameter diff table merging <code>args.yaml</code> and CLI flags from
+  <code>command.txt</code>.</li>
+<li><strong>Notes, Tags &amp; Starred Runs</strong>: Bookmark favorite runs (<code>★ Star</code>), assign
+  short aliases, add searchable tags, and record lab notes stored
+  non-destructively in <code>annolid_run_meta.json</code> inside each run folder; filter
+  the runs list by <code>Starred only</code>, tag, alias, or notes.</li>
+<li><strong>Automated Health Diagnostics</strong>: Automatically surfaces actionable alerts
+  for <code>NaN</code>/<code>Inf</code> metrics, sudden loss spikes, overfitting trends, metric
+  plateaus, finished runs missing checkpoints, and low free disk space.</li>
+<li><strong>Live System Telemetry</strong>: Displays non-blocking CPU, RAM, disk free space,
+  and GPU/VRAM utilization (NVIDIA via <code>nvidia-smi</code> or Apple Silicon MPS hint)
+  in the header and <strong>System</strong> sub-tab.</li>
+<li><strong>Offline Reports &amp; Optional Tracker Export</strong>: Click <strong>Export / Trackers</strong> to
+  export a self-contained offline <strong>HTML5 + inline SVG + Markdown + JSON + CSV</strong>
+  experiment report, or push runs to optional external backends (<strong>MLflow</strong>,
+  <strong>Weights &amp; Biases</strong> offline/online, and <strong>Rerun</strong> <code>.rrd</code> recordings) when
+  installed.</li>
+<li><strong>Plots &amp; Images</strong>: Preview generated <code>results.png</code>, confusion matrices,
+  PR/F1 curves, and validation batch overlays directly in the dashboard.</li>
+<li><strong>TensorBoard &amp; Projector</strong>: Launch a non-blocking embedded (or browser)
+  TensorBoard server scoped to the <strong>Selected Run</strong>, <strong>Compare Checked Runs</strong>
+  (<code>--logdir_spec</code>), or <strong>All Runs (Root)</strong>, including one-click access to the
+  <strong>Embedding Projector</strong> when <code>projector_config.pbtxt</code> is present.</li>
+</ul>
 <p>When training completes:</p>
 <ul>
 <li>The trained <code>best.pt</code> checkpoint is automatically discovered and added to the
@@ -3244,7 +3363,7 @@ fewer images.</p>
 <li>The completion dialog provides one-click actions to <strong>Use Model Now</strong>,
   <strong>Run Inference...</strong>, or <strong>Open Run Folder</strong>.</li>
 <li>You can also stop an active run or launch inference on any completed run from
-  the <strong>Training Dashboard</strong>.</li>
+  the <strong>Training Monitor &amp; Visualization Dashboard</strong>.</li>
 </ul>
 <h3 id="train-models-dialog-advanced-single-window-form">Train Models Dialog (Advanced Single-Window Form)<a class="headerlink" href="#train-models-dialog-advanced-single-window-form" title="Permanent link">&para;</a></h3>
 <p><strong>AI &amp; Models -&gt; Train Models... -&gt; YOLO</strong> exposes the same presets, family/task/size

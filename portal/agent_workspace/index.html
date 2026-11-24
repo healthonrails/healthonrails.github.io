@@ -698,6 +698,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1068,6 +1072,62 @@
     
   
     YOLO & YOLOE Fine-Tuning and Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google_colab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Colab Training and Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sim2real_colab_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sim-to-Real Studio (3D Simulation → Colab)
   
 
     
@@ -3265,8 +3325,9 @@
 <ul>
 <li><code>google_drive</code> (optional, enabled by config)</li>
 <li><code>google_calendar</code> (optional, enabled by config)</li>
+<li><code>google_colab</code> (optional, enabled by config — see <a href="../google_colab/">Google Colab Training and Inference</a>)</li>
 </ul>
-<p>The Google OAuth token/credentials are shared so Drive and Calendar use one local auth setup. This also prepares a single auth surface for future Gmail tooling.</p>
+<p>The Google OAuth token/credentials are shared so Drive, Calendar, and Colab use one local auth setup, and re-authorizing preserves previously granted scopes.</p>
 <h2 id="what-changed">What Changed<a class="headerlink" href="#what-changed" title="Permanent link">&para;</a></h2>
 <p>The legacy Google Workspace CLI (<code>gws</code>) path and <code>gws_setup</code> tool are removed.</p>
 <ul>
@@ -3436,6 +3497,7 @@ Error 403: access_denied
 <p>Verify configured paths in <code>~/.annolid/config.json</code> and ensure files are readable/writable.</p>
 <h2 id="related-docs">Related Docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="../google_colab/">Google Colab Training and Inference</a></li>
 <li><a href="../agent_calendar/">Agent Calendar</a></li>
 <li><a href="../mcp/">MCP</a></li>
 <li><a href="../agent_secrets/">Agent Secrets</a></li>

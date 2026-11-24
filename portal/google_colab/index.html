@@ -1,0 +1,3606 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Unified Annolid documentation.">
+      
+      
+      
+        <link rel="canonical" href="https://annolid.com/google_colab/">
+      
+      
+        <link rel="prev" href="../yolo_workflow/">
+      
+      
+        <link rel="next" href="../sim2real_colab_workflow/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/icon_annolid.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Google Colab Training and Inference - Annolid Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-colab-training-and-inference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Annolid Docs" class="md-header__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+      
+  <img src="../assets/images/icon_annolid.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Annolid Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Colab Training and Inference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/healthonrails/annolid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    healthonrails/annolid
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting_started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Start Here
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../workflows/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Workflows
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../agent_and_automation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Agent and Automation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../operations/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Operations
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reference/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../model_plugin_help/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Developer Notes
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Annolid Docs" class="md-nav__button md-logo" aria-label="Annolid Docs" data-md-component="logo">
+      
+  <img src="../assets/images/icon_annolid.png" alt="logo">
+
+    </a>
+    Annolid Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/healthonrails/annolid" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    healthonrails/annolid
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Start Here
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting_started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install_with_uv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uv Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one_line_install_choices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-Line Installer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflow Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/mouse083_resident_intruder_showcase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Featured Walkthrough (mouse083)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../atlas_overlay_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large TIFF and Atlas Overlays
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../large_image_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Large Image Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_depth_anything/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Depth Anything
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brain_3d_reconstruction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Brain 3D Reconstruction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation_flybody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and FlyBody
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two_mice_simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-Mouse 3D Simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coco_data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COCO Data Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pose_estimation_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pose Estimation Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pose_interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DeepLabCut, SLEAP & Pose Interoperability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yolo_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YOLO & YOLOE Fine-Tuning and Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Colab Training and Inference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Colab Training and Inference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choose-your-execution-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Your Execution Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-authenticate-with-google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Authenticate with Google Colab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Authenticate with Google Colab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-official-google-colab-cli-fastest-on-macos-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Official Google Colab CLI (Fastest on macOS / Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-shared-annolid-google-oauth2-colab-api-google-drive-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Shared Annolid Google OAuth2 (Colab API + Google Drive Sync)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-google-cloud-application-default-credentials-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Google Cloud Application Default Credentials (ADC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inspect-eligible-gpus-and-manage-runtimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inspect Eligible GPUs and Manage Runtimes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-train-a-model-on-google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Train a Model on Google Colab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Train a Model on Google Colab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo-instance-segmentation-pose-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO Instance Segmentation / Pose Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dino-kpseg-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DINO KPSEG Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torchvision-mask-r-cnn-or-keypoint-r-cnn-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Torchvision Mask R-CNN or Keypoint R-CNN Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reuse-a-warm-gpu-session-across-training-and-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reuse a Warm GPU Session Across Training and Inference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebook-google-drive-mode-interactive-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notebook + Google Drive Mode (Interactive Browser)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-run-inference-on-google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Run Inference on Google Colab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-use-google-colab-studio-from-the-annolid-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Use Google Colab Studio from the Annolid GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-annolid-bot-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Annolid Bot Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-datasets-long-training-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Datasets &amp; Long Training Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opt-in-live-integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opt-In Live Integration Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sim2real_colab_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sim-to-Real Studio (3D Simulation → Colab)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/merge_canvas_shapes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merge Canvas Shapes (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/reorder_annotation_lists/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reorder Annotation Lists (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/video_downsample_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Downsample Workflow (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/behavior_timeline_flags_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Labeling (Timeline + Flags + Bot)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/polygon_tcn_video_collection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Polygon TCN Video Collection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/tcn_behavior_pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCN Behavior Classification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/realtime_wireless_camera_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Realtime Wireless Camera Detection (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/multi_camera_realtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi-Camera Realtime Detection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/video_ffmpeg_processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Video Processing with FFmpeg
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/segment-based-batch-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Segment-based Batch Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/tracking_correction_with_sam3_bot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking Correction with SAM3 Bot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dinov3_keypoint_tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DINOv3 Keypoint Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../body_part_segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instance Body Part Segmentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tapnext/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TAPNext ONNX Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cowtracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CoWTracker Point Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behavior_agent_user_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Agent User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Draw Zones Quickstart (GUI)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/zone_analysis_workflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zone Analysis Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reporting_and_statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporting and Statistics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Repair and Governor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/Labelme_to_YOLO_class_map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabelMe to YOLO Class Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/sandboxed_shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sandboxed Shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sam3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sam3d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SAM 3D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent and Automation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Agent and Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_and_automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_annolid_run/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent CLI with annolid-run
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_box/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Box Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../codex_and_acp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Codex and ACP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_calendar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Calendar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_workspace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Google Integrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent_security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Agent Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory Subsystem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../packaging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Packaging and Distribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migration Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/behavior_analysis_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behavior Agent Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture_layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../redirects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Redirect Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone_analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zone Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../identity_governor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity Repair and Governor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developer Notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model_plugin_help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Plugin Help
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#choose-your-execution-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choose Your Execution Backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-authenticate-with-google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Authenticate with Google Colab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Authenticate with Google Colab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-official-google-colab-cli-fastest-on-macos-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A: Official Google Colab CLI (Fastest on macOS / Linux)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-shared-annolid-google-oauth2-colab-api-google-drive-sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B: Shared Annolid Google OAuth2 (Colab API + Google Drive Sync)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-google-cloud-application-default-credentials-adc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Google Cloud Application Default Credentials (ADC)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-inspect-eligible-gpus-and-manage-runtimes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inspect Eligible GPUs and Manage Runtimes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-train-a-model-on-google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Train a Model on Google Colab
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Train a Model on Google Colab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yolo-instance-segmentation-pose-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        YOLO Instance Segmentation / Pose Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dino-kpseg-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DINO KPSEG Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torchvision-mask-r-cnn-or-keypoint-r-cnn-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Torchvision Mask R-CNN or Keypoint R-CNN Training
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reuse-a-warm-gpu-session-across-training-and-inference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reuse a Warm GPU Session Across Training and Inference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notebook-google-drive-mode-interactive-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notebook + Google Drive Mode (Interactive Browser)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-run-inference-on-google-colab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Run Inference on Google Colab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-use-google-colab-studio-from-the-annolid-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Use Google Colab Studio from the Annolid GUI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-annolid-bot-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Annolid Bot Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#large-datasets-long-training-runs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Large Datasets &amp; Long Training Runs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opt-in-live-integration-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opt-In Live Integration Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href=".." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../workflows/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Workflows
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/healthonrails/annolid/edit/main/docs/google_colab.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/healthonrails/annolid/raw/main/docs/google_colab.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="google-colab-training-and-inference">Google Colab Training and Inference<a class="headerlink" href="#google-colab-training-and-inference" title="Permanent link">&para;</a></h1>
+<p>Annolid supports authenticating with <strong>Google Colab</strong> and <strong>Google Drive</strong> to run GPU/TPU model training and video/image inference remotely from the <strong>GUI</strong>, the <strong><code>annolid-run colab</code> CLI</strong>, or <strong>Annolid Bot</strong>.</p>
+<p>Supported models include:</p>
+<ul>
+<li><strong>Training:</strong> <code>yolo</code>, <code>dino_kpseg</code>, <code>maskrcnn_detectron2</code>, <code>keypoint_rcnn</code>, <code>tcn_behavior</code>, <code>polygon_classifier</code>, <code>behavior_classifier</code></li>
+<li><strong>Inference:</strong> <code>yolo_labelme</code> (exports LabelMe JSON + tracking CSVs), <code>yolo</code>, <code>dino_kpseg</code>, <code>maskrcnn_detectron2</code>, <code>keypoint_rcnn</code></li>
+</ul>
+<h2 id="choose-your-execution-backend">Choose Your Execution Backend<a class="headerlink" href="#choose-your-execution-backend" title="Permanent link">&para;</a></h2>
+<p>Annolid automatically picks the best available backend (<code>--backend auto</code>), or you can choose one explicitly:</p>
+<table>
+<thead>
+<tr>
+<th>Backend</th>
+<th>Best For</th>
+<th>Platforms</th>
+<th>Auth Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>cli</code></strong> (<code>google-colab-cli</code>)</td>
+<td>Headless GPU/TPU runs with a personal Google account (no GCP project required)</td>
+<td>macOS, Linux (WSL on Windows)</td>
+<td>Browser OAuth2 via <code>colab</code> (saved in OS keyring) or <code>gcloud</code> ADC</td>
+</tr>
+<tr>
+<td><strong><code>api</code></strong> (<code>colaboratory.googleapis.com/v1beta</code>)</td>
+<td>Cross-platform headless execution directly from Python</td>
+<td>macOS, Linux, Windows</td>
+<td>Shared Annolid Google OAuth2 (<code>colaboratory</code> scope) or <code>gcloud</code> ADC</td>
+</tr>
+<tr>
+<td><strong><code>notebook</code></strong> (Google Drive + <code>.ipynb</code>)</td>
+<td>Interactive execution in Colab browser, Free tier, or restricted networks</td>
+<td>macOS, Linux, Windows</td>
+<td>Optional Google Drive OAuth2 (or manual upload of generated <code>.ipynb</code> + <code>.zip</code>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-authenticate-with-google-colab">1. Authenticate with Google Colab<a class="headerlink" href="#1-authenticate-with-google-colab" title="Permanent link">&para;</a></h2>
+<p>If you run a training or inference job without active credentials (or with expired tokens), Annolid guides you through sign-in and automatically resumes your job:</p>
+<ul>
+<li><strong>Interactive CLI:</strong> prompts you to sign in via <code>google-colab-cli</code>, Google OAuth2, or <code>gcloud</code> ADC, or switch to <code>.ipynb</code> Notebook mode. Pass <code>--no-prompt</code> for non-interactive scripts/CI.</li>
+<li><strong>GUI (<code>Colab Studio</code>):</strong> opens a guided <strong>Sign In to Google Colab</strong> dialog (with one-click <strong>Install Colab CLI</strong>, automatic browser launch, and a paste-code prompt if <code>google-colab-cli</code> uses its OAuth2 copy-paste flow) and automatically resumes your job after sign-in.</li>
+</ul>
+<p>Check current readiness across all authentication paths:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>status
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>status
+annolid-run<span class="w"> </span>colab<span class="w"> </span>doctor
+<span class="c1"># Optional: verify real live connectivity against Colab API, Drive API, and Colab CLI</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>doctor<span class="w"> </span>--live
+</code></pre></div>
+<h3 id="option-a-official-google-colab-cli-fastest-on-macos-linux">Option A: Official Google Colab CLI (Fastest on macOS / Linux)<a class="headerlink" href="#option-a-official-google-colab-cli-fastest-on-macos-linux" title="Permanent link">&para;</a></h3>
+<p>Works with personal Google accounts and Colab Free/Pro/Pro+ tiers without creating a Google Cloud OAuth app:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install automatically if missing and sign in:</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login<span class="w"> </span>--method<span class="w"> </span>colab-cli<span class="w"> </span>--install-cli
+
+<span class="c1"># Or install manually first:</span>
+uv<span class="w"> </span>tool<span class="w"> </span>install<span class="w"> </span>google-colab-cli
+<span class="c1"># or: pip install google-colab-cli</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login<span class="w"> </span>--method<span class="w"> </span>colab-cli
+</code></pre></div>
+<p>Note: <code>colab --auth=oauth2</code> opens a Google sign-in URL and displays an authorization code tied to that exact run (PKCE). Always approve the newest browser tab opened by the current command and paste the code promptly. If <code>gcloud</code> is installed, Option C (<code>--method adc</code>) uses an automatic <code>localhost</code> browser redirect with no code copy/paste and also powers <code>google-colab-cli</code>.</p>
+<h3 id="option-b-shared-annolid-google-oauth2-colab-api-google-drive-sync">Option B: Shared Annolid Google OAuth2 (Colab API + Google Drive Sync)<a class="headerlink" href="#option-b-shared-annolid-google-oauth2-colab-api-google-drive-sync" title="Permanent link">&para;</a></h3>
+<p>Uses Annolid's shared OAuth files (<code>~/.annolid/agent/google_oauth_credentials.json</code> and <code>~/.annolid/agent/google_oauth_token.json</code>, mode <code>0600</code>):</p>
+<ol>
+<li>Install the Google OAuth extra if not already installed:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"annolid[annolid_bot]"</span>
+</code></pre></div>
+<ol>
+<li>Place your Google Cloud OAuth Desktop client JSON at <code>~/.annolid/agent/google_oauth_credentials.json</code>.</li>
+<li>Sign in once from CLI or GUI (merges with existing Drive/Calendar scopes instead of overwriting them):</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># Request both Colab API and Google Drive scopes:</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login<span class="w"> </span>--method<span class="w"> </span>oauth2
+
+<span class="c1"># Or Google Drive sync only (for Notebook + Drive mode):</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login<span class="w"> </span>--method<span class="w"> </span>drive
+</code></pre></div>
+<h3 id="option-c-google-cloud-application-default-credentials-adc">Option C: Google Cloud Application Default Credentials (ADC)<a class="headerlink" href="#option-c-google-cloud-application-default-credentials-adc" title="Permanent link">&para;</a></h3>
+<p>Recommended when <code>gcloud</code> is installed — opens your browser with automatic <code>localhost</code> redirect (no code copy/paste) and automatically configures <code>google-colab-cli</code> (<code>--cli-auth auto</code> -&gt; <code>adc</code>):</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login<span class="w"> </span>--method<span class="w"> </span>adc
+</code></pre></div>
+<p>On Google's consent screen, make sure <strong>all</strong> requested permission checkboxes (including Google Cloud and Google Colab) are selected before clicking <strong>Continue</strong>.</p>
+<p>Or run <code>gcloud</code> directly:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>auth<span class="w"> </span>application-default<span class="w"> </span>login<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--scopes<span class="o">=</span>openid,https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/colaboratory
+</code></pre></div>
+<p>To check which personal Google account is active and view your Colab compute-unit balance, or sign out to switch accounts:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>whoami
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span><span class="nb">logout</span><span class="w"> </span>--all
+</code></pre></div>
+<h2 id="2-inspect-eligible-gpus-and-manage-runtimes">2. Inspect Eligible GPUs and Manage Runtimes<a class="headerlink" href="#2-inspect-eligible-gpus-and-manage-runtimes" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># List eligible CPU/GPU/TPU runtime specs via Colab API</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>specs
+
+<span class="c1"># List active sessions / runtimes</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>sessions
+
+<span class="c1"># Provision a persistent GPU session manually</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>new<span class="w"> </span>--session<span class="w"> </span>annolid-gpu<span class="w"> </span>--gpu<span class="w"> </span>T4
+
+<span class="c1"># Stop a session or runtime</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>stop<span class="w"> </span>annolid-gpu
+</code></pre></div>
+<h2 id="3-train-a-model-on-google-colab">3. Train a Model on Google Colab<a class="headerlink" href="#3-train-a-model-on-google-colab" title="Permanent link">&para;</a></h2>
+<p>When packaging a YOLO <code>data.yaml</code> or LabelMe/COCO <code>spec.yaml</code>, Annolid automatically builds a portable <code>.zip</code> archive with normalized relative paths (<code>path: .</code>) without modifying your original dataset on disk, so macOS/Windows paths never break on Linux Colab containers.</p>
+<h3 id="yolo-instance-segmentation-pose-training">YOLO Instance Segmentation / Pose Training<a class="headerlink" href="#yolo-instance-segmentation-pose-training" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span>/path/to/my_dataset/data.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch<span class="w"> </span><span class="m">16</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--imgsz<span class="w"> </span><span class="m">640</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output<span class="w"> </span>./colab_runs/yolo_run
+</code></pre></div>
+<h3 id="dino-kpseg-training">DINO KPSEG Training<a class="headerlink" href="#dino-kpseg-training" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>dino_kpseg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span>/path/to/labelme_spec.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="w"> </span><span class="m">150</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch<span class="w"> </span><span class="m">8</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>L4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output<span class="w"> </span>./colab_runs/dino_run
+</code></pre></div>
+<h3 id="torchvision-mask-r-cnn-or-keypoint-r-cnn-training">Torchvision Mask R-CNN or Keypoint R-CNN Training<a class="headerlink" href="#torchvision-mask-r-cnn-or-keypoint-r-cnn-training" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>maskrcnn_detectron2<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span>/path/to/coco_dataset<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--max-iterations<span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--batch<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4
+</code></pre></div>
+<h3 id="reuse-a-warm-gpu-session-across-training-and-inference">Reuse a Warm GPU Session Across Training and Inference<a class="headerlink" href="#reuse-a-warm-gpu-session-across-training-and-inference" title="Permanent link">&para;</a></h3>
+<p>Pass <code>--session &lt;name&gt; --keep-runtime</code> on training, then reuse <code>--session &lt;name&gt;</code> on inference to skip VM cold-start and reuse cached Annolid packages on the same GPU:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span>/path/to/data.yaml<span class="w"> </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span>--epochs<span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4<span class="w"> </span>--session<span class="w"> </span>annolid-gpu<span class="w"> </span>--keep-runtime<span class="w"> </span>--output<span class="w"> </span>./colab_runs/train
+
+annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span class="w"> </span>yolo_labelme<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source<span class="w"> </span>/path/to/video.mp4<span class="w"> </span>--weights<span class="w"> </span>./colab_runs/train/train/weights/best.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4<span class="w"> </span>--session<span class="w"> </span>annolid-gpu<span class="w"> </span>--output<span class="w"> </span>./colab_runs/predict
+
+annolid-run<span class="w"> </span>colab<span class="w"> </span>stop<span class="w"> </span>annolid-gpu
+</code></pre></div>
+<p>In <strong>Colab Studio</strong> (GUI), when a training run finishes and downloads <code>best.pt</code>, Annolid automatically fills the <strong>Inference on Colab</strong> tab's weights (and session name when <strong>Keep runtime alive</strong> is checked) for one-click handoff.</p>
+<h3 id="notebook-google-drive-mode-interactive-browser">Notebook + Google Drive Mode (Interactive Browser)<a class="headerlink" href="#notebook-google-drive-mode-interactive-browser" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span>/path/to/data.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backend<span class="w"> </span>notebook<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--drive-folder<span class="w"> </span>Annolid/colab<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--open-browser
+</code></pre></div>
+<p>After running the notebook in Colab, pull the trained weights (<code>best.pt</code>, metrics, plots) back locally:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span><span class="nb">jobs</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>pull<span class="w"> </span>&lt;job_id&gt;<span class="w"> </span>--output<span class="w"> </span>./colab_runs/pulled
+</code></pre></div>
+<h2 id="4-run-inference-on-google-colab">4. Run Inference on Google Colab<a class="headerlink" href="#4-run-inference-on-google-colab" title="Permanent link">&para;</a></h2>
+<p>Run video or image inference remotely and automatically download LabelMe JSON predictions, <code>*_tracking.csv</code>, <code>*_tracked.csv</code>, and optional annotated preview video:</p>
+<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span class="w"> </span>yolo_labelme<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weights<span class="w"> </span>/path/to/best.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--conf<span class="w"> </span><span class="m">0</span>.3<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--save-video<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output<span class="w"> </span>./colab_preds/video_01
+</code></pre></div>
+<h2 id="5-use-google-colab-studio-from-the-annolid-gui">5. Use Google Colab Studio from the Annolid GUI<a class="headerlink" href="#5-use-google-colab-studio-from-the-annolid-gui" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Open <strong>AI &amp; Models -&gt; Google Colab…</strong> (or click the <strong>Google Colab</strong> toolbar button).</li>
+<li>You can also configure a job in <strong>Training Wizard</strong> or <strong>Inference Wizard</strong> and click <strong>Run on Google Colab…</strong> to prefill Google Colab Studio with your selected dataset, video, model, and hyperparameters.</li>
+<li>In the top <strong>Personal Account Bar</strong> (or the <strong>Account &amp; Runtimes</strong> tab), click <strong>Sign In with Google</strong> to connect your own personal Google Colab account (Free, Pro, or Pro+) — no Google Cloud project setup required. Your signed-in email, compute-unit balance, and active runtimes appear directly in the header, and <strong>Switch Account</strong> lets another lab member sign out and log into their own personal account cleanly.</li>
+<li>In <strong>Train on Colab</strong> or <strong>Inference on Colab</strong>, launch headless Colab jobs (with optional warm <strong>Session Name</strong> reuse and <strong>Colab Pip Spec</strong> selection) or generate a Drive-synced <code>.ipynb</code> notebook. When training completes, <code>best.pt</code> is automatically prefilled into the Inference tab.</li>
+<li>In <strong>Live Monitor</strong> (opened automatically when a direct run starts), watch real-time <strong>Stage</strong>, <strong>GPU (<code>nvidia-smi</code>)</strong>, <strong>Elapsed Timer</strong>, <strong>Epoch/Step Progress</strong>, <strong>KPI Metric Cards</strong> (<code>Train Loss</code>, <code>Box mAP50</code>, <code>Mask mAP50</code>, <code>GPU Mem</code>, <code>Artifacts</code>), <strong>Live Loss &amp; mAP50 Curves</strong>, <strong>Training Plots Preview</strong> (<code>results.png</code>, <code>confusion_matrix.png</code>, validation overlays), <strong>Open Runtime in Colab Browser</strong>, and a <strong>filterable live log console</strong> with Copy/Save/Auto-scroll.</li>
+<li>In <strong>Jobs &amp; Notebooks</strong>, click <strong>Inspect in Monitor</strong> to replay any past run's <code>results.csv</code> curves and plots, pull outputs from Google Drive, open output folders, click <strong>Load Predictions in Annolid</strong> to import LabelMe predictions directly onto the canvas, or launch curated official Annolid Colab notebooks.</li>
+</ol>
+<h2 id="6-annolid-bot-integration">6. Annolid Bot Integration<a class="headerlink" href="#6-annolid-bot-integration" title="Permanent link">&para;</a></h2>
+<p>Enable the <code>google_colab</code> tool in <code>~/.annolid/config.json</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"google_auth"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"credentialsFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~/.annolid/agent/google_oauth_credentials.json"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"tokenFile"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~/.annolid/agent/google_oauth_token.json"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"allowInteractiveAuth"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"google_drive"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"google_colab"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"backend"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"defaultAccelerator"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T4"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"driveFolder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annolid/colab"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="large-datasets-long-training-runs">Large Datasets &amp; Long Training Runs<a class="headerlink" href="#large-datasets-long-training-runs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Proxy token auto-refresh (<code>api</code> backend):</strong> Colab runtime proxy tokens expire roughly every 60 minutes. Annolid automatically inspects <code>connectionInfo.expireTime</code> and refreshes the runtime proxy token before upload, execution, and download (as well as retrying once on proxy HTTP <code>401</code>/<code>403</code>) so multi-hour training jobs do not fail when downloading checkpoints.</li>
+<li><strong>O(1)-memory streaming downloads (<code>api</code> backend):</strong> Output archives (<code>output_bundle.zip</code>) are streamed as binary bytes via the runtime <code>/files/</code> endpoint (with automatic fallback to <code>/api/contents/</code>).</li>
+<li><strong>Multi-GB video / dataset throughput:</strong> For very large (&gt;100 MB) datasets or raw videos, <code>--backend cli</code> (<code>google-colab-cli</code>) or <code>--backend notebook</code> (resumable Google Drive upload) avoids base64 overhead on the Jupyter Contents API.</li>
+</ul>
+<h2 id="opt-in-live-integration-tests">Opt-In Live Integration Tests<a class="headerlink" href="#opt-in-live-integration-tests" title="Permanent link">&para;</a></h2>
+<p>Default <code>pytest</code> runs stay completely offline and deterministic. When you have signed in to Google Colab / Drive on your machine, you can run read-only live verification probes with:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">ANNOLID_COLAB_LIVE_TESTS</span><span class="o">=</span><span class="m">1</span><span class="w"> </span>pytest<span class="w"> </span>tests/test_colab_live_integration.py<span class="w"> </span>-v
+</code></pre></div>
+<h2 id="related-docs">Related Docs<a class="headerlink" href="#related-docs" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../sim2real_colab_workflow/">Sim-to-Real Studio (3D Mouse/Fly Simulation → Colab)</a></li>
+<li><a href="../agent_workspace/">Google Integrations</a></li>
+<li><a href="../yolo_workflow/">YOLO &amp; YOLOE Fine-Tuning and Inference</a></li>
+<li><a href="../pose_estimation_workflow/">Pose Estimation Workflow</a></li>
+<li><a href="../tutorials/">Tutorials</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/healthonrails/annolid" target="_blank" rel="noopener" title="Annolid on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://annolid.com/" target="_blank" rel="noopener" title="Annolid website" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.indexes", "navigation.path", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

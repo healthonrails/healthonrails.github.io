@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -55,7 +55,7 @@
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -455,8 +455,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-official-notebook">Open the official notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-google-colab-studio-in-annolid">Open Google Colab Studio in Annolid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-notebooks">Official Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical Workflow</a></li>
 </ul>
             </nav>
         </div>
@@ -470,26 +471,50 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="annolid-on-google-colab">
 <h1>Annolid on Google Colab<a class="headerlink" href="#annolid-on-google-colab" title="Link to this heading">#</a></h1>
-<p>Google Colab is often the easiest way to run GPU-heavy training or inference (especially for Detectron2 / Mask R-CNN workflows).</p>
-<section id="open-the-official-notebook">
-<h2>Open the official notebook<a class="headerlink" href="#open-the-official-notebook" title="Link to this heading">#</a></h2>
+<p>Google Colab lets you run GPU-heavy Annolid training and inference (YOLO, DINO KPSEG, Mask R-CNN, Keypoint R-CNN, and video batch tracking) without needing a local CUDA GPU.</p>
+<section id="open-google-colab-studio-in-annolid">
+<h2>Open Google Colab Studio in Annolid<a class="headerlink" href="#open-google-colab-studio-in-annolid" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>From the Annolid GUI: <em>File → Open in Colab</em></p></li>
-<li><p>Or open directly:</p></li>
+<li><p>From the Annolid GUI: <strong>AI &amp; Models → Google Colab…</strong> (or click the <strong>Google Colab</strong> toolbar button, or click <strong>Run on Google Colab…</strong> from the Training / Inference Wizards).</p></li>
+<li><p>From the CLI:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>colab<span class="w"> </span>status
+annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login
+annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span>--data<span class="w"> </span>/path/to/data.yaml<span class="w"> </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span>--gpu<span class="w"> </span>T4
+annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span class="w"> </span>yolo_labelme<span class="w"> </span>--source<span class="w"> </span>/path/to/video.mp4<span class="w"> </span>--weights<span class="w"> </span>/path/to/best.pt<span class="w"> </span>--gpu<span class="w"> </span>T4
+</pre></div>
+</div>
+</section>
+<section id="official-notebooks">
+<h2>Official Notebooks<a class="headerlink" href="#official-notebooks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Unified Annolid Train &amp; Inference (recommended):</strong></p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Colab_Train_and_Inference.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<ul class="simple">
+<li><p><strong>YOLO Instance Segmentation:</strong></p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Instance_Segmentation_on_YOLO_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<ul class="simple">
+<li><p><strong>YOLO Pose Estimation:</strong></p></li>
+</ul>
+<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Pose_Estimation_on_YOLO_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<ul class="simple">
+<li><p><strong>Legacy Detectron2 Mask R-CNN:</strong></p></li>
 </ul>
 <p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_on_Detectron2_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
 </section>
 <section id="typical-workflow">
-<h2>Typical workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<h2>Typical Workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>On your local machine, label frames in Annolid and export a dataset (COCO or YOLO depending on the notebook/tooling you use).</p></li>
-<li><p>Upload the dataset to Google Drive (or point the notebook at a GitHub URL if the data is public).</p></li>
-<li><p>Run training/inference in Colab.</p></li>
-<li><p>Download the trained weights and use them in Annolid (e.g., “Browse Custom YOLO…” or your Detectron2 model path).</p></li>
+<li><p>Label frames locally in Annolid and export a dataset (YOLO <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code>, LabelMe <code class="docutils literal notranslate"><span class="pre">spec.yaml</span></code>, or COCO folder).</p></li>
+<li><p>Authenticate via <strong>Google Colab Studio</strong> or <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span> <span class="pre">auth</span> <span class="pre">login</span></code> (supports <code class="docutils literal notranslate"><span class="pre">google-colab-cli</span></code>, Google OAuth2 for Colab API + Drive, or <code class="docutils literal notranslate"><span class="pre">gcloud</span></code> ADC).</p></li>
+<li><p>Run training or inference directly on a Colab GPU (<code class="docutils literal notranslate"><span class="pre">cli</span></code> / <code class="docutils literal notranslate"><span class="pre">api</span></code> backend) or generate a Google Drive-synced <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebook (<code class="docutils literal notranslate"><span class="pre">notebook</span></code> backend).</p></li>
+<li><p>Trained checkpoints and inference LabelMe JSONs / tracking CSVs are downloaded locally (or pulled via <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span> <span class="pre">pull</span> <span class="pre">&lt;job_id&gt;</span></code>).</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For many tracking tasks you don’t need Colab: you can label one frame and track with Annolid’s built-in tracking backends, then export to CSV for analysis.</p>
+<p>For full authentication options, CLI flags, and Annolid Bot setup, see <code class="docutils literal notranslate"><span class="pre">docs/google_colab.md</span></code>.</p>
 </div>
 </section>
 </section>
@@ -560,8 +585,9 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-the-official-notebook">Open the official notebook</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-google-colab-studio-in-annolid">Open Google Colab Studio in Annolid</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-notebooks">Official Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical Workflow</a></li>
 </ul>
   </nav></div>
 
