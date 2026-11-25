@@ -862,6 +862,8 @@
       
         
       
+        
+      
     
     
     
@@ -1784,6 +1786,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../behavior_embedding_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frame & Behavior Search (ONNX EmbeddingGemma 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
         
   
@@ -2657,8 +2687,6 @@
       
         
       
-        
-      
     
     
     
@@ -2749,34 +2777,6 @@
     
   
     Zone Analysis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../identity_governor/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity Repair and Governor
   
 
     
@@ -3141,8 +3141,9 @@ annolid-run<span class="w"> </span>--help
 annolid-run<span class="w"> </span>list-models
 </code></pre></div>
 <h2 id="onnx-runtime-gpu-provider">ONNX Runtime GPU Provider<a class="headerlink" href="#onnx-runtime-gpu-provider" title="Permanent link">&para;</a></h2>
-<p>The editable install brings in CPU <code>onnxruntime</code> by default. On Linux or Windows machines with an NVIDIA driver reporting CUDA 12.x or newer, add the GPU provider after installing Annolid:</p>
-<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+<p>The lean <code>.[gui]</code> install omits ONNX Runtime by default; extras such as <code>.[gui,onnx]</code>, <code>.[gui,ml]</code>, or <code>.[gui,tracking]</code> bring in CPU <code>onnxruntime</code>. On Linux or Windows machines with an NVIDIA driver reporting CUDA 12.x or newer, replace CPU <code>onnxruntime</code> with <code>onnxruntime-gpu</code>:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>pip<span class="w"> </span>uninstall<span class="w"> </span>onnxruntime<span class="w"> </span>onnxruntime-gpu
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>--force-reinstall<span class="w"> </span>onnxruntime-gpu<span class="w"> </span>--extra-index-url<span class="w"> </span>https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
 python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import onnxruntime as ort; print(ort.get_available_providers())"</span>
 </code></pre></div>
 <p>The provider list should include <code>CUDAExecutionProvider</code>. If it does not, keep the CPU install until the NVIDIA driver/runtime mismatch is resolved:</p>

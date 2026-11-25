@@ -990,6 +990,8 @@
       
         
       
+        
+      
     
     
     
@@ -1912,6 +1914,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../behavior_embedding_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frame & Behavior Search (ONNX EmbeddingGemma 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
         
   
@@ -2785,8 +2815,6 @@
       
         
       
-        
-      
     
     
     
@@ -2877,34 +2905,6 @@
     
   
     Zone Analysis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../identity_governor/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity Repair and Governor
   
 
     
@@ -3683,10 +3683,10 @@ curl<span class="w"> </span>-sSL<span class="w"> </span>https://raw.githubuserco
 <p>The one-line installers no longer install SAM-HQ during the default GUI setup. SAM-HQ is attempted only when a SAM-related profile such as <code>--extras sam3</code> / <code>-Extras sam3</code> or <code>all</code> is selected. This keeps the default installer independent of an extra GitHub source install and makes locked-down lab workstations easier to bootstrap.</p>
 <h3 id="cutie-runtime-note">Cutie runtime note<a class="headerlink" href="#cutie-runtime-note" title="Permanent link">&para;</a></h3>
 <p>The <code>cutie</code> extra installs the Python runtime packages used by Cutie tracking.
-The default <code>gui</code> profile installs this extra up front. If a minimal install
+The <code>tracking</code>, <code>workstation</code>, and <code>full</code> profiles (or <code>--extras cutie</code>) install this extra up front, while the lean <code>gui</code> profile keeps initial install small. If a lean install
 tries to run Cutie tracking and one of those packages is missing, Annolid
 attempts to install the missing packages into the active environment before
-loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code> to disable that
+loading the tracker. Set <code>ANNOLID_AUTO_INSTALL_OPTIONAL_DEPS=0</code> (or legacy <code>ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</code>) to disable that
 automatic repair and show the exact install command instead.</p>
 <h2 id="recommended-patterns">Recommended patterns<a class="headerlink" href="#recommended-patterns" title="Permanent link">&para;</a></h2>
 <ul>

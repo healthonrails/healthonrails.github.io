@@ -918,6 +918,8 @@
       
         
       
+        
+      
     
     
     
@@ -1840,6 +1842,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../behavior_embedding_search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frame & Behavior Search (ONNX EmbeddingGemma 2)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../tutorials/draw_zones_quickstart/" class="md-nav__link">
         
   
@@ -2713,8 +2743,6 @@
       
         
       
-        
-      
     
     
     
@@ -2805,34 +2833,6 @@
     
   
     Zone Analysis
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../identity_governor/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Identity Repair and Governor
   
 
     
@@ -3429,7 +3429,7 @@ command instead.</p>
 </code></pre></div>
 <p>On Python 3.14 and 3.15, <code>ffpyplayer</code> may build from source and require native FFmpeg development headers such as <code>libpostproc</code>.</p>
 <h3 id="note-on-python-315-wheel-coverage">Note on Python 3.15+ Wheel Coverage<a class="headerlink" href="#note-on-python-315-wheel-coverage" title="Permanent link">&para;</a></h3>
-<p>On Python 3.10 through 3.14, <code>h5py</code> and <code>scikit-image</code> are installed automatically in the base dependency set. On Python 3.15+, both packages are gated out of the base install (<code>python_version &lt; "3.15"</code>) so <code>pip install "annolid[gui]"</code> does not fail attempting native <code>libhdf5</code> or Meson/C++ source builds before upstream <code>cp315</code> wheels are available:</p>
+<p>On Python 3.10 through 3.14, <code>h5py</code> and <code>scikit-image</code> are included in the optional <code>scientific</code>, <code>sleap</code>, <code>test</code>, and <code>all</code> extras (and gated with <code>python_version &lt; "3.15"</code> where applicable) so <code>pip install "annolid[gui]"</code> stays lean and never attempts native <code>libhdf5</code> or Meson/C++ source builds before upstream <code>cp315</code> wheels are available:</p>
 <ul>
 <li>Mask rendering, binary polygon rasterization, and shape skeletonization fall back automatically to OpenCV/SciPy when <code>scikit-image</code> is absent.</li>
 <li>SLEAP <code>.slp</code> / <code>.h5</code> import raises an explicit install hint when <code>h5py</code> is absent; install <code>pip install "annolid[sleap]"</code> (or <code>pip install h5py</code> with HDF5 headers/wheels) if you need SLEAP HDF5 conversion on Python 3.15+.</li>
