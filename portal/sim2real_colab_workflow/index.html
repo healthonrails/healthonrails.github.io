@@ -1268,10 +1268,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-analyze-your-example-videos" class="md-nav__link">
+  <a href="#1-sample-user-videos-match-3d-mouse-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Analyze your example video(s)
+        1. Sample user videos &amp; match 3D Mouse simulation
       
     </span>
   </a>
@@ -1290,10 +1290,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-run-multi-iteration-closed-loop-training-evaluation-on-google-colab" class="md-nav__link">
+  <a href="#3-train-iterate-body-part-or-pose-estimation-models-colab-gpu-or-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Run multi-iteration closed-loop training &amp; evaluation on Google Colab
+        3. Train &amp; iterate body-part or pose estimation models (Colab GPU or Local)
       
     </span>
   </a>
@@ -1313,6 +1313,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annolid-bot-natural-language-chat-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annolid Bot (Natural-Language &amp; Chat Usage)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2984,10 +2995,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-analyze-your-example-videos" class="md-nav__link">
+  <a href="#1-sample-user-videos-match-3d-mouse-simulation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Analyze your example video(s)
+        1. Sample user videos &amp; match 3D Mouse simulation
       
     </span>
   </a>
@@ -3006,10 +3017,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-run-multi-iteration-closed-loop-training-evaluation-on-google-colab" class="md-nav__link">
+  <a href="#3-train-iterate-body-part-or-pose-estimation-models-colab-gpu-or-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Run multi-iteration closed-loop training &amp; evaluation on Google Colab
+        3. Train &amp; iterate body-part or pose estimation models (Colab GPU or Local)
       
     </span>
   </a>
@@ -3029,6 +3040,17 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annolid-bot-natural-language-chat-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annolid Bot (Natural-Language &amp; Chat Usage)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3139,63 +3161,108 @@
 <p>Annolid's <strong>Sim-to-Real Studio</strong> (<code>annolid-run sim2real</code> and <strong>AI &amp; Models → Sim-to-Real Studio (3D Sim → Colab)…</strong>) lets you bootstrap and iteratively improve segmentation, pose, and detection models starting directly from real example videos—with zero or minimal manual labels.</p>
 <h2 id="end-to-end-workflow">End-to-End Workflow<a class="headerlink" href="#end-to-end-workflow" title="Permanent link">&para;</a></h2>
 <ol>
-<li><strong>Add real example videos (or an image folder)</strong> and run <strong>Analyze Environment</strong>:</li>
-<li>Extracts resolution, FPS, median arena background (<code>reference_background.png</code>), and sample montage (<code>example_samples.png</code>).</li>
-<li>Infers species (<code>mouse</code> vs <code>fly</code>, or overrides with <code>--species</code>), illumination/IR profile (<code>default</code>, <code>ir_night</code>, <code>calms_gray</code>, <code>dim_warm</code>), arena geometry (<code>open_field</code>, <code>circular_open_field</code>, <code>home_cage</code>, <code>light_dark_box</code>, mazes), camera perspective, coat appearance, wire-bar occluders, and optical blur/noise/vignette statistics.</li>
-<li><strong>Generate an environment-matched 3D synthetic dataset</strong>:</li>
-<li><strong>Mouse 3D (<code>threejs_two_mice_3d</code>)</strong>: drives Annolid's bundled Three.js Two-Mice 3D scene via Playwright Chromium with 10 neuroscience arenas, 6 camera perspectives, 4 lighting presets, 5 coat pairs, wire-bar occluders, headstages, exact WebGL 3D ID-pass segmentation masks (<code>instances</code> or <code>head</code>/<code>torso</code>/<code>limbs</code>/<code>tail</code> parts), and surface-occlusion-aware 13-keypoint pose labels.</li>
-<li><strong>Fly 3D (<code>flybody_mujoco</code>)</strong>: drives Annolid's FlyBody MuJoCo/dm_control simulation (automatically discovering <code>.venv311</code> or your FlyBody runtime) across <code>walk_imitation</code>, <code>forage_walk</code>, <code>grooming</code>, <code>backward_walk</code>, <code>escape_takeoff</code>, <code>flight_imitation</code>, and <code>template_task</code>, rendering pixel-exact geom-ID body-part masks (<code>head</code>, <code>thorax</code>, <code>abdomen</code>, <code>wings</code>, <code>legs</code>) and 11 projected 2D anatomical keypoints.</li>
-<li>Applies label-preserving <strong>photometric domain matching</strong> (Reinhard Lab color/contrast transfer, IR/grayscale matching, optical blur, sensor noise, radial vignette), optional <strong>real arena background compositing</strong>, configurable <strong>domain randomization</strong>, and optional <strong>sim + real LabelMe frame mixing</strong>.</li>
-<li>Exports portable Ultralytics YOLO datasets (<code>yolo_seg</code>, <code>yolo_pose</code>, <code>yolo_detect</code> with relative <code>data.yaml</code>) and LabelMe JSONs.</li>
-<li><strong>Train / fine-tune on Google Colab (or locally)</strong>:</li>
-<li>Uses your signed-in personal Google Colab account (<code>annolid-run colab auth login --method personal</code>), reusing a single warm Colab GPU session across multi-iteration loops and cleanly stopping it afterward unless <code>--keep-runtime</code> is set.</li>
-<li>Automatically warm-starts Iteration 2+ from the previous iteration's <code>best.pt</code>.</li>
-<li><strong>Evaluate on real example videos &amp; iterate</strong>:</li>
-<li>Extracts compact evaluation clips from your example videos, runs <code>yolo_labelme</code> inference on Colab/locally, parses training <code>results.csv</code> (<code>mAP@50</code>, losses), and computes real-video metrics (detection coverage, mean/P10 confidence, expected subject-count accuracy, frame-to-frame temporal IoU stability, plus optional supervised mIoU/Precision/Recall/F1 if you provide labeled validation frames).</li>
-<li>Generates deterministic <strong>Diagnosis &amp; Next-Iteration Recommendations</strong> that adjust scenarios, real-background compositing, photometry strength, domain randomization, frame counts, <code>epochs</code>, <code>imgsz</code>, and checkpoint warm-starting.</li>
+<li><strong>Sample &amp; analyze real user videos (or an image folder)</strong> using <code>annolid-run sim2real sample</code> / <code>analyze</code> or <strong>1. Example Videos &amp; Match</strong> in the GUI:</li>
+<li>Uses <strong>diverse foreground + motion coreset sampling</strong> (K-Means medoids + Farthest-Point Sampling with blur filtering) or <code>uniform</code> spacing to sample representative and rare postures from one or more user videos, writing <code>environment_analysis/sampled_frames/</code> and <code>sampled_frames_manifest.json</code>.</li>
+<li>Extracts clean <strong>per-video median arena backgrounds</strong> (<code>reference_background.png</code>, <code>reference_background_v02.png</code>, …) and per-video photometric profiles so multi-video projects match every recording cleanly without ghosted cross-video background averages.</li>
+<li>Infers species (<code>mouse</code>, <code>rat</code>, or <code>fly</code>), illumination/IR profile (<code>default</code>, <code>ir_night</code>, <code>calms_gray</code>, <code>dim_warm</code>), arena geometry (10 neuroscience arenas), camera perspective, coat appearance, subject count (<code>1–6</code>), calibrated 3D <strong>body scale (<code>0.75–1.35</code>)</strong>, motion activity (<code>low</code>/<code>medium</code>/<code>high</code>), wire-bar occluders, and optical blur/noise/vignette statistics.</li>
+<li><strong>Generate an environment-matched 3D synthetic dataset for body parts or pose estimation</strong>:</li>
+<li><strong>Mouse 3D (<code>threejs_two_mice_3d</code>)</strong>: drives Annolid's bundled Three.js 3D mouse simulator via Playwright Chromium across 1–6 subjects, 10 neuroscience arenas, 6 camera perspectives, 4 lighting presets, 5 coat pairs, calibrated <code>body_scale</code>, wire-bar occluders, and headstages.<ul>
+<li><strong>Body-part segmentation (<code>task=yolo_seg</code>)</strong>: supports <code>instances</code>, coarse 4-part <code>parts</code> (<code>head</code>, <code>torso</code>, <code>limbs</code>, <code>tail</code>), pose-oriented 5-part <code>semantic_parts</code> (<code>head</code>, <code>snout</code>, <code>ear</code>, <code>torso</code>, <code>tail</code>), 11-part <code>fine_parts</code> (<code>head</code>, <code>snout</code>, <code>left_ear</code>, <code>right_ear</code>, <code>neck</code>, <code>torso</code>, <code>left_forelimb</code>, <code>right_forelimb</code>, <code>left_hindlimb</code>, <code>right_hindlimb</code>, <code>tail</code>), and <code>hierarchical_parts</code> (whole-animal + semantic parts), plus dense <code>semantic_masks/{train,val}/*.png</code> and optional COCO-Seg JSONs.</li>
+<li><strong>Pose estimation (<code>task=yolo_pose</code>)</strong>: exports exact 3D-projected anatomical keypoints aligned to <code>two_mice_scene.js</code> for <strong><code>mouse13</code></strong> (13 landmarks including ears, spine, paws, and tail), <strong><code>calms7</code></strong> (7 CalMS21/MARS landmarks), or <strong><code>topdown6</code></strong> (6 dorsal landmarks), complete with <code>data.yaml</code> (<code>kpt_shape</code>, <code>keypoint_names</code>, <code>flip_idx</code>), <code>pose_schema.json</code>, and a synchronized <strong>COCO Keypoints</strong> dataset (<code>coco_keypoints/train/annotations.json</code>, <code>valid/annotations.json</code>, <code>coco_spec.yaml</code>).</li>
+</ul>
+</li>
+<li><strong>Fly 3D (<code>flybody_mujoco</code>)</strong> and <strong>Rat 3D (<code>threejs_rat_ncap_3d</code>)</strong>: also supported with matching body-part and pose exports.</li>
+<li>Applies label-preserving <strong>foreground-first photometric matching</strong> (matching 3D subject Lab color/contrast, IR desaturation, blur, and noise before compositing onto per-video real arena backgrounds with soft contact shadows so real backgrounds are never double-blurred), configurable <strong>domain randomization</strong>, and <strong>sim + real LabelMe mixing</strong> (preserving real polygons, body-part masks, and pose keypoints).</li>
+<li><strong>Train / fine-tune body-part or pose estimation models on Google Colab or locally</strong>:</li>
+<li><strong><code>yolo</code></strong>: Ultralytics YOLO-Seg (body-part / instance segmentation), YOLO-Pose (multi-instance keypoint pose), or YOLO-Detect.</li>
+<li><strong><code>dino_kpseg</code></strong>: DINOv3 dense-feature keypoint pose estimation trained directly on the generated <code>YOLO_dataset/data.yaml</code> (<code>keypoint_names</code> + <code>flip_idx</code>).</li>
+<li><strong><code>keypoint_rcnn</code></strong>: Torchvision ResNet-50 FPN Keypoint R-CNN trained directly on the generated <code>coco_keypoints/</code> dataset.</li>
+<li>Automatically warm-starts Iteration 2+ from the previous iteration's best checkpoint and reuses one warm Colab GPU session across loops.</li>
+<li><strong>Evaluate on real user videos &amp; iterate</strong>:</li>
+<li>Runs model-appropriate inference (<code>yolo_labelme --save-pose-bbox</code>, <code>dino_kpseg</code>, or <code>keypoint_rcnn</code>) on sampled clips from your recordings.</li>
+<li>Computes <strong>task-aware metrics</strong>: real-video detection coverage, confidence, subject-count accuracy, temporal IoU stability, <strong>pose landmark completeness &amp; per-keypoint detection rates</strong> (plus supervised <strong>OKS / PCK</strong> when GT keypoints are supplied), and <strong>body-part completeness &amp; per-part coverage</strong>.</li>
+<li>Renders skeleton + keypoint and body-part overlays and proposes automated <strong>Diagnosis &amp; Next-Iteration Recommendations</strong>.</li>
 <li><strong>Write reproducible reports</strong>:</li>
-<li>Produces <code>reports/sim2real_report.md</code>, <code>reports/sim2real_report.json</code>, and self-contained <code>reports/sim2real_report.html</code> with inline SVG metric trend charts and visual contact sheets comparing real example frames, matched 3D synthetic frames, and predicted overlays.</li>
+<li>Produces <code>reports/sim2real_report.md</code>, <code>reports/sim2real_report.json</code>, and self-contained <code>reports/sim2real_report.html</code> with inline SVG metric trend charts (including <code>val_mask_map50</code>, <code>val_pose_map50</code>, <code>val_box_map50</code>) and visual contact sheets.</li>
 </ol>
 <h2 id="quick-start-cli">Quick Start (CLI)<a class="headerlink" href="#quick-start-cli" title="Permanent link">&para;</a></h2>
-<h3 id="1-analyze-your-example-videos">1. Analyze your example video(s)<a class="headerlink" href="#1-analyze-your-example-videos" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>sim2real<span class="w"> </span>analyze<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--video<span class="w"> </span>/path/to/lab_recording.mp4<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_project<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--species<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+<h3 id="1-sample-user-videos-match-3d-mouse-simulation">1. Sample user videos &amp; match 3D Mouse simulation<a class="headerlink" href="#1-sample-user-videos-match-3d-mouse-simulation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># For 13-keypoint Mouse Pose Estimation (supports YOLO-Pose, DINOv3 KPSEG, and Keypoint R-CNN)</span>
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>sample<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--video<span class="w"> </span>/path/to/lab_recording_1.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--video<span class="w"> </span>/path/to/lab_recording_2.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_pose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--species<span class="w"> </span>mouse<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--task<span class="w"> </span>yolo_pose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pose-schema<span class="w"> </span>mouse13<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--sampling-strategy<span class="w"> </span>diverse<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--samples-per-video<span class="w"> </span><span class="m">24</span>
+
+<span class="c1"># For Mouse Anatomical Body-Part Segmentation (hierarchical whole mouse + head/snout/ear/torso/tail)</span>
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>sample<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--video<span class="w"> </span>/path/to/lab_recording_1.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_parts<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--species<span class="w"> </span>mouse<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--task<span class="w"> </span>yolo_seg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--export-level<span class="w"> </span>instances
+<span class="w">  </span>--export-level<span class="w"> </span>hierarchical_parts<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--sampling-strategy<span class="w"> </span>diverse<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--export-coco
 </code></pre></div>
 <h3 id="2-generate-an-environment-matched-synthetic-dataset-optional-standalone-step">2. Generate an environment-matched synthetic dataset (optional standalone step)<a class="headerlink" href="#2-generate-an-environment-matched-synthetic-dataset-optional-standalone-step" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Mouse 3D (Three.js + Playwright Chromium)</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Mouse 3D Pose dataset (YOLO-Pose + COCO Keypoints + LabelMe + pose_schema.json)</span>
 annolid-run<span class="w"> </span>sim2real<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_pose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--composite-bg<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--frames-per-scenario<span class="w"> </span><span class="m">24</span>
 
-<span class="c1"># Fly 3D (FlyBody MuJoCo via .venv311 / installed FlyBody runtime)</span>
+<span class="c1"># Mouse 3D Fine Body-Part Segmentation (11 anatomical parts)</span>
 annolid-run<span class="w"> </span>sim2real<span class="w"> </span>generate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--project<span class="w"> </span>./sim2real_fly_project<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--species<span class="w"> </span>fly<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--scenarios<span class="w"> </span>walk_imitation<span class="w"> </span>forage_walk<span class="w"> </span>grooming<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_parts<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--export-level<span class="w"> </span>fine_parts<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--composite-bg<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--frames-per-scenario<span class="w"> </span><span class="m">24</span>
 </code></pre></div>
-<h3 id="3-run-multi-iteration-closed-loop-training-evaluation-on-google-colab">3. Run multi-iteration closed-loop training &amp; evaluation on Google Colab<a class="headerlink" href="#3-run-multi-iteration-closed-loop-training-evaluation-on-google-colab" title="Permanent link">&para;</a></h3>
-<p>Ensure you are signed in to your personal Google Colab account first:</p>
-<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login<span class="w"> </span>--method<span class="w"> </span>personal
-</code></pre></div>
-<p>Then launch a 2-iteration closed loop on a Colab T4 GPU:</p>
-<div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>sim2real<span class="w"> </span>iterate<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_project<span class="w"> </span><span class="se">\</span>
+<h3 id="3-train-iterate-body-part-or-pose-estimation-models-colab-gpu-or-local">3. Train &amp; iterate body-part or pose estimation models (Colab GPU or Local)<a class="headerlink" href="#3-train-iterate-body-part-or-pose-estimation-models-colab-gpu-or-local" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># YOLO-Pose or YOLO-Seg (body parts) on Colab T4 GPU</span>
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>iterate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_pose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>yolo<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--iterations<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--train-backend<span class="w"> </span>colab<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--gpu<span class="w"> </span>T4<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--epochs<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--imgsz<span class="w"> </span><span class="m">640</span>
+
+<span class="c1"># DINOv3 KPSEG pose estimation (local or Colab)</span>
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>iterate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_pose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>dino_kpseg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--iterations<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--train-backend<span class="w"> </span><span class="nb">local</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="w"> </span><span class="m">30</span>
+
+<span class="c1"># Torchvision Keypoint R-CNN pose estimation on the exported COCO Keypoints dataset</span>
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>iterate<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="w"> </span>./sim2real_mouse_pose<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--model<span class="w"> </span>keypoint_rcnn<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--iterations<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--train-backend<span class="w"> </span>colab<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--epochs<span class="w"> </span><span class="m">25</span>
 </code></pre></div>
 <h3 id="4-inspect-status-or-regenerate-reports">4. Inspect status or regenerate reports<a class="headerlink" href="#4-inspect-status-or-regenerate-reports" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>annolid-run<span class="w"> </span>sim2real<span class="w"> </span>status<span class="w"> </span>--project<span class="w"> </span>./sim2real_mouse_project
 annolid-run<span class="w"> </span>sim2real<span class="w"> </span>report<span class="w"> </span>--project<span class="w"> </span>./sim2real_mouse_project
 </code></pre></div>
+<h2 id="annolid-bot-natural-language-chat-usage">Annolid Bot (Natural-Language &amp; Chat Usage)<a class="headerlink" href="#annolid-bot-natural-language-chat-usage" title="Permanent link">&para;</a></h2>
+<p>You can ask <strong>Annolid Bot</strong> (in the Annolid GUI AI Chat dock, CLI bot, or connected chat channels) to run the entire Sim-to-Real workflow in plain language:</p>
+<ul>
+<li><em>"Sample my mouse videos in <code>./recordings</code>, use 3D mouse simulation to generate a matching body-parts dataset, and train a YOLO segmentation model on Colab in the background."</em></li>
+<li><em>"Use my currently open video to generate a matching 3D mouse pose dataset (<code>calms7</code>) and train a <code>dino_kpseg</code> model locally."</em></li>
+<li><em>"Check the progress of my Sim-to-Real background job and open Sim-to-Real Studio for that project."</em></li>
+<li>Type <code>/sim2real</code> (or <code>/sim2real project=/path/to/project</code>) in the GUI chat box to open <strong>Sim-to-Real Studio</strong> directly.</li>
+</ul>
+<p>Under the hood, Annolid Bot uses <code>sim2real_workflow</code> (with <code>preflight</code> readiness checks, one-shot <code>action="run_pipeline"</code>, intent presets <code>goal="pose"|"body_parts"|"fine_body_parts"|"hierarchical_body_parts"</code>, <code>video_dir</code> auto-discovery, active GUI video handoff, and persisted non-blocking <code>background=true</code> jobs monitored via <code>job_status</code> / <code>list_jobs</code> / <code>cancel_job</code>) plus <code>gui_open_sim2real_studio</code> in the desktop app.</p>
 <h2 id="gui-usage">GUI Usage<a class="headerlink" href="#gui-usage" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Open <strong>AI &amp; Models → Sim-to-Real Studio (3D Sim → Colab)…</strong> (or click <strong>Sim-to-Real Studio…</strong> in the Google Colab Studio header bar).</li>

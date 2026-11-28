@@ -2265,8 +2265,63 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Long-Lived ACP Sessions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegating-tasks-from-annolid-bot-delegate_to_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegating Tasks from Annolid Bot (delegate_to_agent)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delegating Tasks from Annolid Bot (delegate_to_agent)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-external-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported External Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-bot-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Bot Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-custom-external-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Custom External Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-sandbox-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security &amp; Sandbox Boundaries
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#what-annolid-stores-for-acp-sessions" class="md-nav__link">
@@ -3147,8 +3202,63 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Long-Lived ACP Sessions">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delegating-tasks-from-annolid-bot-delegate_to_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delegating Tasks from Annolid Bot (delegate_to_agent)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Delegating Tasks from Annolid Bot (delegate_to_agent)">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-external-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported External Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typical-bot-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Typical Bot Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-custom-external-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Custom External Agents
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-sandbox-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security &amp; Sandbox Boundaries
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#what-annolid-stores-for-acp-sessions" class="md-nav__link">
@@ -3474,10 +3584,94 @@ pip<span class="w"> </span>install<span class="w"> </span>oauth-cli-kit<span cla
 <li>keep it open across prompts,</li>
 <li>queue follow-up requests into the same session,</li>
 <li>cancel the active turn without destroying the whole session,</li>
-<li>run in either <code>read-only</code> or <code>workspace-write</code> Codex CLI sandbox mode,</li>
+<li>run in either <code>read-only</code> or <code>workspace-write</code> sandbox mode,</li>
 <li>expose the session over stdio for IDE integrations.</li>
 </ul>
 <p>This is different from one-shot provider chat. ACP is for ongoing coding work.</p>
+<h2 id="delegating-tasks-from-annolid-bot-delegate_to_agent">Delegating Tasks from Annolid Bot (<code>delegate_to_agent</code>)<a class="headerlink" href="#delegating-tasks-from-annolid-bot-delegate_to_agent" title="Permanent link">&para;</a></h2>
+<p>Annolid Bot can delegate coding, review, debugging, and research tasks to external coding agents installed on your machine via the unified <code>delegate_to_agent</code> tool (and the compatible <code>coding_session_*</code> tools).</p>
+<h3 id="supported-external-agents">Supported External Agents<a class="headerlink" href="#supported-external-agents" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Canonical Name</th>
+<th>Aliases</th>
+<th>Runtime Transport</th>
+<th>Resume Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>codex_cli</code></td>
+<td><code>codex</code>, <code>codex-cli</code></td>
+<td>Local <code>codex exec</code> / <code>codex exec resume</code></td>
+<td>Yes (persisted thread IDs)</td>
+</tr>
+<tr>
+<td><code>antigravity</code></td>
+<td><code>agy</code>, <code>google_antigravity</code></td>
+<td>Headless <code>agy -p --output-format json --add-dir &lt;workspace&gt;</code> (or local loopback <code>ConversationService</code> <code>CreateConversation</code> + <code>GetConversation</code> run-state polling when <code>ANTIGRAVITY_LS_ADDRESS</code> and <code>ANTIGRAVITY_CSRF_TOKEN</code> are set)</td>
+<td>Per-session history context</td>
+</tr>
+<tr>
+<td><code>claude_code</code></td>
+<td><code>claude</code>, <code>claude-code</code></td>
+<td>Headless <code>claude -p --output-format json --resume &lt;id&gt;</code></td>
+<td>Yes (persisted session IDs)</td>
+</tr>
+<tr>
+<td><code>gemini_cli</code></td>
+<td><code>gemini</code>, <code>gemini-cli</code></td>
+<td>Headless <code>gemini -p --output-format json</code> (<code>--sandbox</code> for <code>read-only</code>, <code>--approval-mode auto_edit</code> for <code>workspace-write</code>)</td>
+<td>Per-session history context</td>
+</tr>
+<tr>
+<td><code>opencode</code></td>
+<td><code>open-code</code>, <code>opencode_cli</code></td>
+<td>Headless <code>opencode run --format json</code></td>
+<td>Per-session history context</td>
+</tr>
+<tr>
+<td>Custom CLI</td>
+<td>Configured under <code>tools.external_agents.&lt;name&gt;</code></td>
+<td>User-defined <code>cli_path</code> and <code>args_template</code> (<code>shell=False</code>)</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="typical-bot-usage">Typical Bot Usage<a class="headerlink" href="#typical-bot-usage" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Discover available agents:</strong> ask Annolid Bot <em>"Which external coding agents are available?"</em> → calls <code>delegate_to_agent(action="list_agents")</code>.</li>
+<li><strong>Inline delegation (wait for result):</strong> ask <em>"Delegate a read-only code review of <code>parser.py</code> to Antigravity"</em> → calls <code>delegate_to_agent(action="run", agent="antigravity", task=..., files=["parser.py"], sandbox="read-only", wait=true)</code>.</li>
+<li><strong>Background multi-turn delegation:</strong> ask <em>"Ask Codex to refactor the dataset loader and keep the session open"</em> → calls <code>delegate_to_agent(action="run", agent="codex", sandbox="workspace-write", wait=false)</code> followed by <code>poll</code>, <code>send</code>, <code>abort</code>, or <code>close</code>.</li>
+<li><strong>Auto-select agent:</strong> pass <code>agent="auto"</code> to select the first installed external agent automatically.</li>
+</ul>
+<h3 id="configuring-custom-external-agents">Configuring Custom External Agents<a class="headerlink" href="#configuring-custom-external-agents" title="Permanent link">&para;</a></h3>
+<p>You can override executable paths, default models, extra flags, or register custom CLI delegates in <code>~/.annolid/agent_config.json</code> under <code>tools.external_agents</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"tools"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"external_agents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"antigravity"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"cli_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/local/bin/agy"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"default_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"gemini-3-pro"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"extra_args"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nt">"my_cli_agent"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"cli_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/usr/local/bin/my-agent"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"args_template"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"--prompt"</span><span class="p">,</span><span class="w"> </span><span class="s2">"{prompt}"</span><span class="p">,</span><span class="w"> </span><span class="s2">"--cwd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"{workspace}"</span><span class="p">,</span><span class="w"> </span><span class="s2">"--mode"</span><span class="p">,</span><span class="w"> </span><span class="s2">"{sandbox}"</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="security-sandbox-boundaries">Security &amp; Sandbox Boundaries<a class="headerlink" href="#security-sandbox-boundaries" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Strict agent allowlist:</strong> only built-in external agents (<code>antigravity</code>, <code>codex_cli</code>, <code>claude_code</code>, <code>gemini_cli</code>, <code>opencode</code>) or custom agents explicitly declared under <code>tools.external_agents</code> can be invoked. Unconfigured arbitrary binary names are rejected.</li>
+<li><strong>Read-only by default (fail-closed):</strong> <code>delegate_to_agent</code> and <code>coding_session_start</code> accept only <code>read-only</code> (default) or <code>workspace-write</code>, rejecting other sandbox values. Any non-<code>read-only</code> sandbox is classified as a mutating action requiring explicit approval when operator confirmation is active.</li>
+<li><strong>Workspace isolation:</strong> delegated workspaces and attached <code>files</code> (capped at 32 per turn) are validated against the bot's workspace / <code>allowed_read_roots</code>, and every <code>poll</code>/<code>send</code>/<code>list</code>/<code>abort</code>/<code>close</code> call is scoped to sessions within those roots.</li>
+<li><strong>No shell interpolation &amp; version-drift resilience:</strong> external CLIs are invoked directly via resolved argv (<code>shell=False</code>), output is byte-capped, unrecognized cosmetic formatting flags are retried cleanly without weakening sandbox flags, and Antigravity's <code>ConversationService</code> fallback accepts loopback addresses only (<code>127.0.0.1</code>, <code>localhost</code>, <code>::1</code>) without proxying.</li>
+</ul>
 <h3 id="what-annolid-stores-for-acp-sessions">What Annolid Stores for ACP Sessions<a class="headerlink" href="#what-annolid-stores-for-acp-sessions" title="Permanent link">&para;</a></h3>
 <p>Annolid keeps ACP session state under the local session store in:</p>
 <ul>
