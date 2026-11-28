@@ -3165,8 +3165,11 @@ make<span class="w"> </span>site-watch
 <li><code>.site_preview/</code> is gitignored so local preview artifacts never pollute commits.</li>
 </ul>
 <h3 id="2-validate-before-committing">2. Validate Before Committing<a class="headerlink" href="#2-validate-before-committing" title="Permanent link">&para;</a></h3>
-<p>Run one command to validate both <code>website/</code> and <code>docs/</code> locally:</p>
+<p>Run one command to validate <code>website/</code>, <code>docs/</code>, and <code>book/</code> locally:</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>site-check
+
+<span class="c1"># Or validate only the Jupyter Book (`book/`) surface:</span>
+make<span class="w"> </span>book-check
 </code></pre></div>
 <p><code>scripts/site_workflow.py check</code> verifies:</p>
 <ol>
@@ -3176,8 +3179,9 @@ make<span class="w"> </span>site-watch
 <li>every <code>/portal/...</code> link in <code>website/index.html</code> resolves inside the built MkDocs output,</li>
 <li>every local image reference across published Markdown docs exists on disk,</li>
 <li><code>mkdocs build --strict --clean</code> succeeds with zero warnings/errors,</li>
-<li>no machine-local absolute paths leaked into <code>docs/</code>, <code>website/</code>, or generated HTML examples, and</li>
-<li>showcase and website assets stay within size budgets (below the pre-commit 6 MB limit).</li>
+<li>no machine-local absolute paths leaked into <code>docs/</code>, <code>website/</code>, <code>book/</code>, or generated HTML examples,</li>
+<li>Jupyter Book (<code>book/</code>) <code>_config.yml</code>, <code>_toc.yml</code>, chapter headings, local relative links, and self-contained images resolve inside <code>book/</code>, and</li>
+<li>showcase, website, and book assets stay within size budgets (below the pre-commit 6 MB limit).</li>
 </ol>
 <h3 id="3-regenerate-showcase-screenshots-animations-simulation-captures">3. Regenerate Showcase Screenshots, Animations &amp; Simulation Captures<a class="headerlink" href="#3-regenerate-showcase-screenshots-animations-simulation-captures" title="Permanent link">&para;</a></h3>
 <p>Regenerate offline 3D simulation screenshots (<code>Two-Mouse</code>, <code>13-Keypoint Pose</code>, <code>Fly-Brain LIF Connectome</code>, <code>FlyBody 3D</code>) and sync them into <code>website/assets/images/showcase/</code>:</p>
