@@ -1,72 +1,80 @@
-# Video preparation
+# Preparing & Compressing Videos
 
-In our paper, we find that compressing and downsampling videos can significantly increase processing speed and save compute resources and time.
+Before tracking a long lab recording, a 30-second video-preparation step can cut tracking time by **4× to 10×** while keeping every animal contour sharp.
 
-For a quick one-line example:
+```{tip}
+**Do you need to extract frames first?** No! Annolid opens `.mp4`, `.avi`, `.mov`, and `.mkv` files directly (`File → Open Video`). Downsample or crop when your raw recordings are very high resolution (1080p / 4K), huge uncompressed `.avi` files, or contain large empty borders around the arena.
+```
+
+## When Should You Downsample or Crop?
+
+| Situation | Recommended Action | Why It Helps |
+| --- | --- | --- |
+| Raw 1080p / 4K recordings (`> 1280 px` wide) | Scale to `0.5` (`~640–960 px` wide) | Dramatically faster Cutie, SAM3, and DINOv3 inference with crisp masks |
+| Wide camera showing lab table around the cage | Crop to the arena bounding box | Removes background distractors and shrinks file sizes |
+| Uncompressed `.avi` (multiple GB per trial) | Re-encode to H.264 `.mp4` (`libx264`, `-crf 18`) | 10× smaller files and smoother GUI timeline scrubbing |
+| Folder of 12+ trials with 1–2 outlier cameras | Use **GUI Downsample Videos** with per-video overrides | Keeps folder defaults clean while recording an auditable `.md` report per video |
+
+## Option 1 (Recommended): Batch Downsample in the Annolid GUI
+
+The built-in **Downsample Videos** dialog handles single files or entire folders and writes a reproducible `.md` audit log + `metadata.csv` next to every processed file:
+
+```{figure} ../images/downsample_gui_processing.png
+---
+name: prep-downsample-gui
+alt: Annolid Downsample Videos dialog showing Scale Factor, FPS, Codec, Denoise, Auto Contrast, and Crop Region controls
+width: 90%
+---
+The **Downsample Videos** dialog (`File → Downsample Videos`) lets you set shared defaults for a folder and review outlier videos one by one.
+```
+
+1. Open **`File → Downsample Videos`**.
+2. In **`Input / Output`**, select your source video or folder. Leave the output folder blank to automatically write into a safe sibling `<folder>_downsampled/` directory (your original videos are never overwritten).
+3. In **`Processing`**, configure folder-wide defaults:
+   - **Scale Factor**: e.g. `0.5` halves width and height.
+   - **FPS**: leave blank to keep the original frame rate, or check **Use specified FPS** to normalize mixed cameras.
+   - **Crop Region**: click **Preview & Crop First Frame** to draw the arena visually.
+4. If one or two recordings have a shifted camera angle, click **`Review Videos One by One (Folder Input)`** and click **`Save & Next`** only for the exceptions.
+5. Open the **`Run`** tab, check **`Rescale Video`**, and click **`Run Processing`**.
+
+For a complete visual guide to per-video crops and batch overrides, see [Downsample and crop videos](downsample_and_crop_videos.md) and [Batch downsampling with sequential video review](../tutorials/Downsample_video_batch_overrides.md).
+
+## Option 2: Quick FFmpeg CLI Recipes
+
+### Install & Verify FFmpeg
 
 ```bash
-ffmpeg -i mouse.avi -vcodec libx264 -vf scale=720x480 mouse.mp4
-```
+# macOS (Homebrew)
+brew install ffmpeg
 
-## Video Compression and Rescaling with FFmpeg
-
-FFmpeg is a potent tool for video processing, offering capabilities for compression and rescaling. This guide presents the process of compressing and rescaling videos using FFmpeg.
-
-## Installing FFmpeg
-
-```shell
-conda create --name annolid-env
-conda activate annolid-env
+# Conda (all platforms)
 conda install -c conda-forge ffmpeg
 
-```
-## Verify FFmpeg installation
-
-```
+# Verify
 ffmpeg -version
 ```
-## Compressing a Video
-Reduce file size while maintaining quality
-```
-ffmpeg -i input.mp4 -c:v libx264 -crf 18 output.mp4
-```
-Reduce file size and quality
 
-```
-ffmpeg -i input.mp4 -c:v libx264 -b:v 500k output.mp4
-```
-## Rescaling a Video
-Resize to a specific resolution
-```
-ffmpeg -i input.mp4 -filter:v scale=w=1280:h=720 output.mp4
-```
-Resize to a specific aspect ratio
-```
-ffmpeg -i input.mp4 -filter:v scale=w=1280:h=-1 output.mp4
+### Everyday Compression & Rescaling Commands
+
+```bash
+# Quick convert AVI -> compact H.264 MP4 at 720x480
+ffmpeg -i mouse.avi -c:v libx264 -vf scale=720:480 mouse.mp4
+
+# Visually lossless compression (keep resolution, smaller file)
+ffmpeg -i input.mp4 -c:v libx264 -crf 18 -preset fast output.mp4
+
+# Resize to 960px wide while preserving aspect ratio (height auto-rounded to even)
+ffmpeg -i input.mp4 -vf "scale=960:-2" -c:v libx264 -crf 20 output.mp4
+
+# Crop to arena region (width:height:x:y) and compress
+ffmpeg -i input.mp4 -vf "crop=800:500:120:40" -c:v libx264 -crf 18 cropped.mp4
+
+# Trim a short 30-second test clip starting at 00:01:00 (great for verifying your pipeline)
+ffmpeg -ss 00:01:00 -t 30 -i input.mp4 -c:v libx264 -crf 18 test_clip.mp4
 ```
 
-## Compress Videos with Annolid GUI
+```{note}
+Using `scale=960:-2` instead of `scale=960:-1` ensures the computed height is always divisible by 2 — which H.264 (`libx264`) requires!
+```
 
-The GUI version is a better fit when you need to process a folder of videos, apply the same defaults to most files, and keep a few file-specific exceptions.
-
-1. **Click `File -> Downsample Videos`.**
-2. **Select the folder** containing your original videos.
-3. **Open the `Input / Output` tab** and set an output folder to save all the processed videos.
-   - If you leave it blank, Annolid uses a sibling folder with `_downsampled` appended to the input folder name.
-4. **Open the `Processing` tab** and set folder defaults:
-   - For example, selecting `0.5` will reduce the size of the video by half.
-   - Leave FPS blank unless you need a fixed frame rate.
-   - Enable crop only if the same crop applies to every video.
-5. If one or more videos need different settings, click **`Review Videos One by One (Folder Input)`** and use **`Save & Next`** for exceptions or **`Skip`** to keep the defaults.
-6. **Open the `Run` tab**.
-7. **Check the `Rescale Video` checkbox**.
-8. **Click the `Run Processing` button**.
-
-This workflow compresses and downsamples the selected folder while keeping per-video changes explicit and reproducible.
-
-## Additional Tips
-
-- Utilize the `-preset` option to adjust encoding speed, for example `-preset fast`.
-- Specify the audio codec with `-c:a`, for example `-c:a aac`.
-- Set the audio bitrate using `-b:a`, for example `-b:a 128k`.
-- If you need a deeper walkthrough for folder workflows, see the dedicated downsampling guide in the documentation.
+Next: walk through the full [Downsample and crop videos](downsample_and_crop_videos.md) GUI tool, or jump straight to [Labeling Instances](labelling_images.md).

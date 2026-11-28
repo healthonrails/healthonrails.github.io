@@ -1,12 +1,21 @@
-# New contributor guide
+# Contributing to Annolid
 
-To get an overview of the project, read the README and the documentation. You should also have used Annolid at least once and ideally be a regular user.
+Contributions of every kind are welcome — from bug reports, documentation improvements, and example datasets to new tracking backends and GUI enhancements!
 
-1. Check that the issue has not been reported already.
-If you encounter an issue with Annolid or have a suggestion, start by making sure there is not already an [opened ticket](https://github.com/healthonrails/annolid/issues) on the same problem, or an [older closed ticket](https://github.com/healthonrails/annolid/issues?q=is%3Aissue+is%3Aclosed) for it.
+## How to Get Started
 
-1. Open an issue.
-If you encounter a problem or have a suggestion, **and have checked that it was not previously reported**, please open an [issue](https://github.com/healthonrails/annolid/issues). Also check to see what types of contributions we accept before making changes. Some of them don't even require writing a single line of code. In all cases though starting out with opening an issue will allow for discussion with the developers and avoid you spending unnecessary time on something that is not going to be implemented.
+1. **Check existing issues first.** Before filing a new ticket, search [open issues](https://github.com/healthonrails/annolid/issues) and [closed issues](https://github.com/healthonrails/annolid/issues?q=is%3Aissue+is%3Aclosed) to see if the bug or idea is already being discussed.
+2. **Open an issue to align early.** If your issue or feature request is new, open a concise [GitHub Issue](https://github.com/healthonrails/annolid/issues). Many helpful contributions (documentation guides, workflow recipes, test cases) require little or no code.
+3. **Fork, branch, and submit a pull request.**
+   - Fork the repository and create a focused feature/fix branch.
+   - Set up a local `.venv` with `uv venv .venv --python 3.11 && source .venv/bin/activate && uv pip install -e ".[gui,test]"`.
+   - Run targeted tests (`QT_QPA_PLATFORM=offscreen pytest -q ...`) and formatting/linting (`ruff check` / `ruff format --check`).
+   - Open a pull request referencing the issue and enable **"Allow edits by maintainers"** so reviews go smoothly.
 
-2. Contributing to opened issue.
-Whether you opened an issue or want to scan through our existing issues to find one that interests you, please let us know. We will assign you to the issue so we know who is working on it. Fork the repository and open a new branch to work on your issue. Then open a PR for that specific issue and submit it for review from your forked repository. Enable the checkbox to allow maintainer edits so the branch can be updated for a merge. Once you submit your PR, we will review your changes as quickly as we can. We may ask questions or request additional information. We may ask for changes to be made before a PR can be merged, either using suggested changes or pull request comments. As you update your PR and apply changes, mark each conversation as resolved.
+## Contributing to This Book & Docs
+
+- The Annolid Book lives in `book/` (built with `jupyter-book build book`).
+- The Docs Portal lives in `docs/` (built with `mkdocs build --strict` and checked via `make site-check`).
+- Keep images web-optimized (under 2 MB when possible) and never commit machine-local paths or credentials.
+
+See [CONTRIBUTING.md](https://github.com/healthonrails/annolid/blob/main/CONTRIBUTING.md) on GitHub for the complete developer standard.

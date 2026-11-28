@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Freezing and motion assays &#8212; Annolid Start Here</title>
+    <title>Freezing &amp; Dense Motion Assays &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -60,12 +61,15 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Freezing_and motion_assays';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="DINOv3 Keypoint Tracking" href="DINOv3_keypoint_tracking.html" />
-    <link rel="prev" title="Behavior classification" href="Behavior_classification.html" />
+    <link rel="next" title="Inter-Instance Distances &amp; Kinematics" href="Calculate_distances_between_instances.html" />
+    <link rel="prev" title="Polygon-Feature TCN Behavior Classification" href="TCN_behavior_classification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +201,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +219,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../content/README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../content/introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Freezing and motion assays</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +363,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/tutorials/Freezing_and motion_assays.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +492,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Freezing and motion assays</h1>
+    <h1>Freezing & Dense Motion Assays</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,9 +502,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-dense-motion-estimation">How to Run Dense Motion Estimation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freezing-or-not-freezing">Freezing or Not Freezing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-for-dense-motion-estimation">Methodology for Dense Motion Estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-dense-optical-flow-motion-estimation-in-the-gui">Option 1: Dense Optical-Flow Motion Estimation in the GUI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-freezing-threshold">Tuning the Freezing Threshold</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-headless-kinematics-freezing-bouts-via-annolid-run">Option 2: Headless Kinematics &amp; Freezing Bouts via <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-mask-scoped-farneback-optical-flow">Methodology: Mask-Scoped Farnebäck Optical Flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -469,61 +520,94 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="freezing-and-motion-assays">
-<h1>Freezing and motion assays<a class="headerlink" href="#freezing-and-motion-assays" title="Link to this heading">#</a></h1>
-<section id="how-to-run-dense-motion-estimation">
-<h2>How to Run Dense Motion Estimation<a class="headerlink" href="#how-to-run-dense-motion-estimation" title="Link to this heading">#</a></h2>
-<p>To run dense motion estimation:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="freezing-dense-motion-assays">
+<h1>Freezing &amp; Dense Motion Assays<a class="headerlink" href="#freezing-dense-motion-assays" title="Link to this heading">#</a></h1>
+<p>Annolid quantifies fine-grained immobility and <strong>freezing behavior</strong> (for example in fear conditioning, isolation USV studies, or zebrafish startle assays) by combining <strong>instance masks</strong> with <strong>dense optical flow</strong> — measuring movement <em>strictly inside each animal’s body mask</em> rather than being fooled by bedding flicker or background noise.</p>
+<section id="option-1-dense-optical-flow-motion-estimation-in-the-gui">
+<h2>Option 1: Dense Optical-Flow Motion Estimation in the GUI<a class="headerlink" href="#option-1-dense-optical-flow-motion-estimation-in-the-gui" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Open Annolid.</p></li>
-<li><p>Click on the File menu and select <strong>Glitter2</strong>.</p></li>
-<li><p>In the dialog, choose a video file and the corresponding tracking CSV file (for example, <code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_tracking.csv</span></code>).</p></li>
-<li><p>Select a motion threshold greater than zero, for example, 0.09 as shown in the screenshot below. This motion threshold will be used to decide whether freezing behavior is present or not.</p></li>
+<li><p>Track your video first so you have a tracking CSV (for example <code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_tracking.csv</span></code>).</p></li>
+<li><p>Launch <code class="docutils literal notranslate"><span class="pre">annolid</span></code> and open <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Glitter2</span></code></strong>.</p></li>
+<li><p>Choose your source video file and its matching tracking CSV file.</p></li>
+<li><p>Set a <strong>motion threshold</strong> greater than zero (for example <code class="docutils literal notranslate"><span class="pre">0.09</span></code>). Frames whose normalized mask motion index falls below this threshold are labeled <code class="docutils literal notranslate"><span class="pre">freezing</span></code>.</p></li>
 </ol>
-<p><img alt="Visualizing and Dense Motion Estimation Dialog" src="../_images/fish_motion_estimation.png" /></p>
-<p>This will generate a CSV file named with the format <code class="docutils literal notranslate"><span class="pre">video_name_tracking_motion.csv</span></code>, for example, <code class="docutils literal notranslate"><span class="pre">fish_640x360_tracking_motion.csv</span></code>.</p>
-<p>Here are the first few rows of the <code class="docutils literal notranslate"><span class="pre">fish_640x360_tracking_motion.csv</span></code> file:</p>
-<p><img alt="Motion Estimation Result CSV file" src="../_images/motion_csv.png" />.
-Note: The motion index column corresponds to the dense motion estimation method described in the section below.</p>
+<figure class="align-default" id="freezing-dialog">
+<a class="reference internal image-reference" href="../_images/fish_motion_estimation.png"><img alt="Annolid Visualizing and Dense Motion Estimation dialog configured with video, tracking CSV, and 0.09 motion threshold" src="../_images/fish_motion_estimation.png" style="width: 82%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 44 </span><span class="caption-text">Configuring the dense optical-flow motion and freezing threshold in Annolid.</span><a class="headerlink" href="#freezing-dialog" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Annolid generates <code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_tracking_motion.csv</span></code> (for example <code class="docutils literal notranslate"><span class="pre">fish_640x360_tracking_motion.csv</span></code>) alongside an optional motion-flow visualization video:</p>
+<figure class="align-default" id="freezing-csv-preview">
+<a class="reference internal image-reference" href="../_images/motion_csv.png"><img alt="Preview of the generated tracking_motion.csv table showing per-frame motion_index and freezing classification columns" src="../_images/motion_csv.png" style="width: 92%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 45 </span><span class="caption-text">First rows of the generated <code class="docutils literal notranslate"><span class="pre">*_tracking_motion.csv</span></code> showing per-frame <code class="docutils literal notranslate"><span class="pre">motion_index</span></code> and binary <code class="docutils literal notranslate"><span class="pre">freezing</span></code> labels.</span><a class="headerlink" href="#freezing-csv-preview" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="tuning-the-freezing-threshold">
+<h3>Tuning the Freezing Threshold<a class="headerlink" href="#tuning-the-freezing-threshold" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Frames with <code class="docutils literal notranslate"><span class="pre">motion_index</span> <span class="pre">&lt;</span> <span class="pre">threshold</span></code> → classified as <strong><code class="docutils literal notranslate"><span class="pre">freezing</span></code></strong>.</p></li>
+<li><p>Frames with <code class="docutils literal notranslate"><span class="pre">motion_index</span> <span class="pre">&gt;=</span> <span class="pre">threshold</span></code> → classified as <strong><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">freezing</span></code></strong>.</p></li>
+<li><p>Because the raw continuous <code class="docutils literal notranslate"><span class="pre">motion_index</span></code> column is preserved for every frame, you can also test sensitivity curves or adjust the cutoff offline in Python/R without re-running optical flow!</p></li>
+</ul>
 </section>
-<section id="freezing-or-not-freezing">
-<h2>Freezing or Not Freezing<a class="headerlink" href="#freezing-or-not-freezing" title="Link to this heading">#</a></h2>
-<p>By default, Annolid will use the selected motion threshold to produce the freezing binary classification with the “freezing” column based on the motion index. If the motion index is greater and equal than the threshold, it will be classified as “not freezing”; otherwise, it will be classified as “freezing”.</p>
-<p>Alternatively, you can perform post-processing based on the motion index column to determine a better threshold for classification.</p>
 </section>
-<section id="methodology-for-dense-motion-estimation">
-<h2>Methodology for Dense Motion Estimation<a class="headerlink" href="#methodology-for-dense-motion-estimation" title="Link to this heading">#</a></h2>
-<p>In this section, we detail our methodology for dense motion estimation, including the algorithms and techniques utilized. We employ a computer vision method that combines optical flow and instance masks derived from a tracking result CSV file to estimate dense motion across frames in a video. Specifically, the method utilizes the Farneback algorithm [1], implemented in OpenCV [2], to calculate the optical flow between consecutive frames, thereby providing a dense motion field. This optical flow is then employed to compute the motion index, representing the magnitude of motion within each instance mask. The motion index is calculated as the sum of optical flow magnitudes in polar coordinates within the instance mask, normalized by the mask’s area. This approach furnishes a quantitative measure of motion within each instance.</p>
-<p>Moreover, the method leverages mask Intersection over Union (IOU) to quantify the overlap between instance masks across frames. It further integrates instance tracking results from a CSV file, enabling the analysis of specific instances (e.g., objects) within the video. The output of this method comprises a video annotated with motion flows, along with a tracking CSV file containing motion analysis results, including motion index values for each instance in each frame.</p>
-<p>Our dense motion estimation has been validated through comparison with ultrasonic data, showing a high correlation. This validation was conducted in a study by Pranic et al. (2022) [3], where mouse pups’ production of ultrasonic vocalizations (USVs) in response to isolation from the nest was examined.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="nd">@inproceedings</span><span class="p">{</span><span class="n">farneback2003two</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Two</span><span class="o">-</span><span class="n">frame</span> <span class="n">motion</span> <span class="n">estimation</span> <span class="n">based</span> <span class="n">on</span> <span class="n">polynomial</span> <span class="n">expansion</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Farneb</span><span class="p">{</span>\<span class="s2">"a}ck, Gunnar},</span>
-  <span class="n">booktitle</span><span class="o">=</span><span class="p">{</span><span class="n">Image</span> <span class="n">Analysis</span><span class="p">:</span> <span class="mi">13</span><span class="n">th</span> <span class="n">Scandinavian</span> <span class="n">Conference</span><span class="p">,</span> <span class="n">SCIA</span> <span class="mi">2003</span> <span class="n">Halmstad</span><span class="p">,</span> <span class="n">Sweden</span><span class="p">,</span> <span class="n">June</span> <span class="mi">29</span><span class="o">--</span><span class="n">July</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2003</span> <span class="n">Proceedings</span> <span class="mi">13</span><span class="p">},</span>
-  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">363</span><span class="o">--</span><span class="mi">370</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2003</span><span class="p">},</span>
-  <span class="n">organization</span><span class="o">=</span><span class="p">{</span><span class="n">Springer</span><span class="p">}</span>
+<section id="option-2-headless-kinematics-freezing-bouts-via-annolid-run">
+<h2>Option 2: Headless Kinematics &amp; Freezing Bouts via <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code><a class="headerlink" href="#option-2-headless-kinematics-freezing-bouts-via-annolid-run" title="Link to this heading">#</a></h2>
+<p>For batch processing across many recordings — or when you want bout-level freezing durations calibrated in physical units (<code class="docutils literal notranslate"><span class="pre">cm/s</span></code>) — run <strong><code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">kinematics</span></code></strong> (or open <strong>Analysis → Analysis &amp; Reporting Studio… → Kinematics &amp; Freezing</strong>):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>kinematics<span class="w"> </span>session_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--px-per-cm<span class="w"> </span><span class="m">12</span>.5<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./kinematics_out<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--events-csv<span class="w"> </span>freezing_bouts.csv
+</pre></div>
+</div>
+<p>The exported <code class="docutils literal notranslate"><span class="pre">freezing_bouts.csv</span></code> uses Annolid’s standard ethogram event format so you can open it directly on the <strong>Timeline</strong> or pass it straight into <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">report</span></code>!</p>
+</section>
+<section id="methodology-mask-scoped-farneback-optical-flow">
+<h2>Methodology: Mask-Scoped Farnebäck Optical Flow<a class="headerlink" href="#methodology-mask-scoped-farneback-optical-flow" title="Link to this heading">#</a></h2>
+<p>Annolid’s dense motion estimator computes frame-to-frame optical flow using the <strong>Farnebäck polynomial expansion algorithm</strong> [1] in <strong>OpenCV</strong> [2], then masks the flow magnitude strictly to each tracked instance polygon:</p>
+<ol class="arabic simple">
+<li><p>Compute the dense 2D optical-flow field <span class="math notranslate nohighlight">\((u, v)\)</span> between consecutive frames <span class="math notranslate nohighlight">\(t-1\)</span> and <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+<li><p>Convert flow vectors inside instance <span class="math notranslate nohighlight">\(i\)</span>’s mask <span class="math notranslate nohighlight">\(M_i(t)\)</span> to polar magnitudes <span class="math notranslate nohighlight">\(\|f(x, y)\| = \sqrt{u^2 + v^2}\)</span>.</p></li>
+<li><p>Compute the area-normalized <strong>motion index</strong>:
+$<span class="math notranslate nohighlight">\(\text{motion\_index}_i(t) = \frac{1}{|M_i(t)|} \sum_{(x,y) \in M_i(t)} \|f(x,y)\|\)</span>$</p></li>
+<li><p>Also compute frame-to-frame mask <strong>Intersection over Union (IoU)</strong> as a complementary body-overlap stability signal.</p></li>
+</ol>
+<p>This mask-scoped motion index has been biologically validated against mouse pup ultrasonic vocalization (USV) production during maternal isolation in <strong>Pranic et al. (2022)</strong> [3].</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<div class="highlight-bibtex notranslate"><div class="highlight"><pre><span></span><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">farneback2003two</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Two-frame motion estimation based on polynomial expansion}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Farneb{\"a}ck, Gunnar}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">booktitle</span><span class="p">=</span><span class="s">{Image Analysis: 13th Scandinavian Conference, SCIA 2003}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">pages</span><span class="p">=</span><span class="s">{363--370}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2003}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">organization</span><span class="p">=</span><span class="s">{Springer}</span>
 <span class="p">}</span>
 
-<span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="nd">@article</span><span class="p">{</span><span class="n">bradski2000opencv</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">The</span> <span class="n">opencv</span> <span class="n">library</span><span class="o">.</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Bradski</span><span class="p">,</span> <span class="n">Gary</span><span class="p">},</span>
-  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Dr</span><span class="o">.</span> <span class="n">Dobb</span><span class="s1">'s Journal: Software Tools for the Professional Programmer},</span>
-  <span class="n">volume</span><span class="o">=</span><span class="p">{</span><span class="mi">25</span><span class="p">},</span>
-  <span class="n">number</span><span class="o">=</span><span class="p">{</span><span class="mi">11</span><span class="p">},</span>
-  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">120</span><span class="o">--</span><span class="mi">123</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2000</span><span class="p">},</span>
-  <span class="n">publisher</span><span class="o">=</span><span class="p">{</span><span class="n">Miller</span> <span class="n">Freeman</span> <span class="n">Inc</span><span class="o">.</span><span class="p">}</span>
+<span class="nc">@article</span><span class="p">{</span><span class="nl">bradski2000opencv</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{The OpenCV Library}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Bradski, Gary}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Dr. Dobb's Journal of Software Tools}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">volume</span><span class="p">=</span><span class="s">{25}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">number</span><span class="p">=</span><span class="s">{11}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">pages</span><span class="p">=</span><span class="s">{120--123}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2000}</span>
 <span class="p">}</span>
 
-<span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="nd">@article</span><span class="p">{</span><span class="n">pranic2022rates</span><span class="p">,</span>
-  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Rates</span> <span class="n">of</span> <span class="n">ultrasonic</span> <span class="n">vocalizations</span> <span class="n">are</span> <span class="n">more</span> <span class="n">strongly</span> <span class="n">related</span> <span class="n">than</span> <span class="n">acoustic</span> <span class="n">features</span> <span class="n">to</span> <span class="n">non</span><span class="o">-</span><span class="n">vocal</span> <span class="n">behaviors</span> <span class="ow">in</span> <span class="n">mouse</span> <span class="n">pups</span><span class="p">},</span>
-  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Pranic</span><span class="p">,</span> <span class="n">Nicole</span> <span class="n">M</span> <span class="ow">and</span> <span class="n">Kornbrek</span><span class="p">,</span> <span class="n">Caroline</span> <span class="ow">and</span> <span class="n">Yang</span><span class="p">,</span> <span class="n">Chen</span> <span class="ow">and</span> <span class="n">Cleland</span><span class="p">,</span> <span class="n">Thomas</span> <span class="n">A</span> <span class="ow">and</span> <span class="n">Tschida</span><span class="p">,</span> <span class="n">Katherine</span> <span class="n">A</span><span class="p">},</span>
-  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">Frontiers</span> <span class="ow">in</span> <span class="n">Behavioral</span> <span class="n">Neuroscience</span><span class="p">},</span>
-  <span class="n">volume</span><span class="o">=</span><span class="p">{</span><span class="mi">16</span><span class="p">},</span>
-  <span class="n">pages</span><span class="o">=</span><span class="p">{</span><span class="mi">1015484</span><span class="p">},</span>
-  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2022</span><span class="p">},</span>
-  <span class="n">publisher</span><span class="o">=</span><span class="p">{</span><span class="n">Frontiers</span><span class="p">}</span>
+<span class="nc">@article</span><span class="p">{</span><span class="nl">pranic2022rates</span><span class="p">,</span>
+<span class="w">  </span><span class="na">title</span><span class="p">=</span><span class="s">{Rates of ultrasonic vocalizations are more strongly related than acoustic features to non-vocal behaviors in mouse pups}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">author</span><span class="p">=</span><span class="s">{Pranic, Nicole M and Kornbrek, Caroline and Yang, Chen and Cleland, Thomas A and Tschida, Katherine A}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">journal</span><span class="p">=</span><span class="s">{Frontiers in Behavioral Neuroscience}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">volume</span><span class="p">=</span><span class="s">{16}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">pages</span><span class="p">=</span><span class="s">{1015484}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">year</span><span class="p">=</span><span class="s">{2022}</span><span class="p">,</span>
+<span class="w">  </span><span class="na">publisher</span><span class="p">=</span><span class="s">{Frontiers}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -561,20 +645,20 @@ Note: The motion index column corresponds to the dense motion estimation method 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Behavior_classification.html"
+       href="TCN_behavior_classification.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Behavior classification</p>
+        <p class="prev-next-title">Polygon-Feature TCN Behavior Classification</p>
       </div>
     </a>
     <a class="right-next"
-       href="DINOv3_keypoint_tracking.html"
+       href="Calculate_distances_between_instances.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">DINOv3 Keypoint Tracking</p>
+        <p class="prev-next-title">Inter-Instance Distances &amp; Kinematics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -596,9 +680,13 @@ Note: The motion index column corresponds to the dense motion estimation method 
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-dense-motion-estimation">How to Run Dense Motion Estimation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#freezing-or-not-freezing">Freezing or Not Freezing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-for-dense-motion-estimation">Methodology for Dense Motion Estimation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-dense-optical-flow-motion-estimation-in-the-gui">Option 1: Dense Optical-Flow Motion Estimation in the GUI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuning-the-freezing-threshold">Tuning the Freezing Threshold</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-headless-kinematics-freezing-bouts-via-annolid-run">Option 2: Headless Kinematics &amp; Freezing Bouts via <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-mask-scoped-farneback-optical-flow">Methodology: Mask-Scoped Farnebäck Optical Flow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
@@ -623,7 +711,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -636,6 +724,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

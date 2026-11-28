@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Annolid on Google Colab &#8212; Annolid Start Here</title>
+    <title>Running Annolid on Google Colab &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/Annolid_on_Google_Colab';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Expert mode: CLI tools" href="Expert_mode_CLI_tools.html" />
-    <link rel="prev" title="Combining models" href="combining_models.html" />
+    <link rel="next" title="Batch downsampling with sequential video review" href="../tutorials/Downsample_video_batch_overrides.html" />
+    <link rel="prev" title="Data Formats &amp; COCO / YOLO / NDJSON Cookbook" href="../tutorials/COCO_and_data_formats.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/Annolid_on_Google_Colab.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Annolid on Google Colab</h1>
+    <h1>Running Annolid on Google Colab</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,9 +500,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-google-colab-studio-in-annolid">Open Google Colab Studio in Annolid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-notebooks">Official Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-google-colab-studio">Launch Google Colab Studio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-ready-to-run-colab-notebooks">Official Ready-to-Run Colab Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-to-end-cloud-workflow">End-to-End Cloud Workflow</a></li>
 </ul>
             </nav>
         </div>
@@ -469,52 +514,70 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="annolid-on-google-colab">
-<h1>Annolid on Google Colab<a class="headerlink" href="#annolid-on-google-colab" title="Link to this heading">#</a></h1>
-<p>Google Colab lets you run GPU-heavy Annolid training and inference (YOLO, DINO KPSEG, Mask R-CNN, Keypoint R-CNN, and video batch tracking) without needing a local CUDA GPU.</p>
-<section id="open-google-colab-studio-in-annolid">
-<h2>Open Google Colab Studio in Annolid<a class="headerlink" href="#open-google-colab-studio-in-annolid" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="running-annolid-on-google-colab">
+<h1>Running Annolid on Google Colab<a class="headerlink" href="#running-annolid-on-google-colab" title="Link to this heading">#</a></h1>
+<p>No local NVIDIA GPU? <strong>Google Colab Studio</strong> lets you run GPU-heavy Annolid training and inference (<strong>YOLO11/YOLO26</strong>, <strong>DINO KPSEG</strong>, <strong>Mask R-CNN</strong>, <strong>Keypoint R-CNN</strong>, <strong>Sim-to-Real loops</strong>, and video batch tracking) on cloud T4/L4/A100 GPUs directly from the Annolid desktop app or CLI.</p>
+<section id="launch-google-colab-studio">
+<h2>Launch Google Colab Studio<a class="headerlink" href="#launch-google-colab-studio" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>From the Annolid GUI: <strong>AI &amp; Models → Google Colab…</strong> (or click the <strong>Google Colab</strong> toolbar button, or click <strong>Run on Google Colab…</strong> from the Training / Inference Wizards).</p></li>
-<li><p>From the CLI:</p></li>
+<li><p><strong>From the Annolid GUI</strong>: Open <strong><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">&amp;</span> <span class="pre">Models</span> <span class="pre">→</span> <span class="pre">Google</span> <span class="pre">Colab…</span></code></strong>, click the <strong>Google Colab</strong> toolbar button, or click <strong><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">on</span> <span class="pre">Google</span> <span class="pre">Colab…</span></code></strong> inside the <strong>Training Wizard</strong>, <strong>Inference Wizard</strong>, or <strong>Sim-to-Real Studio</strong>.</p></li>
+<li><p><strong>From the CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span></code>)</strong>:</p></li>
 </ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>colab<span class="w"> </span>status
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check authentication and available Colab runtime status</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>status
 annolid-run<span class="w"> </span>colab<span class="w"> </span>auth<span class="w"> </span>login
-annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span>--data<span class="w"> </span>/path/to/data.yaml<span class="w"> </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span>--gpu<span class="w"> </span>T4
-annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span class="w"> </span>yolo_labelme<span class="w"> </span>--source<span class="w"> </span>/path/to/video.mp4<span class="w"> </span>--weights<span class="w"> </span>/path/to/best.pt<span class="w"> </span>--gpu<span class="w"> </span>T4
+
+<span class="c1"># Train a YOLO11 segmentation model on a Colab T4 GPU</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--data<span class="w"> </span>/path/to/data.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4
+
+<span class="c1"># Run remote YOLO inference and pull LabelMe JSONs back locally</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span class="w"> </span>yolo_labelme<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--source<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--weights<span class="w"> </span>/path/to/best.pt<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--gpu<span class="w"> </span>T4
 </pre></div>
 </div>
 </section>
-<section id="official-notebooks">
-<h2>Official Notebooks<a class="headerlink" href="#official-notebooks" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Unified Annolid Train &amp; Inference (recommended):</strong></p></li>
-</ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Colab_Train_and_Inference.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<ul class="simple">
-<li><p><strong>YOLO Instance Segmentation:</strong></p></li>
-</ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Instance_Segmentation_on_YOLO_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<ul class="simple">
-<li><p><strong>YOLO Pose Estimation:</strong></p></li>
-</ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Pose_Estimation_on_YOLO_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<ul class="simple">
-<li><p><strong>Legacy Detectron2 Mask R-CNN:</strong></p></li>
-</ul>
-<p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_on_Detectron2_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section id="official-ready-to-run-colab-notebooks">
+<h2>Official Ready-to-Run Colab Notebooks<a class="headerlink" href="#official-ready-to-run-colab-notebooks" title="Link to this heading">#</a></h2>
+<p>Click any badge to launch directly in Google Colab:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Workflow</p></th>
+<th class="head"><p>Launch in Colab</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Unified Annolid Train &amp; Inference <em>(Recommended)</em></strong></p></td>
+<td><p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Colab_Train_and_Inference.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>YOLO Instance Segmentation</strong></p></td>
+<td><p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Instance_Segmentation_on_YOLO_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>YOLO Pose Estimation</strong></p></td>
+<td><p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_Pose_Estimation_on_YOLO_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Legacy Detectron2 Mask R-CNN</strong></p></td>
+<td><p><a class="reference external" href="https://colab.research.google.com/github/healthonrails/annolid/blob/main/docs/tutorials/Annolid_on_Detectron2_Tutorial.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
-<section id="typical-workflow">
-<h2>Typical Workflow<a class="headerlink" href="#typical-workflow" title="Link to this heading">#</a></h2>
+<section id="end-to-end-cloud-workflow">
+<h2>End-to-End Cloud Workflow<a class="headerlink" href="#end-to-end-cloud-workflow" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>Label frames locally in Annolid and export a dataset (YOLO <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code>, LabelMe <code class="docutils literal notranslate"><span class="pre">spec.yaml</span></code>, or COCO folder).</p></li>
-<li><p>Authenticate via <strong>Google Colab Studio</strong> or <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span> <span class="pre">auth</span> <span class="pre">login</span></code> (supports <code class="docutils literal notranslate"><span class="pre">google-colab-cli</span></code>, Google OAuth2 for Colab API + Drive, or <code class="docutils literal notranslate"><span class="pre">gcloud</span></code> ADC).</p></li>
-<li><p>Run training or inference directly on a Colab GPU (<code class="docutils literal notranslate"><span class="pre">cli</span></code> / <code class="docutils literal notranslate"><span class="pre">api</span></code> backend) or generate a Google Drive-synced <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebook (<code class="docutils literal notranslate"><span class="pre">notebook</span></code> backend).</p></li>
-<li><p>Trained checkpoints and inference LabelMe JSONs / tracking CSVs are downloaded locally (or pulled via <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span> <span class="pre">pull</span> <span class="pre">&lt;job_id&gt;</span></code>).</p></li>
+<li><p><strong>Label locally in Annolid</strong> and export a dataset (YOLO <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code>, LabelMe <code class="docutils literal notranslate"><span class="pre">spec.yaml</span></code>, or COCO folder) — or let <strong>Sim-to-Real Studio</strong> generate one automatically.</p></li>
+<li><p><strong>Sign in once</strong> via <strong>Google Colab Studio</strong> or <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span> <span class="pre">auth</span> <span class="pre">login</span></code> (supports <code class="docutils literal notranslate"><span class="pre">google-colab-cli</span></code>, Google OAuth2 for Colab API + Drive, or <code class="docutils literal notranslate"><span class="pre">gcloud</span></code> ADC).</p></li>
+<li><p><strong>Dispatch training or inference</strong> directly to a remote GPU (<code class="docutils literal notranslate"><span class="pre">cli</span></code> / <code class="docutils literal notranslate"><span class="pre">api</span></code> backend) or generate a Google Drive-synced <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebook (<code class="docutils literal notranslate"><span class="pre">notebook</span></code> backend).</p></li>
+<li><p><strong>Pull artifacts back &amp; review</strong>: Trained <code class="docutils literal notranslate"><span class="pre">best.pt</span></code> weights, training metrics (viewable in <strong>Training Monitor <code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+V</span></code></strong>), and predicted LabelMe JSONs / tracking CSVs download locally (or pull anytime with <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">colab</span> <span class="pre">pull</span> <span class="pre">&lt;job_id&gt;</span></code>).</p></li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>For full authentication options, CLI flags, and Annolid Bot setup, see <code class="docutils literal notranslate"><span class="pre">docs/google_colab.md</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Need detailed OAuth setup instructions, Drive sync tips, or Annolid Bot cloud-job prompts? See the full <a class="reference external" href="https://annolid.com/portal/google_colab/">Google Colab Guide</a> on the Annolid Docs Portal.</p>
 </div>
 </section>
 </section>
@@ -550,20 +613,20 @@ annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span cla
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="combining_models.html"
+       href="../tutorials/COCO_and_data_formats.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Combining models</p>
+        <p class="prev-next-title">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</p>
       </div>
     </a>
     <a class="right-next"
-       href="Expert_mode_CLI_tools.html"
+       href="../tutorials/Downsample_video_batch_overrides.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Expert mode: CLI tools</p>
+        <p class="prev-next-title">Batch downsampling with sequential video review</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -585,9 +648,9 @@ annolid-run<span class="w"> </span>colab<span class="w"> </span>predict<span cla
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-google-colab-studio-in-annolid">Open Google Colab Studio in Annolid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-notebooks">Official Notebooks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typical-workflow">Typical Workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-google-colab-studio">Launch Google Colab Studio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#official-ready-to-run-colab-notebooks">Official Ready-to-Run Colab Notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#end-to-end-cloud-workflow">End-to-End Cloud Workflow</a></li>
 </ul>
   </nav></div>
 
@@ -612,7 +675,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -625,6 +688,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

@@ -1,72 +1,98 @@
-# Place preference
+# Spatial Zones & Place Preference
 
-## Labeling Places of Preference or Zones
+Spatial zone analysis measures **how long**, **how often**, and **how quickly** each tracked animal visits user-defined regions of an arena — such as open-field center vs. periphery, elevated-plus-maze arms, conditioned place-preference chambers, or three-chamber social zones.
 
-We recommend labeling only the first frame of your video for the zones. Draw polygons around the zones of interest and include the keyword "zone" in the label description field, as shown in the image below.
-![Labeling Zones](../images/place_preference_zone.png)
+```{figure} ../images/showcase/mouse083_zone_analysis.png
+---
+name: zones-mouse083-example
+alt: Three home-cage arena zones overlaid with tracked mouse centroids and computed zone occupancy bar chart
+width: 96%
+---
+Example zone layout (`left_nest_zone`, `center_arena`, `right_port_zone`) scored on `mouse083_task1_annotator1` with `annolid-run zone-analysis`.
+```
 
-## Running Place Preference Analysis
+## Method 1 (Recommended): Zone Dock & `annolid-run zone-analysis`
 
-1. Go to the File menu and click on "Place Preference" as shown in the image below.
-![Place Preference Menu](../images/place_preference_menu.png)
+Annolid's modern **Zones** workflow supports **polygons**, **rectangles**, and **2-point circles**, saves reusable `*_zones.json` files with explicit `semantic_type=zone` metadata, and includes one-click arena presets (such as `3×3 Chamber Layout` and `3×3 Social Door Layout`).
 
-2. In the pop-up dialog, select the tracked video file. An example is shown below.
-![Place Preference Dialog](../images/place_preference_dialog.png)
+### Step 1: Draw & Save Reusable Zones in the GUI
 
-3. Click the "Analyze" button. The analysis will calculate the duration, in seconds, that the instances specified remain within the defined zones.
+1. Open your video in Annolid (`File → Open Video`) on a clear reference frame.
+2. Open **`Video Tools → Zones`** (or draw polygons on Frame 0 and add `zone` in the label description / zone flag).
+3. Name each region clearly (for example `left_nest_zone`, `center_arena`, `right_port_zone`).
+4. Save the zone layout as `<session>_zones.json` so you can reuse the exact same chamber geometry across every trial recorded on that rig!
 
+```{figure} ../images/place_preference_zone.png
+---
+name: zones-draw-first-frame
+alt: Drawing zone polygons on the first frame of a video and tagging them with the zone keyword
+width: 92%
+---
+Labeling arena zones on a clean reference frame in Annolid.
+```
 
-## Converting and Featuring SLEAP Keypoint Predictions with Annolid
-[[](https://i9.ytimg.com/vi_webp/tvLHj-Nwu-Y/mq2.webp?sqp=COCIxbEG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLA8dAP3_nEJsDAFYf02EJ9ct147UQ)](https://youtu.be/tvLHj-Nwu-Y?si=G7gXjQM4Oh9Ob5ix)
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tvLHj-Nwu-Y?si=ddyWwA2Wedypnoim" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### Step 2: Score Occupancy & Latency (GUI or CLI)
 
-In this tutorial, we'll walk through the process of converting SLEAP keypoint predictions into JSON files and featuring them with Annolid for tracking purposes. Let's dive in!
+- **In the GUI**: Open **`File → Place Preference`** (or **`Analysis → Analysis & Reporting Studio…`**), select your tracked video / CSV and zone file, and click **Analyze**.
 
-## Prerequisites
+:::::{container} ann-pair
 
-Before getting started, ensure you have the following:
+:::{figure} ../images/place_preference_menu.png
+:alt: Opening Place Preference from the Annolid File menu
+Launch Place Preference from the menu bar.
+:::
 
-- SLEAP prediction H5 format file
-- AI Polygon for zone creation
-- Annolid installed and configured
+:::{figure} ../images/place_preference_dialog.png
+:alt: Place Preference dialog selecting tracked video and zone parameters
+Select your tracked video or CSV and click **Analyze**.
+:::
 
-## Steps
+:::::
 
-### 1. Create Zone File
+- **From the CLI (`annolid-run zone-analysis`)**:
 
-- Open your video file.
-- Use AI Polygon to automatically create zone shapes.
-- Name the zones and specify the keyword "zone" in the label description field.
+```bash
+# Generic zone metrics (occupancy %, duration, entries, latency, mean/max visit dwell)
+annolid-run zone-analysis mouse083_tracked.csv \
+  --zone-file mouse083_zones.json \
+  --fps 30 \
+  --mode zone_metrics \
+  --output-dir ./zone_out
 
-### 2. Load SLEAP Prediction File
+# Open-field or assay summary + visit events CSV
+annolid-run zone-analysis session.mp4 \
+  --zone-file session_zones.json \
+  --profile open_field \
+  --mode assay_summary \
+  --events-csv zone_visits.csv
+```
 
-- Go to the file menu and select "Load SLEAP h5"
-- Click the "run" button to initiate the conversion to Labelme JSON format.
+```{tip}
+**Three-chamber social assays:** Mark connecting tunnels with `zone_kind=connector_tube` (or `occupant_role=neutral`) so neutral transit time is reported separately from social-chamber preference. See the full [Zone Analysis Reference](https://annolid.com/portal/zone_analysis/) on the Docs Portal.
+```
 
-### 3. Save Keypoints to JSON
+---
 
-- Once the conversion is complete, save the JSON files containing the keypoints on your desktop.
+## Bonus Walkthrough: Importing SLEAP Predictions for Zone Analysis
 
-### 4. Load Files into Annolid
+Already tracked keypoints in **SLEAP** (`.slp`, `.pkg.slp`, or `.analysis.h5`) or **DeepLabCut** (`.csv` / `.h5`)? You can import them straight into Annolid, review/edit frames visually, overlay your zones, and export CSV or HTML5 reports!
 
-- Open Annolid.
-- Load the the video file and Annolid will load JSON files automatically for further reviewing or editing.
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/tvLHj-Nwu-Y" title="Converting and analyzing SLEAP keypoint predictions in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-### 5. Conversion Verification
+### GUI Steps (SLEAP → Annolid → Zones)
 
-- Check the conversions across frames to ensure the predictions are accurate.
+1. **Create your zone file**: Open the video, draw arena zones on Frame 0, and save your `*_zones.json`.
+2. **Import SLEAP predictions**: Open **`Tools → SLEAP (.slp / .h5) Import & Export…`** (or **`File → Load SLEAP h5`**), select your `.slp`, `.pkg.slp`, or `.analysis.h5` file, and run conversion to Annolid LabelMe JSON.
+3. **Inspect in Annolid**: Open the video in Annolid — converted keypoint overlays and skeleton bones load automatically so you can verify frames and fix any swaps.
+4. **Export CSV & analyze**: Run **`File → Save CSV`** (or `annolid-run zone-analysis` directly on the converted folder) to quantify zone occupancy and visits.
 
-### 6. Optional: Convert to CSV
+### Fast CLI Equivalent
 
-- If needed, convert the JSON file format of the keypoints to CSV format.
-- Click on the file menu and select "Save CSV."
-- Locate the folder containing the JSON files and click the "run" button to generate and save the CSV files to disk.
+```bash
+# Import SLEAP .analysis.h5 or .pkg.slp directly to Annolid LabelMe JSON
+annolid-run import-pose predictions.analysis.h5 --video trial.mp4 -o ./sleap_labelme
+```
 
-### 7. Additional Features
-
-- Annolid automatically converts the keypoints to smaller circles around their center with a radius of 10 pixels.
-- Random 10 points are drawn on each circle.
-
-## Conclusion
-
-By following these steps, you can efficiently convert SLEAP keypoint predictions into JSON files and utilize Annolid for tracking and analysis purposes. Happy tracking!
+For bidirectional **DeepLabCut**, **Lightning Pose**, **SLEAP**, and **SimBA** recipes, see [Model Training & Pose Interoperability](../content/model_training.md).

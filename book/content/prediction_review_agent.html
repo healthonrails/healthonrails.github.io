@@ -1,0 +1,777 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Annolid Bot &amp; Guided Track Review &#8212; The Annolid Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/prediction_review_agent';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integrations: MCP, Memory, Cloud Storage &amp; Security" href="../tutorials/Integrations_mcp_cloud_memory.html" />
+    <link rel="prev" title="3D Digital Animal Twins &amp; Sim-to-Real Studio" href="../tutorials/Simulation_3d_digital_twins.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    The Annolid Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/prediction_review_agent.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/issues/new?title=Issue%20on%20page%20%2Fcontent/prediction_review_agent.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/prediction_review_agent.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Annolid Bot & Guided Track Review</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-setting-up-annolid-bot">Opening &amp; Setting Up Annolid Bot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyday-slash-commands-copy-paste">Everyday Slash Commands (Copy &amp; Paste)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-language-prompts-that-work-great">Natural-Language Prompts That Work Great</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-guided-track-review-loop-shapes-qc-behaviors">The Guided Track-Review Loop (Shapes → QC → Behaviors)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-safety-tool-inspection">Built-In Safety &amp; Tool Inspection</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="annolid-bot-guided-track-review">
+<h1>Annolid Bot &amp; Guided Track Review<a class="headerlink" href="#annolid-bot-guided-track-review" title="Link to this heading">#</a></h1>
+<p>Instead of remembering menu locations or complex CLI flags, you can work with <strong>Annolid Bot</strong> right inside the Annolid desktop window to launch tracking, score 1-second behavior clips, audit track quality, generate HTML5 reports, and kick off Sim-to-Real pipelines in plain language.</p>
+<figure class="align-default" id="bot-gui-dock">
+<a class="reference internal image-reference" href="../_images/annolid_bot_gui_dock.png"><img alt="Annolid Bot chat dock inside the Annolid desktop GUI showing model selector, quick action buttons, prompt bar, and suggested skills" src="../_images/annolid_bot_gui_dock.png" style="width: 88%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 63 </span><span class="caption-text">The <strong>Annolid Bot</strong> dock (<code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">&amp;</span> <span class="pre">Models</span> <span class="pre">→</span> <span class="pre">Annolid</span> <span class="pre">Bot…</span></code>) sits beside your video canvas with quick action buttons, skill suggestions, and typed tool execution.</span><a class="headerlink" href="#bot-gui-dock" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="opening-setting-up-annolid-bot">
+<h2>Opening &amp; Setting Up Annolid Bot<a class="headerlink" href="#opening-setting-up-annolid-bot" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>In the desktop app, click <strong><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">&amp;</span> <span class="pre">Models</span> <span class="pre">→</span> <span class="pre">Annolid</span> <span class="pre">Bot…</span></code></strong>.</p></li>
+<li><p>Choose your LLM/VLM provider (local <strong>Ollama</strong> models for 100% private lab data, or hosted <strong>OpenAI</strong> / <strong>Anthropic</strong> / <strong>Gemini</strong> APIs configured in <strong>Settings</strong>).</p></li>
+<li><p>Send messages with <strong><code class="docutils literal notranslate"><span class="pre">Ctrl+Enter</span></code></strong> (<code class="docutils literal notranslate"><span class="pre">Cmd+Enter</span></code> on macOS).</p></li>
+</ol>
+<figure class="align-default" id="bot-dock-closeup">
+<a class="reference internal image-reference" href="../_images/annolid_bot_dock_closeup.png"><img alt="Close-up of the Annolid Bot dock showing quick actions like Label 1s Behaviors and suggested skills" src="../_images/annolid_bot_dock_closeup.png" style="width: 72%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 64 </span><span class="caption-text">Quick-launch buttons inside the Annolid Bot dock let you trigger 1-second behavior labeling or inspect the active workspace directly.</span><a class="headerlink" href="#bot-dock-closeup" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="everyday-slash-commands-copy-paste">
+<h2>Everyday Slash Commands (Copy &amp; Paste)<a class="headerlink" href="#everyday-slash-commands-copy-paste" title="Link to this heading">#</a></h2>
+<p>Type <code class="docutils literal notranslate"><span class="pre">/</span></code> in the Annolid Bot chat box to run structured, repeatable workflows immediately:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Slash Command</p></th>
+<th class="head"><p>What It Does</p></th>
+<th class="head"><p>Example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">/track</span></code></strong></p></td>
+<td><p>Opens a guided form or runs Cutie / SAM3 tracking on your video</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/track</span> <span class="pre">video=/path/to/trial.mp4</span> <span class="pre">prompt=&quot;mouse&quot;</span> <span class="pre">model=Cutie</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">/qc</span></code></strong></p></td>
+<td><p>Runs automated Track QC &amp; gap audits on tracking CSVs or frame folders</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/qc</span> <span class="pre">/path/to/mouse083_tracked.csv</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">/stats</span></code></strong></p></td>
+<td><p>Computes kinematics, speed, freezing bouts, and telemetry summaries</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/stats</span> <span class="pre">/path/to/mouse083_tracked.csv</span> <span class="pre">px_per_cm=12.5</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">/report</span></code></strong></p></td>
+<td><p>Generates a unified HTML5 + inline SVG + Markdown + JSON scientific report</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/report</span> <span class="pre">/path/to/mouse083_tracked.csv</span> <span class="pre">px_per_cm=12.5</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">/sim2real</span></code></strong></p></td>
+<td><p>Opens <strong>Sim-to-Real Studio</strong> for zero-label 3D synthetic bootstrapping</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">/sim2real</span> <span class="pre">project=./my_sim2real</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="natural-language-prompts-that-work-great">
+<h2>Natural-Language Prompts That Work Great<a class="headerlink" href="#natural-language-prompts-that-work-great" title="Link to this heading">#</a></h2>
+<p>You can also ask Annolid Bot in plain English:</p>
+<ul>
+<li><p><strong>Behavior segment scoring</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Label behavior in /path/to/video.mp4 with labels investigation, mount, grooming every 1s
+</pre></div>
+</div>
+</li>
+<li><p><strong>SAM3 long-video tracking &amp; NDJSON occlusion repair</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Inspect /path/to/video.mp4, run a dry run of sam3_agent_video_track with prompt "mouse", then track forward.
+</pre></div>
+</div>
+</li>
+<li><p><strong>Sim-to-Real background job</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Sample my mouse videos in ./recordings, generate a matching 3D mouse pose dataset (calms7), and train a YOLO pose model on Colab in the background.
+</pre></div>
+</div>
+</li>
+<li><p><strong>3D digital twin preview</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>open threejs example two mice
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="the-guided-track-review-loop-shapes-qc-behaviors">
+<h2>The Guided Track-Review Loop (Shapes → QC → Behaviors)<a class="headerlink" href="#the-guided-track-review-loop-shapes-qc-behaviors" title="Link to this heading">#</a></h2>
+<p>When you track thousands of frames, reviewing every single frame manually is impossible. Annolid’s guided review workflow narrows your attention to the exact 0.5% of frames that matter:</p>
+<figure class="align-default" id="bot-hitl-loop">
+<a class="reference internal image-reference" href="../_images/human_in_the_loop_animation.gif"><img alt="Animated 4-step human-in-the-loop tracking and QC review cycle" src="../_images/human_in_the_loop_animation.gif" style="width: 92%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 65 </span><span class="caption-text">Combine automatic propagation with Track QC alerts so you fix only genuine occlusion or swap frames.</span><a class="headerlink" href="#bot-hitl-loop" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p><strong>Run Track QC</strong> via <code class="docutils literal notranslate"><span class="pre">/qc</span></code> in Annolid Bot or <strong><code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">→</span> <span class="pre">Analysis</span> <span class="pre">&amp;</span> <span class="pre">Reporting</span> <span class="pre">Studio…</span> <span class="pre">→</span> <span class="pre">Track</span> <span class="pre">QC</span> <span class="pre">&amp;</span> <span class="pre">Gaps</span></code></strong>.</p></li>
+<li><p><strong>Sort by severity</strong>: Annolid ranks velocity spikes, missing-instance dropouts, area jumps, and ID-swap suspects into a prioritized manual review queue.</p></li>
+<li><p><strong>Jump &amp; repair</strong>: Double-click any alert row to jump the main video canvas directly to that exact frame. Fix the polygon or keypoint, press <code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code>, and re-propagate cleanly (with Cutie or SAM3 Agent).</p></li>
+<li><p><strong>Verify &amp; score behaviors</strong>: Once tracks pass QC, score ethogram bouts using <strong>Flags</strong>, <strong>Timeline</strong>, or <strong>Annolid Bot</strong> 1-second segment labeling, then run <code class="docutils literal notranslate"><span class="pre">/report</span></code> for your unified HTML5/SVG summary.</p></li>
+</ol>
+</section>
+<section id="built-in-safety-tool-inspection">
+<h2>Built-In Safety &amp; Tool Inspection<a class="headerlink" href="#built-in-safety-tool-inspection" title="Link to this heading">#</a></h2>
+<p>Annolid Bot routes CLI operations through a <strong>typed <code class="docutils literal notranslate"><span class="pre">annolid_run</span></code> tool</strong> with explicit path sandboxing and mutation guardrails:</p>
+<ul class="simple">
+<li><p><strong>Read-only discovery commands</strong> (<code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">list-models</span></code>, <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">agent-status</span></code>, <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">help</span> <span class="pre">train</span></code>) run safely out of the box.</p></li>
+<li><p><strong>State-changing operations</strong> (such as launching training, modifying files, or running updates) require explicit opt-in and respect workspace <code class="docutils literal notranslate"><span class="pre">allowed_read_roots</span></code>.</p></li>
+<li><p>Open the <strong>Capabilities &amp; Skills Inspector</strong> inside Annolid Bot to see every allowed tool and automatically matched research skill:</p></li>
+</ul>
+<figure class="align-default" id="bot-capabilities-inspector">
+<a class="reference internal image-reference" href="../_images/annolid_bot_capabilities.png"><img alt="Annolid Bot Capabilities Inspector showing allowed tools, available skills, and task-matched skill suggestions" src="../_images/annolid_bot_capabilities.png" style="width: 92%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 66 </span><span class="caption-text">Inspect active tool policies, workspace scope, and context-matched research skills in one click.</span><a class="headerlink" href="#bot-capabilities-inspector" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Want to connect external <strong>MCP</strong> servers, Google Drive / Calendar, LanceDB memory, or customize security policies? See the full <a class="reference external" href="https://annolid.com/portal/agent_and_automation/">Agent &amp; Automation Portal</a> and <a class="reference external" href="https://annolid.com/portal/agent_security/">Agent Security Guide</a>.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../tutorials/Simulation_3d_digital_twins.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3D Digital Animal Twins &amp; Sim-to-Real Studio</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../tutorials/Integrations_mcp_cloud_memory.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integrations: MCP, Memory, Cloud Storage &amp; Security</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-setting-up-annolid-bot">Opening &amp; Setting Up Annolid Bot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everyday-slash-commands-copy-paste">Everyday Slash Commands (Copy &amp; Paste)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-language-prompts-that-work-great">Natural-Language Prompts That Work Great</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-guided-track-review-loop-shapes-qc-behaviors">The Guided Track-Review Loop (Shapes → QC → Behaviors)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-safety-tool-inspection">Built-In Safety &amp; Tool Inspection</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

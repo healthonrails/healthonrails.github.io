@@ -1,0 +1,811 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hierarchical Instance Body-Part Segmentation &#8212; The Annolid Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Body_part_segmentation';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DINOv3 Keypoint Tracking" href="DINOv3_keypoint_tracking.html" />
+    <link rel="prev" title="Segment-Based Batch Tracking &amp; Long-Video Scale-Up" href="Segment_based_batch_tracking.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../content/README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../content/README.html">
+                    The Annolid Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/how_to_install.html">Installation Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Preparing &amp; Compressing Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/downsample_and_crop_videos.html">Downsample and crop videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hierarchical Instance Body-Part Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/licence.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/tutorials/Body_part_segmentation.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/issues/new?title=Issue%20on%20page%20%2Ftutorials/Body_part_segmentation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/Body_part_segmentation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hierarchical Instance Body-Part Segmentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-hierarchical-body-part-segmentation">Why Hierarchical Body-Part Segmentation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-your-mode-feature-backbone">Choose Your Mode &amp; Feature Backbone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-in-gui-cli-or-python">Run in GUI, CLI, or Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-compact-cutie-sam3-body-parts-distilled-tracker">Bonus: Compact <code class="docutils literal notranslate"><span class="pre">Cutie</span> <span class="pre">(SAM3</span> <span class="pre">Body</span> <span class="pre">Parts)</span></code> Distilled Tracker</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hierarchical-instance-body-part-segmentation">
+<h1>Hierarchical Instance Body-Part Segmentation<a class="headerlink" href="#hierarchical-instance-body-part-segmentation" title="Link to this heading">#</a></h1>
+<p>Standard video trackers follow an animal’s <strong>whole body</strong> (<code class="docutils literal notranslate"><span class="pre">mouse_1</span></code>, <code class="docutils literal notranslate"><span class="pre">mouse_2</span></code>). <strong>Instance Body Part Segmentation</strong> goes one level deeper: it decomposes each tracked parent polygon into non-overlapping anatomical sub-regions — such as <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">torso</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code>, limbs, snout, or wings — <strong>strictly inside each animal’s own ROI</strong>.</p>
+<figure class="align-default" id="body-parts-pipeline">
+<a class="reference internal image-reference" href="../_images/body_part_segmentation_pipeline.png"><img alt="Four-stage hierarchical body-part segmentation pipeline from tracked parent ROIs through canonical pose frame and mode selection to disjoint part outputs" src="../_images/body_part_segmentation_pipeline.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 28 </span><span class="caption-text">Every animal is segmented independently inside its own hard-masked parent crop — preventing cross-animal bleed even during tight social huddles.</span><a class="headerlink" href="#body-parts-pipeline" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="why-hierarchical-body-part-segmentation">
+<h2>Why Hierarchical Body-Part Segmentation?<a class="headerlink" href="#why-hierarchical-body-part-segmentation" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Zero cross-animal bleed</strong>: Pixels outside a parent animal’s mask are strictly excluded, even during nose-to-body investigation or mounting.</p></li>
+<li><p><strong>Merged-parent huddle recovery</strong>: When two animals temporarily merge into one parent blob, edge-weighted geodesic + Lab color splitting separates them and freezes prototype drift.</p></li>
+<li><p><strong>Disjoint sub-parts</strong>: Sibling parts inside one animal never overlap (<code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">torso</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code> partition cleanly).</p></li>
+<li><p><strong>360° coiled-posture invariance</strong>: Uses a pose-normalized body frame with an intrinsic masked geodesic spine so C-shaped, U-shaped, and coiled animals stay cleanly oriented.</p></li>
+</ul>
+<figure class="align-default" id="body-parts-benchmark-preview">
+<a class="reference internal image-reference" href="../_images/sim_body_part_segmentation.png"><img alt="Side-by-side comparison of 3D ground truth vs Annolid predicted head, torso, and tail body-part segmentation" src="../_images/sim_body_part_segmentation.png" style="width: 96%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 29 </span><span class="caption-text">Ground-truth 3D anatomical parts vs. Annolid hierarchical body-part predictions on interacting resident-intruder mice.</span><a class="headerlink" href="#body-parts-benchmark-preview" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="choose-your-mode-feature-backbone">
+<h2>Choose Your Mode &amp; Feature Backbone<a class="headerlink" href="#choose-your-mode-feature-backbone" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Mode (<code class="docutils literal notranslate"><span class="pre">--mode</span></code>)</p></th>
+<th class="head"><p>Inputs Required</p></th>
+<th class="head"><p>Best For</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">auto</span></code></strong> <em>(default)</em></p></td>
+<td><p>Tracked parent polygons (+ optional seed parts or keypoints)</p></td>
+<td><p>Picks <code class="docutils literal notranslate"><span class="pre">seeded</span></code> if part polygons exist, <code class="docutils literal notranslate"><span class="pre">keypoint_guided</span></code> if keypoints exist, or <code class="docutils literal notranslate"><span class="pre">unsupervised</span></code> otherwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">seeded</span></code></strong></p></td>
+<td><p>Manual part polygons drawn on 1+ seed frames (one animal is enough!)</p></td>
+<td><p>Custom parts (<code class="docutils literal notranslate"><span class="pre">snout</span></code>, <code class="docutils literal notranslate"><span class="pre">ear</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">torso</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code>) or partial labeling (<code class="docutils literal notranslate"><span class="pre">head</span></code> only).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">keypoint_guided</span></code></strong></p></td>
+<td><p>Tracked parent polygons + sparse keypoints (DINOv3, YOLO-Pose, TAPNext)</p></td>
+<td><p>Turning sparse skeletons into dense anatomical masks without drawing part polygons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">unsupervised</span></code></strong></p></td>
+<td><p>Tracked parent polygons only</p></td>
+<td><p>Fast axial decomposition (<code class="docutils literal notranslate"><span class="pre">anterior</span></code>/<code class="docutils literal notranslate"><span class="pre">posterior</span></code> or <code class="docutils literal notranslate"><span class="pre">head</span></code>/<code class="docutils literal notranslate"><span class="pre">torso</span></code>/<code class="docutils literal notranslate"><span class="pre">tail</span></code>) with zero supervision.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Backbone (<code class="docutils literal notranslate"><span class="pre">--backbone</span></code>)</p></th>
+<th class="head"><p>Speed &amp; Dependencies</p></th>
+<th class="head"><p>When to Pick</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">fast</span></code></strong> <em>(default)</em></p></td>
+<td><p>~1–3 ms/crop on CPU (OpenCV + NumPy only)</p></td>
+<td><p>Everyday default for long recordings and laptops.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">dino</span></code></strong></p></td>
+<td><p>PyTorch + <code class="docutils literal notranslate"><span class="pre">transformers</span></code> (DINOv3 ViT patch features)</p></td>
+<td><p>Strongest semantic invariance across coat patterns or lighting shifts.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">hybrid</span></code></strong></p></td>
+<td><p>DINOv3 semantics + high-resolution Lab/gradient edges</p></td>
+<td><p>Sharpest boundaries + stability on CUDA / Apple Silicon MPS.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="run-in-gui-cli-or-python">
+<h2>Run in GUI, CLI, or Python<a class="headerlink" href="#run-in-gui-cli-or-python" title="Link to this heading">#</a></h2>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label aria-controls="sd-tab-item-0-content" class="sd-tab-label" for="sd-tab-item-0">
+Desktop GUI</label><div class="sd-tab-content docutils" id="sd-tab-item-0-content">
+<ol class="arabic simple">
+<li><p>Track your whole animals first (with <strong><a class="reference internal" href="../content/tracking_with_Cutie.html"><span class="std std-doc">Cutie</span></a></strong>, <strong><a class="reference internal" href="SAM3_video_tracking.html"><span class="std std-doc">SAM3</span></a></strong>, or <strong>YOLO</strong>).</p></li>
+<li><p><em>(Optional, for <code class="docutils literal notranslate"><span class="pre">seeded</span></code> mode)</em> Draw body-part polygons (<code class="docutils literal notranslate"><span class="pre">head</span></code>, <code class="docutils literal notranslate"><span class="pre">torso</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code>) inside <strong>one</strong> animal on a clear frame and press <code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code> — prototypes automatically share across other animals of the same species.</p></li>
+<li><p>Choose <strong><code class="docutils literal notranslate"><span class="pre">Instance</span> <span class="pre">Body</span> <span class="pre">Part</span> <span class="pre">Segmentation</span></code></strong> in the top <strong>AI Model</strong> dropdown and click <strong><code class="docutils literal notranslate"><span class="pre">Pred</span></code></strong>.</p></li>
+</ol>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label aria-controls="sd-tab-item-1-content" class="sd-tab-label" for="sd-tab-item-1">
+CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</label><div class="sd-tab-content docutils" id="sd-tab-item-1-content">
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fast CPU auto mode + CSV export</span>
+annolid-run<span class="w"> </span>segment-body-parts<span class="w"> </span>/path/to/social_assay.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>auto<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backbone<span class="w"> </span>fast<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--export-csv
+
+<span class="c1"># Keypoint-guided fine body parts using a PoseSchema</span>
+annolid-run<span class="w"> </span>segment-body-parts<span class="w"> </span>/path/to/fly_courtship.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--annotations<span class="w"> </span>/path/to/fly_courtship<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>keypoint_guided<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--keypoint-granularity<span class="w"> </span>fine<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--pose-schema<span class="w"> </span>/path/to/pose_schema.yaml<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--export-csv
+
+<span class="c1"># Seeded mode with hybrid DINOv3 + Lab/gradient features</span>
+annolid-run<span class="w"> </span>segment-body-parts<span class="w"> </span>/path/to/session.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>seeded<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--backbone<span class="w"> </span>hybrid<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--dino-model<span class="w"> </span>facebook/dinov3-vits16-pretrain-lvd1689m<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--qualify-labels<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>/path/to/session/body_part_report.json
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label aria-controls="sd-tab-item-2-content" class="sd-tab-label" for="sd-tab-item-2">
+Python API</label><div class="sd-tab-content docutils" id="sd-tab-item-2-content">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.segmentation</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BodyPartSegmentationConfig</span><span class="p">,</span>
+    <span class="n">InstanceBodyPartVideoProcessor</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">config</span> <span class="o">=</span> <span class="n">BodyPartSegmentationConfig</span><span class="p">(</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
+    <span class="n">feature_backend</span><span class="o">=</span><span class="s2">"fast"</span><span class="p">,</span>
+    <span class="n">crop_size</span><span class="o">=</span><span class="mi">224</span><span class="p">,</span>
+    <span class="n">guided_radius</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">split_merged_parent_masks</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">processor</span> <span class="o">=</span> <span class="n">InstanceBodyPartVideoProcessor</span><span class="p">(</span>
+    <span class="s2">"/path/to/video.mp4"</span><span class="p">,</span>
+    <span class="n">results_folder</span><span class="o">=</span><span class="s2">"/path/to/video"</span><span class="p">,</span>
+    <span class="n">body_part_config</span><span class="o">=</span><span class="n">config</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">summary</span> <span class="o">=</span> <span class="n">processor</span><span class="o">.</span><span class="n">process_video_frames</span><span class="p">(</span><span class="n">start_frame</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">processor</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="bonus-compact-cutie-sam3-body-parts-distilled-tracker">
+<h2>Bonus: Compact <code class="docutils literal notranslate"><span class="pre">Cutie</span> <span class="pre">(SAM3</span> <span class="pre">Body</span> <span class="pre">Parts)</span></code> Distilled Tracker<a class="headerlink" href="#bonus-compact-cutie-sam3-body-parts-distilled-tracker" title="Link to this heading">#</a></h2>
+<p>Prefer direct VOS propagation of both whole animals and body parts in a single Cutie pass? Select <strong><code class="docutils literal notranslate"><span class="pre">Cutie</span> <span class="pre">(SAM3</span> <span class="pre">Body</span> <span class="pre">Parts)</span></code></strong> in the model dropdown:</p>
+<ul class="simple">
+<li><p>Dual-teacher distilled (<code class="docutils literal notranslate"><span class="pre">SAM</span> <span class="pre">3.1</span></code> + <code class="docutils literal notranslate"><span class="pre">DINOv3</span> <span class="pre">ViT-L/16</span></code>) and compressed <strong>4.43× smaller</strong> (<code class="docutils literal notranslate"><span class="pre">133.9</span> <span class="pre">MB</span> <span class="pre">→</span> <span class="pre">30.3</span> <span class="pre">MB</span></code>, <strong>55% fewer parameters</strong>).</p></li>
+<li><p>Runs <strong>1.48× faster on CPU</strong> and up to <strong>2.72× faster on Apple Silicon MPS</strong>, while raising held-out body-part <code class="docutils literal notranslate"><span class="pre">J&amp;F</span></code> from <code class="docutils literal notranslate"><span class="pre">0.780</span></code> to <code class="docutils literal notranslate"><span class="pre">0.813</span></code>.</p></li>
+<li><p>Original <strong><code class="docutils literal notranslate"><span class="pre">Cutie</span></code></strong> remains untouched as the default for strict backward compatibility.</p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Want deeper parameter tuning (<code class="docutils literal notranslate"><span class="pre">--partial-parts</span></code>, <code class="docutils literal notranslate"><span class="pre">--num-parts</span></code>, <code class="docutils literal notranslate"><span class="pre">--no-split-merged-parents</span></code>)? See the full <a class="reference external" href="https://annolid.com/portal/body_part_segmentation/">Instance Body Part Segmentation Guide</a> on the Docs Portal.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Segment_based_batch_tracking.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DINOv3_keypoint_tracking.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">DINOv3 Keypoint Tracking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-hierarchical-body-part-segmentation">Why Hierarchical Body-Part Segmentation?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-your-mode-feature-backbone">Choose Your Mode &amp; Feature Backbone</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-in-gui-cli-or-python">Run in GUI, CLI, or Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-compact-cutie-sam3-body-parts-distilled-tracker">Bonus: Compact <code class="docutils literal notranslate"><span class="pre">Cutie</span> <span class="pre">(SAM3</span> <span class="pre">Body</span> <span class="pre">Parts)</span></code> Distilled Tracker</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Model training &#8212; Annolid Start Here</title>
+    <title>Model Training &amp; Pose Interoperability &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/model_training';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Combining models" href="combining_models.html" />
-    <link rel="prev" title="Video Depth Anything (Depth Estimation)" href="video_depth_anything.html" />
+    <link rel="next" title="Combining Models &amp; Multi-Tool Pipelines" href="combining_models.html" />
+    <link rel="prev" title="Track QC, Statistics &amp; HTML5 Reports" href="../tutorials/Reporting_and_track_qc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/model_training.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Model training</h1>
+    <h1>Model Training & Pose Interoperability</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,13 +500,14 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-recommended-train-yolo-segmentation-pose">Option A (recommended): train YOLO segmentation/pose</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-yolo-dataset-from-your-annolid-labels">1) Create a YOLO dataset from your Annolid labels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-from-the-annolid-gui">2) Train from the Annolid GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-path-fine-tune-yolo11-yolo26-yoloe">Recommended Path: Fine-Tune YOLO11 / YOLO26 / YOLOE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-prepare-or-export-your-dataset">Step 1: Prepare or Export Your Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-pick-a-fine-tuning-preset-in-the-training-wizard">Step 2: Pick a Fine-Tuning Preset in the Training Wizard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-monitor-runs-compare-experiments-ctrl-shift-v">Step 3: Monitor Runs &amp; Compare Experiments (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+V</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-mask-r-cnn-via-detectron2-optional">Option B: Mask R-CNN via Detectron2 (optional)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coco-export">COCO export</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bidirectional-deeplabcut-sleap-coco-interoperability">Bidirectional DeepLabCut, SLEAP &amp; COCO Interoperability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-legacy-mask-r-cnn-via-detectron2">Optional: Legacy Mask R-CNN via Detectron2</a></li>
 </ul>
             </nav>
         </div>
@@ -473,60 +519,112 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="model-training">
-<h1>Model training<a class="headerlink" href="#model-training" title="Link to this heading">#</a></h1>
-<p>You do <strong>not</strong> always need to train a model to use Annolid effectively. For many videos, you can label a single frame and track with a video-object-segmentation backend (e.g., Cutie / EfficientTAM-style trackers), then review and correct.</p>
-<p>Train a model when you need:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="model-training-pose-interoperability">
+<h1>Model Training &amp; Pose Interoperability<a class="headerlink" href="#model-training-pose-interoperability" title="Link to this heading">#</a></h1>
+<p>You do <strong>not</strong> always need to train a custom neural network to succeed with Annolid. For single trials or small pilot studies, labeling 1 frame and propagating with <strong><a class="reference internal" href="tracking_with_Cutie.html"><span class="std std-doc">Cutie</span></a></strong>, <strong><a class="reference internal" href="../tutorials/SAM3_video_tracking.html"><span class="std std-doc">SAM3</span></a></strong>, <strong><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html"><span class="std std-doc">INSID3</span></a></strong>, or <strong><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html"><span class="std std-doc">DINOv3 Keypoints</span></a></strong> is often faster.</p>
+<p>Train a custom model when you need:</p>
 <ul class="simple">
-<li><p>higher speed for long recordings,</p></li>
-<li><p>better generalisation to your camera/arena/species,</p></li>
-<li><p>a domain-specific detector/segmenter (e.g., custom objects, special backgrounds),</p></li>
-<li><p>a pose model with named keypoints.</p></li>
+<li><p><strong>high-throughput speed</strong> across dozens or hundreds of cohort videos,</p></li>
+<li><p><strong>real-time camera inference</strong> (for closed-loop or wireless camera setups),</p></li>
+<li><p><strong>generalization</strong> across sessions, arenas, or species, or</p></li>
+<li><p><strong>reusable multi-animal pose estimation</strong> with named anatomical skeletons.</p></li>
 </ul>
-<section id="option-a-recommended-train-yolo-segmentation-pose">
-<h2>Option A (recommended): train YOLO segmentation/pose<a class="headerlink" href="#option-a-recommended-train-yolo-segmentation-pose" title="Link to this heading">#</a></h2>
-<p>Annolid integrates Ultralytics YOLO for segmentation and pose.</p>
-<section id="create-a-yolo-dataset-from-your-annolid-labels">
-<h3>1) Create a YOLO dataset from your Annolid labels<a class="headerlink" href="#create-a-yolo-dataset-from-your-annolid-labels" title="Link to this heading">#</a></h3>
+<section id="recommended-path-fine-tune-yolo11-yolo26-yoloe">
+<h2>Recommended Path: Fine-Tune YOLO11 / YOLO26 / YOLOE<a class="headerlink" href="#recommended-path-fine-tune-yolo11-yolo26-yoloe" title="Link to this heading">#</a></h2>
+<p>Annolid integrates Ultralytics <strong>YOLO11</strong>, <strong>YOLO26</strong>, and open-vocabulary <strong>YOLOE</strong> for detection, instance segmentation, and pose estimation — with guided presets for small lab datasets.</p>
+<section id="step-1-prepare-or-export-your-dataset">
+<h3>Step 1: Prepare or Export Your Dataset<a class="headerlink" href="#step-1-prepare-or-export-your-dataset" title="Link to this heading">#</a></h3>
+<p>Annolid’s <strong>Training Wizard</strong> and <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code> accept any of these directly:</p>
+<ul class="simple">
+<li><p>a standard YOLO <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code> (or folder containing <code class="docutils literal notranslate"><span class="pre">YOLO_dataset/data.yaml</span></code>),</p></li>
+<li><p>a <strong>COCO</strong> dataset folder (detection, polygon/RLE segmentation, or keypoints — auto-converted non-destructively), or</p></li>
+<li><p><strong>Annolid LabelMe JSON</strong> frames exported via <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Convert</span> <span class="pre">Labelme</span> <span class="pre">to</span> <span class="pre">YOLO</span> <span class="pre">format</span></code></strong> or the CLI:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modern dataset index -&gt; YOLO export</span>
+annolid-run<span class="w"> </span>collect-labels<span class="w"> </span>--input<span class="w"> </span>/path/to/labeled_frames<span class="w"> </span>--output<span class="w"> </span>dataset_index.jsonl
+annolid-run<span class="w"> </span>index-to-yolo<span class="w"> </span>--index<span class="w"> </span>dataset_index.jsonl<span class="w"> </span>--output<span class="w"> </span>./yolo_dataset
+
+<span class="c1"># Classic direct conversion helper</span>
+python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span>--labelme2yolo<span class="w"> </span>/path/to/labelme_json_folder<span class="w"> </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--test_size<span class="w"> </span><span class="m">0</span>.1
+</pre></div>
+</div>
+</section>
+<section id="step-2-pick-a-fine-tuning-preset-in-the-training-wizard">
+<h3>Step 2: Pick a Fine-Tuning Preset in the Training Wizard<a class="headerlink" href="#step-2-pick-a-fine-tuning-preset-in-the-training-wizard" title="Link to this heading">#</a></h3>
+<p>Open <strong><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">&amp;</span> <span class="pre">Models</span> <span class="pre">→</span> <span class="pre">Training</span> <span class="pre">Wizard…</span></code></strong>:</p>
 <ol class="arabic simple">
-<li><p>Label frames in Annolid (polygons/keypoints saved as LabelMe JSON).</p></li>
-<li><p>Convert your LabelMe JSON folder to YOLO format:</p>
-<ul class="simple">
-<li><p>GUI: <em>File → Convert Labelme to YOLO format</em></p></li>
-<li><p>CLI: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">annolid.main</span> <span class="pre">--labelme2yolo</span> <span class="pre">/path/to/json_folder</span> <span class="pre">--val_size</span> <span class="pre">0.1</span> <span class="pre">--test_size</span> <span class="pre">0.1</span></code></p></li>
-</ul>
-</li>
+<li><p><strong>Select Dataset</strong>: Browse to your YOLO <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code> or COCO folder. Annolid inspects class names, image counts, and task type (Detection / Segmentation / Pose) automatically.</p></li>
+<li><p><strong>Choose Backend</strong>: Select <strong>YOLO (Ultralytics)</strong> (or <strong>DINO KPSEG</strong> / <strong>Keypoint R-CNN</strong> for pose tasks).</p></li>
+<li><p><strong>Configure Preset &amp; Hardware</strong>:</p></li>
 </ol>
-<p>This produces a dataset folder containing images, label files, and a <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Preset</p></th>
+<th class="head"><p>Best For</p></th>
+<th class="head"><p>Key Defaults</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">Small</span> <span class="pre">Lab</span> <span class="pre">Dataset</span> <span class="pre">(Fine-tune)</span></code></strong></p></td>
+<td><p>~20–150 labeled frames</p></td>
+<td><p>120 epochs, AdamW, <code class="docutils literal notranslate"><span class="pre">lr0=0.002</span></code>, <code class="docutils literal notranslate"><span class="pre">freeze=10</span></code>, cosine LR</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">Balanced</span> <span class="pre">(Recommended)</span></code></strong></p></td>
+<td><p>150+ labeled frames</p></td>
+<td><p>100 epochs, 640 px, patience 50, cosine LR</p></td>
+</tr>
+<tr class="row-even"><td><p><strong><code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">Smoke</span> <span class="pre">Test</span></code></strong></p></td>
+<td><p>Checking labels &amp; class map</p></td>
+<td><p>30 epochs, batch 16</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong><code class="docutils literal notranslate"><span class="pre">High</span> <span class="pre">Accuracy</span> <span class="pre">(960px)</span></code></strong></p></td>
+<td><p>Small animals or fine body parts</p></td>
+<td><p>200 epochs, 960 px, AdamW</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Launch locally or on Google Colab</strong>: Run on NVIDIA CUDA, Apple Silicon MPS, or CPU — or click <strong>Run on Google Colab…</strong> to offload training to a cloud GPU.</p></li>
+</ol>
 </section>
-<section id="train-from-the-annolid-gui">
-<h3>2) Train from the Annolid GUI<a class="headerlink" href="#train-from-the-annolid-gui" title="Link to this heading">#</a></h3>
-<p>Use <em>File → Train models</em> and select <strong>YOLO</strong>. Choose:</p>
+<section id="step-3-monitor-runs-compare-experiments-ctrl-shift-v">
+<h3>Step 3: Monitor Runs &amp; Compare Experiments (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+V</span></code>)<a class="headerlink" href="#step-3-monitor-runs-compare-experiments-ctrl-shift-v" title="Link to this heading">#</a></h3>
+<p>Open <strong><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">&amp;</span> <span class="pre">Models</span> <span class="pre">→</span> <span class="pre">Training</span> <span class="pre">Monitor</span> <span class="pre">&amp;</span> <span class="pre">Visualization…</span></code></strong> (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+V</span></code>) to:</p>
 <ul class="simple">
-<li><p>a base model (or a custom YOLO export),</p></li>
-<li><p>epochs and image size,</p></li>
-<li><p>an output directory for runs/checkpoints.</p></li>
+<li><p>watch live loss, mAP, PCK, and learning-rate curves with EMA smoothing,</p></li>
+<li><p>compare multiple checked runs side by side with a highlighted hyperparameter diff table,</p></li>
+<li><p>star favorite checkpoints, add lab notes/tags, and receive automated health diagnostics (<code class="docutils literal notranslate"><span class="pre">NaN</span></code>/spike/overfitting/plateau alerts), and</p></li>
+<li><p>export an offline <strong>HTML5 + inline SVG</strong> experiment report or open embedded <strong>TensorBoard</strong>.</p></li>
 </ul>
-<p>After training, you can select the resulting weights in the AI model selector (or “Browse Custom YOLO…”).</p>
+<p>When training completes, select your trained <code class="docutils literal notranslate"><span class="pre">best.pt</span></code> directly from the <strong>AI Model</strong> selector (or <strong>Browse Custom YOLO…</strong>).</p>
 </section>
 </section>
-<section id="option-b-mask-r-cnn-via-detectron2-optional">
-<h2>Option B: Mask R-CNN via Detectron2 (optional)<a class="headerlink" href="#option-b-mask-r-cnn-via-detectron2-optional" title="Link to this heading">#</a></h2>
-<p>If you specifically need Detectron2-based Mask R-CNN training/inference:</p>
+<section id="bidirectional-deeplabcut-sleap-coco-interoperability">
+<h2>Bidirectional DeepLabCut, SLEAP &amp; COCO Interoperability<a class="headerlink" href="#bidirectional-deeplabcut-sleap-coco-interoperability" title="Link to this heading">#</a></h2>
+<p>Already have labeled data or predictions from <strong>DeepLabCut</strong>, <strong>Lightning Pose</strong>, <strong>SLEAP</strong>, <strong>SimBA</strong>, or <strong>COCO</strong>? Annolid imports and exports all of them cleanly — both from <strong><code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">DeepLabCut</span> <span class="pre">/</span> <span class="pre">Lightning</span> <span class="pre">Pose</span> <span class="pre">Import</span> <span class="pre">&amp;</span> <span class="pre">Export…</span></code></strong>, <strong><code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">SLEAP</span> <span class="pre">(.slp</span> <span class="pre">/</span> <span class="pre">.h5)</span> <span class="pre">Import</span> <span class="pre">&amp;</span> <span class="pre">Export…</span></code></strong>, and the CLI:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import DeepLabCut / Lightning Pose CSV or H5 into Annolid LabelMe JSON</span>
+annolid-run<span class="w"> </span>import-pose<span class="w"> </span>trialDLC_dlcrnet_filtered.csv<span class="w"> </span>--video<span class="w"> </span>trial.mp4<span class="w"> </span>--min-likelihood<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>-o<span class="w"> </span>./trial_labelme
+
+<span class="c1"># Import a SLEAP project (.slp / .pkg.slp) or analysis HDF5 (.analysis.h5)</span>
+annolid-run<span class="w"> </span>import-pose<span class="w"> </span>predictions.analysis.h5<span class="w"> </span>--video<span class="w"> </span>trial.mp4<span class="w"> </span>-o<span class="w"> </span>./sleap_labelme
+
+<span class="c1"># Export Annolid annotations or tracking to DeepLabCut, SimBA, or SLEAP</span>
+annolid-run<span class="w"> </span>export-pose<span class="w"> </span>./trial_labelme<span class="w"> </span>--format<span class="w"> </span>deeplabcut-csv<span class="w"> </span>--scorer<span class="w"> </span>my_lab<span class="w"> </span>-o<span class="w"> </span>./trial_dlc.csv
+annolid-run<span class="w"> </span>export-pose<span class="w"> </span>./trial_tracking.csv<span class="w"> </span>--format<span class="w"> </span>sleap-h5<span class="w"> </span>--video<span class="w"> </span>./trial.mp4<span class="w"> </span>-o<span class="w"> </span>./trial.analysis.h5
+</pre></div>
+</div>
+</section>
+<section id="optional-legacy-mask-r-cnn-via-detectron2">
+<h2>Optional: Legacy Mask R-CNN via Detectron2<a class="headerlink" href="#optional-legacy-mask-r-cnn-via-detectron2" title="Link to this heading">#</a></h2>
+<p>If your lab maintains an existing Detectron2 Mask R-CNN pipeline:</p>
 <ul class="simple">
-<li><p>Prefer the Colab notebook (<em>File → Open in Colab</em>) for a working GPU environment.</p></li>
-<li><p>Or follow the Detectron2 installation guide linked from <a class="reference internal" href="how_to_install.html"><span class="std std-doc">Install options</span></a>.</p></li>
+<li><p>Prefer <a class="reference internal" href="Annolid_on_Google_Colab.html"><span class="std std-doc">Annolid on Google Colab</span></a> for a ready-to-run GPU notebook.</p></li>
+<li><p>Export LabelMe frames to COCO format via <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">COCO</span> <span class="pre">format</span></code></strong>.</p></li>
 </ul>
-</section>
-<section id="coco-export">
-<h2>COCO export<a class="headerlink" href="#coco-export" title="Link to this heading">#</a></h2>
-<p>If you need COCO format for interoperability with other toolchains:</p>
-<ul class="simple">
-<li><p>GUI: <em>File → COCO format</em></p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Annolid can export multiple formats (COCO/YOLO/CSV). Pick the one that matches your training/inference stack.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Zero labeled frames yet?</strong> You can also bootstrap a working mouse, rat, or fly segmentation/pose model from raw videos using <a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html"><span class="std std-doc">Sim-to-Real Studio</span></a>. For complete YOLO CLI flags and pose workflows, see the <a class="reference external" href="https://annolid.com/portal/yolo_workflow/">YOLO Workflow</a> and <a class="reference external" href="https://annolid.com/portal/pose_interoperability/">Pose Interoperability</a> guides on the Docs Portal.</p>
 </div>
 </section>
 </section>
@@ -562,12 +660,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="video_depth_anything.html"
+       href="../tutorials/Reporting_and_track_qc.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Video Depth Anything (Depth Estimation)</p>
+        <p class="prev-next-title">Track QC, Statistics &amp; HTML5 Reports</p>
       </div>
     </a>
     <a class="right-next"
@@ -575,7 +673,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Combining models</p>
+        <p class="prev-next-title">Combining Models &amp; Multi-Tool Pipelines</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -597,13 +695,14 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-a-recommended-train-yolo-segmentation-pose">Option A (recommended): train YOLO segmentation/pose</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-yolo-dataset-from-your-annolid-labels">1) Create a YOLO dataset from your Annolid labels</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-from-the-annolid-gui">2) Train from the Annolid GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-path-fine-tune-yolo11-yolo26-yoloe">Recommended Path: Fine-Tune YOLO11 / YOLO26 / YOLOE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-prepare-or-export-your-dataset">Step 1: Prepare or Export Your Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-pick-a-fine-tuning-preset-in-the-training-wizard">Step 2: Pick a Fine-Tuning Preset in the Training Wizard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-monitor-runs-compare-experiments-ctrl-shift-v">Step 3: Monitor Runs &amp; Compare Experiments (<code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+V</span></code>)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-b-mask-r-cnn-via-detectron2-optional">Option B: Mask R-CNN via Detectron2 (optional)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coco-export">COCO export</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bidirectional-deeplabcut-sleap-coco-interoperability">Bidirectional DeepLabCut, SLEAP &amp; COCO Interoperability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-legacy-mask-r-cnn-via-detectron2">Optional: Legacy Mask R-CNN via Detectron2</a></li>
 </ul>
   </nav></div>
 
@@ -628,7 +727,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -641,6 +740,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

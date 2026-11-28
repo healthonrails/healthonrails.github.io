@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Labeling instances: under the hood &#8212; Annolid Start Here</title>
+    <title>AI-Assisted Labeling: Point &amp; Text Prompts &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/labeling_instances_under_the_hood';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tracking with Cutie" href="tracking_with_Cutie.html" />
-    <link rel="prev" title="Labeling Instances" href="labelling_images.html" />
+    <link rel="next" title="GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps" href="../tutorials/GUI_power_tips_and_editing.html" />
+    <link rel="prev" title="Labeling Instances, Keypoints &amp; Zones" href="labelling_images.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/labeling_instances_under_the_hood.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Labeling instances:  under the hood</h1>
+    <h1>AI-Assisted Labeling: Point & Text Prompts</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,8 +500,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-point-prompt">Labeling with Point Prompt</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-text-prompt">Labeling with text prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-prompts-create-ai-polygon">1. Point Prompts (<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">AI-Polygon</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-walkthrough-point-prompt-labeling">Video walkthrough: Point-prompt labeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-prompts-grounding-dino-sam-sam3">2. Text Prompts (Grounding DINO → SAM &amp; SAM3)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-walkthrough-text-prompt-labeling">Video walkthrough: Text-prompt labeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-tips-for-clean-ai-polygons">Practical Tips for Clean AI Polygons</a></li>
 </ul>
             </nav>
         </div>
@@ -468,18 +520,65 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="labeling-instances-under-the-hood">
-<h1>Labeling instances:  under the hood<a class="headerlink" href="#labeling-instances-under-the-hood" title="Link to this heading">#</a></h1>
-<section id="labeling-with-point-prompt">
-<h2>Labeling with Point Prompt<a class="headerlink" href="#labeling-with-point-prompt" title="Link to this heading">#</a></h2>
-<p>When you select the “AI Polygons” option, you can click points in the video frame or image. Annolid will then use efficientSAM by default to produce a polygon around the instance.</p>
-<p>Please refer to this <a class="reference external" href="https://youtu.be/YOnUnpwkLFc?si=bbmKXpPiGe2_G5h7">video</a> for a step-by-step guide.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ai-assisted-labeling-point-text-prompts">
+<h1>AI-Assisted Labeling: Point &amp; Text Prompts<a class="headerlink" href="#ai-assisted-labeling-point-text-prompts" title="Link to this heading">#</a></h1>
+<p>Annolid accelerates manual annotation by letting you prompt foundation models with either <strong>clicks</strong> (point prompts) or <strong>plain words</strong> (text prompts) — and converts every predicted mask straight into an editable polygon on your canvas.</p>
+<section id="point-prompts-create-ai-polygon">
+<h2>1. Point Prompts (<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">AI-Polygon</span></code>)<a class="headerlink" href="#point-prompts-create-ai-polygon" title="Link to this heading">#</a></h2>
+<p>When you select <strong>Create AI-Polygon</strong> from the canvas right-click menu:</p>
+<ol class="arabic simple">
+<li><p>Choose an interactive segmentation backend from the <strong>AI Model</strong> selector (for example <strong>EfficientSAM</strong> for fast CPU/laptop response, or <strong>SAM2 / SAM3</strong> for fine edges and complex bedding).</p></li>
+<li><p>Click inside the target animal or object — Annolid computes a binary mask and simplifies its boundary into a crisp, editable polygon.</p></li>
+<li><p>Click additional points if needed to refine thin regions (like ears or tails), then <strong>Ctrl+Left-Click</strong> (<code class="docutils literal notranslate"><span class="pre">Cmd+Left-Click</span></code> on macOS) to confirm and assign a label.</p></li>
+</ol>
+<figure class="align-default" id="under-hood-ai-polygon">
+<a class="reference internal image-reference" href="../_images/AI_polygon.png"><img alt="Right-clicking the Annolid video canvas to select Create AI-Polygon" src="../_images/AI_polygon.png" style="width: 92%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Selecting <strong>Create AI-Polygon</strong> from the canvas context menu with EfficientSAM active.</span><a class="headerlink" href="#under-hood-ai-polygon" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="video-walkthrough-point-prompt-labeling">
+<h3>Video walkthrough: Point-prompt labeling<a class="headerlink" href="#video-walkthrough-point-prompt-labeling" title="Link to this heading">#</a></h3>
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/YOnUnpwkLFc" title="AI-Polygon point-prompt labeling in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 </section>
-<section id="labeling-with-text-prompt">
-<h2>Labeling with text prompt<a class="headerlink" href="#labeling-with-text-prompt" title="Link to this heading">#</a></h2>
-<p>Annolid allows you to input text prompts with comma-separated labels, such as ‘cat, dog’, to utilize Grounding-DINO for generating bounding boxes. These bounding boxes will then serve as prompts for High-Quality SAM to generate masks, which will subsequently be converted into polygons.</p>
-<p>Here is a video guiding you through the process: <a class="reference external" href="https://youtu.be/bCCobNAwWvM?si=-mbTc2QfjnNv9FKy">Watch Video</a>
-.</p>
+</section>
+<section id="text-prompts-grounding-dino-sam-sam3">
+<h2>2. Text Prompts (Grounding DINO → SAM &amp; SAM3)<a class="headerlink" href="#text-prompts-grounding-dino-sam-sam3" title="Link to this heading">#</a></h2>
+<p>When you have multiple animals or arena objects on screen and want to bootstrap masks without clicking each one:</p>
+<ol class="arabic simple">
+<li><p>Enter comma-separated phrases in the <strong>Text Prompt</strong> field in the top toolbar — for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">mouse,</span> <span class="pre">white</span> <span class="pre">mouse</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mouse,</span> <span class="pre">feeder,</span> <span class="pre">water</span> <span class="pre">bottle</span></code></p></li>
+</ul>
+</li>
+<li><p>You can also use <strong>label aliases</strong> with SAM3 text mode so the visual query maps straight to your study’s canonical label name:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">mouse=resident,</span> <span class="pre">white</span> <span class="pre">mouse=intruder</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">mouse</span> <span class="pre">-&gt;</span> <span class="pre">resident;</span> <span class="pre">white</span> <span class="pre">mouse</span> <span class="pre">-&gt;</span> <span class="pre">intruder</span></code></p></li>
+</ul>
+</li>
+<li><p>Annolid runs <strong>Grounding DINO → SAM</strong> (or <strong>SAM3</strong> windowed propagation) to detect boxes, refine segmentation masks, and place editable polygons onto the frame.</p></li>
+</ol>
+<section id="video-walkthrough-text-prompt-labeling">
+<h3>Video walkthrough: Text-prompt labeling<a class="headerlink" href="#video-walkthrough-text-prompt-labeling" title="Link to this heading">#</a></h3>
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/bCCobNAwWvM" title="Text-prompt segmentation with Grounding DINO and SAM in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</section>
+</section>
+<section id="practical-tips-for-clean-ai-polygons">
+<h2>Practical Tips for Clean AI Polygons<a class="headerlink" href="#practical-tips-for-clean-ai-polygons" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Start on an unoccluded frame</strong>: Give the segmentation model a clear view of each animal’s silhouette before launching video tracking.</p></li>
+<li><p><strong>Tweak vertices only where it matters</strong>: Minor boundary fuzz on a tail tip rarely hurts tracking, whereas merged masks between two touching animals should be separated before pressing <strong>Pred</strong>.</p></li>
+<li><p><strong>Switch models anytime</strong>: Because every AI backend writes the exact same LabelMe polygon format, you can seed frame 0 with <strong>EfficientSAM</strong>, track with <strong>Cutie</strong> or <strong>SAM3</strong>, and later add keypoints with <strong>DINOv3</strong>.</p></li>
+</ul>
+<p>Next: see the full end-to-end <a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html"><span class="std std-doc">mouse083 Resident-Intruder Walkthrough</span></a> or follow the step-by-step <a class="reference internal" href="tracking_with_Cutie.html"><span class="std std-doc">Tracking with Cutie</span></a> guide.</p>
 </section>
 </section>
 
@@ -519,15 +618,15 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Labeling Instances</p>
+        <p class="prev-next-title">Labeling Instances, Keypoints &amp; Zones</p>
       </div>
     </a>
     <a class="right-next"
-       href="tracking_with_Cutie.html"
+       href="../tutorials/GUI_power_tips_and_editing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tracking with Cutie</p>
+        <p class="prev-next-title">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -549,8 +648,15 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-point-prompt">Labeling with Point Prompt</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-with-text-prompt">Labeling with text prompt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#point-prompts-create-ai-polygon">1. Point Prompts (<code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">AI-Polygon</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-walkthrough-point-prompt-labeling">Video walkthrough: Point-prompt labeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-prompts-grounding-dino-sam-sam3">2. Text Prompts (Grounding DINO → SAM &amp; SAM3)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#video-walkthrough-text-prompt-labeling">Video walkthrough: Text-prompt labeling</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-tips-for-clean-ai-polygons">Practical Tips for Clean AI Polygons</a></li>
 </ul>
   </nav></div>
 
@@ -575,7 +681,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -588,6 +694,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

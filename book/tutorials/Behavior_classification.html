@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Behavior classification &#8212; Annolid Start Here</title>
+    <title>Behavior Scoring, Timelines &amp; Ethograms &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Behavior_classification';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Freezing and motion assays" href="Freezing_and%20motion_assays.html" />
-    <link rel="prev" title="Place preference" href="Place_preference.html" />
+    <link rel="next" title="Polygon-Feature TCN Behavior Classification" href="TCN_behavior_classification.html" />
+    <link rel="prev" title="Spatial Zones &amp; Place Preference" href="Place_preference.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../content/README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../content/introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Place preference</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/tutorials/Behavior_classification.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Behavior classification</h1>
+    <h1>Behavior Scoring, Timelines & Ethograms</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,12 +500,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-scoring-and-time-budgets-recommended-starting-point">1) Event scoring and time budgets (recommended starting point)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-events-in-the-gui">Record events in the GUI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarise-behavior-duration-time-budget">Summarise behavior duration (“time budget”)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-behavior-classifier-optional-experimental">2) Train a behavior classifier (optional / experimental)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-project-schema-project-annolid-json">Shared Project Schema (<code class="docutils literal notranslate"><span class="pre">project.annolid.json</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-1-manual-scoring-with-flags-timeline-fastest-start">Workflow 1: Manual Scoring With Flags &amp; Timeline (Fastest Start)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-2-agent-assisted-1-second-segment-labeling-annolid-bot">Workflow 2: Agent-Assisted 1-Second Segment Labeling (Annolid Bot)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-3-bidirectional-boris-inter-rater-reliability">Workflow 3: Bidirectional BORIS &amp; Inter-Rater Reliability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-4-train-a-supervised-behavior-classifier-optional">Workflow 4: Train a Supervised Behavior Classifier (Optional)</a></li>
 </ul>
             </nav>
         </div>
@@ -472,45 +516,103 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="behavior-classification">
-<h1>Behavior classification<a class="headerlink" href="#behavior-classification" title="Link to this heading">#</a></h1>
-<p>Annolid supports two complementary behavior workflows:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="behavior-scoring-timelines-ethograms">
+<h1>Behavior Scoring, Timelines &amp; Ethograms<a class="headerlink" href="#behavior-scoring-timelines-ethograms" title="Link to this heading">#</a></h1>
+<p>Annolid supports the full spectrum of behavioral ethogram workflows — from rapid manual keyboard/timeline scoring and <strong>BORIS</strong> interoperability to <strong>Annolid Bot</strong> 1-second video-language labeling and supervised <strong>TCN / video behavior classifiers</strong>.</p>
+<figure class="align-default" id="behavior-scoring-gif">
+<a class="reference internal image-reference" href="../_images/behavior_scoring_timeline.gif"><img alt="Animated demonstration of scoring timestamped behavior bouts directly inside the Annolid GUI" src="../_images/behavior_scoring_timeline.gif" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 41 </span><span class="caption-text">Interactive behavior scoring inside Annolid: mark start and stop timestamps while scrubbing your video, and export clean bout tables and ethogram plots.</span><a class="headerlink" href="#behavior-scoring-gif" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="shared-project-schema-project-annolid-json">
+<h2>Shared Project Schema (<code class="docutils literal notranslate"><span class="pre">project.annolid.json</span></code>)<a class="headerlink" href="#shared-project-schema-project-annolid-json" title="Link to this heading">#</a></h2>
+<p>Define your ethogram behaviors <strong>once</strong> — Annolid automatically keeps names synchronized across:</p>
+<ul class="simple">
+<li><p>the <strong>Flags</strong> dock (per-frame &amp; start/stop scoring),</p></li>
+<li><p>the <strong>Timeline</strong> dock (interactive drag-scrubbing needle + resizable bout bars),</p></li>
+<li><p><strong>Annolid Bot</strong> (1-second automated segment classification), and</p></li>
+<li><p><strong>BORIS</strong> bidirectional import/export.</p></li>
+</ul>
+<figure class="align-default" id="behavior-ethogram-output">
+<a class="reference internal image-reference" href="../_images/mouse083_ethogram_kinematics.png"><img alt="Scored behavior ethogram timeline raster paired with inter-animal distance curve, trajectories, and behavior time budget" src="../_images/mouse083_ethogram_kinematics.png" style="width: 96%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 42 </span><span class="caption-text">Downstream ethogram raster, proximity alignment, and behavior time budget computed from Annolid behavior labels on <code class="docutils literal notranslate"><span class="pre">mouse083_task1_annotator1</span></code>.</span><a class="headerlink" href="#behavior-ethogram-output" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="workflow-1-manual-scoring-with-flags-timeline-fastest-start">
+<h2>Workflow 1: Manual Scoring With Flags &amp; Timeline (Fastest Start)<a class="headerlink" href="#workflow-1-manual-scoring-with-flags-timeline-fastest-start" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Event scoring in the GUI</strong> (manual or semi-manual), with exports and summaries.</p></li>
-<li><p><strong>Model-based classification</strong> (optional / experimental), for projects that have labeled training data.</p></li>
+<li><p>Open your video in Annolid (or pre-populate behaviors from the terminal with <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--flags</span> <span class="pre">&quot;investigation,mount,grooming,rearing&quot;</span></code>).</p></li>
+<li><p>Open the <strong>Flags</strong> dock and add your behavior names, then click <strong>Save All</strong> (<code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code>).</p></li>
+<li><p>Open the <strong>Timeline</strong> dock:</p>
+<ul class="simple">
+<li><p>Drag the <strong>red timeline playhead needle</strong> to scrub frames continuously.</p></li>
+<li><p>Click <strong>Start / End</strong> in Flags (or create/drag interval bars on the Timeline) to record bouts.</p></li>
+</ul>
+</li>
+<li><p>Export behavior events to CSV and compute a full <strong>time budget</strong> + ethogram SVG + transition graph:</p></li>
 </ol>
-<section id="event-scoring-and-time-budgets-recommended-starting-point">
-<h2>1) Event scoring and time budgets (recommended starting point)<a class="headerlink" href="#event-scoring-and-time-budgets-recommended-starting-point" title="Link to this heading">#</a></h2>
-<section id="record-events-in-the-gui">
-<h3>Record events in the GUI<a class="headerlink" href="#record-events-in-the-gui" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Open a video in Annolid.</p></li>
-<li><p>Use your behavior labels (or launch with <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--flags</span> <span class="pre">&quot;grooming,rearing,freezing&quot;</span></code>).</p></li>
-<li><p>Mark events over time (start/end) and save.</p></li>
-</ol>
-</section>
-<section id="summarise-behavior-duration-time-budget">
-<h3>Summarise behavior duration (“time budget”)<a class="headerlink" href="#summarise-behavior-duration-time-budget" title="Link to this heading">#</a></h3>
-<p>After exporting events to CSV, compute summary statistics:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>/path/to/exported_events.csv<span class="w"> </span>-o<span class="w"> </span>time_budget.csv
-</pre></div>
-</div>
-<p>To get a binned time course (e.g., 60-second bins):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>/path/to/exported_events.csv<span class="w"> </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span>-o<span class="w"> </span>time_budget.csv
-</pre></div>
-</div>
-</section>
-</section>
-<section id="train-a-behavior-classifier-optional-experimental">
-<h2>2) Train a behavior classifier (optional / experimental)<a class="headerlink" href="#train-a-behavior-classifier-optional-experimental" title="Link to this heading">#</a></h2>
-<p>Annolid includes behavior training utilities under <code class="docutils literal notranslate"><span class="pre">annolid/behavior/</span></code>.</p>
-<p>The training entry point is:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.training.train<span class="w"> </span>--video_folder<span class="w"> </span>/path/to/labeled_clips
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute bout counts, total/mean/median durations, 60s binned time course, and SVG plots</span>
+annolid-run<span class="w"> </span>time-budget<span class="w"> </span>exported_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ethogram-svg<span class="w"> </span>ethogram.svg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transitions-svg<span class="w"> </span>transitions.svg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>time_budget.csv
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The training dataset loader expects per-video CSV annotations (same stem as the video file) with columns such as <code class="docutils literal notranslate"><span class="pre">Behavior</span></code> and <code class="docutils literal notranslate"><span class="pre">Trial</span> <span class="pre">time</span></code>. If your data is in a different format, you’ll likely want to adapt <code class="docutils literal notranslate"><span class="pre">annolid/behavior/data_loading/datasets.py</span></code> to your project.</p>
+<p>Classic helper syntax also remains supported: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">annolid.behavior.time_budget</span> <span class="pre">/path/to/exported_events.csv</span> <span class="pre">--bin-size</span> <span class="pre">60</span> <span class="pre">-o</span> <span class="pre">time_budget.csv</span></code>.</p>
+</div>
+</section>
+<section id="workflow-2-agent-assisted-1-second-segment-labeling-annolid-bot">
+<h2>Workflow 2: Agent-Assisted 1-Second Segment Labeling (Annolid Bot)<a class="headerlink" href="#workflow-2-agent-assisted-1-second-segment-labeling-annolid-bot" title="Link to this heading">#</a></h2>
+<p>Once your behaviors are defined in the project schema, let <strong>Annolid Bot</strong> draft a first-pass ethogram over 1-second video windows using a multimodal vision-language model (local Ollama or hosted VLM):</p>
+<ol class="arabic simple">
+<li><p>Open <strong><code class="docutils literal notranslate"><span class="pre">AI</span> <span class="pre">&amp;</span> <span class="pre">Models</span> <span class="pre">→</span> <span class="pre">Annolid</span> <span class="pre">Bot…</span></code></strong> (or click <strong><code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">1s</span> <span class="pre">Behaviors</span></code></strong> in the Bot dock).</p></li>
+<li><p>Paste a structured prompt:</p></li>
+</ol>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Label behavior in /path/to/video.mp4 with labels grooming, rearing, investigation every 1s
+</pre></div>
+</div>
+<p>Or provide rich domain definitions for subtle social assays:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Label behavior in /path/to/video.mp4 with labels aggression_bout every 1s
+video description: Two mice in resident-intruder home cage;
+instances: 2;
+behavior definitions: Aggression bout includes lunging, chasing, or physical wrestling;
+focus points: Count bouts and note onset/offset transition frames.
+</pre></div>
+</div>
+<p>Annolid constrains the model to strict JSON (<code class="docutils literal notranslate"><span class="pre">label</span></code>, <code class="docutils literal notranslate"><span class="pre">confidence</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code>) and writes reviewable timeline intervals, behavior timestamps CSV, and a segment-level JSON log so you can inspect and adjust every bout on the Timeline!</p>
+</section>
+<section id="workflow-3-bidirectional-boris-inter-rater-reliability">
+<h2>Workflow 3: Bidirectional BORIS &amp; Inter-Rater Reliability<a class="headerlink" href="#workflow-3-bidirectional-boris-inter-rater-reliability" title="Link to this heading">#</a></h2>
+<p>Already score videos in <strong>BORIS</strong>? Round-trip cleanly without losing modifiers or out-of-sight intervals:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a .boris project into Annolid events + cohort manifest</span>
+annolid-run<span class="w"> </span>boris-import<span class="w"> </span>study.boris<span class="w"> </span>--output-dir<span class="w"> </span>./annolid_from_boris<span class="w"> </span>--group-variable<span class="w"> </span>Treatment
+
+<span class="c1"># Export Annolid behavior events back to a .boris file</span>
+annolid-run<span class="w"> </span>boris-export<span class="w"> </span>session_events.csv<span class="w"> </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span>--format<span class="w"> </span>boris<span class="w"> </span>--output<span class="w"> </span>session.boris
+
+<span class="c1"># Measure inter-rater agreement (Cohen's kappa, Fleiss' kappa, Krippendorff's alpha)</span>
+annolid-run<span class="w"> </span>behavior-irr<span class="w"> </span>rater1.csv<span class="w"> </span>rater2.csv<span class="w"> </span>--bin-seconds<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--disagreements-csv<span class="w"> </span>disagreements.csv<span class="w"> </span>--out<span class="w"> </span>irr.json
+</pre></div>
+</div>
+</section>
+<section id="workflow-4-train-a-supervised-behavior-classifier-optional">
+<h2>Workflow 4: Train a Supervised Behavior Classifier (Optional)<a class="headerlink" href="#workflow-4-train-a-supervised-behavior-classifier-optional" title="Link to this heading">#</a></h2>
+<p>For labs with labeled multi-video behavior corpora, Annolid also ships polygon-feature <strong>TCN (Temporal Convolutional Network)</strong> and video behavior classification utilities under <code class="docutils literal notranslate"><span class="pre">annolid/behavior/</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.training.train<span class="w"> </span>--video_folder<span class="w"> </span>/path/to/labeled_clips
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Want copy-paste Annolid Bot prompt recipes or TCN pipeline details? See <a class="reference external" href="https://annolid.com/portal/tutorials/behavior_timeline_flags_bot/">Behavior Labeling with Timeline, Flags, and Bot</a> and <a class="reference external" href="https://annolid.com/portal/tutorials/tcn_behavior_pipeline/">TCN Behavior Classification</a> on the Docs Portal.</p>
 </div>
 </section>
 </section>
@@ -551,15 +653,15 @@
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Place preference</p>
+        <p class="prev-next-title">Spatial Zones &amp; Place Preference</p>
       </div>
     </a>
     <a class="right-next"
-       href="Freezing_and%20motion_assays.html"
+       href="TCN_behavior_classification.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Freezing and motion assays</p>
+        <p class="prev-next-title">Polygon-Feature TCN Behavior Classification</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -581,12 +683,11 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-scoring-and-time-budgets-recommended-starting-point">1) Event scoring and time budgets (recommended starting point)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#record-events-in-the-gui">Record events in the GUI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summarise-behavior-duration-time-budget">Summarise behavior duration (“time budget”)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-a-behavior-classifier-optional-experimental">2) Train a behavior classifier (optional / experimental)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-project-schema-project-annolid-json">Shared Project Schema (<code class="docutils literal notranslate"><span class="pre">project.annolid.json</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-1-manual-scoring-with-flags-timeline-fastest-start">Workflow 1: Manual Scoring With Flags &amp; Timeline (Fastest Start)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-2-agent-assisted-1-second-segment-labeling-annolid-bot">Workflow 2: Agent-Assisted 1-Second Segment Labeling (Annolid Bot)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-3-bidirectional-boris-inter-rater-reliability">Workflow 3: Bidirectional BORIS &amp; Inter-Rater Reliability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#workflow-4-train-a-supervised-behavior-classifier-optional">Workflow 4: Train a Supervised Behavior Classifier (Optional)</a></li>
 </ul>
   </nav></div>
 
@@ -611,7 +712,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -624,6 +725,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

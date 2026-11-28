@@ -1,0 +1,402 @@
+/* The Annolid Book — Custom Visual Styling
+ * Harmonizes Jupyter Book (sphinx-book-theme) with annolid.com and the Docs Portal.
+ */
+
+:root {
+  --ann-teal: #0f8f92;
+  --ann-teal-dark: #0b6469;
+  --ann-teal-soft: #e6f7f8;
+  --ann-amber: #e87d2f;
+  --ann-amber-soft: #fef4eb;
+  --ann-ink: #163744;
+  --ann-muted: #466573;
+  --ann-line: #d4e4e8;
+  --ann-surface: #ffffff;
+  --ann-shadow: 0 12px 30px rgba(15, 76, 88, 0.09);
+}
+
+/* Crisp figures, screenshots, and animated GIFs */
+article.bd-article img:not(.logo__image):not(.badge):not([src*="shields.io"]):not([src*="colab-badge"]):not([src*="actions/workflows"]) {
+  border-radius: 12px;
+  border: 1px solid rgba(18, 70, 78, 0.16);
+  box-shadow: 0 10px 26px rgba(13, 70, 83, 0.10);
+  margin: 0.75rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+article.bd-article figure {
+  margin: 1.4rem 0;
+  text-align: center;
+}
+
+article.bd-article figure figcaption {
+  margin-top: 0.55rem;
+  font-size: 0.9rem;
+  color: var(--ann-muted);
+}
+
+/* Responsive 16:9 video embeds */
+.video_container {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  aspect-ratio: 16 / 9;
+  margin: 1.25rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--ann-line);
+  box-shadow: var(--ann-shadow);
+  background: #0f242c;
+}
+
+.video_container iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Book Hero Banner */
+.ann-book-hero {
+  background: linear-gradient(135deg, #ffffff 0%, #effafc 48%, #fdf6ee 100%);
+  border: 1px solid var(--ann-line);
+  border-radius: 16px;
+  padding: 1.65rem 1.75rem;
+  margin: 0.6rem 0 1.6rem;
+  box-shadow: var(--ann-shadow);
+}
+
+.ann-book-kicker {
+  display: inline-block;
+  background: var(--ann-teal-soft);
+  color: var(--ann-teal-dark);
+  border: 1px solid #b5e4e8;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.ann-book-hero h2,
+.ann-book-hero .ann-hero-title {
+  margin-top: 0.15rem !important;
+  margin-bottom: 0.65rem;
+  border: none !important;
+  color: var(--ann-ink);
+  font-size: clamp(1.48rem, 2.5vw, 2.0rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ann-book-hero p {
+  color: #294957;
+  font-size: 1.02rem;
+  margin-bottom: 0.85rem;
+}
+
+/* Action Button Row (supports both raw HTML links and MyST paragraph links) */
+.ann-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1rem 0 0.25rem;
+}
+
+.ann-cta-row > p {
+  display: contents;
+}
+
+.ann-cta,
+.ann-cta-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.55rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid var(--ann-line);
+  background: var(--ann-surface);
+  color: var(--ann-ink) !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  transition: transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.ann-cta:hover,
+.ann-cta-row a:hover {
+  transform: translateY(-1px);
+  border-color: var(--ann-teal);
+  box-shadow: 0 8px 18px rgba(15, 143, 146, 0.16);
+}
+
+.ann-cta--primary,
+.ann-cta-row a:first-of-type {
+  background: linear-gradient(135deg, var(--ann-teal), var(--ann-teal-dark));
+  border-color: transparent;
+  color: #ffffff !important;
+}
+
+.ann-cta--primary:hover,
+.ann-cta-row a:first-of-type:hover {
+  color: #ffffff !important;
+  box-shadow: 0 10px 22px rgba(11, 100, 105, 0.28);
+}
+
+/* Metrics / Stats Strip */
+.ann-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0 1.45rem;
+}
+
+.ann-stat {
+  background: var(--ann-surface);
+  border: 1px solid var(--ann-line);
+  border-radius: 12px;
+  padding: 0.85rem 0.95rem;
+  box-shadow: 0 6px 18px rgba(15, 76, 88, 0.06);
+}
+
+.ann-stat strong {
+  display: block;
+  font-size: 1.18rem;
+  line-height: 1.2;
+  color: var(--ann-teal-dark);
+}
+
+.ann-stat span {
+  display: block;
+  margin-top: 0.22rem;
+  font-size: 0.82rem;
+  color: var(--ann-muted);
+}
+
+/* Visual Showcase Gallery (2 columns; compatible with MyST container + Sphinx img wrapping) */
+.ann-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.05rem;
+  margin: 1.15rem 0 1.6rem;
+}
+
+.ann-card {
+  background: var(--ann-surface);
+  border: 1px solid var(--ann-line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--ann-shadow);
+  display: flex;
+  flex-direction: column;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.ann-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(15, 76, 88, 0.14);
+}
+
+.ann-card > p:first-child,
+.ann-card > a:first-child,
+.ann-card figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0;
+}
+
+.ann-card img {
+  width: 100% !important;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid var(--ann-line) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block;
+}
+
+.ann-card-body {
+  padding: 0.95rem 1.05rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.ann-card-body h3,
+.ann-card-body .ann-card-title {
+  margin: 0 !important;
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: var(--ann-ink);
+  line-height: 1.3;
+}
+
+.ann-card-body p {
+  margin: 0;
+  font-size: 0.89rem;
+  color: var(--ann-muted);
+  line-height: 1.45;
+}
+
+.ann-card-body a {
+  font-weight: 700;
+  font-size: 0.89rem;
+  color: var(--ann-teal-dark);
+}
+
+/* Choose-Your-Path Grid (3 columns) */
+.ann-path-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.ann-path-card {
+  background: var(--ann-surface);
+  border: 1px solid var(--ann-line);
+  border-top: 3px solid var(--ann-teal);
+  border-radius: 12px;
+  padding: 1rem 1.05rem;
+  box-shadow: 0 8px 20px rgba(15, 76, 88, 0.06);
+}
+
+.ann-path-card--warm {
+  border-top-color: var(--ann-amber);
+}
+
+.ann-path-card strong {
+  display: block;
+  color: var(--ann-ink);
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.ann-path-card p {
+  font-size: 0.88rem;
+  color: var(--ann-muted);
+  margin-bottom: 0.55rem;
+}
+
+/* Side-by-side comparison pairs */
+.ann-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.15rem 0 1.5rem;
+  align-items: start;
+}
+
+.ann-pair figure {
+  margin: 0 !important;
+}
+
+.ann-pair img {
+  width: 100% !important;
+  height: auto;
+  margin: 0 auto 0.4rem !important;
+}
+
+/* Dark theme compatibility for sphinx-book-theme dark mode */
+html[data-theme="dark"] .ann-book-hero {
+  background: linear-gradient(135deg, #132831 0%, #16333e 55%, #26221d 100%);
+  border-color: #29505d;
+}
+
+html[data-theme="dark"] .ann-book-hero h2,
+html[data-theme="dark"] .ann-book-hero .ann-hero-title,
+html[data-theme="dark"] .ann-card-body h3,
+html[data-theme="dark"] .ann-card-body .ann-card-title,
+html[data-theme="dark"] .ann-path-card strong {
+  color: #edf7f9;
+}
+
+html[data-theme="dark"] .ann-book-hero p,
+html[data-theme="dark"] .ann-card-body p,
+html[data-theme="dark"] .ann-path-card p,
+html[data-theme="dark"] .ann-stat span {
+  color: #b7d2db;
+}
+
+html[data-theme="dark"] .ann-stat,
+html[data-theme="dark"] .ann-card,
+html[data-theme="dark"] .ann-path-card,
+html[data-theme="dark"] .ann-cta:not(.ann-cta--primary),
+html[data-theme="dark"] .ann-cta-row a:not(:first-of-type) {
+  background: #142730;
+  border-color: #294c58;
+  color: #e4f3f6 !important;
+}
+
+html[data-theme="dark"] .ann-stat strong,
+html[data-theme="dark"] .ann-card-body a {
+  color: #5cd6d2;
+}
+
+html[data-theme="dark"] .ann-book-kicker {
+  background: #153c42;
+  border-color: #2c6e76;
+  color: #7ee3e0;
+}
+
+/* Harmonize sphinx-design tabs and dropdowns with Annolid teal branding */
+.sd-tab-set > input:checked + label {
+  border-color: var(--ann-teal) !important;
+  color: var(--ann-teal-dark) !important;
+  font-weight: 700;
+}
+
+.sd-tab-set > label:hover {
+  color: var(--ann-teal) !important;
+}
+
+.sd-dropdown {
+  border-radius: 12px !important;
+  border-color: var(--ann-line) !important;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 76, 88, 0.05);
+}
+
+.sd-dropdown .sd-summary-title {
+  font-weight: 700;
+  color: var(--ann-ink);
+}
+
+html[data-theme="dark"] .sd-tab-set > input:checked + label {
+  color: #5cd6d2 !important;
+  border-color: #5cd6d2 !important;
+}
+
+html[data-theme="dark"] .sd-dropdown {
+  border-color: #294c58 !important;
+}
+
+html[data-theme="dark"] .sd-dropdown .sd-summary-title {
+  color: #e8f5f8;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 960px) {
+  .ann-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ann-path-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .ann-gallery,
+  .ann-pair {
+    grid-template-columns: 1fr;
+  }
+  .ann-book-hero {
+    padding: 1.2rem 1.15rem;
+  }
+}

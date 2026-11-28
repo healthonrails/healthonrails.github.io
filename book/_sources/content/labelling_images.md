@@ -1,68 +1,116 @@
-# Labeling Instances
+# Labeling Instances, Keypoints & Zones
 
-## Effortless Object Labeling with Minimal Points: Automated Polygon Generation using Segment Anything Models
-![](https://github.com/healthonrails/annolid/blob/main/docs/imgs/annolid_with_segment_anything.gif)
+Annolid builds on a fast, LabelMe-compatible canvas enhanced with **AI-assisted polygons**, **anatomical keypoints**, **spatial zones**, and **behavior flags**. Everything saves to human-readable JSON so your labels remain portable forever.
 
-## What should you label ?
-Due to Annolid using an instance segmentation approach, it is very versatile in what you want to label. We use polygons & keypoints to label region of interest (e.g. Vole_1, Mouse_1, Mouse_2, Frog, tail_base, nose...) or to capture interesting behaviors or feature (e.g. rearing, social_interaction, urine_sample ...).
+## Effortless AI-Assisted Labeling (SAM AI-Polygons)
 
-Here is an example image :
-![](../images/labelling_0.png)
+Instead of tracing 30 polygon vertices by hand, switch to **AI-Polygon** mode and click once or twice on your animal — Annolid's Segment Anything backend snaps a clean contour automatically:
 
-
-Labeling is done on a frame-by-frame basis. You can start from either:
-
-- a video opened directly in Annolid (navigate to an informative frame), or
-- an extracted image directory from the optional [Extract frames](extract_frames) workflow.
-
-We'll show you how to label zones in a given frame. Start the Annolid GUI. If you are labeling extracted images, click the 'Open dir' button and select the directory containing them. Otherwise, open your video and move to the frame you want to annotate. Click the 'Create Polygon' button and delineate the structure/zone you want to label. When you finish labeling your zone, you can give it a name that will appear in the 'Polygon Labels'. Repeat until all the desired zones are labeled. You can adjust or delete the polygons by clicking on the 'Edit Polygon' button. Then click the polygon to be edited and directly edit the nodes. If you want to delete it, once you selected it, just click the 'delete Polygon' button.
-When done, save the zone information to a json file by clicking the Save icon.
-
-```{note}
-If you need to delineate something other than a polygon (for example a keypoint), right click on the image and click 'Create Point'. You can also create Rectangle, Circle, Line or LineStrip.
+```{figure} ../images/showcase/ai_polygon_sam_demo.gif
+---
+name: label-ai-polygon-gif
+alt: Animated demonstration of clicking points on animals in Annolid to generate SAM AI polygons automatically
+width: 92%
+---
+One-click **AI-Polygon** labeling using Segment Anything inside Annolid: click foreground points to include an object, right-click or use negative prompts to exclude background, and press `Ctrl+Click` to finish and name the label.
 ```
 
-# Save Labels
+## What Can You Label?
 
-In the previous [step](labelling_images), we delineated zones and their associated labels. Those labels need to be saved using the 'Save Labels' button.
+Because Annolid uses flexible instance shapes plus optional group IDs and metadata, you can annotate:
 
-```{note}
-You can manually edit those labels by opening the label file and adding/removing labels. They will then appear inside the GUI.
+- **Whole-body animals** (`resident`, `intruder`, `mouse_1`, `mouse_2`, `fly_0`) — polygons or masks
+- **Anatomical keypoints** (`nose`, `left_ear`, `right_ear`, `neck`, `left_hip`, `right_hip`, `tail_base`) — linked to an animal via `group_id`
+- **Arena objects & landmarks** (`feeder`, `teaball`, `novel_object`, `nest`) — polygons or rectangles
+- **Spatial zones** (`left_nest_zone`, `center_arena`, `right_port_zone`) — polygons, rectangles, or circles marked as zones
+- **Behavior events** (`investigation`, `mount`, `grooming`, `rearing`, `freezing`) — frame flags or timeline intervals
+
+```{figure} ../images/showcase/mouse083_gui_workspace.png
+---
+name: label-modern-workspace
+alt: Modern Annolid GUI showing resident and intruder polygons, 14 keypoints, Flags dock, and Label Instances dock
+width: 96%
+---
+The Annolid annotation workspace combining whole-body polygons, anatomical keypoints, the active behavior badge (`• investigation`), and synchronized right-hand docks.
 ```
+
+## Step-by-Step: Label Your First Seed Frame
+
+1. **Open your video** (`File → Open Video`) — or click **`Open Dir`** if you extracted images beforehand.
+2. **Navigate to a clean seed frame** where all animals and objects of interest are clearly separated and unoccluded.
+3. **Create a shape** using the toolbar or right-click canvas menu:
+   - **`Create AI-Polygon`** *(fastest)*: click inside the animal; hold **`Ctrl` (macOS `Cmd`) + Left-Click** to finish the polygon and name it.
+   - **`Create Polygons`**: click around the outline manually and close the loop on the first vertex.
+   - **`Create Point`** (right-click → `Create Point` or Keypoint Sequencer): place named body-part keypoints.
+   - **`Create Rectangle` / `Create Circle` / `Create Line`**: draw boxes, circular zones, or calibration lines.
+4. **Edit or refine anytime**: click **`Edit Polygons`** to drag vertices, press `Delete` to remove a selected shape, or **`Ctrl+Z`** to undo.
+5. **Save your seed frame** with **`Ctrl+S`** (`Cmd+S` on macOS). Annolid saves `<video_stem>/<video_stem>_#########.json` (plus a PNG snapshot for reference frames).
+
+```{figure} ../images/labelling_0.png
+---
+name: label-classic-zones
+alt: Example of labeled animal instances and arena zones inside Annolid
+width: 85%
+---
+Cleanly separated instance and zone polygons make downstream tracking and place-preference analysis straightforward.
+```
+
+```{tip}
+**Keyboard shortcuts that save hours:**
+- `Ctrl+S` (`Cmd+S`): Save current frame
+- `Ctrl+Z` / `Ctrl+Shift+Z`: Undo / Redo polygon edits
+- `D` / `A` (or Left/Right arrows): Next / Previous frame
+- `Scroll wheel` / `Ctrl+0`: Zoom in/out and fit to window
+```
+
+## Naming Rule: Individual Tracking vs. Class Generalization
+
+How you name your labels tells Annolid whether to preserve individual identities or generalize across animals:
+
+| Your Goal | How to Name Labels | Example |
+| --- | --- | --- |
+| **Track specific individuals** across frames (multi-animal identity) | Give each animal its own unique label | `resident`, `intruder` or `vole_1`, `vole_2` |
+| **Train a general detector** that recognizes *any* animal of that type across new videos | Use the same shared class label for all animals of that class | `mouse`, `vole`, `fly` |
+| **Combine body polygons + keypoints** | Group keypoints with their animal's `group_id` or prefix | `resident` + `resident_nose`, `resident_tail_base` |
 
 ```{warning}
-If you manually edit the label file, do not remove the first 2 lines '\_\_ignore\_\_' and
-'\_background\_'
+If you manually edit a saved `labels.txt` file outside Annolid, keep the first two header lines (`__ignore__` and `_background_`) intact if they are present.
 ```
 
-Here is a video to guide you through the process:
+## How Many Frames Should You Label?
 
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/pb8X4bqLRZ0" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+- **For Cutie, SAM3, INSID3, or DINOv3 Keypoints (training-free):** Start with **just 1 clean frame**! Only label extra correction frames later if an occlusion causes drift.
+- **For custom YOLO11 / YOLO26 training:** Start with **20–50 diverse frames** (using the `Small Lab Dataset` preset), evaluate on a test clip, and expand toward **100–150 frames** only where errors remain.
 
+```{figure} ../images/labelling_1.png
+---
+name: label-accuracy-curve
+alt: Illustration of segmentation accuracy improving as more labeled frames are added
+width: 72%
+---
+Even a small set of diverse seed frames goes a long way when paired with human-in-the-loop correction.
+```
 
+## Video Tutorials
 
-To help guide you through the process we made the following video:
+### Labeling zones & saving labels in Annolid
 
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/zX8cUImRI_s" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/pb8X4bqLRZ0" title="Labeling zones and saving labels in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
+### Annotating instances step by step
 
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/zX8cUImRI_s" title="Annotating instances step by step in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-Depending on your behavioral apparatus and overall configuration, Annolid might need very few images to perform accurate instance segmentation. We recommend as a first pass to label ~100 frames.
-![](../images/labelling_1.png)
+### Multi-animal tracking & re-identification example
 
-## Tracking and re-identification
-To link instances across frames, we treat each instance as its own class across frames.
-So if you want
-- **to track multiple animals** : you need to label each animal as a separate instance (Vole_1, Vole_2 ...).
-- **to generalize recognition across animals or videos** : you need to label multiple animals as examples of the same instance (Vole).
+*Video courtesy of Lindsay Sailer and Alex Ophir.*
 
+<div class="video_container">
+  <iframe src="https://drive.google.com/file/d/1uw_0JO_rB6Adq7YEHrapzDdGEOPxsmhC/preview" title="Multi-animal re-identification example" allowfullscreen></iframe>
+</div>
 
-Video example courtesy of Lindsay Sailer and Alex Ophir:
-
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://drive.google.com/file/d/1uw_0JO_rB6Adq7YEHrapzDdGEOPxsmhC/preview" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+Next: see how [AI point prompts and text prompts work under the hood](labeling_instances_under_the_hood.md), or jump straight into [Tracking with Cutie](tracking_with_Cutie.md).

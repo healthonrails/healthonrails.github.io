@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Place preference &#8212; Annolid Start Here</title>
+    <title>Spatial Zones &amp; Place Preference &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Place_preference';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Behavior classification" href="Behavior_classification.html" />
-    <link rel="prev" title="Expert mode: CLI tools" href="../content/Expert_mode_CLI_tools.html" />
+    <link rel="next" title="Behavior Scoring, Timelines &amp; Ethograms" href="Behavior_classification.html" />
+    <link rel="prev" title="Video Depth Anything (Per-Frame Depth Estimation)" href="../content/video_depth_anything.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../content/README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../content/introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../content/downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/tutorials/Place_preference.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Place preference</h1>
+    <h1>Spatial Zones & Place Preference</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,21 +500,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-places-of-preference-or-zones">Labeling Places of Preference or Zones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-place-preference-analysis">Running Place Preference Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-and-featuring-sleap-keypoint-predictions-with-annolid">Converting and Featuring SLEAP Keypoint Predictions with Annolid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-zone-file">1. Create Zone File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-sleap-prediction-file">2. Load SLEAP Prediction File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-keypoints-to-json">3. Save Keypoints to JSON</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-files-into-annolid">4. Load Files into Annolid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-verification">5. Conversion Verification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-convert-to-csv">6. Optional: Convert to CSV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features">7. Additional Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-recommended-zone-dock-annolid-run-zone-analysis">Method 1 (Recommended): Zone Dock &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">zone-analysis</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-draw-save-reusable-zones-in-the-gui">Step 1: Draw &amp; Save Reusable Zones in the GUI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-score-occupancy-latency-gui-or-cli">Step 2: Score Occupancy &amp; Latency (GUI or CLI)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-walkthrough-importing-sleap-predictions-for-zone-analysis">Bonus Walkthrough: Importing SLEAP Predictions for Zone Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-steps-sleap-annolid-zones">GUI Steps (SLEAP → Annolid → Zones)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-cli-equivalent">Fast CLI Equivalent</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -481,93 +521,102 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="place-preference">
-<h1>Place preference<a class="headerlink" href="#place-preference" title="Link to this heading">#</a></h1>
-<section id="labeling-places-of-preference-or-zones">
-<h2>Labeling Places of Preference or Zones<a class="headerlink" href="#labeling-places-of-preference-or-zones" title="Link to this heading">#</a></h2>
-<p>We recommend labeling only the first frame of your video for the zones. Draw polygons around the zones of interest and include the keyword “zone” in the label description field, as shown in the image below.
-<img alt="Labeling Zones" src="../_images/place_preference_zone.png" /></p>
-</section>
-<section id="running-place-preference-analysis">
-<h2>Running Place Preference Analysis<a class="headerlink" href="#running-place-preference-analysis" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="spatial-zones-place-preference">
+<h1>Spatial Zones &amp; Place Preference<a class="headerlink" href="#spatial-zones-place-preference" title="Link to this heading">#</a></h1>
+<p>Spatial zone analysis measures <strong>how long</strong>, <strong>how often</strong>, and <strong>how quickly</strong> each tracked animal visits user-defined regions of an arena — such as open-field center vs. periphery, elevated-plus-maze arms, conditioned place-preference chambers, or three-chamber social zones.</p>
+<figure class="align-default" id="zones-mouse083-example">
+<a class="reference internal image-reference" href="../_images/mouse083_zone_analysis.png"><img alt="Three home-cage arena zones overlaid with tracked mouse centroids and computed zone occupancy bar chart" src="../_images/mouse083_zone_analysis.png" style="width: 96%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 37 </span><span class="caption-text">Example zone layout (<code class="docutils literal notranslate"><span class="pre">left_nest_zone</span></code>, <code class="docutils literal notranslate"><span class="pre">center_arena</span></code>, <code class="docutils literal notranslate"><span class="pre">right_port_zone</span></code>) scored on <code class="docutils literal notranslate"><span class="pre">mouse083_task1_annotator1</span></code> with <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">zone-analysis</span></code>.</span><a class="headerlink" href="#zones-mouse083-example" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="method-1-recommended-zone-dock-annolid-run-zone-analysis">
+<h2>Method 1 (Recommended): Zone Dock &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">zone-analysis</span></code><a class="headerlink" href="#method-1-recommended-zone-dock-annolid-run-zone-analysis" title="Link to this heading">#</a></h2>
+<p>Annolid’s modern <strong>Zones</strong> workflow supports <strong>polygons</strong>, <strong>rectangles</strong>, and <strong>2-point circles</strong>, saves reusable <code class="docutils literal notranslate"><span class="pre">*_zones.json</span></code> files with explicit <code class="docutils literal notranslate"><span class="pre">semantic_type=zone</span></code> metadata, and includes one-click arena presets (such as <code class="docutils literal notranslate"><span class="pre">3×3</span> <span class="pre">Chamber</span> <span class="pre">Layout</span></code> and <code class="docutils literal notranslate"><span class="pre">3×3</span> <span class="pre">Social</span> <span class="pre">Door</span> <span class="pre">Layout</span></code>).</p>
+<section id="step-1-draw-save-reusable-zones-in-the-gui">
+<h3>Step 1: Draw &amp; Save Reusable Zones in the GUI<a class="headerlink" href="#step-1-draw-save-reusable-zones-in-the-gui" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Go to the File menu and click on “Place Preference” as shown in the image below.
-<img alt="Place Preference Menu" src="../_images/place_preference_menu.png" /></p></li>
-<li><p>In the pop-up dialog, select the tracked video file. An example is shown below.
-<img alt="Place Preference Dialog" src="../_images/place_preference_dialog.png" /></p></li>
-<li><p>Click the “Analyze” button. The analysis will calculate the duration, in seconds, that the instances specified remain within the defined zones.</p></li>
+<li><p>Open your video in Annolid (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">Video</span></code>) on a clear reference frame.</p></li>
+<li><p>Open <strong><code class="docutils literal notranslate"><span class="pre">Video</span> <span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Zones</span></code></strong> (or draw polygons on Frame 0 and add <code class="docutils literal notranslate"><span class="pre">zone</span></code> in the label description / zone flag).</p></li>
+<li><p>Name each region clearly (for example <code class="docutils literal notranslate"><span class="pre">left_nest_zone</span></code>, <code class="docutils literal notranslate"><span class="pre">center_arena</span></code>, <code class="docutils literal notranslate"><span class="pre">right_port_zone</span></code>).</p></li>
+<li><p>Save the zone layout as <code class="docutils literal notranslate"><span class="pre">&lt;session&gt;_zones.json</span></code> so you can reuse the exact same chamber geometry across every trial recorded on that rig!</p></li>
+</ol>
+<figure class="align-default" id="zones-draw-first-frame">
+<a class="reference internal image-reference" href="../_images/place_preference_zone.png"><img alt="Drawing zone polygons on the first frame of a video and tagging them with the zone keyword" src="../_images/place_preference_zone.png" style="width: 92%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 38 </span><span class="caption-text">Labeling arena zones on a clean reference frame in Annolid.</span><a class="headerlink" href="#zones-draw-first-frame" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="step-2-score-occupancy-latency-gui-or-cli">
+<h3>Step 2: Score Occupancy &amp; Latency (GUI or CLI)<a class="headerlink" href="#step-2-score-occupancy-latency-gui-or-cli" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>In the GUI</strong>: Open <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Place</span> <span class="pre">Preference</span></code></strong> (or <strong><code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">→</span> <span class="pre">Analysis</span> <span class="pre">&amp;</span> <span class="pre">Reporting</span> <span class="pre">Studio…</span></code></strong>), select your tracked video / CSV and zone file, and click <strong>Analyze</strong>.</p></li>
+</ul>
+<div class="ann-pair docutils container">
+<figure class="align-default" id="id1">
+<img alt="Opening Place Preference from the Annolid File menu" src="../_images/place_preference_menu.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 39 </span><span class="caption-text">Launch Place Preference from the menu bar.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="Place Preference dialog selecting tracked video and zone parameters" src="../_images/place_preference_dialog.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 40 </span><span class="caption-text">Select your tracked video or CSV and click <strong>Analyze</strong>.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<ul class="simple">
+<li><p><strong>From the CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">zone-analysis</span></code>)</strong>:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generic zone metrics (occupancy %, duration, entries, latency, mean/max visit dwell)</span>
+annolid-run<span class="w"> </span>zone-analysis<span class="w"> </span>mouse083_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>zone_metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./zone_out
+
+<span class="c1"># Open-field or assay summary + visit events CSV</span>
+annolid-run<span class="w"> </span>zone-analysis<span class="w"> </span>session.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>session_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--profile<span class="w"> </span>open_field<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>assay_summary<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--events-csv<span class="w"> </span>zone_visits.csv
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Three-chamber social assays:</strong> Mark connecting tunnels with <code class="docutils literal notranslate"><span class="pre">zone_kind=connector_tube</span></code> (or <code class="docutils literal notranslate"><span class="pre">occupant_role=neutral</span></code>) so neutral transit time is reported separately from social-chamber preference. See the full <a class="reference external" href="https://annolid.com/portal/zone_analysis/">Zone Analysis Reference</a> on the Docs Portal.</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bonus-walkthrough-importing-sleap-predictions-for-zone-analysis">
+<h2>Bonus Walkthrough: Importing SLEAP Predictions for Zone Analysis<a class="headerlink" href="#bonus-walkthrough-importing-sleap-predictions-for-zone-analysis" title="Link to this heading">#</a></h2>
+<p>Already tracked keypoints in <strong>SLEAP</strong> (<code class="docutils literal notranslate"><span class="pre">.slp</span></code>, <code class="docutils literal notranslate"><span class="pre">.pkg.slp</span></code>, or <code class="docutils literal notranslate"><span class="pre">.analysis.h5</span></code>) or <strong>DeepLabCut</strong> (<code class="docutils literal notranslate"><span class="pre">.csv</span></code> / <code class="docutils literal notranslate"><span class="pre">.h5</span></code>)? You can import them straight into Annolid, review/edit frames visually, overlay your zones, and export CSV or HTML5 reports!</p>
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/tvLHj-Nwu-Y" title="Converting and analyzing SLEAP keypoint predictions in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<section id="gui-steps-sleap-annolid-zones">
+<h3>GUI Steps (SLEAP → Annolid → Zones)<a class="headerlink" href="#gui-steps-sleap-annolid-zones" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Create your zone file</strong>: Open the video, draw arena zones on Frame 0, and save your <code class="docutils literal notranslate"><span class="pre">*_zones.json</span></code>.</p></li>
+<li><p><strong>Import SLEAP predictions</strong>: Open <strong><code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">SLEAP</span> <span class="pre">(.slp</span> <span class="pre">/</span> <span class="pre">.h5)</span> <span class="pre">Import</span> <span class="pre">&amp;</span> <span class="pre">Export…</span></code></strong> (or <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Load</span> <span class="pre">SLEAP</span> <span class="pre">h5</span></code></strong>), select your <code class="docutils literal notranslate"><span class="pre">.slp</span></code>, <code class="docutils literal notranslate"><span class="pre">.pkg.slp</span></code>, or <code class="docutils literal notranslate"><span class="pre">.analysis.h5</span></code> file, and run conversion to Annolid LabelMe JSON.</p></li>
+<li><p><strong>Inspect in Annolid</strong>: Open the video in Annolid — converted keypoint overlays and skeleton bones load automatically so you can verify frames and fix any swaps.</p></li>
+<li><p><strong>Export CSV &amp; analyze</strong>: Run <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Save</span> <span class="pre">CSV</span></code></strong> (or <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">zone-analysis</span></code> directly on the converted folder) to quantify zone occupancy and visits.</p></li>
 </ol>
 </section>
-<section id="converting-and-featuring-sleap-keypoint-predictions-with-annolid">
-<h2>Converting and Featuring SLEAP Keypoint Predictions with Annolid<a class="headerlink" href="#converting-and-featuring-sleap-keypoint-predictions-with-annolid" title="Link to this heading">#</a></h2>
-<p>[<a class="reference external" href="https://i9.ytimg.com/vi_webp/tvLHj-Nwu-Y/mq2.webp?sqp=COCIxbEG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&amp;amp;rs=AOn4CLA8dAP3_nEJsDAFYf02EJ9ct147UQ"></a>](<a class="reference external" href="https://youtu.be/tvLHj-Nwu-Y?si=G7gXjQM4Oh9Ob5ix">https://youtu.be/tvLHj-Nwu-Y?si=G7gXjQM4Oh9Ob5ix</a>)</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tvLHj-Nwu-Y?si=ddyWwA2Wedypnoim" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-<p>In this tutorial, we’ll walk through the process of converting SLEAP keypoint predictions into JSON files and featuring them with Annolid for tracking purposes. Let’s dive in!</p>
+<section id="fast-cli-equivalent">
+<h3>Fast CLI Equivalent<a class="headerlink" href="#fast-cli-equivalent" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import SLEAP .analysis.h5 or .pkg.slp directly to Annolid LabelMe JSON</span>
+annolid-run<span class="w"> </span>import-pose<span class="w"> </span>predictions.analysis.h5<span class="w"> </span>--video<span class="w"> </span>trial.mp4<span class="w"> </span>-o<span class="w"> </span>./sleap_labelme
+</pre></div>
+</div>
+<p>For bidirectional <strong>DeepLabCut</strong>, <strong>Lightning Pose</strong>, <strong>SLEAP</strong>, and <strong>SimBA</strong> recipes, see <a class="reference internal" href="../content/model_training.html"><span class="std std-doc">Model Training &amp; Pose Interoperability</span></a>.</p>
 </section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
-<p>Before getting started, ensure you have the following:</p>
-<ul class="simple">
-<li><p>SLEAP prediction H5 format file</p></li>
-<li><p>AI Polygon for zone creation</p></li>
-<li><p>Annolid installed and configured</p></li>
-</ul>
-</section>
-<section id="steps">
-<h2>Steps<a class="headerlink" href="#steps" title="Link to this heading">#</a></h2>
-<section id="create-zone-file">
-<h3>1. Create Zone File<a class="headerlink" href="#create-zone-file" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Open your video file.</p></li>
-<li><p>Use AI Polygon to automatically create zone shapes.</p></li>
-<li><p>Name the zones and specify the keyword “zone” in the label description field.</p></li>
-</ul>
-</section>
-<section id="load-sleap-prediction-file">
-<h3>2. Load SLEAP Prediction File<a class="headerlink" href="#load-sleap-prediction-file" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Go to the file menu and select “Load SLEAP h5”</p></li>
-<li><p>Click the “run” button to initiate the conversion to Labelme JSON format.</p></li>
-</ul>
-</section>
-<section id="save-keypoints-to-json">
-<h3>3. Save Keypoints to JSON<a class="headerlink" href="#save-keypoints-to-json" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Once the conversion is complete, save the JSON files containing the keypoints on your desktop.</p></li>
-</ul>
-</section>
-<section id="load-files-into-annolid">
-<h3>4. Load Files into Annolid<a class="headerlink" href="#load-files-into-annolid" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Open Annolid.</p></li>
-<li><p>Load the the video file and Annolid will load JSON files automatically for further reviewing or editing.</p></li>
-</ul>
-</section>
-<section id="conversion-verification">
-<h3>5. Conversion Verification<a class="headerlink" href="#conversion-verification" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Check the conversions across frames to ensure the predictions are accurate.</p></li>
-</ul>
-</section>
-<section id="optional-convert-to-csv">
-<h3>6. Optional: Convert to CSV<a class="headerlink" href="#optional-convert-to-csv" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>If needed, convert the JSON file format of the keypoints to CSV format.</p></li>
-<li><p>Click on the file menu and select “Save CSV.”</p></li>
-<li><p>Locate the folder containing the JSON files and click the “run” button to generate and save the CSV files to disk.</p></li>
-</ul>
-</section>
-<section id="additional-features">
-<h3>7. Additional Features<a class="headerlink" href="#additional-features" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Annolid automatically converts the keypoints to smaller circles around their center with a radius of 10 pixels.</p></li>
-<li><p>Random 10 points are drawn on each circle.</p></li>
-</ul>
-</section>
-</section>
-<section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
-<p>By following these steps, you can efficiently convert SLEAP keypoint predictions into JSON files and utilize Annolid for tracking and analysis purposes. Happy tracking!</p>
 </section>
 </section>
 
@@ -602,12 +651,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../content/Expert_mode_CLI_tools.html"
+       href="../content/video_depth_anything.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Expert mode: CLI tools</p>
+        <p class="prev-next-title">Video Depth Anything (Per-Frame Depth Estimation)</p>
       </div>
     </a>
     <a class="right-next"
@@ -615,7 +664,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Behavior classification</p>
+        <p class="prev-next-title">Behavior Scoring, Timelines &amp; Ethograms</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -637,21 +686,16 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-places-of-preference-or-zones">Labeling Places of Preference or Zones</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-place-preference-analysis">Running Place Preference Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-and-featuring-sleap-keypoint-predictions-with-annolid">Converting and Featuring SLEAP Keypoint Predictions with Annolid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steps">Steps</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-zone-file">1. Create Zone File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-sleap-prediction-file">2. Load SLEAP Prediction File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-keypoints-to-json">3. Save Keypoints to JSON</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-files-into-annolid">4. Load Files into Annolid</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-verification">5. Conversion Verification</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-convert-to-csv">6. Optional: Convert to CSV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features">7. Additional Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-recommended-zone-dock-annolid-run-zone-analysis">Method 1 (Recommended): Zone Dock &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">zone-analysis</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-draw-save-reusable-zones-in-the-gui">Step 1: Draw &amp; Save Reusable Zones in the GUI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-score-occupancy-latency-gui-or-cli">Step 2: Score Occupancy &amp; Latency (GUI or CLI)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-walkthrough-importing-sleap-predictions-for-zone-analysis">Bonus Walkthrough: Importing SLEAP Predictions for Zone Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gui-steps-sleap-annolid-zones">GUI Steps (SLEAP → Annolid → Zones)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-cli-equivalent">Fast CLI Equivalent</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -676,7 +720,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -689,6 +733,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

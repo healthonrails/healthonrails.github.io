@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Video preparation &#8212; Annolid Start Here</title>
+    <title>Preparing &amp; Compressing Videos &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/video_preparation';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Downsample and crop videos" href="downsample_and_crop_videos.html" />
-    <link rel="prev" title="Installation Options" href="how_to_install.html" />
+    <link rel="prev" title="Troubleshooting &amp; Frequently Asked Questions" href="troubleshooting_and_faq.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/video_preparation.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Video preparation</h1>
+    <h1>Preparing & Compressing Videos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,13 +500,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-compression-and-rescaling-with-ffmpeg">Video Compression and Rescaling with FFmpeg</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ffmpeg">Installing FFmpeg</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-ffmpeg-installation">Verify FFmpeg installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressing-a-video">Compressing a Video</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rescaling-a-video">Rescaling a Video</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compress-videos-with-annolid-gui">Compress Videos with Annolid GUI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tips">Additional Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-should-you-downsample-or-crop">When Should You Downsample or Crop?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-recommended-batch-downsample-in-the-annolid-gui">Option 1 (Recommended): Batch Downsample in the Annolid GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-quick-ffmpeg-cli-recipes">Option 2: Quick FFmpeg CLI Recipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-verify-ffmpeg">Install &amp; Verify FFmpeg</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#everyday-compression-rescaling-commands">Everyday Compression &amp; Rescaling Commands</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -473,86 +518,107 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="video-preparation">
-<h1>Video preparation<a class="headerlink" href="#video-preparation" title="Link to this heading">#</a></h1>
-<p>In our paper, we find that compressing and downsampling videos can significantly increase processing speed and save compute resources and time.</p>
-<p>For a quick one-line example:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg<span class="w"> </span>-i<span class="w"> </span>mouse.avi<span class="w"> </span>-vcodec<span class="w"> </span>libx264<span class="w"> </span>-vf<span class="w"> </span><span class="nv">scale</span><span class="o">=</span>720x480<span class="w"> </span>mouse.mp4
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="preparing-compressing-videos">
+<h1>Preparing &amp; Compressing Videos<a class="headerlink" href="#preparing-compressing-videos" title="Link to this heading">#</a></h1>
+<p>Before tracking a long lab recording, a 30-second video-preparation step can cut tracking time by <strong>4× to 10×</strong> while keeping every animal contour sharp.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Do you need to extract frames first?</strong> No! Annolid opens <code class="docutils literal notranslate"><span class="pre">.mp4</span></code>, <code class="docutils literal notranslate"><span class="pre">.avi</span></code>, <code class="docutils literal notranslate"><span class="pre">.mov</span></code>, and <code class="docutils literal notranslate"><span class="pre">.mkv</span></code> files directly (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">Video</span></code>). Downsample or crop when your raw recordings are very high resolution (1080p / 4K), huge uncompressed <code class="docutils literal notranslate"><span class="pre">.avi</span></code> files, or contain large empty borders around the arena.</p>
 </div>
-<section id="video-compression-and-rescaling-with-ffmpeg">
-<h2>Video Compression and Rescaling with FFmpeg<a class="headerlink" href="#video-compression-and-rescaling-with-ffmpeg" title="Link to this heading">#</a></h2>
-<p>FFmpeg is a potent tool for video processing, offering capabilities for compression and rescaling. This guide presents the process of compressing and rescaling videos using FFmpeg.</p>
-</section>
-<section id="installing-ffmpeg">
-<h2>Installing FFmpeg<a class="headerlink" href="#installing-ffmpeg" title="Link to this heading">#</a></h2>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>annolid-env
-conda<span class="w"> </span>activate<span class="w"> </span>annolid-env
-conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ffmpeg
-</pre></div>
-</div>
-</section>
-<section id="verify-ffmpeg-installation">
-<h2>Verify FFmpeg installation<a class="headerlink" href="#verify-ffmpeg-installation" title="Link to this heading">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">version</span>
-</pre></div>
-</div>
-</section>
-<section id="compressing-a-video">
-<h2>Compressing a Video<a class="headerlink" href="#compressing-a-video" title="Link to this heading">#</a></h2>
-<p>Reduce file size while maintaining quality</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">libx264</span> <span class="o">-</span><span class="n">crf</span> <span class="mi">18</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
-</pre></div>
-</div>
-<p>Reduce file size and quality</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="n">c</span><span class="p">:</span><span class="n">v</span> <span class="n">libx264</span> <span class="o">-</span><span class="n">b</span><span class="p">:</span><span class="n">v</span> <span class="mi">500</span><span class="n">k</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
-</pre></div>
-</div>
-</section>
-<section id="rescaling-a-video">
-<h2>Rescaling a Video<a class="headerlink" href="#rescaling-a-video" title="Link to this heading">#</a></h2>
-<p>Resize to a specific resolution</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="nb">filter</span><span class="p">:</span><span class="n">v</span> <span class="n">scale</span><span class="o">=</span><span class="n">w</span><span class="o">=</span><span class="mi">1280</span><span class="p">:</span><span class="n">h</span><span class="o">=</span><span class="mi">720</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
-</pre></div>
-</div>
-<p>Resize to a specific aspect ratio</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ffmpeg</span> <span class="o">-</span><span class="n">i</span> <span class="nb">input</span><span class="o">.</span><span class="n">mp4</span> <span class="o">-</span><span class="nb">filter</span><span class="p">:</span><span class="n">v</span> <span class="n">scale</span><span class="o">=</span><span class="n">w</span><span class="o">=</span><span class="mi">1280</span><span class="p">:</span><span class="n">h</span><span class="o">=-</span><span class="mi">1</span> <span class="n">output</span><span class="o">.</span><span class="n">mp4</span>
-</pre></div>
+<section id="when-should-you-downsample-or-crop">
+<h2>When Should You Downsample or Crop?<a class="headerlink" href="#when-should-you-downsample-or-crop" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Situation</p></th>
+<th class="head"><p>Recommended Action</p></th>
+<th class="head"><p>Why It Helps</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Raw 1080p / 4K recordings (<code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">1280</span> <span class="pre">px</span></code> wide)</p></td>
+<td><p>Scale to <code class="docutils literal notranslate"><span class="pre">0.5</span></code> (<code class="docutils literal notranslate"><span class="pre">~640–960</span> <span class="pre">px</span></code> wide)</p></td>
+<td><p>Dramatically faster Cutie, SAM3, and DINOv3 inference with crisp masks</p></td>
+</tr>
+<tr class="row-odd"><td><p>Wide camera showing lab table around the cage</p></td>
+<td><p>Crop to the arena bounding box</p></td>
+<td><p>Removes background distractors and shrinks file sizes</p></td>
+</tr>
+<tr class="row-even"><td><p>Uncompressed <code class="docutils literal notranslate"><span class="pre">.avi</span></code> (multiple GB per trial)</p></td>
+<td><p>Re-encode to H.264 <code class="docutils literal notranslate"><span class="pre">.mp4</span></code> (<code class="docutils literal notranslate"><span class="pre">libx264</span></code>, <code class="docutils literal notranslate"><span class="pre">-crf</span> <span class="pre">18</span></code>)</p></td>
+<td><p>10× smaller files and smoother GUI timeline scrubbing</p></td>
+</tr>
+<tr class="row-odd"><td><p>Folder of 12+ trials with 1–2 outlier cameras</p></td>
+<td><p>Use <strong>GUI Downsample Videos</strong> with per-video overrides</p></td>
+<td><p>Keeps folder defaults clean while recording an auditable <code class="docutils literal notranslate"><span class="pre">.md</span></code> report per video</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="compress-videos-with-annolid-gui">
-<h2>Compress Videos with Annolid GUI<a class="headerlink" href="#compress-videos-with-annolid-gui" title="Link to this heading">#</a></h2>
-<p>The GUI version is a better fit when you need to process a folder of videos, apply the same defaults to most files, and keep a few file-specific exceptions.</p>
+<section id="option-1-recommended-batch-downsample-in-the-annolid-gui">
+<h2>Option 1 (Recommended): Batch Downsample in the Annolid GUI<a class="headerlink" href="#option-1-recommended-batch-downsample-in-the-annolid-gui" title="Link to this heading">#</a></h2>
+<p>The built-in <strong>Downsample Videos</strong> dialog handles single files or entire folders and writes a reproducible <code class="docutils literal notranslate"><span class="pre">.md</span></code> audit log + <code class="docutils literal notranslate"><span class="pre">metadata.csv</span></code> next to every processed file:</p>
+<figure class="align-default" id="prep-downsample-gui">
+<a class="reference internal image-reference" href="../_images/downsample_gui_processing.png"><img alt="Annolid Downsample Videos dialog showing Scale Factor, FPS, Codec, Denoise, Auto Contrast, and Crop Region controls" src="../_images/downsample_gui_processing.png" style="width: 90%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">The <strong>Downsample Videos</strong> dialog (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Downsample</span> <span class="pre">Videos</span></code>) lets you set shared defaults for a folder and review outlier videos one by one.</span><a class="headerlink" href="#prep-downsample-gui" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <ol class="arabic simple">
-<li><p><strong>Click <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">-&gt;</span> <span class="pre">Downsample</span> <span class="pre">Videos</span></code>.</strong></p></li>
-<li><p><strong>Select the folder</strong> containing your original videos.</p></li>
-<li><p><strong>Open the <code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">/</span> <span class="pre">Output</span></code> tab</strong> and set an output folder to save all the processed videos.</p>
+<li><p>Open <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Downsample</span> <span class="pre">Videos</span></code></strong>.</p></li>
+<li><p>In <strong><code class="docutils literal notranslate"><span class="pre">Input</span> <span class="pre">/</span> <span class="pre">Output</span></code></strong>, select your source video or folder. Leave the output folder blank to automatically write into a safe sibling <code class="docutils literal notranslate"><span class="pre">&lt;folder&gt;_downsampled/</span></code> directory (your original videos are never overwritten).</p></li>
+<li><p>In <strong><code class="docutils literal notranslate"><span class="pre">Processing</span></code></strong>, configure folder-wide defaults:</p>
 <ul class="simple">
-<li><p>If you leave it blank, Annolid uses a sibling folder with <code class="docutils literal notranslate"><span class="pre">_downsampled</span></code> appended to the input folder name.</p></li>
+<li><p><strong>Scale Factor</strong>: e.g. <code class="docutils literal notranslate"><span class="pre">0.5</span></code> halves width and height.</p></li>
+<li><p><strong>FPS</strong>: leave blank to keep the original frame rate, or check <strong>Use specified FPS</strong> to normalize mixed cameras.</p></li>
+<li><p><strong>Crop Region</strong>: click <strong>Preview &amp; Crop First Frame</strong> to draw the arena visually.</p></li>
 </ul>
 </li>
-<li><p><strong>Open the <code class="docutils literal notranslate"><span class="pre">Processing</span></code> tab</strong> and set folder defaults:</p>
-<ul class="simple">
-<li><p>For example, selecting <code class="docutils literal notranslate"><span class="pre">0.5</span></code> will reduce the size of the video by half.</p></li>
-<li><p>Leave FPS blank unless you need a fixed frame rate.</p></li>
-<li><p>Enable crop only if the same crop applies to every video.</p></li>
-</ul>
-</li>
-<li><p>If one or more videos need different settings, click <strong><code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Videos</span> <span class="pre">One</span> <span class="pre">by</span> <span class="pre">One</span> <span class="pre">(Folder</span> <span class="pre">Input)</span></code></strong> and use <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> for exceptions or <strong><code class="docutils literal notranslate"><span class="pre">Skip</span></code></strong> to keep the defaults.</p></li>
-<li><p><strong>Open the <code class="docutils literal notranslate"><span class="pre">Run</span></code> tab</strong>.</p></li>
-<li><p><strong>Check the <code class="docutils literal notranslate"><span class="pre">Rescale</span> <span class="pre">Video</span></code> checkbox</strong>.</p></li>
-<li><p><strong>Click the <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Processing</span></code> button</strong>.</p></li>
+<li><p>If one or two recordings have a shifted camera angle, click <strong><code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Videos</span> <span class="pre">One</span> <span class="pre">by</span> <span class="pre">One</span> <span class="pre">(Folder</span> <span class="pre">Input)</span></code></strong> and click <strong><code class="docutils literal notranslate"><span class="pre">Save</span> <span class="pre">&amp;</span> <span class="pre">Next</span></code></strong> only for the exceptions.</p></li>
+<li><p>Open the <strong><code class="docutils literal notranslate"><span class="pre">Run</span></code></strong> tab, check <strong><code class="docutils literal notranslate"><span class="pre">Rescale</span> <span class="pre">Video</span></code></strong>, and click <strong><code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">Processing</span></code></strong>.</p></li>
 </ol>
-<p>This workflow compresses and downsamples the selected folder while keeping per-video changes explicit and reproducible.</p>
+<p>For a complete visual guide to per-video crops and batch overrides, see <a class="reference internal" href="downsample_and_crop_videos.html"><span class="std std-doc">Downsample and crop videos</span></a> and <a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html"><span class="std std-doc">Batch downsampling with sequential video review</span></a>.</p>
 </section>
-<section id="additional-tips">
-<h2>Additional Tips<a class="headerlink" href="#additional-tips" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Utilize the <code class="docutils literal notranslate"><span class="pre">-preset</span></code> option to adjust encoding speed, for example <code class="docutils literal notranslate"><span class="pre">-preset</span> <span class="pre">fast</span></code>.</p></li>
-<li><p>Specify the audio codec with <code class="docutils literal notranslate"><span class="pre">-c:a</span></code>, for example <code class="docutils literal notranslate"><span class="pre">-c:a</span> <span class="pre">aac</span></code>.</p></li>
-<li><p>Set the audio bitrate using <code class="docutils literal notranslate"><span class="pre">-b:a</span></code>, for example <code class="docutils literal notranslate"><span class="pre">-b:a</span> <span class="pre">128k</span></code>.</p></li>
-<li><p>If you need a deeper walkthrough for folder workflows, see the dedicated downsampling guide in the documentation.</p></li>
-</ul>
+<section id="option-2-quick-ffmpeg-cli-recipes">
+<h2>Option 2: Quick FFmpeg CLI Recipes<a class="headerlink" href="#option-2-quick-ffmpeg-cli-recipes" title="Link to this heading">#</a></h2>
+<section id="install-verify-ffmpeg">
+<h3>Install &amp; Verify FFmpeg<a class="headerlink" href="#install-verify-ffmpeg" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># macOS (Homebrew)</span>
+brew<span class="w"> </span>install<span class="w"> </span>ffmpeg
+
+<span class="c1"># Conda (all platforms)</span>
+conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>ffmpeg
+
+<span class="c1"># Verify</span>
+ffmpeg<span class="w"> </span>-version
+</pre></div>
+</div>
+</section>
+<section id="everyday-compression-rescaling-commands">
+<h3>Everyday Compression &amp; Rescaling Commands<a class="headerlink" href="#everyday-compression-rescaling-commands" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quick convert AVI -&gt; compact H.264 MP4 at 720x480</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>mouse.avi<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-vf<span class="w"> </span><span class="nv">scale</span><span class="o">=</span><span class="m">720</span>:480<span class="w"> </span>mouse.mp4
+
+<span class="c1"># Visually lossless compression (keep resolution, smaller file)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>-preset<span class="w"> </span>fast<span class="w"> </span>output.mp4
+
+<span class="c1"># Resize to 960px wide while preserving aspect ratio (height auto-rounded to even)</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="s2">"scale=960:-2"</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">20</span><span class="w"> </span>output.mp4
+
+<span class="c1"># Crop to arena region (width:height:x:y) and compress</span>
+ffmpeg<span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-vf<span class="w"> </span><span class="s2">"crop=800:500:120:40"</span><span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>cropped.mp4
+
+<span class="c1"># Trim a short 30-second test clip starting at 00:01:00 (great for verifying your pipeline)</span>
+ffmpeg<span class="w"> </span>-ss<span class="w"> </span><span class="m">00</span>:01:00<span class="w"> </span>-t<span class="w"> </span><span class="m">30</span><span class="w"> </span>-i<span class="w"> </span>input.mp4<span class="w"> </span>-c:v<span class="w"> </span>libx264<span class="w"> </span>-crf<span class="w"> </span><span class="m">18</span><span class="w"> </span>test_clip.mp4
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">scale=960:-2</span></code> instead of <code class="docutils literal notranslate"><span class="pre">scale=960:-1</span></code> ensures the computed height is always divisible by 2 — which H.264 (<code class="docutils literal notranslate"><span class="pre">libx264</span></code>) requires!</p>
+</div>
+<p>Next: walk through the full <a class="reference internal" href="downsample_and_crop_videos.html"><span class="std std-doc">Downsample and crop videos</span></a> GUI tool, or jump straight to <a class="reference internal" href="labelling_images.html"><span class="std std-doc">Labeling Instances</span></a>.</p>
+</section>
 </section>
 </section>
 
@@ -587,12 +653,12 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="how_to_install.html"
+       href="troubleshooting_and_faq.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Installation Options</p>
+        <p class="prev-next-title">Troubleshooting &amp; Frequently Asked Questions</p>
       </div>
     </a>
     <a class="right-next"
@@ -622,13 +688,13 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-compression-and-rescaling-with-ffmpeg">Video Compression and Rescaling with FFmpeg</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-ffmpeg">Installing FFmpeg</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-ffmpeg-installation">Verify FFmpeg installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compressing-a-video">Compressing a Video</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rescaling-a-video">Rescaling a Video</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compress-videos-with-annolid-gui">Compress Videos with Annolid GUI</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-tips">Additional Tips</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-should-you-downsample-or-crop">When Should You Downsample or Crop?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-1-recommended-batch-downsample-in-the-annolid-gui">Option 1 (Recommended): Batch Downsample in the Annolid GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#option-2-quick-ffmpeg-cli-recipes">Option 2: Quick FFmpeg CLI Recipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#install-verify-ffmpeg">Install &amp; Verify FFmpeg</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#everyday-compression-rescaling-commands">Everyday Compression &amp; Rescaling Commands</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -653,7 +719,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -666,6 +732,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

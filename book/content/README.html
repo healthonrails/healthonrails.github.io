@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Annolid: Start Here &#8212; Annolid Start Here</title>
+    <title>The Annolid Book &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -60,8 +61,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/README';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction" href="introduction.html" />
@@ -198,8 +202,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -216,54 +220,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -334,6 +364,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/README.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -446,7 +493,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Annolid: Start Here</h1>
+    <h1>The Annolid Book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -456,11 +503,9 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-here">Start Here</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-and-use-cases">Tutorials and Use Cases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli-and-agent-workflows">CLI and Agent Workflows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn More</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-and-citation">Community and Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-annolid-in-action">See Annolid in Action</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-your-path">Choose Your Path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-book-is-organized">How This Book Is Organized</a></li>
 </ul>
             </nav>
         </div>
@@ -472,65 +517,136 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="annolid-start-here">
-<h1>Annolid: Start Here<a class="headerlink" href="#annolid-start-here" title="Link to this heading">#</a></h1>
-<blockquote>
-<div><p>Canonical docs now live in the Annolid Docs Portal:
-<a class="reference external" href="https://annolid.com/">https://annolid.com/</a></p>
-</div></blockquote>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-annolid-book">
+<h1>The Annolid Book<a class="headerlink" href="#the-annolid-book" title="Link to this heading">#</a></h1>
+<div class="ann-book-hero docutils container">
+<p><span class="ann-book-kicker">Interactive Guide · Screenshots · Animations · Real Lab Walkthroughs</span></p>
+<div class="ann-hero-title">Annotate, track, and quantify animal behavior — from raw video to publication-ready figures.</div>
+<p><strong>Annolid</strong> combines a desktop annotation GUI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>), a reproducible CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>), foundation-model tracking (Cutie, SAM3, DINOv3, INSID3, TAPNext, CoWTracker, YOLO), automated Track QC, behavior ethograms, spatial zones, large-TIFF / Brain 3D reconstruction, and offline 3D digital animal simulations in one unified toolkit.</p>
+<div class="ann-cta-row docutils container">
+<p><a class="reference internal" href="how_to_install.html"><span class="std std-doc">Install Annolid in 2 Minutes →</span></a>
+<a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html"><span class="std std-doc">Featured Walkthrough (mouse083)</span></a>
+<a class="reference internal" href="tracking_with_Cutie.html"><span class="std std-doc">Track From One Frame</span></a>
+<a class="reference internal" href="quick_reference_cheatsheet.html"><span class="std std-doc">Quick Reference Cheat Sheet</span></a>
+<a class="reference external" href="https://annolid.com/portal/">Docs Reference Portal</a></p>
+</div>
+</div>
 <p><a class="reference external" href="https://github.com/healthonrails/annolid/actions/workflows/CI.yml"><img alt="Annolid CI" src="https://github.com/healthonrails/annolid/actions/workflows/CI.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/healthonrails/annolid/actions/workflows/release.yml"><img alt="Release" src="https://github.com/healthonrails/annolid/actions/workflows/release.yml/badge.svg" /></a>
 <a class="reference external" href="https://github.com/healthonrails/annolid/actions/workflows/annolid-publish.yml"><img alt="Publish to PyPI" src="https://github.com/healthonrails/annolid/actions/workflows/annolid-publish.yml/badge.svg" /></a></p>
-<p>Annolid is a practical toolkit for annotation, segmentation, tracking, and behavior analysis in research videos.
-This book remains available as a compatibility layer and curated walkthrough collection.
-For the latest, unified user docs, use the Docs Portal.</p>
-<section id="start-here">
-<h2>Start Here<a class="headerlink" href="#start-here" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://annolid.com/">Open the Docs Portal</a></p></li>
-<li><p><a class="reference external" href="https://annolid.com/portal/installation/">Install Annolid</a></p></li>
-<li><p><a class="reference external" href="https://annolid.com/portal/workflows/">Run the video-first workflow</a></p></li>
-<li><p><a class="reference external" href="https://annolid.com/portal/tutorials/">Explore tutorials</a></p></li>
-<li><p>Use this book for legacy chapter-style walkthroughs when needed.</p></li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">extract_frames.md</span></code> remains available for workflows where frame sampling is preferred, but it is optional for standard video-first labeling.</p>
+<section id="see-annolid-in-action">
+<h2>See Annolid in Action<a class="headerlink" href="#see-annolid-in-action" title="Link to this heading">#</a></h2>
+<div class="ann-gallery docutils container">
+<div class="ann-card docutils container">
+<p><img alt="Animated multi-animal polygon, 14-keypoint skeleton, and behavior tracking demo on mouse083_task1_annotator1" src="../_images/mouse083_tracking_demo.gif" /></p>
+<div class="ann-card-body docutils container">
+<div class="ann-card-title">Multi-Animal Tracking &amp; 14 Keypoints</div>
+<p>Follow instance polygons, anatomical skeletons, and live social states across 4,881 frames of real home-cage video.</p>
+<p><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html"><span class="std std-doc">Walk through the mouse083 assay →</span></a></p>
+</div>
+</div>
+<div class="ann-card docutils container">
+<p><img alt="Annolid desktop GUI displaying polygons, keypoints, Flags dock, and Label Instances" src="../_images/mouse083_gui_workspace.png" /></p>
+<div class="ann-card-body docutils container">
+<div class="ann-card-title">Desktop GUI for Polygons, Keypoints &amp; Flags</div>
+<p>Click once with SAM AI-Polygons, scrub the behavior timeline, and inspect synchronized docks in one dark-mode Qt app.</p>
+<p><a class="reference internal" href="labelling_images.html"><span class="std std-doc">Learn fast GUI annotation →</span></a></p>
+</div>
+</div>
+<div class="ann-card docutils container">
+<p><img alt="Ethogram timeline raster, inter-animal proximity curve, arena trajectories, and behavior time budget" src="../_images/mouse083_ethogram_kinematics.png" /></p>
+<div class="ann-card-body docutils container">
+<div class="ann-card-title">Ethograms, Zones, Track QC &amp; HTML5 Reports</div>
+<p>Automatically flag occlusion gaps, compute zone occupancy and freezing bouts, and export self-contained HTML5/SVG reports.</p>
+<p><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html"><span class="std std-doc">Explore Track QC &amp; Reporting →</span></a></p>
+</div>
+</div>
+<div class="ann-card docutils container">
+<p><img alt="Offline Three.js 3D Two-Mouse simulation in Fly-Brain LIF Connectome mode" src="../_images/sim_fly_brain_connectome.png" /></p>
+<div class="ann-card-body docutils container">
+<div class="ann-card-title">Offline 3D Digital Twins &amp; Sim-to-Real</div>
+<p>Run 10 Two-Mouse 3D arenas, Fly-Brain LIF spiking circuits, Rat NCAP spinal locomotion, and zero-label Sim-to-Real training.</p>
+<p><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html"><span class="std std-doc">Explore 3D Simulations →</span></a></p>
+</div>
+</div>
+</div>
 </section>
-<section id="tutorials-and-use-cases">
-<h2>Tutorials and Use Cases<a class="headerlink" href="#tutorials-and-use-cases" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Place preference analysis</p></li>
-<li><p>Behavior classification</p></li>
-<li><p>Freezing and motion assays</p></li>
-<li><p>DINOv3 keypoint tracking</p></li>
-<li><p>Post hoc distance analysis</p></li>
-</ul>
+<section id="choose-your-path">
+<h2>Choose Your Path<a class="headerlink" href="#choose-your-path" title="Link to this heading">#</a></h2>
+<div class="ann-path-grid docutils container">
+<div class="ann-path-card docutils container">
+<p><strong>1. First-Time User (No Training Needed)</strong></p>
+<p>Install Annolid, open a short video directly, outline your animals on frame 0 with AI-Polygons, and track the entire clip with Cutie or SAM3.</p>
+<p><a class="reference internal" href="how_to_install.html"><span class="std std-doc">Install</span></a> · <a class="reference internal" href="labelling_images.html"><span class="std std-doc">Label 1 Frame</span></a> · <a class="reference internal" href="tracking_with_Cutie.html"><span class="std std-doc">Track with Cutie</span></a></p>
+</div>
+<div class="ann-path-card ann-path-card-warm docutils container">
+<p><strong>2. Behavior, Pose &amp; Quantitative Analysis</strong></p>
+<p>Score ethograms on the timeline, draw spatial zones, interoperate with DeepLabCut/SLEAP, audit with Track QC, and export HTML5 reports.</p>
+<p><a class="reference internal" href="../tutorials/Place_preference.html"><span class="std std-doc">Zones</span></a> · <a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html"><span class="std std-doc">Pose &amp; DLC/SLEAP</span></a> · <a class="reference internal" href="../tutorials/Reporting_and_track_qc.html"><span class="std std-doc">Track QC &amp; Reports</span></a></p>
+</div>
+<div class="ann-path-card docutils container">
+<p><strong>3. Cohort Scale, Live Cameras &amp; 3D Twins</strong></p>
+<p>Fine-tune YOLO11/YOLO26 on Colab, run wireless multi-camera detection, search hours of video with EmbeddingGemma 2, or bootstrap from 3D twins.</p>
+<p><a class="reference internal" href="model_training.html"><span class="std std-doc">Train YOLO</span></a> · <a class="reference internal" href="../tutorials/Realtime_and_multicamera.html"><span class="std std-doc">Live Cameras</span></a> · <a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html"><span class="std std-doc">3D Twins &amp; Sim-to-Real</span></a></p>
+</div>
+</div>
 </section>
-<section id="cli-and-agent-workflows">
-<h2>CLI and Agent Workflows<a class="headerlink" href="#cli-and-agent-workflows" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="Expert_mode_CLI_tools.html"><span class="std std-doc">Expert mode CLI tools</span></a></p></li>
-<li><p><a class="reference internal" href="#prediction_review_agent.md"><span class="xref myst">Prediction review agent workflow</span></a></p></li>
-</ul>
+<section id="how-this-book-is-organized">
+<h2>How This Book Is Organized<a class="headerlink" href="#how-this-book-is-organized" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Part</p></th>
+<th class="head"><p>What You Will Learn</p></th>
+<th class="head"><p>Recommended Starting Chapter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Start Here</strong></p></td>
+<td><p>What Annolid does, how the pipeline fits together, tabbed installation, lab-bench cheat sheet, and FAQ.</p></td>
+<td><p><a class="reference internal" href="introduction.html"><span class="std std-doc">Introduction</span></a> · <a class="reference internal" href="how_to_install.html"><span class="std std-doc">Installation</span></a> · <a class="reference internal" href="quick_reference_cheatsheet.html"><span class="std std-doc">Cheat Sheet</span></a> · <a class="reference internal" href="troubleshooting_and_faq.html"><span class="std std-doc">FAQ</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Prepare Videos &amp; Annotate</strong></p></td>
+<td><p>Batch downsample &amp; crop folders, label polygons/keypoints with SAM clicks or text prompts, merge shapes, and reorder lists.</p></td>
+<td><p><a class="reference internal" href="labelling_images.html"><span class="std std-doc">Labeling Instances</span></a> · <a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html"><span class="std std-doc">GUI Power Tips</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Tracking, Segmentation &amp; Pose</strong></p></td>
+<td><p>Real <code class="docutils literal notranslate"><span class="pre">mouse083</span></code> assay, Cutie, SAM3, segment batch tracking, hierarchical body-part masks, DINOv3, TAPNext, CoWTracker, INSID3, Pose Workbench &amp; DLC/SLEAP interop.</p></td>
+<td><p><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html"><span class="std std-doc">mouse083 Walkthrough</span></a> · <a class="reference internal" href="../tutorials/Body_part_segmentation.html"><span class="std std-doc">Body-Part Segmentation</span></a> · <a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html"><span class="std std-doc">Pose &amp; DLC/SLEAP</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Behavior, Zones &amp; Analysis</strong></p></td>
+<td><p>Place preference, ethogram scoring, TCN behavior classifiers, freezing/optical flow, distances, EmbeddingGemma 2 frame search, Identity Governor, Track QC, IRR, and HTML5 reports.</p></td>
+<td><p><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html"><span class="std std-doc">Track QC &amp; Reports</span></a> · <a class="reference internal" href="../tutorials/TCN_behavior_classification.html"><span class="std std-doc">TCN Classifiers</span></a> · <a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html"><span class="std std-doc">Frame Search &amp; ID Repair</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Train Models &amp; Scale Up</strong></p></td>
+<td><p>Train YOLO11/YOLO26/YOLOE, COCO/YOLO/NDJSON data formats, Google Colab GPUs, batch downsampling, and real-time multi-camera pipelines.</p></td>
+<td><p><a class="reference internal" href="model_training.html"><span class="std std-doc">Model Training</span></a> · <a class="reference internal" href="../tutorials/COCO_and_data_formats.html"><span class="std std-doc">COCO &amp; Data Formats</span></a> · <a class="reference internal" href="../tutorials/Realtime_and_multicamera.html"><span class="std std-doc">Live Cameras</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Microscopy &amp; 3D Digital Twins</strong></p></td>
+<td><p>View gigapixel TIFF + Illustrator atlas overlays, reconstruct Brain 3D coronal planes, and explore offline 3D animal twins &amp; Sim-to-Real Studio.</p></td>
+<td><p><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html"><span class="std std-doc">Large TIFF &amp; Brain 3D</span></a> · <a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html"><span class="std std-doc">3D Twins &amp; Sim-to-Real</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Automation, CLI &amp; Annolid Bot</strong></p></td>
+<td><p>Annolid Bot slash commands (<code class="docutils literal notranslate"><span class="pre">/track</span></code>, <code class="docutils literal notranslate"><span class="pre">/qc</span></code>, <code class="docutils literal notranslate"><span class="pre">/stats</span></code>, <code class="docutils literal notranslate"><span class="pre">/report</span></code>, <code class="docutils literal notranslate"><span class="pre">/sim2real</span></code>), MCP servers, LanceDB Memory, Google/Box integrations, security audits, and <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code> CLI.</p></td>
+<td><p><a class="reference internal" href="prediction_review_agent.html"><span class="std std-doc">Annolid Bot</span></a> · <a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html"><span class="std std-doc">MCP, Memory &amp; Security</span></a> · <a class="reference internal" href="Expert_mode_CLI_tools.html"><span class="std std-doc">CLI Reference</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Resources &amp; Community</strong></p></td>
+<td><p>ModelZoo datasets, YouTube tutorials, citation BibTeX, publications using Annolid, contributing, and license.</p></td>
+<td><p><a class="reference internal" href="annolid_zoo.html"><span class="std std-doc">ModelZoo</span></a> · <a class="reference internal" href="cite_annolid.html"><span class="std std-doc">Cite Annolid</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Quickest 60-second setup:</strong> Install the lean GUI with <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;annolid[gui]&quot;</span></code> (or run our <a class="reference internal" href="how_to_install.html"><span class="std std-doc">one-line installer</span></a>), launch <code class="docutils literal notranslate"><span class="pre">annolid</span></code>, and open a video directly — frame extraction is optional!</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Book vs. Docs Portal:</strong> This book is designed for step-by-step, visual, chapter-style learning. For exhaustive CLI flags, API contracts, MCP/security references, and operational docs, visit the <a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a>.</p>
+</div>
 </section>
-<section id="learn-more">
-<h2>Learn More<a class="headerlink" href="#learn-more" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="high_level_overview.html"><span class="std std-doc">High-level overview</span></a></p></li>
-<li><p><a class="reference internal" href="combining_models.html"><span class="std std-doc">Model combinations</span></a></p></li>
-<li><p><a class="reference internal" href="annolid_zoo.html"><span class="std std-doc">Annolid Zoo</span></a></p></li>
-<li><p><a class="reference internal" href="video_depth_anything.html"><span class="std std-doc">Video Depth Anything</span></a></p></li>
-</ul>
-</section>
-<section id="community-and-citation">
-<h2>Community and Citation<a class="headerlink" href="#community-and-citation" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference internal" href="get_in_touch.html"><span class="std std-doc">Get in touch</span></a></p></li>
-<li><p><a class="reference internal" href="contributing.html"><span class="std std-doc">Contributing</span></a></p></li>
-<li><p><a class="reference internal" href="work_based_on_annolid.html"><span class="std std-doc">Work based on Annolid</span></a></p></li>
-<li><p><a class="reference internal" href="cite_annolid.html"><span class="std std-doc">Cite Annolid</span></a></p></li>
-<li><p><a class="reference internal" href="licence.html"><span class="std std-doc">License</span></a></p></li>
-</ul>
-</section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -604,11 +720,9 @@ For the latest, unified user docs, use the Docs Portal.</p>
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#start-here">Start Here</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-and-use-cases">Tutorials and Use Cases</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cli-and-agent-workflows">CLI and Agent Workflows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn More</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#community-and-citation">Community and Citation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#see-annolid-in-action">See Annolid in Action</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choose-your-path">Choose Your Path</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-this-book-is-organized">How This Book Is Organized</a></li>
 </ul>
   </nav></div>
 
@@ -633,7 +747,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -646,6 +760,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

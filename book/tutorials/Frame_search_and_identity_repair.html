@@ -1,0 +1,789 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Semantic Frame Search &amp; Automated Identity Repair &#8212; The Annolid Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/Frame_search_and_identity_repair';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Track QC, Statistics &amp; HTML5 Reports" href="Reporting_and_track_qc.html" />
+    <link rel="prev" title="Inter-Instance Distances &amp; Kinematics" href="Calculate_distances_between_instances.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../content/README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../content/README.html">
+                    The Annolid Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/how_to_install.html">Installation Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Preparing &amp; Compressing Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/downsample_and_crop_videos.html">Downsample and crop videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/licence.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/tutorials/Frame_search_and_identity_repair.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/issues/new?title=Issue%20on%20page%20%2Ftutorials/Frame_search_and_identity_repair.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/Frame_search_and_identity_repair.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Semantic Frame Search & Automated Identity Repair</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-find-rare-behaviors-in-seconds-onnx-embeddinggemma-2">Part 1: Find Rare Behaviors in Seconds (ONNX EmbeddingGemma 2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-inside-the-gui-embedding-search-dock">Search Inside the GUI (<code class="docutils literal notranslate"><span class="pre">Embedding</span> <span class="pre">Search</span></code> Dock)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-cli-behavior-search-annolid-run-behavior-search">Fast CLI Behavior Search (<code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">behavior-search</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-automated-identity-repair-identity-governor">Part 2: Automated Identity Repair (Identity Governor)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-identity-governor-in-the-gui">Run Identity Governor in the GUI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripted-python-api-dry-run-apply">Scripted Python API (Dry-Run → Apply)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="semantic-frame-search-automated-identity-repair">
+<h1>Semantic Frame Search &amp; Automated Identity Repair<a class="headerlink" href="#semantic-frame-search-automated-identity-repair" title="Link to this heading">#</a></h1>
+<p>Working with multi-hour recordings? Two power tools in Annolid save hours of manual scrubbing:</p>
+<ol class="arabic simple">
+<li><p><strong>Semantic Frame &amp; Behavior Search (<code class="docutils literal notranslate"><span class="pre">ONNX</span> <span class="pre">EmbeddingGemma</span> <span class="pre">2</span></code>)</strong> — find rare behavioral moments by typing plain English (<code class="docutils literal notranslate"><span class="pre">mouse</span> <span class="pre">grooming</span></code>, <code class="docutils literal notranslate"><span class="pre">nose-to-nose</span> <span class="pre">sniffing</span></code>, <code class="docutils literal notranslate"><span class="pre">rearing</span> <span class="pre">on</span> <span class="pre">hind</span> <span class="pre">legs</span></code>) with <strong>no PyTorch required</strong>.</p></li>
+<li><p><strong>Identity Governor</strong> — audit and automatically repair stubborn multi-animal identity swaps across thousands of frames using explicit, reproducible zone/distance/area evidence rules.</p></li>
+</ol>
+<hr class="docutils" />
+<section id="part-1-find-rare-behaviors-in-seconds-onnx-embeddinggemma-2">
+<h2>Part 1: Find Rare Behaviors in Seconds (ONNX EmbeddingGemma 2)<a class="headerlink" href="#part-1-find-rare-behaviors-in-seconds-onnx-embeddinggemma-2" title="Link to this heading">#</a></h2>
+<p>Annolid integrates <strong>ONNX EmbeddingGemma 2</strong> (<code class="docutils literal notranslate"><span class="pre">onnx-community/embeddinggemma-2-ONNX</span></code>, Apache 2.0, ungated), mapping text, individual video frames, and multi-frame temporal clips (<code class="docutils literal notranslate"><span class="pre">4f</span></code> / <code class="docutils literal notranslate"><span class="pre">8f</span></code>) into one shared 768-dimensional semantic space — running cleanly on <strong>ONNX Runtime</strong> (~270 MB <code class="docutils literal notranslate"><span class="pre">q4</span></code> download, no PyTorch needed).</p>
+<section id="search-inside-the-gui-embedding-search-dock">
+<h3>Search Inside the GUI (<code class="docutils literal notranslate"><span class="pre">Embedding</span> <span class="pre">Search</span></code> Dock)<a class="headerlink" href="#search-inside-the-gui-embedding-search-dock" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open your video in Annolid (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">Video</span></code>).</p></li>
+<li><p>Open <strong><code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">/</span> <span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Frame</span> <span class="pre">Search</span> <span class="pre">(Embedding)</span></code></strong>.</p></li>
+<li><p>Keep the default <strong>EmbeddingGemma 2 (ONNX)</strong> backend and pick a speed/detail preset:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Q4</span> <span class="pre">·</span> <span class="pre">140t</span> <span class="pre">·</span> <span class="pre">768d</span></code> <em>(default balanced)</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Q4</span> <span class="pre">·</span> <span class="pre">70t</span> <span class="pre">·</span> <span class="pre">256d</span> <span class="pre">(fast)</span></code> <em>(2–5× faster on CPU)</em></p></li>
+<li><p>Temporal window: <code class="docutils literal notranslate"><span class="pre">1f</span> <span class="pre">(frame)</span></code>, <code class="docutils literal notranslate"><span class="pre">4f</span> <span class="pre">(clip)</span></code>, or <code class="docutils literal notranslate"><span class="pre">8f</span> <span class="pre">(clip)</span></code> for dynamic actions like chasing or rearing.</p></li>
+</ul>
+</li>
+<li><p>Keep <strong>Auto</strong> thresholding enabled (adaptive MAD-based threshold calibrated to EmbeddingGemma 2’s cosine cone).</p></li>
+<li><p>Type a natural-language query (<code class="docutils literal notranslate"><span class="pre">mouse</span> <span class="pre">grooming</span></code>, <code class="docutils literal notranslate"><span class="pre">mounting</span></code>) and press <strong>Enter</strong> — or navigate to an example frame and click <strong>Search</strong> to find visually similar moments!</p></li>
+<li><p><strong>Double-click any match</strong> to jump straight to that frame, or select matching rows and click <strong><code class="docutils literal notranslate"><span class="pre">Label</span> <span class="pre">Selected</span></code></strong> to write intervals directly into your behavior log.</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Once a video is indexed into Annolid’s disk <code class="docutils literal notranslate"><span class="pre">.npz</span></code> cache, follow-up searches for <em>different</em> behaviors return results in <strong>milliseconds</strong>!</p>
+</div>
+</section>
+<section id="fast-cli-behavior-search-annolid-run-behavior-search">
+<h3>Fast CLI Behavior Search (<code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">behavior-search</span></code>)<a class="headerlink" href="#fast-cli-behavior-search-annolid-run-behavior-search" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Index once and search by natural-language query</span>
+annolid-run<span class="w"> </span>behavior-search<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--query<span class="w"> </span><span class="s2">"mouse grooming"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--quantization<span class="w"> </span>q4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--soft-tokens<span class="w"> </span><span class="m">140</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--matryoshka-dim<span class="w"> </span><span class="m">256</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--stride<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--index-cache<span class="w"> </span>./video_eg2_index.npz<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>./grooming_matches.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--json
+
+<span class="c1"># Reuse the cached index for a second behavior in milliseconds</span>
+annolid-run<span class="w"> </span>behavior-search<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--query<span class="w"> </span><span class="s2">"rearing on hind legs"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--index-cache<span class="w"> </span>./video_eg2_index.npz<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--json
+
+<span class="c1"># Zero-shot multi-behavior scoring across the timeline</span>
+annolid-run<span class="w"> </span>behavior-search<span class="w"> </span>/path/to/video.mp4<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--behaviors<span class="w"> </span><span class="s2">"grooming,rearing,sniffing,resting"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--clip-frames<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--stride<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>./behavior_scores.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--json
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="part-2-automated-identity-repair-identity-governor">
+<h2>Part 2: Automated Identity Repair (Identity Governor)<a class="headerlink" href="#part-2-automated-identity-repair-identity-governor" title="Link to this heading">#</a></h2>
+<p>For isolated identity swaps during Cutie/SAM3 tracking, fixing 1 anchor frame and re-propagating is still the fastest path. When you have <strong>large batches of already-tracked frame JSONs</strong> and clear assay evidence (for example a tethered resident vs. untethered intruder, chamber-restricted animals, or consistent size differences), <strong>Identity Governor</strong> audits and repairs swaps reproducibly with a dry-run report.</p>
+<figure class="align-default" id="search-identity-storyboard">
+<a class="reference internal image-reference" href="../_images/mouse083_behavior_storyboard.png"><img alt="Four-panel storyboard showing normal tracking, close contact, and an occlusion event caught by Track QC" src="../_images/mouse083_behavior_storyboard.png" style="width: 96%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 47 </span><span class="caption-text">Close dyadic contact and occlusions (Panels C–D) are the primary moments where multi-animal trackers risk swapping IDs — pair Track QC with Identity Governor to audit and repair them cleanly.</span><a class="headerlink" href="#search-identity-storyboard" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="run-identity-governor-in-the-gui">
+<h3>Run Identity Governor in the GUI<a class="headerlink" href="#run-identity-governor-in-the-gui" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Open <strong><code class="docutils literal notranslate"><span class="pre">Video</span> <span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Identity</span> <span class="pre">Governor…</span></code></strong> (or <strong><code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">→</span> <span class="pre">Identity</span> <span class="pre">Governor…</span></code></strong>).</p></li>
+<li><p>Load a built-in policy snippet (<em>Generic identity template</em>, <em>2-subject arena (zone + distance)</em>, <em>3-vole social assay</em>, or <em>Distance-only fallback</em>).</p></li>
+<li><p>Always run <strong>Dry Run</strong> first to inspect the generated audit report before applying atomic JSON rewrites!</p></li>
+</ol>
+</section>
+<section id="scripted-python-api-dry-run-apply">
+<h3>Scripted Python API (Dry-Run → Apply)<a class="headerlink" href="#scripted-python-api-dry-run-apply" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">annolid.postprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_identity_governor</span>
+
+<span class="n">policy</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"metric_aliases"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"in_left"</span><span class="p">:</span> <span class="s2">"zone.inside.left_zone"</span><span class="p">,</span>
+        <span class="s2">"in_right"</span><span class="p">:</span> <span class="s2">"zone.inside.right_zone"</span><span class="p">,</span>
+        <span class="s2">"nearest"</span><span class="p">:</span> <span class="s2">"distance.nearest"</span><span class="p">,</span>
+        <span class="s2">"area_px"</span><span class="p">:</span> <span class="s2">"area"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"resident_when_right_and_large"</span><span class="p">,</span>
+            <span class="s2">"assign_label"</span><span class="p">:</span> <span class="s2">"resident"</span><span class="p">,</span>
+            <span class="s2">"conditions"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"in_right"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"eq"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+                <span class="p">{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"area_px"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"gte"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mf">80.0</span><span class="p">},</span>
+            <span class="p">],</span>
+            <span class="s2">"min_streak_frames"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">"priority"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">],</span>
+    <span class="s2">"ambiguity_conditions"</span><span class="p">:</span> <span class="p">[{</span><span class="s2">"metric"</span><span class="p">:</span> <span class="s2">"nearest"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">:</span> <span class="s2">"lte"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">}],</span>
+    <span class="s2">"max_backtrack_frames"</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="s2">"canonical_track_ids"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"resident"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span> <span class="s2">"intruder"</span><span class="p">:</span> <span class="s2">"2"</span><span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># Dry-run first (apply=False writes only the audit report)</span>
+<span class="n">report</span> <span class="o">=</span> <span class="n">run_identity_governor</span><span class="p">(</span>
+    <span class="n">annotation_dir</span><span class="o">=</span><span class="s2">"/path/to/video_annotations"</span><span class="p">,</span>
+    <span class="n">zone_file</span><span class="o">=</span><span class="s2">"/path/to/session_zones.json"</span><span class="p">,</span>
+    <span class="n">policy</span><span class="o">=</span><span class="n">policy</span><span class="p">,</span>
+    <span class="n">apply</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Proposed frame repairs:"</span><span class="p">,</span> <span class="n">report</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"total_repairs"</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Want to embed audio vocalizations (<code class="docutils literal notranslate"><span class="pre">.wav</span></code>) alongside video frames in EmbeddingGemma 2, or configure advanced backtracking spans in Identity Governor? See the <a class="reference external" href="https://annolid.com/portal/behavior_embedding_search/">Behavior Embedding Search</a> and <a class="reference external" href="https://annolid.com/portal/identity_governor/">Identity Governor</a> guides on the Docs Portal.</p>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Calculate_distances_between_instances.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Inter-Instance Distances &amp; Kinematics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Reporting_and_track_qc.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Track QC, Statistics &amp; HTML5 Reports</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-find-rare-behaviors-in-seconds-onnx-embeddinggemma-2">Part 1: Find Rare Behaviors in Seconds (ONNX EmbeddingGemma 2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#search-inside-the-gui-embedding-search-dock">Search Inside the GUI (<code class="docutils literal notranslate"><span class="pre">Embedding</span> <span class="pre">Search</span></code> Dock)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fast-cli-behavior-search-annolid-run-behavior-search">Fast CLI Behavior Search (<code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">behavior-search</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-automated-identity-repair-identity-governor">Part 2: Automated Identity Repair (Identity Governor)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#run-identity-governor-in-the-gui">Run Identity Governor in the GUI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scripted-python-api-dry-run-apply">Scripted Python API (Dry-Run → Apply)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tracking with Cutie &#8212; Annolid Start Here</title>
+    <title>Tracking From One Frame with Cutie &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/tracking_with_Cutie';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Video Depth Anything (Depth Estimation)" href="video_depth_anything.html" />
-    <link rel="prev" title="Labeling instances: under the hood" href="labeling_instances_under_the_hood.html" />
+    <link rel="next" title="Long-Video Tracking &amp; Correction with SAM3" href="../tutorials/SAM3_video_tracking.html" />
+    <link rel="prev" title="Featured Walkthrough: Resident-Intruder Social Assay (mouse083)" href="../tutorials/mouse083_resident_intruder_showcase.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/tracking_with_Cutie.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tracking with Cutie</h1>
+    <h1>Tracking From One Frame with Cutie</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,11 +500,11 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-start-to-tracking-with-annolid">A Quick Start to Tracking with Annolid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-your-video-and-label-instances-in-one-frame">Step 1: Open your video and label instances in one frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-start-automatic-predictions-tracking-based-on-the-first-frame">Step 2: Start automatic predictions (tracking) based on the first frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-annolid-s-predictions-and-correct-if-necessary">Step 3: Verify Annolid’s predictions and correct if necessary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-finalize-the-predictions">Step 4: Finalize the predictions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-your-video-label-one-seed-frame">Step 1: Open Your Video &amp; Label One Seed Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-start-automatic-tracking-pred">Step 2: Start Automatic Tracking (<code class="docutils literal notranslate"><span class="pre">Pred</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-pause-correct-an-anchor-frame-resume">Step 3: Pause, Correct an Anchor Frame &amp; Resume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-review-finalize-predictions">Step 4: Review &amp; Finalize Predictions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-your-tracking-outputs-are-saved">Where Your Tracking Outputs Are Saved</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -472,53 +517,109 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tracking-with-cutie">
-<h1>Tracking with Cutie<a class="headerlink" href="#tracking-with-cutie" title="Link to this heading">#</a></h1>
-<section id="a-quick-start-to-tracking-with-annolid">
-<h2>A Quick Start to Tracking with Annolid<a class="headerlink" href="#a-quick-start-to-tracking-with-annolid" title="Link to this heading">#</a></h2>
-<p>This short guide will get you started using Annolid to track animals or other objects in your videos. It is only a starting point, in which we illustrate the semiautomated segmentation of user-specified objects followed by Cutie-based automatic tracking predictions.</p>
-<p>For further details about Annolid’s new (2024) SAM/Grounding DINO-based automatic segmentation coupled with Cutie-based automatic tracking, consult <a class="reference external" href="https://arxiv.org/abs/2403.18690">Yang et al., 2024</a>. For some of Annolid’s diverse other behavioral analysis applications, consult <a class="reference external" href="https://arxiv.org/abs/2312.07723">Yang et al., 2023</a> and <a class="reference external" href="https://confluence.cornell.edu/download/attachments/89461995/2023_SFN_Ray_final.pdf?version=1&amp;amp;modificationDate=1709845356175&amp;amp;api=v2">Fang et al., 2023</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tracking-from-one-frame-with-cutie">
+<h1>Tracking From One Frame with Cutie<a class="headerlink" href="#tracking-from-one-frame-with-cutie" title="Link to this heading">#</a></h1>
+<p>This step-by-step guide walks you through Annolid’s signature <strong>zero-training workflow</strong>: outline your animals on <strong>one frame</strong> with AI-Polygons, launch <strong>Cutie</strong> video object segmentation (VOS), verify predictions in real time, fix any occlusion mistake in seconds, and export clean tracking CSVs.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Want to see how Cutie fits into a complete 4,881-frame social behavior assay with 14 keypoints, automated Track QC, spatial zones, and an HTML5 report? Check out the <a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html"><span class="std std-doc">Featured Walkthrough (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</span></a>!</p>
+</div>
+<p>For full methodological details on Annolid’s SAM / Grounding DINO + Cutie tracking pipeline, see <a class="reference external" href="https://arxiv.org/abs/2403.18690">Yang &amp; Cleland, 2024</a> and <a class="reference external" href="https://arxiv.org/abs/2312.07723">Yang et al., 2023</a>.</p>
+<section id="step-1-open-your-video-label-one-seed-frame">
+<h2>Step 1: Open Your Video &amp; Label One Seed Frame<a class="headerlink" href="#step-1-open-your-video-label-one-seed-frame" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Launch <code class="docutils literal notranslate"><span class="pre">annolid</span></code> and click <strong><code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Video</span></code></strong> on the toolbar (or <strong><code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">Video</span></code></strong>).</p></li>
+<li><p>Scrub to a clean starting frame where every animal and object you want to track is clearly visible and separated.</p></li>
+<li><p>Right-click on the canvas and select <strong><code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">AI-Polygon</span></code></strong>. Click each object to let Segment Anything snap a tight polygon around it.</p></li>
+</ol>
+<figure class="align-default" id="cutie-step1-ai-polygon">
+<a class="reference internal image-reference" href="../_images/AI_polygon.png"><img alt="Opening a video in Annolid and selecting Create AI-Polygon from the context menu" src="../_images/AI_polygon.png" style="width: 94%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 21 </span><span class="caption-text"><strong>Step 1a:</strong> Right-click on a clean seed frame and pick <strong>Create AI-Polygon</strong> to outline each target with a single click.</span><a class="headerlink" href="#cutie-step1-ai-polygon" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="4">
+<li><p>Hold <strong><code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> (macOS <code class="docutils literal notranslate"><span class="pre">Cmd</span></code>) + Left-Click</strong> to finish each polygon and assign a unique instance name (for example <code class="docutils literal notranslate"><span class="pre">mouse_1</span></code>, <code class="docutils literal notranslate"><span class="pre">mouse_2</span></code>, <code class="docutils literal notranslate"><span class="pre">teaball</span></code>).</p></li>
+<li><p>Press <strong><code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code></strong> (<code class="docutils literal notranslate"><span class="pre">Cmd+S</span></code> on macOS) or click <strong>Save</strong> to write the seed frame JSON to disk.</p></li>
+</ol>
+<figure class="align-default" id="cutie-step1-save-label">
+<a class="reference internal image-reference" href="../_images/click_save_polygon.png"><img alt="Labeling an AI-generated polygon in Annolid using Ctrl+Click and saving to JSON" src="../_images/click_save_polygon.png" style="width: 94%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 22 </span><span class="caption-text"><strong>Step 1b:</strong> Name each instance cleanly and save your seed frame (<code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code>) before starting prediction.</span><a class="headerlink" href="#cutie-step1-save-label" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="step-1-open-your-video-and-label-instances-in-one-frame">
-<h2>Step 1: Open your video and label instances in one frame<a class="headerlink" href="#step-1-open-your-video-and-label-instances-in-one-frame" title="Link to this heading">#</a></h2>
-<p>Start by opening Annolid and loading the video you want to work with. You can do this by clicking on the <em>Open Video</em> icon in the toolbar or selecting “Open Video” from the File menu.</p>
-<p><img alt="Opening a video and selecting the AI-Polygon tool" src="../_images/AI_polygon.png" />
-<em>Figure: Opening a video and selecting the AI-Polygon tool</em></p>
-<p>Once the video is loaded, navigate to the first frame in which all of your animals and other objects of interest appear. Right-click to bring up the floating menu and choose “AI-Polygon” (Figure 1). (This tool uses Meta’s Segment Anything Model to automagically outline most common objects so that you don’t have to manually draw the outlining polygon, though you can do so if you prefer). Click on the object you want to track, and Annolid will generate a polygon around it. You then can manually adjust the polygon as needed and assign a unique identifier to the instance. Clicking on an object while holding down the Control (Command) key will bring up a pop-up dialog (Figure 2) in which you can enter the information for each instance.</p>
-<p>When labeling is complete, use Control-S (Command-S) or click on the toolbar Save button to save the labeled instances to a JSON file.</p>
-<p><img alt="Labeling instances in Annolid (control-click)" src="../_images/click_save_polygon.png" />
-<em>Figure: Labeling instances in Annolid (control-click)</em></p>
+<section id="step-2-start-automatic-tracking-pred">
+<h2>Step 2: Start Automatic Tracking (<code class="docutils literal notranslate"><span class="pre">Pred</span></code>)<a class="headerlink" href="#step-2-start-automatic-tracking-pred" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Choose <strong><code class="docutils literal notranslate"><span class="pre">Cutie</span></code></strong> from the <strong>AI Model</strong> dropdown in the top toolbar.</p></li>
+<li><p>Click the green <strong><code class="docutils literal notranslate"><span class="pre">Pred</span></code></strong> button.</p></li>
+<li><p>Annolid tracks forward in a background worker thread so the UI remains responsive. Drag the bottom video slider at any time to inspect completed frames as they stream in.</p></li>
+</ol>
+<figure class="align-default" id="cutie-step2-running">
+<a class="reference internal image-reference" href="../_images/stop_prediction_and_correction.png"><img alt="Cutie tracking running in the background inside Annolid while reviewing completed frames" src="../_images/stop_prediction_and_correction.png" style="width: 94%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 23 </span><span class="caption-text"><strong>Step 2:</strong> Cutie propagates every labeled instance mask forward automatically while you monitor progress live.</span><a class="headerlink" href="#cutie-step2-running" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Self-healing runtime:</strong> If a Cutie dependency is missing in a lean <code class="docutils literal notranslate"><span class="pre">annolid[gui]</span></code> install, Annolid can automatically install the missing packages (or display the exact <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command when <code class="docutils literal notranslate"><span class="pre">ANNOLID_AUTO_INSTALL_CUTIE_DEPS=0</span></code> is set).</p>
+</div>
 </section>
-<section id="step-2-start-automatic-predictions-tracking-based-on-the-first-frame">
-<h2>Step 2: Start automatic predictions (tracking) based on the first frame<a class="headerlink" href="#step-2-start-automatic-predictions-tracking-based-on-the-first-frame" title="Link to this heading">#</a></h2>
-<p>After labeling the first frame, it’s time to start tracking! Select “Cutie” from the AI Model pulldown menu and click on the green “Pred” button to initiate the tracking process. Annolid will run its model inference in the background, and you can check its predictions in real time by navigating through the completed frames using the slider at the bottom of the screen.</p>
-<p><img alt="Tracking underway in Annolid" src="../_images/stop_prediction_and_correction.png" />
-<em>Figure: Tracking underway in Annolid</em></p>
+<section id="step-3-pause-correct-an-anchor-frame-resume">
+<h2>Step 3: Pause, Correct an Anchor Frame &amp; Resume<a class="headerlink" href="#step-3-pause-correct-an-anchor-frame-resume" title="Link to this heading">#</a></h2>
+<p>If two animals cross closely or a sudden occlusion causes drift on a later frame:</p>
+<ol class="arabic simple">
+<li><p>Click the red <strong><code class="docutils literal notranslate"><span class="pre">Stop</span></code></strong> button to pause tracking.</p></li>
+<li><p>Scrub back to the <strong>first frame</strong> where the mask drifted or swapped IDs.</p></li>
+<li><p>Fix that single frame using <strong>Edit Polygons</strong> or <strong>Create AI-Polygon</strong> and press <strong><code class="docutils literal notranslate"><span class="pre">Ctrl+S</span></code></strong>.</p></li>
+<li><p>Clear stale predictions after that frame and click <strong><code class="docutils literal notranslate"><span class="pre">Pred</span></code></strong> again — Cutie resumes cleanly forward from your corrected anchor!</p></li>
+</ol>
+<figure class="align-default" id="cutie-step3-correct">
+<a class="reference internal image-reference" href="../_images/delete_prediction_from_next_frame.png"><img alt="Pausing tracking, correcting a single anchor frame, and deleting stale future predictions" src="../_images/delete_prediction_from_next_frame.png" style="width: 94%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 24 </span><span class="caption-text"><strong>Step 3:</strong> Correct only the first frame where an error begins, prune stale future predictions, and resume forward.</span><a class="headerlink" href="#cutie-step3-correct" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="step-3-verify-annolid-s-predictions-and-correct-if-necessary">
-<h2>Step 3: Verify Annolid’s predictions and correct if necessary<a class="headerlink" href="#step-3-verify-annolid-s-predictions-and-correct-if-necessary" title="Link to this heading">#</a></h2>
-<p>If you notice any inaccuracies in Annolid’s predictions, you can stop the prediction process by clicking the red “Stop” button (Figure 3). Once prediction has been paused, navigate to the first incorrectly segmented frame, make corrections as needed (Figure 4), and restart predictions (“Pred” button). Annolid will make new predictions from that point forward.</p>
-<p><img alt="Pausing and correcting predictions in Annolid" src="../_images/delete_prediction_from_next_frame.png" />
-<em>Figure: Pausing and correcting predictions in Annolid</em></p>
+<section id="step-4-review-finalize-predictions">
+<h2>Step 4: Review &amp; Finalize Predictions<a class="headerlink" href="#step-4-review-finalize-predictions" title="Link to this heading">#</a></h2>
+<p>When tracking reaches the end of the video, scrub through key interactions — or run automated <strong>Track QC</strong> (<code class="docutils literal notranslate"><span class="pre">Analysis</span> <span class="pre">→</span> <span class="pre">Analysis</span> <span class="pre">&amp;</span> <span class="pre">Reporting</span> <span class="pre">Studio…</span></code>) to let Annolid highlight any short dropout or velocity spike automatically!</p>
+<figure class="align-default" id="cutie-step4-finish">
+<a class="reference internal image-reference" href="../_images/check_and_finish_prediction.png"><img alt="Reviewing finalized multi-frame Cutie tracking predictions in Annolid" src="../_images/check_and_finish_prediction.png" style="width: 94%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 25 </span><span class="caption-text"><strong>Step 4:</strong> Verify your tracked masks across the recording and export summary tables.</span><a class="headerlink" href="#cutie-step4-finish" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 </section>
-<section id="step-4-finalize-the-predictions">
-<h2>Step 4: Finalize the predictions<a class="headerlink" href="#step-4-finalize-the-predictions" title="Link to this heading">#</a></h2>
-<p>Once you are satisfied with the tracking, you can finalize the predictions (Figure 5). Annolid makes it easy to review and complete the tracking task, ensuring accuracy and reliability.</p>
-<p><img alt="Completing the tracking process in Annolid" src="../_images/check_and_finish_prediction.png" />
-<em>Figure: Completing the tracking process in Annolid</em></p>
-<p>Congratulations! You’ve successfully used Annolid to track objects in your videos. Your tracking results will be saved to a folder with the same name as the video. This folder will contain all the JSON files following the convention ‘video_name_frame_number.json’, as well as two summary CSV (spreadsheet) files following the filename conventions ‘video_name_tracking.csv’ and ‘video_name_tracked.csv’. More details are available in our published works (see <em>References</em> below) and in the online Annolid documentation linked from <a class="reference external" href="https://annolid.com">annolid.com</a>.</p>
+<section id="where-your-tracking-outputs-are-saved">
+<h2>Where Your Tracking Outputs Are Saved<a class="headerlink" href="#where-your-tracking-outputs-are-saved" title="Link to this heading">#</a></h2>
+<p>Annolid saves results into a sibling folder matching your video’s name (<code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;/</span></code>):</p>
+<ul class="simple">
+<li><p><strong>Manual seed &amp; corrected frames</strong>: <code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_#########.json</span></code> (LabelMe JSON)</p></li>
+<li><p><strong>High-volume predicted frames</strong>: per-frame JSON files or compact <code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_annotations.ndjson</span></code> (<code class="docutils literal notranslate"><span class="pre">AnnotationStore</span></code>)</p></li>
+<li><p><strong>Summary spreadsheets</strong>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_tracking.csv</span></code> — per-frame RLE masks, bounding boxes, and centroids for every shape</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;video_stem&gt;_tracked.csv</span></code> — clean per-instance centroid trajectories, motion indices, and timestamps ready for Python, R, or <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">report</span></code></p></li>
+</ul>
+</li>
+</ul>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>[1] C. Yang and T. A. Cleland, “Annolid: annotate, segment, and track anything you need,”
-arXiv:2403.18690, 2024.</p></li>
-<li><p>[2] C. Yang, J. Forest, M. Einhorn, and T. A. Cleland, “Automated behavioral analysis using
-instance segmentation,” arXiv:2312.07723, 2023.</p></li>
-<li><p>[3] J. Fang, C. Yang, and T. A. Cleland, “Scoring rodent digging behavior with Annolid,” Soc.
-Neurosci. Abstr. 512.01, 2023.
-13</p></li>
+<li><p>[1] C. Yang and T. A. Cleland, <em>“Annolid: Annotate, Segment, and Track Anything You Need,”</em> <a class="reference external" href="https://arxiv.org/abs/2403.18690">arXiv:2403.18690</a>, 2024.</p></li>
+<li><p>[2] C. Yang, J. Forest, M. Einhorn, and T. A. Cleland, <em>“Automated Behavioral Analysis Using Instance Segmentation,”</em> <a class="reference external" href="https://arxiv.org/abs/2312.07723">arXiv:2312.07723</a>, 2023.</p></li>
+<li><p>[3] J. Fang, C. Yang, and T. A. Cleland, <em>“Scoring rodent digging behavior with Annolid,”</em> Soc. Neurosci. Abstr. 512.01, 2023.</p></li>
 </ul>
+<p>Next: for very long videos with repeated disappearances or text-prompted seeding, check out <a class="reference internal" href="../tutorials/SAM3_video_tracking.html"><span class="std std-doc">Long-Video Tracking with SAM3</span></a>.</p>
 </section>
 </section>
 
@@ -553,20 +654,20 @@ Neurosci. Abstr. 512.01, 2023.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="labeling_instances_under_the_hood.html"
+       href="../tutorials/mouse083_resident_intruder_showcase.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Labeling instances:  under the hood</p>
+        <p class="prev-next-title">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</p>
       </div>
     </a>
     <a class="right-next"
-       href="video_depth_anything.html"
+       href="../tutorials/SAM3_video_tracking.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Video Depth Anything (Depth Estimation)</p>
+        <p class="prev-next-title">Long-Video Tracking &amp; Correction with SAM3</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -588,11 +689,11 @@ Neurosci. Abstr. 512.01, 2023.
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-start-to-tracking-with-annolid">A Quick Start to Tracking with Annolid</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-your-video-and-label-instances-in-one-frame">Step 1: Open your video and label instances in one frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-start-automatic-predictions-tracking-based-on-the-first-frame">Step 2: Start automatic predictions (tracking) based on the first frame</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-verify-annolid-s-predictions-and-correct-if-necessary">Step 3: Verify Annolid’s predictions and correct if necessary</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-finalize-the-predictions">Step 4: Finalize the predictions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-open-your-video-label-one-seed-frame">Step 1: Open Your Video &amp; Label One Seed Frame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-start-automatic-tracking-pred">Step 2: Start Automatic Tracking (<code class="docutils literal notranslate"><span class="pre">Pred</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-pause-correct-an-anchor-frame-resume">Step 3: Pause, Correct an Anchor Frame &amp; Resume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-review-finalize-predictions">Step 4: Review &amp; Finalize Predictions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-your-tracking-outputs-are-saved">Where Your Tracking Outputs Are Saved</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
@@ -618,7 +719,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -631,6 +732,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

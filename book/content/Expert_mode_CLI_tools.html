@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Expert mode: CLI tools &#8212; Annolid Start Here</title>
+    <title>Power-User CLI (annolid &amp; annolid-run) &#8212; The Annolid Book</title>
   
   
   
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
@@ -62,10 +63,11 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/Expert_mode_CLI_tools';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Place preference" href="../tutorials/Place_preference.html" />
-    <link rel="prev" title="Annolid on Google Colab" href="Annolid_on_Google_Colab.html" />
+    <link rel="next" title="Built-in Models &amp; Annolid ModelZoo" href="annolid_zoo.html" />
+    <link rel="prev" title="Integrations: MCP, Memory, Cloud Storage &amp; Security" href="../tutorials/Integrations_mcp_cloud_memory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -197,8 +199,8 @@
       
     
     
-    <img src="../_static/cpl_logo.png" class="logo__image only-light" alt="Annolid Start Here - Home"/>
-    <img src="../_static/cpl_logo.png" class="logo__image only-dark pst-js-only" alt="Annolid Start Here - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
   
   
 </a></div>
@@ -215,54 +217,80 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="README.html">
-                    Annolid: Start Here
+                    The Annolid Book
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">Technical overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_install.html">Installation Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Video preparation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="video_preparation.html">Preparing &amp; Compressing Videos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="downsample_and_crop_videos.html">Downsample and crop videos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extract frames</a></li>
-<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances</a></li>
-
-<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">Labeling instances:  under the hood</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking with Cutie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Depth Estimation)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model training</a></li>
-<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Annolid on Google Colab</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Expert mode: CLI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Place preference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior classification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing and motion assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/mouse083_resident_intruder_showcase.html">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Post hoc analysis methods</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../tutorials/Calculate_distances_between_instances.html">Calculate distances between instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid libraries</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Annolid ModelZoo</a></li>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Annolid on Youtube</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">https://www.youtube.com/@annolid/videos</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Get in touch</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to cite Annolid</a></li>
-<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Annolid bibliography</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">New contributor guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="licence.html">License</a></li>
 </ul>
 
     </div>
@@ -333,6 +361,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/content/Expert_mode_CLI_tools.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -445,7 +490,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Expert mode: CLI tools</h1>
+    <h1>Power-User CLI (annolid & annolid-run)</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -455,13 +500,16 @@
             </div>
             <nav aria-label="Page">
                 <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-annolid-command-gui-entry-point">The <code class="docutils literal notranslate"><span class="pre">annolid</span></code> command (GUI entry point)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-utilities-run-as-python-modules">Batch utilities (run as Python modules)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-labelme-json-csv">Convert LabelMe JSON → CSV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-labelme-json-yolo-dataset">Convert LabelMe JSON → YOLO dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-time-budgets-from-event-exports">Behavior time budgets from event exports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-the-gui-annolid">1. Launching the GUI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composable-pipeline-cli-annolid-run">2. Composable Pipeline CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-discovery-runtime-management">Model Discovery &amp; Runtime Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-qc-kinematics-zones-one-command-html5-reports">Track QC, Kinematics, Zones &amp; One-Command HTML5 Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-ethograms-boris-irr-cohort-statistics">Behavior Ethograms, BORIS, IRR &amp; Cohort Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pose-interoperability-deeplabcut-sleap-lightning-pose-simba">Pose Interoperability (DeepLabCut, SLEAP, Lightning Pose, SimBA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-gpu-colab-3d-sim-to-real-sim2real">Cloud GPU (<code class="docutils literal notranslate"><span class="pre">colab</span></code>) &amp; 3D Sim-to-Real (<code class="docutils literal notranslate"><span class="pre">sim2real</span></code>)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-python-module-helpers-python-m">3. Classic Python Module Helpers (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code>)</a></li>
 </ul>
             </nav>
         </div>
@@ -473,46 +521,136 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="expert-mode-cli-tools">
-<h1>Expert mode: CLI tools<a class="headerlink" href="#expert-mode-cli-tools" title="Link to this heading">#</a></h1>
-<p>Most Annolid users work in the GUI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>). The CLI is useful when you want to automate conversions, run batch processing, or integrate Annolid into a pipeline.</p>
-<section id="the-annolid-command-gui-entry-point">
-<h2>The <code class="docutils literal notranslate"><span class="pre">annolid</span></code> command (GUI entry point)<a class="headerlink" href="#the-annolid-command-gui-entry-point" title="Link to this heading">#</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">annolid</span></code> launches the GUI, but it also accepts a few helpful CLI flags:</p>
-<ul class="simple">
-<li><p>Print version: <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--version</span></code></p></li>
-<li><p>Load custom label list: <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--labels</span> <span class="pre">labels.txt</span></code> (or <code class="docutils literal notranslate"><span class="pre">--labels</span> <span class="pre">&quot;mouse_1,mouse_2&quot;</span></code>)</p></li>
-<li><p>Enable event flags: <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--flags</span> <span class="pre">flags.txt</span></code> (or <code class="docutils literal notranslate"><span class="pre">--flags</span> <span class="pre">&quot;rearing,grooming&quot;</span></code>)</p></li>
-<li><p>Use a specific config: <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--config</span> <span class="pre">~/.labelmerc</span></code></p></li>
-<li><p>Auto-save annotations: <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--autosave</span></code></p></li>
-</ul>
-<p>Run <code class="docutils literal notranslate"><span class="pre">annolid</span> <span class="pre">--help</span></code> to see the full list.</p>
-</section>
-<section id="batch-utilities-run-as-python-modules">
-<h2>Batch utilities (run as Python modules)<a class="headerlink" href="#batch-utilities-run-as-python-modules" title="Link to this heading">#</a></h2>
-<p>Annolid also ships “utility” modules you can run with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">...</span></code>.</p>
-<section id="convert-labelme-json-csv">
-<h3>Convert LabelMe JSON → CSV<a class="headerlink" href="#convert-labelme-json-csv" title="Link to this heading">#</a></h3>
-<p>Export per-frame segmentation/keypoint annotations into a single tracking-style CSV:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.annotation.labelme2csv<span class="w"> </span>--json_folder<span class="w"> </span>/path/to/video_results_folder
+  <section class="tex2jax_ignore mathjax_ignore" id="power-user-cli-annolid-annolid-run">
+<h1>Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)<a class="headerlink" href="#power-user-cli-annolid-annolid-run" title="Link to this heading">#</a></h1>
+<p>Most researchers start in the desktop GUI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>). Once your pipeline works on one video, Annolid’s composable command-line interface (<strong><code class="docutils literal notranslate"><span class="pre">annolid-run</span></code></strong>) lets you automate entire lab cohorts, run headless jobs on remote Linux servers or Google Colab, and plug Annolid cleanly into scripts.</p>
+<section id="launching-the-gui-annolid">
+<h2>1. Launching the GUI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>)<a class="headerlink" href="#launching-the-gui-annolid" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">annolid</span></code> entrypoint supports handy launch flags for pre-loading project labels and behavior flags:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check installed version</span>
+annolid<span class="w"> </span>--version
+
+<span class="c1"># Launch with custom instance labels &amp; behavior flags pre-populated</span>
+annolid<span class="w"> </span>--labels<span class="w"> </span><span class="s2">"resident,intruder"</span><span class="w"> </span>--flags<span class="w"> </span><span class="s2">"investigation,mount,grooming"</span>
+
+<span class="c1"># Enable automatic saving on frame change</span>
+annolid<span class="w"> </span>--autosave
+
+<span class="c1"># See all GUI flags</span>
+annolid<span class="w"> </span>--help
 </pre></div>
 </div>
 </section>
-<section id="convert-labelme-json-yolo-dataset">
-<h3>Convert LabelMe JSON → YOLO dataset<a class="headerlink" href="#convert-labelme-json-yolo-dataset" title="Link to this heading">#</a></h3>
-<p>Create a YOLO dataset (images + labels + <code class="docutils literal notranslate"><span class="pre">data.yaml</span></code>) from LabelMe JSON files:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span>--labelme2yolo<span class="w"> </span>/path/to/labelme_json_folder<span class="w"> </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--test_size<span class="w"> </span><span class="m">0</span>.1
+<section id="composable-pipeline-cli-annolid-run">
+<h2>2. Composable Pipeline CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)<a class="headerlink" href="#composable-pipeline-cli-annolid-run" title="Link to this heading">#</a></h2>
+<p>Run <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">--help</span></code> or <code class="docutils literal notranslate"><span class="pre">annolid-run</span> <span class="pre">list-models</span></code> to discover every available command and model plugin in your environment.</p>
+<section id="model-discovery-runtime-management">
+<h3>Model Discovery &amp; Runtime Management<a class="headerlink" href="#model-discovery-runtime-management" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>list-models
+annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> </span>train<span class="w"> </span>yolo
+annolid-run<span class="w"> </span><span class="nb">help</span><span class="w"> </span>predict<span class="w"> </span>yolo_labelme
+annolid-run<span class="w"> </span>runtime<span class="w"> </span>status
+annolid-run<span class="w"> </span>runtime<span class="w"> </span>install<span class="w"> </span>tracking<span class="w"> </span>sam3
+annolid-run<span class="w"> </span>dinov3-models<span class="w"> </span>--list
 </pre></div>
 </div>
 </section>
-<section id="behavior-time-budgets-from-event-exports">
-<h3>Behavior time budgets from event exports<a class="headerlink" href="#behavior-time-budgets-from-event-exports" title="Link to this heading">#</a></h3>
-<p>If you export behavior events from the GUI, compute a “time budget” summary:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>/path/to/exported_events.csv<span class="w"> </span>-o<span class="w"> </span>time_budget.csv<span class="w"> </span>--bin-size<span class="w"> </span><span class="m">60</span>
+<section id="track-qc-kinematics-zones-one-command-html5-reports">
+<h3>Track QC, Kinematics, Zones &amp; One-Command HTML5 Reports<a class="headerlink" href="#track-qc-kinematics-zones-one-command-html5-reports" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Automated Track QC &amp; prioritized manual review queue</span>
+annolid-run<span class="w"> </span>track-qc<span class="w"> </span>mouse083_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--expected-instances<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--review-csv<span class="w"> </span>review_queue.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>track_qc.json
+
+<span class="c1"># 2. Calibrated kinematics, freezing bouts &amp; pairwise distance</span>
+annolid-run<span class="w"> </span>kinematics<span class="w"> </span>mouse083_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--px-per-cm<span class="w"> </span><span class="m">12</span>.5<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./kinematics_out
+
+<span class="c1"># 3. Spatial zone &amp; place-preference metrics</span>
+annolid-run<span class="w"> </span>zone-analysis<span class="w"> </span>mouse083_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>zone_metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./zone_out
+
+<span class="c1"># 4. Unified self-contained HTML5 + inline SVG + Markdown + JSON report</span>
+annolid-run<span class="w"> </span>report<span class="w"> </span>mouse083_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--events-csv<span class="w"> </span>mouse083_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--title<span class="w"> </span><span class="s2">"Resident-Intruder Assay"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./session_report
 </pre></div>
 </div>
-<p>If you use a project schema (categories/modifiers), pass it with <code class="docutils literal notranslate"><span class="pre">--schema</span></code>.</p>
 </section>
+<section id="behavior-ethograms-boris-irr-cohort-statistics">
+<h3>Behavior Ethograms, BORIS, IRR &amp; Cohort Statistics<a class="headerlink" href="#behavior-ethograms-boris-irr-cohort-statistics" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Behavior time budget (60s bins + SVG ethogram + transition graph)</span>
+annolid-run<span class="w"> </span>time-budget<span class="w"> </span>session_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--bin-size<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--ethogram-svg<span class="w"> </span>ethogram.svg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--transitions-svg<span class="w"> </span>transitions.svg<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>time_budget.csv
+
+<span class="c1"># Import/export BORIS projects</span>
+annolid-run<span class="w"> </span>boris-import<span class="w"> </span>study.boris<span class="w"> </span>--output-dir<span class="w"> </span>./annolid_from_boris
+annolid-run<span class="w"> </span>boris-export<span class="w"> </span>session_events.csv<span class="w"> </span>--schema<span class="w"> </span>project.annolid.json<span class="w"> </span>--format<span class="w"> </span>boris<span class="w"> </span>--output<span class="w"> </span>session.boris
+
+<span class="c1"># Inter-rater reliability (Cohen's kappa, Fleiss' kappa, Krippendorff's alpha)</span>
+annolid-run<span class="w"> </span>behavior-irr<span class="w"> </span>rater1.csv<span class="w"> </span>rater2.csv<span class="w"> </span>--bin-seconds<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--out<span class="w"> </span>irr_report.json
+
+<span class="c1"># Cohort-level statistical comparisons with Benjamini-Hochberg FDR</span>
+annolid-run<span class="w"> </span>behavior-cohort<span class="w"> </span>./cohort_manifest.json<span class="w"> </span>--unit<span class="w"> </span>recording<span class="w"> </span>--out<span class="w"> </span>cohort_report.json
+</pre></div>
+</div>
+</section>
+<section id="pose-interoperability-deeplabcut-sleap-lightning-pose-simba">
+<h3>Pose Interoperability (DeepLabCut, SLEAP, Lightning Pose, SimBA)<a class="headerlink" href="#pose-interoperability-deeplabcut-sleap-lightning-pose-simba" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import DLC or SLEAP into Annolid LabelMe JSON</span>
+annolid-run<span class="w"> </span>import-pose<span class="w"> </span>trialDLC_filtered.csv<span class="w"> </span>--video<span class="w"> </span>trial.mp4<span class="w"> </span>--min-likelihood<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>-o<span class="w"> </span>./trial_labelme
+annolid-run<span class="w"> </span>import-pose<span class="w"> </span>predictions.analysis.h5<span class="w"> </span>--video<span class="w"> </span>trial.mp4<span class="w"> </span>-o<span class="w"> </span>./sleap_labelme
+
+<span class="c1"># Export Annolid annotations or tracking CSV to DLC or SLEAP</span>
+annolid-run<span class="w"> </span>export-pose<span class="w"> </span>./trial_labelme<span class="w"> </span>--format<span class="w"> </span>deeplabcut-csv<span class="w"> </span>--scorer<span class="w"> </span>lab1<span class="w"> </span>-o<span class="w"> </span>./trial_dlc.csv
+annolid-run<span class="w"> </span>export-pose<span class="w"> </span>./trial_tracking.csv<span class="w"> </span>--format<span class="w"> </span>sleap-h5<span class="w"> </span>--video<span class="w"> </span>./trial.mp4<span class="w"> </span>-o<span class="w"> </span>./trial.analysis.h5
+</pre></div>
+</div>
+</section>
+<section id="cloud-gpu-colab-3d-sim-to-real-sim2real">
+<h3>Cloud GPU (<code class="docutils literal notranslate"><span class="pre">colab</span></code>) &amp; 3D Sim-to-Real (<code class="docutils literal notranslate"><span class="pre">sim2real</span></code>)<a class="headerlink" href="#cloud-gpu-colab-3d-sim-to-real-sim2real" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Google Colab training &amp; inference</span>
+annolid-run<span class="w"> </span>colab<span class="w"> </span>status
+annolid-run<span class="w"> </span>colab<span class="w"> </span>train<span class="w"> </span>yolo<span class="w"> </span>--data<span class="w"> </span>./yolo_dataset/data.yaml<span class="w"> </span>--weights<span class="w"> </span>yolo11s-seg.pt<span class="w"> </span>--gpu<span class="w"> </span>T4
+
+<span class="c1"># Sim-to-Real 3D synthetic bootstrap &amp; iteration</span>
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>sample<span class="w"> </span>--video<span class="w"> </span>trial_01.mp4<span class="w"> </span>--project<span class="w"> </span>./s2r_mouse<span class="w"> </span>--species<span class="w"> </span>mouse<span class="w"> </span>--task<span class="w"> </span>yolo_pose<span class="w"> </span>--pose-schema<span class="w"> </span>mouse13
+annolid-run<span class="w"> </span>sim2real<span class="w"> </span>iterate<span class="w"> </span>--project<span class="w"> </span>./s2r_mouse<span class="w"> </span>--model<span class="w"> </span>yolo<span class="w"> </span>--train-backend<span class="w"> </span>colab<span class="w"> </span>--gpu<span class="w"> </span>T4<span class="w"> </span>--epochs<span class="w"> </span><span class="m">30</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="classic-python-module-helpers-python-m">
+<h2>3. Classic Python Module Helpers (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code>)<a class="headerlink" href="#classic-python-module-helpers-python-m" title="Link to this heading">#</a></h2>
+<p>Existing scripts using Annolid’s classic module entrypoints continue to work seamlessly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert LabelMe JSON folder -&gt; tracking CSV</span>
+python<span class="w"> </span>-m<span class="w"> </span>annolid.annotation.labelme2csv<span class="w"> </span>--json_folder<span class="w"> </span>/path/to/video_results_folder
+
+<span class="c1"># Convert LabelMe JSON folder -&gt; YOLO dataset</span>
+python<span class="w"> </span>-m<span class="w"> </span>annolid.main<span class="w"> </span>--labelme2yolo<span class="w"> </span>/path/to/labelme_json_folder<span class="w"> </span>--val_size<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--test_size<span class="w"> </span><span class="m">0</span>.1
+
+<span class="c1"># Compute behavior time budget CSV</span>
+python<span class="w"> </span>-m<span class="w"> </span>annolid.behavior.time_budget<span class="w"> </span>/path/to/exported_events.csv<span class="w"> </span>-o<span class="w"> </span>time_budget.csv<span class="w"> </span>--bin-size<span class="w"> </span><span class="m">60</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For complete CLI schemas and agent-safe execution patterns, see <a class="reference external" href="https://annolid.com/portal/agent_annolid_run/">Annolid Agent and <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code></a> and <a class="reference external" href="https://annolid.com/portal/reporting_and_statistics/">Reporting &amp; Statistics Reference</a> on the Docs Portal.</p>
+</div>
 </section>
 </section>
 
@@ -547,20 +685,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Annolid_on_Google_Colab.html"
+       href="../tutorials/Integrations_mcp_cloud_memory.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Annolid on Google Colab</p>
+        <p class="prev-next-title">Integrations: MCP, Memory, Cloud Storage &amp; Security</p>
       </div>
     </a>
     <a class="right-next"
-       href="../tutorials/Place_preference.html"
+       href="annolid_zoo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Place preference</p>
+        <p class="prev-next-title">Built-in Models &amp; Annolid ModelZoo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -582,13 +720,16 @@
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-annolid-command-gui-entry-point">The <code class="docutils literal notranslate"><span class="pre">annolid</span></code> command (GUI entry point)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#batch-utilities-run-as-python-modules">Batch utilities (run as Python modules)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-labelme-json-csv">Convert LabelMe JSON → CSV</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-labelme-json-yolo-dataset">Convert LabelMe JSON → YOLO dataset</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-time-budgets-from-event-exports">Behavior time budgets from event exports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-the-gui-annolid">1. Launching the GUI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composable-pipeline-cli-annolid-run">2. Composable Pipeline CLI (<code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-discovery-runtime-management">Model Discovery &amp; Runtime Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#track-qc-kinematics-zones-one-command-html5-reports">Track QC, Kinematics, Zones &amp; One-Command HTML5 Reports</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#behavior-ethograms-boris-irr-cohort-statistics">Behavior Ethograms, BORIS, IRR &amp; Cohort Statistics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pose-interoperability-deeplabcut-sleap-lightning-pose-simba">Pose Interoperability (DeepLabCut, SLEAP, Lightning Pose, SimBA)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-gpu-colab-3d-sim-to-real-sim2real">Cloud GPU (<code class="docutils literal notranslate"><span class="pre">colab</span></code>) &amp; 3D Sim-to-Real (<code class="docutils literal notranslate"><span class="pre">sim2real</span></code>)</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-python-module-helpers-python-m">3. Classic Python Module Helpers (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span></code>)</a></li>
 </ul>
   </nav></div>
 
@@ -613,7 +754,7 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
       <br/>
     
   </p>
@@ -626,6 +767,14 @@ By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
   </div>
   
 </div>

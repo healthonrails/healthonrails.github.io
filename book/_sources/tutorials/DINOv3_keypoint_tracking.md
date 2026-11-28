@@ -1,6 +1,20 @@
 # DINOv3 Keypoint Tracking
 
-This tutorial shows how to track labeled body-part keypoints through a video using frozen DINO-family patch descriptors, local motion-prior search, optional mask constraints, and Lucas-Kanade pixel refinement. The backend is a sparse-label tracker: it propagates manual seed points and correction frames, but it does not train a new pose-estimation model.
+This tutorial shows how to track labeled body-part keypoints through a video using frozen DINO-family patch descriptors, local motion-prior search, optional mask constraints, and Lucas-Kanade pixel refinement. The backend is a **sparse-label tracker**: it propagates manual seed points and correction frames with zero model training.
+
+:::::{container} ann-pair
+
+:::{figure} ../images/showcase/mouse_keypoints.png
+:alt: Anatomical mouse keypoint landmarks labeled in Annolid
+Seed anatomical landmarks (nose, ears, neck, hips, tail base) on a clean starting frame.
+:::
+
+:::{figure} ../images/showcase/mouse083_tracking_hero.png
+:alt: Multi-animal polygon and 14-keypoint skeleton tracking result on mouse083
+Mask-constrained keypoint trajectories stay cleanly separated during close social contact.
+:::
+
+:::::
 
 ## Prerequisites
 - Annolid installed with the GUI, model, and tracking runtime dependencies, and

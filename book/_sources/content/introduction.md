@@ -1,91 +1,150 @@
 # Introduction
-Annolid stands for **Annotation + Annelid** (segmentation).
 
-Annolid is a toolkit for video-based research workflows that combines:
-- Annotation (polygons, keypoints, and event labels)
-- Instance segmentation and multi-object tracking
-- Keypoint tracking and downstream analysis (e.g., place preference, motion/freezing metrics)
+**Annolid** stands for **Annotation + Annelid** (*segmentation*). It is an open-source research platform that brings annotation, instance segmentation, multi-animal tracking, pose keypoints, behavior scoring, quantitative reporting, microscopy/3D brain reconstruction, and 3D digital animal simulations into one cohesive workspace.
 
-## What Annolid can do today
-Annolid’s feature set evolves quickly, but the core workflows are stable:
-- **Fast labeling in the GUI** (LabelMe-based), with manual tools plus AI-assisted tools.
-- **AI-assisted polygons** using point prompts (Segment Anything family) and **text prompts** (Grounding DINO → SAM).
-- **Video tracking backends** including Cutie / EfficientTAM-style VOS, plus model-driven segmentation/pose options (e.g., YOLO).
-- **Export and interoperability**: LabelMe JSON, CSV summaries, COCO, and YOLO dataset conversion.
-- **Behavior/event utilities**: event marking in the GUI, time-budget summaries, and post-hoc analyses.
+<div class="ann-stats">
+  <div class="ann-stat">
+    <strong>1-Frame Tracking</strong>
+    <span>Propagate masks with Cutie, SAM3, or INSID3 with zero model training</span>
+  </div>
+  <div class="ann-stat">
+    <strong>Polygons + Pose</strong>
+    <span>Combine whole-body masks, body parts, and anatomical keypoints</span>
+  </div>
+  <div class="ann-stat">
+    <strong>Open Data Contracts</strong>
+    <span>LabelMe JSON/NDJSON, CSV, COCO, YOLO, DeepLabCut, SLEAP &amp; BORIS</span>
+  </div>
+  <div class="ann-stat">
+    <strong>GUI + CLI + Bot</strong>
+    <span>Interactive Qt app, <code>annolid-run</code> CLI, and Annolid Bot copilot</span>
+  </div>
+</div>
 
-If you need help or encounter an issue, please open an issue or use the community links in [Get in touch](get_in_touch).
+## What You Can Do With Annolid Today
 
-## Video introduction
-Below is a brief introduction to annolid:
+- **Label faster with AI assistance**: Draw accurate instance masks with a few clicks using **SAM AI-Polygons**, bootstrap masks with **text prompts** (Grounding DINO → SAM or SAM3), and place anatomical keypoints directly on video frames with the **Keypoint Sequencer**.
+- **Track multiple animals through occlusions**: Propagate masks from a single labeled frame with **Cutie**, **SAM3**, or **INSID3**, and track sparse body-part landmarks with **DINOv3 Keypoint Tracking**, **TAPNext (ONNX)**, or **CoWTracker**.
+- **Review and repair tracks efficiently**: Run automated **Track QC** to pinpoint occlusion gaps, velocity spikes, and identity-swap suspects, jump directly to flagged frames, repair identities with **Identity Governor**, or re-propagate cleanly.
+- **Score & search behaviors**: Mark ethogram bouts on the synchronized **Timeline** and **Flags** docks, search hours of video by plain English with **ONNX EmbeddingGemma 2**, run 1-second **Annolid Bot** segment labeling, define reusable **Zones**, and import/export **BORIS** projects.
+- **Generate publication-grade analytics**: Compute calibrated kinematics (`px_per_cm` or planar homography), freezing bouts, inter-rater reliability (IRR), cohort statistics, and self-contained **HTML5 + inline SVG reports**.
+- **Train custom models, run live cameras & simulate in 3D**: Fine-tune **YOLO11 / YOLO26 / YOLOE** locally or on **Google Colab**, run real-time wireless/multi-camera detection, reconstruct 3D coronal brain slices from large TIFF stacks, or generate matched synthetic datasets from offline **Two-Mouse 3D**, **Rat NCAP 3D**, and **FlyBody** twins.
 
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/tVIE6vG9Gao" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+## Real-World Visual Showcase
 
-## Annolid can be applied to many diverse goals
+### Multi-animal social tracking, 14 keypoints & live ethogram state
 
+In a real resident-intruder home-cage trial (`mouse083_task1_annotator1`, 4,881 frames @ 30 FPS), Annolid tracks both whole-body polygons and 14 anatomical landmarks while synchronizing social behavior bouts (`investigation`, `mount`, `other`):
 
-- Animal Tracking
-- Keypoints tracking (i.e. body parts)
-- Automated behavior recognition
+```{figure} ../images/showcase/mouse083_tracking_demo.gif
+---
+name: intro-mouse083-gif
+alt: Animated multi-animal tracking demo showing resident and intruder polygons, 14 keypoints, trails, and live behavior overlay
+width: 92%
+---
+Multi-animal instance masks, 7-keypoint skeletons per mouse, trajectory trails, and live behavior overlays on home-cage video. See the [full mouse083 walkthrough](../tutorials/mouse083_resident_intruder_showcase.md).
+```
 
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/op3A4_LuVj8" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+### Raw social interaction vs. tracked instance masks
 
+:::::{container} ann-pair
 
-- Multiple animal tracking, including periods of partial body occlusion
-- Whole-body masking
-- Automated identification of interactions
+:::{figure} ../images/interaction_raw.gif
+:alt: Raw social interaction recording before Annolid tracking
+**Before:** Raw multi-animal social interaction recording.
+:::
 
-Video courtesy of Caitlyn Finton and Alex Ophir:
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/dZ-qsD8uu-U" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+:::{figure} ../images/interaction_analyzed.gif
+:alt: Annolid tracked instance masks overlaid on social interaction video
+**After:** Tracked per-individual masks ready for proximity and bout quantification.
+:::
 
+:::::
 
-- Masking and automatic scoring of lone animals and huddles of multiple animals
-- Confidence of identification reported
+### Diverse species, arenas, and research paradigms
 
-Video courtesy of Rikki Laser and Alex Ophir:
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://lh5.googleusercontent.com/FyOrtO6nEGeBEgEnZeuPf66cfqanl7NNmJFnHG7tJRnnvEOrf0FFfKNjT64pIS2HHjMs3queacFYFBVt4n18s4U1Dr6r7m3IYfEJzit83dh4UVRuUOpRUlU0UUjl0a7Bd6LACqGBuVc" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+:::::{container} ann-gallery
 
+::::{container} ann-card
+![Multiple prairie vole tracking in a home cage](../images/mutiple_animal_tracking.png)
 
-- Animal and object tracking, including periods of occlusion
-- Tracked objects automatically associated with user-defined zones
-- Robustness to noisy background
+:::{container} ann-card-body
+<div class="ann-card-title">Pair-Bonding &amp; Social Voles</div>
 
-Video courtesy of Emily Sattora and Christiane Linster:
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://lh6.googleusercontent.com/KhRfq5CfxTUvxVh-CBcQpW-hg1W83_-Hj3KSphdnfZJo_8oMZ5ED47erJ9mnFAqWBG7FphpzWN8qvM2sedAeuX-3NnqoJcDEBtAZtJlBQp1g3joyMX4vCdmxzqL_rM6D--wY-pJxtUo" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+Whole-body instance tracking through close huddles and partial body occlusion in side-view home cages.
+:::
+::::
 
+::::{container} ann-card
+![Mouse object investigation tracking on a holeboard arena](../images/holeboard_mouse_tracking.png)
 
-- Identification of freezing behavior  (e.g., from fear conditioning)
-- Reporting of motion score based on optical flow measurements applied selectively to the body mask
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/qFABuhoGr_E" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+:::{container} ann-card-body
+<div class="ann-card-title">Object Investigation &amp; Zones</div>
 
+Track animals alongside arena stimuli and automatically associate proximity with user-defined zones.
+:::
+::::
 
-- Multiple animal tracking on cryptic background
+::::{container} ann-card
+![Multi-fly Drosophila arena tracked in Annolid GUI](../images/annolid_gui.png)
 
-Video courtesy of Jessica Nowicki, Julia Cora-anne Lee, and Lauren O’Connell:
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://lh5.googleusercontent.com/CrYqegHOYWqkrYnbOHXSfK3n2T8iuyYHPyIQGBiMHwlltb6CIs4fO02KR9BAxz1Nju747gkKN32v5bEGlLDmpnQfCa5r8T9GSetMEtpp740D2KubY3f3rZCGdnbQxmqc92cuA7jmV7I" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+:::{container} ann-card-body
+<div class="ann-card-title">Multi-Fly <em>Drosophila</em> Arenas</div>
 
+Simultaneous identity-preserving tracking of eight flies in an open-field circular arena.
+:::
+::::
 
-- Multiple animal tracking with a large field of view
+::::{container} ann-card
+![Thermal urine spot and mouse tracking](../images/urine_tracking.png)
 
-Video courtesy of Santiago Forero and Alex Ophir:
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://drive.google.com/file/d/1cYdmueC-CaMhScpcB2E-eL9mkGDFuVCs/preview" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+:::{container} ann-card-body
+<div class="ann-card-title">Specialized Modalities (Thermal &amp; Microscopy)</div>
 
+Segment non-standard targets such as thermal urine deposits, large TIFF brain sections, and multi-channel frames.
+:::
+::::
 
-## Youtube playlist
-You can find these videos, tutorials on how to best use Annolid, as well as examples in Annolid's YouTube playlist [here](https://www.youtube.com/playlist?list=PLYp4D9Y-8_dRXPOtfGu48W5ENtfKn-Owc).
+:::::
+
+## Video Demonstrations
+
+### Brief overview of Annolid
+
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/tVIE6vG9Gao" title="Introduction to Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Keypoint tracking & automated behavior recognition
+
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/op3A4_LuVj8" title="Animal tracking, keypoints, and automated behavior recognition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Multiple animal tracking with partial occlusion
+
+*Video courtesy of Caitlyn Finton and Alex Ophir.*
+
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/dZ-qsD8uu-U" title="Multi-animal tracking with occlusion in voles" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Freezing behavior & optical-flow motion scoring
+
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/qFABuhoGr_E" title="Freezing and dense optical flow motion scoring in Annolid" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+### Large field-of-view multi-animal tracking
+
+*Video courtesy of Santiago Forero and Alex Ophir.*
+
+<div class="video_container">
+  <iframe src="https://drive.google.com/file/d/1cYdmueC-CaMhScpcB2E-eL9mkGDFuVCs/preview" title="Large field-of-view multi-animal tracking" allowfullscreen></iframe>
+</div>
+
+## Explore More Examples
+
+- Browse the full [Annolid YouTube tutorial playlist](https://www.youtube.com/playlist?list=PLYp4D9Y-8_dRXPOtfGu48W5ENtfKn-Owc).
+- Need help with your own recordings or species? Reach out via [Get in touch](get_in_touch.md).
+- Ready to see how all the pieces connect? Continue to [How Annolid Works (Technical Overview)](high_level_overview.md).

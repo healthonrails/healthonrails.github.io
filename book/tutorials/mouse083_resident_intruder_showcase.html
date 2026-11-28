@@ -1,0 +1,873 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Featured Walkthrough: Resident-Intruder Social Assay (mouse083) &#8212; The Annolid Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=7ac63165" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/mouse083_resident_intruder_showcase';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="icon" href="../_static/annolid_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tracking From One Frame with Cutie" href="../content/tracking_with_Cutie.html" />
+    <link rel="prev" title="GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps" href="GUI_power_tips_and_editing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../content/README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/annolid_logo.png" class="logo__image only-light" alt="The Annolid Book - Home"/>
+    <img src="../_static/annolid_logo.png" class="logo__image only-dark pst-js-only" alt="The Annolid Book - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../content/README.html">
+                    The Annolid Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Start Here</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/high_level_overview.html">How Annolid Works (Technical Overview)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/how_to_install.html">Installation Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/quick_reference_cheatsheet.html">Quick Reference: Shortcuts, Files &amp; Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/troubleshooting_and_faq.html">Troubleshooting &amp; Frequently Asked Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Prepare Videos &amp; Annotate</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/video_preparation.html">Preparing &amp; Compressing Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/downsample_and_crop_videos.html">Downsample and crop videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/extract_frames.html">Extracting Frames (Optional Workflow)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labelling_images.html">Labeling Instances, Keypoints &amp; Zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/labeling_instances_under_the_hood.html">AI-Assisted Labeling: Point &amp; Text Prompts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GUI_power_tips_and_editing.html">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tracking, Segmentation &amp; Pose</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/tracking_with_Cutie.html">Tracking From One Frame with Cutie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SAM3_video_tracking.html">Long-Video Tracking &amp; Correction with SAM3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Segment_based_batch_tracking.html">Segment-Based Batch Tracking &amp; Long-Video Scale-Up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Body_part_segmentation.html">Hierarchical Instance Body-Part Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DINOv3_keypoint_tracking.html">DINOv3 Keypoint Tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point_tracking_tapnext_cowtracker.html">Point Tracking with TAPNext (ONNX) &amp; CoWTracker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INSID3_video_segmentation.html">INSID3 Video Segmentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pose_estimation_and_interop.html">Pose Estimation &amp; DeepLabCut / SLEAP Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/video_depth_anything.html">Video Depth Anything (Per-Frame Depth Estimation)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Behavior, Zones &amp; Analysis</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Place_preference.html">Spatial Zones &amp; Place Preference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Behavior_classification.html">Behavior Scoring, Timelines &amp; Ethograms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TCN_behavior_classification.html">Polygon-Feature TCN Behavior Classification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Freezing_and%20motion_assays.html">Freezing &amp; Dense Motion Assays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Calculate_distances_between_instances.html">Inter-Instance Distances &amp; Kinematics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frame_search_and_identity_repair.html">Semantic Frame Search &amp; Automated Identity Repair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reporting_and_track_qc.html">Track QC, Statistics &amp; HTML5 Reports</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Train Models &amp; Scale Up</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/model_training.html">Model Training &amp; Pose Interoperability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/combining_models.html">Combining Models &amp; Multi-Tool Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="COCO_and_data_formats.html">Data Formats &amp; COCO / YOLO / NDJSON Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Annolid_on_Google_Colab.html">Running Annolid on Google Colab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Downsample_video_batch_overrides.html">Batch downsampling with sequential video review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Realtime_and_multicamera.html">Real-Time Wireless &amp; Multi-Camera Live Detection</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Microscopy &amp; 3D Digital Twins</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Large_images_and_brain_3d.html">Large TIFF, Atlas Overlays &amp; Brain 3D Reconstruction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulation_3d_digital_twins.html">3D Digital Animal Twins &amp; Sim-to-Real Studio</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Automation, CLI &amp; Annolid Bot</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/prediction_review_agent.html">Annolid Bot &amp; Guided Track Review</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integrations_mcp_cloud_memory.html">Integrations: MCP, Memory, Cloud Storage &amp; Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/Expert_mode_CLI_tools.html">Power-User CLI (<code class="docutils literal notranslate"><span class="pre">annolid</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">annolid-run</span></code>)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources &amp; Community</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../content/annolid_zoo.html">Built-in Models &amp; Annolid ModelZoo</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://www.youtube.com/@annolid/videos">Annolid on YouTube</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://annolid.com/portal/">Annolid Docs Portal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/get_in_touch.html">Community &amp; Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/cite_annolid.html">How to Cite Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/work_based_on_annolid.html">Publications &amp; Posters Using Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/contributing.html">Contributing to Annolid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/licence.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/edit/main/book/tutorials/mouse083_resident_intruder_showcase.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/healthonrails/annolid/issues/new?title=Issue%20on%20page%20%2Ftutorials/mouse083_resident_intruder_showcase.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/tutorials/mouse083_resident_intruder_showcase.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Featured Walkthrough: Resident-Intruder Social Assay (mouse083)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animated-multi-animal-tracking-behavior-preview">Animated Multi-Animal Tracking &amp; Behavior Preview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transparent-project-files-on-disk">1. Transparent Project Files on Disk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-review-inside-the-desktop-gui">2. Labeling &amp; Review Inside the Desktop GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-through-close-contact-catching-occlusions-with-track-qc">3. Tracking Through Close Contact &amp; Catching Occlusions With Track QC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethogram-timeline-social-proximity-arena-trajectories">4. Ethogram Timeline, Social Proximity &amp; Arena Trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-zone-place-preference-scoring">5. Spatial Zone &amp; Place-Preference Scoring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-command-unified-html5-inline-svg-report">6. One-Command Unified HTML5 + Inline SVG Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-real-recordings-with-3d-digital-twins">7. Pair Real Recordings With 3D Digital Twins</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="featured-walkthrough-resident-intruder-social-assay-mouse083">
+<h1>Featured Walkthrough: Resident-Intruder Social Assay (<code class="docutils literal notranslate"><span class="pre">mouse083</span></code>)<a class="headerlink" href="#featured-walkthrough-resident-intruder-social-assay-mouse083" title="Link to this heading">#</a></h1>
+<p>This end-to-end walkthrough follows one real two-mouse home-cage recording (<strong><code class="docutils literal notranslate"><span class="pre">mouse083_task1_annotator1.mp4</span></code></strong>: <code class="docutils literal notranslate"><span class="pre">1024</span> <span class="pre">×</span> <span class="pre">570</span></code>, <code class="docutils literal notranslate"><span class="pre">30</span> <span class="pre">FPS</span></code>, <code class="docutils literal notranslate"><span class="pre">4,881</span> <span class="pre">frames</span></code>, <code class="docutils literal notranslate"><span class="pre">162.7</span> <span class="pre">s</span></code>) from first GUI click to a publication-ready HTML5 + SVG report.</p>
+<div class="ann-stats">
+  <div class="ann-stat">
+    <strong>4,881 frames</strong>
+    <span>162.7 s @ 30 FPS (1024 × 570)</span>
+  </div>
+  <div class="ann-stat">
+    <strong>2 masks + 14 keypoints</strong>
+    <span>resident &amp; intruder · 7 landmarks each</span>
+  </div>
+  <div class="ann-stat">
+    <strong>39.1 s / 19.9 s</strong>
+    <span>investigation (25 bouts) · mount (7 bouts)</span>
+  </div>
+  <div class="ann-stat">
+    <strong>5-frame QC alert</strong>
+    <span>intruder occlusion flagged at 3361–3366</span>
+  </div>
+</div>
+<div class="ann-cta-row">
+  <a class="ann-cta ann-cta--primary" href="https://annolid.com/portal/assets/reports/mouse083_report.html" target="_blank" rel="noopener">Open Live Interactive HTML5/SVG Report →</a>
+  <a class="ann-cta" href="Reporting_and_track_qc.html">Track QC &amp; Reporting Guide</a>
+  <a class="ann-cta" href="Simulation_3d_digital_twins.html">Matching 3D Digital Twin</a>
+</div>
+<section id="animated-multi-animal-tracking-behavior-preview">
+<h2>Animated Multi-Animal Tracking &amp; Behavior Preview<a class="headerlink" href="#animated-multi-animal-tracking-behavior-preview" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="mouse083-tracking-demo">
+<a class="reference internal image-reference" href="../_images/mouse083_tracking_demo.gif"><img alt="Animated resident-intruder tracking demo showing cyan resident and orange intruder polygons, 14 keypoints, trails, and live behavior banner" src="../_images/mouse083_tracking_demo.gif" style="width: 92%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Tethered black resident (<code class="docutils literal notranslate"><span class="pre">resident</span></code>, cyan contour + 7 keypoints) interacting with a white intruder (<code class="docutils literal notranslate"><span class="pre">intruder</span></code>, amber contour + 7 keypoints) on textured aspen bedding near a right-wall feeder port.</span><a class="headerlink" href="#mouse083-tracking-demo" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="transparent-project-files-on-disk">
+<h2>1. Transparent Project Files on Disk<a class="headerlink" href="#transparent-project-files-on-disk" title="Link to this heading">#</a></h2>
+<p>Every stage stays human-readable and versionable in plain JSON and CSV files:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>mouse083_task1_annotator1.mp4                  # Source 30 FPS video (1024 × 570, 4,881 frames)
+mouse083_task1_annotator1/
+  project.annolid.json                         # Shared ethogram schema (other, investigation, mount)
+  mouse083_task1_annotator1_000000000.json     # Per-frame LabelMe JSON (2 polygons + 14 keypoints + flags)
+  ...
+  mouse083_task1_annotator1_000004880.json
+mouse083_task1_annotator1_tracking.csv         # 78,091 rows: RLE masks, boxes, centroids for all 16 shapes
+mouse083_task1_annotator1_tracked.csv          # 9,757 rows: per-animal centroids, motion index, timestamps
+</pre></div>
+</div>
+<p>Each annotated frame contains:</p>
+<ul class="simple">
+<li><p><strong>2 whole-animal polygons</strong>: <code class="docutils literal notranslate"><span class="pre">resident</span></code> and <code class="docutils literal notranslate"><span class="pre">intruder</span></code></p></li>
+<li><p><strong>14 anatomical keypoints</strong> (7 per mouse, linked by <code class="docutils literal notranslate"><span class="pre">group_id</span></code>): <code class="docutils literal notranslate"><span class="pre">nose</span></code>, <code class="docutils literal notranslate"><span class="pre">left_ear</span></code>, <code class="docutils literal notranslate"><span class="pre">right_ear</span></code>, <code class="docutils literal notranslate"><span class="pre">neck</span></code>, <code class="docutils literal notranslate"><span class="pre">left_hip</span></code>, <code class="docutils literal notranslate"><span class="pre">right_hip</span></code>, <code class="docutils literal notranslate"><span class="pre">tail_base</span></code></p></li>
+<li><p><strong>Frame-level ethogram flags</strong>: <code class="docutils literal notranslate"><span class="pre">other</span></code>, <code class="docutils literal notranslate"><span class="pre">investigation</span></code>, or <code class="docutils literal notranslate"><span class="pre">mount</span></code></p></li>
+</ul>
+</section>
+<section id="labeling-review-inside-the-desktop-gui">
+<h2>2. Labeling &amp; Review Inside the Desktop GUI<a class="headerlink" href="#labeling-review-inside-the-desktop-gui" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="mouse083-gui-workspace">
+<a class="reference internal image-reference" href="../_images/mouse083_gui_workspace.png"><img alt="Annolid desktop GUI open on mouse083_task1_annotator1 with polygons, keypoints, investigation overlay pill, Flags dock, and Label Instances dock" src="../_images/mouse083_gui_workspace.png" style="width: 96%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">The Annolid desktop workspace synchronizes polygons, keypoints, viewport-pinned behavior badges (<code class="docutils literal notranslate"><span class="pre">•</span> <span class="pre">investigation</span></code>), <strong>Flags</strong>, <strong>Label Instances</strong>, <strong>Video List</strong>, and <strong>Behavior Controls</strong>.</span><a class="headerlink" href="#mouse083-gui-workspace" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To run this workflow on your own recording:</p>
+<ol class="arabic simple">
+<li><p>Open your video directly (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">Video</span></code>) — no frame extraction required.</p></li>
+<li><p>Seed <code class="docutils literal notranslate"><span class="pre">Frame</span> <span class="pre">0000</span></code> with whole-body polygons (<strong>Create AI-Polygon</strong>) and anatomical keypoints.</p></li>
+<li><p>Track polygons forward with <strong><a class="reference internal" href="../content/tracking_with_Cutie.html"><span class="std std-doc">Cutie</span></a></strong>, <strong><a class="reference internal" href="SAM3_video_tracking.html"><span class="std std-doc">SAM3</span></a></strong>, or <strong>YOLO</strong>, and track keypoints with <strong><a class="reference internal" href="DINOv3_keypoint_tracking.html"><span class="std std-doc">DINOv3 Keypoint Tracking</span></a></strong>.</p></li>
+<li><p>Score behaviors (<code class="docutils literal notranslate"><span class="pre">investigation</span></code>, <code class="docutils literal notranslate"><span class="pre">mount</span></code>, <code class="docutils literal notranslate"><span class="pre">other</span></code>) via <strong>Flags</strong>, the <strong>Timeline</strong> needle, or <strong>Annolid Bot</strong> 1-second segment labeling.</p></li>
+</ol>
+</section>
+<section id="tracking-through-close-contact-catching-occlusions-with-track-qc">
+<h2>3. Tracking Through Close Contact &amp; Catching Occlusions With Track QC<a class="headerlink" href="#tracking-through-close-contact-catching-occlusions-with-track-qc" title="Link to this heading">#</a></h2>
+<p>Real social trials alternate between clear separation and heavy overlap where one mouse temporarily hides the other.</p>
+<figure class="align-default" id="mouse083-storyboard">
+<a class="reference internal image-reference" href="../_images/mouse083_behavior_storyboard.png"><img alt="Four-panel storyboard of mouse083 showing Seed Frame, Social Investigation, Mounting Bout, and Track QC Occlusion Alert" src="../_images/mouse083_behavior_storyboard.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text"><strong>Four key moments across the trial:</strong> (A) clean seed frame (<code class="docutils literal notranslate"><span class="pre">494</span> <span class="pre">px</span></code> separation), (B) nose-to-body <code class="docutils literal notranslate"><span class="pre">investigation</span></code> (<code class="docutils literal notranslate"><span class="pre">143</span> <span class="pre">px</span></code>), (C) high-overlap <code class="docutils literal notranslate"><span class="pre">mount</span></code> (<code class="docutils literal notranslate"><span class="pre">114</span> <span class="pre">px</span></code>), and (D) a 5-frame occlusion dropout automatically caught by <strong>Track QC</strong> at frames <code class="docutils literal notranslate"><span class="pre">3361–3366</span></code>.</span><a class="headerlink" href="#mouse083-storyboard" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Run automated <strong>Track QC</strong> to rank the highest-risk frames for targeted human review instead of guessing where errors occurred:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>track-qc<span class="w"> </span>mouse083_task1_annotator1_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--expected-instances<span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--review-csv<span class="w"> </span>mouse083_review_queue.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--out<span class="w"> </span>mouse083_track_qc.json
+</pre></div>
+</div>
+<p>Double-clicking row <code class="docutils literal notranslate"><span class="pre">#1</span></code> in <strong>Analysis → Analysis &amp; Reporting Studio… → Track QC &amp; Gaps</strong> jumps your canvas straight to frame <code class="docutils literal notranslate"><span class="pre">3361</span></code> so you can repair one anchor frame and re-propagate cleanly.</p>
+</section>
+<section id="ethogram-timeline-social-proximity-arena-trajectories">
+<h2>4. Ethogram Timeline, Social Proximity &amp; Arena Trajectories<a class="headerlink" href="#ethogram-timeline-social-proximity-arena-trajectories" title="Link to this heading">#</a></h2>
+<figure class="align-default" id="mouse083-ethogram-kinematics">
+<a class="reference internal image-reference" href="../_images/mouse083_ethogram_kinematics.png"><img alt="Ethogram timeline raster, inter-animal centroid proximity curve, thigmotaxis trajectories, and behavior time budget for mouse083" src="../_images/mouse083_ethogram_kinematics.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Scored ethogram bouts align tightly with sharp drops in inter-animal distance (<code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">100</span> <span class="pre">px</span></code> close-contact threshold), while full-session trajectories reveal clear wall-following thigmotaxis.</span><a class="headerlink" href="#mouse083-ethogram-kinematics" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">resident</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">intruder</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Observed Frames (Coverage)</p></td>
+<td><p>4,881 / 4,881 (<code class="docutils literal notranslate"><span class="pre">100.0%</span></code>)</p></td>
+<td><p>4,876 / 4,881 (<code class="docutils literal notranslate"><span class="pre">99.9%</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Path Distance</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">27,173.4</span> <span class="pre">px</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">20,957.8</span> <span class="pre">px</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Mean Speed</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">167.06</span> <span class="pre">px/s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">128.78</span> <span class="pre">px/s</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Freezing % (Bouts)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.5%</span></code> (<code class="docutils literal notranslate"><span class="pre">7</span></code> bouts)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.0%</span></code> (<code class="docutils literal notranslate"><span class="pre">9</span></code> bouts)</p></td>
+</tr>
+<tr class="row-even"><td><p>Inter-Animal Distance</p></td>
+<td><p>Mean <code class="docutils literal notranslate"><span class="pre">280.5</span> <span class="pre">px</span></code> · Min <code class="docutils literal notranslate"><span class="pre">15.7</span> <span class="pre">px</span></code></p></td>
+<td><p>Close contact (<code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">100</span> <span class="pre">px</span></code>): <code class="docutils literal notranslate"><span class="pre">5.7%</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Behavior time budget across the <code class="docutils literal notranslate"><span class="pre">162.7</span> <span class="pre">s</span></code> recording:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Behavior</p></th>
+<th class="head"><p>Bouts</p></th>
+<th class="head"><p>Total Duration</p></th>
+<th class="head"><p>Mean Bout</p></th>
+<th class="head"><p>Median Bout</p></th>
+<th class="head"><p>% of Session</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">other</span></code></p></td>
+<td><p>24</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">103.70</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">4.32</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">3.65</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">63.7%</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">investigation</span></code></p></td>
+<td><p>25</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">39.07</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1.56</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0.63</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">24.0%</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mount</span></code></p></td>
+<td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">19.90</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.84</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">2.57</span> <span class="pre">s</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">12.2%</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="spatial-zone-place-preference-scoring">
+<h2>5. Spatial Zone &amp; Place-Preference Scoring<a class="headerlink" href="#spatial-zone-place-preference-scoring" title="Link to this heading">#</a></h2>
+<p>Define reusable arena zones once in <strong>Video Tools → Zones</strong> (<code class="docutils literal notranslate"><span class="pre">mouse083_zones.json</span></code>) and score occupancy and entries in one command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>zone-analysis<span class="w"> </span>mouse083_task1_annotator1_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--mode<span class="w"> </span>zone_metrics<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./mouse083_zone_out
+</pre></div>
+</div>
+<figure class="align-default" id="mouse083-zone-analysis">
+<a class="reference internal image-reference" href="../_images/mouse083_zone_analysis.png"><img alt="Three home-cage zones overlaid on mouse083 alongside bar chart of occupancy durations and entry counts" src="../_images/mouse083_zone_analysis.png" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 19 </span><span class="caption-text">Spatial zone polygons (<code class="docutils literal notranslate"><span class="pre">left_nest_zone</span></code>, <code class="docutils literal notranslate"><span class="pre">center_arena</span></code>, <code class="docutils literal notranslate"><span class="pre">right_port_zone</span></code>) overlaid with tracked centroids and computed occupancy durations and entry counts.</span><a class="headerlink" href="#mouse083-zone-analysis" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Both animals spend over <strong>78%</strong> of the trial in the two end zones (<code class="docutils literal notranslate"><span class="pre">left_nest_zone</span></code> and <code class="docutils literal notranslate"><span class="pre">right_port_zone</span></code>) and transit quickly across <code class="docutils literal notranslate"><span class="pre">center_arena</span></code> (<code class="docutils literal notranslate"><span class="pre">1.10–1.59</span> <span class="pre">s</span></code> mean visit).</p>
+</section>
+<section id="one-command-unified-html5-inline-svg-report">
+<h2>6. One-Command Unified HTML5 + Inline SVG Report<a class="headerlink" href="#one-command-unified-html5-inline-svg-report" title="Link to this heading">#</a></h2>
+<p>Combine Track QC, kinematics, spatial zones, body-part contact ethograms, and behavior time budgets into one shareable, offline HTML5 report:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>annolid-run<span class="w"> </span>report<span class="w"> </span>mouse083_task1_annotator1_tracked.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--events-csv<span class="w"> </span>mouse083_events.csv<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--zone-file<span class="w"> </span>mouse083_zones.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--schema<span class="w"> </span>mouse083_task1_annotator1/project.annolid.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--fps<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--title<span class="w"> </span><span class="s2">"mouse083_task1_annotator1 — Resident-Intruder Social Assay"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--output-dir<span class="w"> </span>./mouse083_report
+</pre></div>
+</div>
+<figure class="align-default" id="mouse083-report-preview">
+<a class="reference internal image-reference" href="../_images/mouse083_report_preview.png"><img alt="Preview of the self-contained HTML5 and inline SVG report generated by annolid-run report" src="../_images/mouse083_report_preview.png" style="width: 96%;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 20 </span><span class="caption-text">Preview of the generated self-contained HTML5/SVG report (<a class="reference external" href="https://annolid.com/portal/assets/reports/mouse083_report.html">open the live interactive report</a>).</span><a class="headerlink" href="#mouse083-report-preview" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="pair-real-recordings-with-3d-digital-twins">
+<h2>7. Pair Real Recordings With 3D Digital Twins<a class="headerlink" href="#pair-real-recordings-with-3d-digital-twins" title="Link to this heading">#</a></h2>
+<p>Want synthetic ground-truth pose, body-part masks, or controlled occlusion tests modeled on the same black C57BL/6 + white BALB/c paradigm? Continue to <a class="reference internal" href="Simulation_3d_digital_twins.html"><span class="std std-doc">3D Digital Animal Twins &amp; Sim-to-Real Studio</span></a>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="GUI_power_tips_and_editing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">GUI Power Tips: Merging Shapes, Reordering Lists &amp; Class Maps</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../content/tracking_with_Cutie.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tracking From One Frame with Cutie</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animated-multi-animal-tracking-behavior-preview">Animated Multi-Animal Tracking &amp; Behavior Preview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transparent-project-files-on-disk">1. Transparent Project Files on Disk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-review-inside-the-desktop-gui">2. Labeling &amp; Review Inside the Desktop GUI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tracking-through-close-contact-catching-occlusions-with-track-qc">3. Tracking Through Close Contact &amp; Catching Occlusions With Track QC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethogram-timeline-social-proximity-arena-trajectories">4. Ethogram Timeline, Social Proximity &amp; Arena Trajectories</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spatial-zone-place-preference-scoring">5. Spatial Zone &amp; Place-Preference Scoring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-command-unified-html5-inline-svg-report">6. One-Command Unified HTML5 + Inline SVG Report</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pair-real-recordings-with-3d-digital-twins">7. Pair Real Recordings With 3D Digital Twins</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Chen Yang, Jeremy Forest, Matthew Einhorn, Thomas Cleland
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2020–2026 Computational Physiology Laboratory · Annolid Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+  Looking for the full reference portal? Visit
+  <a href="https://annolid.com/portal/">Annolid Docs Portal</a> or
+  <a href="https://annolid.com/">annolid.com</a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

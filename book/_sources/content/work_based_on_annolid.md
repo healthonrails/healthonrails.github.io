@@ -1,49 +1,27 @@
-# Annolid bibliography
+# Publications & Posters Using Annolid
 
-Please let us know if you use Annolid in your research, we would love to add it to this page !
+Did you publish a paper, preprint, thesis, or conference poster using Annolid? Please [let us know](get_in_touch.md) or open a pull request — we would love to feature your work here!
 
-## 2021
+## Conference Posters & Presentations
 
-### SNF Conference
-Poster: Instance segmentation-based multiple-animal tracking and behavior analysis package
+### Society for Neuroscience (SfN) 2023
+- **PSTR512.02** — *Annolid: Annotate, Segment, and Track Anything You Need* (Chen Yang, Thomas A. Cleland)
+- **PSTR512.01** — *Scoring rodent digging behavior with Annolid* (J. Fang, Chen Yang, Thomas A. Cleland)
 
-Slides:
-__TODO__
+### Society for Neuroscience (SfN) 2021
+- **Poster**: *Instance segmentation-based multiple-animal tracking and behavior analysis package* ([download PDF poster](../images/SfN%20Annolid%20Poster%20Nov%202021.pdf))
 
-Poster recording:
-<figure class="video_container">
-  <iframe width="720" height="480" src="https://www.youtube.com/embed/tVIE6vG9Gao" frameborder="0" allowfullscreen="true"> </iframe>
-</figure>
+<div class="video_container">
+  <iframe src="https://www.youtube.com/embed/tVIE6vG9Gao" title="SfN 2021 Annolid Poster Presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-## SfN 2023 posters
-PSTR512.02 - Annolid: Annotate, Segment, and Track Anything You Need
-PSTR512.01 - Scoring rodent digging behavior with Annolid
+## Peer-Reviewed Papers & Preprints
 
-## Other open-access pre-prints related to Annolid
+- **Pranic, N. M., Kornbrek, C., Yang, C., Cleland, T. A., & Tschida, K. A. (2022).** *Rates of ultrasonic vocalizations are more strongly related than acoustic features to non-vocal behaviors in mouse pups.* Frontiers in Behavioral Neuroscience, 16, 1015484.
+- **Nowicki, J. P., Rodríguez, C., Lee, J. C., Goolsby, B. C., Yang, C., Cleland, T. A., & O'Connell, L. A. (2022).** *Evidence for empathy in pair bonding poison frogs.* bioRxiv, `10.1101/2022.09.25.509360`.
 
-```
-@article{pranic2022rates,
-  title={Rates but not acoustic features of ultrasonic vocalizations are related to non-vocal behaviors in mouse pups},
-  author={Pranic, Nicole M and Kornbrek, Caroline and Yang, Chen and Cleland, Thomas A and Tschida, Katherine A},
-  journal={bioRxiv},
-  year={2022},
-  publisher={Cold Spring Harbor Laboratory}
-}
-
-@article {Nowicki2022.09.25.509360,
-	author = {Jessica P. Nowicki and Camilo Rodr{\'\i}guez and Julia C. Lee and Billie C. Goolsby and Chen Yang and Thomas A. Cleland and Lauren A. O{\textquoteright}Connell},
-	title = {EVIDENCE FOR EMPATHY IN PAIR BONDING POISON FROGS},
-	elocation-id = {2022.09.25.509360},
-	year = {2022},
-	doi = {10.1101/2022.09.25.509360},
-	publisher = {Cold Spring Harbor Laboratory},
-	abstract = {Empathy is critical to individual and societal wellbeing in humans. More than a century ago, Charles Darwin hypothesized that the empathy-like phenotype is a phylogenetically widespread phenomenon. This idea remains contentious, partly due to few investigations among non-mammalian vertebrates. We provide evidence for Darwin{\textquoteright}s hypothesis by discovering key empathetic features, emotional contagion and ingroup bias, in pair bonding Ranitomeya imitator (Mimetic) poison frogs. We found that the corticosterone level of males appears to positively correlate with female partners across various conditions, including cohabitation and during experimental manipulation. This response is selective towards female partners relative to familiarized female non-partners and is irrespective of partnership longevity or lifetime reproductive output. However, hormonal state matching is not reflected behaviorally, indicating that behavioral state matching can be an unreliable proxy for emotional contagion. These results constitute the first evidence for emotional contagion in an amphibian. Together with findings in other taxa, they suggest empathy is evolutionarily widespread among social vertebrates.Competing Interest StatementThe authors have declared no competing interest.},
-	URL = {https://www.biorxiv.org/content/early/2022/09/26/2022.09.25.509360},
-	eprint = {https://www.biorxiv.org/content/early/2022/09/26/2022.09.25.509360.full.pdf},
-	journal = {bioRxiv}
-}
-
-@article{pranic2022rates,
+```bibtex
+@article{pranic2022rates_frontiers,
   title={Rates of ultrasonic vocalizations are more strongly related than acoustic features to non-vocal behaviors in mouse pups},
   author={Pranic, Nicole M and Kornbrek, Caroline and Yang, Chen and Cleland, Thomas A and Tschida, Katherine A},
   journal={Frontiers in Behavioral Neuroscience},
@@ -51,5 +29,15 @@ PSTR512.01 - Scoring rodent digging behavior with Annolid
   pages={1015484},
   year={2022},
   publisher={Frontiers}
+}
+
+@article{nowicki2022empathy,
+  author={Jessica P. Nowicki and Camilo Rodr{\'\i}guez and Julia C. Lee and Billie C. Goolsby and Chen Yang and Thomas A. Cleland and Lauren A. O'Connell},
+  title={Evidence for Empathy in Pair Bonding Poison Frogs},
+  elocation-id={2022.09.25.509360},
+  year={2022},
+  doi={10.1101/2022.09.25.509360},
+  publisher={Cold Spring Harbor Laboratory},
+  journal={bioRxiv}
 }
 ```
